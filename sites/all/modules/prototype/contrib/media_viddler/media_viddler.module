@@ -1,0 +1,238 @@
+<?php
+
+/**
+ * Implements hook_media_internet_providers().
+ */
+function media_viddler_media_internet_providers() {
+  $path = drupal_get_path('module', 'media_viddler');
+  return array(
+    'MediaInternetViddlerHandler' => array(
+      'title' => 'Viddler',
+    ),
+  );
+}
+
+/**
+ * Implements hook_stream_wrappers().
+ */
+function media_viddler_stream_wrappers() {
+  return array(
+    'viddler' => array(
+      'name' => t('Viddler videos'),
+      'class' => 'MediaViddlerStreamWrapper',
+      'description' => t('Videos provided by Viddler.'),
+      'type' => STREAM_WRAPPERS_READ_VISIBLE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function media_viddler_theme($existing, $type, $theme, $path) {
+  return array(
+    'media_viddler_video' => array(
+      'variables' => array('uri' => NULL, 'options' => array()),
+    ),
+  );
+}
+
+/**
+ * Implements hook_media_parse().
+ */
+function media_viddler_media_parse($embedCode, $options = array()) {
+  $matches = array();
+  $patterns = array(
+    '/viddler id=([\w]+)/',
+    '@viddler\.com/v/([\w]+)@i',
+  );
+  foreach ($patterns as $pattern) {
+    preg_match($pattern, $embedCode, $matches);
+    if (isset($matches[1])) {
+      return file_stream_wrapper_uri_normalize('viddler://' . $matches[1]);
+    }
+  }
+}
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function media_viddler_ctools_plugin_api($owner, $api) {
+  static $api_versions = array(
+    'file_entity' => array(
+      'file_default_displays' => 1,
+    ),
+  );
+  if (isset($api_versions[$owner][$api])) {
+    return array('version' => $api_versions[$owner][$api]);
+  }
+}
+
+/**
+ * Implements hook_file_formatter_info().
+ */
+function media_viddler_file_formatter_info() {
+  $formatters['media_viddler_video'] = array(
+    'label' => t('Viddler Video'),
+    'file types' => array('video'),
+    'default settings' => array(),
+    'view callback' => 'media_viddler_file_formatter_video_view',
+    'settings callback' => 'media_viddler_file_formatter_video_settings',
+  );
+  $formatters['media_viddler_video']['default settings'] = array(
+    'width' => 704,
+    'height' => 396,
+  );
+  $formatters['media_viddler_image'] = array(
+    'label' => t('Viddler Preview Image'),
+    'file types' => array('video'),
+    'default settings' => array(
+      'image_style' => '',
+    ),
+    'view callback' => 'media_viddler_file_formatter_image_view',
+    'settings callback' => 'media_viddler_file_formatter_image_settings',
+  );
+  return $formatters;
+}
+
+
+/**
+ * Implements hook_file_formatter_FORMATTER_view().
+ */
+function media_viddler_file_formatter_video_view($file, $display, $langcode) {
+  $scheme = file_uri_scheme($file->uri);
+  if ($scheme == 'viddler') {
+    $element = array(
+      '#theme' => 'media_viddler_video',
+      '#uri' => $file->uri,
+      '#options' => array(),
+    );
+    foreach (array('width', 'height') as $setting) {
+      $element['#options'][$setting] = isset($file->override[$setting]) ? $file->override[$setting] : $display['settings'][$setting];
+    }
+    return $element;
+  }
+}
+
+/**
+ * Implements hook_file_formatter_FORMATTER_settings().
+ */
+function media_viddler_file_formatter_video_settings($form, &$form_state, $settings) {
+  $element = array();
+
+  $element['width'] = array(
+    '#title' => t('Width'),
+    '#type' => 'textfield',
+    '#default_value' => $settings['width'],
+  );
+  $element['height'] = array(
+    '#title' => t('Height'),
+    '#type' => 'textfield',
+    '#default_value' => $settings['height'],
+  );
+  return $element;
+}
+
+/**
+ * Implements hook_file_formatter_FORMATTER_view().
+ */
+function media_viddler_file_formatter_image_view($file, $display, $langcode) {
+  $scheme = file_uri_scheme($file->uri);
+  if ($scheme == 'viddler') {
+    $wrapper = file_stream_wrapper_get_instance_by_uri($file->uri);
+    $image_style = $display['settings']['image_style'];
+    $valid_image_styles = image_style_options(FALSE);
+    if (empty($image_style) || !isset($valid_image_styles[$image_style])) {
+      $element = array(
+        '#theme' => 'image',
+        '#path' => $wrapper->getOriginalThumbnailPath(),
+      );
+    }
+    else {
+      $element = array(
+        '#theme' => 'image_style',
+        '#style_name' => $image_style,
+        '#path' => $wrapper->getLocalThumbnailPath(),
+      );
+    }
+    return $element;
+  }
+}
+
+/**
+ * Implements hook_file_formatter_FORMATTER_settings().
+ */
+function media_viddler_file_formatter_image_settings($form, &$form_state, $settings) {
+  $element = array();
+  $element['image_style'] = array(
+    '#title' => t('Image style'),
+    '#type' => 'select',
+    '#options' => image_style_options(FALSE),
+    '#default_value' => $settings['image_style'],
+    '#empty_option' => t('None (original image)'),
+  );
+  return $element;
+}
+
+/**
+ * Implements hook_file_default_displays().
+ */
+function media_viddler_file_default_displays() {
+  $default_displays = array();
+
+  // Default settings for displaying as a video.
+  $default_video_settings = array(
+    'media_large' => array(
+      'width' => 480,
+      'height' => 360,
+      'autoplay' => FALSE,
+    ),
+    'media_original' => array(
+      'width' => 640,
+      'height' => 480,
+      'autoplay' => FALSE,
+    ),
+  );
+  foreach ($default_video_settings as $view_mode => $settings) {
+    $display_name = 'video__' . $view_mode . '__media_viddler_video';
+    $default_displays[$display_name] = (object) array(
+      'api_version' => 1,
+      'name' => $display_name,
+      'status' => 1,
+      'weight' => 1,
+      'settings' => $settings,
+    );
+  }
+
+  $default_image_styles = array(
+    'media_preview' => 'square_thumbnail',
+    'media_large' => 'large',
+    'media_original' => ''
+  );
+  foreach ($default_image_styles as $view_mode => $image_style) {
+    $display_name = 'video__' . $view_mode . '__media_viddler_image';
+    $default_displays[$display_name] = (object) array(
+      'api_version' => 1,
+      'name' => $display_name,
+      'status' => 1,
+      'weight' => 2,
+      'settings' => array('image_style' => $image_style),
+    );
+  }
+
+  return $default_displays;
+}
+
+/**
+ * The embedded flash displaying the viddler video.
+ */
+function theme_media_viddler_video($variables) {
+  $uri = $variables['uri'];
+  $wrapper = file_stream_wrapper_get_instance_by_uri($uri);
+  $id = $wrapper->get_parameters();
+  $options = $variables['options'];
+  $output = '<!--[if IE]><object width="' . $options['width'] . '" height="' . $options['height'] . '" id="viddlerOuter-' . $id . '" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"><param name="movie" value="//www.viddler.com/player/' . $id . '/0/"><param name="allowScriptAccess" value="always"><param name="allowNetworking" value="all"><param name="allowFullScreen" value="true"><param name="flashVars" value="f=1&openURL=14451388&autoplay=f&disablebranding=f&view_secret=14451388"><object id="viddlerInner-' . $id . '"><video id="viddlerVideo-' . $id . '" src="//www.viddler.com/file/' . $id . '/html5mobile?openURL=14451388" type="video/mp4" width="' . $options['width'] . '" height="' . $options['height'] . '" poster="//www.viddler.com/thumbnail/' . $id . '/" controls="controls" x-webkit-airplay="allow"></video></object></object><![endif]-->';
+  $output .= '<!--[if !IE]> <!--> <object width="' . $options['width'] . '" height="349" id="viddlerOuter-' . $id . '" type="application/x-shockwave-flash" data="//www.viddler.com/player/' . $id . '/0/"> <param name="movie" value="//www.viddler.com/player/' . $id . '/0/"> <param name="allowScriptAccess" value="always"><param name="allowNetworking" value="all"><param name="allowFullScreen" value="true"><param name="flashVars" value="f=1&openURL=14451388&autoplay=f&disablebranding=f&view_secret=14451388"><object id="viddlerInner-' . $id . '"> <video id="viddlerVideo-' . $id . '" src="//www.viddler.com/file/' . $id . '/html5mobile?openURL=14451388" type="video/mp4" width="' . $options['width'] . '" height="' . $options['height'] . '" poster="//www.viddler.com/thumbnail/' . $id . '/" controls="controls" x-webkit-airplay="allow"></video> </object></object> <!--<![endif]-->';
+
+  return $output;
+}
