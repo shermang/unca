@@ -1,0 +1,12 @@
+name = Viddler
+description = "Viddler field"
+core = 7.x
+package = Viddler
+dependencies[] = media_internet
+files[] = library/phpviddler.php
+; Information added by drupal.org packaging script on 2011-11-01
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "viddler"
+datestamp = "1320107827"
+
