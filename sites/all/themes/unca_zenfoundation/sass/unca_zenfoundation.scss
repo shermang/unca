@@ -1,0 +1,12 @@
+//
+// Partials to be shared with all .scss files.
+//
+
+@import "compass"; // compass library, compass-style.org
+// @import "sprites/*.png"; // import compass sprites
+
+
+@import "partials/global/*";
+@import "partials/base/_base_*";
+@import "partials/layout/_layout_*";
+@import "partials/components/_components_*";
