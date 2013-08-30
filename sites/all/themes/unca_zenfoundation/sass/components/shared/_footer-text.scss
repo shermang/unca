@@ -1,0 +1,8 @@
+#block-block-1 {
+  color: $gray;
+  font-size: $small-font-size;
+  text-align: center;
+  @include respond-to($tablet) {
+    text-align: right;
+  }
+}
