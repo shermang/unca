@@ -1,0 +1,13 @@
+// @include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
+
+.sidebar {
+  @include grid-column($full-width);
+  @include respond-to($tablet) {
+    @include grid-column($sidebar-1-width);
+  }
+}
+.region-sidebar-first {
+  .sidebar-first & {
+    @include grid-column($sidebar-1-width, false, false, false, false, $content-width);
+  }
+}

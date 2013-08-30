@@ -1,0 +1,169 @@
+// Put emCalc in so it can be used
+$em-base: 16 !default;
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+@function convert-to-em($value)  {
+  $value: strip-unit($value) / strip-unit($em-base) * 1em;
+  @if ($value == 0em) { $value: 0; } // Turn 0em into 0
+  @return $value;
+}
+@function emCalc($values...) {
+  $max: length($values); // Get the total number of parameters passed
+
+  // If there is only 1 parameter, then return it as an integer.
+  // This is done because a list can't be multiplied or divided even if it contains a single value
+  @if $max == 1 { @return convert-to-em(nth($values, 1)); }
+
+  $emValues: (); // This will eventually store the converted $values in a list
+  @for $i from 1 through $max {
+    $emValues: append($emValues, convert-to-em(nth($values, $i)));
+  }
+  @return $emValues;
+}
+
+
+//
+// Layout
+//
+
+// Grid variables
+
+$row-width: emCalc(1100px);
+// $column-gutter: emCalc(30);
+$total-columns: 12; // Caution: changing this will alter the breakpoints
+
+// $column-gutter-half: $column-gutter / 2;
+
+$grid-width: $row-width / $total-columns;
+
+
+// Column variables - use these to set your region widths
+$full-width:           $total-columns;
+$sidebar-1-width:      3;
+$content-width:        $full-width - $sidebar-1-width;
+
+
+// Media Queries
+
+$small-screen: emCalc(768px);
+$medium-screen: emCalc(1000px);
+$large-screen: emCalc(1440px);
+
+// $screen: "only screen";
+$small: "only screen and (min-width: #{$small-screen})";
+$medium: "only screen and (min-width: #{$medium-screen})";
+$large: "only screen and (min-width: #{$large-screen})";
+$landscape: "only screen and (orientation: landscape)";
+$portrait: "only screen and (orientation: portrait)";
+
+// @for $i 1 through $total-columns {
+//   $grid-break-#{$i}:
+// }
+
+$topbar-breakpoint: $small-screen;
+
+// Respond-to variables
+$print: "print";
+$no-print: "false";
+
+// Assign devices to sizes
+$tablet: $small;
+$desktop: $medium;
+$widescreen: $large;
+
+// Need to define IE variables for the respond-to mixin
+$ie10: ".ie10";
+$ie9: ".lt-ie10";
+$ie8: ".lt-ie9";
+$ie7: ".lt-ie8";
+
+
+//
+// Colors
+//
+
+$white:        #ffffff;
+$gray-lighter:   darken($white, 10%);
+$gray-light:   darken($white, 25%);
+$gray:         darken($white, 50%);
+$gray-dark:    darken($white, 75%);
+$black:      #000000;
+
+// Foundation colors
+$primary-color: #2ba6cb; // This is also the link color
+// $secondary-color: #e9e9e9;
+// $alert-color: #c60f13;
+// $success-color: #5da423;
+
+// Topbar / primary menu colors
+// $topbar-bg: #111;
+// $topbar-dropdown-bg: #222;
+// $topbar-dropdown-link-color: #fff;
+// $topbar-dropdown-link-bg: lighten($topbar-bg, 5%);
+// $topbar-link-color: #fff;
+// $topbar-link-color-hover: #fff;
+// $topbar-link-color-active: #fff;
+// $topbar-link-color: #fff;
+// $topbar-link-color-hover: #fff;
+// $topbar-link-color-active: #fff;
+// $topbar-menu-link-color: #fff;
+// $topbar-menu-icon-color: #fff;
+// $topbar-menu-link-color-toggled: #888;
+// $topbar-menu-icon-color-toggled: #888;
+
+//
+// Typography
+//
+
+$small-font-size: 80%;
+
+// Control header font sizes
+
+$h1-font-size: emCalc(44);
+$h2-font-size: emCalc(37);
+$h3-font-size: emCalc(27);
+$h4-font-size: emCalc(23);
+$h5-font-size: emCalc(18);
+$h6-font-size: 1em;
+
+// Style lists
+
+$list-style-position: outside;
+$list-side-margin: emCalc(20);
+// $list-nested-margin: emCalc(20);
+// $definition-list-header-weight: bold;
+// $definition-list-header-margin-bottom: .3em;
+// $definition-list-margin-bottom: emCalc(12);
+
+
+// Various global styles
+
+$default-float: left;
+
+// $body-bg: #fff;
+$body-font-color: #222;
+// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $body-font-weight: normal;
+// $body-font-style: normal;
+
+// Font-smoothing
+// $font-smoothing: antialiased;
+
+// Text direction settings
+// $text-direction: ltr;
+
+
+// Make sure border radius matches unless we want it different.
+
+// $global-radius: 3px;
+// $global-rounded: 1000px;
+
+// Inset shadow shiny edges and depressions.
+
+// $shiny-edge-size: 0 1px 0;
+// $shiny-edge-color: rgba(#fff, .5);
+// $shiny-edge-active-color: rgba(#000, .2);
+
+
+$include-print-styles: false;

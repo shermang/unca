@@ -1,0 +1,10 @@
+.section-menu {
+  ul {
+    @extend .side-nav;
+    @extend %sidebar-menu;
+    padding: 0;
+    li {
+      margin-bottom: 0;
+    }
+  }
+}

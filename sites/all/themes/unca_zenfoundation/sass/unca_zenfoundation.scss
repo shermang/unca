@@ -1,12 +1,16 @@
-//
-// Partials to be shared with all .scss files.
-//
+@import "compass";
 
-@import "compass"; // compass library, compass-style.org
-// @import "sprites/*.png"; // import compass sprites
+@import "../fonts/wireframe-icons/_wireframe-icons.scss";
 
+@import "global/functions";
+@import "global/variables";
+@import "global/extends";
+@import "global/mixins";
 
-@import "partials/global/*";
-@import "partials/base/_base_*";
-@import "partials/layout/_layout_*";
-@import "partials/components/_components_*";
+@import "base/vendor/foundation/custom_foundation";
+@import "base/html/**/*";
+@import "base/page/**/*";
+
+@import "components/**/*";
+
+@import "layout/**/*";

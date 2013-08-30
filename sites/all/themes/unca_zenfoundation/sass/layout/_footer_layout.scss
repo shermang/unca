@@ -1,0 +1,6 @@
+#footer {
+  @include grid-row;
+  .block {
+    @include grid-column($full-width);
+  }
+}

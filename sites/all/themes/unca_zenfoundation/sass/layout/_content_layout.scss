@@ -1,0 +1,14 @@
+#content {
+  @include grid-column($full-width);
+  // One sidebar, on the left
+  .one-sidebar & {
+    @include respond-to($tablet) {
+      @include grid-column($content-width);
+    }
+  }
+  .sidebar-first & {
+    @include respond-to($tablet) {
+      @include grid-column($content-width, false, false, false, $sidebar-1-width);
+    }
+  }
+}
