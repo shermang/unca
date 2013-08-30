@@ -1,0 +1,16 @@
+name = UNCA Home
+description = UNCA Main Site components
+core = 7.x
+package = UNCA Home
+version = 7.x-1.0
+project = unca_home
+dependencies[] = features
+dependencies[] = menu
+features[features_api][] = api:2
+features[menu_custom][] = menu-home-page-secondary-navigat
+features[menu_links][] = menu-home-page-secondary-navigat:node/1
+features[menu_links][] = menu-home-page-secondary-navigat:node/2
+features[menu_links][] = menu-home-page-secondary-navigat:node/3
+features[menu_links][] = menu-home-page-secondary-navigat:node/4
+features[menu_links][] = menu-home-page-secondary-navigat:node/5
+project path = sites/all/modules/features
