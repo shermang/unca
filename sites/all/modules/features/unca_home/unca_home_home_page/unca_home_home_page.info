@@ -1,0 +1,11 @@
+name = UNCA Home Page
+core = 7.x
+package = UNCA Home
+version = 7.x-1.0
+project = unca_home_home_page
+dependencies[] = context
+dependencies[] = ctools
+features[context][] = unca_home_page
+features[ctools][] = context:context:3
+features[features_api][] = api:2
+project path = sites/all/modules/features/unca_home
