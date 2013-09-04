@@ -1,0 +1,10 @@
+name = UNCA Slideshow
+description = Slideshow entity, admin UI and supporting functionality
+package = UNCA Global
+version = VERSION
+core = 7.x
+
+dependencies[] = entity
+dependencies[] = views
+
+files[] = slideshow_entity.controller.inc
