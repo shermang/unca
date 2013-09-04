@@ -1,0 +1,111 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function slideshow_entity_schema() {
+  $schema = array();
+
+  $schema['slideshow_entity'] = array(
+    'description' => 'The base table for slideshows.',
+    'fields' => array(
+      'ssid' => array(
+        'description' => 'The primary identifier for the slideshow.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'type' => array(
+        'description' => 'The type (bundle) of this slideshow.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'title' => array(
+        'description' => 'The administrative title of the slideshow.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'uid' => array(
+        'description' => 'ID of Drupal user creator.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'created' => array(
+        'description' => 'The Unix timestamp when the slideshow was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'changed' => array(
+        'description' => 'The Unix timestamp when the slideshow was most recently saved.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'description' => array(
+        'description' => 'slideshow description.',
+        'type' => 'text',
+      ),
+    ),
+    'primary key' => array('ssid'),
+  );
+
+  $schema['slideshow_entity_type'] = array(
+    'description' => 'Stores information about all defined slideshow types.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique slideshow type ID.',
+      ),
+      'type' => array(
+        'description' => 'The machine-readable name of this type.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ),
+      'label' => array(
+        'description' => 'The human-readable name of this type.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'description' => array(
+        'description' => 'A brief description of this type.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'medium',
+        'translatable' => TRUE,
+      ),
+      'status' => array(
+        'type' => 'int', 
+        'not null' => TRUE,
+        // Set the default to ENTITY_CUSTOM without using the constant as it is
+        // not safe to use it at this point. 
+        'default' => 0x01, 
+        'size' => 'tiny', 
+        'description' => 'The exportable status of the entity.',
+      ), 
+      'module' => array(
+        'description' => 'The name of the providing module if the entity has been defined in code.', 
+        'type' => 'varchar', 
+        'length' => 255, 
+        'not null' => FALSE,
+      ),
+
+
+
+    ) ,
+    'primary key' => array('id'),
+    'unique keys' => array(
+      'type' => array('type'),
+    ),
+  );
+
+  return $schema;
+}
