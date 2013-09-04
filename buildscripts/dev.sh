@@ -72,7 +72,12 @@ context \
 context_layouts \
 context_ui \
 ds \
-ds_ui
+ds_ui \
+unca_global_header_and_footer \
+unca_slideshow \
+unca_department_navigation \
+unca_home \
+
 
 # To disable modules, uncomment the following command and list the modules to disable
 # drush dis --yes \
