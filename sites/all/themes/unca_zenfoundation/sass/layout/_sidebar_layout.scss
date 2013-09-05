@@ -7,7 +7,12 @@
   }
 }
 .region-sidebar-first {
+  // When there's only one sidebar and it's the first one
   .sidebar-first & {
-    @include grid-column($sidebar-1-width, false, false, false, false, $content-width);
+    @include grid-column($sidebar-1-width, false, false, false, false, $content-width-sb1);
+  }
+  // When there are two sidebars
+  .two-sidebars & {
+    @include grid-column($sidebar-1-width, false, false, false, false, $content-width-sb1-sb2);
   }
 }

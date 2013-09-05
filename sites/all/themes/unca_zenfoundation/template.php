@@ -153,11 +153,141 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function unca_zenfoundation_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+
+  // Add page--node_type.tpl.php suggestions
+  if (!empty($variables['node'])) {
+    $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
+  }
+
+  $variables['linked_site_name'] = '';
+  if (!empty($variables['site_name'])) {
+    $variables['linked_site_name'] = l($variables['site_name'], '<front>', array(
+      'attributes' => array(
+        'rel'   => 'home',
+        'title' => strip_tags($variables['site_name']) . ' ' . t('Home'),
+      ),
+    ));
+  }
+
+  // Top bar.
+  if ($variables['top_bar'] = theme_get_setting('unca_zenfoundation_top_bar_enable')) {
+    $top_bar_classes = array();
+
+    if (theme_get_setting('unca_zenfoundation_top_bar_grid')) {
+      $top_bar_classes[] = 'contain-to-grid';
+    }
+
+    if (theme_get_setting('unca_zenfoundation_top_bar_sticky')) {
+      $top_bar_classes[] = 'sticky';
+    }
+
+    if ($variables['top_bar'] == 2) {
+      $top_bar_classes[] = 'show-for-small';
+    }
+
+    $variables['top_bar_classes'] = implode(' ', $top_bar_classes);
+    $variables['top_bar_menu_text'] = theme_get_setting('unca_zenfoundation_top_bar_menu_text');
+
+    $top_bar_options = array();
+
+    if (!theme_get_setting('unca_zenfoundation_top_bar_custom_back_text')) {
+      $top_bar_options[] = 'custom_back_text:false';
+    }
+
+    if ($back_text = theme_get_setting('unca_zenfoundation_top_bar_back_text')) {
+      if ($back_text !== 'Back') {
+        $top_bar_options[] = "back_text:'{$back_text}'";
+      }
+    }
+
+    if (!theme_get_setting('unca_zenfoundation_top_bar_is_hover')) {
+      $top_bar_options[] = 'is_hover:false';
+    }
+
+    if (!theme_get_setting('unca_zenfoundation_top_bar_scrolltop')) {
+      $top_bar_options[] = 'scrolltop:false';
+    }
+
+    $variables['top_bar_options'] = ' data-options="' . implode('; ', $top_bar_options) . '"';
+  }
+
+  // Alternative header.
+  // This is what will show up if the top bar is disabled or enabled only for
+  // mobile.
+  if ($variables['alt_header'] = ($variables['top_bar'] != 1)) {
+    // Hide alt header on mobile if using top bar in mobile.
+    $variables['alt_header_classes'] = $variables['top_bar'] == 2 ? ' hide-for-small' : '';
+  }
+
+  // Menus for alternative header.
+  $variables['alt_main_menu'] = '';
+
+  if (!empty($variables['main_menu'])) {
+    $variables['alt_main_menu'] = theme('links__system_main_menu', array(
+      'links' => $variables['main_menu'],
+      'attributes' => array(
+        'id' => 'main-menu-links',
+        'class' => array('links', 'inline-list', 'clearfix'),
+      ),
+      'heading' => array(
+        'text' => t('Main menu'),
+        'level' => 'h2',
+        'class' => array('element-invisible'),
+      ),
+    ));
+  }
+
+  $variables['alt_secondary_menu'] = '';
+
+  if (!empty($variables['secondary_menu'])) {
+    $variables['alt_secondary_menu'] = theme('links__system_secondary_menu', array(
+      'links' => $variables['secondary_menu'],
+      'attributes' => array(
+        'id' => 'secondary-menu-links',
+        'class' => array('links', 'clearfix'),
+      ),
+      'heading' => array(
+        'text' => t('Secondary menu'),
+        'level' => 'h2',
+        'class' => array('element-invisible'),
+      ),
+    ));
+  }
+
+  // Top bar menus.
+  $variables['top_bar_main_menu'] = '';
+  if (!empty($variables['main_menu'])) {
+    $variables['top_bar_main_menu'] = theme('links__topbar_main_menu', array(
+      'links' => $variables['main_menu'],
+      'attributes' => array(
+        'id' => 'main-menu',
+        'class' => array('main-nav'),
+      ),
+      'heading' => array(
+        'text' => t('Main menu'),
+        'level' => 'h2',
+        'class' => array('element-invisible'),
+      ),
+    ));
+  }
+
+  $variables['top_bar_secondary_menu'] = '';
+  if (!empty($variables['secondary_menu'])) {
+    $variables['top_bar_secondary_menu'] = theme('links__topbar_secondary_menu', array(
+      'links' => $variables['secondary_menu'],
+      'attributes' => array(
+        'id'    => 'secondary-menu',
+        'class' => array('secondary', 'link-list'),
+      ),
+      'heading' => array(
+        'text' => t('Secondary menu'),
+        'level' => 'h2',
+        'class' => array('element-invisible'),
+      ),
+    ));
+  }
 }
-// */
 
 /**
  * Override or insert variables into the node templates.
@@ -235,75 +365,129 @@ function unca_zenfoundation_preprocess_block(&$variables, $hook) {
 }
 // */
 
+
 /**
- * Implements theme_links() targeting the main menu specifically
- * Outputs Foundation Nav bar http://foundation.zurb.com/docs/navigation.php
- *
- * This should really be more render-array-y
+ * Implements theme_links() targeting the main menu specifically.
+ * Formats links for Top Bar http://foundation.zurb.com/docs/components/top-bar.html
  */
-function unca_zenfoundation_links__system_main_menu($vars) {
-  // Get all the main menu links
-  $menu_links = menu_tree_output(menu_tree_all_data('main-menu'));
+function unca_zenfoundation_links__topbar_main_menu($variables) {
+  // We need to fetch the links ourselves because we need the entire tree.
+  $links = menu_tree_output(menu_tree_all_data(variable_get('menu_main_links_source', 'main-menu')));
+  $output = _unca_zenfoundation_links($links);
+  $variables['attributes']['class'][] = 'left';
 
-  // Initialize some variables to prevent errors
+  return '<ul' . drupal_attributes($variables['attributes']) . '>' . $output . '</ul>';
+}
+
+/**
+ * Implements theme_links() targeting the secondary menu specifically.
+ * Formats links for Top Bar http://foundation.zurb.com/docs/components/top-bar.html
+ */
+function unca_zenfoundation_links__topbar_secondary_menu($variables) {
+  // We need to fetch the links ourselves because we need the entire tree.
+  $links = menu_tree_output(menu_tree_all_data(variable_get('menu_secondary_links_source', 'user-menu')));
+  $output = _unca_zenfoundation_links($links);
+  $variables['attributes']['class'][] = 'right';
+
+  return '<ul' . drupal_attributes($variables['attributes']) . '>' . $output . '</ul>';
+}
+
+/**
+ * Helper function to output a Drupal menu as a Foundation Top Bar.
+ *
+ * @param array
+ *   An array of menu links.
+ *
+ * @return string
+ *   A rendered list of links, with no <ul> or <ol> wrapper.
+ *
+ * @see unca_zenfoundation_links__system_main_menu()
+ * @see unca_zenfoundation_links__system_secondary_menu()
+ */
+function _unca_zenfoundation_links($links) {
   $output = '';
-  $sub_menu = '';
 
-  foreach ($menu_links as $key => $link) {
-    // // Add special class needed for Foundation dropdown menu to work
-    // if (!empty($link['#below'])) {
-    //   // dupe for our double mobile nav
+  foreach (element_children($links) as $key) {
+    $output .= _unca_zenfoundation_render_link($links[$key]);
+  }
 
-    //   $output .= '<li' . drupal_attributes($link['#attributes']) . '>'
-    //     . l(
-    //       $link['#title'],
-    //       $link['#href']
-    //     );
+  return $output;
+}
 
-    //   $link['#attributes']['class'][] = 'has-dropdown-trigger';
-    //  }
+/**
+ * Helper function to recursively render sub-menus.
+ *
+ * @param array
+ *   An array of menu links.
+ *
+ * @return string
+ *   A rendered list of links, with no <ul> or <ol> wrapper.
+ *
+ * @see _unca_zenfoundation_links()
+ */
+function _unca_zenfoundation_render_link($link) {
+  $output = '';
 
-    // Render top level and make sure we have an actual link
-    if (!empty($link['#href'])) {
-        $trigger_attributes = array();
-        // add our icons in for this dropdown link
-        if (in_array('has-dropdown-trigger', $link['#attributes']['class'])) {
-          // the "+" symbol
-          $link['#title'] = '&#x2b;';
-          // this link is the actual trigger
-          $trigger_attributes = array(
-            'html' => TRUE,
-            'attributes' => array(
-              'class' => array('trigger-link'),
-            )
-          );
+  // This is a duplicate link that won't get the dropdown class and will only
+  // show up in small-screen.
+  $small_link = $link;
+
+  if (!empty($link['#below'])) {
+    $link['#attributes']['class'][] = 'has-dropdown';
+  }
+
+  // Render top level and make sure we have an actual link.
+  if (!empty($link['#href'])) {
+    $rendered_link = NULL;
+
+    // Foundation offers some of the same functionality as Special Menu Items;
+    // ie: Dividers and Labels in the top bar. So let's make sure that we
+    // render them the Foundation way.
+    if (module_exists('special_menu_items')) {
+      if ($link['#href'] === '<nolink>') {
+        $rendered_link = '<label>' . $link['#title'] . '</label>';
+      }
+      else if ($link['#href'] === '<separator>') {
+        $link['#attributes']['class'][] = 'divider';
+        $rendered_link = '';
+      }
+    }
+
+    if (!isset($rendered_link)) {
+      $rendered_link = theme('unca_zenfoundation_menu_link', array('link' => $link));
+    }
+
+    // Test for localization options and apply them if they exist.
+    if (isset($link['#localized_options']['attributes']) && is_array($link['#localized_options']['attributes'])) {
+      $link['#attributes'] = array_merge($link['#attributes'], $link['#localized_options']['attributes']);
+    }
+    $output .= '<li' . drupal_attributes($link['#attributes']) . '>' . $rendered_link;
+
+    if (!empty($link['#below'])) {
+      // Add repeated link under the dropdown for small-screen.
+      $small_link['#attributes']['class'][] = '';
+      $sub_menu = '<li' . drupal_attributes($small_link['#attributes']) . '>' . l($link['#title'], $link['#href'], $link['#localized_options']);
+
+      // Build sub nav recursively.
+      foreach ($link['#below'] as $sub_link) {
+        if (!empty($sub_link['#href'])) {
+          $sub_menu .= _unca_zenfoundation_render_link($sub_link);
         }
-        $output .= '<li' . drupal_attributes($link['#attributes']) . '>'
-        . l(
-          $link['#title'],
-          $link['#href'],
-          $trigger_attributes
-        );
-       // Get sub navigation links if they exist
-       foreach ($link['#below'] as $key => $sub_link) {
-         if (!empty($sub_link['#href'])) {
-           $sub_menu .= '<li>'
-           . l(
-              $sub_link['#title'],
-              $sub_link['#href']
-            )
-           . '</li>';
-         }
+      }
 
-       }
-       $output .= !empty($link['#below']) ? '<ul class="dropdown-nav">' . $sub_menu . '</ul>' : '';
+      $output .= '<ul class="dropdown">' . $sub_menu . '</ul>';
+    }
 
-       // Reset dropdown to prevent duplicates
-       unset($sub_menu);
-       $sub_menu = '';
+    $output .=  '</li>';
+  }
 
-       $output .=  '</li>';
-     }
-   }
-   return '<ul class="main-menu mobile-menu">' . $output . '</ul>';
+  return $output;
+}
+
+/**
+ * Theme function to render a single top bar menu link.
+ */
+function theme_unca_zenfoundation_menu_link($variables) {
+  $link = $variables['link'];
+  return l($link['#title'], $link['#href'], $link['#localized_options']);
 }

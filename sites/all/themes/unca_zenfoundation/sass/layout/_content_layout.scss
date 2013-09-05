@@ -1,14 +1,21 @@
+// @include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
+
 #content {
   @include grid-column($full-width);
   // One sidebar, on the left
   .one-sidebar & {
     @include respond-to($tablet) {
-      @include grid-column($content-width);
+      @include grid-column($content-width-sb1);
     }
   }
   .sidebar-first & {
     @include respond-to($tablet) {
-      @include grid-column($content-width, false, false, false, $sidebar-1-width);
+      @include grid-column($content-width-sb1, false, false, false, $sidebar-1-width);
+    }
+  }
+  .two-sidebars & {
+    @include respond-to($tablet) {
+      @include grid-column($content-width-sb1-sb2, false, false, false, $sidebar-1-width);
     }
   }
 }

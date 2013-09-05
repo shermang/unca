@@ -17,6 +17,11 @@
   margin-bottom: 1em;
 }
 
+// Inline list
+.inline {
+  @extend .inline-list;
+}
+
 // Inline list center
 %inline-list-center {
   margin: 0;
