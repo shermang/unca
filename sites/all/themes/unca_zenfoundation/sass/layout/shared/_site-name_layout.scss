@@ -1,0 +1,15 @@
+#site-name {
+  @include grid-column($full-width);
+  text-align: center;
+  @include respond-to($tablet) {
+    @include grid-column(4);
+    text-align: left;
+    h1 {
+      line-height: 1;
+      margin-top: 0;
+    }
+  }
+  @include respond-to($desktop) {
+    @include grid-column(5);
+  }
+}
