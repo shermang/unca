@@ -1,9 +1,0 @@
-#header {
-  @include grid-row;
-  position: relative;
-  .inner {
-    @include respond-to($tablet) {
-      // padding-top: 3em;
-    }
-  }
-}
