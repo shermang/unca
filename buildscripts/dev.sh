@@ -6,6 +6,7 @@ field_group \
 field_permissions \
 references \
 admin_menu \
+admin_menu_toolbar \
 captcha \
 ctools \
 customerror \
@@ -39,7 +40,6 @@ recaptcha \
 rules \
 scanner \
 scheduler \
-securelogin \
 sharethis \
 taxonomy_menu \
 taxonomy_menu_block \
@@ -80,8 +80,10 @@ unca_home \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
-# drush dis --yes \
+drush dis --yes \
 # {module_name} \
+toolbar \
+securelogin
 
 # perform any db queries required by code changes to modules from git pull
 echo "Running any required database updates"
