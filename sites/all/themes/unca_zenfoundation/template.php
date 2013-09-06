@@ -284,6 +284,7 @@ function unca_zenfoundation_links__system_main_menu($vars) {
 
   }
 
-  return '<ul class="main-menu left">' . $output . '</ul>';
+  // Wrap the whole thing in a ul
+  return '<ul' . drupal_attributes($vars['attributes']) . '>' . $output . '</ul>';
 
 }
