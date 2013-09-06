@@ -235,6 +235,7 @@ function unca_zenfoundation_preprocess_block(&$variables, $hook) {
 }
 // */
 
+
 /**
  * Implements theme_links() targeting the main menu specifically
  * Outputs Foundation Nav bar http://foundation.zurb.com/docs/navigation.php
@@ -250,60 +251,43 @@ function unca_zenfoundation_links__system_main_menu($vars) {
   $sub_menu = '';
 
   foreach ($menu_links as $key => $link) {
-    // // Add special class needed for Foundation dropdown menu to work
-    // if (!empty($link['#below'])) {
-    //   // dupe for our double mobile nav
+    // Add special class needed for Foundation dropdown menu to work
+    if (!empty($link['#below'])) {
+      $link['#attributes']['class'][] = 'has-dropdown';
+    }
 
-    //   $output .= '<li' . drupal_attributes($link['#attributes']) . '>'
-    //     . l(
-    //       $link['#title'],
-    //       $link['#href']
-    //     );
-
-    //   $link['#attributes']['class'][] = 'has-dropdown-trigger';
-    //  }
-
-    // Render top level and make sure we have an actual link
+    // Printing the actual menu item
     if (!empty($link['#href'])) {
-        $trigger_attributes = array();
-        // add our icons in for this dropdown link
-        if (in_array('has-dropdown-trigger', $link['#attributes']['class'])) {
-          // the "+" symbol
-          $link['#title'] = '&#x2b;';
-          // this link is the actual trigger
-          $trigger_attributes = array(
-            'html' => TRUE,
-            'attributes' => array(
-              'class' => array('trigger-link'),
-            )
-          );
+      $output .= '<li' . drupal_attributes($link['#attributes']) . '>'
+      . l(
+        $link['#title'],
+        $link['#href']
+      );
+
+      // Get sub navigation links if they exist
+      foreach ($link['#below'] as $key => $sub_link) {
+        // dpm($sub_menu);
+        if (!empty($sub_link['#href'])) {
+         $sub_menu .= '<li>'
+         . l(
+            $sub_link['#title'],
+            $sub_link['#href']
+          )
+         . '</li>';
         }
-        $output .= '<li' . drupal_attributes($link['#attributes']) . '>'
-        . l(
-          $link['#title'],
-          $link['#href'],
-          $trigger_attributes
-        );
-       // Get sub navigation links if they exist
-       foreach ($link['#below'] as $key => $sub_link) {
-         if (!empty($sub_link['#href'])) {
-           $sub_menu .= '<li>'
-           . l(
-              $sub_link['#title'],
-              $sub_link['#href']
-            )
-           . '</li>';
-         }
+      }
+      $output .= !empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
 
-       }
-       $output .= !empty($link['#below']) ? '<ul class="dropdown-nav">' . $sub_menu . '</ul>' : '';
+      // Reset dropdown to prevent duplicates
+      // unset($sub_menu);
+      // $sub_menu = '';
 
-       // Reset dropdown to prevent duplicates
-       unset($sub_menu);
-       $sub_menu = '';
+      $output .=  '</li>';
 
-       $output .=  '</li>';
-     }
-   }
-   return '<ul class="main-menu mobile-menu">' . $output . '</ul>';
+    }
+
+  }
+
+  return '<ul class="main-menu left">' . $output . '</ul>';
+
 }

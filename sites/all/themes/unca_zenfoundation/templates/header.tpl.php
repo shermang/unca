@@ -22,6 +22,10 @@
 
         <nav class="top-bar">
           <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name">
+              <h1><a href="#"><?php print $site_name; ?></a></h1>
+            </li>
             <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
             <li class="toggle-topbar menu-icon"><a href="#"><span aria-hidden="true" class="icon-menu">Menu</span></a></li>
           </ul>
@@ -31,7 +35,7 @@
               print theme('links__system_main_menu', array(
                 'links' => $main_menu,
                 'attributes' => array(
-                  'class' => array('main-menu-links', 'links', 'inline', 'clearfix'),
+                  'class' => array('main-menu-links', 'links', 'left'),
                   ),
                 'heading' => array(
                   'text' => t('Main menu'),
