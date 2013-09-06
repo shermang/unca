@@ -13,8 +13,6 @@
 // See http://docs.jquery.com/Using_jQuery_with_Other_Libraries
 // and http://zeptojs.com/
 
-console.log("foundation.js is loading");
-
 var libFuncName = null;
 
 if (typeof jQuery === "undefined" &&

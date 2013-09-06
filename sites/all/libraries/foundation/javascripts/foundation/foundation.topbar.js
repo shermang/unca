@@ -61,8 +61,6 @@
     },
 
     events : function () {
-          console.log("foundation.topbar.js is loading");
-      
       var self = this;
       var offst = this.outerHeight($('.top-bar, [data-topbar]'));
       $(this.scope)
