@@ -20,31 +20,33 @@
 
         <?php print render($page['header']); ?>
 
-    <?php if ($top_bar): ?>
-      <!--.top-bar -->
-      <?php if ($top_bar_classes): ?>
-        <div class="<?php print $top_bar_classes; ?>">
-      <?php endif; ?>
-      <nav class="top-bar"<?php print $top_bar_options; ?>>
-        <ul class="title-area">
-          <li class="name"><h1><?php print $linked_site_name; ?></h1></li>
-          <li class="toggle-topbar menu-icon"><a href="#"><span><?php print $top_bar_menu_text; ?></span></a></li>
-        </ul>
-        <section class="top-bar-section">
-          <?php if ($top_bar_main_menu) :?>
-            <?php print $top_bar_main_menu; ?>
-          <?php endif; ?>
-          <?php if ($top_bar_secondary_menu) :?>
-            <?php print $top_bar_secondary_menu; ?>
-          <?php endif; ?>
-        </section>
-      </nav>
-      <?php if ($top_bar_classes): ?>
-        </div>
-      <?php endif; ?>
-      <!--/.top-bar -->
-    <?php endif; ?>
+        <nav class="top-bar">
+          <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name">
+              <h1><a href="#"><?php print $site_name; ?></a></h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span aria-hidden="true" class="icon-menu">Menu</span></a></li>
+          </ul>
 
+          <section class="top-bar-section">
+            <?php
+              print theme('links__system_main_menu', array(
+                'links' => $main_menu,
+                'attributes' => array(
+                  'class' => array('main-menu-links', 'links', 'left'),
+                  ),
+                'heading' => array(
+                  'text' => t('Main menu'),
+                  'level' => 'h2',
+                  'class' => array('element-invisible'),
+                  ),
+                )
+              );
+            ?>
+          </section>
+        </nav> <!-- /.top-bar -->
       </div><!-- /.inner -->
   </header>
 </div> <!-- /.header-wrapper -->

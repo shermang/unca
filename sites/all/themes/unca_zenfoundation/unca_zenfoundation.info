@@ -155,26 +155,6 @@ settings[zen_wireframes]           = 0
 
 ;settings[shortcut_module_link]    = 1
 
-
-; Theme settings:
-
-; Top Bar.
-settings[unca_zenfoundation_top_bar_enable] = 1
-settings[unca_zenfoundation_top_bar_grid] = 0
-settings[unca_zenfoundation_top_bar_sticky] = 0
-settings[unca_zenfoundation_top_bar_menu_text] = 'Menu'
-settings[unca_zenfoundation_top_bar_custom_back_text] = 1
-settings[unca_zenfoundation_top_bar_back_text] = 'Back'
-settings[unca_zenfoundation_top_bar_is_hover] = 1
-settings[unca_zenfoundation_top_bar_scrolltop] = 1
-
-; Tooltips.
-settings[unca_zenfoundation_tooltip_enable] = 1
-settings[unca_zenfoundation_tooltip_position] = 'top'
-settings[unca_zenfoundation_tooltip_mode] = 'text'
-settings[unca_zenfoundation_tooltip_text] = 'More information?'
-settings[unca_zenfoundation_tooltip_touch] = 0
-
 ; To add a Panels layout (which can also be used by Display Suite), uncomment
 ; the line below and see the documentation at: http://drupal.org/node/495654
 ;plugins[panels][layouts] = layouts

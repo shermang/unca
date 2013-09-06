@@ -1,6 +1,4 @@
-
-
-console.log("foundation.topbar.js is loading");/*jslint unparam: true, browser: true, indent: 2 */
+/*jslint unparam: true, browser: true, indent: 2 */
 
 ;(function ($, window, document, undefined) {
   'use strict';
@@ -63,6 +61,8 @@ console.log("foundation.topbar.js is loading");/*jslint unparam: true, browser: 
     },
 
     events : function () {
+          console.log("foundation.topbar.js is loading");
+      
       var self = this;
       var offst = this.outerHeight($('.top-bar, [data-topbar]'));
       $(this.scope)
