@@ -8473,28 +8473,6 @@ html[xmlns] .slides {
   padding-right: 0;
 }
 
-/* line 1, ../sass/components/shared/_placeholder.scss */
-.placeholder {
-  position: relative;
-  width: 50%;
-  /* desired width */
-}
-/* line 4, ../sass/components/shared/_placeholder.scss */
-.placeholder:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-  /* initial ratio of 1:1*/
-}
-/* line 9, ../sass/components/shared/_placeholder.scss */
-.placeholder.inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
 /* line 18, ../sass/components/shared/_placeholder.scss */
 img.placeholder {
   -webkit-transition: background-color 0.25s;
