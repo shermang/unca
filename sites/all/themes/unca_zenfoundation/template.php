@@ -278,10 +278,6 @@ function unca_zenfoundation_links__system_main_menu($vars) {
       }
       $output .= !empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
 
-      // Reset dropdown to prevent duplicates
-      // unset($sub_menu);
-      // $sub_menu = '';
-
       $output .=  '</li>';
 
     }

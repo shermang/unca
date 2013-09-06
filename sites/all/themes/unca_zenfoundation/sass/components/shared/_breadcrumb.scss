@@ -1,5 +1,6 @@
 .breadcrumb {
   @include crumb-container;
+  margin-bottom: 1em;
   ol {
     list-style-image: none;
     list-style: none;

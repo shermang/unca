@@ -15,7 +15,6 @@
   Drupal.behaviors.foundation = {
     attach: function(context){
       $(document).foundation();
-      console.log("script_footer.js is loading");
     }
   };
 
