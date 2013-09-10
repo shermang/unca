@@ -1,0 +1,7 @@
+nav.navigation {
+  @include grid-row;
+  clear: both;
+  .block {
+    @include grid-column($full-width);
+  }
+}
