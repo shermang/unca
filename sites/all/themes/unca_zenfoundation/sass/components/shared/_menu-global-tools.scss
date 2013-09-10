@@ -1,0 +1,12 @@
+#block-menu-menu-global-tools-menu,
+#block-menu-menu-global-tools-menu--2 {
+  // When the menu is in the navigation region
+  nav.navigation & {
+    a {
+      color: $primary-color;
+    }
+  }
+  // When the menu is in the navigation region
+  .region-header & {
+  }
+}

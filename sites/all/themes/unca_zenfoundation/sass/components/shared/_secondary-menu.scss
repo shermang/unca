@@ -1,0 +1,10 @@
+#block-menu-menu-secondary-navigation-prot {
+  // When the primary menu is in the navigation region
+  nav.navigation & {
+    @include respond-to($tablet) {
+    }
+    ul.menu {
+      @extend %no-bullet;
+    }
+  }
+}

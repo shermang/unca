@@ -4,9 +4,11 @@
 $nav-main-menu-width: ($full-width / 4) * 3;
 $nav-search-width: $full-width / 4;
 
+#block-menu-menu-global-primary-navigation, // Temporary
 #block-system-main-menu {
   // When the primary menu is in the navigation region
   nav.navigation & {
+    @include grid-column($full-width / 2);
     // Remove the block title
     @extend %block-title-hide;
     margin-bottom: 0;
@@ -16,9 +18,13 @@ $nav-search-width: $full-width / 4;
     .menu {
       // Remove the bullets
       @extend %no-bullet;
+      margin-bottom: 0;
+      text-align: right;
       @include respond-to($tablet) {
         // Put the items in an inline list
         @include inline-list;
+        margin-bottom: 0;
+        text-align: left;
         ul.menu {
           // Hide any sub items
           display: none;

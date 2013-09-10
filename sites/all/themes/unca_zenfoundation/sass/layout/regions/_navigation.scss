@@ -1,7 +1,9 @@
 nav.navigation {
   @include grid-row;
   clear: both;
+  margin-bottom: 2em;
   .block {
-    @include grid-column($full-width);
+    @include grid-column($full-width / 2);
+    @extend %block-title-hide;
   }
 }

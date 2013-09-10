@@ -1,0 +1,28 @@
+#block-menu-menu-global-tools-menu,
+#block-menu-menu-global-tools-menu--2 {
+  // When in the navigation region
+  nav.navigation & {
+    ul.menu {
+      @extend .inline-list;
+    }
+    @include respond-to($tablet) {
+      display: none;
+    }
+  }
+  // When the menu is in the navigation region
+  .region-header & {
+    @extend %block-title-hide;
+    display: none;
+    @include respond-to($tablet) {
+      @include grid-column($full-width / 2);
+      display: block;
+      text-align: right;
+    }
+    ul.menu {
+      li {
+        display: inline;
+        margin-left: 1em;
+      }
+    }
+  }
+}
