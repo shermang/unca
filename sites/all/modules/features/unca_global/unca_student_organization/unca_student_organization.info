@@ -1,0 +1,15 @@
+name = UNCA Student Organization
+description = Student Organization Content Type for UNC Asheville
+core = 7.x
+package = UNCA Global
+version = 7.x-1.0
+project = unca_student_organization
+dependencies[] = features
+dependencies[] = link
+dependencies[] = text
+dependencies[] = unca_fields
+features[features_api][] = api:2
+features[field_instance][] = node-student_organization-body
+features[field_instance][] = node-student_organization-field_link
+features[field_instance][] = node-student_organization-field_teaser_text
+features[node][] = student_organization
