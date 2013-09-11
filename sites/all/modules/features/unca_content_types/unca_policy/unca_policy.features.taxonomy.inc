@@ -12,7 +12,7 @@ function unca_policy_taxonomy_default_vocabularies() {
     'groups_policies_apply_to' => array(
       'name' => 'Groups Policies Apply To',
       'machine_name' => 'groups_policies_apply_to',
-      'description' => '',
+      'description' => 'Content Type: Policy',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
@@ -20,7 +20,7 @@ function unca_policy_taxonomy_default_vocabularies() {
     'policy_categories' => array(
       'name' => 'Policy Categories',
       'machine_name' => 'policy_categories',
-      'description' => '',
+      'description' => 'Content Type: Policy',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
@@ -28,7 +28,7 @@ function unca_policy_taxonomy_default_vocabularies() {
     'policy_owner' => array(
       'name' => 'Policy Owner',
       'machine_name' => 'policy_owner',
-      'description' => '',
+      'description' => 'Content Type: Policy',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
@@ -36,8 +36,8 @@ function unca_policy_taxonomy_default_vocabularies() {
     'responsible_office' => array(
       'name' => 'Responsible Office',
       'machine_name' => 'responsible_office',
-      'description' => '',
-      'hierarchy' => 1,
+      'description' => 'Content Type: Policy',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
     ),
