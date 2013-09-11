@@ -12,15 +12,15 @@ function study_abroad_taxonomy_default_vocabularies() {
     'program_types' => array(
       'name' => 'Program Types',
       'machine_name' => 'program_types',
-      'description' => '',
-      'hierarchy' => 1,
+      'description' => 'Content Type: Destination',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
     ),
     'region' => array(
       'name' => 'Region',
       'machine_name' => 'region',
-      'description' => 'References vocab Study Abroad Regions (aka Region)',
+      'description' => 'Content Type: Destination',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
@@ -28,7 +28,7 @@ function study_abroad_taxonomy_default_vocabularies() {
     'university_term' => array(
       'name' => 'University Term',
       'machine_name' => 'university_term',
-      'description' => '',
+      'description' => 'Content Type: Destination',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
