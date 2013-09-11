@@ -1,0 +1,45 @@
+.unc-ds-gateway {
+  // Since this is inside another row, we need the nesting styles
+  @include grid-row(nest);
+  // Default behavior for all regions
+  .ds-row-1,
+  .ds-row-2-column-1,
+  .ds-row-2-column-2,
+  .ds-row-3-column-1,
+  .ds-row-3-column-2 {
+    @include grid-column($full-width);
+  }
+  // Layout styles for the 2nd and 3rd rows
+  .ds-row-2-column-1,
+  .ds-row-2-column-2,
+  .ds-row-3-column-1,
+  .ds-row-3-column-2 {
+    @include respond-to($tablet) {
+      @include grid-column($full-width / 2);
+    }
+  }
+  // If there's no Row2Column1, make Row2Colum2 full width
+  &.no-ds-row-2-column-1 {
+    .ds-row-2-column-2 {
+      @include grid-column($full-width);
+    }
+  }
+  // If there's no Row2Column2, make Row2Colum1 full width
+  &.no-ds-row-2-column-2 {
+    .ds-row-2-column-1 {
+      @include grid-column($full-width);
+    }
+  }
+  // If there's no Row3Column1, make Row3Colum2 full width
+  &.no-ds-row-3-column-1 {
+    .ds-row-3-column-2 {
+      @include grid-column($full-width);
+    }
+  }
+  // If there's no Row3Column2 make Row3Colum1 full width
+  &.no-ds-row-3-column-2 {
+    .ds-row-3-column-1 {
+      @include grid-column($full-width);
+    }
+  }
+}
