@@ -975,9 +975,8 @@ a.email:before,
 }
 
 /* line 3, ../sass/global/_extends.scss */
-#block-menu-menu-footer-menu .block-title, #block-menu-menu-audience-menu .block-title, .block-search .block-title, #block-menu-menu-social-links .block-title, nav.navigation .block .block-title, .region-header #block-menu-menu-global-tools-menu .block-title, .region-header
-#block-menu-menu-global-tools-menu--2 .block-title, nav.navigation #block-menu-menu-global-primary-navigation .block-title, nav.navigation
-#block-system-main-menu .block-title {
+nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu-footer-menu .block-title, #block-menu-menu-audience-menu .block-title, #block-menu-menu-social-links .block-title, .region-header #block-menu-menu-global-tools-menu .block-title, .region-header
+#block-menu-menu-global-tools-menu--2 .block-title, nav.navigation #block-system-main-menu .block-title {
   display: none;
 }
 
@@ -1069,8 +1068,8 @@ a.email:before,
 }
 
 /* line 101, ../sass/global/_extends.scss */
-.node-event .field-name-field-image, .field img,
-.views-field img {
+.field img,
+.views-field img, .node-event .field-name-field-image {
   float: left;
   margin: 0 1em 1em 0;
 }
@@ -1155,13 +1154,10 @@ a.email:before,
 }
 
 /* line 189, ../sass/global/_extends.scss */
-.related-links ul, nav.navigation #block-menu-menu-secondary-navigation-prot ul.menu, nav.navigation #block-menu-menu-global-primary-navigation .menu, nav.navigation
-#block-system-main-menu .menu,
-.related-links ul,
+nav.navigation #block-menu-menu-secondary-navigation-prot ul.menu, .related-links ul, nav.navigation #block-system-main-menu .menu,
 nav.navigation #block-menu-menu-secondary-navigation-prot ul.menu,
-nav.navigation #block-menu-menu-global-primary-navigation .menu,
-nav.navigation
-#block-system-main-menu .menu,
+.related-links ul,
+nav.navigation #block-system-main-menu .menu,
 .no-bullet,
 .related-files ul,
 .steps-to-student ul {
@@ -3333,8 +3329,7 @@ ul.disc {
   list-style-type: disc;
 }
 /* line 273, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_type.scss */
-.related-links ul, nav.navigation #block-menu-menu-secondary-navigation-prot ul.menu, nav.navigation #block-menu-menu-global-primary-navigation ul.menu, nav.navigation
-#block-system-main-menu ul.menu,
+nav.navigation #block-menu-menu-secondary-navigation-prot ul.menu, .related-links ul, nav.navigation #block-system-main-menu ul.menu,
 ul.no-bullet,
 .related-files ul, .steps-to-student ul {
   list-style: none;
@@ -7526,9 +7521,10 @@ input[type="submit"] {
 nav.navigation {
   background-color: black;
   color: white;
+  margin-bottom: 2em;
   padding: 1em;
 }
-/* line 5, ../sass/base/regions/_navigation.scss */
+/* line 6, ../sass/base/regions/_navigation.scss */
 nav.navigation a {
   color: white;
 }
@@ -7538,34 +7534,61 @@ nav.navigation a {
   padding-bottom: 2em;
 }
 
-/* line 4, ../sass/components/ct-event/_ct-event-node.scss */
-.node-event .field-name-field-image img {
+/* line 1, ../sass/components/blocks-all/_blocks-all.scss */
+.block-title {
+  font-size: 1.6875em;
+  line-height: 1;
+  margin: 0 0 .5em 0;
+}
+
+/* line 7, ../sass/components/blocks-all/_blocks-all.scss */
+.block {
+  margin-bottom: 2em;
+}
+
+/* line 3, ../sass/components/blocks-custom/_cta-current-students.scss */
+.current-students .cta-item img {
+  height: 120px;
+  width: 100%;
+}
+
+/* line 3, ../sass/components/blocks-custom/_cta-prospective-students.scss */
+.prospective-students .cta-item img {
+  height: 120px;
+  width: 100%;
+}
+
+/* line 3, ../sass/components/blocks-custom/_cta.scss */
+.cta-list img,
+.cta-list-notext img {
   -webkit-transition: background-color 0.25s;
   -moz-transition: background-color 0.25s;
   -o-transition: background-color 0.25s;
   transition: background-color 0.25s;
   background-color: gray;
-  height: 250px;
+  height: 100px;
   margin-bottom: 1em;
   max-width: 100%;
-  width: 450px;
+  width: 500px;
+  display: block;
 }
 /* line 137, ../sass/global/_mixins.scss */
-.node-event .field-name-field-image img:hover {
+.cta-list img:hover,
+.cta-list-notext img:hover {
   background-color: #8c8c8c;
 }
-/* line 8, ../sass/components/ct-event/_ct-event-node.scss */
-.node-event .field-name-body {
-  clear: both;
-  margin: 1em 0;
-}
-/* line 12, ../sass/components/ct-event/_ct-event-node.scss */
-.node-event .field {
-  margin-bottom: 0;
-  line-height: 1.5;
+/* line 10, ../sass/components/blocks-custom/_cta.scss */
+.cta-list .cta-item,
+.cta-list-notext .cta-item {
+  margin-bottom: 1em;
 }
 
-/* line 2, ../sass/components/ct-flexpage/_estimated-cost.scss */
+/* line 26, ../sass/components/blocks-custom/_cta.scss */
+.cta-list-notext .cta-item {
+  margin-bottom: 1em;
+}
+
+/* line 2, ../sass/components/blocks-custom/_estimated-cost.scss */
 .estimated-cost img {
   -webkit-transition: background-color 0.25s;
   -moz-transition: background-color 0.25s;
@@ -7582,389 +7605,30 @@ nav.navigation a {
   background-color: #cccccc;
 }
 
-/* line 4, ../sass/components/ct-news/_ct-news-node.scss */
-.node-news .field-name-field-image img {
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-  background-color: gray;
-  height: 400px;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 795px;
-  margin: 0;
-}
-/* line 137, ../sass/global/_mixins.scss */
-.node-news .field-name-field-image img:hover {
-  background-color: #8c8c8c;
-}
-
-/* line 2, ../sass/components/ct-person/_ct-person-node.scss */
-.node-person .field, .node-person .views-field {
-  line-height: 1.5;
-  margin: 0;
-}
-/* line 6, ../sass/components/ct-person/_ct-person-node.scss */
-.node-person .field-name-body, .node-person .field-type-text-with-summary {
-  clear: both;
-}
-
-/* END: .node-person */
-@media only screen and (min-width: 48em) {
-  /* line 1, ../sass/components/page-calendar/_block-calendar-list.scss */
-  .block-calendar-list {
-    display: none;
-  }
-}
-@media print {
-  /* line 1, ../sass/components/page-calendar/_block-calendar-list.scss */
-  .block-calendar-list {
-    display: none;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .block-calendar-list {
-  display: none;
-}
-
-/* line 1, ../sass/components/page-calendar/_block-calendar.scss */
-.block-calendar {
-  display: none;
-}
-@media only screen and (min-width: 48em) {
-  /* line 1, ../sass/components/page-calendar/_block-calendar.scss */
-  .block-calendar {
-    display: block;
-  }
-}
-@media print {
-  /* line 1, ../sass/components/page-calendar/_block-calendar.scss */
-  .block-calendar {
-    display: block;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .block-calendar {
-  display: block;
-}
-/* line 6, ../sass/components/page-calendar/_block-calendar.scss */
-.block-calendar .fc-header {
+/* line 1, ../sass/components/blocks-custom/_footer-text.scss */
+#block-block-1 {
+  color: gray;
+  font-size: 80%;
   text-align: center;
 }
-
-/* line 2, ../sass/components/page-directory/_view-directory.scss */
-.view-directory .views-row {
-  margin-bottom: 3em;
-}
-/* line 5, ../sass/components/page-directory/_view-directory.scss */
-.view-directory .views-field {
-  line-height: 1.3;
-  margin: 0 0 0 120px;
-}
-/* line 8, ../sass/components/page-directory/_view-directory.scss */
-.view-directory .views-field h4 {
-  margin-bottom: 0;
-}
-/* line 12, ../sass/components/page-directory/_view-directory.scss */
-.view-directory .views-field-field-person-headshot {
-  margin: 0;
-}
-/* line 14, ../sass/components/page-directory/_view-directory.scss */
-.view-directory .views-field-field-person-headshot img {
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-  background-color: gray;
-  height: 125px;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 126px;
-  margin-top: .24em;
-}
-/* line 137, ../sass/global/_mixins.scss */
-.view-directory .views-field-field-person-headshot img:hover {
-  background-color: #8c8c8c;
-}
 @media only screen and (min-width: 48em) {
-  /* line 14, ../sass/components/page-directory/_view-directory.scss */
-  .view-directory .views-field-field-person-headshot img {
-    margin-top: .74em;
+  /* line 1, ../sass/components/blocks-custom/_footer-text.scss */
+  #block-block-1 {
+    text-align: right;
   }
 }
 @media print {
-  /* line 14, ../sass/components/page-directory/_view-directory.scss */
-  .view-directory .views-field-field-person-headshot img {
-    margin-top: .74em;
+  /* line 1, ../sass/components/blocks-custom/_footer-text.scss */
+  #block-block-1 {
+    text-align: right;
   }
 }
 /* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .view-directory .views-field-field-person-headshot img {
-  margin-top: .74em;
+.lt-ie9 #block-block-1 {
+  text-align: right;
 }
 
-/* line 2, ../sass/components/page-grid/_grid.scss */
-.page-grid .grid-item {
-  margin-bottom: 1em;
-}
-/* line 7, ../sass/components/page-grid/_grid.scss */
-.page-grid div.grid .grid-item img {
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-  background-color: gray;
-  height: 6em;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 8em;
-}
-/* line 137, ../sass/global/_mixins.scss */
-.page-grid div.grid .grid-item img:hover {
-  background-color: #8c8c8c;
-}
-@media only screen and (min-width: 25em) {
-  /* line 7, ../sass/components/page-grid/_grid.scss */
-  .page-grid div.grid .grid-item img {
-    -webkit-transition: background-color 0.25s;
-    -moz-transition: background-color 0.25s;
-    -o-transition: background-color 0.25s;
-    transition: background-color 0.25s;
-    background-color: gray;
-    height: 6em;
-    margin-bottom: 1em;
-    max-width: 100%;
-    width: 100%;
-  }
-  /* line 137, ../sass/global/_mixins.scss */
-  .page-grid div.grid .grid-item img:hover {
-    background-color: #8c8c8c;
-  }
-}
-@media print {
-  /* line 7, ../sass/components/page-grid/_grid.scss */
-  .page-grid div.grid .grid-item img {
-    -webkit-transition: background-color 0.25s;
-    -moz-transition: background-color 0.25s;
-    -o-transition: background-color 0.25s;
-    transition: background-color 0.25s;
-    background-color: gray;
-    height: 6em;
-    margin-bottom: 1em;
-    max-width: 100%;
-    width: 100%;
-  }
-  /* line 137, ../sass/global/_mixins.scss */
-  .page-grid div.grid .grid-item img:hover {
-    background-color: #8c8c8c;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid div.grid .grid-item img {
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-  background-color: gray;
-  height: 6em;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 100%;
-}
-/* line 137, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid div.grid .grid-item img:hover {
-  background-color: #8c8c8c;
-}
-/* line 18, ../sass/components/page-grid/_grid.scss */
-.page-grid ul.grid .grid-item img, .page-grid ol.grid .grid-item img {
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-  background-color: #e6e6e6;
-  height: 5em;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 6em;
-  margin-bottom: .5em;
-}
-/* line 137, ../sass/global/_mixins.scss */
-.page-grid ul.grid .grid-item img:hover, .page-grid ol.grid .grid-item img:hover {
-  background-color: #f2f2f2;
-}
-/* line 24, ../sass/components/page-grid/_grid.scss */
-.page-grid ul.grid .grid-item:nth-child(3n+2) img, .page-grid ol.grid .grid-item:nth-child(3n+2) img {
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-  background-color: #e6e6e6;
-  height: 6em;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 6em;
-}
-/* line 137, ../sass/global/_mixins.scss */
-.page-grid ul.grid .grid-item:nth-child(3n+2) img:hover, .page-grid ol.grid .grid-item:nth-child(3n+2) img:hover {
-  background-color: #f2f2f2;
-}
-/* line 29, ../sass/components/page-grid/_grid.scss */
-.page-grid ul.grid .grid-item:nth-child(3n+4) img, .page-grid ol.grid .grid-item:nth-child(3n+4) img {
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-  background-color: #e6e6e6;
-  height: 7em;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 5em;
-}
-/* line 137, ../sass/global/_mixins.scss */
-.page-grid ul.grid .grid-item:nth-child(3n+4) img:hover, .page-grid ol.grid .grid-item:nth-child(3n+4) img:hover {
-  background-color: #f2f2f2;
-}
-/* line 34, ../sass/components/page-grid/_grid.scss */
-.page-grid ul.grid .grid-item:nth-child(4n+7) img, .page-grid ol.grid .grid-item:nth-child(4n+7) img {
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-  background-color: #e6e6e6;
-  height: 7em;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 6em;
-}
-/* line 137, ../sass/global/_mixins.scss */
-.page-grid ul.grid .grid-item:nth-child(4n+7) img:hover, .page-grid ol.grid .grid-item:nth-child(4n+7) img:hover {
-  background-color: #f2f2f2;
-}
-/* line 39, ../sass/components/page-grid/_grid.scss */
-.page-grid ul.grid .grid-item:nth-child(5n+2) img, .page-grid ol.grid .grid-item:nth-child(5n+2) img {
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-  background-color: #e6e6e6;
-  height: 4em;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 7em;
-}
-/* line 137, ../sass/global/_mixins.scss */
-.page-grid ul.grid .grid-item:nth-child(5n+2) img:hover, .page-grid ol.grid .grid-item:nth-child(5n+2) img:hover {
-  background-color: #f2f2f2;
-}
-/* line 47, ../sass/components/page-grid/_grid.scss */
-.page-grid ol.grid .grid-item {
-  border: 1px solid #e6e6e6;
-  padding: .5em;
-}
-
-/* line 3, ../sass/components/page-home/_cta-current-students.scss */
-.current-students .cta-item img {
-  height: 120px;
-  width: 100%;
-}
-
-/* line 3, ../sass/components/page-home/_cta-prospective-students.scss */
-.prospective-students .cta-item img {
-  height: 120px;
-  width: 100%;
-}
-
-/* line 3, ../sass/components/shared/_block-recent-news.scss */
-.view-news .views-field {
-  margin-bottom: .5em;
-}
-/* line 6, ../sass/components/shared/_block-recent-news.scss */
-.view-news .views-field-body {
-  line-height: 1.3em;
-}
-
-/* END: .related-files */
-/* line 2, ../sass/components/shared/_block-upcoming-events.scss */
-#block-view-upcoming-events .content {
-  padding: .5em 0;
-}
-/* line 5, ../sass/components/shared/_block-upcoming-events.scss */
-#block-view-upcoming-events .views-row {
-  clear: both;
-  margin-bottom: .5em;
-}
-/* line 9, ../sass/components/shared/_block-upcoming-events.scss */
-#block-view-upcoming-events .views-field {
-  margin-bottom: 0;
-  margin-left: 4em;
-}
-/* line 13, ../sass/components/shared/_block-upcoming-events.scss */
-#block-view-upcoming-events .views-field-title {
-  font-size: 1em;
-  font-weight: bold;
-}
-/* line 16, ../sass/components/shared/_block-upcoming-events.scss */
-#block-view-upcoming-events .views-field-title h3 {
-  font-size: 1em;
-}
-/* line 23, ../sass/components/shared/_block-upcoming-events.scss */
-#block-view-upcoming-events .views-field-nothing {
-  display: block;
-  float: left;
-  margin-left: 0;
-  padding-top: .2em;
-  padding-left: 0;
-  width: 3em;
-}
-/* line 30, ../sass/components/shared/_block-upcoming-events.scss */
-#block-view-upcoming-events .views-field-nothing .event-calendar-date {
-  display: block;
-  font-weight: normal;
-  text-align: center;
-}
-/* line 34, ../sass/components/shared/_block-upcoming-events.scss */
-#block-view-upcoming-events .views-field-nothing .event-calendar-date a, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:link, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:visited, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:hover, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:active, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:focus {
-  border-bottom: 0 none;
-  font-weight: normal;
-}
-/* line 38, ../sass/components/shared/_block-upcoming-events.scss */
-#block-view-upcoming-events .views-field-nothing .event-calendar-date .event-month {
-  font-size: 1.25em;
-  display: block;
-  line-height: 1;
-  text-transform: uppercase;
-}
-/* line 45, ../sass/components/shared/_block-upcoming-events.scss */
-#block-view-upcoming-events .views-field-nothing .event-calendar-date .event-day {
-  display: block;
-  font-size: 2.25em;
-  line-height: 1em;
-  padding: 0 0 .25em 0;
-}
-/* line 54, ../sass/components/shared/_block-upcoming-events.scss */
-#block-view-upcoming-events .views-field-field-event-liblocation {
-  font-style: italic;
-  padding: .5em 0;
-}
-/* line 57, ../sass/components/shared/_block-upcoming-events.scss */
-#block-view-upcoming-events .views-field-field-event-liblocation .field-content {
-  font-size: .9em;
-}
-
-/* line 1, ../sass/components/shared/_blocks-all.scss */
-.block-title {
-  font-size: 1.6875em;
-  line-height: 1;
-  margin: 0 0 .5em 0;
-}
-
-/* line 7, ../sass/components/shared/_blocks-all.scss */
-.block {
-  margin-bottom: 2em;
-}
-
-/* line 1, ../sass/components/shared/_breadcrumb.scss */
+/* line 1, ../sass/components/blocks-system/_breadcrumb.scss */
 .breadcrumb {
   display: block;
   padding: 0.5625em 0.875em 0.5625em;
@@ -7977,12 +7641,12 @@ nav.navigation a {
   border-color: gainsboro;
   margin-bottom: 1em;
 }
-/* line 4, ../sass/components/shared/_breadcrumb.scss */
+/* line 4, ../sass/components/blocks-system/_breadcrumb.scss */
 .breadcrumb ol {
   list-style-image: none;
   list-style: none;
 }
-/* line 8, ../sass/components/shared/_breadcrumb.scss */
+/* line 8, ../sass/components/blocks-system/_breadcrumb.scss */
 .breadcrumb li {
   margin: 0;
   float: left;
@@ -8042,37 +7706,12 @@ nav.navigation a {
   margin: 0;
 }
 
-/* line 3, ../sass/components/shared/_cta.scss */
-.cta-list img,
-.cta-list-notext img {
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-  background-color: gray;
-  height: 100px;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 500px;
-  display: block;
-}
-/* line 137, ../sass/global/_mixins.scss */
-.cta-list img:hover,
-.cta-list-notext img:hover {
-  background-color: #8c8c8c;
-}
-/* line 10, ../sass/components/shared/_cta.scss */
-.cta-list .cta-item,
-.cta-list-notext .cta-item {
-  margin-bottom: 1em;
+/* line 3, ../sass/components/blocks-system/_search-box.scss */
+.block-search label {
+  display: none;
 }
 
-/* line 26, ../sass/components/shared/_cta.scss */
-.cta-list-notext .cta-item {
-  margin-bottom: 1em;
-}
-
-/* line 4, ../sass/components/shared/_fields-all.scss */
+/* line 4, ../sass/components/fields/_fields-all.scss */
 .field img,
 .views-field img {
   -webkit-transition: background-color 0.25s;
@@ -8091,6 +7730,286 @@ nav.navigation a {
   background-color: #8c8c8c;
 }
 
+/* line 3, ../sass/components/menus/_footer-menu.scss */
+#block-menu-menu-footer-menu ul {
+  border-bottom: 0 none;
+  padding: 0;
+}
+/* line 8, ../sass/components/menus/_footer-menu.scss */
+#block-menu-menu-footer-menu ul li {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 48em) {
+  /* line 18, ../sass/components/menus/_footer-menu.scss */
+  #block-menu-menu-footer-menu ul {
+    border-bottom: 0 none;
+  }
+  /* line 20, ../sass/components/menus/_footer-menu.scss */
+  #block-menu-menu-footer-menu ul li {
+    border-bottom: 0 none;
+  }
+  /* line 23, ../sass/components/menus/_footer-menu.scss */
+  #block-menu-menu-footer-menu ul li.first {
+    border-top: 0 none;
+  }
+}
+@media print {
+  /* line 18, ../sass/components/menus/_footer-menu.scss */
+  #block-menu-menu-footer-menu ul {
+    border-bottom: 0 none;
+  }
+  /* line 20, ../sass/components/menus/_footer-menu.scss */
+  #block-menu-menu-footer-menu ul li {
+    border-bottom: 0 none;
+  }
+  /* line 23, ../sass/components/menus/_footer-menu.scss */
+  #block-menu-menu-footer-menu ul li.first {
+    border-top: 0 none;
+  }
+}
+/* line 18, ../sass/components/menus/_footer-menu.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul {
+  border-bottom: 0 none;
+}
+/* line 20, ../sass/components/menus/_footer-menu.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul li {
+  border-bottom: 0 none;
+}
+/* line 23, ../sass/components/menus/_footer-menu.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul li.first {
+  border-top: 0 none;
+}
+
+/* line 4, ../sass/components/menus/_menu-audience.scss */
+#block-menu-menu-audience-menu .menu > li {
+  margin-left: 1em;
+}
+/* line 7, ../sass/components/menus/_menu-audience.scss */
+#block-menu-menu-audience-menu .menu > li.last a {
+  padding-right: 0;
+}
+
+/* line 5, ../sass/components/menus/_menu-global-tools.scss */
+.region-header #block-menu-menu-global-tools-menu, .region-header
+#block-menu-menu-global-tools-menu--2 {
+  font-size: .9em;
+}
+/* line 11, ../sass/components/menus/_menu-global-tools.scss */
+nav.navigation #block-menu-menu-global-tools-menu a, nav.navigation
+#block-menu-menu-global-tools-menu--2 a {
+  color: #2ba6cb;
+}
+
+/* line 2, ../sass/components/menus/_primary-menu.scss */
+.primary-menu .dropdown {
+  -webkit-transition: visibility 0.1s;
+  -moz-transition: visibility 0.1s;
+  -o-transition: visibility 0.1s;
+  transition: visibility 0.1s;
+}
+/* line 6, ../sass/components/menus/_primary-menu.scss */
+.primary-menu .last a, .primary-menu .last a:not(.button) {
+  -webkit-transition: background 0.25s;
+  -moz-transition: background 0.25s;
+  -o-transition: background 0.25s;
+  transition: background 0.25s;
+  background: gray;
+}
+/* line 11, ../sass/components/menus/_primary-menu.scss */
+.primary-menu .last:hover a, .primary-menu .last:hover a:not(.button) {
+  background: #bfbfbf;
+}
+@media only screen and (min-width: 48em) {
+  /* line 16, ../sass/components/menus/_primary-menu.scss */
+  .primary-menu .dropdown {
+    background-color: #111111;
+    padding-bottom: .5em;
+  }
+}
+@media print {
+  /* line 16, ../sass/components/menus/_primary-menu.scss */
+  .primary-menu .dropdown {
+    background-color: #111111;
+    padding-bottom: .5em;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 .primary-menu .dropdown {
+  background-color: #111111;
+  padding-bottom: .5em;
+}
+
+/* line 3, ../sass/components/menus/_secondary-menu.scss */
+nav.navigation #block-menu-menu-secondary-navigation-prot {
+  margin-bottom: .5em;
+}
+/* line 5, ../sass/components/menus/_secondary-menu.scss */
+nav.navigation #block-menu-menu-secondary-navigation-prot ul.menu {
+  border-bottom: 1px solid white;
+  padding-bottom: .5em;
+}
+
+/* line 2, ../sass/components/menus/_section-menu.scss */
+.section-menu ul {
+  padding: 0;
+}
+/* line 6, ../sass/components/menus/_section-menu.scss */
+.section-menu ul li {
+  margin-bottom: 0;
+}
+
+/* line 3, ../sass/components/menus/_social-links.scss */
+#block-menu-menu-social-links ul.menu {
+  font-size: 1.75em;
+  margin: 0;
+}
+/* line 6, ../sass/components/menus/_social-links.scss */
+#block-menu-menu-social-links ul.menu li {
+  margin: 0;
+}
+/* line 8, ../sass/components/menus/_social-links.scss */
+#block-menu-menu-social-links ul.menu li a {
+  display: inline-block;
+}
+
+/* line 4, ../sass/components/nodes/_ct-event-node.scss */
+.node-event .field-name-field-image img {
+  -webkit-transition: background-color 0.25s;
+  -moz-transition: background-color 0.25s;
+  -o-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+  background-color: gray;
+  height: 250px;
+  margin-bottom: 1em;
+  max-width: 100%;
+  width: 450px;
+}
+/* line 137, ../sass/global/_mixins.scss */
+.node-event .field-name-field-image img:hover {
+  background-color: #8c8c8c;
+}
+/* line 8, ../sass/components/nodes/_ct-event-node.scss */
+.node-event .field-name-body {
+  clear: both;
+  margin: 1em 0;
+}
+/* line 12, ../sass/components/nodes/_ct-event-node.scss */
+.node-event .field {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* line 4, ../sass/components/nodes/_ct-news-node.scss */
+.node-news .field-name-field-image img {
+  -webkit-transition: background-color 0.25s;
+  -moz-transition: background-color 0.25s;
+  -o-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+  background-color: gray;
+  height: 400px;
+  margin-bottom: 1em;
+  max-width: 100%;
+  width: 795px;
+  margin: 0;
+}
+/* line 137, ../sass/global/_mixins.scss */
+.node-news .field-name-field-image img:hover {
+  background-color: #8c8c8c;
+}
+
+/* line 2, ../sass/components/nodes/_ct-person-node.scss */
+.node-person .field, .node-person .views-field {
+  line-height: 1.5;
+  margin: 0;
+}
+/* line 6, ../sass/components/nodes/_ct-person-node.scss */
+.node-person .field-name-body, .node-person .field-type-text-with-summary {
+  clear: both;
+}
+
+/* END: .node-person */
+/* line 4, ../sass/components/page-elements/_tabs.scss */
+.tabs li {
+  font-weight: normal;
+}
+
+/* line 3, ../sass/components/views/_block-recent-news.scss */
+.view-news .views-field {
+  margin-bottom: .5em;
+}
+/* line 6, ../sass/components/views/_block-recent-news.scss */
+.view-news .views-field-body {
+  line-height: 1.3em;
+}
+
+/* END: .related-files */
+/* line 2, ../sass/components/views/_block-upcoming-events.scss */
+#block-view-upcoming-events .content {
+  padding: .5em 0;
+}
+/* line 5, ../sass/components/views/_block-upcoming-events.scss */
+#block-view-upcoming-events .views-row {
+  clear: both;
+  margin-bottom: .5em;
+}
+/* line 9, ../sass/components/views/_block-upcoming-events.scss */
+#block-view-upcoming-events .views-field {
+  margin-bottom: 0;
+  margin-left: 4em;
+}
+/* line 13, ../sass/components/views/_block-upcoming-events.scss */
+#block-view-upcoming-events .views-field-title {
+  font-size: 1em;
+  font-weight: bold;
+}
+/* line 16, ../sass/components/views/_block-upcoming-events.scss */
+#block-view-upcoming-events .views-field-title h3 {
+  font-size: 1em;
+}
+/* line 23, ../sass/components/views/_block-upcoming-events.scss */
+#block-view-upcoming-events .views-field-nothing {
+  display: block;
+  float: left;
+  margin-left: 0;
+  padding-top: .2em;
+  padding-left: 0;
+  width: 3em;
+}
+/* line 30, ../sass/components/views/_block-upcoming-events.scss */
+#block-view-upcoming-events .views-field-nothing .event-calendar-date {
+  display: block;
+  font-weight: normal;
+  text-align: center;
+}
+/* line 34, ../sass/components/views/_block-upcoming-events.scss */
+#block-view-upcoming-events .views-field-nothing .event-calendar-date a, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:link, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:visited, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:hover, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:active, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:focus {
+  border-bottom: 0 none;
+  font-weight: normal;
+}
+/* line 38, ../sass/components/views/_block-upcoming-events.scss */
+#block-view-upcoming-events .views-field-nothing .event-calendar-date .event-month {
+  font-size: 1.25em;
+  display: block;
+  line-height: 1;
+  text-transform: uppercase;
+}
+/* line 45, ../sass/components/views/_block-upcoming-events.scss */
+#block-view-upcoming-events .views-field-nothing .event-calendar-date .event-day {
+  display: block;
+  font-size: 2.25em;
+  line-height: 1em;
+  padding: 0 0 .25em 0;
+}
+/* line 54, ../sass/components/views/_block-upcoming-events.scss */
+#block-view-upcoming-events .views-field-field-event-liblocation {
+  font-style: italic;
+  padding: .5em 0;
+}
+/* line 57, ../sass/components/views/_block-upcoming-events.scss */
+#block-view-upcoming-events .views-field-field-event-liblocation .field-content {
+  font-size: .9em;
+}
+
 /*
  * jQuery FlexSlider v2.2.0
  * http://www.woothemes.com/flexslider/
@@ -8103,7 +8022,7 @@ nav.navigation a {
  */
 /* Browser Resets
 *********************************/
-/* line 18, ../sass/components/shared/_flexslider.scss */
+/* line 18, ../sass/components/views/_flexslider.scss */
 .flex-container a:active,
 .flexslider a:active,
 .flex-container a:focus,
@@ -8111,7 +8030,7 @@ nav.navigation a {
   outline: none;
 }
 
-/* line 21, ../sass/components/shared/_flexslider.scss */
+/* line 21, ../sass/components/views/_flexslider.scss */
 .slides,
 .flex-control-nav,
 .flex-direction-nav {
@@ -8133,33 +8052,33 @@ nav.navigation a {
 
 /* FlexSlider Necessary Styles
 *********************************/
-/* line 39, ../sass/components/shared/_flexslider.scss */
+/* line 39, ../sass/components/views/_flexslider.scss */
 .flexslider {
   margin: 0;
   padding: 0;
 }
-/* line 42, ../sass/components/shared/_flexslider.scss */
+/* line 42, ../sass/components/views/_flexslider.scss */
 .flexslider .slides {
   /* Hide the slides before the JS is loaded. Avoids image jumping */
 }
-/* line 43, ../sass/components/shared/_flexslider.scss */
+/* line 43, ../sass/components/views/_flexslider.scss */
 .flexslider .slides > li {
   display: none;
   -webkit-backface-visibility: hidden;
 }
-/* line 47, ../sass/components/shared/_flexslider.scss */
+/* line 47, ../sass/components/views/_flexslider.scss */
 .flexslider .slides img {
   width: 100%;
   display: block;
 }
 
-/* line 54, ../sass/components/shared/_flexslider.scss */
+/* line 54, ../sass/components/views/_flexslider.scss */
 .flex-pauseplay span {
   text-transform: capitalize;
 }
 
 /* Clearfix for the .slides element */
-/* line 61, ../sass/components/shared/_flexslider.scss */
+/* line 61, ../sass/components/views/_flexslider.scss */
 .slides:after {
   content: "\0020";
   display: block;
@@ -8169,12 +8088,12 @@ nav.navigation a {
   height: 0;
 }
 
-/* line 71, ../sass/components/shared/_flexslider.scss */
+/* line 71, ../sass/components/views/_flexslider.scss */
 html[xmlns] .slides {
   display: block;
 }
 
-/* line 76, ../sass/components/shared/_flexslider.scss */
+/* line 76, ../sass/components/views/_flexslider.scss */
 * html .slides {
   height: 1%;
 }
@@ -8182,14 +8101,14 @@ html[xmlns] .slides {
 /* No JavaScript Fallback */
 /* If you are not using another script, such as Modernizr, make sure you
  * include js that eliminates this class on page load */
-/* line 87, ../sass/components/shared/_flexslider.scss */
+/* line 87, ../sass/components/views/_flexslider.scss */
 .no-js .slides > li:first-child {
   display: block;
 }
 
 /* FlexSlider Default Theme
 *********************************/
-/* line 96, ../sass/components/shared/_flexslider.scss */
+/* line 96, ../sass/components/views/_flexslider.scss */
 .flexslider {
   margin: 0 0 60px;
   background: #fff;
@@ -8205,12 +8124,12 @@ html[xmlns] .slides {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   zoom: 1;
 }
-/* line 110, ../sass/components/shared/_flexslider.scss */
+/* line 110, ../sass/components/views/_flexslider.scss */
 .flexslider .slides {
   zoom: 1;
 }
 
-/* line 114, ../sass/components/shared/_flexslider.scss */
+/* line 114, ../sass/components/views/_flexslider.scss */
 .flex-viewport {
   max-height: 2000px;
   -webkit-transition: all 1s ease;
@@ -8219,22 +8138,22 @@ html[xmlns] .slides {
   transition: all 1s ease;
 }
 
-/* line 122, ../sass/components/shared/_flexslider.scss */
+/* line 122, ../sass/components/views/_flexslider.scss */
 .loading .flex-viewport {
   max-height: 300px;
 }
 
-/* line 127, ../sass/components/shared/_flexslider.scss */
+/* line 127, ../sass/components/views/_flexslider.scss */
 .carousel li {
   margin-right: 5px;
 }
 
 /* Direction Nav */
-/* line 133, ../sass/components/shared/_flexslider.scss */
+/* line 133, ../sass/components/views/_flexslider.scss */
 .flex-direction-nav {
   *height: 0;
 }
-/* line 135, ../sass/components/shared/_flexslider.scss */
+/* line 135, ../sass/components/views/_flexslider.scss */
 .flex-direction-nav a {
   display: block;
   width: 40px;
@@ -8252,42 +8171,42 @@ html[xmlns] .slides {
   -moz-transition: all .3s ease;
   transition: all .3s ease;
 }
-/* line 151, ../sass/components/shared/_flexslider.scss */
+/* line 151, ../sass/components/views/_flexslider.scss */
 .flex-direction-nav a:before {
   font-family: "flexslider-icon";
   font-size: 40px;
   display: inline-block;
   content: '\f001';
 }
-/* line 158, ../sass/components/shared/_flexslider.scss */
+/* line 158, ../sass/components/views/_flexslider.scss */
 .flex-direction-nav a.flex-next:before {
   content: '\f002';
 }
-/* line 163, ../sass/components/shared/_flexslider.scss */
+/* line 163, ../sass/components/views/_flexslider.scss */
 .flex-direction-nav .flex-prev {
   left: -50px;
 }
-/* line 166, ../sass/components/shared/_flexslider.scss */
+/* line 166, ../sass/components/views/_flexslider.scss */
 .flex-direction-nav .flex-next {
   right: -50px;
   text-align: right;
 }
-/* line 171, ../sass/components/shared/_flexslider.scss */
+/* line 171, ../sass/components/views/_flexslider.scss */
 .flex-direction-nav:hover .flex-prev {
   opacity: 0.7;
   left: 10px;
 }
-/* line 175, ../sass/components/shared/_flexslider.scss */
+/* line 175, ../sass/components/views/_flexslider.scss */
 .flex-direction-nav:hover .flex-next {
   opacity: 0.7;
   right: 10px;
 }
-/* line 181, ../sass/components/shared/_flexslider.scss */
+/* line 181, ../sass/components/views/_flexslider.scss */
 .flex-direction-nav:hover .flex-next:hover,
 .flex-direction-nav:hover .flex-prev:hover {
   opacity: 1;
 }
-/* line 186, ../sass/components/shared/_flexslider.scss */
+/* line 186, ../sass/components/views/_flexslider.scss */
 .flex-direction-nav .flex-disabled {
   opacity: 0 !important;
   filter: alpha(opacity=0);
@@ -8295,7 +8214,7 @@ html[xmlns] .slides {
 }
 
 /* Pause/Play */
-/* line 195, ../sass/components/shared/_flexslider.scss */
+/* line 195, ../sass/components/views/_flexslider.scss */
 .flex-pauseplay a {
   display: block;
   width: 20px;
@@ -8309,38 +8228,38 @@ html[xmlns] .slides {
   cursor: pointer;
   color: #000;
 }
-/* line 207, ../sass/components/shared/_flexslider.scss */
+/* line 207, ../sass/components/views/_flexslider.scss */
 .flex-pauseplay a:before {
   font-family: "flexslider-icon";
   font-size: 20px;
   display: inline-block;
   content: '\f004';
 }
-/* line 213, ../sass/components/shared/_flexslider.scss */
+/* line 213, ../sass/components/views/_flexslider.scss */
 .flex-pauseplay a:hover {
   opacity: 1;
 }
-/* line 217, ../sass/components/shared/_flexslider.scss */
+/* line 217, ../sass/components/views/_flexslider.scss */
 .flex-pauseplay a.flex-play :before {
   content: '\f003';
 }
 
 /* Control Nav */
-/* line 224, ../sass/components/shared/_flexslider.scss */
+/* line 224, ../sass/components/views/_flexslider.scss */
 .flex-control-nav {
   width: 100%;
   position: absolute;
   bottom: -40px;
   text-align: center;
 }
-/* line 229, ../sass/components/shared/_flexslider.scss */
+/* line 229, ../sass/components/views/_flexslider.scss */
 .flex-control-nav li {
   margin: 0 6px;
   display: inline-block;
   zoom: 1;
   *display: inline;
 }
-/* line 234, ../sass/components/shared/_flexslider.scss */
+/* line 234, ../sass/components/views/_flexslider.scss */
 .flex-control-nav li a {
   width: 11px;
   height: 11px;
@@ -8358,231 +8277,73 @@ html[xmlns] .slides {
   -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
 }
-/* line 250, ../sass/components/shared/_flexslider.scss */
+/* line 250, ../sass/components/views/_flexslider.scss */
 .flex-control-nav li a:hover {
   background: #333;
   background: rgba(0, 0, 0, 0.7);
 }
-/* line 254, ../sass/components/shared/_flexslider.scss */
+/* line 254, ../sass/components/views/_flexslider.scss */
 .flex-control-nav li a.flex-active {
   background: #000;
   background: rgba(0, 0, 0, 0.9);
   cursor: default;
 }
 
-/* line 263, ../sass/components/shared/_flexslider.scss */
+/* line 263, ../sass/components/views/_flexslider.scss */
 .flex-control-thumbs {
   margin: 5px 0 0;
   position: static;
   overflow: hidden;
 }
-/* line 267, ../sass/components/shared/_flexslider.scss */
+/* line 267, ../sass/components/views/_flexslider.scss */
 .flex-control-thumbs li {
   width: 25%;
   float: left;
   margin: 0;
 }
-/* line 272, ../sass/components/shared/_flexslider.scss */
+/* line 272, ../sass/components/views/_flexslider.scss */
 .flex-control-thumbs img {
   width: 100%;
   display: block;
   opacity: .7;
   cursor: pointer;
 }
-/* line 277, ../sass/components/shared/_flexslider.scss */
+/* line 277, ../sass/components/views/_flexslider.scss */
 .flex-control-thumbs img:hover {
   opacity: 1;
 }
-/* line 281, ../sass/components/shared/_flexslider.scss */
+/* line 281, ../sass/components/views/_flexslider.scss */
 .flex-control-thumbs .flex-active {
   opacity: 1;
   cursor: default;
 }
 
 @media screen and (max-width: 860px) {
-  /* line 289, ../sass/components/shared/_flexslider.scss */
+  /* line 289, ../sass/components/views/_flexslider.scss */
   .flex-direction-nav .flex-prev {
     opacity: 1;
     left: 10px;
   }
-  /* line 293, ../sass/components/shared/_flexslider.scss */
+  /* line 293, ../sass/components/views/_flexslider.scss */
   .flex-direction-nav .flex-next {
     opacity: 1;
     right: 10px;
   }
 }
-/* line 3, ../sass/components/shared/_footer-menu.scss */
-#block-menu-menu-footer-menu ul {
-  border-bottom: 0 none;
-  padding: 0;
-}
-/* line 8, ../sass/components/shared/_footer-menu.scss */
-#block-menu-menu-footer-menu ul li {
-  margin-bottom: 0;
-}
-@media only screen and (min-width: 48em) {
-  /* line 18, ../sass/components/shared/_footer-menu.scss */
-  #block-menu-menu-footer-menu ul {
-    border-bottom: 0 none;
-  }
-  /* line 20, ../sass/components/shared/_footer-menu.scss */
-  #block-menu-menu-footer-menu ul li {
-    border-bottom: 0 none;
-  }
-  /* line 23, ../sass/components/shared/_footer-menu.scss */
-  #block-menu-menu-footer-menu ul li.first {
-    border-top: 0 none;
-  }
-}
-@media print {
-  /* line 18, ../sass/components/shared/_footer-menu.scss */
-  #block-menu-menu-footer-menu ul {
-    border-bottom: 0 none;
-  }
-  /* line 20, ../sass/components/shared/_footer-menu.scss */
-  #block-menu-menu-footer-menu ul li {
-    border-bottom: 0 none;
-  }
-  /* line 23, ../sass/components/shared/_footer-menu.scss */
-  #block-menu-menu-footer-menu ul li.first {
-    border-top: 0 none;
-  }
-}
-/* line 18, ../sass/components/shared/_footer-menu.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul {
-  border-bottom: 0 none;
-}
-/* line 20, ../sass/components/shared/_footer-menu.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul li {
-  border-bottom: 0 none;
-}
-/* line 23, ../sass/components/shared/_footer-menu.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul li.first {
-  border-top: 0 none;
-}
-
-/* line 1, ../sass/components/shared/_footer-text.scss */
-#block-block-1 {
-  color: gray;
-  font-size: 80%;
-  text-align: center;
-}
-@media only screen and (min-width: 48em) {
-  /* line 1, ../sass/components/shared/_footer-text.scss */
-  #block-block-1 {
-    text-align: right;
-  }
-}
-@media print {
-  /* line 1, ../sass/components/shared/_footer-text.scss */
-  #block-block-1 {
-    text-align: right;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 #block-block-1 {
-  text-align: right;
-}
-
-/* line 4, ../sass/components/shared/_menu-audience.scss */
-#block-menu-menu-audience-menu .menu > li {
-  margin-left: 1em;
-}
-/* line 7, ../sass/components/shared/_menu-audience.scss */
-#block-menu-menu-audience-menu .menu > li.last a {
-  padding-right: 0;
-}
-
-/* line 5, ../sass/components/shared/_menu-global-tools.scss */
-nav.navigation #block-menu-menu-global-tools-menu a, nav.navigation
-#block-menu-menu-global-tools-menu--2 a {
-  color: #2ba6cb;
-}
-
-/* line 18, ../sass/components/shared/_placeholder.scss */
-img.placeholder {
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-  background-color: gray;
-  height: 180px;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 220px;
-}
-/* line 137, ../sass/global/_mixins.scss */
-img.placeholder:hover {
-  background-color: #8c8c8c;
-}
-
-/* line 2, ../sass/components/shared/_primary-menu.scss */
-.primary-menu .dropdown {
-  -webkit-transition: visibility 0.1s;
-  -moz-transition: visibility 0.1s;
-  -o-transition: visibility 0.1s;
-  transition: visibility 0.1s;
-}
-/* line 6, ../sass/components/shared/_primary-menu.scss */
-.primary-menu .last a, .primary-menu .last a:not(.button) {
-  -webkit-transition: background 0.25s;
-  -moz-transition: background 0.25s;
-  -o-transition: background 0.25s;
-  transition: background 0.25s;
-  background: gray;
-}
-/* line 11, ../sass/components/shared/_primary-menu.scss */
-.primary-menu .last:hover a, .primary-menu .last:hover a:not(.button) {
-  background: #bfbfbf;
-}
-@media only screen and (min-width: 48em) {
-  /* line 16, ../sass/components/shared/_primary-menu.scss */
-  .primary-menu .dropdown {
-    background-color: #111111;
-    padding-bottom: .5em;
-  }
-}
-@media print {
-  /* line 16, ../sass/components/shared/_primary-menu.scss */
-  .primary-menu .dropdown {
-    background-color: #111111;
-    padding-bottom: .5em;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .primary-menu .dropdown {
-  background-color: #111111;
-  padding-bottom: .5em;
-}
-
-/* line 3, ../sass/components/shared/_search-box.scss */
-.block-search label {
-  display: none;
-}
-
-/* line 2, ../sass/components/shared/_section-menu.scss */
-.section-menu ul {
-  padding: 0;
-}
-/* line 6, ../sass/components/shared/_section-menu.scss */
-.section-menu ul li {
-  margin-bottom: 0;
-}
-
-/* line 1, ../sass/components/shared/_slideshow.scss */
+/* line 1, ../sass/components/views/_slideshow.scss */
 .flexslider {
   position: relative;
 }
-/* line 3, ../sass/components/shared/_slideshow.scss */
+/* line 3, ../sass/components/views/_slideshow.scss */
 .flexslider h3 {
   margin: 0;
 }
-/* line 7, ../sass/components/shared/_slideshow.scss */
+/* line 7, ../sass/components/views/_slideshow.scss */
 .flexslider .slides li {
   position: relative;
 }
 
-/* line 12, ../sass/components/shared/_slideshow.scss */
+/* line 12, ../sass/components/views/_slideshow.scss */
 .flex-caption {
   background-color: rgba(255, 255, 255, 0.85);
   bottom: 0;
@@ -8592,33 +8353,1329 @@ img.placeholder:hover {
   width: 100%;
 }
 
-/* line 24, ../sass/components/shared/_slideshow.scss */
+/* line 24, ../sass/components/views/_slideshow.scss */
 .flex-direction-nav a {
   height: 3em;
   margin-top: -3em;
 }
-/* line 27, ../sass/components/shared/_slideshow.scss */
+/* line 27, ../sass/components/views/_slideshow.scss */
 .flex-direction-nav a:before {
   text-shadow: 0 0 0.5em white;
 }
 
-/* line 3, ../sass/components/shared/_social-links.scss */
-#block-menu-menu-social-links ul.menu {
-  font-size: 1.75em;
-  margin: 0;
+@media only screen and (min-width: 48em) {
+  /* line 1, ../sass/components/views/_view-calendar-list.scss */
+  .block-calendar-list {
+    display: none;
+  }
 }
-/* line 6, ../sass/components/shared/_social-links.scss */
-#block-menu-menu-social-links ul.menu li {
-  margin: 0;
+@media print {
+  /* line 1, ../sass/components/views/_view-calendar-list.scss */
+  .block-calendar-list {
+    display: none;
+  }
 }
-/* line 8, ../sass/components/shared/_social-links.scss */
-#block-menu-menu-social-links ul.menu li a {
-  display: inline-block;
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 .block-calendar-list {
+  display: none;
 }
 
-/* line 4, ../sass/components/shared/_tabs.scss */
-.tabs li {
-  font-weight: normal;
+/* line 1, ../sass/components/views/_view-calendar.scss */
+.block-calendar {
+  display: none;
+}
+@media only screen and (min-width: 48em) {
+  /* line 1, ../sass/components/views/_view-calendar.scss */
+  .block-calendar {
+    display: block;
+  }
+}
+@media print {
+  /* line 1, ../sass/components/views/_view-calendar.scss */
+  .block-calendar {
+    display: block;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 .block-calendar {
+  display: block;
+}
+/* line 6, ../sass/components/views/_view-calendar.scss */
+.block-calendar .fc-header {
+  text-align: center;
+}
+
+/* line 2, ../sass/components/views/_view-directory.scss */
+.view-directory .views-row {
+  margin-bottom: 3em;
+}
+/* line 5, ../sass/components/views/_view-directory.scss */
+.view-directory .views-field {
+  line-height: 1.3;
+  margin: 0 0 0 120px;
+}
+/* line 8, ../sass/components/views/_view-directory.scss */
+.view-directory .views-field h4 {
+  margin-bottom: 0;
+}
+/* line 12, ../sass/components/views/_view-directory.scss */
+.view-directory .views-field-field-person-headshot {
+  margin: 0;
+}
+/* line 14, ../sass/components/views/_view-directory.scss */
+.view-directory .views-field-field-person-headshot img {
+  -webkit-transition: background-color 0.25s;
+  -moz-transition: background-color 0.25s;
+  -o-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+  background-color: gray;
+  height: 125px;
+  margin-bottom: 1em;
+  max-width: 100%;
+  width: 126px;
+  margin-top: .24em;
+}
+/* line 137, ../sass/global/_mixins.scss */
+.view-directory .views-field-field-person-headshot img:hover {
+  background-color: #8c8c8c;
+}
+@media only screen and (min-width: 48em) {
+  /* line 14, ../sass/components/views/_view-directory.scss */
+  .view-directory .views-field-field-person-headshot img {
+    margin-top: .74em;
+  }
+}
+@media print {
+  /* line 14, ../sass/components/views/_view-directory.scss */
+  .view-directory .views-field-field-person-headshot img {
+    margin-top: .74em;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 .view-directory .views-field-field-person-headshot img {
+  margin-top: .74em;
+}
+
+/* line 1, ../sass/layout/components/blocks-custom/_footer-text_layout.scss */
+#block-block-1 {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 100%;
+  float: left;
+}
+@media only screen and (min-width: 48em) {
+  /* line 1, ../sass/layout/components/blocks-custom/_footer-text_layout.scss */
+  #block-block-1 {
+    position: relative;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    width: 66.66667%;
+    float: left;
+  }
+}
+@media print {
+  /* line 1, ../sass/layout/components/blocks-custom/_footer-text_layout.scss */
+  #block-block-1 {
+    position: relative;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    width: 66.66667%;
+    float: left;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 #block-block-1 {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 66.66667%;
+  float: left;
+}
+
+/* line 1, ../sass/layout/components/blocks-system/_logo_layout.scss */
+.logo-link {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+@media only screen and (min-width: 48em) {
+  /* line 1, ../sass/layout/components/blocks-system/_logo_layout.scss */
+  .logo-link {
+    float: left;
+    text-align: left;
+    width: auto;
+  }
+}
+@media print {
+  /* line 1, ../sass/layout/components/blocks-system/_logo_layout.scss */
+  .logo-link {
+    float: left;
+    text-align: left;
+    width: auto;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 .logo-link {
+  float: left;
+  text-align: left;
+  width: auto;
+}
+
+/* line 5, ../sass/layout/components/blocks-system/_search-box_layout.scss */
+.block-search .form-type-textfield input {
+  display: inline;
+  width: auto;
+}
+/* line 11, ../sass/layout/components/blocks-system/_search-box_layout.scss */
+nav.navigation .block-search {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 100%;
+  float: left;
+  margin-bottom: 0;
+  text-align: center;
+}
+@media only screen and (min-width: 48em) {
+  /* line 11, ../sass/layout/components/blocks-system/_search-box_layout.scss */
+  nav.navigation .block-search {
+    position: relative;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    width: 25%;
+    left: 75%;
+    right: auto;
+    float: left;
+    text-align: right;
+  }
+}
+@media print {
+  /* line 11, ../sass/layout/components/blocks-system/_search-box_layout.scss */
+  nav.navigation .block-search {
+    position: relative;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    width: 25%;
+    left: 75%;
+    right: auto;
+    float: left;
+    text-align: right;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 nav.navigation .block-search {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 25%;
+  left: 75%;
+  right: auto;
+  float: left;
+  text-align: right;
+}
+/* line 20, ../sass/layout/components/blocks-system/_search-box_layout.scss */
+nav.navigation .block-search form,
+nav.navigation .block-search input {
+  margin-bottom: 0;
+}
+
+/* line 1, ../sass/layout/components/blocks-system/_site-name_layout.scss */
+#site-name {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+@media only screen and (min-width: 48em) {
+  /* line 1, ../sass/layout/components/blocks-system/_site-name_layout.scss */
+  #site-name {
+    float: left;
+    padding: 0;
+    text-align: left;
+    width: auto;
+  }
+  /* line 9, ../sass/layout/components/blocks-system/_site-name_layout.scss */
+  #site-name h1 {
+    line-height: 1;
+    margin-top: 0;
+  }
+}
+@media print {
+  /* line 1, ../sass/layout/components/blocks-system/_site-name_layout.scss */
+  #site-name {
+    float: left;
+    padding: 0;
+    text-align: left;
+    width: auto;
+  }
+  /* line 9, ../sass/layout/components/blocks-system/_site-name_layout.scss */
+  #site-name h1 {
+    line-height: 1;
+    margin-top: 0;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 #site-name {
+  float: left;
+  padding: 0;
+  text-align: left;
+  width: auto;
+}
+/* line 9, ../sass/layout/components/blocks-system/_site-name_layout.scss */
+.lt-ie9 #site-name h1 {
+  line-height: 1;
+  margin-top: 0;
+}
+
+/* line 1, ../sass/layout/components/menus/_footer-menu_layout.scss */
+#block-menu-menu-footer-menu {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 100%;
+  float: left;
+}
+@media only screen and (min-width: 48em) {
+  /* line 4, ../sass/layout/components/menus/_footer-menu_layout.scss */
+  #block-menu-menu-footer-menu ul {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625em;
+    *zoom: 1;
+  }
+  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul:before, #block-menu-menu-footer-menu ul:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul:after {
+    clear: both;
+  }
+  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li {
+    width: 50%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li:nth-of-type(2n+1) {
+    clear: both;
+  }
+  /* line 6, ../sass/layout/components/menus/_footer-menu_layout.scss */
+  #block-menu-menu-footer-menu ul ul {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625em;
+    *zoom: 1;
+    margin: 0;
+  }
+  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul ul:before, #block-menu-menu-footer-menu ul ul:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul ul:after {
+    clear: both;
+  }
+  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li {
+    width: 100%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li:nth-of-type(1n+1) {
+    clear: both;
+  }
+  /* line 9, ../sass/layout/components/menus/_footer-menu_layout.scss */
+  #block-menu-menu-footer-menu ul ul li {
+    padding: 0;
+  }
+}
+@media print {
+  /* line 4, ../sass/layout/components/menus/_footer-menu_layout.scss */
+  #block-menu-menu-footer-menu ul {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625em;
+    *zoom: 1;
+  }
+  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul:before, #block-menu-menu-footer-menu ul:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul:after {
+    clear: both;
+  }
+  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li {
+    width: 50%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li:nth-of-type(2n+1) {
+    clear: both;
+  }
+  /* line 6, ../sass/layout/components/menus/_footer-menu_layout.scss */
+  #block-menu-menu-footer-menu ul ul {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625em;
+    *zoom: 1;
+    margin: 0;
+  }
+  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul ul:before, #block-menu-menu-footer-menu ul ul:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul ul:after {
+    clear: both;
+  }
+  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li {
+    width: 100%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li:nth-of-type(1n+1) {
+    clear: both;
+  }
+  /* line 9, ../sass/layout/components/menus/_footer-menu_layout.scss */
+  #block-menu-menu-footer-menu ul ul li {
+    padding: 0;
+  }
+}
+/* line 4, ../sass/layout/components/menus/_footer-menu_layout.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul {
+  display: block;
+  padding: 0;
+  margin: 0 -0.625em;
+  *zoom: 1;
+}
+/* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul:before, .lt-ie9 #block-menu-menu-footer-menu ul:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul:after {
+  clear: both;
+}
+/* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul > li {
+  display: inline;
+  height: auto;
+  float: left;
+  padding: 0 0.625em 1.25em;
+}
+/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul > li {
+  width: 50%;
+  padding: 0 0.625em 1.25em;
+}
+/* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul > li:nth-of-type(n) {
+  clear: none;
+}
+/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul > li:nth-of-type(2n+1) {
+  clear: both;
+}
+/* line 6, ../sass/layout/components/menus/_footer-menu_layout.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul {
+  display: block;
+  padding: 0;
+  margin: 0 -0.625em;
+  *zoom: 1;
+  margin: 0;
+}
+/* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul:before, .lt-ie9 #block-menu-menu-footer-menu ul ul:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul:after {
+  clear: both;
+}
+/* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul > li {
+  display: inline;
+  height: auto;
+  float: left;
+  padding: 0 0.625em 1.25em;
+}
+/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul > li {
+  width: 100%;
+  padding: 0 0.625em 1.25em;
+}
+/* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul > li:nth-of-type(n) {
+  clear: none;
+}
+/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul > li:nth-of-type(1n+1) {
+  clear: both;
+}
+/* line 9, ../sass/layout/components/menus/_footer-menu_layout.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul li {
+  padding: 0;
+}
+@media only screen and (min-width: 62.5em) {
+  /* line 16, ../sass/layout/components/menus/_footer-menu_layout.scss */
+  #block-menu-menu-footer-menu ul {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625em;
+    *zoom: 1;
+  }
+  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul:before, #block-menu-menu-footer-menu ul:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul:after {
+    clear: both;
+  }
+  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li {
+    width: 25%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li:nth-of-type(4n+1) {
+    clear: both;
+  }
+  /* line 18, ../sass/layout/components/menus/_footer-menu_layout.scss */
+  #block-menu-menu-footer-menu ul ul {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625em;
+    *zoom: 1;
+    margin: 0;
+  }
+  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul ul:before, #block-menu-menu-footer-menu ul ul:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul ul:after {
+    clear: both;
+  }
+  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li {
+    width: 100%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li:nth-of-type(1n+1) {
+    clear: both;
+  }
+  /* line 21, ../sass/layout/components/menus/_footer-menu_layout.scss */
+  #block-menu-menu-footer-menu ul ul li {
+    padding: 0;
+  }
+}
+@media print {
+  /* line 16, ../sass/layout/components/menus/_footer-menu_layout.scss */
+  #block-menu-menu-footer-menu ul {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625em;
+    *zoom: 1;
+  }
+  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul:before, #block-menu-menu-footer-menu ul:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul:after {
+    clear: both;
+  }
+  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li {
+    width: 25%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul > li:nth-of-type(4n+1) {
+    clear: both;
+  }
+  /* line 18, ../sass/layout/components/menus/_footer-menu_layout.scss */
+  #block-menu-menu-footer-menu ul ul {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625em;
+    *zoom: 1;
+    margin: 0;
+  }
+  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul ul:before, #block-menu-menu-footer-menu ul ul:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+  #block-menu-menu-footer-menu ul ul:after {
+    clear: both;
+  }
+  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li {
+    width: 100%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+  #block-menu-menu-footer-menu ul ul > li:nth-of-type(1n+1) {
+    clear: both;
+  }
+  /* line 21, ../sass/layout/components/menus/_footer-menu_layout.scss */
+  #block-menu-menu-footer-menu ul ul li {
+    padding: 0;
+  }
+}
+/* line 16, ../sass/layout/components/menus/_footer-menu_layout.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul {
+  display: block;
+  padding: 0;
+  margin: 0 -0.625em;
+  *zoom: 1;
+}
+/* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul:before, .lt-ie9 #block-menu-menu-footer-menu ul:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul:after {
+  clear: both;
+}
+/* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul > li {
+  display: inline;
+  height: auto;
+  float: left;
+  padding: 0 0.625em 1.25em;
+}
+/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul > li {
+  width: 25%;
+  padding: 0 0.625em 1.25em;
+}
+/* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul > li:nth-of-type(n) {
+  clear: none;
+}
+/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul > li:nth-of-type(4n+1) {
+  clear: both;
+}
+/* line 18, ../sass/layout/components/menus/_footer-menu_layout.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul {
+  display: block;
+  padding: 0;
+  margin: 0 -0.625em;
+  *zoom: 1;
+  margin: 0;
+}
+/* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul:before, .lt-ie9 #block-menu-menu-footer-menu ul ul:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul:after {
+  clear: both;
+}
+/* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul > li {
+  display: inline;
+  height: auto;
+  float: left;
+  padding: 0 0.625em 1.25em;
+}
+/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul > li {
+  width: 100%;
+  padding: 0 0.625em 1.25em;
+}
+/* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul > li:nth-of-type(n) {
+  clear: none;
+}
+/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul > li:nth-of-type(1n+1) {
+  clear: both;
+}
+/* line 21, ../sass/layout/components/menus/_footer-menu_layout.scss */
+.lt-ie9 #block-menu-menu-footer-menu ul ul li {
+  padding: 0;
+}
+
+/* line 1, ../sass/layout/components/menus/_menu-audience_layout.scss */
+#block-menu-menu-audience-menu {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 100%;
+  float: left;
+}
+@media only screen and (min-width: 48em) {
+  /* line 1, ../sass/layout/components/menus/_menu-audience_layout.scss */
+  #block-menu-menu-audience-menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  /* line 10, ../sass/layout/components/menus/_menu-audience_layout.scss */
+  #block-menu-menu-audience-menu .menu {
+    margin: 0 auto 1.0625em auto;
+    margin-left: -1.375em;
+    margin-right: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    float: right;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+  #block-menu-menu-audience-menu .menu > li {
+    list-style: none;
+    float: left;
+    margin-left: 1.375em;
+    display: block;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+  #block-menu-menu-audience-menu .menu > li > * {
+    display: block;
+  }
+}
+@media print {
+  /* line 1, ../sass/layout/components/menus/_menu-audience_layout.scss */
+  #block-menu-menu-audience-menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  /* line 10, ../sass/layout/components/menus/_menu-audience_layout.scss */
+  #block-menu-menu-audience-menu .menu {
+    margin: 0 auto 1.0625em auto;
+    margin-left: -1.375em;
+    margin-right: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    float: right;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+  #block-menu-menu-audience-menu .menu > li {
+    list-style: none;
+    float: left;
+    margin-left: 1.375em;
+    display: block;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+  #block-menu-menu-audience-menu .menu > li > * {
+    display: block;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 #block-menu-menu-audience-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 10, ../sass/layout/components/menus/_menu-audience_layout.scss */
+.lt-ie9 #block-menu-menu-audience-menu .menu {
+  margin: 0 auto 1.0625em auto;
+  margin-left: -1.375em;
+  margin-right: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  float: right;
+}
+/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+.lt-ie9 #block-menu-menu-audience-menu .menu > li {
+  list-style: none;
+  float: left;
+  margin-left: 1.375em;
+  display: block;
+}
+/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+.lt-ie9 #block-menu-menu-audience-menu .menu > li > * {
+  display: block;
+}
+
+/* line 5, ../sass/layout/components/menus/_menu-global-tools_layout.scss */
+nav.navigation #block-menu-menu-global-tools-menu, nav.navigation
+#block-menu-menu-global-tools-menu--2 {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 50%;
+  float: left;
+}
+@media only screen and (min-width: 48em) {
+  /* line 5, ../sass/layout/components/menus/_menu-global-tools_layout.scss */
+  nav.navigation #block-menu-menu-global-tools-menu, nav.navigation
+  #block-menu-menu-global-tools-menu--2 {
+    display: none;
+  }
+}
+@media print {
+  /* line 5, ../sass/layout/components/menus/_menu-global-tools_layout.scss */
+  nav.navigation #block-menu-menu-global-tools-menu, nav.navigation
+  #block-menu-menu-global-tools-menu--2 {
+    display: none;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 nav.navigation #block-menu-menu-global-tools-menu, .lt-ie9 nav.navigation
+#block-menu-menu-global-tools-menu--2 {
+  display: none;
+}
+/* line 16, ../sass/layout/components/menus/_menu-global-tools_layout.scss */
+.region-header #block-menu-menu-global-tools-menu, .region-header
+#block-menu-menu-global-tools-menu--2 {
+  display: none;
+}
+@media only screen and (min-width: 48em) {
+  /* line 16, ../sass/layout/components/menus/_menu-global-tools_layout.scss */
+  .region-header #block-menu-menu-global-tools-menu, .region-header
+  #block-menu-menu-global-tools-menu--2 {
+    position: relative;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    width: 100%;
+    float: left;
+    display: block;
+    float: right;
+    text-align: right;
+    width: auto;
+  }
+}
+@media print {
+  /* line 16, ../sass/layout/components/menus/_menu-global-tools_layout.scss */
+  .region-header #block-menu-menu-global-tools-menu, .region-header
+  #block-menu-menu-global-tools-menu--2 {
+    position: relative;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    width: 100%;
+    float: left;
+    display: block;
+    float: right;
+    text-align: right;
+    width: auto;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 .region-header #block-menu-menu-global-tools-menu, .lt-ie9 .region-header
+#block-menu-menu-global-tools-menu--2 {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 100%;
+  float: left;
+  display: block;
+  float: right;
+  text-align: right;
+  width: auto;
+}
+/* line 27, ../sass/layout/components/menus/_menu-global-tools_layout.scss */
+.region-header #block-menu-menu-global-tools-menu ul.menu li, .region-header
+#block-menu-menu-global-tools-menu--2 ul.menu li {
+  display: inline;
+  margin-left: 1em;
+}
+
+/* line 5, ../sass/layout/components/menus/_primary-menu_layout.scss */
+nav.navigation #block-system-main-menu {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 50%;
+  float: left;
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 48em) {
+  /* line 5, ../sass/layout/components/menus/_primary-menu_layout.scss */
+  nav.navigation #block-system-main-menu {
+    position: relative;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    width: 75%;
+    right: 25%;
+    left: auto;
+    float: left;
+  }
+}
+@media print {
+  /* line 5, ../sass/layout/components/menus/_primary-menu_layout.scss */
+  nav.navigation #block-system-main-menu {
+    position: relative;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    width: 75%;
+    right: 25%;
+    left: auto;
+    float: left;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 nav.navigation #block-system-main-menu {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 75%;
+  right: 25%;
+  left: auto;
+  float: left;
+}
+/* line 13, ../sass/layout/components/menus/_primary-menu_layout.scss */
+nav.navigation #block-system-main-menu .menu {
+  margin-bottom: 0;
+  text-align: right;
+}
+@media only screen and (min-width: 48em) {
+  /* line 13, ../sass/layout/components/menus/_primary-menu_layout.scss */
+  nav.navigation #block-system-main-menu .menu {
+    margin: 0 auto 1.0625em auto;
+    margin-left: -1.375em;
+    margin-right: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+  nav.navigation #block-system-main-menu .menu > li {
+    list-style: none;
+    float: left;
+    margin-left: 1.375em;
+    display: block;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+  nav.navigation #block-system-main-menu .menu > li > * {
+    display: block;
+  }
+  /* line 23, ../sass/layout/components/menus/_primary-menu_layout.scss */
+  nav.navigation #block-system-main-menu .menu ul.menu {
+    display: none;
+  }
+}
+@media print {
+  /* line 13, ../sass/layout/components/menus/_primary-menu_layout.scss */
+  nav.navigation #block-system-main-menu .menu {
+    margin: 0 auto 1.0625em auto;
+    margin-left: -1.375em;
+    margin-right: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+  nav.navigation #block-system-main-menu .menu > li {
+    list-style: none;
+    float: left;
+    margin-left: 1.375em;
+    display: block;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+  nav.navigation #block-system-main-menu .menu > li > * {
+    display: block;
+  }
+  /* line 23, ../sass/layout/components/menus/_primary-menu_layout.scss */
+  nav.navigation #block-system-main-menu .menu ul.menu {
+    display: none;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 nav.navigation #block-system-main-menu .menu {
+  margin: 0 auto 1.0625em auto;
+  margin-left: -1.375em;
+  margin-right: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  margin-bottom: 0;
+  text-align: left;
+}
+/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+.lt-ie9 nav.navigation #block-system-main-menu .menu > li {
+  list-style: none;
+  float: left;
+  margin-left: 1.375em;
+  display: block;
+}
+/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+.lt-ie9 nav.navigation #block-system-main-menu .menu > li > * {
+  display: block;
+}
+/* line 23, ../sass/layout/components/menus/_primary-menu_layout.scss */
+.lt-ie9 nav.navigation #block-system-main-menu .menu ul.menu {
+  display: none;
+}
+
+/* line 34, ../sass/layout/components/menus/_primary-menu_layout.scss */
+.top-bar {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 100%;
+  float: left;
+  clear: both;
+}
+@media only screen and (min-width: 48em) {
+  /* line 38, ../sass/layout/components/menus/_primary-menu_layout.scss */
+  .top-bar .title-area {
+    display: none;
+  }
+  /* line 42, ../sass/layout/components/menus/_primary-menu_layout.scss */
+  .top-bar .top-bar-section ul {
+    margin-bottom: 1.875em;
+    width: 100%;
+  }
+  /* line 46, ../sass/layout/components/menus/_primary-menu_layout.scss */
+  .top-bar .top-bar-section ul ul {
+    width: auto;
+  }
+}
+@media print {
+  /* line 38, ../sass/layout/components/menus/_primary-menu_layout.scss */
+  .top-bar .title-area {
+    display: none;
+  }
+  /* line 42, ../sass/layout/components/menus/_primary-menu_layout.scss */
+  .top-bar .top-bar-section ul {
+    margin-bottom: 1.875em;
+    width: 100%;
+  }
+  /* line 46, ../sass/layout/components/menus/_primary-menu_layout.scss */
+  .top-bar .top-bar-section ul ul {
+    width: auto;
+  }
+}
+/* line 38, ../sass/layout/components/menus/_primary-menu_layout.scss */
+.lt-ie9 .top-bar .title-area {
+  display: none;
+}
+/* line 42, ../sass/layout/components/menus/_primary-menu_layout.scss */
+.lt-ie9 .top-bar .top-bar-section ul {
+  margin-bottom: 1.875em;
+  width: 100%;
+}
+/* line 46, ../sass/layout/components/menus/_primary-menu_layout.scss */
+.lt-ie9 .top-bar .top-bar-section ul ul {
+  width: auto;
+}
+
+/* line 3, ../sass/layout/components/menus/_secondary-menu_layout.scss */
+nav.navigation #block-menu-menu-secondary-navigation-prot {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 50%;
+  float: left;
+}
+@media only screen and (min-width: 48em) {
+  /* line 3, ../sass/layout/components/menus/_secondary-menu_layout.scss */
+  nav.navigation #block-menu-menu-secondary-navigation-prot {
+    display: none;
+  }
+}
+@media print {
+  /* line 3, ../sass/layout/components/menus/_secondary-menu_layout.scss */
+  nav.navigation #block-menu-menu-secondary-navigation-prot {
+    display: none;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 nav.navigation #block-menu-menu-secondary-navigation-prot {
+  display: none;
+}
+
+/* line 1, ../sass/layout/components/menus/_social-links_layout.scss */
+#block-menu-menu-social-links {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 100%;
+  float: left;
+}
+@media only screen and (min-width: 48em) {
+  /* line 1, ../sass/layout/components/menus/_social-links_layout.scss */
+  #block-menu-menu-social-links {
+    position: relative;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    width: 33.33333%;
+    float: left;
+  }
+  /* line 9, ../sass/layout/components/menus/_social-links_layout.scss */
+  #block-menu-menu-social-links .menu {
+    margin: 0 auto 1.0625em auto;
+    margin-left: -1.375em;
+    margin-right: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+  #block-menu-menu-social-links .menu > li {
+    list-style: none;
+    float: left;
+    margin-left: 1.375em;
+    display: block;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+  #block-menu-menu-social-links .menu > li > * {
+    display: block;
+  }
+}
+@media print {
+  /* line 1, ../sass/layout/components/menus/_social-links_layout.scss */
+  #block-menu-menu-social-links {
+    position: relative;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    width: 33.33333%;
+    float: left;
+  }
+  /* line 9, ../sass/layout/components/menus/_social-links_layout.scss */
+  #block-menu-menu-social-links .menu {
+    margin: 0 auto 1.0625em auto;
+    margin-left: -1.375em;
+    margin-right: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+  }
+  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+  #block-menu-menu-social-links .menu > li {
+    list-style: none;
+    float: left;
+    margin-left: 1.375em;
+    display: block;
+  }
+  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+  #block-menu-menu-social-links .menu > li > * {
+    display: block;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 #block-menu-menu-social-links {
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 33.33333%;
+  float: left;
+}
+/* line 9, ../sass/layout/components/menus/_social-links_layout.scss */
+.lt-ie9 #block-menu-menu-social-links .menu {
+  margin: 0 auto 1.0625em auto;
+  margin-left: -1.375em;
+  margin-right: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+.lt-ie9 #block-menu-menu-social-links .menu > li {
+  list-style: none;
+  float: left;
+  margin-left: 1.375em;
+  display: block;
+}
+/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
+.lt-ie9 #block-menu-menu-social-links .menu > li > * {
+  display: block;
+}
+
+@media only screen and (min-width: 48em) {
+  /* line 2, ../sass/layout/components/views/_views-directory_layout.scss */
+  .view-directory .views-row {
+    clear: none;
+    display: block;
+    float: left;
+    margin-right: 2%;
+    width: 49%;
+  }
+  /* line 108, ../sass/global/_mixins.scss */
+  .view-directory .views-row:nth-child(odd), .view-directory .views-row:nth-child(even) {
+    clear: none;
+    margin-right: 2%;
+  }
+  /* line 114, ../sass/global/_mixins.scss */
+  .view-directory .views-row:nth-child(2n+3) {
+    clear: left;
+  }
+  /* line 118, ../sass/global/_mixins.scss */
+  .view-directory .views-row:nth-child(2n+2) {
+    margin-right: 0;
+  }
+  /* line 123, ../sass/global/_mixins.scss */
+  .lt-ie9 .view-directory .views-row {
+    height: auto;
+    width: 48%;
+  }
+}
+@media print {
+  /* line 2, ../sass/layout/components/views/_views-directory_layout.scss */
+  .view-directory .views-row {
+    clear: none;
+    display: block;
+    float: left;
+    margin-right: 2%;
+    width: 49%;
+  }
+  /* line 108, ../sass/global/_mixins.scss */
+  .view-directory .views-row:nth-child(odd), .view-directory .views-row:nth-child(even) {
+    clear: none;
+    margin-right: 2%;
+  }
+  /* line 114, ../sass/global/_mixins.scss */
+  .view-directory .views-row:nth-child(2n+3) {
+    clear: left;
+  }
+  /* line 118, ../sass/global/_mixins.scss */
+  .view-directory .views-row:nth-child(2n+2) {
+    margin-right: 0;
+  }
+  /* line 123, ../sass/global/_mixins.scss */
+  .lt-ie9 .view-directory .views-row {
+    height: auto;
+    width: 48%;
+  }
+}
+/* line 80, ../sass/global/_mixins.scss */
+.lt-ie9 .view-directory .views-row {
+  clear: none;
+  display: block;
+  float: left;
+  margin-right: 2%;
+  width: 49%;
+}
+/* line 108, ../sass/global/_mixins.scss */
+.lt-ie9 .view-directory .views-row:nth-child(odd), .lt-ie9 .view-directory .views-row:nth-child(even) {
+  clear: none;
+  margin-right: 2%;
+}
+/* line 114, ../sass/global/_mixins.scss */
+.lt-ie9 .view-directory .views-row:nth-child(2n+3) {
+  clear: left;
+}
+/* line 118, ../sass/global/_mixins.scss */
+.lt-ie9 .view-directory .views-row:nth-child(2n+2) {
+  margin-right: 0;
+}
+/* line 123, ../sass/global/_mixins.scss */
+.lt-ie9 .lt-ie9 .view-directory .views-row {
+  height: auto;
+  width: 48%;
 }
 
 /* line 1, ../sass/layout/ds-layouts/_unc-ds-default.scss */
@@ -9443,992 +10500,6 @@ img.placeholder:hover {
   right: 0;
 }
 
-@media only screen and (min-width: 48em) {
-  /* line 2, ../sass/layout/page-directory/_views-directory_layout.scss */
-  .view-directory .views-row {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 2%;
-    width: 49%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .view-directory .views-row:nth-child(odd), .view-directory .views-row:nth-child(even) {
-    clear: none;
-    margin-right: 2%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .view-directory .views-row:nth-child(2n+3) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .view-directory .views-row:nth-child(2n+2) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .view-directory .views-row {
-    height: auto;
-    width: 48%;
-  }
-}
-@media print {
-  /* line 2, ../sass/layout/page-directory/_views-directory_layout.scss */
-  .view-directory .views-row {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 2%;
-    width: 49%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .view-directory .views-row:nth-child(odd), .view-directory .views-row:nth-child(even) {
-    clear: none;
-    margin-right: 2%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .view-directory .views-row:nth-child(2n+3) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .view-directory .views-row:nth-child(2n+2) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .view-directory .views-row {
-    height: auto;
-    width: 48%;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .view-directory .views-row {
-  clear: none;
-  display: block;
-  float: left;
-  margin-right: 2%;
-  width: 49%;
-}
-/* line 108, ../sass/global/_mixins.scss */
-.lt-ie9 .view-directory .views-row:nth-child(odd), .lt-ie9 .view-directory .views-row:nth-child(even) {
-  clear: none;
-  margin-right: 2%;
-}
-/* line 114, ../sass/global/_mixins.scss */
-.lt-ie9 .view-directory .views-row:nth-child(2n+3) {
-  clear: left;
-}
-/* line 118, ../sass/global/_mixins.scss */
-.lt-ie9 .view-directory .views-row:nth-child(2n+2) {
-  margin-right: 0;
-}
-/* line 123, ../sass/global/_mixins.scss */
-.lt-ie9 .lt-ie9 .view-directory .views-row {
-  height: auto;
-  width: 48%;
-}
-
-/* line 3, ../sass/layout/page-grid/_grid_layout.scss */
-.page-grid .grid {
-  *zoom: 1;
-  margin: 0 0 2em 0;
-}
-/* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-.page-grid .grid:before, .page-grid .grid:after {
-  content: " ";
-  display: table;
-}
-/* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-.page-grid .grid:after {
-  clear: both;
-}
-/* line 8, ../sass/layout/page-grid/_grid_layout.scss */
-.page-grid .grid-item {
-  clear: none;
-  display: block;
-  float: left;
-  margin-right: 5%;
-  width: 100%;
-}
-/* line 108, ../sass/global/_mixins.scss */
-.page-grid .grid-item:nth-child(odd), .page-grid .grid-item:nth-child(even) {
-  clear: none;
-  margin-right: 5%;
-}
-/* line 114, ../sass/global/_mixins.scss */
-.page-grid .grid-item:nth-child(1n+2) {
-  clear: left;
-}
-/* line 118, ../sass/global/_mixins.scss */
-.page-grid .grid-item:nth-child(1n+1) {
-  margin-right: 0;
-}
-/* line 123, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item {
-  height: auto;
-  width: 95%;
-}
-/* line 10, ../sass/layout/page-grid/_grid_layout.scss */
-.page-grid .grid-item img {
-  display: block;
-  float: left;
-  margin-right: 1em;
-}
-@media only screen and (min-width: 25em) {
-  /* line 8, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 5%;
-    width: 47.5%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(odd), .page-grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 5%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(2n+3) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(2n+2) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid .grid-item {
-    height: 9em;
-    width: 45%;
-  }
-  /* line 19, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid .grid-item img {
-    display: block;
-    float: none;
-    margin-right: 0;
-  }
-}
-@media print {
-  /* line 8, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 5%;
-    width: 47.5%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(odd), .page-grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 5%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(2n+3) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(2n+2) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid .grid-item {
-    height: 9em;
-    width: 45%;
-  }
-  /* line 19, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid .grid-item img {
-    display: block;
-    float: none;
-    margin-right: 0;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item {
-  clear: none;
-  display: block;
-  float: left;
-  margin-right: 5%;
-  width: 47.5%;
-}
-/* line 108, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(odd), .lt-ie9 .page-grid .grid-item:nth-child(even) {
-  clear: none;
-  margin-right: 5%;
-}
-/* line 114, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(2n+3) {
-  clear: left;
-}
-/* line 118, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(2n+2) {
-  margin-right: 0;
-}
-/* line 123, ../sass/global/_mixins.scss */
-.lt-ie9 .lt-ie9 .page-grid .grid-item {
-  height: 9em;
-  width: 45%;
-}
-/* line 19, ../sass/layout/page-grid/_grid_layout.scss */
-.lt-ie9 .page-grid .grid-item img {
-  display: block;
-  float: none;
-  margin-right: 0;
-}
-@media only screen and (min-width: 35em) {
-  /* line 8, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 5%;
-    width: 30.0%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(odd), .page-grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 5%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(3n+4) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(3n+3) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid .grid-item {
-    height: auto;
-    width: 28.33333%;
-  }
-}
-@media print {
-  /* line 8, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 5%;
-    width: 30.0%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(odd), .page-grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 5%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(3n+4) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(3n+3) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid .grid-item {
-    height: auto;
-    width: 28.33333%;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item {
-  clear: none;
-  display: block;
-  float: left;
-  margin-right: 5%;
-  width: 30.0%;
-}
-/* line 108, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(odd), .lt-ie9 .page-grid .grid-item:nth-child(even) {
-  clear: none;
-  margin-right: 5%;
-}
-/* line 114, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(3n+4) {
-  clear: left;
-}
-/* line 118, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(3n+3) {
-  margin-right: 0;
-}
-/* line 123, ../sass/global/_mixins.scss */
-.lt-ie9 .lt-ie9 .page-grid .grid-item {
-  height: auto;
-  width: 28.33333%;
-}
-@media only screen and (min-width: 45em) {
-  /* line 8, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 5%;
-    width: 21.25%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(odd), .page-grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 5%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(4n+5) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(4n+4) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid .grid-item {
-    height: auto;
-    width: 20%;
-  }
-}
-@media print {
-  /* line 8, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 5%;
-    width: 21.25%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(odd), .page-grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 5%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(4n+5) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(4n+4) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid .grid-item {
-    height: auto;
-    width: 20%;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item {
-  clear: none;
-  display: block;
-  float: left;
-  margin-right: 5%;
-  width: 21.25%;
-}
-/* line 108, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(odd), .lt-ie9 .page-grid .grid-item:nth-child(even) {
-  clear: none;
-  margin-right: 5%;
-}
-/* line 114, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(4n+5) {
-  clear: left;
-}
-/* line 118, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(4n+4) {
-  margin-right: 0;
-}
-/* line 123, ../sass/global/_mixins.scss */
-.lt-ie9 .lt-ie9 .page-grid .grid-item {
-  height: auto;
-  width: 20%;
-}
-@media only screen and (min-width: 55em) {
-  /* line 8, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 5%;
-    width: 16%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(odd), .page-grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 5%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(5n+6) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(5n+5) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid .grid-item {
-    height: auto;
-    width: 15%;
-  }
-}
-@media print {
-  /* line 8, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 5%;
-    width: 16%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(odd), .page-grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 5%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(5n+6) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(5n+5) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid .grid-item {
-    height: auto;
-    width: 15%;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item {
-  clear: none;
-  display: block;
-  float: left;
-  margin-right: 5%;
-  width: 16%;
-}
-/* line 108, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(odd), .lt-ie9 .page-grid .grid-item:nth-child(even) {
-  clear: none;
-  margin-right: 5%;
-}
-/* line 114, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(5n+6) {
-  clear: left;
-}
-/* line 118, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(5n+5) {
-  margin-right: 0;
-}
-/* line 123, ../sass/global/_mixins.scss */
-.lt-ie9 .lt-ie9 .page-grid .grid-item {
-  height: auto;
-  width: 15%;
-}
-@media only screen and (min-width: 65em) {
-  /* line 8, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 5%;
-    width: 12.5%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(odd), .page-grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 5%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(6n+7) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(6n+6) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid .grid-item {
-    height: auto;
-    width: 11.66667%;
-  }
-}
-@media print {
-  /* line 8, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 5%;
-    width: 12.5%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(odd), .page-grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 5%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(6n+7) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid .grid-item:nth-child(6n+6) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid .grid-item {
-    height: auto;
-    width: 11.66667%;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item {
-  clear: none;
-  display: block;
-  float: left;
-  margin-right: 5%;
-  width: 12.5%;
-}
-/* line 108, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(odd), .lt-ie9 .page-grid .grid-item:nth-child(even) {
-  clear: none;
-  margin-right: 5%;
-}
-/* line 114, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(6n+7) {
-  clear: left;
-}
-/* line 118, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid .grid-item:nth-child(6n+6) {
-  margin-right: 0;
-}
-/* line 123, ../sass/global/_mixins.scss */
-.lt-ie9 .lt-ie9 .page-grid .grid-item {
-  height: auto;
-  width: 11.66667%;
-}
-@media only screen and (min-width: 25em) {
-  /* line 39, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid ol.grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 1%;
-    width: 49.5%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(odd), .page-grid ol.grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 1%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(2n+3) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(2n+2) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid ol.grid .grid-item {
-    height: 9em;
-    width: 49%;
-  }
-  /* line 43, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid ol.grid .grid-item img {
-    display: block;
-    float: none;
-    margin-right: 0;
-  }
-}
-@media print {
-  /* line 39, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid ol.grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 1%;
-    width: 49.5%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(odd), .page-grid ol.grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 1%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(2n+3) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(2n+2) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid ol.grid .grid-item {
-    height: 9em;
-    width: 49%;
-  }
-  /* line 43, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid ol.grid .grid-item img {
-    display: block;
-    float: none;
-    margin-right: 0;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item {
-  clear: none;
-  display: block;
-  float: left;
-  margin-right: 1%;
-  width: 49.5%;
-}
-/* line 108, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(odd), .lt-ie9 .page-grid ol.grid .grid-item:nth-child(even) {
-  clear: none;
-  margin-right: 1%;
-}
-/* line 114, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(2n+3) {
-  clear: left;
-}
-/* line 118, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(2n+2) {
-  margin-right: 0;
-}
-/* line 123, ../sass/global/_mixins.scss */
-.lt-ie9 .lt-ie9 .page-grid ol.grid .grid-item {
-  height: 9em;
-  width: 49%;
-}
-/* line 43, ../sass/layout/page-grid/_grid_layout.scss */
-.lt-ie9 .page-grid ol.grid .grid-item img {
-  display: block;
-  float: none;
-  margin-right: 0;
-}
-@media only screen and (min-width: 35em) {
-  /* line 39, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid ol.grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 1%;
-    width: 32.66667%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(odd), .page-grid ol.grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 1%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(3n+4) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(3n+3) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid ol.grid .grid-item {
-    height: auto;
-    width: 32.33333%;
-  }
-}
-@media print {
-  /* line 39, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid ol.grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 1%;
-    width: 32.66667%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(odd), .page-grid ol.grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 1%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(3n+4) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(3n+3) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid ol.grid .grid-item {
-    height: auto;
-    width: 32.33333%;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item {
-  clear: none;
-  display: block;
-  float: left;
-  margin-right: 1%;
-  width: 32.66667%;
-}
-/* line 108, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(odd), .lt-ie9 .page-grid ol.grid .grid-item:nth-child(even) {
-  clear: none;
-  margin-right: 1%;
-}
-/* line 114, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(3n+4) {
-  clear: left;
-}
-/* line 118, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(3n+3) {
-  margin-right: 0;
-}
-/* line 123, ../sass/global/_mixins.scss */
-.lt-ie9 .lt-ie9 .page-grid ol.grid .grid-item {
-  height: auto;
-  width: 32.33333%;
-}
-@media only screen and (min-width: 45em) {
-  /* line 39, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid ol.grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 1%;
-    width: 24.25%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(odd), .page-grid ol.grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 1%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(4n+5) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(4n+4) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid ol.grid .grid-item {
-    height: auto;
-    width: 24%;
-  }
-}
-@media print {
-  /* line 39, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid ol.grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 1%;
-    width: 24.25%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(odd), .page-grid ol.grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 1%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(4n+5) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(4n+4) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid ol.grid .grid-item {
-    height: auto;
-    width: 24%;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item {
-  clear: none;
-  display: block;
-  float: left;
-  margin-right: 1%;
-  width: 24.25%;
-}
-/* line 108, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(odd), .lt-ie9 .page-grid ol.grid .grid-item:nth-child(even) {
-  clear: none;
-  margin-right: 1%;
-}
-/* line 114, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(4n+5) {
-  clear: left;
-}
-/* line 118, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(4n+4) {
-  margin-right: 0;
-}
-/* line 123, ../sass/global/_mixins.scss */
-.lt-ie9 .lt-ie9 .page-grid ol.grid .grid-item {
-  height: auto;
-  width: 24%;
-}
-@media only screen and (min-width: 55em) {
-  /* line 39, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid ol.grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 1%;
-    width: 19.2%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(odd), .page-grid ol.grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 1%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(5n+6) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(5n+5) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid ol.grid .grid-item {
-    height: auto;
-    width: 19%;
-  }
-}
-@media print {
-  /* line 39, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid ol.grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 1%;
-    width: 19.2%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(odd), .page-grid ol.grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 1%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(5n+6) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(5n+5) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid ol.grid .grid-item {
-    height: auto;
-    width: 19%;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item {
-  clear: none;
-  display: block;
-  float: left;
-  margin-right: 1%;
-  width: 19.2%;
-}
-/* line 108, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(odd), .lt-ie9 .page-grid ol.grid .grid-item:nth-child(even) {
-  clear: none;
-  margin-right: 1%;
-}
-/* line 114, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(5n+6) {
-  clear: left;
-}
-/* line 118, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(5n+5) {
-  margin-right: 0;
-}
-/* line 123, ../sass/global/_mixins.scss */
-.lt-ie9 .lt-ie9 .page-grid ol.grid .grid-item {
-  height: auto;
-  width: 19%;
-}
-@media only screen and (min-width: 65em) {
-  /* line 39, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid ol.grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 1%;
-    width: 15.83333%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(odd), .page-grid ol.grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 1%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(6n+7) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(6n+6) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid ol.grid .grid-item {
-    height: auto;
-    width: 15.66667%;
-  }
-}
-@media print {
-  /* line 39, ../sass/layout/page-grid/_grid_layout.scss */
-  .page-grid ol.grid .grid-item {
-    clear: none;
-    display: block;
-    float: left;
-    margin-right: 1%;
-    width: 15.83333%;
-  }
-  /* line 108, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(odd), .page-grid ol.grid .grid-item:nth-child(even) {
-    clear: none;
-    margin-right: 1%;
-  }
-  /* line 114, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(6n+7) {
-    clear: left;
-  }
-  /* line 118, ../sass/global/_mixins.scss */
-  .page-grid ol.grid .grid-item:nth-child(6n+6) {
-    margin-right: 0;
-  }
-  /* line 123, ../sass/global/_mixins.scss */
-  .lt-ie9 .page-grid ol.grid .grid-item {
-    height: auto;
-    width: 15.66667%;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item {
-  clear: none;
-  display: block;
-  float: left;
-  margin-right: 1%;
-  width: 15.83333%;
-}
-/* line 108, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(odd), .lt-ie9 .page-grid ol.grid .grid-item:nth-child(even) {
-  clear: none;
-  margin-right: 1%;
-}
-/* line 114, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(6n+7) {
-  clear: left;
-}
-/* line 118, ../sass/global/_mixins.scss */
-.lt-ie9 .page-grid ol.grid .grid-item:nth-child(6n+6) {
-  margin-right: 0;
-}
-/* line 123, ../sass/global/_mixins.scss */
-.lt-ie9 .lt-ie9 .page-grid ol.grid .grid-item {
-  height: auto;
-  width: 15.66667%;
-}
-
 /* line 3, ../sass/layout/regions/_content_layout.scss */
 #content {
   position: relative;
@@ -10603,7 +10674,7 @@ img.placeholder:hover {
   clear: both;
 }
 
-/* line 1, ../sass/layout/regions/_navigation.scss */
+/* line 1, ../sass/layout/regions/_navigation_layout.scss */
 nav.navigation {
   width: 100%;
   margin-left: auto;
@@ -10613,7 +10684,6 @@ nav.navigation {
   max-width: 68.75em;
   *zoom: 1;
   clear: both;
-  margin-bottom: 2em;
 }
 /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
 nav.navigation:before, nav.navigation:after {
@@ -10623,14 +10693,6 @@ nav.navigation:before, nav.navigation:after {
 /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
 nav.navigation:after {
   clear: both;
-}
-/* line 5, ../sass/layout/regions/_navigation.scss */
-nav.navigation .block {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 50%;
-  float: left;
 }
 
 /* line 1, ../sass/layout/regions/_page_layout.scss */
@@ -10905,1171 +10967,4 @@ nav.navigation .block {
   right: 50%;
   left: auto;
   float: left;
-}
-
-/* line 1, ../sass/layout/shared/_footer-menu_layout.scss */
-#block-menu-menu-footer-menu {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 100%;
-  float: left;
-}
-@media only screen and (min-width: 48em) {
-  /* line 4, ../sass/layout/shared/_footer-menu_layout.scss */
-  #block-menu-menu-footer-menu ul {
-    display: block;
-    padding: 0;
-    margin: 0 -0.625em;
-    *zoom: 1;
-  }
-  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul:before, #block-menu-menu-footer-menu ul:after {
-    content: " ";
-    display: table;
-  }
-  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul:after {
-    clear: both;
-  }
-  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li {
-    display: inline;
-    height: auto;
-    float: left;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li {
-    width: 50%;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li:nth-of-type(n) {
-    clear: none;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li:nth-of-type(2n+1) {
-    clear: both;
-  }
-  /* line 6, ../sass/layout/shared/_footer-menu_layout.scss */
-  #block-menu-menu-footer-menu ul ul {
-    display: block;
-    padding: 0;
-    margin: 0 -0.625em;
-    *zoom: 1;
-    margin: 0;
-  }
-  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul ul:before, #block-menu-menu-footer-menu ul ul:after {
-    content: " ";
-    display: table;
-  }
-  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul ul:after {
-    clear: both;
-  }
-  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li {
-    display: inline;
-    height: auto;
-    float: left;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li {
-    width: 100%;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li:nth-of-type(n) {
-    clear: none;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li:nth-of-type(1n+1) {
-    clear: both;
-  }
-  /* line 9, ../sass/layout/shared/_footer-menu_layout.scss */
-  #block-menu-menu-footer-menu ul ul li {
-    padding: 0;
-  }
-}
-@media print {
-  /* line 4, ../sass/layout/shared/_footer-menu_layout.scss */
-  #block-menu-menu-footer-menu ul {
-    display: block;
-    padding: 0;
-    margin: 0 -0.625em;
-    *zoom: 1;
-  }
-  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul:before, #block-menu-menu-footer-menu ul:after {
-    content: " ";
-    display: table;
-  }
-  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul:after {
-    clear: both;
-  }
-  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li {
-    display: inline;
-    height: auto;
-    float: left;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li {
-    width: 50%;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li:nth-of-type(n) {
-    clear: none;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li:nth-of-type(2n+1) {
-    clear: both;
-  }
-  /* line 6, ../sass/layout/shared/_footer-menu_layout.scss */
-  #block-menu-menu-footer-menu ul ul {
-    display: block;
-    padding: 0;
-    margin: 0 -0.625em;
-    *zoom: 1;
-    margin: 0;
-  }
-  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul ul:before, #block-menu-menu-footer-menu ul ul:after {
-    content: " ";
-    display: table;
-  }
-  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul ul:after {
-    clear: both;
-  }
-  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li {
-    display: inline;
-    height: auto;
-    float: left;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li {
-    width: 100%;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li:nth-of-type(n) {
-    clear: none;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li:nth-of-type(1n+1) {
-    clear: both;
-  }
-  /* line 9, ../sass/layout/shared/_footer-menu_layout.scss */
-  #block-menu-menu-footer-menu ul ul li {
-    padding: 0;
-  }
-}
-/* line 4, ../sass/layout/shared/_footer-menu_layout.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul {
-  display: block;
-  padding: 0;
-  margin: 0 -0.625em;
-  *zoom: 1;
-}
-/* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul:before, .lt-ie9 #block-menu-menu-footer-menu ul:after {
-  content: " ";
-  display: table;
-}
-/* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul:after {
-  clear: both;
-}
-/* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul > li {
-  display: inline;
-  height: auto;
-  float: left;
-  padding: 0 0.625em 1.25em;
-}
-/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul > li {
-  width: 50%;
-  padding: 0 0.625em 1.25em;
-}
-/* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul > li:nth-of-type(n) {
-  clear: none;
-}
-/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul > li:nth-of-type(2n+1) {
-  clear: both;
-}
-/* line 6, ../sass/layout/shared/_footer-menu_layout.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul {
-  display: block;
-  padding: 0;
-  margin: 0 -0.625em;
-  *zoom: 1;
-  margin: 0;
-}
-/* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul:before, .lt-ie9 #block-menu-menu-footer-menu ul ul:after {
-  content: " ";
-  display: table;
-}
-/* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul:after {
-  clear: both;
-}
-/* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul > li {
-  display: inline;
-  height: auto;
-  float: left;
-  padding: 0 0.625em 1.25em;
-}
-/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul > li {
-  width: 100%;
-  padding: 0 0.625em 1.25em;
-}
-/* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul > li:nth-of-type(n) {
-  clear: none;
-}
-/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul > li:nth-of-type(1n+1) {
-  clear: both;
-}
-/* line 9, ../sass/layout/shared/_footer-menu_layout.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul li {
-  padding: 0;
-}
-@media only screen and (min-width: 62.5em) {
-  /* line 16, ../sass/layout/shared/_footer-menu_layout.scss */
-  #block-menu-menu-footer-menu ul {
-    display: block;
-    padding: 0;
-    margin: 0 -0.625em;
-    *zoom: 1;
-  }
-  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul:before, #block-menu-menu-footer-menu ul:after {
-    content: " ";
-    display: table;
-  }
-  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul:after {
-    clear: both;
-  }
-  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li {
-    display: inline;
-    height: auto;
-    float: left;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li {
-    width: 25%;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li:nth-of-type(n) {
-    clear: none;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li:nth-of-type(4n+1) {
-    clear: both;
-  }
-  /* line 18, ../sass/layout/shared/_footer-menu_layout.scss */
-  #block-menu-menu-footer-menu ul ul {
-    display: block;
-    padding: 0;
-    margin: 0 -0.625em;
-    *zoom: 1;
-    margin: 0;
-  }
-  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul ul:before, #block-menu-menu-footer-menu ul ul:after {
-    content: " ";
-    display: table;
-  }
-  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul ul:after {
-    clear: both;
-  }
-  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li {
-    display: inline;
-    height: auto;
-    float: left;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li {
-    width: 100%;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li:nth-of-type(n) {
-    clear: none;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li:nth-of-type(1n+1) {
-    clear: both;
-  }
-  /* line 21, ../sass/layout/shared/_footer-menu_layout.scss */
-  #block-menu-menu-footer-menu ul ul li {
-    padding: 0;
-  }
-}
-@media print {
-  /* line 16, ../sass/layout/shared/_footer-menu_layout.scss */
-  #block-menu-menu-footer-menu ul {
-    display: block;
-    padding: 0;
-    margin: 0 -0.625em;
-    *zoom: 1;
-  }
-  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul:before, #block-menu-menu-footer-menu ul:after {
-    content: " ";
-    display: table;
-  }
-  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul:after {
-    clear: both;
-  }
-  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li {
-    display: inline;
-    height: auto;
-    float: left;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li {
-    width: 25%;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li:nth-of-type(n) {
-    clear: none;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul > li:nth-of-type(4n+1) {
-    clear: both;
-  }
-  /* line 18, ../sass/layout/shared/_footer-menu_layout.scss */
-  #block-menu-menu-footer-menu ul ul {
-    display: block;
-    padding: 0;
-    margin: 0 -0.625em;
-    *zoom: 1;
-    margin: 0;
-  }
-  /* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul ul:before, #block-menu-menu-footer-menu ul ul:after {
-    content: " ";
-    display: table;
-  }
-  /* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-  #block-menu-menu-footer-menu ul ul:after {
-    clear: both;
-  }
-  /* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li {
-    display: inline;
-    height: auto;
-    float: left;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li {
-    width: 100%;
-    padding: 0 0.625em 1.25em;
-  }
-  /* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li:nth-of-type(n) {
-    clear: none;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-  #block-menu-menu-footer-menu ul ul > li:nth-of-type(1n+1) {
-    clear: both;
-  }
-  /* line 21, ../sass/layout/shared/_footer-menu_layout.scss */
-  #block-menu-menu-footer-menu ul ul li {
-    padding: 0;
-  }
-}
-/* line 16, ../sass/layout/shared/_footer-menu_layout.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul {
-  display: block;
-  padding: 0;
-  margin: 0 -0.625em;
-  *zoom: 1;
-}
-/* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul:before, .lt-ie9 #block-menu-menu-footer-menu ul:after {
-  content: " ";
-  display: table;
-}
-/* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul:after {
-  clear: both;
-}
-/* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul > li {
-  display: inline;
-  height: auto;
-  float: left;
-  padding: 0 0.625em 1.25em;
-}
-/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul > li {
-  width: 25%;
-  padding: 0 0.625em 1.25em;
-}
-/* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul > li:nth-of-type(n) {
-  clear: none;
-}
-/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul > li:nth-of-type(4n+1) {
-  clear: both;
-}
-/* line 18, ../sass/layout/shared/_footer-menu_layout.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul {
-  display: block;
-  padding: 0;
-  margin: 0 -0.625em;
-  *zoom: 1;
-  margin: 0;
-}
-/* line 121, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul:before, .lt-ie9 #block-menu-menu-footer-menu ul ul:after {
-  content: " ";
-  display: table;
-}
-/* line 122, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_global.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul:after {
-  clear: both;
-}
-/* line 27, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul > li {
-  display: inline;
-  height: auto;
-  float: left;
-  padding: 0 0.625em 1.25em;
-}
-/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul > li {
-  width: 100%;
-  padding: 0 0.625em 1.25em;
-}
-/* line 40, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul > li:nth-of-type(n) {
-  clear: none;
-}
-/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_block-grid.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul > li:nth-of-type(1n+1) {
-  clear: both;
-}
-/* line 21, ../sass/layout/shared/_footer-menu_layout.scss */
-.lt-ie9 #block-menu-menu-footer-menu ul ul li {
-  padding: 0;
-}
-
-/* line 1, ../sass/layout/shared/_footer-text_layout.scss */
-#block-block-1 {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 100%;
-  float: left;
-}
-@media only screen and (min-width: 48em) {
-  /* line 1, ../sass/layout/shared/_footer-text_layout.scss */
-  #block-block-1 {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 66.66667%;
-    float: left;
-  }
-}
-@media print {
-  /* line 1, ../sass/layout/shared/_footer-text_layout.scss */
-  #block-block-1 {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 66.66667%;
-    float: left;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 #block-block-1 {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 66.66667%;
-  float: left;
-}
-
-/* line 1, ../sass/layout/shared/_logo_layout.scss */
-.logo-link {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 100%;
-  float: left;
-  text-align: center;
-}
-@media only screen and (min-width: 48em) {
-  /* line 1, ../sass/layout/shared/_logo_layout.scss */
-  .logo-link {
-    float: left;
-    text-align: left;
-    width: auto;
-  }
-}
-@media print {
-  /* line 1, ../sass/layout/shared/_logo_layout.scss */
-  .logo-link {
-    float: left;
-    text-align: left;
-    width: auto;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .logo-link {
-  float: left;
-  text-align: left;
-  width: auto;
-}
-
-/* line 1, ../sass/layout/shared/_menu-audience_layout.scss */
-#block-menu-menu-audience-menu {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 100%;
-  float: left;
-}
-@media only screen and (min-width: 48em) {
-  /* line 1, ../sass/layout/shared/_menu-audience_layout.scss */
-  #block-menu-menu-audience-menu {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  /* line 10, ../sass/layout/shared/_menu-audience_layout.scss */
-  #block-menu-menu-audience-menu .menu {
-    margin: 0 auto 1.0625em auto;
-    margin-left: -1.375em;
-    margin-right: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-    float: right;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-  #block-menu-menu-audience-menu .menu > li {
-    list-style: none;
-    float: left;
-    margin-left: 1.375em;
-    display: block;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-  #block-menu-menu-audience-menu .menu > li > * {
-    display: block;
-  }
-}
-@media print {
-  /* line 1, ../sass/layout/shared/_menu-audience_layout.scss */
-  #block-menu-menu-audience-menu {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  /* line 10, ../sass/layout/shared/_menu-audience_layout.scss */
-  #block-menu-menu-audience-menu .menu {
-    margin: 0 auto 1.0625em auto;
-    margin-left: -1.375em;
-    margin-right: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-    float: right;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-  #block-menu-menu-audience-menu .menu > li {
-    list-style: none;
-    float: left;
-    margin-left: 1.375em;
-    display: block;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-  #block-menu-menu-audience-menu .menu > li > * {
-    display: block;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 #block-menu-menu-audience-menu {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-/* line 10, ../sass/layout/shared/_menu-audience_layout.scss */
-.lt-ie9 #block-menu-menu-audience-menu .menu {
-  margin: 0 auto 1.0625em auto;
-  margin-left: -1.375em;
-  margin-right: 0;
-  padding: 0;
-  list-style: none;
-  overflow: hidden;
-  float: right;
-}
-/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-.lt-ie9 #block-menu-menu-audience-menu .menu > li {
-  list-style: none;
-  float: left;
-  margin-left: 1.375em;
-  display: block;
-}
-/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-.lt-ie9 #block-menu-menu-audience-menu .menu > li > * {
-  display: block;
-}
-
-@media only screen and (min-width: 48em) {
-  /* line 4, ../sass/layout/shared/_menu-global-tools_layout.scss */
-  nav.navigation #block-menu-menu-global-tools-menu, nav.navigation
-  #block-menu-menu-global-tools-menu--2 {
-    display: none;
-  }
-}
-@media print {
-  /* line 4, ../sass/layout/shared/_menu-global-tools_layout.scss */
-  nav.navigation #block-menu-menu-global-tools-menu, nav.navigation
-  #block-menu-menu-global-tools-menu--2 {
-    display: none;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 nav.navigation #block-menu-menu-global-tools-menu, .lt-ie9 nav.navigation
-#block-menu-menu-global-tools-menu--2 {
-  display: none;
-}
-/* line 13, ../sass/layout/shared/_menu-global-tools_layout.scss */
-.region-header #block-menu-menu-global-tools-menu, .region-header
-#block-menu-menu-global-tools-menu--2 {
-  display: none;
-}
-@media only screen and (min-width: 48em) {
-  /* line 13, ../sass/layout/shared/_menu-global-tools_layout.scss */
-  .region-header #block-menu-menu-global-tools-menu, .region-header
-  #block-menu-menu-global-tools-menu--2 {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 50%;
-    float: left;
-    display: block;
-    text-align: right;
-  }
-}
-@media print {
-  /* line 13, ../sass/layout/shared/_menu-global-tools_layout.scss */
-  .region-header #block-menu-menu-global-tools-menu, .region-header
-  #block-menu-menu-global-tools-menu--2 {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 50%;
-    float: left;
-    display: block;
-    text-align: right;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 .region-header #block-menu-menu-global-tools-menu, .lt-ie9 .region-header
-#block-menu-menu-global-tools-menu--2 {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 50%;
-  float: left;
-  display: block;
-  text-align: right;
-}
-/* line 22, ../sass/layout/shared/_menu-global-tools_layout.scss */
-.region-header #block-menu-menu-global-tools-menu ul.menu li, .region-header
-#block-menu-menu-global-tools-menu--2 ul.menu li {
-  display: inline;
-  margin-left: 1em;
-}
-
-/* line 10, ../sass/layout/shared/_primary-menu_layout.scss */
-nav.navigation #block-menu-menu-global-primary-navigation, nav.navigation
-#block-system-main-menu {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 50%;
-  float: left;
-  margin-bottom: 0;
-}
-@media only screen and (min-width: 48em) {
-  /* line 10, ../sass/layout/shared/_primary-menu_layout.scss */
-  nav.navigation #block-menu-menu-global-primary-navigation, nav.navigation
-  #block-system-main-menu {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 75%;
-    right: 25%;
-    left: auto;
-    float: left;
-  }
-}
-@media print {
-  /* line 10, ../sass/layout/shared/_primary-menu_layout.scss */
-  nav.navigation #block-menu-menu-global-primary-navigation, nav.navigation
-  #block-system-main-menu {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 75%;
-    right: 25%;
-    left: auto;
-    float: left;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 nav.navigation #block-menu-menu-global-primary-navigation, .lt-ie9 nav.navigation
-#block-system-main-menu {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 75%;
-  right: 25%;
-  left: auto;
-  float: left;
-}
-/* line 18, ../sass/layout/shared/_primary-menu_layout.scss */
-nav.navigation #block-menu-menu-global-primary-navigation .menu, nav.navigation
-#block-system-main-menu .menu {
-  margin-bottom: 0;
-  text-align: right;
-}
-@media only screen and (min-width: 48em) {
-  /* line 18, ../sass/layout/shared/_primary-menu_layout.scss */
-  nav.navigation #block-menu-menu-global-primary-navigation .menu, nav.navigation
-  #block-system-main-menu .menu {
-    margin: 0 auto 1.0625em auto;
-    margin-left: -1.375em;
-    margin-right: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-    margin-bottom: 0;
-    text-align: left;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-  nav.navigation #block-menu-menu-global-primary-navigation .menu > li, nav.navigation
-  #block-system-main-menu .menu > li {
-    list-style: none;
-    float: left;
-    margin-left: 1.375em;
-    display: block;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-  nav.navigation #block-menu-menu-global-primary-navigation .menu > li > *, nav.navigation
-  #block-system-main-menu .menu > li > * {
-    display: block;
-  }
-  /* line 28, ../sass/layout/shared/_primary-menu_layout.scss */
-  nav.navigation #block-menu-menu-global-primary-navigation .menu ul.menu, nav.navigation
-  #block-system-main-menu .menu ul.menu {
-    display: none;
-  }
-}
-@media print {
-  /* line 18, ../sass/layout/shared/_primary-menu_layout.scss */
-  nav.navigation #block-menu-menu-global-primary-navigation .menu, nav.navigation
-  #block-system-main-menu .menu {
-    margin: 0 auto 1.0625em auto;
-    margin-left: -1.375em;
-    margin-right: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-    margin-bottom: 0;
-    text-align: left;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-  nav.navigation #block-menu-menu-global-primary-navigation .menu > li, nav.navigation
-  #block-system-main-menu .menu > li {
-    list-style: none;
-    float: left;
-    margin-left: 1.375em;
-    display: block;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-  nav.navigation #block-menu-menu-global-primary-navigation .menu > li > *, nav.navigation
-  #block-system-main-menu .menu > li > * {
-    display: block;
-  }
-  /* line 28, ../sass/layout/shared/_primary-menu_layout.scss */
-  nav.navigation #block-menu-menu-global-primary-navigation .menu ul.menu, nav.navigation
-  #block-system-main-menu .menu ul.menu {
-    display: none;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 nav.navigation #block-menu-menu-global-primary-navigation .menu, .lt-ie9 nav.navigation
-#block-system-main-menu .menu {
-  margin: 0 auto 1.0625em auto;
-  margin-left: -1.375em;
-  margin-right: 0;
-  padding: 0;
-  list-style: none;
-  overflow: hidden;
-  margin-bottom: 0;
-  text-align: left;
-}
-/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-.lt-ie9 nav.navigation #block-menu-menu-global-primary-navigation .menu > li, .lt-ie9 nav.navigation
-#block-system-main-menu .menu > li {
-  list-style: none;
-  float: left;
-  margin-left: 1.375em;
-  display: block;
-}
-/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-.lt-ie9 nav.navigation #block-menu-menu-global-primary-navigation .menu > li > *, .lt-ie9 nav.navigation
-#block-system-main-menu .menu > li > * {
-  display: block;
-}
-/* line 28, ../sass/layout/shared/_primary-menu_layout.scss */
-.lt-ie9 nav.navigation #block-menu-menu-global-primary-navigation .menu ul.menu, .lt-ie9 nav.navigation
-#block-system-main-menu .menu ul.menu {
-  display: none;
-}
-
-/* line 39, ../sass/layout/shared/_primary-menu_layout.scss */
-.top-bar {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 100%;
-  float: left;
-  clear: both;
-}
-@media only screen and (min-width: 48em) {
-  /* line 43, ../sass/layout/shared/_primary-menu_layout.scss */
-  .top-bar .title-area {
-    display: none;
-  }
-  /* line 47, ../sass/layout/shared/_primary-menu_layout.scss */
-  .top-bar .top-bar-section ul {
-    margin-bottom: 1.875em;
-    width: 100%;
-  }
-  /* line 51, ../sass/layout/shared/_primary-menu_layout.scss */
-  .top-bar .top-bar-section ul ul {
-    width: auto;
-  }
-}
-@media print {
-  /* line 43, ../sass/layout/shared/_primary-menu_layout.scss */
-  .top-bar .title-area {
-    display: none;
-  }
-  /* line 47, ../sass/layout/shared/_primary-menu_layout.scss */
-  .top-bar .top-bar-section ul {
-    margin-bottom: 1.875em;
-    width: 100%;
-  }
-  /* line 51, ../sass/layout/shared/_primary-menu_layout.scss */
-  .top-bar .top-bar-section ul ul {
-    width: auto;
-  }
-}
-/* line 43, ../sass/layout/shared/_primary-menu_layout.scss */
-.lt-ie9 .top-bar .title-area {
-  display: none;
-}
-/* line 47, ../sass/layout/shared/_primary-menu_layout.scss */
-.lt-ie9 .top-bar .top-bar-section ul {
-  margin-bottom: 1.875em;
-  width: 100%;
-}
-/* line 51, ../sass/layout/shared/_primary-menu_layout.scss */
-.lt-ie9 .top-bar .top-bar-section ul ul {
-  width: auto;
-}
-
-/* line 5, ../sass/layout/shared/_search-box_layout.scss */
-.block-search .form-type-textfield input {
-  display: inline;
-  width: auto;
-}
-/* line 11, ../sass/layout/shared/_search-box_layout.scss */
-nav.navigation .block-search {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 100%;
-  float: left;
-  margin-bottom: 0;
-  text-align: center;
-}
-@media only screen and (min-width: 48em) {
-  /* line 11, ../sass/layout/shared/_search-box_layout.scss */
-  nav.navigation .block-search {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 25%;
-    left: 75%;
-    right: auto;
-    float: left;
-    text-align: right;
-  }
-}
-@media print {
-  /* line 11, ../sass/layout/shared/_search-box_layout.scss */
-  nav.navigation .block-search {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 25%;
-    left: 75%;
-    right: auto;
-    float: left;
-    text-align: right;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 nav.navigation .block-search {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 25%;
-  left: 75%;
-  right: auto;
-  float: left;
-  text-align: right;
-}
-/* line 20, ../sass/layout/shared/_search-box_layout.scss */
-nav.navigation .block-search form,
-nav.navigation .block-search input {
-  margin-bottom: 0;
-}
-
-@media only screen and (min-width: 48em) {
-  /* line 3, ../sass/layout/shared/_secondary-menu_layout.scss */
-  nav.navigation #block-menu-menu-secondary-navigation-prot {
-    display: none;
-  }
-}
-@media print {
-  /* line 3, ../sass/layout/shared/_secondary-menu_layout.scss */
-  nav.navigation #block-menu-menu-secondary-navigation-prot {
-    display: none;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 nav.navigation #block-menu-menu-secondary-navigation-prot {
-  display: none;
-}
-
-/* line 1, ../sass/layout/shared/_site-name_layout.scss */
-#site-name {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 100%;
-  float: left;
-  text-align: center;
-}
-@media only screen and (min-width: 48em) {
-  /* line 1, ../sass/layout/shared/_site-name_layout.scss */
-  #site-name {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 33.33333%;
-    float: left;
-    text-align: left;
-  }
-  /* line 7, ../sass/layout/shared/_site-name_layout.scss */
-  #site-name h1 {
-    line-height: 1;
-    margin-top: 0;
-  }
-}
-@media print {
-  /* line 1, ../sass/layout/shared/_site-name_layout.scss */
-  #site-name {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 33.33333%;
-    float: left;
-    text-align: left;
-  }
-  /* line 7, ../sass/layout/shared/_site-name_layout.scss */
-  #site-name h1 {
-    line-height: 1;
-    margin-top: 0;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 #site-name {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 33.33333%;
-  float: left;
-  text-align: left;
-}
-/* line 7, ../sass/layout/shared/_site-name_layout.scss */
-.lt-ie9 #site-name h1 {
-  line-height: 1;
-  margin-top: 0;
-}
-@media only screen and (min-width: 62.5em) {
-  /* line 1, ../sass/layout/shared/_site-name_layout.scss */
-  #site-name {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 41.66667%;
-    float: left;
-  }
-}
-@media print {
-  /* line 1, ../sass/layout/shared/_site-name_layout.scss */
-  #site-name {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 41.66667%;
-    float: left;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 #site-name {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 41.66667%;
-  float: left;
-}
-
-/* line 1, ../sass/layout/shared/_social-links_layout.scss */
-#block-menu-menu-social-links {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 100%;
-  float: left;
-}
-@media only screen and (min-width: 48em) {
-  /* line 1, ../sass/layout/shared/_social-links_layout.scss */
-  #block-menu-menu-social-links {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 33.33333%;
-    float: left;
-  }
-  /* line 9, ../sass/layout/shared/_social-links_layout.scss */
-  #block-menu-menu-social-links .menu {
-    margin: 0 auto 1.0625em auto;
-    margin-left: -1.375em;
-    margin-right: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-  #block-menu-menu-social-links .menu > li {
-    list-style: none;
-    float: left;
-    margin-left: 1.375em;
-    display: block;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-  #block-menu-menu-social-links .menu > li > * {
-    display: block;
-  }
-}
-@media print {
-  /* line 1, ../sass/layout/shared/_social-links_layout.scss */
-  #block-menu-menu-social-links {
-    position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
-    width: 33.33333%;
-    float: left;
-  }
-  /* line 9, ../sass/layout/shared/_social-links_layout.scss */
-  #block-menu-menu-social-links .menu {
-    margin: 0 auto 1.0625em auto;
-    margin-left: -1.375em;
-    margin-right: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-  }
-  /* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-  #block-menu-menu-social-links .menu > li {
-    list-style: none;
-    float: left;
-    margin-left: 1.375em;
-    display: block;
-  }
-  /* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-  #block-menu-menu-social-links .menu > li > * {
-    display: block;
-  }
-}
-/* line 80, ../sass/global/_mixins.scss */
-.lt-ie9 #block-menu-menu-social-links {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 33.33333%;
-  float: left;
-}
-/* line 9, ../sass/layout/shared/_social-links_layout.scss */
-.lt-ie9 #block-menu-menu-social-links .menu {
-  margin: 0 auto 1.0625em auto;
-  margin-left: -1.375em;
-  margin-right: 0;
-  padding: 0;
-  list-style: none;
-  overflow: hidden;
-}
-/* line 36, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-.lt-ie9 #block-menu-menu-social-links .menu > li {
-  list-style: none;
-  float: left;
-  margin-left: 1.375em;
-  display: block;
-}
-/* line 41, ../../../../../../../../../Users/marlene/.rvm/gems/ruby-1.9.3-p448/gems/zurb-foundation-4.3.1/scss/foundation/components/_inline-lists.scss */
-.lt-ie9 #block-menu-menu-social-links .menu > li > * {
-  display: block;
 }

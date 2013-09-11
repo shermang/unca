@@ -1,10 +1,5 @@
 // @include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
 
-// Variables
-$nav-main-menu-width: ($full-width / 4) * 3;
-$nav-search-width: $full-width / 4;
-
-#block-menu-menu-global-primary-navigation, // Temporary
 #block-system-main-menu {
   // When the primary menu is in the navigation region
   nav.navigation & {

@@ -1,8 +1,12 @@
 nav.navigation {
   background-color: $black;
   color: $white;
+  margin-bottom: 2em;
   padding: 1em;
   a {
     color: $white;
+  }
+  .block {
+    @extend %block-title-hide;
   }
 }

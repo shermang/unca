@@ -1,10 +1,9 @@
 #block-menu-menu-secondary-navigation-prot {
   // When the primary menu is in the navigation region
   nav.navigation & {
+    @include grid-column($full-width / 2);
     @include respond-to($tablet) {
-    }
-    ul.menu {
-      @extend %no-bullet;
+      display: none;
     }
   }
 }
