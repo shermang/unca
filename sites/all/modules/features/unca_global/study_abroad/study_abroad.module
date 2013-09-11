@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Study Abroad feature.
+ */
+
+include_once 'study_abroad.features.inc';
