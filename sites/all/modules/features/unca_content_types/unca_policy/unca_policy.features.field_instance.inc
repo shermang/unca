@@ -10,52 +10,51 @@
 function unca_policy_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-profile-body'
-  $field_instances['node-profile-body'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-body'
+  $field_instances['node-policy-body'] = array(
+    'bundle' => 'policy',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
+        'type' => 'text_default',
+        'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 1,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_approval_date'
-  $field_instances['node-profile-field_policy_approval_date'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_approval_date'
+  $field_instances['node-policy-field_policy_approval_date'] = array(
+    'bundle' => 'policy',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -70,7 +69,7 @@ function unca_policy_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -103,13 +102,13 @@ function unca_policy_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
+      'weight' => 9,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_approved_by'
-  $field_instances['node-profile-field_policy_approved_by'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_approved_by'
+  $field_instances['node-policy-field_policy_approved_by'] = array(
+    'bundle' => 'policy',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Select authority that approved this policy.',
@@ -119,7 +118,7 @@ function unca_policy_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -140,13 +139,13 @@ function unca_policy_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => -1,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_associated_forms'
-  $field_instances['node-profile-field_policy_associated_forms'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_associated_forms'
+  $field_instances['node-policy-field_policy_associated_forms'] = array(
+    'bundle' => 'policy',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -156,7 +155,7 @@ function unca_policy_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -182,13 +181,13 @@ function unca_policy_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 12,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_categories_term'
-  $field_instances['node-profile-field_policy_categories_term'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_categories_term'
+  $field_instances['node-policy-field_policy_categories_term'] = array(
+    'bundle' => 'policy',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -198,7 +197,7 @@ function unca_policy_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -219,13 +218,13 @@ function unca_policy_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 14,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_code'
-  $field_instances['node-profile-field_policy_code'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_code'
+  $field_instances['node-policy-field_policy_code'] = array(
+    'bundle' => 'policy',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -240,7 +239,7 @@ function unca_policy_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -265,13 +264,13 @@ function unca_policy_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => -3,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_groups_term'
-  $field_instances['node-profile-field_policy_groups_term'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_groups_term'
+  $field_instances['node-policy-field_policy_groups_term'] = array(
+    'bundle' => 'policy',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -281,7 +280,7 @@ function unca_policy_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -302,13 +301,13 @@ function unca_policy_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 13,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_last_amended_date'
-  $field_instances['node-profile-field_policy_last_amended_date'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_last_amended_date'
+  $field_instances['node-policy-field_policy_last_amended_date'] = array(
+    'bundle' => 'policy',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -323,7 +322,7 @@ function unca_policy_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -356,13 +355,13 @@ function unca_policy_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 8,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_next_review_date'
-  $field_instances['node-profile-field_policy_next_review_date'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_next_review_date'
+  $field_instances['node-policy-field_policy_next_review_date'] = array(
+    'bundle' => 'policy',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -377,7 +376,7 @@ function unca_policy_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -409,13 +408,13 @@ function unca_policy_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 4,
+      'weight' => 10,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_number'
-  $field_instances['node-profile-field_policy_number'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_number'
+  $field_instances['node-policy-field_policy_number'] = array(
+    'bundle' => 'policy',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -430,7 +429,7 @@ function unca_policy_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -455,13 +454,13 @@ function unca_policy_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => -2,
+      'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_origination_date'
-  $field_instances['node-profile-field_policy_origination_date'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_origination_date'
+  $field_instances['node-policy-field_policy_origination_date'] = array(
+    'bundle' => 'policy',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -476,7 +475,7 @@ function unca_policy_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -509,13 +508,13 @@ function unca_policy_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 1,
+      'weight' => 7,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_owner_term'
-  $field_instances['node-profile-field_policy_owner_term'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_owner_term'
+  $field_instances['node-policy-field_policy_owner_term'] = array(
+    'bundle' => 'policy',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -525,7 +524,7 @@ function unca_policy_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -546,13 +545,13 @@ function unca_policy_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 15,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_reference_materials'
-  $field_instances['node-profile-field_policy_reference_materials'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_reference_materials'
+  $field_instances['node-policy-field_policy_reference_materials'] = array(
+    'bundle' => 'policy',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -562,7 +561,7 @@ function unca_policy_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -586,13 +585,13 @@ function unca_policy_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 11,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_responsible_term'
-  $field_instances['node-profile-field_policy_responsible_term'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_responsible_term'
+  $field_instances['node-policy-field_policy_responsible_term'] = array(
+    'bundle' => 'policy',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -602,7 +601,7 @@ function unca_policy_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -623,13 +622,13 @@ function unca_policy_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 16,
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_policy_type'
-  $field_instances['node-profile-field_policy_type'] = array(
-    'bundle' => 'profile',
+  // Exported field_instance: 'node-policy-field_policy_type'
+  $field_instances['node-policy-field_policy_type'] = array(
+    'bundle' => 'policy',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Select type of policy',
@@ -639,7 +638,7 @@ function unca_policy_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -660,7 +659,7 @@ function unca_policy_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 0,
+      'weight' => 6,
     ),
   );
 

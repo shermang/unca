@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the UNCA Policy feature.
  */
+
+include_once 'unca_policy.features.inc';
