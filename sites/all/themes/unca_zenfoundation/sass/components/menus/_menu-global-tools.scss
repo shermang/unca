@@ -8,6 +8,7 @@
 
   // When the menu is in the navigation region
   nav.navigation & {
+    margin-bottom: 0;
     a {
       color: $primary-color;
     }

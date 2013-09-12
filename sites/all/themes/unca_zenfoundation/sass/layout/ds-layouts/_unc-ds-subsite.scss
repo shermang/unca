@@ -17,7 +17,7 @@
   &.has-sidebar {
     .ds-content-wrapper {
       @include respond-to($tablet) {
-        @include grid-column($content-width-sb1);
+        @include grid-column($content-width-sb1, false, false, false, false, false, true);
       }
     }
     .ds-sidebar-column {
@@ -29,7 +29,7 @@
   // Content area layout styles
   .ds-content-wrapper {
     @include respond-to($tablet) {
-      @include grid-row(nest);
+      // @include grid-row(nest);
     }
   }
   .ds-content-row-2-column-1,

@@ -1,4 +1,4 @@
-#block-menu-menu-secondary-navigation-prot {
+.block-menu-menu-secondary-navigation---prot {
   // When the primary menu is in the navigation region
   nav.navigation & {
     @include grid-column($full-width / 2);
