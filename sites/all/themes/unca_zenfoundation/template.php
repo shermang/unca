@@ -222,8 +222,14 @@ function unca_zenfoundation_preprocess_region(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function unca_zenfoundation_preprocess_block(&$variables, $hook) {
+  // Add block machine name to classes
+  $variables['classes_array'][] = 'block-' . $variables['block']->module . '-' . $variables['block']->delta;
+
+  //
+  // Examples provided by Zen
+  //
+
   // Add a count to all the blocks in the region.
   // $variables['classes_array'][] = 'count-' . $variables['block_id'];
 
@@ -233,7 +239,6 @@ function unca_zenfoundation_preprocess_block(&$variables, $hook) {
   //  $variables['theme_hook_suggestions'] = array_diff($variables['theme_hook_suggestions'], array('block__no_wrapper'));
   //}
 }
-// */
 
 
 /**

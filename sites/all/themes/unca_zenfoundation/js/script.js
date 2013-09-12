@@ -27,4 +27,34 @@
   //   }
   // };
 
+
+  function initExpandingNav (selector) {
+
+    // Get items with children
+    var parents = $(selector + ' li').has('ul');
+console.log(parents);
+    // Init all branches as collapsed
+    parents.addClass('js-collapsed');
+
+    // Add expand/collapse buttons
+    parents.children('a').after('<span class="js-trigger"></span>');
+    
+    // Add toggle event for expand/collapse buttons
+    $(selector + ' .js-trigger').click(function() {
+
+      // clicked menu item
+      var item = $(this).parent();
+      // Toggle state
+      if(item.hasClass('js-collapsed')) {
+        item.removeClass('js-collapsed').addClass('js-expanded');
+      } else {
+        item.removeClass('js-expanded').addClass('js-collapsed');
+      }
+      return false;
+    });
+
+  }
+  initExpandingNav('.ds-sidebar-column .block-menu-menu-secondary-navigation---prot');
+  // initExpandingNav('.secondary-nav-mini');
+
 })(jQuery);

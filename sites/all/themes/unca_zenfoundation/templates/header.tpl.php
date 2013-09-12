@@ -20,33 +20,14 @@
 
         <?php print render($page['header']); ?>
 
-        <nav class="top-bar">
-          <ul class="title-area">
-            <!-- Title Area -->
-            <li class="name">
-              <h1><a href="#"><?php print $site_name; ?></a></h1>
-            </li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar menu-icon"><a href="#"><span aria-hidden="true" class="icon-menu">Menu</span></a></li>
-          </ul>
+        <!-- Uncomment this next line if you want the Foundation topbar for the main menu -->
+        <!-- <?php //include(path_to_theme().'/templates/topbar.tpl.php'); ?> -->
 
-          <section class="top-bar-section">
-            <?php
-              print theme('links__system_main_menu', array(
-                'links' => $main_menu,
-                'attributes' => array(
-                  'class' => array('main-menu-links', 'links', 'left'),
-                  ),
-                'heading' => array(
-                  'text' => t('Main menu'),
-                  'level' => 'h2',
-                  'class' => array('element-invisible'),
-                  ),
-                )
-              );
-            ?>
-          </section>
-        </nav> <!-- /.top-bar -->
+        <?php if ($page['navigation']): ?>
+          <nav class="navigation js-toggle">
+            <?php print render($page['navigation']); ?>
+          </nav>
+        <?php endif; ?>
       </div><!-- /.inner -->
   </header>
 </div> <!-- /.header-wrapper -->

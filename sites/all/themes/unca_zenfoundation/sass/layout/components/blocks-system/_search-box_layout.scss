@@ -1,0 +1,21 @@
+// @include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
+
+.block-search {
+  .form-type-textfield {
+    input {
+      display: inline;
+      width: auto;
+    }
+  }
+  // The search box when it's in the navigation region
+  nav.navigation & {
+    @include grid-column($full-width);
+    @include respond-to($tablet) {
+      @include grid-column($nav-search-width, false, false, false, $nav-main-menu-width);
+    }
+    form,
+    input {
+      margin-bottom: 0;
+    }
+  }
+}

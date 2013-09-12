@@ -1,0 +1,52 @@
+// @include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
+
+#block-system-main-menu {
+  // When the primary menu is in the navigation region
+  nav.navigation & {
+    @include grid-column($full-width / 2);
+    // Remove the block title
+    @extend %block-title-hide;
+    margin-bottom: 0;
+    @include respond-to($tablet) {
+      @include grid-column($nav-main-menu-width, false, false, false, false, $nav-search-width);
+    }
+    .menu {
+      // Remove the bullets
+      @extend %no-bullet;
+      margin-bottom: 0;
+      text-align: right;
+      @include respond-to($tablet) {
+        // Put the items in an inline list
+        @include inline-list;
+        margin-bottom: 0;
+        text-align: left;
+        ul.menu {
+          // Hide any sub items
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+// When the primary menu is in the Foundation topbar
+.top-bar {
+  @include grid-column($full-width);
+  clear: both;
+  @include respond-to($tablet) {
+    .title-area {
+      display: none;
+    }
+    .top-bar-section {
+      ul {
+        margin-bottom: 1.875em;
+        // padding: 0 1%;
+        width: 100%;
+        ul {
+          width: auto;
+        }
+      }
+    }
+  }
+}
