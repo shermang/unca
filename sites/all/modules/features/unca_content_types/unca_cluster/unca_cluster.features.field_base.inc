@@ -49,7 +49,7 @@ function unca_cluster_field_default_field_bases() {
         'year' => 'year',
       ),
       'timezone_db' => 'UTC',
-      'todate' => '',
+      'todate' => 'optional',
       'tz_handling' => 'site',
     ),
     'translatable' => 0,
