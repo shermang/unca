@@ -89,6 +89,7 @@ unca_news \
 unca_fields \
 slideshow_entity \
 unca_home_home_page \
+unca_zenfoundation \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
@@ -102,6 +103,10 @@ securelogin
 echo "Running any required database updates"
 drush --nocolor updatedb --yes
 echo ""
+
+# Set unca_zenfoundation as the active theme
+echo "Setting unca_zenfoundation as the active theme"
+drush vset theme_default unca_zenfoundation
 
 # clear the cache
 echo "Clearing the drupal cache"
