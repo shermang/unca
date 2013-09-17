@@ -77,12 +77,25 @@ unca_global_header_and_footer \
 unca_slideshow \
 unca_department_navigation \
 unca_home \
+unca_profile \
+unca_student_organization \
+study_abroad \
+unca_policy \
+unca_event \
+unca_cluster \
+unca_course \
+unca_campus_update \
+unca_news \
+unca_fields \
+slideshow_entity \
+unca_home_home_page \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
 drush dis --yes \
 # {module_name} \
 toolbar \
+overlay \
 securelogin
 
 # perform any db queries required by code changes to modules from git pull

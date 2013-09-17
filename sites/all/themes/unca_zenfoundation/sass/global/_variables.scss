@@ -33,11 +33,6 @@ $row-width: emCalc(1100px);
 // $column-gutter: emCalc(30);
 $total-columns: 12;
 
-// $column-gutter-half: $column-gutter / 2;
-
-$grid-width: $row-width / $total-columns;
-
-
 // Column variables - use these to set your region widths
 $full-width:           $total-columns;
 $sidebar-1-width:      3;
@@ -45,6 +40,11 @@ $sidebar-2-width:      3;
 $content-width-sb1:        $full-width - $sidebar-1-width;
 $content-width-sb2:        $full-width - $sidebar-2-width;
 $content-width-sb1-sb2:    $full-width - $sidebar-1-width - $sidebar-2-width;
+
+
+// Navigation region variables
+$nav-main-menu-width: ($full-width / 4) * 3;
+$nav-search-width: $full-width / 4;
 
 
 // Media Queries
