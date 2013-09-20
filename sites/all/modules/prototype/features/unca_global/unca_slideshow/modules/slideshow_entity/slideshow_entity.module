@@ -80,6 +80,45 @@ function slideshow_entity_entity_info_alter(&$entity_info) {
 function slideshow_entity_menu() {
   $items = array();
 
+  // admin/content tab
+  $items['admin/content/slideshows'] = array(
+    'title' => 'Slideshows',
+    'description' => 'Slideshows tab for admin/content page',
+    'page callback' => ' slideshow_entity_content_admin',
+    'type' => MENU_LOCAL_TASK,
+    'access callback' => 'user_access',
+    'access arguments' => array('administer slideshow_entity entities'),
+    'weight' => 1
+  );
+  $items['ss/test'] = array(
+    'title' => 'Slideshows',
+    'description' => 'Slideshows tab for admin/content page',
+    'page callback' => ' slideshow_entity_content_admin',
+    'type' => MENU_NORMAL_ITEM,
+    'access callback' => 'user_access',
+    'access arguments' => array('administer slideshow_entity entities'),
+    'weight' => 1
+  );
+  $items['ss/test'] = array(
+    'title' => 'Slideshows',
+    'description' => 'Slideshows tab for admin/content page',
+    'page callback' => 'slideshow_entity_content_admin',
+    'type' => MENU_LOCAL_TASK,
+    'access callback' => 'user_access',
+    'access arguments' => array('administer slideshow_entity entities'),
+    // 'tab_parent' => 'slideshow',
+    // 'tab_root' => 'slideshow',
+  );
+  $items['admin/content/slideshows'] = array(
+    'title' => 'Slideshows',
+    'description' => 'Slideshows tab for admin/content page',
+    'page callback' => 'slideshow_entity_content_admin',
+    'type' => MENU_LOCAL_TASK,
+    'access arguments' => array('administer slideshow_entity entities'),
+    // 'tab_parent' => 'slideshow',
+    // 'tab_root' => 'slideshow',
+  );
+
   $items['slideshow/add'] = array(
     'title' => 'Add slideshow',
     'page callback' => 'slideshow_entity_admin_add_page',
@@ -231,9 +270,64 @@ function slideshow_entity_entity_property_info_alter(&$info) {
   );
 }
 
+function slideshow_entity_content_admin() {
+  // return 'hi';
+  return views_embed_view('slideshows', 'default');
+  print_r($d);
+  return $d;
+}
 
-/*******************************************************************************
- ********************************* Slideshow API's **********************************
+
+
+/**
+ * Implements hook_field_formatter().
+ * @return [type] [description]
+ */
+function slideshow_entity_field_formatter_info() {
+  return array(
+    'slideshow_entity_slideshow' => array(
+      'label' => t('Slideshow Entity'),
+      'field types' => array('entityreference'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function slideshow_entity_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  return $element;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function slideshow_entity_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  // $settings = $display['settings'];
+  $summary = t('Render a slideshow entity'); 
+  return $summary;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function slideshow_entity_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, &$items, $display) {
+  $element = array(); // Initialize the var
+
+  $element[0]['#markup'] = '<h1>Slideshow output (testing)</h1>' . "\n";
+  foreach($items as $ss) {
+    $ssid = $ss['target_id'];
+    $ss_view = views_embed_view('slideshow_display_rev', 'flexslider_block', $ssid);
+    $element[0]['#markup'] .= $ss_view;
+  }
+
+  return $element;
+}
+
+
+/******************************************************************************
+ ****************************** Slideshow API's *******************************
  ******************************************************************************/
 
 /**

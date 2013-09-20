@@ -95,6 +95,7 @@ flexslider \
 entityreference \
 references_dialog \
 strongarm \
+unca_slideshow \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
