@@ -92,6 +92,7 @@ slideshow_entity \
 unca_home_home_page \
 libraries \
 flexslider \
+entityreference \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
