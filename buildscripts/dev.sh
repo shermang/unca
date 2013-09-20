@@ -93,6 +93,7 @@ unca_home_home_page \
 libraries \
 flexslider \
 entityreference \
+references_dialog \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
