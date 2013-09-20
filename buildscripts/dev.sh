@@ -94,6 +94,7 @@ libraries \
 flexslider \
 entityreference \
 references_dialog \
+strongarm \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
