@@ -49,6 +49,7 @@ views \
 views_bulk_operations \
 views_data_export \
 views_flipped_table \
+views_ui \
 views_slideshow \
 weather \
 webform \
