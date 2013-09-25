@@ -30,7 +30,7 @@ class UNCAUserMigration extends DrupalUser6Migration {
     // print_r($row);
 
     // if(in_array(3, $row->roles[0])) {
-      
+
     // }
     // [roles] => Array
     //     (
@@ -52,5 +52,6 @@ class UNCAUserMigration extends DrupalUser6Migration {
     //                      array('!vid' => $row->vid)));
     // }
   }
+
 
 }
