@@ -230,7 +230,8 @@ abstract class EntityMetadataWrapper {
   public function access($op, $account = NULL) {
     if (empty($this->info['parent']) && $this instanceof EntityDrupalWrapper) {
       // If there is no parent just incorporate entity based access.
-      return $this->entityAccess($op == 'edit' ? 'update' : 'view', $account);
+      $entity_access_op = $op === 'view' ? 'view' : $this->getIdentifier() ? 'update' : 'create';
+      return $this->entityAccess($entity_access_op, $account);
     }
     return !empty($this->info['parent']) ? $this->info['parent']->propertyAccess($this->info['name'], $op, $account) : TRUE;
   }
@@ -512,7 +513,8 @@ class EntityStructureWrapper extends EntityMetadataWrapper implements IteratorAg
       while (!($entity instanceof EntityDrupalWrapper) && isset($entity->info['parent'])) {
         $entity = $entity->info['parent'];
       }
-      if ($entity instanceof EntityDrupalWrapper && !$entity->entityAccess('update', $account)) {
+      $entity_access_op = $entity->getIdentifier() ? 'update' : 'create';
+      if ($entity instanceof EntityDrupalWrapper && !$entity->entityAccess($entity_access_op, $account)) {
         return FALSE;
       }
     }

@@ -1,0 +1,112 @@
+<?php
+
+/**
+ * @file
+ * Defines a formatter that renders a link like an iframe
+ */
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function link_iframe_formatter_options_field_formatter_info() {
+  return array(
+    'link_iframe_formatter_options_iframe' => array(
+      'label' => t('iframe'),
+      'field types' => array('link_field'),
+      'settings' => array(
+        'width' => '100%',
+        'height' => '700',
+        'frameborder' => 0,
+        'scrolling' => 'auto',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function link_iframe_formatter_options_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $settings = $instance['display'][$view_mode]['settings'];
+
+  $element = array();
+
+  $element['width'] = array(
+    '#title' => t('Width'),
+    '#type' => 'textfield',
+    '#default_value' => $settings['width'],
+    '#required' => TRUE,
+  );
+
+  $element['height'] = array(
+    '#title' => t('Height'),
+    '#type' => 'textfield',
+    '#default_value' => $settings['height'],
+    '#required' => TRUE,
+  );
+
+  $element['frameborder'] = array(
+    '#title' => t('Frameborder'),
+    '#type' => 'select',
+    '#options' => array(
+      0 => 'Hide Frameborder',
+      1 => 'Show Frameborder',
+    ),
+    '#description' => t('Default is to hide frameborder. Select Show Frameborder if you want a border around the frame.'),
+    '#default_value' => $settings['frameborder'],
+  );
+
+  $element['scrolling'] = array(
+    '#title' => t('Scrolling'),
+    '#type' => 'select',
+    '#options' => array(
+      'auto' => 'Automatic scrolling',
+      'no' => 'Disable scrolling',
+      'yes' => 'Enable scrolling',
+    ),
+    '#description' => t('Default is automatic scrolling. It is not recommended to disable scrolling, even if you think you know what you are doing.'),
+    '#default_value' => $settings['scrolling'],
+  );
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function link_iframe_formatter_options_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $settings = $instance['display'][$view_mode]['settings'];
+
+  $summary = t('Width: @width; Height: @height; Frameborder: @frameborder; Scrolling: @scrolling', array('@width' => $settings['width'], '@height' => $settings['height'], '@frameborder' => $settings['scrolling'], '@scrolling' => $settings['scrolling']));
+
+  return $summary;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function link_iframe_formatter_options_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $elements = array();
+  foreach ($items as $delta => $item) {
+    if ($display['type'] == 'link_iframe_formatter_options_iframe') {
+      $link_options = $item;
+      unset($link_options['title']);
+      unset($link_options['url']);
+      $elements[$delta] = array(
+        '#type' => 'html_tag',
+        '#tag' => 'iframe',
+        '#attributes' => array(
+          'height' => $display['settings']['height'],
+          'name' => $item['title'],
+          'src' => url($item['url'], $link_options),
+          'width' => $display['settings']['width'],
+          'frameborder' => $display['settings']['frameborder'],
+          'scrolling' => $display['settings']['scrolling'],
+          'class' => $link_options['attributes']['class'],
+        ),
+        '#value' => ''
+      );
+    }
+  }
+  return $elements;
+}

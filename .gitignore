@@ -45,3 +45,7 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
+
+# IDE PROJECT FILES #
+#####################
+.idea

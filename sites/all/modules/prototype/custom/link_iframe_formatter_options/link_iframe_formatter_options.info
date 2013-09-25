@@ -1,0 +1,6 @@
+name = Link iframe formatter options
+description = Provides more options for the iframe link field formatter
+core = 7.x
+package = Fields
+
+dependencies[] = link
