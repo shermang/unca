@@ -1,0 +1,48 @@
+#header-ncccr{
+background-color:#fff; 
+background:url(http://www.unca.edu/sites/all/themes/unca/ncccr/imgs/banners/banner.php) no-repeat; 
+margin-bottom:-5px;
+}
+
+#search {
+background:url(http://www.unca.edu/sites/all/themes/unca/imgs/navigation-primary-background-sprites.png) no-repeat -690px 0px; 
+width:265px; 
+height:30px; 
+padding-right:5px; 
+overflow:hidden;
+	position:absolute;
+	top: 10px;
+	left: 905px;
+}
+ 
+#search ul {
+margin-top:-20px;
+}
+ 
+#search li {
+margin:10px 0px 10px 5px;
+}
+ 
+#search #q, #search #query_string {
+border:0px; 
+padding:3px; 
+margin-top:4px; 
+width:190px; 
+}
+
+#accessibility
+{
+display:none;
+}
+ #navigation-utility {
+ float:right;
+ }
+#search-button-people,
+#search-button-web {
+margin-top:4px;
+}
+
+#searchform{
+ padding-top: 9px;
+}
+
