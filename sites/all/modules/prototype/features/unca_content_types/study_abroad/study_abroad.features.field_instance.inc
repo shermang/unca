@@ -50,7 +50,7 @@ function study_abroad_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 1,
     ),
   );
 
@@ -68,7 +68,7 @@ function study_abroad_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -100,7 +100,7 @@ function study_abroad_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => -2,
+      'weight' => 2,
     ),
   );
 
@@ -116,7 +116,7 @@ function study_abroad_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -137,7 +137,7 @@ function study_abroad_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 4,
     ),
   );
 
@@ -153,7 +153,7 @@ function study_abroad_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -174,7 +174,7 @@ function study_abroad_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 5,
     ),
   );
 
@@ -190,7 +190,7 @@ function study_abroad_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -214,12 +214,12 @@ function study_abroad_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 0,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-destination-field_university_term'
-  $field_instances['node-destination-field_university_term'] = array(
+  // Exported field_instance: 'node-destination-field_university_semester_term'
+  $field_instances['node-destination-field_university_semester_term'] = array(
     'bundle' => 'destination',
     'default_value' => NULL,
     'deleted' => 0,
@@ -227,9 +227,8 @@ function study_abroad_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -240,8 +239,8 @@ function study_abroad_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_university_term',
-    'label' => 'University Term',
+    'field_name' => 'field_university_semester_term',
+    'label' => 'University Semester',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -251,7 +250,7 @@ function study_abroad_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 6,
     ),
   );
 
@@ -266,7 +265,7 @@ function study_abroad_field_default_field_instances() {
   t('Select the type(s) of study abroad program');
   t('Select which university term this program is in.');
   t('Teaser');
-  t('University Term');
+  t('University Semester');
   t('Upload an image of the flag of the destination country. This image will appear in destination listings on the Study Abroad Programs page.');
 
   return $field_instances;
