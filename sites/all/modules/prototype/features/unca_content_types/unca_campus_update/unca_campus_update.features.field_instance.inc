@@ -15,7 +15,7 @@ function unca_campus_update_field_default_field_instances() {
     'bundle' => 'campus_update',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the main content of this campus update. Use the Featured Image and Embedded Video fields to add primary images and video (optional).',
+    'description' => 'Enter the main content of this campus update. Summary: Click Edit Summary below to show the Summary input to be used in blocks listing Campus Updates.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -64,7 +64,7 @@ function unca_campus_update_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Check this box to feature this update.',
+    'description' => 'Check this box to feature this update. Only the most recently posted featured update will appear on the home page.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -205,7 +205,7 @@ function unca_campus_update_field_default_field_instances() {
     'bundle' => 'campus_update',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter a succinct summary of this campus update that will appear in blocks listing Campus Updates.',
+    'description' => 'Enter a summary here. Summaries will appear in blocks listing Campus Updates. If no summary information is entered here, the first 200 characters of the body will be used in its place.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -286,12 +286,12 @@ function unca_campus_update_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Check this box to feature this update.');
+  t('Check this box to feature this update. Only the most recently posted featured update will appear on the home page.');
   t('Choose a featured image to prominently display with this article, which will also display as a thumbnail in blocks listing Campus Updates.');
   t('Choose a video to embed on this node\'s page.');
   t('Embed Video');
-  t('Enter a succinct summary of this campus update that will appear in blocks listing Campus Updates.');
-  t('Enter the main content of this campus update. Use the Featured Image and Embedded Video fields to add primary images and video (optional).');
+  t('Enter a summary here. Summaries will appear in blocks listing Campus Updates. If no summary information is entered here, the first 200 characters of the body will be used in its place.');
+  t('Enter the main content of this campus update. Summary: Click Edit Summary below to show the Summary input to be used in blocks listing Campus Updates.');
   t('Featured Image');
   t('Featured Update');
   t('Free tagging. Enter any new or existing tags to this piece of content.');
