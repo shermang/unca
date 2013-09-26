@@ -31,5 +31,35 @@ class UNCARoleMigration extends DrupalRole6Migration {
     return $query;
   }
 
+  // /**
+  //  * Override DrupalRoleMigration::prepare
+  //  *
+  //  * @param $row
+  //  * @return bool
+  //  */
+  // public function prepare($role, $row) {
+  //   parent::prepare($role, $row);
+  //   // if($role->name == 'administrator') {
 
+  //   //   if (isset($this->roleMappings[$role->name])) {
+  //   //     $destination_name = $this->roleMappings[$role->name];
+  //   //     $destination_rid = db_select('role', 'r')
+  //   //                        ->fields('r', array('rid'))
+  //   //                        ->condition('name', $destination_name)
+  //   //                        ->execute()
+  //   //                        ->fetchField();
+  //   //     drush_print_r($destination_rid);
+  //   //     if ($destination_rid) {
+  //   //       $role->rid = $destination_rid;
+  //   //       // Make sure we don't change the destination name
+  //   //       $role->name = $destination_name;
+  //   //       $this->rollbackAction = MigrateMap::ROLLBACK_PRESERVE;
+  //   //     }
+  //   //   }
+
+
+  //   // } else {
+  //   //   parent::prepare($role, $row);
+  //   // }
+  // }
 }
