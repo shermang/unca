@@ -49,6 +49,7 @@ views \
 views_bulk_operations \
 views_data_export \
 views_flipped_table \
+views_ui \
 views_slideshow \
 weather \
 webform \
@@ -77,18 +78,41 @@ unca_global_header_and_footer \
 unca_slideshow \
 unca_department_navigation \
 unca_home \
+unca_profile \
+unca_student_organization \
+study_abroad \
+unca_policy \
+unca_event \
+unca_cluster \
+unca_course \
+unca_campus_update \
+unca_news \
+unca_fields \
+slideshow_entity \
+unca_home_home_page \
+unca_zenfoundation \
+libraries \
+flexslider \
+entityreference \
+references_dialog \
+strongarm \
+unca_slideshow \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
 drush dis --yes \
-# {module_name} \
 toolbar \
+overlay \
 securelogin
 
 # perform any db queries required by code changes to modules from git pull
 echo "Running any required database updates"
 drush --nocolor updatedb --yes
 echo ""
+
+# Set unca_zenfoundation as the active theme
+echo "Setting unca_zenfoundation as the active theme"
+drush vset theme_default unca_zenfoundation
 
 # clear the cache
 echo "Clearing the drupal cache"
