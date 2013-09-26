@@ -62,7 +62,19 @@ stylesheets[all][] = system.menus.css
 ; stylesheets[all][] = css/forms.css
 ; stylesheets[all][] = css/fields.css
 ; stylesheets[all][] = css/print.css
-
+stylesheets[all][] = css/reset.css
+stylesheets[all][] = css/grid.css
+stylesheets[all][] = css/global.css
+stylesheets[all][] = css/page.tpl.css
+stylesheets[all][] = css/node.tpl.css
+stylesheets[all][] = css/block.tpl.css
+stylesheets[all][] = css/block-content_bottom_left.tpl.css
+stylesheets[all][] = css/block-content_bottom_right.tpl.css
+stylesheets[all][] = css/views.tpl.css
+stylesheets[all][] = css/footer-spiffs.css
+stylesheets[all][] = css/views-view-fields--Four-Profiles.tpl.css
+stylesheets[all][] = css/aggregated-feeds.tpl.css
+stylesheets[all][] = css/flickrshow.css
 stylesheets[all][] = css/unca_zenfoundation.css
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
