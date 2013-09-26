@@ -104,41 +104,64 @@ function migrate_d2d_unca_register_migrations() {
 
 
 
-  // // 
-  // // +  +  +  +  TAXONOMY  +  +  +  +  
-  // // 
 
-  // // For vocabulary migrations, source_vocabulary and destination_vocabulary are
-  // // required arguments. Note that in Drupal 6 vocabularies did not have machine
-  // // names, so we use the vocabulary ID to uniquely identify them.
-  // $vocabulary_arguments = array(
-  //   array(
-  //     'description' => t('Migration of Countries terms from Drupal 6'),
-  //     'machine_name' => 'Countries',
-  //     'source_vocabulary' => '1',  // D6 Vocabulary ID
-  //     'destination_vocabulary' => 'countries',
-  //   ),
-  //   array(
-  //     'description' => t('Migration of Topics terms from Drupal 6'),
-  //     'machine_name' => 'Topics',
-  //     'source_vocabulary' => '2',  // D6 Vocabulary ID
-  //     'destination_vocabulary' => 'topics',
-  //   ),
-  // );
+  // 
+  // +  +  +  +  TAXONOMY  +  +  +  +  
+  // 
 
-  // // Again, we're using the migrate_d2d class directly.
-  // // The soft dependency says that while we don't have to run the user migration
-  // // first, we want to make sure it's listed first so the vocubularies are
-  // // listed right ahead of the node migrations.
-  // $common_vocabulary_arguments = $common_arguments + array(
-  //   'class_name' => 'DrupalTerm6Migration',
-  //   'soft_dependencies' => array('User'),
-  // );
-  // foreach ($vocabulary_arguments as $arguments) {
-  //   $arguments += $common_vocabulary_arguments;
-  //   Migration::registerMigration($arguments['class_name'], $arguments['machine_name'],
-  //                                $arguments);
-  // }
+  // Vocabulary ids are not consistent on source dbs, so compile our mapping
+  // dynamically
+  extract(migrate_d2d_unca_get_vocab_mappings()); # $vocabs_map, $src_vocabs
+
+  // For vocabulary migrations, source_vocabulary and destination_vocabulary are
+  // required arguments. Note that in Drupal 6 vocabularies did not have machine
+  // names, so we use the vocabulary ID to uniquely identify them.
+  
+
+    $vocabulary_arguments = array(
+                // array(
+                //   'description' => t('Migration of Profile Type terms from Drupal 6'),
+                //   'machine_name' => 'profile_type',
+                //   'source_vocabulary' => '2',  // D6 Vocabulary ID
+                //   'destination_vocabulary' => 'Profile Type',
+                // ),
+      // array(
+      //   'description' => t('Migration of Topics terms from Drupal 6'),
+      //   'machine_name' => 'Topics',
+      //   'source_vocabulary' => '2',  // D6 Vocabulary ID
+      //   'destination_vocabulary' => 'topics',
+      // ),
+    );
+
+    // $t = array();
+    // drush_print_r($vocabs_map);
+  // Normal vocabs, can be handled automatically
+  foreach($vocabs_map as $vname => $vocab) {
+    if(@$vocab['d6_vid']) {
+      $vocabulary_arguments[] = array(
+        'description' => 'Migration of ' . $vocab['d6_name'] . ' terms from Drupal 6',
+        'machine_name' => 'Term_' . $vocab['mach_name'],
+        'source_vocabulary' => $vocab['d6_vid'],  // D6 Vocabulary ID
+        'destination_vocabulary' => $vocab['mach_name'],  // D7 vocabulary machine name
+      );
+    }
+  }
+
+
+  // Again, we're using the migrate_d2d class directly.
+  // The soft dependency says that while we don't have to run the user migration
+  // first, we want to make sure it's listed first so the vocubularies are
+  // listed right ahead of the node migrations.
+  $common_vocabulary_arguments = $common_arguments + array(
+    // 'class_name' => 'DrupalTerm6Migration',
+    'class_name' => 'UNCATermMigration',
+    // 'soft_dependencies' => array('User'),
+  );
+  foreach ($vocabulary_arguments as $arguments) {
+    $arguments += $common_vocabulary_arguments;
+#drush_print_r(array($arguments['machine_name'] => $arguments));
+    Migration::registerMigration($arguments['class_name'], $arguments['machine_name'], $arguments);
+  }
 
 
 
@@ -191,4 +214,203 @@ function migrate_d2d_unca_migrate_api() {
     'api' => 2,
   );
   return $api;
+}
+
+
+function migrate_d2d_unca_get_vocab_mappings() {
+
+  $vocabs_map = array(
+    'course_catalogs' => array(
+      'd7_name' => 'Course Catalog',
+      'mach_name' => 'course_catalogs',
+      'd6_name' => 'Catalogs'
+    ),
+    'course_days' => array(
+      'd7_name' => 'Course Days',
+      'mach_name' => 'course_days',
+      'd6_name' => 'Days'
+    ),
+    'course_times' => array(
+      'd7_name' => 'Course Times',
+      'mach_name' => 'course_times',
+      'd6_name' => 'Time'
+    ),
+    'course_topic' => array(
+      'd7_name' => 'Course Topic',
+      'mach_name' => 'course_topic',
+      'd6_name' => 'Topics'
+    ),
+    'event_categories' => array(
+      'd7_name' => 'Event Categories',
+      'mach_name' => 'event_categories',
+      'd6_name' => '', # special handling: SOME "News & Events Categories"
+    ),
+    'policy_owner' => array(
+      'd7_name' => 'Policy Owner',
+      'mach_name' => 'policy_owner',
+      'd6_name' => 'Policy Owner'
+    ),
+    'policy_categories' => array(
+      'd7_name' => 'Policy Categories',
+      'mach_name' => 'policy_categories',
+      'd6_name' => 'Policy Categories'
+    ),
+    'groups_policies_apply_to' => array(
+      'd7_name' => 'Groups Policies Apply To',
+      'mach_name' => 'groups_policies_apply_to',
+      'd6_name' => 'Groups Policies Apply To'
+    ),
+    'responsible_office' => array(
+      'd7_name' => 'Responsible Office',
+      'mach_name' => 'responsible_office',
+      'd6_name' => 'Responsible Office'
+    ),
+    'humanities_level' => array(
+      'd7_name' => 'Humanities Level',
+      'mach_name' => 'humanities_level',
+      'd6_name' => 'Humanities Level'
+    ),
+
+    'news_categories' => array(
+      'd7_name' => 'News Categories',
+      'mach_name' => 'news_categories',
+      'd6_name' => '', # special handling: all "News Articles" + SOME "News & Events Categories"
+    ),
+    // 'news_categories' => array(
+    //   'd7_name' => 'News Categories',
+    //   'mach_name' => 'news_categories',
+    //   'd6_name' => 'News Articles'
+    // ),
+
+    'profile_type' => array(
+      'd7_name' => 'Profile Type',
+      'mach_name' => 'profile_types',
+      'd6_name' => 'Profile Types'
+    ),
+    'program_type' => array(
+      'd7_name' => 'Program Type',
+      'mach_name' => 'program_type',
+      'd6_name' => 'Program Type'
+    ),
+    'project_type' => array(
+      'd7_name' => 'Project Type',
+      'mach_name' => 'project_type',
+      'd6_name' => 'Project Types'
+    ),
+    'region' => array(
+      'd7_name' => 'Study Abroad Region',
+      'mach_name' => 'region',
+      'd6_name' => 'Region'
+    ),
+    'university_semester' => array(
+      'd7_name' => 'University Semester',
+      'mach_name' => 'university_semester',
+      'd6_name' => 'Term'
+    ),
+    'location_type' => array(
+      'd7_name' => 'Location Type',
+      'mach_name' => 'location_type',
+      'd6_name' => '', # special handling: multiple d6 names: Map Category, Map Categories
+    ),
+    'student_orgs' => array(
+      'd7_name' => 'Student Organizations',
+      'mach_name' => 'student_orgs',
+      'd6_name' => 'Student Organizations'
+    ),
+    '__slideshows__' => array(
+      'd7_name' => 'Slideshows',
+      'mach_name' => 'see Migration notes',
+      'd6_name' => ''
+    ),
+
+  );
+
+  // Temporarily correct pending updates in features
+  $vocabs_map['event_type'] = $vocabs_map['event_categories'];
+  $vocabs_map['event_type']['mach_name'] = 'event_type';
+  unset($vocabs_map['event_categories']);
+
+  $vocabs_map['profile_types'] = $vocabs_map['profile_type'];
+  $vocabs_map['profile_types']['mach_name'] = 'profile_types';
+  unset($vocabs_map['profile_type']);
+
+
+  // $vocabs_map['program_type']['mach_name'] = 'program_types';
+  $vocabs_map['program_types'] = $vocabs_map['program_type'];
+  $vocabs_map['program_types']['mach_name'] = 'program_types';
+  unset($vocabs_map['program_type']);
+
+  // $vocabs_map['university_semester']['mach_name'] = 'university_term';
+  $vocabs_map['university_term'] = $vocabs_map['university_semester'];
+  $vocabs_map['university_term']['mach_name'] = 'university_term';
+  unset($vocabs_map['university_semester']);
+
+
+
+  // Create map array for easy lookup
+  $map_d6_name_to_mach_name = array(); 
+  foreach($vocabs_map as $vocab) {
+    switch ($vocab['d6_name']) {
+      case 'News and Events Categories':
+      case 'News Articles':
+         // do nothing (these will be handled manually)
+         break;
+      default:
+      $map_d6_name_to_mach_name[$vocab['d6_name']] = trim($vocab['mach_name']);
+    }
+    
+  }
+  // Add these manually
+  $map_d6_name_to_mach_name['Map Categories'] = 'location_type';
+  $map_d6_name_to_mach_name['Map Category'] = 'location_type';
+
+  // load source site's vocabularies
+  db_set_active('legacy');
+  $result = db_query('SELECT vid, name from {vocabulary}'); //Your own queries on the external DB.
+
+  $src_vocabs = array();
+  foreach ($result as $record) {
+    $src_vocabs[] = $record;
+    if($mach_name = @$map_d6_name_to_mach_name[$record->name]) {
+      $vocabs_map[$mach_name]['d6_name'] = $record->name;
+      $vocabs_map[$mach_name]['d6_vid'] = $record->vid;
+    } else {
+      switch ($record->name) {
+        case 'Map Categories':
+        case 'Map Category':
+          $vocabs_map['location_type']['d6_name'] = $record->name;
+          $vocabs_map['location_type']['d6_vid'] = $record->vid;
+          break;
+      }
+    }
+  }; 
+  // Re-set default db
+  db_set_active();
+
+  return compact('vocabs_map', 'src_vocabs');
+}
+
+
+/**
+ * TEMP DEBUGGING FUNCTION
+ * @return [type] [description]
+ */
+function migrate_d2d_unca__debug__print_migrations_data() {
+  $q = "select * from migrate_status";
+  $r = db_query($q);
+  foreach($r as $row) {
+    $row->arguments = unserialize($row->arguments);
+    dpm($row, $row->machine_name);
+  }
+
+}
+
+/**
+ * TEMP DEBUGGING FUNCTION
+ * @return [type] [description]
+ */
+function migrate_d2d_unca__debug__print_vocab_mappings() {
+  $d = migrate_d2d_unca_get_vocab_mappings();
+  dpm($d);
+
 }
