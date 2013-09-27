@@ -23,7 +23,7 @@ function unca_campus_update_node_info() {
       'base' => 'node_content',
       'description' => t('A campus update is an announcement, alert, or other update directed toward the primary audiences of the university. It is distinct from an official press release. It gets displayed in blocks throughout the site.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Headline'),
       'help' => '',
     ),
   );

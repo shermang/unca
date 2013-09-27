@@ -51,7 +51,7 @@ function unca_campus_update_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 1,
     ),
   );
 
@@ -73,7 +73,7 @@ function unca_campus_update_field_default_field_instances() {
           'prefix_suffix' => TRUE,
         ),
         'type' => 'number_boolean',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -84,7 +84,7 @@ function unca_campus_update_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_featured_update',
-    'label' => 'Featured Update',
+    'label' => 'Feature this update',
     'required' => 0,
     'settings' => array(
       'false' => array(
@@ -124,7 +124,7 @@ function unca_campus_update_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -135,7 +135,7 @@ function unca_campus_update_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_image',
-    'label' => 'Featured Image',
+    'label' => 'Image',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
@@ -156,7 +156,7 @@ function unca_campus_update_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 0,
+      'weight' => 2,
     ),
   );
 
@@ -172,7 +172,7 @@ function unca_campus_update_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -200,59 +200,20 @@ function unca_campus_update_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-campus_update-field_teaser_text'
-  $field_instances['node-campus_update-field_teaser_text'] = array(
-    'bundle' => 'campus_update',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Enter a summary here. Summaries will appear in blocks listing Campus Updates. If no summary information is entered here, the first 200 characters of the body will be used in its place.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_teaser_text',
-    'label' => 'Teaser',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => -2,
-    ),
-  );
-
   // Exported field_instance: 'node-campus_update-field_video_embed'
   $field_instances['node-campus_update-field_video_embed'] = array(
     'bundle' => 'campus_update',
-    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Choose a video to embed on this node\'s page.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 3,
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -263,7 +224,7 @@ function unca_campus_update_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_video_embed',
-    'label' => 'Embed Video',
+    'label' => 'Video',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -274,12 +235,23 @@ function unca_campus_update_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'emfield',
+      'module' => 'media',
       'settings' => array(
-        'size' => 60,
+        'allowed_schemes' => array(
+          'public' => 0,
+          'viddler' => 'viddler',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'default' => 0,
+          'image' => 0,
+          'video' => 'video',
+        ),
+        'progress_indicator' => 'throbber',
       ),
-      'type' => 'enfield_widget',
-      'weight' => 2,
+      'type' => 'media_generic',
+      'weight' => 3,
     ),
   );
 
@@ -288,15 +260,12 @@ function unca_campus_update_field_default_field_instances() {
   t('Body');
   t('Check this box to feature this update. Only the most recently posted featured update will appear on the home page.');
   t('Choose a featured image to prominently display with this article, which will also display as a thumbnail in blocks listing Campus Updates.');
-  t('Choose a video to embed on this node\'s page.');
-  t('Embed Video');
-  t('Enter a summary here. Summaries will appear in blocks listing Campus Updates. If no summary information is entered here, the first 200 characters of the body will be used in its place.');
   t('Enter the main content of this campus update. Summary: Click Edit Summary below to show the Summary input to be used in blocks listing Campus Updates.');
-  t('Featured Image');
-  t('Featured Update');
+  t('Feature this update');
   t('Free tagging. Enter any new or existing tags to this piece of content.');
+  t('Image');
   t('Tags');
-  t('Teaser');
+  t('Video');
 
   return $field_instances;
 }
