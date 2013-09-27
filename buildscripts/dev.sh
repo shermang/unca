@@ -97,6 +97,7 @@ references_dialog \
 strongarm \
 unca_slideshow \
 email \
+unca_student_project \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
