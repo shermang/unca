@@ -87,6 +87,7 @@ unca_cluster \
 unca_course \
 unca_campus_update \
 unca_news \
+unca_project \
 unca_fields \
 slideshow_entity \
 unca_home_home_page \
