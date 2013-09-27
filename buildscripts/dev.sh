@@ -32,6 +32,7 @@ link \
 location \
 mcfilemanager \
 media_viddler \
+media_youtube \
 node_export \
 pathauto \
 print \
@@ -44,7 +45,6 @@ sharethis \
 taxonomy_menu \
 taxonomy_menu_block \
 token \
-viddler \
 views \
 views_bulk_operations \
 views_data_export \
@@ -87,6 +87,7 @@ unca_cluster \
 unca_course \
 unca_campus_update \
 unca_news \
+unca_project \
 unca_fields \
 slideshow_entity \
 unca_home_home_page \
@@ -97,7 +98,7 @@ entityreference \
 references_dialog \
 strongarm \
 unca_slideshow \
-
+unca_maps \
 
 # To disable modules, uncomment the following command and list the modules to disable
 drush dis --yes \

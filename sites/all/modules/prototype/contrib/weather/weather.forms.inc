@@ -222,11 +222,11 @@ function weather_display_settings_form($form, &$form_state, $display_type, $disp
       'metar' => t('Original METAR report'),
     ),
   );
-  $form['settings']['show_windchill'] = array(
+  $form['settings']['show_apparent_temperature'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Show windchill temperature'),
-    '#default_value' => $settings->settings['show_windchill'],
-    '#description' => t('Calculates the temperature resulting from windchill. This is how the temperature <q>feels like</q>. Windchill temperature is only defined for temperatures below 10 °C (50 °F) and wind speeds above 5 km/h (3 mph).'),
+    '#title' => t('Show apparent temperature'),
+    '#default_value' => $settings->settings['show_apparent_temperature'],
+    '#description' => t('Displays the apparent temperature. This is how the temperature <q>feels like</q>. For cold and windy conditions, the windchill is calculated. For hot and humid conditions, the heat index is calculated. Note that windchill temperature is only defined for temperatures below 10 °C (50 °F) and wind speeds above 5 km/h (3 mph). The heat index is only defined for temperatures above 26.7 °C (80 °F) and a relative humidity above 40%.'),
   );
   $form['settings']['show_abbreviated_directions'] = array(
     '#type' => 'checkbox',
