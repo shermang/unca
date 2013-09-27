@@ -32,6 +32,7 @@ link \
 location \
 mcfilemanager \
 media_viddler \
+media_youtube \
 node_export \
 pathauto \
 print \
@@ -44,7 +45,6 @@ sharethis \
 taxonomy_menu \
 taxonomy_menu_block \
 token \
-viddler \
 views \
 views_bulk_operations \
 views_data_export \
