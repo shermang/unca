@@ -97,7 +97,7 @@ entityreference \
 references_dialog \
 strongarm \
 unca_slideshow \
-
+unca_maps \
 
 # To disable modules, uncomment the following command and list the modules to disable
 drush dis --yes \

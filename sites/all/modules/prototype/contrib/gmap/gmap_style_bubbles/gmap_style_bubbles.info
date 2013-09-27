@@ -1,10 +1,12 @@
-name = Location + Gmap 'Find Address' button
-description = "Adds a 'Find Address' button to all location fields that use gmap"
-core = 7.x
+name = Gmap Style Bubbles
+description = A module that lets you add more styles to your gmap popup bubbles.
 package = Location
-dependencies[] = location_cck
-dependencies[] = location
+core = 7.x
+
+project = gmap_style_bubbles
 dependencies[] = gmap
+dependencies[] = libraries (2.x)
+
 
 ; Information added by drupal.org packaging script on 2013-09-11
 version = "7.x-2.8-beta5+0-dev"
