@@ -326,15 +326,18 @@ function weather_block_view($delta = '') {
     case 'ip':
       if (user_access('access content') and module_exists('smart_ip')) {
         $result = smart_ip_get_location(ip_address());
-        $latitude = $result['latitude'];
-        $longitude = $result['longitude'];
-        if (!empty($latitude) and !empty($longitude)) {
-          $block['subject'] = t('Current weather near you');
-          $display = weather_get_display_settings('default', 1);
-          $station = weather_get_nearest_station($latitude, $longitude);
-          $metar = weather_get_metar($station->icao);
-          $block['content'] = theme('weather_theming',
-            array('display' => $display, 'location' => $station, 'metar' => $metar));
+        // Check that the lookup did find a location for the IP.
+        if ($result != FALSE) {
+          $latitude = $result['latitude'];
+          $longitude = $result['longitude'];
+          if (!empty($latitude) and !empty($longitude)) {
+            $block['subject'] = t('Current weather near you');
+            $display = weather_get_display_settings('default', 1);
+            $station = weather_get_nearest_station($latitude, $longitude);
+            $metar = weather_get_metar($station->icao);
+            $block['content'] = theme('weather_theming',
+              array('display' => $display, 'location' => $station, 'metar' => $metar));
+          }
         }
       }
       break;
@@ -427,7 +430,7 @@ function weather_get_display_settings($display_type, $display_number=NULL) {
           'humidity' => 'humidity',
           'visibility' => 'visibility',
         ),
-        'show_windchill' => FALSE,
+        'show_apparent_temperature' => FALSE,
         'show_abbreviated_directions' => FALSE,
         'show_directions_degree' => FALSE,
         'show_compact_block' => FALSE,

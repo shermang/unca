@@ -1,3 +1,23 @@
+Version: 7.x-1.8                                     Date: 2013-09-11
+---------------------------------------------------------------------
+
+* Update information for Mariscal Sucre International Airport,
+  Ecuador. Thanks to Julián Bustamante for the bug report.
+  Closes: [#2082881]
+* Refresh list of known METAR stations. 294 weather stations have
+  been removed, 877 have been added, resulting in a total of 4470
+  locations which provide weather data.
+
+
+Version: 7.x-1.7                                     Date: 2013-09-01
+---------------------------------------------------------------------
+
+* Support heat index, thanks to on4sar for the idea. Closes: [#2061103]
+* Do not show an error message if the smart_ip module could not
+  find a location for a given IP. Thanks to Vict0rC for the bug
+  report. Closes: [#2012580]
+
+
 Version: 7.x-1.6                                     Date: 2013-07-29
 ---------------------------------------------------------------------
 

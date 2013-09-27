@@ -55,8 +55,8 @@ function theme_weather_theming($variables) {
     $units = $display->units;
     if (!empty($show['temperature']) and isset($metar->temperature)) {
       $weather->temperature = weather_format_temperature($metar->temperature, $units['temperature']);
-      if (!empty($display->settings['show_windchill']) and isset($metar->wind_speed)) {
-        $weather->windchill = weather_format_windchill($metar->temperature, $metar->wind_speed, $units['temperature']);
+      if (!empty($display->settings['show_apparent_temperature'])) {
+        $weather->apparent_temperature = weather_format_apparent_temperature($metar, $units['temperature']);
       }
     }
     if (!empty($show['wind']) and isset($metar->wind_direction)) {
@@ -215,17 +215,22 @@ function weather_format_temperature($temperature, $unit) {
 }
 
 /**
- * Calculates windchill.
+ * Calculates apparent temperature.
+ *
+ * This might be windchill (if cold and windy) or
+ * heat index (if hot and humid).
  *
  * Windchill temperature is only defined for temperatures at or below
  * 10 °C (50 °F) and wind speeds above 4.8 km/h (3 mph). Bright sunshine
  * may increase the wind chill temperature.
  * @link http://en.wikipedia.org/wiki/Wind_chill
  *
- * @param int $temperature
- *   Temperature in degree celsius.
- * @param int $wind_speed
- *   Wind speed in km/h.
+ * The heat index is only defined for temperatures at or above
+ * 26.7 °C (80 °F) and a relative humidity above 40%.
+ * @link http://en.wikipedia.org/wiki/Heat_index
+ *
+ * @param int $metar
+ *   Structure with necessary information.
  * @param string $unit
  *   Unit to be returned (celsius, fahrenheit, ...).
  *
@@ -233,17 +238,43 @@ function weather_format_temperature($temperature, $unit) {
  *   Formatted representation in the desired unit. If the windchill is not
  *   defined for the current conditions, returns NULL.
  */
-function weather_format_windchill($temperature, $wind_speed, $unit) {
-  if (($temperature <= 10) and ($wind_speed >= 4.8)) {
-    // Calculate windchill (in degree Celsius).
-    $windchill = round(13.12 + 0.6215 * $temperature -
-      11.37 * pow($wind_speed, 0.16) +
-      0.3965 * $temperature * pow($wind_speed, 0.16), 1);
-    $result = weather_format_temperature($windchill, $unit);
+function weather_format_apparent_temperature($metar, $unit) {
+  // Set up the empty result, if apparent temperature is not defined
+  // for current conditions.
+  $result = NULL;
+  // First, check conditions for windchill temperature.
+  if ($metar->temperature <= 10) {
+    if (isset($metar->wind_speed) and ($metar->wind_speed >= 4.8)) {
+      // Calculate windchill (in degree Celsius).
+      $windchill = round(13.12 + 0.6215 * $metar->temperature -
+        11.37 * pow($metar->wind_speed, 0.16) +
+        0.3965 * $metar->temperature * pow($metar->wind_speed, 0.16), 1);
+      $result = weather_format_temperature($windchill, $unit);
+    }
   }
-  else {
-    // Windchill is not defined for current conditions.
-    $result = NULL;
+  // Second, check conditions for heat index.
+  if ($metar->temperature >= 26.7) {
+    if (isset($metar->dewpoint)) {
+      // Calculate relative humidity
+      $e = 6.11 * pow(10, (7.5 * $metar->dewpoint / (237.7 + $metar->dewpoint)));
+      $es = 6.11 * pow(10, (7.5 * $metar->temperature / (237.7 + $metar->temperature)));
+      $h = max(0, min(100, round(100 * ($e / $es), 0)));
+      if ($h >= 40) {
+        // Calculate heat index (in degree Celsius).
+        $c1 = -8.784695;
+        $c2 = 1.61139411;
+        $c3 = 2.338549;
+        $c4 = -0.14611605;
+        $c5 = -1.2308094E-2;
+        $c6 = -1.6424828E-2;
+        $c7 = 2.211732E-3;
+        $c8 = 7.2546E-4;
+        $c9 = -3.582E-6;
+        $t = $metar->temperature;
+        $heatindex = round($c1 + $c2*$t + $c3*$h + $c4*$t*$h + $c5*$t*$t + $c6*$h*$h + $c7*$t*$t*$h + $c8*$t*$h*$h + $c9*$t*$t*$h*$h, 1);
+        $result = weather_format_temperature($heatindex, $unit);
+      }
+    }
   }
   return $result;
 }

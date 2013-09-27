@@ -1,5 +1,5 @@
 (function($) {
-jQuery.noConflict( );
+
   // Behavior to load FlexSlider
   Drupal.behaviors.flexslider = {
     attach: function(context, settings) {
@@ -31,7 +31,6 @@ jQuery.noConflict( );
    */
 
   function _flexslider_init(id, optionset, context) {
-    console.log(id);
     $('#' + id, context).once('flexslider', function() {
       // Remove width/height attributes
       // @todo load the css path from the settings
