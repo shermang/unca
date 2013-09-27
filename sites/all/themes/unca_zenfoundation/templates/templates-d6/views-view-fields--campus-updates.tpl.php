@@ -1,2 +1,0 @@
-<h3><?php print $fields['title']->content; ?></h3>
-<p><?php if ($fields['field_campus_update_image_fid']->content){ ?><img src="<?php print $fields['field_campus_update_image_fid']->content; ?>" width="70" height="55" alt="<?php print $fields['field_campus_update_image_data']->content; ?>" class="left" /><?php }?> <?php print $fields['field_campus_update_teaser_value']->content; ?> <?php print $fields['view_node']->content; ?></p>
