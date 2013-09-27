@@ -9,5 +9,6 @@ dependencies[] = migrate_d2d
 
 files[] = role.inc
 files[] = user.inc
+files[] = taxonomy.inc
 files[] = node.inc
 files[] = file.inc
