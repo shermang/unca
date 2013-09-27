@@ -69,22 +69,6 @@ function migrate_d2d_unca_register_migrations() {
   // 
   // +  +  +  +  USERS: 'UNCAUser'  +  +  +  +  
   // 
-  // Src: 
-  // 1  anonymous user
-  // 2 authenticated user
-  // 3 content manager
-  // 4 administrator
-  // 
-  // Target:
-  // 1  anonymous user  
-  // 2 authenticated user  
-  // 3 administrator 
-  // 
-  // Migration:
-  // Create target role: 4 content manager
-  // Where src.rid = 3 (cont. mgr) or 5 (editor), convert to 4 (cont. mgr)
-  // Where src.rid = 4 (admin), convert to 3 (administrator)
-  //  
 
   // The description and the migration machine name are also required arguments,
   // which will be unique for each migration you register.
@@ -102,8 +86,19 @@ function migrate_d2d_unca_register_migrations() {
 
 
 
+  // 
+  // +  +  +  +  TAXONOMY  +  +  +  +  
+  // 
 
+  //  IMPORTANT:  TAXONOMY MIGRATION IS USING THE WRONG D7 MACHINE NAMES; 
+  //  THEY WILL NEED TO BE CHANGED IN migrate_d2d_unca_get_vocab_mappings()
+  //  WHEN THEY GET FIXED IN THE FEATURES.
+  
+  // Vocabulary ids are not consistent on source dbs, so compile our mapping
+  // dynamically
+  extract(migrate_d2d_unca_get_vocab_mappings()); # $vocabs_map, $src_vocabs
 
+<<<<<<< HEAD
   // 
   // +  +  +  +  TAXONOMY  +  +  +  +  
   // 
@@ -134,6 +129,12 @@ function migrate_d2d_unca_register_migrations() {
 
     // $t = array();
     // drush_print_r($vocabs_map);
+=======
+  // For vocabulary migrations, source_vocabulary and destination_vocabulary are
+  // required arguments. Note that in Drupal 6 vocabularies did not have machine
+  // names, so we use the vocabulary ID to uniquely identify them.
+
+>>>>>>> migration
   // Normal vocabs, can be handled automatically
   foreach($vocabs_map as $vname => $vocab) {
     if(@$vocab['d6_vid']) {
@@ -146,6 +147,7 @@ function migrate_d2d_unca_register_migrations() {
     }
   }
 
+<<<<<<< HEAD
 
   // Again, we're using the migrate_d2d class directly.
   // The soft dependency says that while we don't have to run the user migration
@@ -153,12 +155,18 @@ function migrate_d2d_unca_register_migrations() {
   // listed right ahead of the node migrations.
   $common_vocabulary_arguments = $common_arguments + array(
     // 'class_name' => 'DrupalTerm6Migration',
+=======
+  $common_vocabulary_arguments = $common_arguments + array(
+>>>>>>> migration
     'class_name' => 'UNCATermMigration',
     // 'soft_dependencies' => array('User'),
   );
   foreach ($vocabulary_arguments as $arguments) {
     $arguments += $common_vocabulary_arguments;
+<<<<<<< HEAD
 drush_print_r(array($arguments['machine_name'] => $arguments));
+=======
+>>>>>>> migration
     Migration::registerMigration($arguments['class_name'], $arguments['machine_name'], $arguments);
   }
 
@@ -218,6 +226,20 @@ function migrate_d2d_unca_migrate_api() {
 
 function migrate_d2d_unca_get_vocab_mappings() {
 
+<<<<<<< HEAD
+=======
+    // Temporarily correct pending updates in features
+    $event_categories_mach_name = 'event_type'; # will change to event_categories
+    $news_categories_mach_name = 'news_category'; # will change to news_categories
+    $profile_type_mach_name = 'profile_types'; # will change to profile_type
+    $program_type_mach_name = 'program_types'; # will change to program_type
+    $university_semester_mach_name = 'university_term'; # will change to university_semester
+
+
+
+  // Array of all the D7 vocabs/settings, mapped to D6 vocab names.
+  // Some D7 vocabs require special handling, which is done later.
+>>>>>>> migration
   $vocabs_map = array(
     'course_catalogs' => array(
       'd7_name' => 'Course Catalog',
@@ -239,10 +261,21 @@ function migrate_d2d_unca_get_vocab_mappings() {
       'mach_name' => 'course_topic',
       'd6_name' => 'Topics'
     ),
+<<<<<<< HEAD
     'event_categories' => array(
       'd7_name' => 'Event Categories',
       'mach_name' => 'event_categories',
       'd6_name' => '', # special handling: SOME "News & Events Categories"
+=======
+    // Note: event_categories is populated from the source "News Articles" OR 
+    // "News and Events Categories", depending on site.
+    // Also, note that these two source vocabularies get duplicated into 
+    // D7.news_categories
+    'event_categories' => array(
+      'd7_name' => 'Event Categories',
+      'mach_name' => $event_categories_mach_name,
+      'd6_name' => '', 
+>>>>>>> migration
     ),
     'policy_owner' => array(
       'd7_name' => 'Policy Owner',
@@ -269,6 +302,7 @@ function migrate_d2d_unca_get_vocab_mappings() {
       'mach_name' => 'humanities_level',
       'd6_name' => 'Humanities Level'
     ),
+<<<<<<< HEAD
 
     'news_categories' => array(
       'd7_name' => 'News Categories',
@@ -284,11 +318,29 @@ function migrate_d2d_unca_get_vocab_mappings() {
     'profile_type' => array(
       'd7_name' => 'Profile Type',
       'mach_name' => 'profile_types',
+=======
+    // Note: news_categories is populated from the source "News Articles" OR 
+    // "News and Events Categories", depending on site.
+    // Also, note that these two source vocabularies get duplicated into 
+    // D7.event_categories
+    'news_categories' => array(
+      'd7_name' => 'News Categories',
+      'mach_name' => $news_categories_mach_name,
+      'd6_name' => '', 
+    ),
+    'profile_type' => array(
+      'd7_name' => 'Profile Type',
+      'mach_name' => $profile_type_mach_name,
+>>>>>>> migration
       'd6_name' => 'Profile Types'
     ),
     'program_type' => array(
       'd7_name' => 'Program Type',
+<<<<<<< HEAD
       'mach_name' => 'program_type',
+=======
+      'mach_name' => $program_type_mach_name,
+>>>>>>> migration
       'd6_name' => 'Program Type'
     ),
     'project_type' => array(
@@ -303,6 +355,7 @@ function migrate_d2d_unca_get_vocab_mappings() {
     ),
     'university_semester' => array(
       'd7_name' => 'University Semester',
+<<<<<<< HEAD
       'mach_name' => 'university_semester',
       'd6_name' => 'Term'
     ),
@@ -310,12 +363,28 @@ function migrate_d2d_unca_get_vocab_mappings() {
       'd7_name' => 'Location Type',
       'mach_name' => 'location_type',
       'd6_name' => '', # special handling: multiple d6 names: Map Category, Map Categories
+=======
+      'mach_name' => $university_semester_mach_name,
+      'd6_name' => 'Term'
+    ),
+    // Note: location_type is populated from the source "Map Category" OR
+    // "Map Categories", depending on site
+    'location_type' => array(
+      'd7_name' => 'Location Type',
+      'mach_name' => 'location_type',
+      'd6_name' => '', 
+>>>>>>> migration
     ),
     'student_orgs' => array(
       'd7_name' => 'Student Organizations',
       'mach_name' => 'student_orgs',
       'd6_name' => 'Student Organizations'
     ),
+<<<<<<< HEAD
+=======
+    // The D6 "Slideshows" vocab MAY get migrated, but will be used to 
+    // create slideshow entities, not taxonomy terms
+>>>>>>> migration
     '__slideshows__' => array(
       'd7_name' => 'Slideshows',
       'mach_name' => 'see Migration notes',
@@ -324,6 +393,7 @@ function migrate_d2d_unca_get_vocab_mappings() {
 
   );
 
+<<<<<<< HEAD
   // Temporarily correct pending updates in features
   $vocabs_map['event_type'] = $vocabs_map['event_categories'];
   $vocabs_map['event_type']['mach_name'] = 'event_type';
@@ -356,6 +426,23 @@ function migrate_d2d_unca_get_vocab_mappings() {
          break;
       default:
       $map_d6_name_to_mach_name[$vocab['d6_name']] = trim($vocab['mach_name']);
+=======
+  // Create map array for easy lookup
+  $map_d6_name_to_mach_name = array(); 
+  foreach($vocabs_map as $key => $vocab) {
+    switch ($vocab['d6_name']) {
+      case 'News and Events Categories':
+      case 'News Articles':
+      case 'Map Categories':
+      case 'Map Category':
+         // do nothing (these will be handled manually)
+         break;
+      case 'News and Event Type':
+         // do nothing (not migrated)
+         break;
+      default:
+      $map_d6_name_to_mach_name[$vocab['d6_name']] = $key;
+>>>>>>> migration
     }
     
   }
@@ -363,6 +450,7 @@ function migrate_d2d_unca_get_vocab_mappings() {
   $map_d6_name_to_mach_name['Map Categories'] = 'location_type';
   $map_d6_name_to_mach_name['Map Category'] = 'location_type';
 
+<<<<<<< HEAD
   // load source site's vocabularies
   db_set_active('legacy');
   $result = db_query('SELECT vid, name from {vocabulary}'); //Your own queries on the external DB.
@@ -379,6 +467,33 @@ function migrate_d2d_unca_get_vocab_mappings() {
         case 'Map Category':
           $vocabs_map['location_type']['d6_name'] = $record->name;
           $vocabs_map['location_type']['d6_vid'] = $record->vid;
+=======
+
+
+  // Get the src db vocab ids and add them to the main map
+  //   load source site's vocabularies
+  db_set_active('legacy');
+  $result = db_query('SELECT vid, name from {vocabulary}'); 
+  //   add to map
+  $src_vocabs = array();
+  foreach ($result as $record) {
+    $src_vocabs[] = $record;
+
+    // 'Normal' vocabs
+    if($mach_name = @$map_d6_name_to_mach_name[$record->name]) {
+      $vocabs_map[$mach_name]['d6_name'] = $record->name;
+      $vocabs_map[$mach_name]['d6_vid'] = $record->vid;
+
+    // Vocabs needing special handling
+    } else {
+      switch ($record->name) {
+        case 'News and Events Categories':
+        case 'News Articles':
+          $vocabs_map['event_categories']['d6_name'] = $record->name;
+          $vocabs_map['event_categories']['d6_vid'] = $record->vid;
+          $vocabs_map['news_categories']['d6_name'] = $record->name;
+          $vocabs_map['news_categories']['d6_vid'] = $record->vid;
+>>>>>>> migration
           break;
       }
     }

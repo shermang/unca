@@ -31,6 +31,7 @@ class UNCATermMigration extends DrupalTerm6Migration {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
     }
+<<<<<<< HEAD
 
     static $t;
     if(!$t) {
@@ -38,5 +39,7 @@ class UNCATermMigration extends DrupalTerm6Migration {
       $t = true;
     }
 
+=======
+>>>>>>> migration
   }
 }
