@@ -14,9 +14,9 @@ files[] = weather_compact.tpl.php
 files[] = tests/permissions.test
 files[] = tests/parser.test
 
-; Information added by drupal.org packaging script on 2013-07-29
-version = "7.x-1.6"
+; Information added by drupal.org packaging script on 2013-09-11
+version = "7.x-1.8"
 core = "7.x"
 project = "weather"
-datestamp = "1375093292"
+datestamp = "1378894184"
 
