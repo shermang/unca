@@ -13,3 +13,10 @@ files[] = taxonomy.inc
 files[] = node.inc
 files[] = file.inc
 files[] = project.inc
+files[] = destination.inc
+files[] = student_project.inc
+files[] = campus_updated.inc
+files[] = cluster.inc
+files[] = course.inc
+files[] = slideshow_slide.inc
+
