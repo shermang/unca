@@ -1,6 +1,6 @@
-name = "UNCA Multisite D6 to D7 migration"
-description = "Migrate content from UNCA D6 sites to D7"
-package = "Development"
+name = UNCA Multisite D6 to D7 migration
+description = Migrate content from UNCA D6 sites to D7
+package = Development
 core = 7.x
 hidden = TRUE
 
@@ -11,3 +11,5 @@ files[] = role.inc
 files[] = user.inc
 files[] = taxonomy.inc
 files[] = node.inc
+files[] = file.inc
+files[] = project.inc

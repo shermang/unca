@@ -87,9 +87,11 @@ unca_cluster \
 unca_course \
 unca_campus_update \
 unca_news \
+unca_project \
 unca_fields \
 slideshow_entity \
 unca_home_home_page \
+unca_zenfoundation \
 libraries \
 flexslider \
 entityreference \
@@ -98,6 +100,7 @@ strongarm \
 unca_slideshow \
 email \
 unca_student_project \
+unca_maps \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
@@ -110,6 +113,10 @@ securelogin
 echo "Running any required database updates"
 drush --nocolor updatedb --yes
 echo ""
+
+# Set unca_zenfoundation as the active theme
+echo "Setting unca_zenfoundation as the active theme"
+drush vset theme_default unca_zenfoundation
 
 # clear the cache
 echo "Clearing the drupal cache"
