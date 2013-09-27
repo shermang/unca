@@ -31,12 +31,5 @@ class UNCATermMigration extends DrupalTerm6Migration {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
     }
-
-    static $t;
-    if(!$t) {
-      drush_print_r($row);
-      $t = true;
-    }
-
   }
 }
