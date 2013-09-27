@@ -78,13 +78,16 @@ function study_abroad_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_university_term'
-  $field_bases['field_university_term'] = array(
+  // Exported field_base: 'field_university_semester_term'
+  $field_bases['field_university_semester_term'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_university_term',
+    'field_name' => 'field_university_semester_term',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -107,6 +110,7 @@ function study_abroad_field_default_field_bases() {
           'parent' => 0,
         ),
       ),
+      'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',

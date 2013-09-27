@@ -50,7 +50,7 @@ function unca_news_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 1,
     ),
   );
 
@@ -93,7 +93,7 @@ function unca_news_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -143,7 +143,7 @@ function unca_news_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 0,
+      'weight' => 3,
     ),
   );
 
@@ -180,7 +180,7 @@ function unca_news_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -217,7 +217,7 @@ function unca_news_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -254,7 +254,7 @@ function unca_news_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
@@ -294,23 +294,24 @@ function unca_news_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => -2,
+      'weight' => 2,
     ),
   );
 
   // Exported field_instance: 'node-news_article-field_video_embed'
   $field_instances['node-news_article-field_video_embed'] = array(
     'bundle' => 'news_article',
-    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enables you to embed a video from Viddler, Vimeo or YouTube',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 3,
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -321,7 +322,7 @@ function unca_news_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_video_embed',
-    'label' => 'Embedded Video',
+    'label' => 'Video',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -332,12 +333,23 @@ function unca_news_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'emfield',
+      'module' => 'media',
       'settings' => array(
-        'size' => 60,
+        'allowed_schemes' => array(
+          'public' => 0,
+          'viddler' => 'viddler',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'default' => 0,
+          'image' => 0,
+          'video' => 'video',
+        ),
+        'progress_indicator' => 'throbber',
       ),
-      'type' => 'enfield_widget',
-      'weight' => 2,
+      'type' => 'media_generic',
+      'weight' => 4,
     ),
   );
 
@@ -345,8 +357,6 @@ function unca_news_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Displayed in listings of News Articles, RSS Feed');
-  t('Embedded Video');
-  t('Enables you to embed a video from Viddler, Vimeo or YouTube');
   t('Featured Image');
   t('News Category');
   t('News and Event Categories');
@@ -356,6 +366,7 @@ function unca_news_field_default_field_instances() {
   t('Related Links');
   t('Teaser');
   t('Upload an image to go with this article.');
+  t('Video');
 
   return $field_instances;
 }
