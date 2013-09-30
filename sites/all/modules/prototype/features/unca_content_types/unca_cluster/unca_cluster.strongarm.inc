@@ -1,68 +1,68 @@
 <?php
 /**
  * @file
- * unca_slideshow.strongarm.inc
+ * unca_cluster.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function unca_slideshow_strongarm() {
+function unca_cluster_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_slideshow_item';
+  $strongarm->name = 'comment_anonymous_cluster';
   $strongarm->value = 0;
-  $export['comment_anonymous_slideshow_item'] = $strongarm;
+  $export['comment_anonymous_cluster'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_slideshow_item';
+  $strongarm->name = 'comment_cluster';
+  $strongarm->value = '0';
+  $export['comment_cluster'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_cluster';
   $strongarm->value = 1;
-  $export['comment_default_mode_slideshow_item'] = $strongarm;
+  $export['comment_default_mode_cluster'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_slideshow_item';
+  $strongarm->name = 'comment_default_per_page_cluster';
   $strongarm->value = '50';
-  $export['comment_default_per_page_slideshow_item'] = $strongarm;
+  $export['comment_default_per_page_cluster'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_slideshow_item';
+  $strongarm->name = 'comment_form_location_cluster';
   $strongarm->value = 1;
-  $export['comment_form_location_slideshow_item'] = $strongarm;
+  $export['comment_form_location_cluster'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_slideshow_item';
+  $strongarm->name = 'comment_preview_cluster';
   $strongarm->value = '1';
-  $export['comment_preview_slideshow_item'] = $strongarm;
+  $export['comment_preview_cluster'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_slideshow_item';
-  $strongarm->value = '1';
-  $export['comment_slideshow_item'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_slideshow_item';
+  $strongarm->name = 'comment_subject_field_cluster';
   $strongarm->value = 1;
-  $export['comment_subject_field_slideshow_item'] = $strongarm;
+  $export['comment_subject_field_cluster'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__slideshow_item';
+  $strongarm->name = 'field_bundle_settings_node__cluster';
   $strongarm->value = array(
     'view_modes' => array(),
     'extra_fields' => array(
@@ -71,50 +71,52 @@ function unca_slideshow_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '6',
         ),
       ),
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__slideshow_item'] = $strongarm;
+  $export['field_bundle_settings_node__cluster'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_slideshow_item';
-  $strongarm->value = array();
-  $export['menu_options_slideshow_item'] = $strongarm;
+  $strongarm->name = 'menu_options_cluster';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_cluster'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_slideshow_item';
+  $strongarm->name = 'menu_parent_cluster';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_slideshow_item'] = $strongarm;
+  $export['menu_parent_cluster'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_slideshow_item';
+  $strongarm->name = 'node_options_cluster';
   $strongarm->value = array(
     0 => 'status',
   );
-  $export['node_options_slideshow_item'] = $strongarm;
+  $export['node_options_cluster'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_slideshow_item';
+  $strongarm->name = 'node_preview_cluster';
   $strongarm->value = '1';
-  $export['node_preview_slideshow_item'] = $strongarm;
+  $export['node_preview_cluster'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_slideshow_item';
+  $strongarm->name = 'node_submitted_cluster';
   $strongarm->value = 0;
-  $export['node_submitted_slideshow_item'] = $strongarm;
+  $export['node_submitted_cluster'] = $strongarm;
 
   return $export;
 }
