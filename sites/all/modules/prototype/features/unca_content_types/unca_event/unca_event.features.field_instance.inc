@@ -50,7 +50,7 @@ function unca_event_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 1,
+      'weight' => 4,
     ),
   );
 
@@ -72,7 +72,7 @@ function unca_event_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -104,24 +104,24 @@ function unca_event_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_text',
-      'weight' => 4,
+      'type' => 'date_select',
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_categories_term'
-  $field_instances['node-event-field_event_categories_term'] = array(
+  // Exported field_instance: 'node-event-field_event_type'
+  $field_instances['node-event-field_event_type'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Specify the type of event.',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -131,17 +131,18 @@ function unca_event_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_event_categories_term',
-    'label' => 'Event Categories',
-    'required' => FALSE,
+    'field_name' => 'field_event_type',
+    'label' => 'Event Type',
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -157,7 +158,7 @@ function unca_event_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -178,7 +179,7 @@ function unca_event_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 11,
     ),
   );
 
@@ -207,7 +208,7 @@ function unca_event_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_image',
-    'label' => 'Image',
+    'label' => 'Featured Image',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
@@ -244,7 +245,7 @@ function unca_event_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -282,7 +283,7 @@ function unca_event_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -322,24 +323,137 @@ function unca_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_news_and_event_categories'
+  $field_instances['node-event-field_news_and_event_categories'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_news_and_event_categories',
+    'label' => 'News and Event Categories',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_news_and_event_type'
+  $field_instances['node-event-field_news_and_event_type'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_news_and_event_type',
+    'label' => 'News and Event Type',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_subheading'
+  $field_instances['node-event-field_subheading'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_subheading',
+    'label' => 'Subheading',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
     ),
   );
 
   // Exported field_instance: 'node-event-field_video_embed'
   $field_instances['node-event-field_video_embed'] = array(
     'bundle' => 'event',
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Specify a video to embed on this event page.',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file_entity',
-        'settings' => array(
-          'file_view_mode' => 'default',
-        ),
-        'type' => 'file_rendered',
-        'weight' => 10,
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -350,7 +464,7 @@ function unca_event_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_video_embed',
-    'label' => 'Video',
+    'label' => 'Embed Video',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -361,23 +475,13 @@ function unca_event_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'file',
       'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 0,
-          'viddler' => 'viddler',
-          'youtube' => 'youtube',
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'default' => 0,
-          'image' => 0,
-          'video' => 'video',
-        ),
         'progress_indicator' => 'throbber',
+        'size' => 60,
       ),
-      'type' => 'media_generic',
-      'weight' => 5,
+      'type' => 'file_generic',
+      'weight' => 6,
     ),
   );
 
@@ -385,17 +489,22 @@ function unca_event_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Date');
+  t('Embed Video');
   t('Enter an alternate link for this event.');
   t('Enter date for this event.');
   t('Enter the location.');
-  t('Event Categories');
+  t('Event Type');
+  t('Featured Image');
   t('Humanities Level');
-  t('Image');
   t('Link');
   t('Location');
+  t('News and Event Categories');
+  t('News and Event Type');
   t('Select the relevant Humanities Level');
+  t('Specify a video to embed on this event page.');
+  t('Specify the type of event.');
+  t('Subheading');
   t('Upload a featured image for this event.');
-  t('Video');
 
   return $field_instances;
 }
