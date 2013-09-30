@@ -93,7 +93,7 @@ function unca_news_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 8,
+      'weight' => 4,
     ),
   );
 
@@ -122,7 +122,7 @@ function unca_news_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_image',
-    'label' => 'Featured Image',
+    'label' => 'Image',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
@@ -143,174 +143,22 @@ function unca_news_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-news_article-field_news_and_event_categories'
-  $field_instances['node-news_article-field_news_and_event_categories'] = array(
-    'bundle' => 'news_article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'References vocab: News and Event Categories',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_news_and_event_categories',
-    'label' => 'News and Event Categories',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-news_article-field_news_and_event_type'
-  $field_instances['node-news_article-field_news_and_event_type'] = array(
-    'bundle' => 'news_article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'References vocab: News and Event Type',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_news_and_event_type',
-    'label' => 'News and Event Type',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-news_article-field_news_category'
-  $field_instances['node-news_article-field_news_category'] = array(
-    'bundle' => 'news_article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_news_category',
-    'label' => 'News Category',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-news_article-field_teaser_text'
-  $field_instances['node-news_article-field_teaser_text'] = array(
-    'bundle' => 'news_article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Displayed in listings of News Articles, RSS Feed',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_teaser_text',
-    'label' => 'Teaser',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
       'weight' => 2,
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_video_embed'
-  $field_instances['node-news_article-field_video_embed'] = array(
+  // Exported field_instance: 'node-news_article-field_news_categories_term'
+  $field_instances['node-news_article-field_news_categories_term'] = array(
     'bundle' => 'news_article',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file_entity',
-        'settings' => array(
-          'file_view_mode' => 'default',
-        ),
-        'type' => 'file_rendered',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 8,
       ),
       'teaser' => array(
@@ -321,52 +169,28 @@ function unca_news_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_video_embed',
-    'label' => 'Video',
+    'field_name' => 'field_news_categories_term',
+    'label' => 'News Categories',
     'required' => 0,
     'settings' => array(
-      'description_field' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'txt',
-      'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 0,
-          'viddler' => 'viddler',
-          'youtube' => 'youtube',
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'default' => 0,
-          'image' => 0,
-          'video' => 'video',
-        ),
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => 4,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 3,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Displayed in listings of News Articles, RSS Feed');
-  t('Featured Image');
-  t('News Category');
-  t('News and Event Categories');
-  t('News and Event Type');
-  t('References vocab: News and Event Categories');
-  t('References vocab: News and Event Type');
+  t('Image');
+  t('News Categories');
   t('Related Links');
-  t('Teaser');
   t('Upload an image to go with this article.');
-  t('Video');
 
   return $field_instances;
 }

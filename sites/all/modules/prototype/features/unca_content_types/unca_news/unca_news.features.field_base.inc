@@ -97,13 +97,13 @@ function unca_news_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_news_category'
-  $field_bases['field_news_category'] = array(
+  // Exported field_base: 'field_news_categories_term'
+  $field_bases['field_news_categories_term'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_news_category',
+    'field_name' => 'field_news_categories_term',
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
