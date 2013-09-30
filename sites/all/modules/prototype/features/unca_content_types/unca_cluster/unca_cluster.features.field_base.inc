@@ -65,6 +65,9 @@ function unca_cluster_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_date',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
@@ -80,6 +83,7 @@ function unca_cluster_field_default_field_bases() {
         'second' => 0,
         'year' => 'year',
       ),
+      'profile2_private' => FALSE,
       'timezone_db' => 'UTC',
       'todate' => 'optional',
       'tz_handling' => 'site',

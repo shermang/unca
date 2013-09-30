@@ -12,3 +12,5 @@ files[] = user.inc
 files[] = taxonomy.inc
 files[] = node.inc
 files[] = file.inc
+files[] = project.inc
+files[] = events.inc
