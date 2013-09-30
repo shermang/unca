@@ -60,7 +60,7 @@ function unca_cluster_field_default_field_instances() {
     'bundle' => 'cluster',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the names and email addresses of all coordinators for this Cluster.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -78,7 +78,7 @@ function unca_cluster_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_cluster_coordinator',
-    'label' => 'Coordinator',
+    'label' => 'Cluster Coordinator',
     'required' => 0,
     'settings' => array(
       'text_processing' => 1,
@@ -88,9 +88,9 @@ function unca_cluster_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'rows' => 5,
       ),
-      'type' => 'text_textfield',
+      'type' => 'text_textarea',
       'weight' => 4,
     ),
   );
@@ -250,11 +250,10 @@ function unca_cluster_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Approved through');
   t('Body');
+  t('Cluster Coordinator');
   t('Cluster Number');
-  t('Coordinator');
   t('Enter the last day that this cluster should appear in lists of clusters.');
   t('Enter the main content of this Cluster. Summary: Click Edit Summary below to show the Summary input to be used as a subheading in the homepage slideshow, as well as in the list of Clusters.');
-  t('Enter the names and email addresses of all coordinators for this Cluster.');
   t('Enter the sort order of this cluster. Enter only the number, ie "17"');
   t('Featured Image');
   t('Select a featured image for this cluster.');
