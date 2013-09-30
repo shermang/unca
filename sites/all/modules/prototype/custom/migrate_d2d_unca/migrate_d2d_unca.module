@@ -92,7 +92,7 @@ function migrate_d2d_unca_register_migrations() {
   $file_arguments = $common_arguments + array(
       'machine_name' => 'UNCAFile',
       'description' => t('Import Drupal 6 files'),
-      'source_dir' => '',       // @TODO: This may need to be changed once we know where the source files are
+      'source_dir' => 'sites/default/files/migration',       // @TODO: This may need to be changed once we know where the source files are
     );
   $file_migration_class = 'UNCAFileMigration';
   // $role_migration_class = 'DrupalRole6Migration';
@@ -168,56 +168,56 @@ function migrate_d2d_unca_register_migrations() {
       'destination_type' => 'destination',
     ),
 
-    // Campus Update CT
-    // Note: core site (unca_drupal) only
-    array(
-      'class_name' => 'UNCACampusUpdateMigration',
-      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
-      'machine_name' => 'UNCACampusUpdatenCT',
-      'source_type' => 'campus_update',
-      'destination_type' => 'campus_update',
-    ),
+    // // Campus Update CT
+    // // Note: core site (unca_drupal) only
+    // array(
+    //   'class_name' => 'UNCACampusUpdateMigration',
+    //   'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+    //   'machine_name' => 'UNCACampusUpdatenCT',
+    //   'source_type' => 'campus_update',
+    //   'destination_type' => 'campus_update',
+    // ),
 
-    // Cluster CT
-    // Note: sites: clusters, giving, ils
-    array(
-      'class_name' => 'UNCAClusterMigration',
-      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
-      'machine_name' => 'UNCAClusterCT',
-      'source_type' => 'cluster',
-      'destination_type' => 'cluster',
-    ),
+    // // Cluster CT
+    // // Note: sites: clusters, giving, ils
+    // array(
+    //   'class_name' => 'UNCAClusterMigration',
+    //   'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+    //   'machine_name' => 'UNCAClusterCT',
+    //   'source_type' => 'cluster',
+    //   'destination_type' => 'cluster',
+    // ),
 
-    // Course CT
-    // Note: sites: nccr, olliaasheville, ils
-    array(
-      'class_name' => 'UNCACourseMigration',
-      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
-      'machine_name' => 'UNCACourseCT',
-      'source_type' => 'course',
-      'destination_type' => 'course',
-    ),
+    // // Course CT
+    // // Note: sites: nccr, olliaasheville, ils
+    // array(
+    //   'class_name' => 'UNCACourseMigration',
+    //   'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+    //   'machine_name' => 'UNCACourseCT',
+    //   'source_type' => 'course',
+    //   'destination_type' => 'course',
+    // ),
 
-    // Slideshow Slide CT
-    // Note: sites: core, advancement, alumni, art, asft, cesap, others
-    array(
-      'class_name' => 'UNCASlideshowSlideMigration',
-      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
-      'machine_name' => 'UNCASlideshowSlideCT',
-      //  ****  NOTE: SOURCE CT MACH NAME VARIES !!!  ****
-      'source_type' => 'slideshow_item   OR  slideshow_image',
-      'destination_type' => 'slideshow_item',
-    ),
+    // // Slideshow Slide CT
+    // // Note: sites: core, advancement, alumni, art, asft, cesap, others
+    // array(
+    //   'class_name' => 'UNCASlideshowSlideMigration',
+    //   'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+    //   'machine_name' => 'UNCASlideshowSlideCT',
+    //   //  ****  NOTE: SOURCE CT MACH NAME VARIES !!!  ****
+    //   'source_type' => 'slideshow_item   OR  slideshow_image',
+    //   'destination_type' => 'slideshow_item',
+    // ),
 
-    // Student Project CT
-    // Note: on nemac (drupal_unca) site only
-    array(
-      'class_name' => 'UNCAStudentProjectMigration',
-      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
-      'machine_name' => 'UNCAStudentProjectCT',
-      'source_type' => 'student_organization',
-      'destination_type' => 'xxxxxxxxxxx',
-    ),
+    // // Student Project CT
+    // // Note: on nemac (drupal_unca) site only
+    // array(
+    //   'class_name' => 'UNCAStudentProjectMigration',
+    //   'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+    //   'machine_name' => 'UNCAStudentProjectCT',
+    //   'source_type' => 'student_organization',
+    //   'destination_type' => 'xxxxxxxxxxx',
+    // ),
 
 
   );
