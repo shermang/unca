@@ -78,7 +78,7 @@ function unca_cluster_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_cluster_coordinator',
-    'label' => 'Cluster Coordinator',
+    'label' => 'Coordinator',
     'required' => 0,
     'settings' => array(
       'text_processing' => 1,
@@ -144,7 +144,6 @@ function unca_cluster_field_default_field_instances() {
   // Exported field_instance: 'node-cluster-field_date'
   $field_instances['node-cluster-field_date'] = array(
     'bundle' => 'cluster',
-    'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Enter the last day this cluster should appear in lists of Clusters. This date can be changed if the Cluster is extended beyond the original date.',
     'display' => array(
@@ -224,7 +223,7 @@ function unca_cluster_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 4,
+      'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -249,8 +248,8 @@ function unca_cluster_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Approved through');
   t('Body');
-  t('Cluster Coordinator');
   t('Cluster Number');
+  t('Coordinator');
   t('Enter the last day this cluster should appear in lists of Clusters. This date can be changed if the Cluster is extended beyond the original date.');
   t('Enter the main content of this Cluster. Summary: Click Edit Summary below to show the Summary input to be used as a subheading in the homepage slideshow, as well as in the list of Clusters.');
   t('Enter the names and email addresses of all coordinators for this Cluster.');

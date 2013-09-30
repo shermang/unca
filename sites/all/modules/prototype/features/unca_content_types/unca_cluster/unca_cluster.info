@@ -22,7 +22,6 @@ features[field_instance][] = node-cluster-field_cluster_number
 features[field_instance][] = node-cluster-field_date
 features[field_instance][] = node-cluster-field_image
 features[node][] = cluster
-features[variable][] = field_bundle_settings_node__cluster
 features[variable][] = comment_anonymous_cluster
 features[variable][] = comment_cluster
 features[variable][] = comment_default_mode_cluster
