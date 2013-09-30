@@ -14,7 +14,6 @@ date \
 devel \
 devel_themer \
 draggableviews \
-emfield \
 entity_path \
 feeds \
 flickr \
