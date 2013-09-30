@@ -109,6 +109,12 @@ function migrate_d2d_unca_register_migrations() {
   
   // Vocabulary ids are not consistent on source dbs, so compile our mapping
   // dynamically
+
+  /** the following comments are used by intellij and phpStorm IDEs to suppress undeclared variable error messages
+   *  as they are created using the php extract() function
+  */
+  /** @var $vocabs_map ARRAY */
+  /** @var $src_vocabs ARRAY */
   extract(migrate_d2d_unca_get_vocab_mappings()); # $vocabs_map, $src_vocabs
 
   // For vocabulary migrations, source_vocabulary and destination_vocabulary are
@@ -148,21 +154,7 @@ function migrate_d2d_unca_register_migrations() {
   // // specifying its particular field mappings and transformations. source_type
   // // and destination_type are required arguments.
   $node_arguments = array(
-    //   array(
-    //     'class_name' => 'UNCAImageMigration',
-    //     'description' => t('Migration of image nodes from Drupal 6'),
-    //     'machine_name' => 'Image',
-    //     'source_type' => 'image',
-    //     'destination_type' => 'image',
-    //   ),
-    //   array(
-    //     'class_name' => 'UNCAArticleMigration',
-    //     'description' => t('Migration of article nodes from Drupal 6'),
-    //     'machine_name' => 'Article',
-    //     'source_type' => 'my_article',
-    //     'destination_type' => 'new_article',
-    //     'dependencies' => array('Image', 'Countries', 'Topics'),
-    //   ),
+
     array(
       'class_name' => 'UNCAProjectMigration',
       'description' => t('Migration of project nodes from Drupal 6'),
@@ -170,6 +162,14 @@ function migrate_d2d_unca_register_migrations() {
       'source_type' => 'project',
       'destination_type' => 'project',
     ),
+    array(
+      'class_name' => 'UNCAEventMigration',
+      'description' => t('Migration of event nodes from Drupal 6'),
+      'machine_name' => 'UNCAEvent',
+      'source_type' => 'event',
+      'destination_type' => 'event',
+    ),
+
 
   );
   // // Tell the node migrations where the users are coming from, so they can
@@ -195,6 +195,35 @@ function migrate_d2d_unca_migrate_api() {
   return $api;
 }
 
+/**
+ * Allow lookup of vocab mach names in order to all them to
+ * change without breaking things.
+ * @param  [type] $key [description]
+ * @return [type]      [description]
+ */
+function migrate_d2d_unca_get_vocab_mach_name($key) {
+  // Temporarily correct pending updates in features
+  switch($key) {
+    case 'event_categories':
+      return 'event_type'; # will change to event_categories
+      break;
+    case 'news_categories':
+      return 'news_category'; # will change to news_categories
+      break;
+    case 'profile_type':
+      return 'profile_types'; # will change to profile_type
+      break;
+    case 'program_type':
+      return 'program_types'; # will change to program_type
+      break;
+    case 'university_semester':
+      return 'university_term'; # will change to university_semester
+      break;
+    default:
+      return $key;
+      break;
+  }
+}
 
 function migrate_d2d_unca_get_vocab_mappings() {
 
