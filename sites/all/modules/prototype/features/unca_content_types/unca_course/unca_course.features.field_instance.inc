@@ -15,7 +15,7 @@ function unca_course_field_default_field_instances() {
     'bundle' => 'course',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter a description for the course.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -37,21 +37,20 @@ function unca_course_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => 0,
+    'required' => FALSE,
     'settings' => array(
-      'display_summary' => 1,
+      'display_summary' => TRUE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 1,
+      'weight' => -4,
     ),
   );
 
@@ -78,7 +77,7 @@ function unca_course_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_course_catalog_term',
-    'label' => 'Course Catalogs',
+    'label' => 'Course Catalog',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -88,7 +87,7 @@ function unca_course_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 3,
     ),
   );
 
@@ -128,7 +127,7 @@ function unca_course_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 2,
     ),
   );
 
@@ -169,7 +168,7 @@ function unca_course_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 4,
     ),
   );
 
@@ -209,7 +208,7 @@ function unca_course_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => -3,
     ),
   );
 
@@ -246,7 +245,7 @@ function unca_course_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 5,
     ),
   );
 
@@ -283,7 +282,7 @@ function unca_course_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 6,
     ),
   );
 
@@ -337,66 +336,7 @@ function unca_course_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-course-field_image'
-  $field_instances['node-course-field_image'] = array(
-    'bundle' => 'course',
-    'deleted' => 0,
-    'description' => 'Upload image(s) of the instructor(s) of this course.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_image',
-    'label' => 'Instructor Photo',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-          'viddler' => 0,
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'default' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => 5,
+      'weight' => 1,
     ),
   );
 
@@ -436,7 +376,68 @@ function unca_course_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => -2,
+    ),
+  );
+
+  // Exported field_instance: 'node-course-field_instructor_photo'
+  $field_instances['node-course-field_instructor_photo'] = array(
+    'bundle' => 'course',
+    'deleted' => 0,
+    'description' => 'Upload image(s) of the instructor(s) of this course.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_instructor_photo',
+    'label' => 'Instructor Photo',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'public files, field/image directory',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'viddler' => 0,
+          'vimeo' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'default' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'media_generic',
+      'weight' => -1,
     ),
   );
 
@@ -476,7 +477,7 @@ function unca_course_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 0,
     ),
   );
 
@@ -484,13 +485,12 @@ function unca_course_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('CRN');
-  t('Course Catalogs');
+  t('Course Catalog');
   t('Course Dates');
   t('Course Days');
   t('Course End Date');
   t('Course Times');
   t('Course Topics');
-  t('Enter a description for the course.');
   t('Enter the course number.');
   t('Enter the last day of this course. Format: Sun, 11/05/2013');
   t('Enter the name(s) of the instructors.');

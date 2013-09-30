@@ -17,9 +17,6 @@ function unca_course_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_course_catalog_term',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -42,7 +39,6 @@ function unca_course_field_default_field_bases() {
           'parent' => 0,
         ),
       ),
-      'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
@@ -118,9 +114,6 @@ function unca_course_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_course_number',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -138,7 +131,6 @@ function unca_course_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(
       'max_length' => 255,
-      'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'text',
@@ -269,6 +261,36 @@ function unca_course_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_instructor_photo'
+  $field_bases['field_instructor_photo'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_instructor_photo',
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_times'
