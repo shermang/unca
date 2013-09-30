@@ -15,7 +15,7 @@ function unca_cluster_field_default_field_instances() {
     'bundle' => 'cluster',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter the main content of this Cluster. Summary: Click Edit Summary below to show the Summary input to be used as a subheading in the homepage slideshow, as well as in the list of Clusters.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -37,20 +37,61 @@ function unca_cluster_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-cluster-field_cluster_coordinator'
+  $field_instances['node-cluster-field_cluster_coordinator'] = array(
+    'bundle' => 'cluster',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter the names and email addresses of all coordinators for this Cluster.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_cluster_coordinator',
+    'label' => 'Coordinator',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
     ),
   );
 
@@ -96,7 +137,7 @@ function unca_cluster_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -104,7 +145,7 @@ function unca_cluster_field_default_field_instances() {
   $field_instances['node-cluster-field_date'] = array(
     'bundle' => 'cluster',
     'deleted' => 0,
-    'description' => 'Enter the last day that this cluster should appear in lists of clusters.',
+    'description' => 'Enter the last day this cluster should appear in lists of Clusters. This date can be changed if the Cluster is extended beyond the original date.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -141,7 +182,6 @@ function unca_cluster_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
-        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'm/d/Y - H:i:s',
         'input_format_custom' => '',
@@ -149,8 +189,8 @@ function unca_cluster_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_popup',
-      'weight' => 6,
+      'type' => 'date_select',
+      'weight' => 5,
     ),
   );
 
@@ -200,47 +240,7 @@ function unca_cluster_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-cluster-field_subheading'
-  $field_instances['node-cluster-field_subheading'] = array(
-    'bundle' => 'cluster',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Enter a short description of this cluster.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_subheading',
-    'label' => 'Subheading',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -249,12 +249,13 @@ function unca_cluster_field_default_field_instances() {
   t('Approved through');
   t('Body');
   t('Cluster Number');
-  t('Enter a short description of this cluster.');
-  t('Enter the last day that this cluster should appear in lists of clusters.');
+  t('Coordinator');
+  t('Enter the last day this cluster should appear in lists of Clusters. This date can be changed if the Cluster is extended beyond the original date.');
+  t('Enter the main content of this Cluster. Summary: Click Edit Summary below to show the Summary input to be used as a subheading in the homepage slideshow, as well as in the list of Clusters.');
+  t('Enter the names and email addresses of all coordinators for this Cluster.');
   t('Enter the sort order of this cluster. Enter only the number, ie "17"');
   t('Featured Image');
   t('Select a featured image for this cluster.');
-  t('Subheading');
 
   return $field_instances;
 }

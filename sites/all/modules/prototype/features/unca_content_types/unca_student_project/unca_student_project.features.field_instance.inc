@@ -1,18 +1,18 @@
 <?php
 /**
  * @file
- * unca_news.features.field_instance.inc
+ * unca_student_project.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function unca_news_field_default_field_instances() {
+function unca_student_project_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-news_article-body'
-  $field_instances['node-news_article-body'] = array(
-    'bundle' => 'news_article',
+  // Exported field_instance: 'node-student_project-body'
+  $field_instances['node-student_project-body'] = array(
+    'bundle' => 'student_project',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -50,67 +50,22 @@ function unca_news_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 1,
+      'weight' => 31,
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_fc_related_links'
-  $field_instances['node-news_article-field_fc_related_links'] = array(
-    'bundle' => 'news_article',
+  // Exported field_instance: 'node-student_project-field_course_number'
+  $field_instances['node-student_project-field_course_number'] = array(
+    'bundle' => 'student_project',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_fc_related_links',
-    'label' => 'Related Links',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'node-news_article-field_image'
-  $field_instances['node-news_article-field_image'] = array(
-    'bundle' => 'news_article',
-    'deleted' => 0,
-    'description' => 'Upload an image to go with this article.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
+        'type' => 'text_default',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -121,118 +76,36 @@ function unca_news_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_image',
-    'label' => 'Featured Image',
+    'field_name' => 'field_course_number',
+    'label' => 'Course Number',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'file_directory' => 'public files, field/image directory',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'text',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
+        'size' => 60,
       ),
-      'type' => 'image_image',
-      'weight' => 3,
+      'type' => 'text_textfield',
+      'weight' => 35,
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_news_and_event_categories'
-  $field_instances['node-news_article-field_news_and_event_categories'] = array(
-    'bundle' => 'news_article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'References vocab: News and Event Categories',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_news_and_event_categories',
-    'label' => 'News and Event Categories',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-news_article-field_news_and_event_type'
-  $field_instances['node-news_article-field_news_and_event_type'] = array(
-    'bundle' => 'news_article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'References vocab: News and Event Type',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_news_and_event_type',
-    'label' => 'News and Event Type',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-news_article-field_news_category'
-  $field_instances['node-news_article-field_news_category'] = array(
-    'bundle' => 'news_article',
+  // Exported field_instance: 'node-student_project-field_email'
+  $field_instances['node-student_project-field_email'] = array(
+    'bundle' => 'student_project',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
+        'module' => 'email',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'email_default',
         'weight' => 6,
       ),
       'teaser' => array(
@@ -243,33 +116,90 @@ function unca_news_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_news_category',
-    'label' => 'News Category',
-    'required' => 1,
+    'field_name' => 'field_email',
+    'label' => 'Student Email',
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 7,
+      'module' => 'email',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 41,
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_teaser_text'
-  $field_instances['node-news_article-field_teaser_text'] = array(
-    'bundle' => 'news_article',
-    'default_value' => NULL,
+  // Exported field_instance: 'node-student_project-field_graduation_year'
+  $field_instances['node-student_project-field_graduation_year'] = array(
+    'bundle' => 'student_project',
     'deleted' => 0,
-    'description' => 'Displayed in listings of News Articles, RSS Feed',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_graduation_year',
+    'label' => 'Student Year of Graduation',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_text',
+      'weight' => 42,
+    ),
+  );
+
+  // Exported field_instance: 'node-student_project-field_image'
+  $field_instances['node-student_project-field_image'] = array(
+    'bundle' => 'student_project',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -280,8 +210,119 @@ function unca_news_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_teaser_text',
-    'label' => 'Teaser',
+    'field_name' => 'field_image',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'viddler' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'default' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'media_generic',
+      'weight' => 33,
+    ),
+  );
+
+  // Exported field_instance: 'node-student_project-field_link'
+  $field_instances['node-student_project-field_link'] = array(
+    'bundle' => 'student_project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_link',
+    'label' => 'Project URL',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 37,
+    ),
+  );
+
+  // Exported field_instance: 'node-student_project-field_student_fullname'
+  $field_instances['node-student_project-field_student_fullname'] = array(
+    'bundle' => 'student_project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_student_fullname',
+    'label' => 'Student Name',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -291,16 +332,16 @@ function unca_news_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'size' => 60,
       ),
-      'type' => 'text_textarea',
-      'weight' => 2,
+      'type' => 'text_textfield',
+      'weight' => 40,
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_video_embed'
-  $field_instances['node-news_article-field_video_embed'] = array(
-    'bundle' => 'news_article',
+  // Exported field_instance: 'node-student_project-field_video_embed'
+  $field_instances['node-student_project-field_video_embed'] = array(
+    'bundle' => 'student_project',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -311,7 +352,7 @@ function unca_news_field_default_field_instances() {
           'file_view_mode' => 'default',
         ),
         'type' => 'file_rendered',
-        'weight' => 8,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -349,23 +390,19 @@ function unca_news_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 4,
+      'weight' => 39,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Displayed in listings of News Articles, RSS Feed');
-  t('Featured Image');
-  t('News Category');
-  t('News and Event Categories');
-  t('News and Event Type');
-  t('References vocab: News and Event Categories');
-  t('References vocab: News and Event Type');
-  t('Related Links');
-  t('Teaser');
-  t('Upload an image to go with this article.');
+  t('Course Number');
+  t('Image');
+  t('Project URL');
+  t('Student Email');
+  t('Student Name');
+  t('Student Year of Graduation');
   t('Video');
 
   return $field_instances;
