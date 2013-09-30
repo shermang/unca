@@ -92,7 +92,7 @@ function migrate_d2d_unca_register_migrations() {
   $file_arguments = $common_arguments + array(
       'machine_name' => 'UNCAFile',
       'description' => t('Import Drupal 6 files'),
-      'source_dir' => 'sites/default/files/migration',       // @TODO: This may need to be changed once we know where the source files are
+      'source_dir' => 'sites/default/files/migration/drupal_studyabroad',       // @TODO: This may need to be changed once we know where the source files are
     );
   $file_migration_class = 'UNCAFileMigration';
   // $role_migration_class = 'DrupalRole6Migration';
