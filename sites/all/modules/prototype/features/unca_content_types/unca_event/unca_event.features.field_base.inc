@@ -10,13 +10,13 @@
 function unca_event_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_event_type'
-  $field_bases['field_event_type'] = array(
+  // Exported field_base: 'field_event_categories_term'
+  $field_bases['field_event_categories_term'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_event_type',
+    'field_name' => 'field_event_categories_term',
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -35,7 +35,7 @@ function unca_event_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'event_type',
+          'vocabulary' => 'event_categories',
           'parent' => 0,
         ),
       ),
