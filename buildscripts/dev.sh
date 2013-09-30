@@ -14,7 +14,6 @@ date \
 devel \
 devel_themer \
 draggableviews \
-emfield \
 entity_path \
 feeds \
 flickr \
@@ -101,6 +100,7 @@ unca_slideshow \
 email \
 unca_student_project \
 unca_maps \
+pathologic \
 
 
 # To disable modules, uncomment the following command and list the modules to disable

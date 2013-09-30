@@ -92,7 +92,7 @@ function migrate_d2d_unca_register_migrations() {
   $file_arguments = $common_arguments + array(
       'machine_name' => 'UNCAFile',
       'description' => t('Import Drupal 6 files'),
-      'source_dir' => '',       // @TODO: This may need to be changed once we know where the source files are
+      'source_dir' => 'sites/default/files/migration/drupal_studyabroad',       // @TODO: This may need to be changed once we know where the source files are
     );
   $file_migration_class = 'UNCAFileMigration';
   // $role_migration_class = 'DrupalRole6Migration';
@@ -150,9 +150,10 @@ function migrate_d2d_unca_register_migrations() {
   // // +  +  +  +  NODE  +  +  +  +  
   // // 
 
-  // // Node migrations - each has its own class derived from the migrate_d2d class,
-  // // specifying its particular field mappings and transformations. source_type
-  // // and destination_type are required arguments.
+
+  // Node migrations - each has its own class derived from the migrate_d2d class,
+  // specifying its particular field mappings and transformations. source_type
+  // and destination_type are required arguments.
   $node_arguments = array(
 
     array(
@@ -171,17 +172,80 @@ function migrate_d2d_unca_register_migrations() {
     ),
 
 
+    // Destination CT
+    // Note: sites: studyabroad (only) 
+    array(
+      'class_name' => 'UNCADestinationMigration',
+      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+      'machine_name' => 'UNCADestinationCT',
+      'source_type' => 'destination',
+      'destination_type' => 'destination',
+    ),
+
+    // // Campus Update CT
+    // // Note: core site (unca_drupal) only
+    // array(
+    //   'class_name' => 'UNCACampusUpdateMigration',
+    //   'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+    //   'machine_name' => 'UNCACampusUpdatenCT',
+    //   'source_type' => 'campus_update',
+    //   'destination_type' => 'campus_update',
+    // ),
+
+    // // Cluster CT
+    // // Note: sites: clusters, giving, ils
+    // array(
+    //   'class_name' => 'UNCAClusterMigration',
+    //   'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+    //   'machine_name' => 'UNCAClusterCT',
+    //   'source_type' => 'cluster',
+    //   'destination_type' => 'cluster',
+    // ),
+
+    // // Course CT
+    // // Note: sites: nccr, olliaasheville, ils
+    // array(
+    //   'class_name' => 'UNCACourseMigration',
+    //   'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+    //   'machine_name' => 'UNCACourseCT',
+    //   'source_type' => 'course',
+    //   'destination_type' => 'course',
+    // ),
+
+    // // Slideshow Slide CT
+    // // Note: sites: core, advancement, alumni, art, asft, cesap, others
+    // array(
+    //   'class_name' => 'UNCASlideshowSlideMigration',
+    //   'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+    //   'machine_name' => 'UNCASlideshowSlideCT',
+    //   //  ****  NOTE: SOURCE CT MACH NAME VARIES !!!  ****
+    //   'source_type' => 'slideshow_item   OR  slideshow_image',
+    //   'destination_type' => 'slideshow_item',
+    // ),
+
+    // // Student Project CT
+    // // Note: on nemac (drupal_unca) site only
+    // array(
+    //   'class_name' => 'UNCAStudentProjectMigration',
+    //   'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+    //   'machine_name' => 'UNCAStudentProjectCT',
+    //   'source_type' => 'student_organization',
+    //   'destination_type' => 'xxxxxxxxxxx',
+    // ),
+
+
   );
-  // // Tell the node migrations where the users are coming from, so they can
-  // // set up the dependency and resolve D6->D7 uids.
+  // Tell the node migrations where the users are coming from, so they can
+  // set up the dependency and resolve D6->D7 uids.
   $common_node_arguments = $common_arguments + array(
-      'user_migration' => 'UNCAUser',
-    );
+    'user_migration' => 'UNCAUser',
+  );
   foreach ($node_arguments as $arguments) {
     $arguments = array_merge_recursive($arguments, $common_node_arguments);
     Migration::registerMigration($arguments['class_name'], $arguments['machine_name'],
-      $arguments);
+                                 $arguments);
   }
+
 }
 
 
@@ -225,15 +289,46 @@ function migrate_d2d_unca_get_vocab_mach_name($key) {
   }
 }
 
+/**
+ * Allow lookup of vocab mach names in order to all them to 
+ * change without breaking things.
+ * @param  [type] $key [description]
+ * @return [type]      [description]
+ */
+function migrate_d2d_unca_get_vocab_mach_name($key) {
+  // Temporarily correct pending updates in features
+  switch($key) {
+    case 'event_categories':
+      return 'event_type'; # will change to event_categories
+      break;
+    case 'news_categories':
+      return 'news_category'; # will change to news_categories
+      break;
+    case 'profile_type':
+      return 'profile_types'; # will change to profile_type
+      break;
+    case 'program_type':
+      return 'program_types'; # will change to program_type
+      break;
+    case 'university_semester':
+      return 'university_term'; # will change to university_semester
+      break;
+  }
+
+}
+
+/**
+ * Dynamically map source vocabularies to destination vocabularies.
+ * @return [type] [description]
+ */
 function migrate_d2d_unca_get_vocab_mappings() {
 
-    // Temporarily correct pending updates in features
-    $event_categories_mach_name = 'event_type'; # will change to event_categories
-    $news_categories_mach_name = 'news_category'; # will change to news_categories
-    $profile_type_mach_name = 'profile_types'; # will change to profile_type
-    $program_type_mach_name = 'program_types'; # will change to program_type
-    $university_semester_mach_name = 'university_term'; # will change to university_semester
-
+  // Temporarily correct pending updates in features
+  $event_categories_mach_name = migrate_d2d_unca_get_vocab_mach_name('event_categories');
+  $news_categories_mach_name = migrate_d2d_unca_get_vocab_mach_name('news_categories');
+  $profile_type_mach_name = migrate_d2d_unca_get_vocab_mach_name('profile_type');
+  $program_type_mach_name = migrate_d2d_unca_get_vocab_mach_name('program_type');
+  $university_semester_mach_name = migrate_d2d_unca_get_vocab_mach_name('university_semester');
 
 
   // Array of all the D7 vocabs/settings, mapped to D6 vocab names.
@@ -370,7 +465,6 @@ function migrate_d2d_unca_get_vocab_mappings() {
   // Add these manually
   $map_d6_name_to_mach_name['Map Categories'] = 'location_type';
   $map_d6_name_to_mach_name['Map Category'] = 'location_type';
-
 
 
   // Get the src db vocab ids and add them to the main map
