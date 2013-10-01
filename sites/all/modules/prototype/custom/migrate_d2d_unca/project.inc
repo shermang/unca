@@ -6,8 +6,19 @@ class UNCAProjectMigration extends UNCANodeMigration {
 
     parent::__construct($arguments);
 
-    $this->addFieldMapping('field_image','field_image');
-//    $this->addFieldMapping('field_date','project_launch_date');
+    $this->addFieldMapping('field_image','field_image')
+      ->sourceMigration('UNCAFile');
+    $this->addFieldMapping('field_image:file_class')
+      ->defaultValue('MigrateFileFid');
+    $this->addFieldMapping('field_image:preserve_files')
+      ->defaultValue(TRUE);
+    $this->addFieldMapping('field_image:title', 'image_copyright')
+      ->defaultValue('');
+    $this->addFieldMapping('field_image:alt', 'image_description')
+      ->defaultValue('');
+    $this->addFieldMapping('field_image:language')
+      ->defaultValue(LANGUAGE_NONE);
+
     $this->addFieldMapping('field_file','field_factsheet');
     $this->addFieldMapping('field_featured_project','field_features');
     $this->addFieldMapping('field_weight','field_weight');
