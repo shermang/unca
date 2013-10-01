@@ -176,6 +176,13 @@ function migrate_d2d_unca_register_migrations() {
       'source_type' => 'news_article',
       'destination_type' => 'news_article',
     ),
+    array(
+      'class_name' => 'UNCAPolicyMigration',
+      'description' => t('Migration of Policy nodes from Drupal 6'),
+      'machine_name' => 'UNCAPolicy',
+      'source_type' => 'policy',
+      'destination_type' => 'policy',
+    ),
 
 
   );
