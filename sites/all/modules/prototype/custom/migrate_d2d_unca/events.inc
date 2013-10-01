@@ -6,7 +6,8 @@ class UNCAEventMigration extends UNCANodeMigration {
 
     parent::__construct($arguments);
 
-    $this->addFieldMapping('field_image','field_image');
+    $this->addFieldMapping('field_image','field_image')
+      ->sourceMigration('UNCAFile');
     $this->addFieldMapping('field_location','field_location');
     $this->addFieldMapping('field_date','created'); // Authored On date
     $this->addFieldMapping('field_video_embed','field_video_embed');
