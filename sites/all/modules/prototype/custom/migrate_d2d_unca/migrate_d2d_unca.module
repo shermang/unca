@@ -183,6 +183,13 @@ function migrate_d2d_unca_register_migrations() {
       'source_type' => 'policy',
       'destination_type' => 'policy',
     ),
+    array(
+      'class_name' => 'UNCAProfileMigration',
+      'description' => t('Migration of Profile nodes from Drupal 6'),
+      'machine_name' => 'UNCAProfile',
+      'source_type' => 'profile',
+      'destination_type' => 'profile',
+    ),
 
 
   );
