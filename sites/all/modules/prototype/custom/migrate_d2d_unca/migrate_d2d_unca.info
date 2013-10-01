@@ -15,3 +15,4 @@ files[] = file.inc
 files[] = project.inc
 files[] = events.inc
 files[] = news_article.inc
+files[] = policy.inc
