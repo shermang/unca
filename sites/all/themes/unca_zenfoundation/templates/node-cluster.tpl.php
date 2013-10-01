@@ -1,10 +1,8 @@
 <?php $base_path = base_path();?>
 <?php if ($field_image[0]['filepath']){?>
- <img src="
- <?php print $base_path . $field_image[0]['filepath']; ?>
- " width="175" alt="Cluster Logo" class="right profiles"/>
+ <img src=" <?php print $base_path . $field_image[0]['filepath']; ?> " width="175" alt="Cluster Logo" class="right profiles"/>
  <?php } else { ?>
- <img src="../../default/files/images/Not_Available.png" width="175" alt="Cluster Thumbnail" class="left profiles"/>
+ <img src="<?php print base_path() . path_to_theme(); ?>/images/Not_Available.png" width="175" alt="Cluster Thumbnail" class="left profiles"/>
  <?php } ?>
 <ul>
 <li>An<span class="alert"> instructor's name</span> beside the course indicates it must be taken with that instructor to count for the cluster.</li>
