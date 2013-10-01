@@ -169,6 +169,13 @@ function migrate_d2d_unca_register_migrations() {
       'source_type' => 'event',
       'destination_type' => 'event',
     ),
+    array(
+      'class_name' => 'UNCANewArticleMigration',
+      'description' => t('Migration of News Articles nodes from Drupal 6'),
+      'machine_name' => 'UNCANews',
+      'source_type' => 'news_article',
+      'destination_type' => 'news_article',
+    ),
 
 
   );
