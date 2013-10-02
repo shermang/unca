@@ -101,6 +101,8 @@ email \
 unca_student_project \
 unca_maps \
 pathologic \
+link_iframe_formatter_options \
+unca_page \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
