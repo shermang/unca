@@ -17,3 +17,4 @@ files[] = events.inc
 files[] = news_article.inc
 files[] = policy.inc
 files[] = profile.inc
+files[] = student_organization.inc
