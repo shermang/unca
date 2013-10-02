@@ -169,7 +169,116 @@ function migrate_d2d_unca_register_migrations() {
       'source_type' => 'event',
       'destination_type' => 'event',
     ),
+    array(
+      'class_name' => 'UNCANewArticleMigration',
+      'description' => t('Migration of News Articles nodes from Drupal 6'),
+      'machine_name' => 'UNCANews',
+      'source_type' => 'news_article',
+      'destination_type' => 'news_article',
+    ),
+    array(
+      'class_name' => 'UNCAPolicyMigration',
+      'description' => t('Migration of Policy nodes from Drupal 6'),
+      'machine_name' => 'UNCAPolicy',
+      'source_type' => 'policy',
+      'destination_type' => 'policy',
+    ),
+    array(
+      'class_name' => 'UNCAProfileMigration',
+      'description' => t('Migration of Profile nodes from Drupal 6'),
+      'machine_name' => 'UNCAProfile',
+      'source_type' => 'profile',
+      'destination_type' => 'profile',
+    ),
 
+    // Destination CT
+    // Note: sites: studyabroad (only) 
+    array(
+      'class_name' => 'UNCADestinationMigration',
+      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+      'machine_name' => 'UNCADestinationCT',
+      'source_type' => 'destination',
+      'destination_type' => 'destination',
+    ),
+
+    // Campus Update CT
+    // Note: core site (unca_drupal) only
+    array(
+      'class_name' => 'UNCACampusUpdateMigration',
+      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+      'machine_name' => 'UNCACampusUpdatenCT',
+      'source_type' => 'campus_update',
+      'destination_type' => 'campus_update',
+    ),
+
+    // Page CT
+    // On unca_drupal, content_field_video_embed -> field_data_video_embed
+    // On drupal_studyabroad, handle viddler (data in fid)
+    array(
+      'class_name' => 'UNCAPageMigration',
+      'description' => t('Migration of "page" nodes from Drupal 6'),
+      'machine_name' => 'UNCAPageCT',
+      'source_type' => 'page',
+      'destination_type' => 'page',
+    ),
+
+    // iFrame/Page CT
+    array(
+      'class_name' => 'UNCAIframeMigration',
+      'description' => t('Migration of "iframe" nodes from Drupal 6'),
+      'machine_name' => 'UNCAIframeCT',
+      'source_type' => 'iframe',
+      'destination_type' => 'page',
+    ),
+
+    // Cluster CT
+    // Note: sites: clusters, giving, ils
+    array(
+      'class_name' => 'UNCAClusterMigration',
+      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+      'machine_name' => 'UNCAClusterCT',
+      'source_type' => 'cluster',
+      'destination_type' => 'cluster',
+    ),
+
+    // Course CT
+    // Note: sites: nccr, olliaasheville, ils
+    array(
+      'class_name' => 'UNCACourseMigration',
+      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+      'machine_name' => 'UNCACourseCT',
+      'source_type' => 'course',
+      'destination_type' => 'course',
+    ),
+
+    // Slideshow Slide CT
+    // Note: sites: core, advancement, alumni, art, asft, cesap, others
+    array(
+      'class_name' => 'UNCASlideshowSlideMigration',
+      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+      'machine_name' => 'UNCASlideshowSlideCT',
+      //  ****  NOTE: SOURCE CT MACH NAME VARIES !!!  ****
+      'source_type' => 'slideshow_item   OR  slideshow_image',
+      'destination_type' => 'slideshow_item',
+    ),
+
+    // Student Project CT
+    // Note: on nemac (drupal_unca) site only
+    array(
+      'class_name' => 'UNCAStudentProjectMigration',
+      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+      'machine_name' => 'UNCAStudentProjectCT',
+      'source_type' => 'student_organization',
+      'destination_type' => 'xxxxxxxxxxx',
+    ),
+
+    array(
+      'class_name' => 'UNCAStudentOrgMigration',
+      'description' => t('Migration of Student Organization nodes from Drupal 6'),
+      'machine_name' => 'UNCAStudentOrg',
+      'source_type' => 'student_organization',
+      'destination_type' => 'student_organization',
+    ),
 
   );
   // // Tell the node migrations where the users are coming from, so they can
