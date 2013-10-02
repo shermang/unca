@@ -190,7 +190,13 @@ function migrate_d2d_unca_register_migrations() {
       'source_type' => 'profile',
       'destination_type' => 'profile',
     ),
-
+    array(
+      'class_name' => 'UNCAStudentOrgMigration',
+      'description' => t('Migration of Student Organization nodes from Drupal 6'),
+      'machine_name' => 'UNCAStudentOrg',
+      'source_type' => 'student_organization',
+      'destination_type' => 'student_organization',
+    ),
 
   );
   // // Tell the node migrations where the users are coming from, so they can
