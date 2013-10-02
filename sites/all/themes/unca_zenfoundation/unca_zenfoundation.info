@@ -110,15 +110,41 @@ scripts[] = js/script.js
 ; And you'll use this variable in maintenance-page.tpl.php:
 ;   <?php print $header_top; ?>
 
-regions[header]         = Header
-regions[navigation]     = Navigation bar
-regions[highlighted]    = Highlighted
+regions[alert]          = Alert Top Bar
 regions[help]           = Help
-regions[content]        = Content
-regions[sidebar_first]  = First sidebar
-regions[sidebar_second] = Second sidebar
+regions[navigation]     = Navigation
+regions[content] = Primary Content Column
+regions[content_row_1]  = Content Row 1
+regions[content_row_2_column_1] = Content Row 2 Column 1
+regions[content_row_2_column_2] = Content Row 2 Column 2
+regions[sidebar_first] = Sidebar Column
+regions[footer_promo_a] = Footer Promo A
+regions[footer_promo_b] = Footer Promo B
+regions[footer_promo_large] = Footer Promo Large
 regions[footer]         = Footer
-regions[bottom]         = Page bottom
+regions[bottom]         = Page Bottom
+
+; Gateway-specific regions
+; Gateway Pages have unique layout and regions.
+; In order to avoid confusion when placing blocks,
+; these regions are prefixed with gateway_
+; and use Gateway Page in the region name.
+; These regions will be used in page-gateway.tpl.php
+; a template suggestion generated using a Site Section vocab
+; a term reference field of which is on the Basic page content type.
+; In the source order, these regions should be rendered in the
+; primary content area, where the Content Row 1 (etc) regions would be.
+
+regions[gateway_row_1] = Gateway Page Row 1
+regions[gateway_row_2_column_1] = Gateway Page Row 2 Column 1
+regions[gateway_row_2_column_2] = Gateway Page Row 2 Column 2
+regions[gateway_row_3_column_1] = Gateway Page Row 3 Column 1
+regions[gateway_row_3_column_2] = Gateway Page Row 3 Column 2
+
+
+
+
+
 
 ; The page_top and page_bottom regions are hidden, which means they will not
 ; show up on the blocks administration page. But they are required in order for

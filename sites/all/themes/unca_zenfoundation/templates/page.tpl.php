@@ -69,8 +69,8 @@
  * @see template_process()
  */
 ?>
-<div id="page">
 
+<div id="page">
   <?php include(path_to_theme().'/templates/header.tpl.php'); ?>
 
   <div id="main">
@@ -78,9 +78,7 @@
   <?php if ($breadcrumb): ?>
       <?php print $breadcrumb; ?>
   <?php endif; ?>
-
-    <div id="content" class="content" role="content">
-      <?php print render($page['highlighted']); ?>
+    <div id="content" class="content <?php print $page_layout_wrapper_classes; ?>" role="content">
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
@@ -93,24 +91,43 @@
       <?php if ($action_links): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
+
+      <!-- Primary Content Column -->
       <?php print render($page['content']); ?>
+      <!-- Content Row 1-->
+      <?php if ($page['content_row_1']): ?>
+      <div class="content_row_1">
+        <?php print render($page['content_row_1']); ?>
+      </div>
+      <?php endif; ?>
+      <!-- Content Row 2 Column 1-->
+      <?php if ($page['content_row_2_column_1']): ?>
+      <div class="content_row_2_column_1">
+        <?php print render($page['content_row_2_column_1']); ?>
+      </div>
+      <?php endif; ?>
+      <!-- Content Row 2 Column 2-->
+      <?php if ($page['content_row_2_column_2']): ?>
+      <div class="content_row_2_column_2">
+        <?php print render($page['content_row_2_column_2']); ?>
+      </div>
+      <?php endif; ?>
       <?php print $feed_icons; ?>
     </div><!-- /#content -->
 
-    <?php
-      // Render the sidebars to see if there's anything in them.
-      $sidebar_first  = render($page['sidebar_first']);
-      $sidebar_second = render($page['sidebar_second']);
-    ?>
-
-    <?php if ($sidebar_first || $sidebar_second): ?>
-      <aside class="sidebars">
-        <?php print $sidebar_first; ?>
-        <?php print $sidebar_second; ?>
-      </aside><!-- /.sidebars -->
+    <!-- Let's simplify the sidebar logic since we only have one sidebar region. -->
+    <?php if ($page['sidebar_first']): ?>
+      <aside class="sidebar">
+        <?php print $page['sidebar_first']; ?>
+      </aside><!-- /.sidebar -->
     <?php endif; ?>
 
   </div><!-- /#main -->
+
+  <?php
+
+
+  ?>
 
 <?php if ($page['footer']): ?>
   <div class="footer">
