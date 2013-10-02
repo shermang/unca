@@ -11,12 +11,10 @@ class UNCADestinationMigration extends DrupalNode6Migration {
     $prog_type_migration_machine_name = 'Term_' . $program_type_mach_name;
 
     // Field mappings
-    // $this->addFieldMapping('field_image', 'field_image');
     $this->addFieldMapping('field_image', 'field_image')
          ->sourceMigration('UNCAFile');
     $this->addFieldMapping('field_image:file_class')
         ->defaultValue('MigrateFileFid');
-    // $this->addFieldMapping('field_teaser_text', 'field_image');
     // Note that we map migrated terms by the vocabulary ID.
     $this->addFieldMapping('field_studyabroad_program_type', '6')
          ->sourceMigration($prog_type_migration_machine_name)
@@ -30,4 +28,18 @@ class UNCADestinationMigration extends DrupalNode6Migration {
 
   }
 
+  public function prepareRow($row) {
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
+    //drush_print_r($row);
+  }
+  public function prepare(stdClass $entity, stdClass $row) {
+
+    $entity->field_video_embed = array();
+    $entity->field_video_embed['und'][0]['value'] = $row->field_video_embed;
+    drush_print_r($entity);
+    //drush_print_r($row);
+
+  }
 }
