@@ -145,6 +145,205 @@ function unca_slideshow_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-slideshow_item-body'
+  $field_instances['node-slideshow_item-body'] = array(
+    'bundle' => 'slideshow_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-slideshow_item-field_image'
+  $field_instances['node-slideshow_item-field_image'] = array(
+    'bundle' => 'slideshow_item',
+    'deleted' => 0,
+    'description' => 'Choose an image already uploaded to this site or one from your computer or shared network drive.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_image',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'viddler' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'default' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'media_generic',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-slideshow_item-field_link'
+  $field_instances['node-slideshow_item-field_link'] = array(
+    'bundle' => 'slideshow_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Set URL destination of this slide\'s headline, image, and read more button.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_link',
+    'label' => 'Read More Link',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-slideshow_item-field_read_more'
+  $field_instances['node-slideshow_item-field_read_more'] = array(
+    'bundle' => 'slideshow_item',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Read More',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Override the "Read More" text. Defaults to "Read more"',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_read_more',
+    'label' => 'Read More Text',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-slideshow_item-field_slide_caption'
   $field_instances['node-slideshow_item-field_slide_caption'] = array(
     'bundle' => 'slideshow_item',
@@ -181,120 +380,7 @@ function unca_slideshow_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-slideshow_item-field_slide_image'
-  $field_instances['node-slideshow_item-field_slide_image'] = array(
-    'bundle' => 'slideshow_item',
-    'deleted' => 0,
-    'description' => 'Choose an image already uploaded to this site or one from your computer or shared network drive.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_slide_image',
-    'label' => 'Slide Image',
-    'required' => 1,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-          'viddler' => 0,
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'default' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-slideshow_item-field_slide_link'
-  $field_instances['node-slideshow_item-field_slide_link'] = array(
-    'bundle' => 'slideshow_item',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Set URL destination of this slide\'s headline, image, and read more button.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_slide_link',
-    'label' => 'Slide Link',
-    'required' => 0,
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'rel_remove' => 'default',
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 2,
+      'weight' => 5,
     ),
   );
 
@@ -338,7 +424,47 @@ function unca_slideshow_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-slideshow_item-field_subheading'
+  $field_instances['node-slideshow_item-field_subheading'] = array(
+    'bundle' => 'slideshow_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Set the caption or sub-heading of this slide.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_subheading',
+    'label' => 'Caption',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 9,
     ),
   );
 
@@ -382,14 +508,17 @@ function unca_slideshow_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Add a Slidehow Item to this slideshow');
+  t('Body');
+  t('Caption');
   t('Choose an image already uploaded to this site or one from your computer or shared network drive.');
+  t('Image');
   t('Override the "Read More" text. Defaults to "Read more"');
+  t('Read More Link');
+  t('Read More Text');
   t('Set URL destination of this slide\'s headline, image, and read more button.');
   t('Set the caption or sub-heading of this slide.');
   t('Slide');
   t('Slide Caption');
-  t('Slide Image');
-  t('Slide Link');
   t('Slide Publish End Date');
   t('Slide Publish Start Date');
   t('Slide Read More Text');
