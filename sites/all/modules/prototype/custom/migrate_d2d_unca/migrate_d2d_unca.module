@@ -169,6 +169,27 @@ function migrate_d2d_unca_register_migrations() {
       'source_type' => 'event',
       'destination_type' => 'event',
     ),
+    array(
+      'class_name' => 'UNCANewArticleMigration',
+      'description' => t('Migration of News Articles nodes from Drupal 6'),
+      'machine_name' => 'UNCANews',
+      'source_type' => 'news_article',
+      'destination_type' => 'news_article',
+    ),
+    array(
+      'class_name' => 'UNCAPolicyMigration',
+      'description' => t('Migration of Policy nodes from Drupal 6'),
+      'machine_name' => 'UNCAPolicy',
+      'source_type' => 'policy',
+      'destination_type' => 'policy',
+    ),
+    array(
+      'class_name' => 'UNCAProfileMigration',
+      'description' => t('Migration of Profile nodes from Drupal 6'),
+      'machine_name' => 'UNCAProfile',
+      'source_type' => 'profile',
+      'destination_type' => 'profile',
+    ),
 
     // Destination CT
     // Note: sites: studyabroad (only) 

@@ -20,3 +20,6 @@ files[] = campus_updated.inc
 files[] = cluster.inc
 files[] = course.inc
 files[] = slideshow_slide.inc
+files[] = news_article.inc
+files[] = policy.inc
+files[] = profile.inc
