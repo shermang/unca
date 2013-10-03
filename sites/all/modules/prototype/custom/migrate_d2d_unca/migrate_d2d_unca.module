@@ -171,7 +171,7 @@ function migrate_d2d_unca_register_migrations() {
     ),
     array(
       'class_name' => 'UNCANewArticleMigration',
-      'description' => t('Migration of News Articles nodes from Drupal 6'),
+      'description' => t('(only unca.edu) Migration of News Articles nodes from Drupal 6'),
       'machine_name' => 'UNCANews',
       'source_type' => 'news_article',
       'destination_type' => 'news_article',
@@ -278,6 +278,13 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCAStudentOrg',
       'source_type' => 'student_organization',
       'destination_type' => 'student_organization',
+    ),
+    array(
+      'class_name' => 'UNCADepartmentalUpdateMigration',
+      'description' => t('(except unca.edu) Migration of News Article nodes from Drupal 6'),
+      'machine_name' => 'UNCADepartmentalUpdate',
+      'source_type' => 'news_article',
+      'destination_type' => 'dept_update',
     ),
 
   );
