@@ -21,7 +21,9 @@ class UNCAEventMigration extends UNCANodeMigration {
 
     $this->addFieldMapping('field_location','field_location');
     $this->addFieldMapping('field_date','created'); // Authored On date
-    $this->addFieldMapping('field_video_embed','field_video_embed');
+
+    // video_embed will be handled in node.inc prepare function
+    //$this->addFieldMapping('field_video_embed','field_video_embed');
     $this->addFieldMapping('field_link','field_link');
 
 // Note that we map migrated terms by the vocabulary ID.
@@ -39,5 +41,9 @@ class UNCAEventMigration extends UNCANodeMigration {
       return FALSE;
     }
     return TRUE;
+  }
+
+  public function prepare(stdClass $entity, stdClass $row) {
+    parent::prepare($entity, $row);
   }
 }
