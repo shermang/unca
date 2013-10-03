@@ -2,11 +2,11 @@
 
 class UNCAIframeMigration extends UNCANodeMigration {
 
-  protected $pre_rollback_nids;
-
   public function __construct(array $arguments) {
 
     parent::__construct($arguments);
+
+    $this->addFieldMapping('field_iframe','field_iframe_url');
 
   }
 
@@ -21,9 +21,5 @@ class UNCAIframeMigration extends UNCANodeMigration {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
     }
-
   }
-
-
-
 }
