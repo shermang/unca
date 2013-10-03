@@ -333,7 +333,7 @@ function migrate_d2d_unca_get_vocab_mach_name($key) {
       return 'program_types'; # will change to program_type
       break;
     case 'university_semester':
-      return 'university_term'; # will change to university_semester
+      return 'university_semester'; # will change to university_semester
       break;
     default:
       return $key;
@@ -348,7 +348,7 @@ function migrate_d2d_unca_get_vocab_mappings() {
     $news_categories_mach_name = 'news_category'; # will change to news_categories
     $profile_type_mach_name = 'profile_types'; # will change to profile_type
     $program_type_mach_name = 'program_types'; # will change to program_type
-    $university_semester_mach_name = 'university_term'; # will change to university_semester
+    $university_semester_mach_name = 'university_semester'; # will change to university_semester
 
 
 

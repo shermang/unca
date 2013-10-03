@@ -55,9 +55,9 @@ function study_abroad_taxonomy_default_vocabularies() {
         ),
       ),
     ),
-    'university_term' => array(
-      'name' => 'University Term',
-      'machine_name' => 'university_term',
+    'university_semester' => array(
+      'name' => 'University Semester',
+      'machine_name' => 'university_semester',
       'description' => 'Content Type: Destination',
       'hierarchy' => 0,
       'module' => 'taxonomy',
