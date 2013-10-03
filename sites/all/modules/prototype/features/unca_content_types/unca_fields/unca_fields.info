@@ -20,4 +20,5 @@ features[field_base][] = field_subheading
 features[field_base][] = field_tags
 features[field_base][] = field_teaser_text
 features[field_base][] = field_video_embed
+features[taxonomy][] = department
 features[taxonomy][] = tags
