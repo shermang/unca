@@ -21,13 +21,5 @@ class UNCAIframeMigration extends UNCANodeMigration {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
     }
-    if(!empty($row->field_video_viddler)){
-      $row->field_video_embed = $row->field_video_viddler;
-    }
-  }
-
-
-  public function prepare(stdClass $entity, stdClass $row) {
-    parent::prepare($entity, $row);
   }
 }
