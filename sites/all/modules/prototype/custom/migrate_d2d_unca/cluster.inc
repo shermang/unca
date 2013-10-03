@@ -5,25 +5,41 @@ class UNCAClusterMigration extends DrupalNode6Migration {
 
     parent::__construct($arguments);
 
-
-    // Temporarily correct pending updates in features
-    $program_type_mach_name = migrate_d2d_unca_get_vocab_mach_name('program_type');
-    $prog_type_migration_machine_name = 'Term_' . $program_type_mach_name;
-
     // Field mappings
-    $this->addFieldMapping('field_image', 'field_image');
-    $this->addFieldMapping('field_teaser_text', 'field_image');
-    // Note that we map migrated terms by the vocabulary ID.
-    $this->addFieldMapping('field_studyabroad_program_type', '6')
-         ->sourceMigration($prog_type_migration_machine_name)
-         ->arguments(array('source_type' => 'tid'));
-    $this->addFieldMapping('field_studyabroad_region', '4')
-         ->sourceMigration('Term_region')
-         ->arguments(array('source_type' => 'tid'));
-    $this->addFieldMapping('field_university_semester_term', '5')
-         ->sourceMigration('Term_university_term')
-         ->arguments(array('source_type' => 'tid'));
+    $this->addFieldMapping('field_image', 'field_image')
+         ->sourceMigration('UNCAFile');
+    $this->addFieldMapping('field_image:file_class')
+        ->defaultValue('MigrateFileFid');
+    $this->addFieldMapping('body:summary', 'field_subhead');
+    $this->addFieldMapping('field_cluster_number', 'field_number');
+    $this->addFieldMapping('field_cluster_coordinator', 'field_coordinator');
+    $this->addFieldMapping('field_cluster_coordinator:format')
+       ->defaultValue('filtered_html');
+    $this->addFieldMapping('field_date', 'field_launch_date');
+  }
 
+  public function prepareRow($row) {
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
+  }
+
+  public function prepare($entity, $row) {
+    drush_print_r($entity);
+    // Manually set date value (migrate_d2d was not handling, for unkown reason)
+    if($row->field_launch_date) {
+      $field_date = array(
+        'und' => array(
+          array(
+            'value' => $row->field_launch_date,
+            'timezone' => 'America/Los_Angeles',
+            'timezone_db' => 'America/Los_Angeles',
+            'date_type' => 'datetime',
+          ),
+        ),
+      ); 
+      $entity->field_date = $field_date;
+    }
   }
 
 }
