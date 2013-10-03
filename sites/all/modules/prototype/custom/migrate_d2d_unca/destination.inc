@@ -32,7 +32,6 @@ class UNCADestinationMigration extends DrupalNode6Migration {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
     }
-    //drush_print_r($row);
   }
 
 }
