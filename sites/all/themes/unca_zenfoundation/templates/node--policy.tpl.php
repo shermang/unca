@@ -21,6 +21,6 @@
 ?>
 <hr/>
   <?php print render($content['field_policy_reference_materials']); ?>
-  <?php print render($content['	field_policy_origination_date']); ?>
+  <?php print render($content['field_policy_origination_date']); ?>
 
 <?php print render($content['links']); ?>
