@@ -11,12 +11,20 @@ abstract class UNCANodeMigration extends DrupalNode6Migration {
   }
 
   public function prepare(stdClass $entity, stdClass $row) {
-
+drush_print_r($row);
     // Convert d6 emfield data to d7 media/media_internet file reference field
-    if(property_exists($row, 'field_video_embed:value')) {
+    $fve = property_exists($row, 'field_video_embed:value');
+    $viddler = property_exists($row, 'field_viddler_video');
 
+    if($fve) {
       $vidvalue = $row->{'field_video_embed:value'}[0];
       $vidprovider = $row->{'field_video_embed:provider'}[0];
+    } elseif($viddler) {
+      $vidvalue = $row->{'field_viddler_video'};
+      $vidprovider = 'viddler';
+    }
+
+    if($fve || $vidprovider) {
       if(!empty($vidvalue)) {
         // Convert field data for media_internet
         $vidtype = false; # let media module handle when it can
@@ -29,10 +37,14 @@ abstract class UNCANodeMigration extends DrupalNode6Migration {
             $viduri = 'vimeo://v/' . $vidvalue;
             $vidmime = 'video/vimeo';
             break;
+          case 'viddler':
+            $viduri = 'viddler://' . $vidvalue;
+            $vidmime = 'video/viddler';
+            break;
           case 'zzz_custom_url':
             $viduri = $vidvalue;
             $vidmime = 'application/x-shockwave-flash';
-            $vidtype = 'legacy';
+            $vidtype = 'legacy';  
             break;
           default:
             $viduri = $vidvalue;
@@ -51,12 +63,9 @@ abstract class UNCANodeMigration extends DrupalNode6Migration {
         $entity->field_video_embed = array();
         $entity->field_video_embed['und'][0]['fid'] = $fid;
         $entity->field_video_embed['und'][0]['display'] = 1;
-
       }
-
     }
   }
-
 }
 
 /**
