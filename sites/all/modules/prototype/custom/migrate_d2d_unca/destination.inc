@@ -32,14 +32,6 @@ class UNCADestinationMigration extends DrupalNode6Migration {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
     }
-    //drush_print_r($row);
   }
-  public function prepare(stdClass $entity, stdClass $row) {
 
-    $entity->field_video_embed = array();
-    $entity->field_video_embed['und'][0]['value'] = $row->field_video_embed;
-    drush_print_r($entity);
-    //drush_print_r($row);
-
-  }
 }

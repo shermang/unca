@@ -171,7 +171,7 @@ function migrate_d2d_unca_register_migrations() {
     ),
     array(
       'class_name' => 'UNCANewArticleMigration',
-      'description' => t('(only unca.edu) Migration of News Articles nodes from Drupal 6'),
+      'description' => t('Migration of News Articles nodes from Drupal 6'),
       'machine_name' => 'UNCANews',
       'source_type' => 'news_article',
       'destination_type' => 'news_article',
@@ -235,7 +235,7 @@ function migrate_d2d_unca_register_migrations() {
     // Note: sites: clusters, giving, ils
     array(
       'class_name' => 'UNCAClusterMigration',
-      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+      'description' => t('Migration of Cluster nodes from Drupal 6'),
       'machine_name' => 'UNCAClusterCT',
       'source_type' => 'cluster',
       'destination_type' => 'cluster',
@@ -245,7 +245,7 @@ function migrate_d2d_unca_register_migrations() {
     // Note: sites: nccr, olliaasheville, ils
     array(
       'class_name' => 'UNCACourseMigration',
-      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+      'description' => t('Migration of Course nodes from Drupal 6'),
       'machine_name' => 'UNCACourseCT',
       'source_type' => 'course',
       'destination_type' => 'course',
@@ -255,7 +255,7 @@ function migrate_d2d_unca_register_migrations() {
     // Note: sites: core, advancement, alumni, art, asft, cesap, others
     array(
       'class_name' => 'UNCASlideshowSlideMigration',
-      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+      'description' => t('Migration of Slideshow Item nodes from Drupal 6'),
       'machine_name' => 'UNCASlideshowSlideCT',
       //  ****  NOTE: SOURCE CT MACH NAME VARIES !!!  ****
       'source_type' => 'slideshow_item   OR  slideshow_image',
@@ -266,7 +266,7 @@ function migrate_d2d_unca_register_migrations() {
     // Note: on nemac (drupal_unca) site only
     array(
       'class_name' => 'UNCAStudentProjectMigration',
-      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+      'description' => t('Migration of Project nodes from Drupal 6'),
       'machine_name' => 'UNCAStudentProjectCT',
       'source_type' => 'student_organization',
       'destination_type' => 'xxxxxxxxxxx',
@@ -278,13 +278,6 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCAStudentOrg',
       'source_type' => 'student_organization',
       'destination_type' => 'student_organization',
-    ),
-    array(
-      'class_name' => 'UNCADepartmentalUpdateMigration',
-      'description' => t('(except unca.edu) Migration of News Article nodes from Drupal 6'),
-      'machine_name' => 'UNCADepartmentalUpdate',
-      'source_type' => 'news_article',
-      'destination_type' => 'dept_update',
     ),
 
   );
