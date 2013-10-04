@@ -155,7 +155,7 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
  */
 
 function unca_zenfoundation_preprocess_page(&$variables, $hook) {
-  dpm($variables, 'variables');
+  
 
   // Add layout classes
 
