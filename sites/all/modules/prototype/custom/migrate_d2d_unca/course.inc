@@ -5,10 +5,6 @@ class UNCACourseMigration extends UNCANodeMigration {
 
     parent::__construct($arguments);
 
-    // Temporarily correct pending updates in features
-    $program_type_mach_name = migrate_d2d_unca_get_vocab_mach_name('program_type');
-    $prog_type_migration_machine_name = 'Term_' . $program_type_mach_name;
-
     // Field mappings
     $this->addFieldMapping('field_image', 'field_instructor_photo')
          ->sourceMigration('UNCAFile');
