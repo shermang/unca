@@ -251,14 +251,23 @@ function migrate_d2d_unca_register_migrations() {
       'destination_type' => 'course',
     ),
 
-    // Slideshow Slide CT
-    // Note: sites: core, advancement, alumni, art, asft, cesap, others
+    // Slideshow *Image* CT migration
+    // Note: two d6 cts map to the single d7 slideshow_item ct (see next migration)
     array(
-      'class_name' => 'UNCASlideshowSlideMigration',
+      'class_name' => 'UNCASlideshowImageMigration',
+      'description' => t('Migration of Slideshow Image nodes from Drupal 6'),
+      'machine_name' => 'UNCASlideshowImageCT',
+      'source_type' => 'slideshow_image',
+      'destination_type' => 'slideshow_item',
+    ),
+
+    // Slideshow *Item* CT migration
+    // Note: two d6 cts map to the single d7 slideshow_item ct (see prev migration)
+    array(
+      'class_name' => 'UNCASlideshowItemMigration',
       'description' => t('Migration of Slideshow Item nodes from Drupal 6'),
-      'machine_name' => 'UNCASlideshowSlideCT',
-      //  ****  NOTE: SOURCE CT MACH NAME VARIES !!!  ****
-      'source_type' => 'slideshow_item   OR  slideshow_image',
+      'machine_name' => 'UNCASlideshowItemCT',
+      'source_type' => 'slideshow_item',
       'destination_type' => 'slideshow_item',
     ),
 
@@ -279,6 +288,23 @@ function migrate_d2d_unca_register_migrations() {
       'source_type' => 'student_organization',
       'destination_type' => 'student_organization',
     ),
+    
+    // Map Item CT
+    // array(
+    //   'class_name' => 'UNCAMapItemMigration',
+    //   'description' => t('Migration of Map Item nodes from Drupal 6'),
+    //   'machine_name' => 'UNCAMapItem',
+    //   'source_type' => 'map_item',
+    //   'destination_type' => '',
+    // ),
+
+    // Webform CT
+    
+
+    // Menus
+    
+
+    // Blocks
 
   );
   // // Tell the node migrations where the users are coming from, so they can
