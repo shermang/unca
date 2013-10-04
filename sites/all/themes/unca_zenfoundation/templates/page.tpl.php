@@ -69,7 +69,11 @@
  * @see template_process()
  */
 ?>
-
+<?php if ($page['emergency']): ?>
+<div id="region_emergency">
+  <?php print render($page['emergency']); ?>
+</div>
+<?php endif; ?>
 <div id="page">
   <?php include(path_to_theme().'/templates/header.tpl.php'); ?>
 
@@ -78,6 +82,15 @@
   <?php if ($breadcrumb): ?>
       <?php print $breadcrumb; ?>
   <?php endif; ?>
+
+  <?php if ($page['notice']): ?>
+    <div id="region_notice">
+      <?php print render($page['notice']); ?>
+    </div>
+  <?php endif; ?>
+
+
+
     <div id="content" class="content <?php print $page_layout_wrapper_classes; ?>" role="content">
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
