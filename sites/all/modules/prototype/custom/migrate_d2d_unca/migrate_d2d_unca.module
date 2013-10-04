@@ -326,7 +326,7 @@ function migrate_d2d_unca_get_vocab_mach_name($key) {
       return 'program_types'; # will change to program_type
       break;
     case 'university_semester':
-      return 'university_term'; # will change to university_semester
+      return 'university_semester'; # will change to university_semester
       break;
     default:
       return $key;
@@ -335,7 +335,7 @@ function migrate_d2d_unca_get_vocab_mach_name($key) {
 }
 
 /**
- * [migrate_d2d_unca_get_src_vocab_id description]
+ * Gets a d6 vocabulary vid
  * @param  [type] $key [description]
  * @return [type]      [description]
  */
@@ -351,7 +351,6 @@ function migrate_d2d_unca_get_src_vocab_id($key) {
     /** @var $src_vocabs ARRAY */
     extract(migrate_d2d_unca_get_vocab_mappings()); # $vocabs_map, $src_vocabs  
   }
-  dpm($vocabs_map);
   return $vocabs_map[$key]['d6_vid'];
 
 }
@@ -359,11 +358,11 @@ function migrate_d2d_unca_get_src_vocab_id($key) {
 function migrate_d2d_unca_get_vocab_mappings() {
 
   // Temporarily correct pending updates in features
-  $event_categories_mach_name = 'event_type'; # will change to event_categories
-  $news_categories_mach_name = 'news_category'; # will change to news_categories
-  $profile_type_mach_name = 'profile_types'; # will change to profile_type
-  $program_type_mach_name = 'program_types'; # will change to program_type
-  $university_semester_mach_name = 'university_term'; # will change to university_semester
+  $event_categories_mach_name = migrate_d2d_unca_get_vocab_mach_name('event_categories'); # will change to event_categories
+  $news_categories_mach_name = migrate_d2d_unca_get_vocab_mach_name('news_categories'); # will change to news_categories
+  $profile_type_mach_name = migrate_d2d_unca_get_vocab_mach_name('profile_type'); # will change to profile_type
+  $program_type_mach_name = migrate_d2d_unca_get_vocab_mach_name('program_type'); # will change to program_type
+  $university_semester_mach_name = migrate_d2d_unca_get_vocab_mach_name('university_semester'); # will change to university_semester
 
 
 
