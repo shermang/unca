@@ -25,15 +25,14 @@ class UNCAClusterMigration extends DrupalNode6Migration {
   }
 
   public function prepare($entity, $row) {
-    drush_print_r($entity);
     // Manually set date value (migrate_d2d was not handling, for unkown reason)
     if($row->field_launch_date) {
       $field_date = array(
         'und' => array(
           array(
             'value' => $row->field_launch_date,
-            'timezone' => 'America/Los_Angeles',
-            'timezone_db' => 'America/Los_Angeles',
+            'timezone' => 'America/New_York',
+            'timezone_db' => 'America/New_York',
             'date_type' => 'datetime',
           ),
         ),

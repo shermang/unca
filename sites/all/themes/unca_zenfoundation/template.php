@@ -153,9 +153,58 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
+
 function unca_zenfoundation_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  
+
+  // Add layout classes
+
+  // Add special classes for Gateway regions
+  $gateway_layout_wrapper_classes = array('unca-gateway', 'clearfix');
+  if (!$variables['page']['gateway_row_2_column_1']) {
+    $gateway_layout_wrapper_classes[] = 'no-gateway-row-2-column-1';
+  }
+  if (!$variables['page']['gateway_row_2_column_2']) {
+    $gateway_layout_wrapper_classes[] = 'no-gateway-row-2-column-2';
+  }
+  if (!$variables['page']['gateway_row_3_column_1']) {
+    $gateway_layout_wrapper_classes[] = 'no-gateway-row-3-column-1';
+  }
+  if (!$variables['page']['gateway_row_3_column_2']) {
+    $gateway_layout_wrapper_classes[] = 'no-gateway-row-3-column-2';
+  }
+  $variables['gateway_layout_wrapper_classes'] = implode(' ', $gateway_layout_wrapper_classes);
+
+  // Add special classes for page regions
+  $page_layout_wrapper_classes = array('unca-default','clearfix');
+
+  if ($variables['page']['sidebar_first']) {
+    $page_layout_wrapper_classes[] = 'has-sidebar';
+  }
+  if (!$variables['page']['content_row_2_column_1']) {
+    $page_layout_wrapper_classes[] = 'no-content-row-2-column-1';
+  }
+  if (!$variables['page']['content_row_2_column_2']) {
+    $page_layout_wrapper_classes[] = 'no-content-row-2-column-2';
+  }
+  if (!$variables['page']['footer_promo_a']) {
+    $page_layout_wrapper_classes[] = 'no-footer-promo-a';
+  }
+  if (!$variables['page']['footer_promo_b']) {
+    $page_layout_wrapper_classes[] = 'no-footer-promo-b';
+  }
+  if (!$variables['page']['footer_promo_large']) {
+    $page_layout_wrapper_classes[] = 'no-footer-promo-large';
+  }
+  // Add special classes for home page
+  if ($variables['is_front']) {
+    $page_layout_wrapper_classes[] = 'unca-home';
+  }
+
+  $variables['page_layout_wrapper_classes'] = implode(' ', $page_layout_wrapper_classes);
+
+  return $variables;
+
 }
 // */
 

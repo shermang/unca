@@ -251,14 +251,23 @@ function migrate_d2d_unca_register_migrations() {
       'destination_type' => 'course',
     ),
 
-    // Slideshow Slide CT
-    // Note: sites: core, advancement, alumni, art, asft, cesap, others
+    // Slideshow *Image* CT migration
+    // Note: two d6 cts map to the single d7 slideshow_item ct (see next migration)
     array(
-      'class_name' => 'UNCASlideshowSlideMigration',
+      'class_name' => 'UNCASlideshowImageMigration',
+      'description' => t('Migration of Slideshow Image nodes from Drupal 6'),
+      'machine_name' => 'UNCASlideshowImageCT',
+      'source_type' => 'slideshow_image',
+      'destination_type' => 'slideshow_item',
+    ),
+
+    // Slideshow *Item* CT migration
+    // Note: two d6 cts map to the single d7 slideshow_item ct (see prev migration)
+    array(
+      'class_name' => 'UNCASlideshowItemMigration',
       'description' => t('Migration of Slideshow Item nodes from Drupal 6'),
-      'machine_name' => 'UNCASlideshowSlideCT',
-      //  ****  NOTE: SOURCE CT MACH NAME VARIES !!!  ****
-      'source_type' => 'slideshow_item   OR  slideshow_image',
+      'machine_name' => 'UNCASlideshowItemCT',
+      'source_type' => 'slideshow_item',
       'destination_type' => 'slideshow_item',
     ),
 
@@ -279,6 +288,23 @@ function migrate_d2d_unca_register_migrations() {
       'source_type' => 'student_organization',
       'destination_type' => 'student_organization',
     ),
+    
+    // Map Item CT
+    // array(
+    //   'class_name' => 'UNCAMapItemMigration',
+    //   'description' => t('Migration of Map Item nodes from Drupal 6'),
+    //   'machine_name' => 'UNCAMapItem',
+    //   'source_type' => 'map_item',
+    //   'destination_type' => '',
+    // ),
+
+    // Webform CT
+    
+
+    // Menus
+    
+
+    // Blocks
 
   );
   // // Tell the node migrations where the users are coming from, so they can
@@ -334,14 +360,35 @@ function migrate_d2d_unca_get_vocab_mach_name($key) {
   }
 }
 
+/**
+ * Gets a d6 vocabulary vid
+ * @param  [type] $key [description]
+ * @return [type]      [description]
+ */
+function migrate_d2d_unca_get_src_vocab_id($key) {
+
+  static $vocabs_map, $src_vocabs;
+
+  if(!$vocabs_map) {
+    /** the following comments are used by intellij and phpStorm IDEs to suppress undeclared variable error messages
+     *  as they are created using the php extract() function
+    */
+    /** @var $vocabs_map ARRAY */
+    /** @var $src_vocabs ARRAY */
+    extract(migrate_d2d_unca_get_vocab_mappings()); # $vocabs_map, $src_vocabs  
+  }
+  return $vocabs_map[$key]['d6_vid'];
+
+}
+
 function migrate_d2d_unca_get_vocab_mappings() {
 
-    // Temporarily correct pending updates in features
-    $event_categories_mach_name = 'event_type'; # will change to event_categories
-    $news_categories_mach_name = 'news_category'; # will change to news_categories
-    $profile_type_mach_name = 'profile_types'; # will change to profile_type
-    $program_type_mach_name = 'program_types'; # will change to program_type
-    $university_semester_mach_name = 'university_semester'; # will change to university_semester
+  // Temporarily correct pending updates in features
+  $event_categories_mach_name = migrate_d2d_unca_get_vocab_mach_name('event_categories'); # will change to event_categories
+  $news_categories_mach_name = migrate_d2d_unca_get_vocab_mach_name('news_categories'); # will change to news_categories
+  $profile_type_mach_name = migrate_d2d_unca_get_vocab_mach_name('profile_type'); # will change to profile_type
+  $program_type_mach_name = migrate_d2d_unca_get_vocab_mach_name('program_type'); # will change to program_type
+  $university_semester_mach_name = migrate_d2d_unca_get_vocab_mach_name('university_semester'); # will change to university_semester
 
 
 
@@ -513,29 +560,4 @@ function migrate_d2d_unca_get_vocab_mappings() {
   db_set_active();
 
   return compact('vocabs_map', 'src_vocabs');
-}
-
-
-/**
- * TEMP DEBUGGING FUNCTION
- * @return [type] [description]
- */
-function migrate_d2d_unca__debug__print_migrations_data() {
-  $q = "select * from migrate_status";
-  $r = db_query($q);
-  foreach($r as $row) {
-    $row->arguments = unserialize($row->arguments);
-    dpm($row, $row->machine_name);
-  }
-
-}
-
-/**
- * TEMP DEBUGGING FUNCTION
- * @return [type] [description]
- */
-function migrate_d2d_unca__debug__print_vocab_mappings() {
-  $d = migrate_d2d_unca_get_vocab_mappings();
-  dpm($d);
-
 }

@@ -21,7 +21,7 @@
         <?php print render($page['header']); ?>
 
         <!-- Uncomment this next line if you want the Foundation topbar for the main menu -->
-        <!-- <?php //include(path_to_theme().'/templates/topbar.tpl.php'); ?> -->
+        <?php include(path_to_theme().'/templates/topbar.tpl.php'); ?>
 
         <?php if ($page['navigation']): ?>
           <nav class="navigation js-toggle">
