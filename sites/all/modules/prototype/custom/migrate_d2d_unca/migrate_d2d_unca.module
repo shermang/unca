@@ -600,7 +600,6 @@ function unca_migrate_node_arguments_by_database($database, $source_content_type
 function unca_migrations_array($arguments){
   $array = array();
   foreach ($arguments as $argument) {
-    drush_print_r($argument);
     $array[] =  $argument['machine_name'];
   }
   return $array;
