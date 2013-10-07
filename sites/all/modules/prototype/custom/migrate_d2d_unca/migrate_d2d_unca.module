@@ -24,9 +24,14 @@ function migrate_d2d_unca_register_migrations() {
    * source_connection (connection key, set up in settings.php, pointing to
    * the Drupal 6 database) and source_version (major version of Drupal).
    */
+
+
+  $connectionOptions = Database::getConnection('default','legacy')->getConnectionOptions();
+
   $common_arguments = array(
     'source_connection' => 'legacy',
     'source_version' => 6,
+    'unca_source_database' => $connectionOptions['database'],
   );
 
 
@@ -154,14 +159,7 @@ function migrate_d2d_unca_register_migrations() {
   // // specifying its particular field mappings and transformations. source_type
   // // and destination_type are required arguments.
   $node_arguments = array(
-
-    array(
-      'class_name' => 'UNCAProjectMigration',
-      'description' => t('Migration of project nodes from Drupal 6'),
-      'machine_name' => 'UNCAProject',
-      'source_type' => 'project',
-      'destination_type' => 'project',
-    ),
+    unca_migrate_node_arguments_by_database($connectionOptions['database'], 'project'),
     array(
       'class_name' => 'UNCAEventMigration',
       'description' => t('Migration of event nodes from Drupal 6'),
@@ -273,14 +271,7 @@ function migrate_d2d_unca_register_migrations() {
 
     // Student Project CT
     // Note: on nemac (drupal_unca) site only
-    array(
-      'class_name' => 'UNCAStudentProjectMigration',
-      'description' => t('Migration of Project nodes from Drupal 6'),
-      'machine_name' => 'UNCAStudentProjectCT',
-      'source_type' => 'student_organization',
-      'destination_type' => 'xxxxxxxxxxx',
-    ),
-
+    unca_migrate_node_arguments_by_database($connectionOptions['database'], 'project'),
     array(
       'class_name' => 'UNCAStudentOrgMigration',
       'description' => t('Migration of Student Organization nodes from Drupal 6'),
@@ -560,4 +551,31 @@ function migrate_d2d_unca_get_vocab_mappings() {
   db_set_active();
 
   return compact('vocabs_map', 'src_vocabs');
+}
+
+function unca_migrate_node_arguments_by_database($database, $source_content_type){
+  switch (true){
+    case ($database != 'D6_drupal_csci' && $source_content_type == 'project'):
+      return array(
+        'class_name' => 'UNCAProjectMigration',
+        'description' => t('Migration of project nodes from Drupal 6'),
+        'machine_name' => 'UNCAProject',
+        'source_type' => 'project',
+        'destination_type' => 'project',
+      );
+
+      break;
+    case ($database == 'D6_drupal_csci' && $source_content_type == 'project'):
+      return array(
+        'class_name' => 'UNCAStudentProjectMigration',
+        'description' => t('Migration of Project nodes from Drupal 6'),
+        'machine_name' => 'UNCAStudentProject',
+        'source_type' => 'project',
+        'destination_type' => 'student_project',
+      );
+      break;
+    default:
+      return array();
+      break;
+  }
 }
