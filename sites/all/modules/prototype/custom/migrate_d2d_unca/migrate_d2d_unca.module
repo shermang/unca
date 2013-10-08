@@ -289,7 +289,14 @@ function migrate_d2d_unca_register_migrations() {
     //   'destination_type' => '',
     // ),
 
-    // Webform CT
+    // Webform CT - Nodes
+        array(
+	      'class_name' => 'UNCAWebformNodeMigration',
+	      'description' => t('Migration of Webform nodes from Drupal 6'),
+	      'machine_name' => 'UNCAWebFormNode',
+	      'source_type' => 'webform',
+	      'destination_type' => 'webform',
+	    ),
 
   );
   // // Tell the node migrations where the users are coming from, so they can
@@ -323,6 +330,65 @@ function migrate_d2d_unca_register_migrations() {
     );
   Migration::registerMigration('UNCADrupalMenuLinks6Migration', $menu_links_arguments['machine_name'],
     $menu_links_arguments);
+
+  // //
+  // // +  +  +  +  TABLE-TO-TABLE MIGRATIONS  +  +  +  +
+  // //
+
+  $table_arguments = array(
+
+    // Webform CT - Roles
+    array(
+      'class_name' => 'UNCAWebformRoleMigration',
+      'description' => t('Migration of Webform Roles from Drupal 6'),
+      'machine_name' => 'UNCAWebFormRole',
+      'wf_node_migration' => 'UNCAWebformNodeMigration',
+      'group' => 'WebformTables',
+    ),
+
+    // Webform CT - Emails
+    array(
+      'class_name' => 'UNCAWebformEmailMigration',
+      'description' => t('Migration of Webform Emails from Drupal 6'),
+      'machine_name' => 'UNCAWebFormEmail',
+      'wf_node_migration' => 'UNCAWebformNodeMigration',
+      'group' => 'WebformTables',
+    ),
+
+    // Webform CT - Components
+    array(
+      'class_name' => 'UNCAWebformComponentMigration',
+      'description' => t('Migration of Webform Components from Drupal 6'),
+      'machine_name' => 'UNCAWebFormComponent',
+      'wf_node_migration' => 'UNCAWebformNodeMigration',
+      'group' => 'WebformTables',
+    ),
+
+    // Webform CT - Submissions
+    array(
+      'class_name' => 'UNCAWebformSubmissionMigration',
+      'description' => t('Migration of Webform Submissions from Drupal 6'),
+      'machine_name' => 'UNCAWebFormSubmission',
+      'wf_node_migration' => 'UNCAWebformNodeMigration',
+      'group' => 'WebformTables',
+    ),
+
+    // Webform CT - Submission data
+    array(
+      'class_name' => 'UNCAWebformDataMigration',
+      'description' => t('Migration of Webform Submission data from Drupal 6'),
+      'machine_name' => 'UNCAWebFormData',
+      'wf_node_migration' => 'UNCAWebformNodeMigration',
+      'group' => 'WebformTables',
+    ),
+
+  );
+
+  foreach ($table_arguments as $arguments) {
+    $arguments = array_merge_recursive($arguments, $common_arguments);
+    Migration::registerMigration($arguments['class_name'], $arguments['machine_name'],
+      $arguments);
+  }
 
   // Blocks
   $block_arguments = $common_arguments + array(
