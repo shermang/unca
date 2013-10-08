@@ -1,5 +1,9 @@
 <?php $base_path = base_path();?>
 
+<?php if ($page == 0): ?>
+<h2><a href="<?php print $node_url ?>" title="<?php print $title ?>"><?php print $title ?></a></h2>
+<?php endif; ?>
+
 <h2><?php print render($content['field_policy_number']); ?></h2>
 <ul>
   <li><?php print render($content['field_policy_approved_by']); ?></li>
