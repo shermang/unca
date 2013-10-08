@@ -11,7 +11,6 @@ abstract class UNCANodeMigration extends DrupalNode6Migration {
   }
 
   public function prepare(stdClass $entity, stdClass $row) {
-drush_print_r($row);
     // Convert d6 emfield data to d7 media/media_internet file reference field
     $fve = property_exists($row, 'field_video_embed:value');
     $viddler = property_exists($row, 'field_viddler_video');
