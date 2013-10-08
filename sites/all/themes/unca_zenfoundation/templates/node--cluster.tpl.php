@@ -1,4 +1,9 @@
 <?php $base_path = base_path();?>
+
+<?php if ($page == 0): ?>
+<h2><a href="<?php print $node_url ?>" title="<?php print $title ?>"><?php print $title ?></a></h2>
+<?php endif; ?>
+
 <?php print render($content['field_image']); ?>
 <ul>
 <li>An<span class="alert"> instructor's name</span> beside the course indicates it must be taken with that instructor to count for the cluster.</li>
