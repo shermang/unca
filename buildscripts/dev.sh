@@ -103,6 +103,7 @@ unca_maps \
 pathologic \
 link_iframe_formatter_options \
 unca_page \
+unca_text_formats \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
