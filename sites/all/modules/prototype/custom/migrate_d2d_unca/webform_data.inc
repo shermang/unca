@@ -8,22 +8,22 @@ class UNCAWebformDataMigration extends DynamicMigration {
     $table_name = 'webform_submitted_data';
 
     $map_source_pkey = array(
-      'srcid1_nid' => array(
+      'nid' => array(
         'type' => 'int',
         'unsigned' => TRUE,
         'not null' => TRUE,
       ),
-      'srcid2_sid' => array(
+      'sid' => array(
         'type' => 'int',
         'unsigned' => TRUE,
         'not null' => TRUE,
       ),
-      'srcid3_cid' => array(
+      'cid' => array(
         'type' => 'int',
         'unsigned' => TRUE,
         'not null' => TRUE,
       ),
-      'srcid4_no' => array(
+      'no' => array(
         'type' => 'varchar',
         'length' => 255,
         'not null' => TRUE,
@@ -46,8 +46,14 @@ class UNCAWebformDataMigration extends DynamicMigration {
     $this->destination = new MigrateDestinationTable($table_name);
 
     // Field mappings
-    $this->addFieldMapping('name', 'style');
-    $this->addFieldMapping('description', 'details');
+    $this->addFieldMapping('nid', 'nid')
+      ->sourceMigration('UNCAWebFormNode');
+    $this->addFieldMapping('sid', 'sid')
+      ->sourceMigration('UNCAWebFormSubmission');
+    $this->addFieldMapping('cid', 'cid');
+    //  ->sourceMigration('UNCAWebFormComponent');
+    $this->addFieldMapping('no', 'no');
+    $this->addFieldMapping('data', 'data');
 
   }
 
