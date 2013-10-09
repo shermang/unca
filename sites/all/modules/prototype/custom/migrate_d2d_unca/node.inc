@@ -7,8 +7,63 @@ abstract class UNCANodeMigration extends DrupalNode6Migration {
   public function __construct(array $arguments) {
     parent::__construct($arguments);
 
-    $this->addFieldMapping('field_legacy_nid', 'nid')
-         ->description('We have a common field to save the D6 nid');
+
+  }
+
+  public function prepare(stdClass $entity, stdClass $row) {
+    // Convert d6 emfield data to d7 media/media_internet file reference field
+    $fve = property_exists($row, 'field_video_embed:value');
+    $viddler = property_exists($row, 'field_viddler_video');
+
+    if($fve) {
+      $vidvalue = $row->{'field_video_embed:value'}[0];
+      $vidprovider = $row->{'field_video_embed:provider'}[0];
+    } elseif($viddler) {
+      $vidvalue = $row->{'field_viddler_video'};
+      $vidprovider = 'viddler';
+    }
+
+    if($fve || $vidprovider) {
+      if(!empty($vidvalue)) {
+        // Convert field data for media_internet
+        $vidtype = false; # let media module handle when it can
+        switch( $vidprovider ) {
+          case 'youtube':
+            $viduri = 'youtube://v/' . $vidvalue;
+            $vidmime = 'video/youtube';
+            break;
+          case 'vimeo':
+            $viduri = 'vimeo://v/' . $vidvalue;
+            $vidmime = 'video/vimeo';
+            break;
+          case 'viddler':
+            $viduri = 'viddler://' . $vidvalue;
+            $vidmime = 'video/viddler';
+            break;
+          case 'zzz_custom_url':
+            $viduri = $vidvalue;
+            $vidmime = 'application/x-shockwave-flash';
+            $vidtype = 'legacy';  
+            break;
+          default:
+            $viduri = $vidvalue;
+            $vidmime = 'application/octet-stream';
+            $vidtype = 'legacy';
+            break;
+        }
+        // Create file record
+        $f = file_uri_to_object($viduri, true);
+        $f->filemime = $vidmime;
+        if($vidtype) $f->type = $vidtype;
+        @file_save($f); # ignore errors (swf file refs cause file stat error that isn't critical but breaks migration process)
+        $fid = $f->fid;
+
+        // Add file ref to new node
+        $entity->field_video_embed = array();
+        $entity->field_video_embed['und'][0]['fid'] = $fid;
+        $entity->field_video_embed['und'][0]['display'] = 1;
+      }
+    }
   }
 }
 
@@ -17,17 +72,9 @@ abstract class UNCANodeMigration extends DrupalNode6Migration {
  */
 class UNCAImageMigration extends UNCANodeMigration {
   public function __construct(array $arguments) {
-    // Add any other data we're pulling into the source row, before the parent
-    // constructor.
-    $this->sourceFields['copyright'] = 'Media copyright notice';
-    $this->sourceFields['filename'] = 'Path of image within mounted filesystem';
 
     parent::__construct($arguments);
 
-    $this->addFieldMapping('field_credit', 'copyright');
-    $arguments = array('source_path' => '/mnt/source_images');
-    $this->addFieldMapping('field_main_image', 'filename')
-         ->arguments($arguments);
   }
 
   /**
@@ -41,22 +88,11 @@ class UNCAImageMigration extends UNCANodeMigration {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
     }
-
-    $image_row = Database::getConnection('default', $this->sourceConnection)
-                 ->select('custom_image_table', 'i')
-                 ->fields('i', array('copyright', 'filename'))
-                 ->condition('vid', $row->vid)
-                 ->execute()
-                 ->fetchObject();
-    if ($image_row) {
-      $row->copyright = $image_row->copyright;
-      $row->filename = $image_row->filename;
-    }
-    else {
-      $this->saveMessage(t('No custom_image_table data for image node with vid !vid',
-                         array('!vid' => $row->vid)));
-    }
   }
+
+
+
+
 }
 
 class UNCAArticleMigration extends UNCANodeMigration {

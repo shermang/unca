@@ -9,6 +9,14 @@
  */
 function unca_event_taxonomy_default_vocabularies() {
   return array(
+    'event_categories' => array(
+      'name' => 'Event Categories',
+      'machine_name' => 'event_categories',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'event_type' => array(
       'name' => 'Event Type',
       'machine_name' => 'event_type',

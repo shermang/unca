@@ -1191,14 +1191,17 @@ function image_effect_definition_load($effect, $style_name = NULL) {
 
   // If a style is specified, do not allow loading of default style
   // effects.
+  //
+  // Error in image_styles of image.module on database update, applied following patch
+  // https://drupal.org/files/1973278-wrong-return-from-image-effect-definition-load-module-5.patch
   if (isset($style_name)) {
     $style = image_style_load($style_name, NULL);
     if ($style['storage'] == IMAGE_STORAGE_DEFAULT) {
-      return FALSE;
+      return array();
     }
   }
 
-  return isset($definitions[$effect]) ? $definitions[$effect] : FALSE;
+  return isset($definitions[$effect]) ? $definitions[$effect] : array();
 }
 
 /**

@@ -55,6 +55,7 @@ function unca_policy_field_default_field_instances() {
   // Exported field_instance: 'node-policy-field_policy_approval_date'
   $field_instances['node-policy-field_policy_approval_date'] = array(
     'bundle' => 'policy',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -101,7 +102,7 @@ function unca_policy_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_popup',
+      'type' => 'date_select',
       'weight' => 9,
     ),
   );
@@ -308,6 +309,7 @@ function unca_policy_field_default_field_instances() {
   // Exported field_instance: 'node-policy-field_policy_last_amended_date'
   $field_instances['node-policy-field_policy_last_amended_date'] = array(
     'bundle' => 'policy',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -354,7 +356,7 @@ function unca_policy_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_popup',
+      'type' => 'date_select',
       'weight' => 8,
     ),
   );
@@ -362,6 +364,7 @@ function unca_policy_field_default_field_instances() {
   // Exported field_instance: 'node-policy-field_policy_next_review_date'
   $field_instances['node-policy-field_policy_next_review_date'] = array(
     'bundle' => 'policy',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -407,7 +410,7 @@ function unca_policy_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_popup',
+      'type' => 'date_select',
       'weight' => 10,
     ),
   );
@@ -461,6 +464,7 @@ function unca_policy_field_default_field_instances() {
   // Exported field_instance: 'node-policy-field_policy_origination_date'
   $field_instances['node-policy-field_policy_origination_date'] = array(
     'bundle' => 'policy',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -507,7 +511,7 @@ function unca_policy_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_popup',
+      'type' => 'date_select',
       'weight' => 7,
     ),
   );
