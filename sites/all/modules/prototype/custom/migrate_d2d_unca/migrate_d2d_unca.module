@@ -338,13 +338,7 @@ function migrate_d2d_unca_register_migrations() {
   $table_arguments = array(
 
     // Webform CT - Roles
-    array(
-      'class_name' => 'UNCAWebformRoleMigration',
-      'description' => t('Migration of Webform Roles from Drupal 6'),
-      'machine_name' => 'UNCAWebFormRole',
-      'wf_node_migration' => 'UNCAWebformNodeMigration',
-      'group' => 'WebformTables',
-    ),
+    // roles are handled in the webformNodeMigration
 
     // Webform CT - Emails
     array(

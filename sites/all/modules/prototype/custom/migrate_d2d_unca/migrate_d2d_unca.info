@@ -32,7 +32,6 @@ files[] = menu.inc
 files[] = menu_links.inc
 files[] = block.inc
 files[] = webform_node.inc
-files[] = webform_role.inc
 files[] = webform_email.inc
 files[] = webform_component.inc
 files[] = webform_submission.inc
