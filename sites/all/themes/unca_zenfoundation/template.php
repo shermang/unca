@@ -203,6 +203,8 @@ function unca_zenfoundation_preprocess_page(&$variables, $hook) {
 
   $variables['page_layout_wrapper_classes'] = implode(' ', $page_layout_wrapper_classes);
 
+  $variables['display_dept_name'] = variable_get('display_dept_name', TRUE);
+
   return $variables;
 
 }
