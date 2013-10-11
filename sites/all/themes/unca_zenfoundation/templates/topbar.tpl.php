@@ -25,7 +25,7 @@
               print theme('links__system_main_menu', array(
                 'links' => $main_menu,
                 'attributes' => array(
-                  'class' => array('main-menu-links', 'links', 'left'),
+                  'class' => array('list-horizontal, main-menu-links', 'links', 'left'),
                   ),
                 'heading' => array(
                   'text' => t('Main menu'),

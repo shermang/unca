@@ -5,12 +5,6 @@ margin:0px;
 padding:0px;
 } 
 
-body {
-background:#003C77 url(../images/background-tile.png) repeat; 
-color:#333; 
-font: 12px/18px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
 hr {
 border: 0 #ccc solid; 
 border-top-width: 1px; 

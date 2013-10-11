@@ -7,6 +7,7 @@ field_permissions \
 references \
 admin_menu \
 admin_menu_toolbar \
+admin_views \
 captcha \
 ctools \
 customerror \
@@ -32,6 +33,7 @@ location \
 mcfilemanager \
 media_viddler \
 media_youtube \
+menu_block \
 node_export \
 pathauto \
 print \
@@ -78,6 +80,8 @@ unca_slideshow \
 unca_department_navigation \
 unca_home \
 unca_profile \
+unca_project_views \
+unca_site_admin_views \
 unca_student_organization \
 study_abroad \
 unca_policy \
