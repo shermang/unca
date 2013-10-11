@@ -81,6 +81,7 @@ unca_department_navigation \
 unca_home \
 unca_profile \
 unca_project_views \
+unca_site_admin_views \
 unca_student_organization \
 study_abroad \
 unca_policy \
