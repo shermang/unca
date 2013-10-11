@@ -91,6 +91,11 @@ stylesheets[all][] = css/unca_zenfoundation.css
 
 ; Optionally add some JavaScripts to your theme.
 
+scripts[] = js/flickrshow-7.2.min.js
+scripts[] = js/jquery-ui-1.8.22.custom.min.js
+scripts[] = js/jquery.arialandmark.js
+scripts[] = js/jquery.slideshow.js
+scripts[] = js/functions.js
 scripts[] = js/script.js
 
 
