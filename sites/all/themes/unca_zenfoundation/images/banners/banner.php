@@ -1,5 +1,19 @@
 <?php
+
+$custom_banner_dir = '../../../../../default/files/banner_images';
 $directory = '../banners/'; // Must have trailing slash
+
+if (file_exists($custom_banner_dir) && is_dir($custom_banner_dir)) {
+  $files = scandir($custom_banner_dir);
+  foreach ($files as $file) {
+    $file_path = $custom_banner_dir . '/' . $file;
+    $file_properties = getimagesize($file_path);
+    if (is_array($file_properties)) {
+      $directory = $custom_banner_dir . '/';
+      break;
+    }
+  }
+}
 
 $accept = array('gif', 'png', 'jpg');
 $deny = array('file1.jpg', 'file2.gif');
@@ -32,10 +46,5 @@ $files = array_values($files);
 $rand = mt_rand(0, count($files) - 1); // mt_rand(min, max);
 $image = $directory . $files[$rand];
 
-//$finfo = finfo_open(FILEINFO_MIME);
-//$mime = finfo_file($finfo, $image);
-//finfo_close($finfo);
-
 header('Content-type: ' . 'image/png' /* $mime */);
 readfile($image);
-?>

@@ -77,7 +77,7 @@
 <div id="page">
   <?php include(path_to_theme().'/templates/header.tpl.php'); ?>
 
-  <div id="main">
+  <div id="main" class="row">
 
   <?php if ($breadcrumb): ?>
       <?php print $breadcrumb; ?>
@@ -114,16 +114,20 @@
       </div>
       <?php endif; ?>
       <!-- Content Row 2 Column 1-->
-      <?php if ($page['content_row_2_column_1']): ?>
-      <div class="content_row_2_column_1">
-        <?php print render($page['content_row_2_column_1']); ?>
-      </div>
-      <?php endif; ?>
-      <!-- Content Row 2 Column 2-->
-      <?php if ($page['content_row_2_column_2']): ?>
-      <div class="content_row_2_column_2">
-        <?php print render($page['content_row_2_column_2']); ?>
-      </div>
+      <?php if ($page['content_row_2_column_1'] || $page['content_row_2_column_2']): ?>
+        <div class="row featured-blocks">
+          <?php if ($page['content_row_2_column_1']): ?>
+          <div class="content_row_2_column_1 tiny-12 small-6 columns">
+            <?php print render($page['content_row_2_column_1']); ?>
+          </div>
+          <?php endif; ?>
+          <!-- Content Row 2 Column 2-->
+          <?php if ($page['content_row_2_column_2']): ?>
+          <div class="content_row_2_column_2 tiny-12 small-6 columns">
+            <?php print render($page['content_row_2_column_2']); ?>
+          </div>
+          <?php endif; ?>
+        </div>
       <?php endif; ?>
       <?php print $feed_icons; ?>
     </div><!-- /#content -->
@@ -131,7 +135,7 @@
     <!-- Let's simplify the sidebar logic since we only have one sidebar region. -->
     <?php if ($page['sidebar_first']): ?>
       <aside class="sidebar">
-        <?php print $page['sidebar_first']; ?>
+        <?php print render($page['sidebar_first']); ?>
       </aside><!-- /.sidebar -->
     <?php endif; ?>
 

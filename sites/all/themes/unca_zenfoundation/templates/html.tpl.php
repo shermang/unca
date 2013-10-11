@@ -39,6 +39,16 @@
     <script src="<?php print $base_path . $path_to_zen; ?>/js/respond.js"></script>
     <![endif]-->
   <?php endif; ?>
+  <!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="/sites/all/themes/unca/css/ie6.css" />
+    <script src="/sites/all/themes/unca_zenfoundation/js/dd_belatedpng_0.0.8a-min.js" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      /* <![CDATA[ */
+        // make pngs transparent
+        DD_belatedPNG.fix('.button-blue-rounded, .section-heading, #logo, .trigger, .trigger-closed, .captioned-image, .calendar-graphic, #question-form, #ask-a-student-submit, .top-stripes, .bottom-stripes, .footer-spiff-mailinglist, .footer-spiff-facebook, .footer-spiff-question, .footer-spiff-tour, .footer-spiff-apply');
+      /* ]]> */
+    </script>
+  <![endif]-->
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <?php if ($skip_link_text && $skip_link_anchor): ?>
