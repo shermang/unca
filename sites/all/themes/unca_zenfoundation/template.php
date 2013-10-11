@@ -143,6 +143,15 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
   // // above foundation scripts fired from our theme script footer
   drupal_add_js(path_to_theme() . '/js/script_footer.js', array('scope' => 'footer', 'weight' => 50));
 
+  foreach ($variables['classes_array'] as $index => $class) {
+    $class_arr = explode(' ', $class);
+    $class_index = array_search('sidebar-first', $class_arr);
+    if (!empty($class_index)) {
+      unset($class_arr[$class_index]);
+    }
+    $variables['classes_array'][$index] = implode(' ', $class_arr);
+  }
+
 }
 
 /**
@@ -277,6 +286,20 @@ function unca_zenfoundation_preprocess_block(&$variables, $hook) {
   // Add block machine name to classes
   $variables['classes_array'][] = 'block-' . $variables['block']->module . '-' . $variables['block']->delta;
 
+  switch($variables['block']->region) {
+    case 'content_row_1':
+    case 'content_row_2_column_1':
+    case 'content_row_2_column_2':
+      $variables['title_attributes_array']['class'][] = 'section-heading';
+      $variables['content_attributes'] = ' class="highlight-box"';
+      break;
+    case 'sidebar_first':
+      $variables['classes_array'][] = 'right-spiff';
+      break;
+    default:
+      $variables['content_attributes'] = '';
+      break;
+  }
   //
   // Examples provided by Zen
   //
