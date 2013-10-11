@@ -13,4 +13,4 @@ features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[variable][] = views_defaults
 features[views_view][] = administration_nodes
-project path = sites\all\modules\prototype\features\
+project path = sites\all\modules\prototype\features\unca_views
