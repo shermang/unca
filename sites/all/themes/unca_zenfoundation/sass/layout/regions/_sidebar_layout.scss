@@ -5,6 +5,11 @@
   @include respond-to($tablet) {
     @include grid-column($sidebar-1-width);
   }
+  .sidebar {
+    padding-left: 0;
+    padding-right: 0;
+    width: auto;
+  }
 }
 .region-sidebar-first {
   // When there's only one sidebar and it's the first one
