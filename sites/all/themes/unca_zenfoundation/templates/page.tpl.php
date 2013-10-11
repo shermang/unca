@@ -77,7 +77,7 @@
 <div id="page">
   <?php include(path_to_theme().'/templates/header.tpl.php'); ?>
 
-  <div id="main" class="row">
+  <div id="main" class="row top-stripes">
 
   <?php if ($breadcrumb): ?>
       <?php print $breadcrumb; ?>
@@ -91,7 +91,7 @@
 
 
 
-    <div id="content" class="content <?php print $page_layout_wrapper_classes; ?>" role="content">
+    <div id="content" class="bottom-stripes content <?php print $page_layout_wrapper_classes; ?>" role="content">
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
