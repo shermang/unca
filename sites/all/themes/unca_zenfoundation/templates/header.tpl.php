@@ -28,6 +28,13 @@
             <?php print render($page['navigation']); ?>
           </nav>
         <?php endif; ?>
+        <?php if($display_dept_name): ?>
+          <div id="department-name-wrapper">
+            <a href="<?php print check_url($front_page); ?>" accesskey="1"><?php print $site_name; ?>
+              <span id="home-icon">&nbsp;</span>
+            </a>
+          </div>
+        <?php endif; ?>
       </div><!-- /.inner -->
   </header>
 </div> <!-- /.header-wrapper -->
