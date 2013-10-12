@@ -7,6 +7,7 @@ project = unca_home
 dependencies[] = features
 dependencies[] = menu
 dependencies[] = taxonomy
+dependencies[] = unca_profile
 dependencies[] = uuid_features
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
