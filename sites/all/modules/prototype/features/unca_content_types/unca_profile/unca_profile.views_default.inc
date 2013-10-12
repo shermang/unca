@@ -11,6 +11,122 @@ function unca_profile_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'Profile_SPIFF';
+  $view->description = '';
+  $view->tag = 'SPIFFs';
+  $view->base_table = 'node';
+  $view->human_name = '';
+  $view->core = 0;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Defaults */
+  $handler = $view->new_display('default', 'Defaults', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'profile_types' => 'profile_types',
+    'course_catalogs' => 0,
+    'course_days' => 0,
+    'course_times' => 0,
+    'course_topic' => 0,
+    'department' => 0,
+    'event_categories' => 0,
+    'event_type' => 0,
+    'groups_policies_apply_to' => 0,
+    'humanities_level' => 0,
+    'location_type' => 0,
+    'news_and_event_type' => 0,
+    'news_and_events_categories' => 0,
+    'news_category' => 0,
+    'policy_categories' => 0,
+    'policy_owner' => 0,
+    'program_types' => 0,
+    'project_type' => 0,
+    'region' => 0,
+    'responsible_office' => 0,
+    'student_organization' => 0,
+    'tags' => 0,
+    'university_semester' => 0,
+    'university_term' => 0,
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  /* Field: Teaser (Summary) */
+  $handler->display->display_options['fields']['field_teaser_text_value']['id'] = 'field_teaser_text_value';
+  $handler->display->display_options['fields']['field_teaser_text_value']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['field_teaser_text_value']['field'] = 'body';
+  $handler->display->display_options['fields']['field_teaser_text_value']['ui_name'] = 'Teaser (Summary)';
+  $handler->display->display_options['fields']['field_teaser_text_value']['label'] = '';
+  $handler->display->display_options['fields']['field_teaser_text_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_teaser_text_value']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['field_teaser_text_value']['settings'] = array(
+    'trim_length' => '600',
+  );
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image_fid']['id'] = 'field_image_fid';
+  $handler->display->display_options['fields']['field_image_fid']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image_fid']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image_fid']['label'] = '';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['fields']['name']['label'] = 'Term';
+  /* Sort criterion: Global: Random */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'profiles' => 'profiles',
+  );
+  $handler->display->display_options['filters']['type']['group'] = '0';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    0 => '163',
+    1 => '164',
+    2 => '168',
+  );
+  $handler->display->display_options['filters']['tid']['group'] = '0';
+  $handler->display->display_options['filters']['tid']['expose']['operator'] = FALSE;
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'profile_types';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = '0';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $export['Profile_SPIFF'] = $view;
+
+  $view = new view();
   $view->name = 'Profiles';
   $view->description = 'Queries profiles for the profiles page.';
   $view->tag = 'Profiles';

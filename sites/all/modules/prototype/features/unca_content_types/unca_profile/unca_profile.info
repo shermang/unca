@@ -47,5 +47,6 @@ features[user_permission][] = access user profiles
 features[user_permission][] = delete terms in profile_types
 features[user_permission][] = edit terms in profile_types
 features[variable][] = field_bundle_settings_node__profiles
+features[views_view][] = Profile_SPIFF
 features[views_view][] = Profiles
 features_exclude[dependencies][ctools] = ctools
