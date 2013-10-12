@@ -2728,9 +2728,7 @@ p aside {
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: bold;
   font-style: normal;
-  color: #222222;
   text-rendering: optimizeLegibility;
   margin-top: 0.2em;
   margin-bottom: 0.5em;
@@ -6657,10 +6655,8 @@ nav.navigation .block-search {
   -o-transition: background-color 0.25s;
   transition: background-color 0.25s;
   background-color: gray;
-  height: 200px;
   margin-bottom: 1em;
   max-width: 100%;
-  width: 250px;
 }
 .field img:hover,
 .views-field img:hover {
@@ -9442,4 +9438,18 @@ nav.navigation:after {
   right: 50%;
   left: auto;
   float: left;
+}
+
+.field-name-field-video-embed {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.field-name-field-video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

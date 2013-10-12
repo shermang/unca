@@ -176,7 +176,7 @@ margin-top:4px;
 color:#fff; 
 padding:5px 0px; 
 display:block; 
-width:190px;
+width:173px;
 }
 
 .navigation-secondary a.active {  /*override system style(make the .active #ffffff */
@@ -185,7 +185,7 @@ color:#FFFFFF;
 
 
 .navigation-secondary ul {
-margin-bottom:0px;
+margin:0px;
 }
 
  
