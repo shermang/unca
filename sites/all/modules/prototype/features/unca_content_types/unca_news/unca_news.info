@@ -34,6 +34,7 @@ features[taxonomy][] = news_category
 features[variable][] = field_bundle_settings_node__news_article
 features[views_view][] = News
 features[views_view][] = News_Archive
+features[views_view][] = News_Categories
 features_exclude[field_base][body] = body
 features_exclude[field_base][field_image] = field_image
 features_exclude[field_base][field_teaser_text] = field_teaser_text
