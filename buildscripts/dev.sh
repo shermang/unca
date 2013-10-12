@@ -7,6 +7,7 @@ field_permissions \
 references \
 admin_menu \
 admin_menu_toolbar \
+admin_views \
 captcha \
 ctools \
 customerror \
@@ -32,6 +33,7 @@ location \
 mcfilemanager \
 media_viddler \
 media_youtube \
+menu_block \
 node_export \
 pathauto \
 print \
@@ -78,6 +80,8 @@ unca_slideshow \
 unca_department_navigation \
 unca_home \
 unca_profile \
+unca_project_views \
+unca_site_admin_views \
 unca_student_organization \
 study_abroad \
 unca_policy \
@@ -104,6 +108,7 @@ pathologic \
 link_iframe_formatter_options \
 unca_page \
 unca_text_formats \
+date_views \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
@@ -120,6 +125,9 @@ echo ""
 # Set unca_zenfoundation as the active theme
 echo "Setting unca_zenfoundation as the active theme"
 drush vset theme_default unca_zenfoundation
+
+# Revert all features
+drush fra --yes
 
 # clear the cache
 echo "Clearing the drupal cache"
