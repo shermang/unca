@@ -216,19 +216,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 }
  
 .navigation-secondary a {
-color:#fff; 
-padding:5px 0px; 
-display:block; 
-width:173px;
+  color:#fff; 
+  padding:5px 0px; 
+  display:inline-block; 
+  width:100%;
+}
+
+.navigation-secondary a:hover {
+  color:#fff; 
+  text-decoration:underline;
 }
 
 .navigation-secondary a.active {  /*override system style(make the .active #ffffff */
-color:#FFFFFF;
+  color:#FFFFFF;
 }
 
 
 .navigation-secondary ul {
-margin:0px;
+  margin:0px;
 }
 
  
