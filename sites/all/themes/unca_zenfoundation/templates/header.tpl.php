@@ -14,10 +14,6 @@
         <?php if ($logo): ?>
           <a class="logo-link" href="<?php print url('<front>') ?>" title="<?php print t('Home'); ?>"><img id="logo" src="<?php print $logo; ?>"></a>
         <?php endif; ?>
-        <?php if ($site_name): ?>
-          <h1 id="site-name"><a href="<?php print url('<front>') ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a></h1>
-        <?php endif; ?>
-
         <?php print render($page['header']); ?>
 
         <!-- Uncomment this next line if you want the Foundation topbar for the main menu -->
