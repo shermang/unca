@@ -20,11 +20,12 @@
             <li class="toggle-topbar menu-icon"><a href="#"><span aria-hidden="true" class="icon-menu">Menu</span></a></li>
           </ul>
 
-          <section class="top-bar-section">
+          <section id="navigation-primary-wrapper" class="top-bar-section">
             <?php
               print theme('links__system_main_menu', array(
                 'links' => $main_menu,
                 'attributes' => array(
+                  'id' => array('navigation-primary'),
                   'class' => array('list-horizontal, main-menu-links', 'links', 'left'),
                   ),
                 'heading' => array(
