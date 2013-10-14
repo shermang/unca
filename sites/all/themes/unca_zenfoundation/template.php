@@ -286,6 +286,9 @@ function unca_zenfoundation_preprocess_region(&$variables, $hook) {
 function unca_zenfoundation_preprocess_block(&$variables, $hook) {
   // Add block machine name to classes
   $variables['classes_array'][] = 'block-' . $variables['block']->module . '-' . $variables['block']->delta;
+  if (($variables['block']->module == 'menu') && ($variables['block']->delta == 'menu-secondary-navigation---prot')) {
+    $variables['classes_array'][] = 'navigation-secondary';
+  }
 
   switch($variables['block']->region) {
     case 'content_row_1':
