@@ -22,7 +22,7 @@ function unca_campus_update_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -117,14 +117,14 @@ function unca_campus_update_field_default_field_instances() {
     'description' => 'Choose a featured image to prominently display with this article, which will also display as a thumbnail in blocks listing Campus Updates.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'backpage-full-width-image',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',

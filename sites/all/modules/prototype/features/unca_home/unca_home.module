@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the UNCA Home feature.
  */
+
+include_once 'unca_home.features.inc';

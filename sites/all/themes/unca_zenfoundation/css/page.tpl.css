@@ -98,89 +98,39 @@ padding:10px 10px;
 color:#fff;
 }
  
-#navigation-primary-wrapper {
-border:solid #fff 1px; 
-margin-bottom:5px; 
-padding:0; 
-height:30px;
-background:url(../images/navigation-primary-background-sprites.png) no-repeat 0 0; 
-}
- 
 #navigation-primary li a {
-background:url(../images/navigation-primary-background-sprites.png) no-repeat; 
 padding-top:30px; 
 height:0px; 
 overflow:hidden; 
 display:block;
 }
  
-#navigation-primary #about {
-background-position:0px 0px; 
+#navigation-primary #about { 
 width:71px;
 }
  
-#navigation-primary #about:hover,
-#navigation-primary #about.current {
-background-position:0px -32px;
-}
- 
 #navigation-primary #academics {
-background-position:-71px 0px; 
 width:92px;
 }
  
-#navigation-primary #academics:hover,
-#navigation-primary #academics.current {
-background-position:-71px -64px;
-}
- 
 #navigation-primary #admissions {
-background-position:-163px 0px; 
 width:102px;
-}
-#navigation-primary #admissions:hover,
-#navigation-primary #admissions.current {
-background-position:-163px -96px;
 }
  
 #navigation-primary #life-on-campus {
-background-position:-265px 0px; 
 width:126px;
 }
  
-#navigation-primary #life-on-campus:hover,
-#navigation-primary #life-on-campus.current {
-background-position:-265px -128px;
-}
- 
 #navigation-primary #athletics {
-background-position:-391px 0px; 
 width:90px;
 }
  
-#navigation-primary #athletics:hover,
-#navigation-primary #athletics.current {
-background-position:-391px -160px;
-}
- 
 #navigation-primary #news-and-events {
-background-position:-481px 0px; 
 width:123px;
 }
  
-#navigation-primary #news-and-events:hover,
-#navigation-primary #news-and-events.current {
-background-position:-481px -192px;
-}
- 
 #navigation-primary #centers {
-background-position:-604px 0px; 
 width:82px;
-}
- 
-#navigation-primary #centers:hover,
-#navigation-primary #centers.current {
-background-position:-604px -224px;
 }
  
 #navigation-primary #search {
@@ -189,7 +139,6 @@ width:265px;
 height:30px; 
 padding-right:5px; 
 overflow:hidden;
-
 }
  
 #navigation-primary #search ul {
@@ -227,7 +176,7 @@ margin-top:4px;
 color:#fff; 
 padding:5px 0px; 
 display:block; 
-width:190px;
+width:173px;
 }
 
 .navigation-secondary a.active {  /*override system style(make the .active #ffffff */
@@ -236,7 +185,7 @@ color:#FFFFFF;
 
 
 .navigation-secondary ul {
-margin-bottom:0px;
+margin:0px;
 }
 
  
@@ -585,11 +534,11 @@ padding:5px 12px 0 0;
 margin:0 -12px 0 0;
 }
   
-/* right nav spiff */
+/* right nav spiff 
 .right-spiff {
 background-color:rgba(232,238,225,0.7);
 padding:10px 10px 1px 10px;
-}
+} */
 
 /* Ask a Student Form */
 #webform-client-form-68 {

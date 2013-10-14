@@ -635,6 +635,46 @@ function unca_profile_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-profiles-field_subheading'
+  $field_instances['node-profiles-field_subheading'] = array(
+    'bundle' => 'profiles',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_subheading',
+    'label' => 'Subheading',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-profiles-field_teaser_text'
   $field_instances['node-profiles-field_teaser_text'] = array(
     'bundle' => 'profiles',
@@ -684,6 +724,7 @@ function unca_profile_field_default_field_instances() {
   t('Last Name');
   t('Profile Type');
   t('Profile Weight');
+  t('Subheading');
   t('Suffix');
   t('Teaser');
 
