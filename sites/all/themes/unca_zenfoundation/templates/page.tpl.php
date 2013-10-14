@@ -133,9 +133,27 @@
     </div><!-- /#content -->
 
     <!-- Let's simplify the sidebar logic since we only have one sidebar region. -->
-    <?php if ($page['sidebar_first']): ?>
+    <?php if ($page['sidebar_first'] || ($is_front && $unca_main)): ?>
       <aside class="sidebar">
-        <?php print render($page['sidebar_first']); ?>
+        <?php if ($is_front && $unca_main): ?>
+            <div id="rail">
+              	<ul class="list-unstyled" id="navigation-gateway">
+                  		<li><a href="/for-students" id="gateway-students">Students</a></li>
+                      	<li><a href="/for-faculty" id="gateway-faculty-staff">Faculty &amp; Staff</a></li>
+                      	<li><a href="http://alumni.unca.edu" id="gateway-alumni">Alumni</a></li>
+                      	<li><a href="/for-parents" id="gateway-parents-families">Parents &amp; Families</a></li>
+                      	<li><a href="/for-the-community" id="gateway-community">The Community</a></li>
+                      	<li><a href="/giving" id="gateway-gift">Make a Gift</a></li>
+                      	<li class="last"><a href="/admissions/apply" id="gateway-apply">Apply</a></li>
+                  	</ul>
+      		<span id="navigation-secondary-bottom">&nbsp;</span>
+              </div>
+          	<div class="clear">&nbsp;</div>
+        <?php endif; ?>
+
+        <?php if ($page['sidebar_first']): ?>
+          <?php print render($page['sidebar_first']); ?>
+        <?php endif; ?>
       </aside><!-- /.sidebar -->
     <?php endif; ?>
 
