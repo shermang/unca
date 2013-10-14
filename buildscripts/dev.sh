@@ -108,6 +108,7 @@ pathologic \
 link_iframe_formatter_options \
 unca_page \
 unca_text_formats \
+date_views \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
@@ -124,6 +125,9 @@ echo ""
 # Set unca_zenfoundation as the active theme
 echo "Setting unca_zenfoundation as the active theme"
 drush vset theme_default unca_zenfoundation
+
+# Revert all features
+drush fra --yes
 
 # clear the cache
 echo "Clearing the drupal cache"
