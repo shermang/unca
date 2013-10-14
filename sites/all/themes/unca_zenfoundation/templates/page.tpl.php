@@ -133,9 +133,9 @@
     </div><!-- /#content -->
 
     <!-- Let's simplify the sidebar logic since we only have one sidebar region. -->
-    <?php if ($page['sidebar_first'] || $is_front): ?>
+    <?php if ($page['sidebar_first'] || ($is_front && $unca_main)): ?>
       <aside class="sidebar">
-        <?php if ($is_front): ?>
+        <?php if ($is_front && $unca_main): ?>
             <div id="rail">
               	<ul class="list-unstyled" id="navigation-gateway">
                   		<li><a href="/for-students" id="gateway-students">Students</a></li>

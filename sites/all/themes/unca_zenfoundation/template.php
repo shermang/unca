@@ -166,6 +166,7 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
 function unca_zenfoundation_preprocess_page(&$variables, $hook) {
   
 
+  $variables['unca_main'] = variable_get('unca_main_site', FALSE);
   // Add layout classes
 
   // Add special classes for Gateway regions
