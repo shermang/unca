@@ -74,7 +74,9 @@ border-right:0px;
 #footer li a {
 padding:10px 15px;
 }
- 
+
+/**start navigation primary--------------------------------------------------------------------------------------**/
+
 #navigation-utility-wrapper {
 float:right;
 width:320px;
@@ -97,68 +99,109 @@ border-right:0px;
 padding:10px 10px; 
 color:#fff;
 }
- 
-#navigation-primary li a {
-padding-top:30px; 
-height:0px; 
-overflow:hidden; 
-display:block;
+
+/**start navigation primary--------------------------------------------------------------------------------------**/
+
+
+#navigation-primary-wrapper {
+  border: 1px solid #FFFFFF;
+  height: 30px;
+  overflow: hidden;  
+  margin-bottom: 5px;
+  padding: 0;
+  background: #c6c6c6; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2M0YzRjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhNGE0YTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, #c6c6c6 0%, #8b8b8b 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(25%,#ffffff), color-stop(25%,#85c6de), color-stop(75%,#85c6de), color-stop(75%,#c4c4c4), color-stop(100%,#a4a4a4)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #c6c6c6 0%, #8b8b8b 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #c6c6c6 0%, #8b8b8b 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #c6c6c6 0%, #8b8b8b 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #c6c6c6 0%, #8b8b8b 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#8b8b8b',GradientType=0 ); /* IE6-8 */    
 }
  
-#navigation-primary #about { 
-width:71px;
+#navigation-primary {
+  margin-bottom: 5px;
+  padding: 0;  
+  background: #eeeeee; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2M0YzRjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhNGE0YTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  #eeeeee 0%, #ffffff 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(25%,#ffffff), color-stop(25%,#85c6de), color-stop(75%,#85c6de), color-stop(75%,#c4c4c4), color-stop(100%,#a4a4a4)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #eeeeee 0%,#ffffff 25%,#85c6de 25%,#85c6de 75%,#c4c4c4 75%,#a4a4a4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #eeeeee 0%,#ffffff 25%,#85c6de 25%,#85c6de 75%,#c4c4c4 75%,#a4a4a4 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #eeeeee 0%,#ffffff 25%,#85c6de 25%,#85c6de 75%,#c4c4c4 75%,#a4a4a4 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #eeeeee 0%,#ffffff 25%,#85c6de 25%,#85c6de 75%,#c4c4c4 75%,#a4a4a4 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#a4a4a4',GradientType=0 ); /* IE6-8 */    
 }
- 
-#navigation-primary #academics {
-width:92px;
+
+#navigation-primary li.first { margin-left: 0px; }
+#navigation-primary li {
+margin-left: 1px;
+background: #eeeeee; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2MzYzNjMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhNGE0YTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #eeeeee 0%, #ffffff 25%, #c3c3c3 75%, #a4a4a4 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(25%,#ffffff), color-stop(75%,#c3c3c3), color-stop(100%,#a4a4a4)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #eeeeee 0%,#ffffff 25%,#c3c3c3 75%,#a4a4a4 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #eeeeee 0%,#ffffff 25%,#c3c3c3 75%,#a4a4a4 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #eeeeee 0%,#ffffff 25%,#c3c3c3 75%,#a4a4a4 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #eeeeee 0%,#ffffff 25%,#c3c3c3 75%,#a4a4a4 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#a4a4a4',GradientType=0 ); /* IE6-8 */
 }
- 
-#navigation-primary #admissions {
-width:102px;
+
+#navigation-primary li > a:hover, #navigation-primary li a:hover {
+  color: #FFFFFF;	
+  display: block;
+  text-decoration: none;
+  border: 1px solid #FFFFFF;
+  background: #ee8b19; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlOGIxOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkZDUxMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  #ee8b19 0%, #dd5100 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ee8b19), color-stop(100%,#dd5100)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ee8b19 0%,#dd5100 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ee8b19 0%,#dd5100 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ee8b19 0%,#dd5100 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ee8b19 0%,#dd5100 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee8b19', endColorstr='#dd5100',GradientType=0 ); /* IE6-8 */
 }
- 
-#navigation-primary #life-on-campus {
-width:126px;
+
+#navigation-primary li > a, #navigation-primary li a {
+  color: #000000;
+  display: block;
+  font-size: 8px;
+  padding: 5px 15px;  
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 100%;
+  background-color: transparent;
 }
- 
-#navigation-primary #athletics {
-width:90px;
-}
- 
-#navigation-primary #news-and-events {
-width:123px;
-}
- 
-#navigation-primary #centers {
-width:82px;
-}
- 
+
 #navigation-primary #search {
-background:url(../images/navigation-primary-background-sprites.png) no-repeat -686px 0px; 
-width:265px; 
-height:30px; 
-padding-right:5px; 
-overflow:hidden;
+    background: url("http://www.unca.edu/sites/all/themes/unca/imgs/navigation-primary-background-sprites.png") no-repeat scroll -686px 0 rgba(0, 0, 0, 0);
+    height: 30px;
+    overflow: hidden;
+    padding-right: 5px;
+    width: 265px;
 }
- 
+
 #navigation-primary #search ul {
-margin-top:-20px;
+    margin-top: -20px;
 }
- 
 #navigation-primary #search li {
-margin:10px 0px 10px 5px;
+    margin: 10px 0 10px 5px;
 }
- 
 #navigation-primary #search #q, #navigation-primary #search #query_string {
-border:0px; 
-padding:3px; 
-margin-top:4px; 
-width:190px; 
+    border: 0 none;
+    margin-top: 4px;
+    padding: 3px;
+    width: 190px;
 }
- 
-#navigation-primary #search-button-people,
-#navigation-primary #search-button-web {
-margin-top:4px;
+#navigation-primary #search-button-people, #navigation-primary #search-button-web {
+    margin-top: 4px;
 }
 
 
@@ -388,14 +431,14 @@ Notes:  Adds icon to all pdf links
 */
 .node a[href $='.pdf']  { 
    padding-right: 15px;
-   background: transparent url(../imgs/icon-pdf.gif);
+   background: transparent url(../images/icon-pdf.gif);
    background-repeat: no-repeat; 
    background-position: center right; 
 }
 
 .node a[href $='.PDF']  { 
    padding-right: 15px;
-   background: transparent url(../imgs/icon-pdf.gif);
+   background: transparent url(../images/icon-pdf.gif);
    background-repeat: no-repeat; 
    background-position: center right; 
 }
@@ -592,7 +635,7 @@ li.arrow  {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	margin-left: 15px;
-	list-style-image: url(../imgs/arrow.png);
+	list-style-image: url(../images/arrow.png);
 }
 
 /*Added on: 2010-03-28
@@ -627,7 +670,7 @@ Notes:  Creates special classes for ncchw site.  Should be moved to ncchw subthe
 
 table.ncchw ul li {
     list-style-type: none;
-    list-style-image: url(../imgs/listbullet-blue.png);
+    list-style-image: url(../images/listbullet-blue.png);
     margin-left: 0px;
     padding: 0px;
     margin-top: 0px;
@@ -851,19 +894,19 @@ Notes:  Adds support for slideshows
 }
 
 .views_slideshow_previous {
-background-image:url('../imgs/slideshow-backward.png');
+background-image:url('../images/slideshow-backward.png');
 }
 
 .views_slideshow_next {
-background-image:url('../imgs/slideshow-forward.png');
+background-image:url('../images/slideshow-forward.png');
 }
 
 .views_slideshow_pause {
-background-image:url('../imgs/slideshow-pause.png');
+background-image:url('../images/slideshow-pause.png');
 }
 
 .views_slideshow_play {
-background-image:url('../imgs/slideshow-resume.png');
+background-image:url('../images/slideshow-resume.png');
 }
 
 .views_slideshow_previous:active,
@@ -943,4 +986,27 @@ margin:10px;
 
 .float-right{
 float:right;
+}
+
+#department-name-wrapper {
+    background-image: url("../images/department-name-background.png");
+    background-position: 0 0;
+    background-repeat: repeat;
+    height: 30px;
+    margin-bottom: 5px;
+    clear: both;
+}
+#department-name-wrapper a {
+    color: #FFFFFF;
+    display: block;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-left: 20px;
+    padding-top: 5px;
+    text-transform: uppercase;
+}
+#department-name-wrapper a:hover {
+    color: #DFDFDF;
+    text-decoration: none;
 }
