@@ -6,7 +6,15 @@
   /**background:url(../images/banners/banner-mountains.jpg) no-repeat; **/
   margin-bottom:-5px;
 }
- 
+
+#home-icon {
+  background: url("../images/home-icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  float: right;
+  height: 30px;
+  margin-bottom: 0;
+  width: 30px;
+}
+
 #footer {
 text-align:center; 
 color:#fff; 
