@@ -10,3 +10,15 @@ nav.navigation {
     @extend %block-title-hide;
   }
 }
+
+.top-bar-section {
+  li {
+    a:not(.button) {
+      line-height: 30px;
+      background: transparent;
+    }
+    a:not(.button).hover {
+      background: transparent;
+    }
+  }
+}
