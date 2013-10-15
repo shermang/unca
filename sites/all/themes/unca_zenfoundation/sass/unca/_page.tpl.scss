@@ -599,23 +599,27 @@ padding:0px 0px 0px 12px;
 }
 	
 .button-blue-rounded span {
-background:url(../images/button-rounded-blue-right.png) top right no-repeat;
-float:right;
-height:29px;
-display:block;
-margin: 0;
-color:#fff;
-padding:5px 12px 0 0;
-margin:0 -12px 0 0;
+  background:url(../images/button-rounded-blue-right.png) top right no-repeat;
+  float:right;
+  height:29px;
+  display:block;
+  margin: 0;
+  color:#fff;
+  padding:5px 12px 0 0;
+  margin:0 -12px 0 0;
 }
   
-/* right nav spiff 
-.right-spiff {
-background-color:rgba(232,238,225,0.7);
-padding:10px 10px 1px 10px;
-} */
+// right nav spiff 
+.sidebar .right-spiff {
+  background-color:rgba(232,238,225,0.7);
+  padding:10px 10px 1px 10px;
+}
+.sidebar .block-menu.right-spiff {
+  background-color: transparent;
+  padding:0;
+}
 
-/* Ask a Student Form */
+// Ask a Student Form
 #webform-client-form-68 {
 background:url(../images/ask-a-student-form-background.png) no-repeat top left transparent;
 padding:10px 20px 20px 20px;

@@ -11392,12 +11392,16 @@ div.content-two-column {
   margin: 0 -12px 0 0;
 }
 
-/* right nav spiff 
-.right-spiff {
-background-color:rgba(232,238,225,0.7);
-padding:10px 10px 1px 10px;
-} */
-/* Ask a Student Form */
+.sidebar .right-spiff {
+  background-color: rgba(232, 238, 225, 0.7);
+  padding: 10px 10px 1px 10px;
+}
+
+.sidebar .block-menu.right-spiff {
+  background-color: transparent;
+  padding: 0;
+}
+
 #webform-client-form-68 {
   background: url(../images/ask-a-student-form-background.png) no-repeat top left transparent;
   padding: 10px 20px 20px 20px;
