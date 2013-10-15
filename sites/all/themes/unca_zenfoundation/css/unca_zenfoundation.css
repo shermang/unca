@@ -9279,6 +9279,18 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
 
 .row .top-bar {
   padding: 0 -0.9375em;
+  border: none;
+  margin-bottom: 5px;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  clear: both;
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+  width: 100%;
+}
+.row .top-bar .toggle-topbar.menu-icon {
+  margin-top: -19px;
 }
 
 #main {
@@ -9543,7 +9555,7 @@ nav.navigation:after {
 .sidebar .sidebar {
   padding-left: 0;
   padding-right: 0;
-  width: auto;
+  width: 100%;
 }
 
 .sidebar-first .region-sidebar-first {
@@ -9973,6 +9985,48 @@ body {
   line-height: 16px;
 }
 
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #CCCCCC;
+  border-image: none;
+  border-right: 0 solid #CCCCCC;
+  border-style: solid;
+  border-width: 1px 0 0;
+  clear: both;
+  height: 0;
+}
+
+h1 {
+  color: #999999;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1;
+}
+
+h2 {
+  color: #173D78;
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #EE5B14;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h4 {
+  color: #4F732E;
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
 #bottom-spiffs .column {
   float: left;
   padding: 0px;
@@ -10267,38 +10321,27 @@ h2.section-heading {
   border-left: solid #fff 1px;
   border-top: solid #fff 1px;
   margin: 0px;
-  padding: 0px;
+  padding: 20px;
+  background: url(../images/navigation-gateway-lightblue.png) repeat-x #0091d1;
 }
 
 .navigation-gateway ul li.last {
   border-bottom: solid #fff 1px;
 }
 
-.navigation-gateway a {
+.navigation-gateway a, .navigation-gateway a.active {
   display: block;
   height: 16px;
   overflow: hidden;
-  padding: 20px;
   text-transform: uppercase;
   font-weight: bold;
   color: #fff;
 }
 
-.navigation-gateway a,
-#gateway-students,
-#gateway-alumni,
-#gateway-faculty-staff,
-#gateway-parents-families,
-#gateway-community {
-  background: url(../images/navigation-gateway-lightblue.png) repeat-x #0091d1;
+.navigation-gateway a:hover {
+  text-decoration: underline;
 }
 
-/*
-#gateway-apply,
-#gateway-gift {
-background:url(../images/navigation-gateway-darkblue.png) repeat-x #001f43;
-}
-*/
 #homepage-events,
 #homepage-news {
   float: left;
@@ -10675,10 +10718,6 @@ Added back in by Luke Withrow on 2013-05-15
   float: left;
 }
 
-#main {
-  padding-top: 20px;
-}
-
 #navigation-primary #search li {
   margin: 0px 0 0 5px;
 }
@@ -10699,6 +10738,7 @@ Added back in by Luke Withrow on 2013-05-15
   height: 30px;
   margin-bottom: 0;
   width: 30px;
+  padding-right: 46px;
 }
 
 #footer {
@@ -10720,7 +10760,6 @@ Added back in by Luke Withrow on 2013-05-15
 }
 
 #main {
-  padding: 10px 20px 20px 20px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -10807,7 +10846,8 @@ Added back in by Luke Withrow on 2013-05-15
 #navigation-primary-wrapper {
   border: 1px solid #FFFFFF;
   clear: both;
-  height: 30px;
+  height: 40px;
+  overflow: hidden;
   margin-bottom: 5px;
   padding: 0;
   background: #c6c6c6;
@@ -10829,9 +10869,25 @@ Added back in by Luke Withrow on 2013-05-15
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c6c6c6', endColorstr='#8b8b8b',GradientType=0 );
   /* IE6-8 */
 }
+@media only screen and (min-width: 64em) {
+  #navigation-primary-wrapper {
+    height: 30px;
+    margin-top: 0;
+  }
+}
+@media print {
+  #navigation-primary-wrapper {
+    height: 30px;
+    margin-top: 0;
+  }
+}
+#navigation-primary-wrapper .lt-ie9 {
+  height: 30px;
+  margin-top: 0;
+}
 
 #navigation-primary {
-  margin-bottom: 5px;
+  margin: 0;
   padding: 0;
   background: #eeeeee;
   /* Old browsers */
@@ -10879,11 +10935,16 @@ Added back in by Luke Withrow on 2013-05-15
   /* IE6-8 */
 }
 
+#navigation-primary li.first > a:hover, #navigation-primary li.first a:hover {
+  padding: 7px 18px 7px 19px;
+}
+
 #navigation-primary li > a:hover, #navigation-primary li a:hover {
   color: #FFFFFF;
   display: block;
   text-decoration: none;
   border: 1px solid #FFFFFF;
+  padding: 7px 18px;
   background: #ee8b19;
   /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -10907,8 +10968,8 @@ Added back in by Luke Withrow on 2013-05-15
 #navigation-primary li > a, #navigation-primary li a {
   color: #000000;
   display: block;
-  font-size: 8px;
-  padding: 5px 15px;
+  font-size: 10px;
+  padding: 7px 20px;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
@@ -11747,7 +11808,6 @@ Notes:  Adds support for slideshows
   background-image: url(../images/department-name-background.png);
   background-position: 0 0;
   background-repeat: repeat;
-  height: 30px;
   margin-bottom: 5px;
   clear: both;
 }
@@ -11759,7 +11819,7 @@ Notes:  Adds support for slideshows
   font-size: 24px;
   letter-spacing: 1px;
   margin-left: 20px;
-  padding-top: 5px;
+  padding: 7px 0;
   text-transform: uppercase;
 }
 
