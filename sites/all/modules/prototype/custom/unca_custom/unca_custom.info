@@ -1,0 +1,4 @@
+name = UNCA Custom Code
+description = Miscellaneous custom code for the UNCA D7 sites
+package = Development
+core = 7.x
