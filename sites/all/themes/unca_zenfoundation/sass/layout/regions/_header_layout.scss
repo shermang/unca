@@ -2,12 +2,21 @@
   @include grid-row;
   position: relative;
   .inner {
-    @include respond-to($tablet) {
-      // padding-top: 3em;
-    }
   }
 }
 
 .row .top-bar {
   padding: 0 -0.9375em;
+  border: none;
+  margin-bottom: 5px;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  clear: both;
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+  width: 100%;
+    .toggle-topbar.menu-icon {
+      margin-top: -19px;
+    }  
 }

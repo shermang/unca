@@ -110,6 +110,7 @@ link_iframe_formatter_options \
 unca_page \
 unca_text_formats \
 date_views \
+unca_custom \
 
 
 # To disable modules, uncomment the following command and list the modules to disable
