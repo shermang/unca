@@ -19,40 +19,42 @@ float:right;
    margin:0px;
 } 
 .navigation-gateway ul li{
-border-left:solid #fff 1px;
-border-top:solid #fff 1px;
-margin:0px;
-padding:0px;
+  border-left:solid #fff 1px;
+  border-top:solid #fff 1px;
+  margin:0px;
+  padding:20px;
+  background:url(../images/navigation-gateway-lightblue.png) repeat-x #0091d1;
 }
 
 .navigation-gateway ul li.last {
 border-bottom:solid #fff 1px;
 }
 
-.navigation-gateway a {
-display:block;
-height:16px;
-overflow:hidden;
-padding:20px;
-text-transform:uppercase;
-font-weight:bold;
-color:#fff;
-}
-.navigation-gateway a,
-#gateway-students,
-#gateway-alumni,
-#gateway-faculty-staff,
-#gateway-parents-families,
-#gateway-community {
-background:url(../images/navigation-gateway-lightblue.png) repeat-x #0091d1;
+.navigation-gateway a, .navigation-gateway a.active  {
+  display:block;
+  height:16px;
+  overflow:hidden;
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#fff;
 }
 
-/*
-#gateway-apply,
-#gateway-gift {
-background:url(../images/navigation-gateway-darkblue.png) repeat-x #001f43;
+.navigation-gateway a:hover  {
+  text-decoration: underline;
 }
-*/
+
+// #gateway-students,
+// #gateway-alumni,
+// #gateway-faculty-staff,
+// #gateway-parents-families,
+// #gateway-community {
+// background:url(../images/navigation-gateway-lightblue.png) repeat-x #0091d1;
+// }
+
+// #gateway-apply,
+// #gateway-gift {
+// background:url(../images/navigation-gateway-darkblue.png) repeat-x #001f43;
+// }
 
 #homepage-events, 
 #homepage-news {
