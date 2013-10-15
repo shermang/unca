@@ -158,14 +158,14 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node_revision'] = TRUE;
-  /* Field: Content: Caption */
+  /* Field: Content: Subheading */
   $handler->display->display_options['fields']['field_subheading']['id'] = 'field_subheading';
   $handler->display->display_options['fields']['field_subheading']['table'] = 'field_data_field_subheading';
   $handler->display->display_options['fields']['field_subheading']['field'] = 'field_subheading';
   $handler->display->display_options['fields']['field_subheading']['relationship'] = 'vid';
   $handler->display->display_options['fields']['field_subheading']['label'] = '';
   $handler->display->display_options['fields']['field_subheading']['element_label_colon'] = FALSE;
-  /* Field: Content: Student Organization Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
   $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
   $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
