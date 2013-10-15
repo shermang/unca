@@ -1,10 +1,10 @@
 /** page structure and layout
 -------------------------------------------------------------------------------------- **/
 #header {
-background-color:#fff; 
-background:url(../images/banners/banner.php) no-repeat;
-/**background:url(../images/banners/banner-mountains.jpg) no-repeat; **/
-margin-bottom:-5px;
+  background-color:#fff; 
+  background:url(../images/banners/banner.php) no-repeat;
+  /**background:url(../images/banners/banner-mountains.jpg) no-repeat; **/
+  margin-bottom:-5px;
 }
  
 #footer {
@@ -27,10 +27,10 @@ margin-bottom:5px;
 }
 
 #main {
-padding:10px 20px 20px 20px; 
-width:680px; 
-margin-bottom:2px; 
-}
+  padding:10px 20px 20px 20px; 
+  @include grid-row;
+  margin-bottom:2px; 
+  }
  
 .top-stripes {
 background:#fff url(../images/page-stripes-topright.png) top right no-repeat;
@@ -986,7 +986,7 @@ margin:10px;
 	border:0; 
 	outline:0;
 	border-bottom: 1px solid #fff; 
-	margin: 10px 0;"
+	margin: 10px 0;
 }
 
 .js-slideshow{
@@ -999,7 +999,7 @@ float:right;
 }
 
 #department-name-wrapper {
-    background-image: url("../images/department-name-background.png");
+    background-image: url(../images/department-name-background.png);
     background-position: 0 0;
     background-repeat: repeat;
     height: 30px;

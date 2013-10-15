@@ -130,6 +130,7 @@ regions[footer_promo_large] = Footer Promo Large
 regions[footer]         = Footer
 regions[bottom]         = Page Bottom
 
+
 ; Gateway-specific regions
 ; Gateway Pages have unique layout and regions.
 ; In order to avoid confusion when placing blocks,
