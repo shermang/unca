@@ -6446,10 +6446,6 @@ input[type="submit"] {
   padding-bottom: 2em;
 }
 
-.header-wrapper {
-  padding-top: 1em;
-}
-
 nav.navigation {
   background-color: black;
   color: white;
@@ -10695,6 +10691,14 @@ Added back in by Luke Withrow on 2013-05-15
   background: url(../images/banners/banner.php) no-repeat;
   /**background:url(../images/banners/banner-mountains.jpg) no-repeat; **/
   margin-bottom: -5px;
+}
+
+#home-icon {
+  background: url("../images/home-icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  float: right;
+  height: 30px;
+  margin-bottom: 0;
+  width: 30px;
 }
 
 #footer {

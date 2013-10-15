@@ -344,90 +344,6 @@ function unca_slideshow_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-slideshow_item-field_slide_caption'
-  $field_instances['node-slideshow_item-field_slide_caption'] = array(
-    'bundle' => 'slideshow_item',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Set the caption or sub-heading of this slide.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_slide_caption',
-    'label' => 'Slide Caption',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-slideshow_item-field_slide_read_more_text'
-  $field_instances['node-slideshow_item-field_slide_read_more_text'] = array(
-    'bundle' => 'slideshow_item',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Read More',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Override the "Read More" text. Defaults to "Read more"',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_slide_read_more_text',
-    'label' => 'Slide Read More Text',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-slideshow_item-field_subheading'
   $field_instances['node-slideshow_item-field_subheading'] = array(
     'bundle' => 'slideshow_item',
@@ -518,10 +434,8 @@ function unca_slideshow_field_default_field_instances() {
   t('Set URL destination of this slide\'s headline, image, and read more button.');
   t('Set the caption or sub-heading of this slide.');
   t('Slide');
-  t('Slide Caption');
   t('Slide Publish End Date');
   t('Slide Publish Start Date');
-  t('Slide Read More Text');
   t('Slideshow Item');
   t('Specify a date at which this slide should become \'published\' (included in the slideshow as presented to site visitors).  If this field is left blank, the slide will be published immediately, and remain published until the date (if any) specified in the Slide Publish End Date field.');
   t('Specify a date at which this slide will become \'unpublished\'.  If this field is left blank, this slide will remain published until manually unpublished or deleted.');
