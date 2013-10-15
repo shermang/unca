@@ -130,6 +130,7 @@ regions[footer_promo_large] = Footer Promo Large
 regions[footer]         = Footer
 regions[bottom]         = Page Bottom
 
+
 ; Gateway-specific regions
 ; Gateway Pages have unique layout and regions.
 ; In order to avoid confusion when placing blocks,
@@ -169,14 +170,13 @@ regions[page_bottom]    = Page bottom
 ; http://drupal.org/node/171205#features
 
 features[] = logo
-features[] = name
-features[] = slogan
-features[] = node_user_picture
-features[] = comment_user_picture
 features[] = favicon
 features[] = main_menu
 features[] = secondary_menu
-
+features[] = name
+;features[] = slogan
+;features[] = node_user_picture
+;features[] = comment_user_picture
 
 
 ; Set the default values of settings on the theme-settings.php form.

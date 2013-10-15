@@ -77,7 +77,7 @@
   }
   // Giving media query styles to IE8, if set as true
   @if $target-ie8 == true {
-    .lt-ie9 & {
+    .lt-ie9 {
       @content;
     }
   }
