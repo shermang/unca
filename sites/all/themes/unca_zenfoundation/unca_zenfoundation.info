@@ -119,6 +119,7 @@ scripts[] = js/script.js
 regions[emergency]      = Emergency
 regions[notice]         = Notice
 regions[help]           = Help
+regions[header]         = Header Top
 regions[navigation]     = Navigation
 regions[content] = Primary Content Column
 regions[content_row_1]  = Content Row 1
