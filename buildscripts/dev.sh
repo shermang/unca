@@ -104,6 +104,7 @@ unca_slideshow \
 email \
 unca_student_project \
 unca_maps \
+unca_map_views \
 pathologic \
 link_iframe_formatter_options \
 unca_page \
