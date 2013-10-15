@@ -9,13 +9,13 @@
 ?>
 
 <div class="header-wrapper">
-  <header id="header">
+  <header id="header" class="row">
       <div class="inner">
         <?php if ($logo): ?>
           <a class="logo-link" href="<?php print url('<front>') ?>" title="<?php print t('Home'); ?>"><img id="logo" src="<?php print $logo; ?>"></a>
         <?php endif; ?>
         <?php print render($page['header']); ?>
-
+        <div id="navigation-primary-wrapper">
         <!-- Uncomment this next line if you want the Foundation topbar for the main menu -->
         <?php include(path_to_theme().'/templates/topbar.tpl.php'); ?>
 
@@ -24,6 +24,7 @@
             <?php print render($page['navigation']); ?>
           </nav>
         <?php endif; ?>
+        </div> <!-- /#navigation-primary-wrapper -->
         <?php if($display_dept_name): ?>
           <div id="department-name-wrapper">
             <a href="<?php print check_url($front_page); ?>" accesskey="1"><?php print $site_name; ?>

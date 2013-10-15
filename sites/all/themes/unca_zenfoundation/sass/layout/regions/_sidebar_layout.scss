@@ -2,6 +2,9 @@
 
 .sidebar {
   @include grid-column($full-width);
+  #main > &  {
+    padding-right: 0;
+  } 
   @include respond-to($tablet) {
     @include grid-column($sidebar-1-width);
   }
