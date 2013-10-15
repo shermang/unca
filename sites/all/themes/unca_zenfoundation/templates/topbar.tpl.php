@@ -18,7 +18,7 @@
             <li class="toggle-topbar menu-icon"><a href="#"><span aria-hidden="true" class="icon-menu">Menu</span></a></li>
           </ul>
 
-          <section id="navigation-primary-wrapper" class="top-bar-section">
+          <section class="top-bar-section">
             <?php
               print theme('links__system_main_menu', array(
                 'links' => $main_menu,
