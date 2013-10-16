@@ -6637,23 +6637,6 @@ nav.navigation .block-search .lt-ie9 {
   display: none;
 }
 
-.field img,
-.views-field img {
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-  background-color: gray;
-  height: 200px;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 250px;
-}
-.field img:hover,
-.views-field img:hover {
-  background-color: #8c8c8c;
-}
-
 .field-name-field-video-embed {
   position: relative;
   padding-bottom: 56.25%;
@@ -8018,7 +8001,6 @@ nav.navigation .block-menu-menu-global-tools-menu .lt-ie9 {
 }
 .region-header .block-menu-menu-global-tools-menu ul.menu li {
   display: inline;
-  margin-left: 1em;
 }
 
 nav.navigation #block-system-main-menu {
@@ -10379,6 +10361,10 @@ h2.section-heading {
   margin-left: 0px;
 }
 
+.view-campus-updates .views-field-body {
+  margin-top: 12px;
+}
+
 #homepage-campus-updates p, .front > .block-views-campus_updates-block_1 p {
   font-size: 11px;
   margin-right: 0px;
@@ -10602,6 +10588,11 @@ Added back in by Luke Withrow on 2013-05-15
 }
 
 /*End Promotion below slideshow*/
+/* sidebar  -------------------------------------------------------------------------------------------- */
+.front #block-menu-menu-home-page-secondary-navigat > h2.block__title {
+  display: none;
+}
+
 /**
  * ie6.css
  * browser specific overrides and hacks to ensure support with Internet Explorer 6.x
@@ -10823,7 +10814,7 @@ Added back in by Luke Withrow on 2013-05-15
 #navigation-primary li,
 #navigation-utility li,
 .navigation-secondary li,
-.block-menu-menu-global-tools-menu li {
+.block-menu-menu-global-tools-menu > li {
   margin-left: 0px;
 }
 
@@ -10849,27 +10840,27 @@ Added back in by Luke Withrow on 2013-05-15
 }
 
 /**start navigation primary--------------------------------------------------------------------------------------**/
-#navigation-utility-wrapper {
+#block-menu-menu-global-tools-menu {
   float: right;
-  width: 320px;
   text-align: right;
-  padding: 90px 10px 0px 0px;
+  padding: 80px 10px 0px 0px;
+  margin: 10px 0;
   color: #fff;
 }
 
-#navigation-utility, .block-menu-menu-global-tools-menu {
+.block-menu-menu-global-tools-menu {
   margin-top: 1em;
 }
 
-#navigation-utility li, .block-menu-menu-global-tools-menu li {
+.block-menu-menu-global-tools-menu li {
   border-right: solid #fff 1px;
 }
 
-#navigation-utility li.last, .block-menu-menu-global-tools-menu li.last {
+.block-menu-menu-global-tools-menu li.last {
   border-right: 0px;
 }
 
-#navigation-utility li a, .block-menu-menu-global-tools-menu li a {
+.block-menu-menu-global-tools-menu li a {
   padding: 10px 10px;
   color: #fff;
 }
@@ -11008,36 +10999,41 @@ Added back in by Luke Withrow on 2013-05-15
   background-color: transparent;
 }
 
-#navigation-primary-wrapper .search-wrapper {
-  float: right;
-  width: auto;
-}
-
-#navigation-primary-wrapper #search {
-  /*  background: url("http://www.unca.edu/sites/all/themes/unca/imgs/navigation-primary-background-sprites.png") no-repeat scroll -686px 0 rgba(0, 0, 0, 0);
-    overflow: hidden;
-    padding-right: 5px;
-    width: 265px; */
+#search {
+  float: left;
   height: 30px;
+  width: 28%;
+  padding: 0 1em;
 }
-
-#navigation-primary-wrapper #search ul {
-  margin-top: -20px;
+#search .form-item-search-block-form {
+  width: 75%;
+  float: left;
+  margin: 0;
 }
-
-#navigation-primary-wrapper #search li {
-  margin: 10px 0 10px 5px;
+#search .form-item-search-block-form .form-text {
+  margin: 4px 0 3px 0;
 }
-
-#navigation-primary-wrapper #search #q, #navigation-primary #search #query_string {
-  border: 0 none;
-  margin-top: 4px;
-  padding: 3px;
-  width: 190px;
+#search .form-actions {
+  width: 25%;
+  float: left;
 }
-
-#navigation-primary-wrapper #search-button-people, #navigation-primary #search-button-web {
-  margin-top: 4px;
+#search .form-actions .form-submit {
+  height: 20px;
+  top: 0;
+  background-color: #7f7f7f;
+  border-color: #7f7f7f;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 5px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#search input {
+  height: 1.35em;
+  top: 0;
+  margin: 3px 0;
 }
 
 /**start navigation secondary--------------------------------------------------------------------------------------**/
@@ -11177,24 +11173,19 @@ Added back in by Luke Withrow on 2013-05-15
 /* section heading */
 .section-heading {
   color: #fff;
-  background: url(../images/heading-background-left.png) no-repeat top left;
   height: 34px;
   min-height: 24px;
-  margin: 0 -5px;
-  padding: 0 0 0 10px;
-}
-
-.section-heading span {
-  background: url(../images/heading-background-right.png) no-repeat top right;
-  width: 100%;
-  display: block;
-  font-style: normal;
-  text-transform: uppercase;
-  font-size: 12px;
-  float: right;
-  height: 34px;
-  min-height: 34px;
-  padding: 11px 0 0 0;
+  padding: 10px;
+  background: -moz-linear-gradient(top, #749c47 0%, #467929);
+  background: -webkit-gradient(linear, left top, left bottom, from(#749c47), to(#467929));
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  border: 1px solid #ffffff;
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5), inset 0px 0px 1px rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5), inset 0px 0px 1px rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5), inset 0px 0px 1px rgba(255, 255, 255, 0.7);
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4), 0px 1px 0px rgba(255, 255, 255, 0.3);
 }
 
 .heading-for-highlight {
