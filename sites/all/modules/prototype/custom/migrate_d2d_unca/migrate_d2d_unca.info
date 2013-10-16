@@ -36,3 +36,4 @@ files[] = webform_email.inc
 files[] = webform_component.inc
 files[] = webform_submission.inc
 files[] = webform_data.inc
+files[] = map_item.inc

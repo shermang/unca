@@ -138,8 +138,8 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
 
   // Foundation js required for mobile bar
   // @todo This should get turned into a proper library call
-  drupal_add_js('/sites/all/libraries/foundation/javascripts/foundation/foundation.js', array('scope' => 'footer', 'weight' => 15));
-  drupal_add_js('/sites/all/libraries/foundation/javascripts/foundation/foundation.topbar.js', array('scope' => 'footer', 'weight' => 16));
+  drupal_add_js('sites/all/libraries/foundation/javascripts/foundation/foundation.js', array('scope' => 'footer', 'weight' => 15));
+  drupal_add_js('sites/all/libraries/foundation/javascripts/foundation/foundation.topbar.js', array('scope' => 'footer', 'weight' => 16));
   // // above foundation scripts fired from our theme script footer
   drupal_add_js(path_to_theme() . '/js/script_footer.js', array('scope' => 'footer', 'weight' => 50));
 

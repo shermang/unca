@@ -51,4 +51,12 @@ function unca_custom_install() {
       ))
       ->execute();
   }
+  variable_set('jquery_update_jquery_version', '1.8');
+}
+
+/**
+ * Update the jQuery version to 1.8.
+ */
+function unca_custom_update_7000() {
+  variable_set('jquery_update_jquery_version', '1.8');
 }
