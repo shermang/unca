@@ -281,13 +281,14 @@ function migrate_d2d_unca_register_migrations() {
     ),
 
     // Map Item CT
-    // array(
-    //   'class_name' => 'UNCAMapItemMigration',
-    //   'description' => t('Migration of Map Item nodes from Drupal 6'),
-    //   'machine_name' => 'UNCAMapItem',
-    //   'source_type' => 'map_item',
-    //   'destination_type' => '',
-    // ),
+     array(
+       'class_name' => 'UNCAMapItemMigration',
+       'description' => t('Migration of Map Item nodes from Drupal 6'),
+       'machine_name' => 'UNCAMapItem',
+       'source_type' => 'map_item',
+       'destination_type' => 'map_item',
+       'dependencies' => array('UNCALocation'),
+     ),
 
     // Webform CT - Nodes
         array(
@@ -376,6 +377,21 @@ function migrate_d2d_unca_register_migrations() {
       'group' => 'WebformTables',
     ),
 
+    // Location - From Map Items
+    array(
+      'class_name' => 'UNCALocationMigration',
+      'description' => t('Migration of Location table from Drupal 6'),
+      'machine_name' => 'UNCALocation',
+      'group' => 'LocationTables',
+    ),
+//  LocationInstance not needed
+//    array(
+//      'class_name' => 'UNCALocationInstanceMigration',
+//      'description' => t('Migration of Location_instance table from Drupal 6'),
+//      'machine_name' => 'UNCALocationInstance',
+//      'group' => 'LocationTables',
+//      'dependencies' => array('UNCALocation','UNCAMapItem'),
+//    ),
   );
 
   foreach ($table_arguments as $arguments) {
@@ -393,6 +409,7 @@ function migrate_d2d_unca_register_migrations() {
   $block_migration_class = 'UNCABlockMigration';
   Migration::registerMigration($block_migration_class,
     $block_arguments['machine_name'], $block_arguments);
+
 }
 
 
