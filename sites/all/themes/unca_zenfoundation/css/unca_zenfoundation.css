@@ -9289,6 +9289,9 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   position: relative;
   width: 100%;
 }
+.row .top-bar.expanded {
+  height: auto;
+}
 .row .top-bar .toggle-topbar.menu-icon {
   margin-top: -19px;
 }
@@ -10876,7 +10879,6 @@ Added back in by Luke Withrow on 2013-05-15
   border: 1px solid #FFFFFF;
   clear: both;
   height: 40px;
-  overflow: hidden;
   margin-bottom: 5px;
   padding: 0;
   background: #c6c6c6;

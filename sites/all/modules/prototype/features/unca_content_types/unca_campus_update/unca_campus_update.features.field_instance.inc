@@ -60,19 +60,17 @@ function unca_campus_update_field_default_field_instances() {
     'bundle' => 'campus_update',
     'default_value' => array(
       0 => array(
-        'value' => -1,
+        'value' => 0,
       ),
     ),
     'deleted' => 0,
-    'description' => 'Check this box to feature this update. Only the most recently posted featured update will appear on the home page.',
+    'description' => 'Can be used to feature an update in a View and display as a Block on a page.',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'boolean',
-        'settings' => array(
-          'prefix_suffix' => TRUE,
-        ),
-        'type' => 'number_boolean',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -87,25 +85,15 @@ function unca_campus_update_field_default_field_instances() {
     'label' => 'Feature this update',
     'required' => 0,
     'settings' => array(
-      'false' => array(
-        'prefix' => '',
-        'suffix' => '',
-      ),
-      'none' => array(
-        'prefix' => '',
-        'suffix' => '',
-      ),
-      'true' => array(
-        'prefix' => '',
-        'suffix' => '',
-      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'boolean',
-      'settings' => array(),
-      'type' => 'boolean_checkbox',
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
       'weight' => 5,
     ),
   );
@@ -258,7 +246,7 @@ function unca_campus_update_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Check this box to feature this update. Only the most recently posted featured update will appear on the home page.');
+  t('Can be used to feature an update in a View and display as a Block on a page.');
   t('Choose a featured image to prominently display with this article, which will also display as a thumbnail in blocks listing Campus Updates.');
   t('Enter the main content of this campus update. Summary: Click Edit Summary below to show the Summary input to be used in blocks listing Campus Updates.');
   t('Feature this update');
