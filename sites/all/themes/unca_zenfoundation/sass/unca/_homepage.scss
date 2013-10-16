@@ -86,9 +86,13 @@ border:0;
 } 
 
 #homepage-campus-updates h3, .front > .block-views-campus_updates-block_1 h3 {
-font-size:15px; 
-font-weight:normal;
-margin-left:0px;
+  font-size:15px; 
+  font-weight:normal;
+  margin-left:0px;
+}
+
+.view-campus-updates .views-field-body {
+  margin-top: 12px;
 }
 
 #homepage-campus-updates p, .front > .block-views-campus_updates-block_1 p {
@@ -286,3 +290,13 @@ Added back in by Luke Withrow on 2013-05-15
 }
 
 /*End Promotion below slideshow*/
+
+/* sidebar  -------------------------------------------------------------------------------------------- */
+
+.front {
+  #block-menu-menu-home-page-secondary-navigat {
+	> h2.block__title {
+	  display: none;
+	}
+  }
+}
