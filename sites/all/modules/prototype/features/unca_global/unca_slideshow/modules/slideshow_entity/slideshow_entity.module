@@ -90,25 +90,7 @@ function slideshow_entity_menu() {
     'access arguments' => array('administer slideshow_entity entities'),
     'weight' => 1
   );
-  $items['ss/test'] = array(
-    'title' => 'Slideshows',
-    'description' => 'Slideshows tab for admin/content page',
-    'page callback' => ' slideshow_entity_content_admin',
-    'type' => MENU_NORMAL_ITEM,
-    'access callback' => 'user_access',
-    'access arguments' => array('administer slideshow_entity entities'),
-    'weight' => 1
-  );
-  $items['ss/test'] = array(
-    'title' => 'Slideshows',
-    'description' => 'Slideshows tab for admin/content page',
-    'page callback' => 'slideshow_entity_content_admin',
-    'type' => MENU_LOCAL_TASK,
-    'access callback' => 'user_access',
-    'access arguments' => array('administer slideshow_entity entities'),
-    // 'tab_parent' => 'slideshow',
-    // 'tab_root' => 'slideshow',
-  );
+
   $items['admin/content/slideshows'] = array(
     'title' => 'Slideshows',
     'description' => 'Slideshows tab for admin/content page',
@@ -447,3 +429,11 @@ function slideshow_entity_views_api() {
   );
 }
 
+function slideshow_entity_admin_paths() {
+  $paths = array(
+    'slideshow/*/add' => TRUE,
+    'slideshow/*/edit' => TRUE,
+    'slideshow/*' => TRUE,
+  );
+  return $paths;
+}
