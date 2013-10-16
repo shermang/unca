@@ -34,5 +34,11 @@
                 )
               );
             ?>
+              <div id="search">
+                <?php
+                  $block = module_invoke('search', 'block_view', 'search');
+                  print render($block);
+                ?>
+            </div> <!-- /#search -->
           </section>
         </nav> <!-- /.top-bar -->
