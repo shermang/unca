@@ -86,9 +86,9 @@ function unca_slideshow_field_default_field_bases() {
       'granularity' => array(
         'day' => 'day',
         'hour' => 'hour',
-        'minute' => 0,
+        'minute' => 'minute',
         'month' => 'month',
-        'second' => 0,
+        'second' => 'second',
         'year' => 'year',
       ),
       'profile2_private' => FALSE,
@@ -120,9 +120,9 @@ function unca_slideshow_field_default_field_bases() {
       'granularity' => array(
         'day' => 'day',
         'hour' => 'hour',
-        'minute' => 0,
+        'minute' => 'minute',
         'month' => 'month',
-        'second' => 0,
+        'second' => 'second',
         'year' => 'year',
       ),
       'profile2_private' => FALSE,
