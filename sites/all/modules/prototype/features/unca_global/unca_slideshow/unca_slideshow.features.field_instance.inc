@@ -183,7 +183,7 @@ function unca_slideshow_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 1,
+      'weight' => 5,
     ),
   );
 
@@ -340,7 +340,7 @@ function unca_slideshow_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 4,
     ),
   );
 
@@ -380,7 +380,7 @@ function unca_slideshow_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 1,
     ),
   );
 

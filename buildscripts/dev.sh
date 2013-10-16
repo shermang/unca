@@ -2,6 +2,8 @@
 
 # modules that we want enabled.
 drush en --yes \
+advanced_help \
+aggregator \
 field_group \
 field_permissions \
 references \
@@ -104,13 +106,16 @@ unca_slideshow \
 email \
 unca_student_project \
 unca_maps \
+unca_map_views \
 pathologic \
 link_iframe_formatter_options \
 unca_page \
 unca_text_formats \
 date_views \
 unca_custom \
-
+unca_departmental_update \
+unca_image_styles \
+unca_roles_permission \
 
 # To disable modules, uncomment the following command and list the modules to disable
 drush dis --yes \
