@@ -16,6 +16,9 @@
   line-height: 30px;
   position: relative;
   width: 100%;
+  &.expanded {
+    height: auto;
+  }
     .toggle-topbar.menu-icon {
       margin-top: -19px;
     }  
