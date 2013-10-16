@@ -59,7 +59,8 @@ float:left;
  
 #navigation-primary li,
 #navigation-utility li,
-.navigation-secondary li {
+.navigation-secondary li,
+.block-menu-menu-global-tools-menu li {
 margin-left:0px;
 }
  
@@ -94,17 +95,19 @@ padding:90px 10px 0px 0px;
 color:#fff;
 }
  
-#navigation-utility {}
+#navigation-utility, .block-menu-menu-global-tools-menu {
+  margin-top: 1em;
+}
  
-#navigation-utility li {
+#navigation-utility li, .block-menu-menu-global-tools-menu li {
 border-right:solid #fff 1px;
 }
  
-#navigation-utility li.last {
+#navigation-utility li.last, .block-menu-menu-global-tools-menu li.last  {
 border-right:0px;
 }
  
-#navigation-utility li a {
+#navigation-utility li a, .block-menu-menu-global-tools-menu li a {
 padding:10px 10px; 
 color:#fff;
 }
@@ -116,7 +119,6 @@ color:#fff;
   border: 1px solid #FFFFFF;
   clear: both;
   height: 40px;
-  overflow: hidden;
   margin-bottom: 5px;
   padding: 0;
   background: #c6c6c6; /* Old browsers */
@@ -366,8 +368,8 @@ color:#fff;
 background:url(../images/heading-background-left.png) no-repeat top left; 
 height:34px; 
 min-height:24px; 
-margin:0 -5px;
-padding:0 0 0 10px;
+margin: 0 -5px;
+padding: 0 0 0 10px;
 }
  
 .section-heading span {
@@ -380,7 +382,7 @@ font-size:12px;
 float:right; 
 height:34px; 
 min-height:34px; 
-padding:7px 0 0 0;
+padding: 11px 0 0 0;
 }
  
 .heading-for-highlight {

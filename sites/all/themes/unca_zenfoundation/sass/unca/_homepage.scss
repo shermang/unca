@@ -79,38 +79,45 @@ padding-bottom:10px;
 border:0;
 }
 
-#homepage-campus-updates {
-float:left;
-padding:0px;
-width:458px;
-}
+#homepage-campus-updates, .front > .block-views-campus_updates-block_1 {
+   float:left;
+   padding:0px;
+// width:458px;
+} 
 
-#homepage-campus-updates h3 {
+#homepage-campus-updates h3, .front > .block-views-campus_updates-block_1 h3 {
 font-size:15px; 
 font-weight:normal;
 margin-left:0px;
 }
 
-#homepage-campus-updates p {
+#homepage-campus-updates p, .front > .block-views-campus_updates-block_1 p {
 	font-size:11px;
 	margin-right: 0px;
 	margin-left: 0px;
 }
 
-#homepage-campus-updates p img{
-float:left;
-padding: 0px 10px 10px 0px;
+#homepage-campus-updates p img, .front .campus-updates p img {
+	float:left;
+	max-width: 100%;
+	padding: 0px 10px 10px 0px;
 }
 
 .campus-updates li {
-float:left;
-display:inline;
-width:200px;
-padding:0 10px 10px 10px;
+  width:100%;
+  float:left;
+  display:inline;
+  padding:0 10px 10px 10px !important;
+  margin: 0 !important;
+  @include respond-to($tablet) {
+  	width:50%;
+  }
 }
 
-#homepage-campus-updates li.views-row-first {
-border-right:solid #aaa 1px;
+#homepage-campus-updates li.views-row-first, .front .campus-updates li.views-row-first {
+  @include respond-to($tablet) {
+    border-right:solid #aaa 1px;
+  }
 }
 /* CSS Document */
 
