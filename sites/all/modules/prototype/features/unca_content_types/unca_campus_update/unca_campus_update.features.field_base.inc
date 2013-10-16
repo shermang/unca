@@ -21,14 +21,23 @@ function unca_campus_update_field_default_field_bases() {
       'type' => 0,
     ),
     'foreign keys' => array(),
-    'indexes' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'boolean',
+    'module' => 'list',
     'settings' => array(
+      'allowed_values' => array(
+        0 => '',
+        1 => '',
+      ),
+      'allowed_values_function' => '',
       'profile2_private' => FALSE,
     ),
     'translatable' => 0,
-    'type' => 'number_boolean',
+    'type' => 'list_boolean',
   );
 
   return $field_bases;
