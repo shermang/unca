@@ -107,14 +107,21 @@ border:0;
 	padding: 0px 10px 10px 0px;
 }
 
-.campus-updates li {
-  width:100%;
-  float:left;
-  display:inline;
-  padding:0 10px 10px 10px !important;
-  margin: 0 !important;
-  @include respond-to($tablet) {
-  	width:50%;
+.campus-updates {
+  li {
+	width:100%;
+	float:left;
+	display:inline;
+	padding:0 10px 10px 10px !important;
+	margin: 0 !important;
+	@include respond-to($tablet) {
+	  width:50%;
+    }
+	p {
+	  font-size: 11px;
+	  margin-left: 0;
+	  margin-right: 0;	 
+	}
   }
 }
 
