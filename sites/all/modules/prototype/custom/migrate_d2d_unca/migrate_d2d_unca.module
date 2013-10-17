@@ -377,13 +377,13 @@ function migrate_d2d_unca_register_migrations() {
       'group' => 'WebformTables',
     ),
 
-    // Location - From Map Items
-    array(
-      'class_name' => 'UNCALocationMigration',
-      'description' => t('Migration of Location table from Drupal 6'),
-      'machine_name' => 'UNCALocation',
-      'group' => 'LocationTables',
-    ),
+//    // Location - From Map Items - NOT NEEDED
+//    array(
+//      'class_name' => 'UNCALocationMigration',
+//      'description' => t('Migration of Location table from Drupal 6'),
+//      'machine_name' => 'UNCALocation',
+//      'group' => 'LocationTables',
+//    ),
 //  LocationInstance not needed
 //    array(
 //      'class_name' => 'UNCALocationInstanceMigration',
