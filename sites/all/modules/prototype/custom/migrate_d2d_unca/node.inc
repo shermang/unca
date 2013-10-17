@@ -6,8 +6,6 @@
 abstract class UNCANodeMigration extends DrupalNode6Migration {
   public function __construct(array $arguments) {
     parent::__construct($arguments);
-
-
   }
 
   public function prepare(stdClass $entity, stdClass $row) {
@@ -23,7 +21,7 @@ abstract class UNCANodeMigration extends DrupalNode6Migration {
       $vidprovider = 'viddler';
     }
 
-    if($fve || $vidprovider) {
+    if($fve || $viddler) {
       if(!empty($vidvalue)) {
         // Convert field data for media_internet
         $vidtype = false; # let media module handle when it can
