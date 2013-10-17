@@ -15,10 +15,10 @@ width:232px;
 float:right;
 }
 
-.navigation-gateway ul {
+#block-menu-menu-home-page-secondary-navigat ul, .navigation-gateway ul {
    margin:0px;
 } 
-.navigation-gateway ul li{
+#block-menu-menu-home-page-secondary-navigat ul li, .navigation-gateway ul li{
   border-left:solid #fff 1px;
   border-top:solid #fff 1px;
   margin:0px;
@@ -26,11 +26,11 @@ float:right;
   background:url(../images/navigation-gateway-lightblue.png) repeat-x #0091d1;
 }
 
-.navigation-gateway ul li.last {
+#block-menu-menu-home-page-secondary-navigat ul li.last, .navigation-gateway ul li.last {
 border-bottom:solid #fff 1px;
 }
 
-.navigation-gateway a, .navigation-gateway a.active  {
+#block-menu-menu-home-page-secondary-navigat a, #block-menu-menu-home-page-secondary-navigat a.active, .navigation-gateway a, .navigation-gateway a.active  {
   display:block;
   height:16px;
   overflow:hidden;
@@ -39,7 +39,7 @@ border-bottom:solid #fff 1px;
   color:#fff;
 }
 
-.navigation-gateway a:hover  {
+#block-menu-menu-home-page-secondary-navigat a:hover, .navigation-gateway a:hover  {
   text-decoration: underline;
 }
 
