@@ -13,7 +13,6 @@ ctools \
 customerror \
 date \
 devel \
-devel_themer \
 draggableviews \
 entity_path \
 feeds \
