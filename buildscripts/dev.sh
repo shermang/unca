@@ -7,8 +7,6 @@ aggregator \
 field_group \
 field_permissions \
 references \
-admin_menu \
-admin_menu_toolbar \
 admin_views \
 captcha \
 ctools \
@@ -48,6 +46,7 @@ sharethis \
 taxonomy_menu \
 taxonomy_menu_block \
 token \
+toolbar \
 views \
 views_bulk_operations \
 views_data_export \
@@ -124,7 +123,8 @@ migrate_d2d_unca \
 
 # To disable modules, uncomment the following command and list the modules to disable
 drush dis --yes \
-toolbar \
+admin_menu \
+admin_menu_toolbar \
 overlay \
 securelogin
 
