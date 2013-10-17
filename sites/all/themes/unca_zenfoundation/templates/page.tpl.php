@@ -79,9 +79,12 @@
 
   <div id="main" class="row top-stripes">
 
-  <?php if ($breadcrumb): ?>
-      <?php print $breadcrumb; ?>
-  <?php endif; ?>
+<?php 
+/*  <?php if ($breadcrumb): ?>
+ *      <?php print $breadcrumb; ?>
+ * <?php endif; ?>
+ */
+?>
 
   <?php if ($page['notice']): ?>
     <div id="region_notice">
