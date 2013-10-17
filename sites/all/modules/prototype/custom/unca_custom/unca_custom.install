@@ -64,7 +64,7 @@ function unca_custom_update_7000() {
 /**
  * Remove the search block from any regions.
  */
-function unca_custom_update_7000() {
+function unca_custom_update_7001() {
   $blocks = array(
     array(
       'module' => 'search',
