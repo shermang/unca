@@ -137,13 +137,18 @@ echo ""
 echo "Setting unca_zenfoundation as the active theme"
 drush vset theme_default unca_zenfoundation
 
+# clear the cache
+echo "Clearing the drupal cache"
+drush --nocolor cc all
+echo ""
+
 # Revert all features
 drush fra --yes
 
 # clear the cache
 echo "Clearing the drupal cache"
 drush --nocolor cc all
-echo ""
 
+echo ""
 echo "Done!"
 
