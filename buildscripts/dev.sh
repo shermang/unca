@@ -116,6 +116,11 @@ unca_custom \
 unca_departmental_update \
 unca_image_styles \
 unca_roles_permission \
+migrate \
+migrate_ui \
+date_migrate \
+migrate_d2d \
+migrate_d2d_unca \
 
 # To disable modules, uncomment the following command and list the modules to disable
 drush dis --yes \

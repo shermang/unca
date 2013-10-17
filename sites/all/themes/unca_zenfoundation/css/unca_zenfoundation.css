@@ -10397,6 +10397,11 @@ h2.section-heading {
 .campus-updates li .lt-ie9 {
   width: 50%;
 }
+.campus-updates li p {
+  font-size: 11px;
+  margin-left: 0;
+  margin-right: 0;
+}
 
 @media only screen and (min-width: 64em) {
   #homepage-campus-updates li.views-row-first, .front .campus-updates li.views-row-first {
@@ -11002,6 +11007,22 @@ Added back in by Luke Withrow on 2013-05-15
 #search {
   float: left;
   height: 30px;
+  padding: 0;
+  width: 100%;
+}
+@media only screen and (min-width: 64em) {
+  #search {
+    width: 28%;
+    padding: 0 1em;
+  }
+}
+@media print {
+  #search {
+    width: 28%;
+    padding: 0 1em;
+  }
+}
+#search .lt-ie9 {
   width: 28%;
   padding: 0 1em;
 }
