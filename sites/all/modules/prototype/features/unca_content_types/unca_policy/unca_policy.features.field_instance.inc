@@ -48,7 +48,7 @@ function unca_policy_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 1,
+      'weight' => 13,
     ),
   );
 
@@ -95,15 +95,15 @@ function unca_policy_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
-        'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'increment' => 1,
+        'input_format' => 'j M Y - g:i:sa',
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+1',
       ),
-      'type' => 'date_select',
-      'weight' => 9,
+      'type' => 'date_popup',
+      'weight' => 11,
     ),
   );
 
@@ -140,7 +140,7 @@ function unca_policy_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -182,7 +182,7 @@ function unca_policy_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 12,
+      'weight' => 15,
     ),
   );
 
@@ -219,7 +219,7 @@ function unca_policy_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 14,
+      'weight' => 7,
     ),
   );
 
@@ -265,7 +265,7 @@ function unca_policy_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 3,
+      'weight' => 1,
     ),
   );
 
@@ -302,7 +302,7 @@ function unca_policy_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 8,
     ),
   );
 
@@ -349,15 +349,15 @@ function unca_policy_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
-        'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'increment' => 1,
+        'input_format' => 'j M Y - g:i:sa',
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-40:+1',
       ),
-      'type' => 'date_select',
-      'weight' => 8,
+      'type' => 'date_popup',
+      'weight' => 10,
     ),
   );
 
@@ -391,7 +391,7 @@ function unca_policy_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_policy_next_review_date',
     'label' => 'Next Review Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'same',
@@ -400,18 +400,19 @@ function unca_policy_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
-        'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'increment' => 1,
+        'input_format' => 'j M Y - g:i:sa',
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-40:+1',
       ),
-      'type' => 'date_select',
-      'weight' => 10,
+      'type' => 'date_popup',
+      'weight' => 12,
     ),
   );
 
@@ -457,7 +458,7 @@ function unca_policy_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -504,15 +505,15 @@ function unca_policy_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
-        'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'increment' => 1,
+        'input_format' => 'j M Y - g:i:sa',
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-40:+1',
       ),
-      'type' => 'date_select',
-      'weight' => 7,
+      'type' => 'date_popup',
+      'weight' => 9,
     ),
   );
 
@@ -549,7 +550,7 @@ function unca_policy_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 6,
     ),
   );
 
@@ -589,7 +590,7 @@ function unca_policy_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 14,
     ),
   );
 
@@ -626,7 +627,7 @@ function unca_policy_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 16,
+      'weight' => 5,
     ),
   );
 
@@ -663,7 +664,7 @@ function unca_policy_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
