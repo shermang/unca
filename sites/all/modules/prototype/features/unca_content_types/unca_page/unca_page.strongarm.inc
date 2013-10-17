@@ -13,6 +13,13 @@ function unca_page_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_page';
+  $strongarm->value = 'edit-menu';
+  $export['additional_settings__active_tab_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_page';
   $strongarm->value = 0;
   $export['comment_anonymous_page'] = $strongarm;
@@ -96,7 +103,7 @@ function unca_page_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '6',
         ),
       ),
       'display' => array(),
@@ -109,7 +116,11 @@ function unca_page_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_page';
   $strongarm->value = array(
-    0 => 'main-menu',
+    0 => 'menu-global-footer-menu',
+    1 => 'menu-global-tools-menu',
+    2 => 'main-menu',
+    3 => 'menu-secondary-navigation---prot',
+    4 => 'menu-home-page-secondary-navigat',
   );
   $export['menu_options_page'] = $strongarm;
 
@@ -117,7 +128,7 @@ function unca_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_page';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'menu-secondary-navigation---prot:0';
   $export['menu_parent_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -142,6 +153,62 @@ function unca_page_strongarm() {
   $strongarm->name = 'node_submitted_page';
   $strongarm->value = 0;
   $export['node_submitted_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_page_pattern';
+  $strongarm->value = '[node:menu-link:parents:join-path]';
+  $export['pathauto_node_page_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_enable_page';
+  $strongarm->value = 1;
+  $export['scheduler_publish_enable_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_required_page';
+  $strongarm->value = 0;
+  $export['scheduler_publish_required_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_revision_page';
+  $strongarm->value = 0;
+  $export['scheduler_publish_revision_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_page';
+  $strongarm->value = 1;
+  $export['scheduler_publish_touch_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_enable_page';
+  $strongarm->value = 1;
+  $export['scheduler_unpublish_enable_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_required_page';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_required_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_revision_page';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_revision_page'] = $strongarm;
 
   return $export;
 }

@@ -109,7 +109,7 @@ function unca_page_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -146,7 +146,7 @@ function unca_page_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
@@ -185,7 +185,7 @@ function unca_page_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -239,7 +239,7 @@ function unca_page_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
