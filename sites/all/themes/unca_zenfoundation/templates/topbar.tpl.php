@@ -24,7 +24,7 @@
                 'links' => $main_menu,
                 'attributes' => array(
                   'id' => array('navigation-primary'),
-                  'class' => array('list-horizontal, main-menu-links', 'links', 'left'),
+                  'class' => array('list-horizontal', 'main-menu-links', 'links', 'left'),
                   ),
                 'heading' => array(
                   'text' => t('Main menu'),
