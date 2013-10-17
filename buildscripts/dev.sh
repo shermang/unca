@@ -18,6 +18,9 @@ entity_path \
 feeds \
 flickr \
 gmap \
+gmap_location \
+gmap_macro_builder \
+gmap_taxonomy \
 html_export \
 image_caption \
 imagecrop \
@@ -29,6 +32,7 @@ jquery_update \
 lightbox2 \
 link \
 location \
+location_cck \
 mcfilemanager \
 media_viddler \
 media_youtube \
