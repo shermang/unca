@@ -3,6 +3,7 @@ drush en --yes advanced_help aggregator field_group field_permissions references
 drush dis --yes toolbar overlay securelogin
 drush --nocolor updatedb --yes
 drush vset theme_default unca_zenfoundation
+drush --nocolor cc all
 drush fra --yes
 drush --nocolor cc all
 echo ""

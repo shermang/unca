@@ -116,6 +116,11 @@ unca_custom \
 unca_departmental_update \
 unca_image_styles \
 unca_roles_permission \
+migrate \
+migrate_ui \
+date_migrate \
+migrate_d2d \
+migrate_d2d_unca \
 
 # To disable modules, uncomment the following command and list the modules to disable
 drush dis --yes \
@@ -132,13 +137,18 @@ echo ""
 echo "Setting unca_zenfoundation as the active theme"
 drush vset theme_default unca_zenfoundation
 
+# clear the cache
+echo "Clearing the drupal cache"
+drush --nocolor cc all
+echo ""
+
 # Revert all features
 drush fra --yes
 
 # clear the cache
 echo "Clearing the drupal cache"
 drush --nocolor cc all
-echo ""
 
+echo ""
 echo "Done!"
 
