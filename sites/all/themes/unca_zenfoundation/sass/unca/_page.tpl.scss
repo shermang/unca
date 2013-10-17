@@ -208,8 +208,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 #search {
   float: left;
   height: 30px;
-  width: 28%;
-  padding: 0 1em;
+  padding: 0;
+  width: 100%;
+  @include respond-to($tablet) {
+    width: 28%;
+    padding: 0 1em; 
+  }
     .form-item-search-block-form {
       width: 75%;
       float: left;
