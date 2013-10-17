@@ -6442,6 +6442,10 @@ input[type="submit"] {
   width: auto;
 }
 
+html {
+  background-color: inherit;
+}
+
 #content {
   padding-bottom: 2em;
 }
