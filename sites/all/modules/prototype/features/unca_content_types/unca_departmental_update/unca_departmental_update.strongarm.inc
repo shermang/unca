@@ -35,7 +35,7 @@ function unca_departmental_update_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_dept_update';
-  $strongarm->value = '2';
+  $strongarm->value = '0';
   $export['comment_dept_update'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -98,7 +98,6 @@ function unca_departmental_update_strongarm() {
   $strongarm->name = 'node_options_dept_update';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
   );
   $export['node_options_dept_update'] = $strongarm;
 
@@ -113,8 +112,57 @@ function unca_departmental_update_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_dept_update';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_dept_update'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_enable_dept_update';
+  $strongarm->value = 1;
+  $export['scheduler_publish_enable_dept_update'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_required_dept_update';
+  $strongarm->value = 0;
+  $export['scheduler_publish_required_dept_update'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_revision_dept_update';
+  $strongarm->value = 0;
+  $export['scheduler_publish_revision_dept_update'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_dept_update';
+  $strongarm->value = 1;
+  $export['scheduler_publish_touch_dept_update'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_enable_dept_update';
+  $strongarm->value = 1;
+  $export['scheduler_unpublish_enable_dept_update'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_required_dept_update';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_required_dept_update'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_revision_dept_update';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_revision_dept_update'] = $strongarm;
 
   return $export;
 }
