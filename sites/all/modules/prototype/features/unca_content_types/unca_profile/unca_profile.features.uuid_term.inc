@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * unca_home.features.uuid_term.inc
+ * unca_profile.features.uuid_term.inc
  */
 
 /**
  * Implements hook_uuid_features_default_terms().
  */
-function unca_home_uuid_features_default_terms() {
+function unca_profile_uuid_features_default_terms() {
   $terms = array();
 
   $terms[] = array(

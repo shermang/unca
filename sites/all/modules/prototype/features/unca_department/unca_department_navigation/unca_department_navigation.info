@@ -9,4 +9,4 @@ dependencies[] = menu
 features[features_api][] = api:2
 features[menu_custom][] = menu-secondary-navigation---prot
 features[menu_links][] = menu-secondary-navigation---prot:<front>
-project path = sites/all/modules/features/unca_department
+project path = sites/all/modules/prototype/features/unca_department

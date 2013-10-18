@@ -35,4 +35,4 @@ features[menu_links][] = menu-global-tools-menu:http://learnonline.unca.edu/
 features[menu_links][] = menu-global-tools-menu:http://maps.unca.edu/
 features[menu_links][] = menu-global-tools-menu:http://oneport.unca.edu/
 features[menu_links][] = menu-global-tools-menu:http://webmail.unca.edu/
-project path = sites/all/modules/features/unca_global
+project path = sites/all/modules/prototype/features/unca_global
