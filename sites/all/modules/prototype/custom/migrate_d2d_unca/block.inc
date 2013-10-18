@@ -1,9 +1,4 @@
 <?php
-/**
- * @file
- * Implementation of DrupalFileMigration for Drupal 6 sources.
- */
-
 class UNCABlockMigration extends DrupalMigration {
 
   public function __construct(array $arguments) {
@@ -23,7 +18,7 @@ class UNCABlockMigration extends DrupalMigration {
           'alias' => 'b',
         ),
       ),
-      MigrateDestinationTable::getKeySchema()
+      MigrateDestinationTable::getKeySchema('block')
     );
 
 
@@ -119,6 +114,17 @@ class UNCABlockMigration extends DrupalMigration {
         break;
     }
 
+    $result = db_select('block','b')
+      ->fields('b',array('bid'))
+      ->condition('theme',$row->theme,'=')
+      ->condition('module',$row->module,'=')
+      ->condition('delta',$row->delta,'=')
+      ->execute()
+      ->fetchAssoc();
+    if($result){
+      return FALSE;
+    }
+
   }
 
   protected function query() {
@@ -130,3 +136,57 @@ class UNCABlockMigration extends DrupalMigration {
     return $query;
   }
 }
+
+class UNCABoxesMigration extends DrupalMigration {
+
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+
+//    $this->source = new MigrateSourceSQL($this->query(), $this->sourceFields,
+//      NULL, $this->sourceOptions);
+
+    $this->source = new MigrateSourceSQL($this->query(), array(), NULL, array('map_joinable' => FALSE));
+
+    $this->map = new MigrateSQLMap($this->machineName,
+      array(
+        'bid' => array(
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+          'alias' => 'bx',
+        ),
+      ),
+      array(
+        'bid' => array(
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+          'alias' => 'bc',
+        ),
+      )
+    );
+
+    $this->destination = new MigrateDestinationTable('block_custom');
+
+    $this->addFieldMapping('bid','bid')
+      ->sourceMigration('UNCABlock');
+    $this->addFieldMapping('body','body');
+    $this->addFieldMapping('info','info');
+    $this->addFieldMapping('format','format');
+  }
+
+
+  public function prepareRow($row) {
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
+  }
+
+  protected function query() {
+    $query = Database::getConnection('default', 'legacy')
+      ->select('boxes', 'b')
+      ->fields('b');
+    return $query;
+  }
+}
+
