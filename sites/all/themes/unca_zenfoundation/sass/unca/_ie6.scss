@@ -25,28 +25,6 @@ padding-bottom:4px;
 
 }
 
-.button-blue-rounded {
-background:#2B80AD; 
-color:#fff; 
-display:block; 
-float:left;
-padding-top:5px;
-margin-top:8px;
-line-height:6px;
-height: 16px;
-min-height:none;
-}
-
-.button-blue-rounded span {
-background:#2B80AD;
-float:left;
-/*display:block;*/
-margin:0;
-padding:0px 12px 5px 0;
-line-height:15px;
-height:auto;
-}
-
 /* compensate for IE's inability to render rgba backgrounds */
 .highlight-box {
 background-color:#eff3ef;

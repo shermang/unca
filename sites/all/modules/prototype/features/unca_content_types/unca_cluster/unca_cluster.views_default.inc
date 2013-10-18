@@ -40,6 +40,8 @@ function unca_cluster_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Field: Teaser (Summary) */
   $handler->display->display_options['fields']['field_teaser_text_value']['id'] = 'field_teaser_text_value';
   $handler->display->display_options['fields']['field_teaser_text_value']['table'] = 'field_data_body';
@@ -47,9 +49,10 @@ function unca_cluster_views_default_views() {
   $handler->display->display_options['fields']['field_teaser_text_value']['ui_name'] = 'Teaser (Summary)';
   $handler->display->display_options['fields']['field_teaser_text_value']['label'] = '';
   $handler->display->display_options['fields']['field_teaser_text_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_teaser_text_value']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_teaser_text_value']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['field_teaser_text_value']['settings'] = array(
-    'trim_length' => '600',
+    'trim_length' => '300',
   );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
@@ -62,6 +65,12 @@ function unca_cluster_views_default_views() {
   $handler->display->display_options['fields']['field_image_fid']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image_fid']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image_fid']['label'] = '';
+  $handler->display->display_options['fields']['field_image_fid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_fid']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_fid']['settings'] = array(
+    'image_style' => 'square_thumbnail',
+    'image_link' => 'content',
+  );
   /* Field: Content: Date to Archive */
   $handler->display->display_options['fields']['field_launch_date_value']['id'] = 'field_launch_date_value';
   $handler->display->display_options['fields']['field_launch_date_value']['table'] = 'field_data_field_date';
@@ -72,6 +81,11 @@ function unca_cluster_views_default_views() {
   $handler->display->display_options['fields']['field_number_value']['table'] = 'field_data_field_cluster_number';
   $handler->display->display_options['fields']['field_number_value']['field'] = 'field_cluster_number';
   $handler->display->display_options['fields']['field_number_value']['label'] = 'Number';
+  $handler->display->display_options['fields']['field_number_value']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_number_value']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
   /* Field: Content: Coordinator */
   $handler->display->display_options['fields']['field_coordinator_value']['id'] = 'field_coordinator_value';
   $handler->display->display_options['fields']['field_coordinator_value']['table'] = 'field_data_field_cluster_coordinator';
