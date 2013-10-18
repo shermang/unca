@@ -287,7 +287,6 @@ function migrate_d2d_unca_register_migrations() {
        'machine_name' => 'UNCAMapItem',
        'source_type' => 'map_item',
        'destination_type' => 'map_item',
-       'dependencies' => array('UNCALocation'),
      ),
 
     // Webform CT - Nodes
@@ -410,6 +409,16 @@ function migrate_d2d_unca_register_migrations() {
   Migration::registerMigration($block_migration_class,
     $block_arguments['machine_name'], $block_arguments);
 
+  // Boxes
+  $block_arguments = $common_arguments + array(
+      'machine_name' => 'UNCABoxes',
+      'description' => t('Migration of Drupal 6 Boxes'),
+    );
+
+  $block_migration_class = 'UNCABoxesMigration';
+  Migration::registerMigration($block_migration_class,
+    $block_arguments['machine_name'], $block_arguments);
+
 }
 
 
@@ -469,9 +478,8 @@ function migrate_d2d_unca_get_src_vocab_id($key) {
     /** @var $vocabs_map ARRAY */
     /** @var $src_vocabs ARRAY */
     extract(migrate_d2d_unca_get_vocab_mappings()); # $vocabs_map, $src_vocabs
+    return $vocabs_map[$key]['d6_vid'];
   }
-  return $vocabs_map[$key]['d6_vid'];
-
 }
 
 function migrate_d2d_unca_get_vocab_mappings() {
