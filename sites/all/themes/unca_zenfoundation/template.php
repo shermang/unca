@@ -215,6 +215,16 @@ function unca_zenfoundation_preprocess_page(&$variables, $hook) {
 
   $variables['display_dept_name'] = variable_get('display_dept_name', TRUE);
 
+  $secondary_menu = menu_tree_all_data('menu-secondary-navigation---prot');
+  $secondary_menu = menu_tree_output($secondary_menu);
+  $secondary_menu = unca_zenfoundation_topbar_menu($secondary_menu, array('class' => array('secondary-nav-mini')));
+  $variables['secondary_menu'] = $secondary_menu;
+
+  $utility_menu = menu_tree_all_data('menu-global-tools-menu');
+  $utility_menu = menu_tree_output($utility_menu);
+  $utility_menu = unca_zenfoundation_topbar_menu($utility_menu, array('class' => array('util-nav-mini')));
+  $variables['utility_menu'] = $utility_menu;
+
   return $variables;
 
 }
@@ -370,4 +380,49 @@ function unca_zenfoundation_links__system_main_menu($vars) {
   // Wrap the whole thing in a ul
   return '<ul' . drupal_attributes($vars['attributes']) . '>' . $output . '</ul>';
 
+}
+
+/**
+ * Theme a copy of the secondary menu to place into the Foundation mobile topbar.
+ */
+function unca_zenfoundation_topbar_menu(&$menu_links, $attributes = array()) {
+  // Initialize some variables to prevent errors
+  $output = '';
+  $sub_menu = '';
+
+  foreach ($menu_links as $key => $link) {
+    // Add special class needed for Foundation dropdown menu to work
+    if (!empty($link['#below'])) {
+      $link['#attributes']['class'][] = 'has-dropdown';
+    }
+
+    // Printing the actual menu item
+    if (!empty($link['#href'])) {
+      $output .= '<li' . drupal_attributes($link['#attributes']) . '>'
+      . l(
+        $link['#title'],
+        $link['#href']
+      );
+
+      // Get sub navigation links if they exist
+      foreach ($link['#below'] as $key => $sub_link) {
+        if (!empty($sub_link['#href'])) {
+         $sub_menu .= '<li>'
+         . l(
+            $sub_link['#title'],
+            $sub_link['#href']
+          )
+         . '</li>';
+        }
+      }
+      $output .= !empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
+
+      $output .=  '</li>';
+
+    }
+
+  }
+
+  // Wrap the whole thing in a ul
+  return '<ul ' . drupal_attributes($attributes) . '>' . $output . '</ul>';
 }
