@@ -6533,25 +6533,6 @@ nav.navigation a {
   background-color: #cccccc;
 }
 
-#block-block-1 {
-  color: gray;
-  font-size: 80%;
-  text-align: center;
-}
-@media only screen and (min-width: 64em) {
-  #block-block-1 {
-    text-align: right;
-  }
-}
-@media print {
-  #block-block-1 {
-    text-align: right;
-  }
-}
-#block-block-1 .lt-ie9 {
-  text-align: right;
-}
-
 .breadcrumb {
   display: block;
   padding: 0.75em 1.16667em 0.75em;
@@ -7321,39 +7302,6 @@ html[xmlns] .slides {
 }
 .view-directory .views-field-field-person-headshot img .lt-ie9 {
   margin-top: .74em;
-}
-
-#block-block-1 {
-  position: relative;
-  padding-left: 1.25em;
-  padding-right: 1.25em;
-  width: 100%;
-  float: left;
-}
-@media only screen and (min-width: 64em) {
-  #block-block-1 {
-    position: relative;
-    padding-left: 1.25em;
-    padding-right: 1.25em;
-    width: 66.66667%;
-    float: left;
-  }
-}
-@media print {
-  #block-block-1 {
-    position: relative;
-    padding-left: 1.25em;
-    padding-right: 1.25em;
-    width: 66.66667%;
-    float: left;
-  }
-}
-#block-block-1 .lt-ie9 {
-  position: relative;
-  padding-left: 1.25em;
-  padding-right: 1.25em;
-  width: 66.66667%;
-  float: left;
 }
 
 .logo-link {
@@ -9735,46 +9683,55 @@ nav.navigation:after {
   -webkit-border-radius: 12px;
 }
 
-/* footer spiffs 
-Last Updated on: 2010-10-18
-Last Updated by: malawren@unca.edu
- */
-#bottom-spiffs ul {
-  margin-bottom: -5px;
+#bottom-spiffs {
+  margin: 0 auto 2px;
+  max-width: 80em;
+  width: 100%;
 }
-
-#bottom-spiffs .column {
+#bottom-spiffs .column, #bottom-spiffs columns {
   float: left;
   padding: 0px;
 }
-
-#bottom-spiffs .first,
-#bottom-spiffs .last {
-  width: 240px;
-  font-size: 14px;
+#bottom-spiffs ul {
+  margin-bottom: -5px;
+}
+#bottom-spiffs .region > .block {
+  clear: both;
+  margin-bottom: 5px;
+}
+#bottom-spiffs .region-footer-promo-a > .block-block, #bottom-spiffs .region-footer-promo-b > .block-block {
+  background: url("../images/footer-spiff-background-tall.png") repeat-x scroll 0 0 #32611c;
+}
+#bottom-spiffs .region-footer-promo-a > .block-block a, #bottom-spiffs .region-footer-promo-b > .block-block a {
+  padding: 26px 20px 27px 50px;
+}
+#bottom-spiffs #footer-profile a {
+  border: none;
 }
 
-/*#bottom-spiffs .interior {
-width:428px;
-margin:0 5px;
-background: url(../images/footer-spiff-background-profile.png) #95b36f repeat-x;
-border:solid #fff 1px;
-padding:20px;
-height:136px;
-overflow:hidden;
-}*/
-/*Added on: 2011-05-04
-Added by: lwithrow@unca.edu
-Notes:  Styles footer middle blocks.  Improves spacing to allow for a bit more copy.
-*/
 #bottom-spiffs .interior {
-  background: url("../images/footer-spiff-background-profile.png") repeat-x scroll 0 0 #95b36f;
+  background: url(../images/footer-spiff-background-profile.png) #95b36f repeat-x;
   border: 1px solid #FFFFFF;
   height: 160px;
-  margin: 0 5px;
   overflow: hidden;
   padding: 5px 10px 10px;
-  width: 448px;
+  width: 100%;
+}
+@media only screen and (min-width: 64em) {
+  #bottom-spiffs .interior {
+    margin: 0 5px;
+    width: 470px;
+  }
+}
+@media print {
+  #bottom-spiffs .interior {
+    margin: 0 5px;
+    width: 470px;
+  }
+}
+#bottom-spiffs .interior .lt-ie9 {
+  margin: 0 5px;
+  width: 470px;
 }
 
 .footer-spiff-apply,
@@ -9881,25 +9838,20 @@ a.footer-spiff-map {
   display: block;
   color: #fff;
   border: solid #fff 1px;
-  padding-top: 33px;
-  padding-right: 20px;
-  padding-bottom: 33px;
-  padding-left: 50px;
+}
+
+#bottom-spiffs a.contextual-links-trigger {
+  color: #333333 !important;
+  margin: 0.25em 0 !important;
+  padding: 0.25em 1em 0.25em 0.5em !important;
+  border: none !important;
 }
 
 #bottom-spiffs .last a {
   /*works for both core and depts because the depts only call first last, not first.*/
   display: block;
   color: #fff;
-  border: solid #fff 1px;
-  padding-top: 18px;
-  padding-right: 20px;
-  padding-bottom: 18px;
-  padding-left: 50px;
-}
-
-#footer-profile {
-  overflow: hidden;
+  padding-top: 18px 20px 18px 50px;
 }
 
 #bottom-spiffs #profile-headshot {
@@ -9914,9 +9866,11 @@ a.footer-spiff-map {
   margin-bottom: 5px;
   margin-top: 5px;
 }
-
-#bottom-spiffs #profile-major {
-  margin-bottom: 5px;
+#bottom-spiffs #profile-name a {
+  color: #4572C5;
+  text-decoration: none;
+  padding: 0;
+  border: none;
 }
 
 #bottom-spiffs #profile-abstract {
@@ -10023,23 +9977,9 @@ h4 {
 
 #bottom-spiffs .first,
 #bottom-spiffs .last {
-  width: 240px;
   font-size: 14px;
 }
 
-/*#bottom-spiffs .interior {
-width:428px;
-margin:0 5px;
-background: url(../images/footer-spiff-background-profile.png) #95b36f repeat-x;
-border:solid #fff 1px;
-padding:20px;
-height:136px;
-overflow:hidden;
-}*/
-/*Added on: 2011-05-04
-Added by: lwithrow@unca.edu
-Notes:  Styles footer middle blocks.  Improves spacing to allow for a bit more copy.
-*/
 #bottom-spiffs .interior {
   background: url("../images/footer-spiff-background-profile.png") repeat-x scroll 0 0 #95b36f;
   border: 1px solid #FFFFFF;
@@ -10047,7 +9987,6 @@ Notes:  Styles footer middle blocks.  Improves spacing to allow for a bit more c
   margin: 0 5px;
   overflow: hidden;
   padding: 5px 10px 10px;
-  width: 448px;
 }
 
 .footer-spiff-apply,
@@ -10627,28 +10566,6 @@ Added back in by Luke Withrow on 2013-05-15
   padding-top: 0px;
 }
 
-.button-blue-rounded {
-  background: #2B80AD;
-  color: #fff;
-  display: block;
-  float: left;
-  padding-top: 5px;
-  margin-top: 8px;
-  line-height: 6px;
-  height: 16px;
-  min-height: none;
-}
-
-.button-blue-rounded span {
-  background: #2B80AD;
-  float: left;
-  /*display:block;*/
-  margin: 0;
-  padding: 0px 12px 5px 0;
-  line-height: 15px;
-  height: auto;
-}
-
 /* compensate for IE's inability to render rgba backgrounds */
 .highlight-box {
   background-color: #eff3ef;
@@ -10737,14 +10654,6 @@ Added back in by Luke Withrow on 2013-05-15
   zoom: 1;
 }
 
-.button-blue-rounded {
-  float: left;
-}
-
-.button-blue-rounded span {
-  float: left;
-}
-
 #navigation-primary #search li {
   margin: 0px 0 0 5px;
 }
@@ -10766,6 +10675,10 @@ Added back in by Luke Withrow on 2013-05-15
   margin-bottom: 0;
   width: 30px;
   padding-right: 46px;
+}
+
+.block-menu-menu-global-footer-menu > h2.block-title {
+  display: none;
 }
 
 #footer {
@@ -10794,7 +10707,7 @@ Added back in by Luke Withrow on 2013-05-15
   margin-bottom: 0;
   max-width: 80em;
   *zoom: 1;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 #main:before, #main:after {
   content: " ";
@@ -10880,7 +10793,6 @@ Added back in by Luke Withrow on 2013-05-15
   clear: both;
   height: 40px;
   margin-bottom: 5px;
-  overflow: hidden;
   padding: 0;
   background: #c6c6c6;
   /* Old browsers */
@@ -11001,7 +10913,7 @@ Added back in by Luke Withrow on 2013-05-15
   color: #000000;
   display: block;
   font-size: 10px;
-  padding: 6px 20px 7px 20px;
+  padding: 6px 20px;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
@@ -11424,21 +11336,23 @@ div.content-two-column {
 
 /* blue button */
 .button-blue-rounded {
-  background: url(../images/button-rounded-blue-left.png) left top no-repeat;
-  height: 29px;
-  float: left;
-  padding: 0px 0px 0px 12px;
-}
-
-.button-blue-rounded span {
-  background: url(../images/button-rounded-blue-right.png) top right no-repeat;
-  float: right;
-  height: 29px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
   display: block;
-  margin: 0;
-  color: #fff;
-  padding: 5px 12px 0 0;
-  margin: 0 -12px 0 0;
+  color: #ffffff;
+  padding: 3px 10px !important;
+  background: -moz-linear-gradient(top, #0463a7 0%, #5497b9);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0463a7), to(#5497b9));
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  border: 2px solid #A3C0CD !important;
+  -moz-box-shadow: 0px 1px 3px rgba(131, 176, 197, 0.5), inset 0px 3px 2px #0053a1;
+  -webkit-box-shadow: 0px 1px 3px rgba(131, 176, 197, 0.5), inset 0px 3px 2px #0053a1;
+  box-shadow: 0px 1px 3px rgba(131, 176, 197, 0.5), inset 0px 3px 2px #0053a1;
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(255, 255, 255, 0);
+  margin: 5px 0 0 0;
+  float: left;
 }
 
 .sidebar .right-spiff {

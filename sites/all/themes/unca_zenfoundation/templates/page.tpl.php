@@ -144,16 +144,32 @@
 
   </div><!-- /#main -->
 
-  <?php
+ <?php if ($page['footer']): ?>
 
+    <div id="bottom-spiffs" class="row fill-left fill-right footer-blocks ">
+        <?php if ($page['footer_promo_a']): ?>
+          <div class="column large-3 columns first">
+            <?php print render($page['footer_promo_a']); ?>
+          </div><!-- /.column .columns .first -->
+        <?php endif; ?>
 
-  ?>
+        <?php if ($page['footer_promo_a']): ?>
+          <div id="footer-profile" class="column large-6 columns interior">
+            <?php print render($page['footer_promo_large']); ?>
+          </div><!-- /.column .columns .interior -->
+        <?php endif; ?>      
 
-<?php if ($page['footer']): ?>
-  <div class="footer">
-     <?php print render($page['footer']); ?>
-  </div>
-<?php endif; ?>
+        <?php if ($page['footer_promo_a']): ?>
+          <div class="column large-3 columns last">
+            <?php print render($page['footer_promo_b']); ?>
+          </div><!-- /.column .columns .last -->
+        <?php endif; ?>
+    </div><!-- /.row .fill-left .fill-right .footer-blocks -->
+
+    <div class="footer">
+       <?php print render($page['footer']); ?>
+    </div><!-- /.footer -->
+  <?php endif; ?>
 
 </div><!-- /#page -->
 
