@@ -9714,24 +9714,28 @@ nav.navigation:after {
   border: 1px solid #FFFFFF;
   height: 160px;
   overflow: hidden;
-  padding: 5px 10px 10px;
   width: 100%;
+  margin: 0 0 5px;
+  padding: 5px 10px !important;
 }
 @media only screen and (min-width: 64em) {
   #bottom-spiffs .interior {
     margin: 0 5px;
     width: 470px;
+    padding: 5px 10px !important;
   }
 }
 @media print {
   #bottom-spiffs .interior {
     margin: 0 5px;
     width: 470px;
+    padding: 5px 10px !important;
   }
 }
 #bottom-spiffs .interior .lt-ie9 {
   margin: 0 5px;
   width: 470px;
+  padding: 5px 10px !important;
 }
 
 .footer-spiff-apply,
@@ -9978,15 +9982,6 @@ h4 {
 #bottom-spiffs .first,
 #bottom-spiffs .last {
   font-size: 14px;
-}
-
-#bottom-spiffs .interior {
-  background: url("../images/footer-spiff-background-profile.png") repeat-x scroll 0 0 #95b36f;
-  border: 1px solid #FFFFFF;
-  height: 160px;
-  margin: 0 5px;
-  overflow: hidden;
-  padding: 5px 10px 10px;
 }
 
 .footer-spiff-apply,

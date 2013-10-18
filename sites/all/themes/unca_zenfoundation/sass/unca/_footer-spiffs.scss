@@ -35,11 +35,13 @@
   border: 1px solid #FFFFFF;
   height: 160px;
   overflow: hidden;
-  padding: 5px 10px 10px;
   width: 100%;
+  margin: 0 0 5px;
+  padding: 5px 10px !important;
   @include respond-to($tablet) {
-    margin:0 5px;
+    margin: 0 5px;
     width: 470px;
+    padding: 5px 10px !important;
   }    
 }
 
