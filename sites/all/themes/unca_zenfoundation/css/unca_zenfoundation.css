@@ -10374,6 +10374,21 @@ a.footer-spiff-map {
   background: url(../images/footer-spiff-background-short.png) repeat-x #32611c;
 }
 
+.views-exposed-form {
+  background-color: transparent;
+  margin: 0 auto;
+  max-width: 80em;
+  padding-top: 0.75em;
+  width: 100%;
+}
+.views-exposed-form .views-exposed-widget {
+  float: left;
+}
+.views-exposed-form .views-submit-button {
+  float: left;
+  clear: none;
+}
+
 .container {
   width: 960px;
   margin: 0 auto;
@@ -11843,6 +11858,23 @@ This CSS overrides .print-link in /modules/print/css/printlinks.css*/
   */
   margin: -53px 329px;
   display: block;
+}
+
+.gmap-map {
+  width: 100% !important;
+}
+@media only screen and (min-width: 64em) {
+  .gmap-map {
+    min-width: 679px;
+  }
+}
+@media print {
+  .gmap-map {
+    min-width: 679px;
+  }
+}
+.gmap-map .lt-ie9 {
+  min-width: 679px;
 }
 
 /*Added on: 2011-05-02

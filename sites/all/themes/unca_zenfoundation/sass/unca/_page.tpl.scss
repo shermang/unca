@@ -801,6 +801,17 @@ This CSS overrides .print-link in /modules/print/css/printlinks.css*/
   margin: -53px 329px;
   display: block;
 }
+
+
+// ------------------------------------- Google maps ------------------------------------- 
+
+.gmap-map {
+  width: 100% !important;
+    @include respond-to($tablet) {
+      min-width: 679px;
+    }
+}
+
 /*Added on: 2011-05-02
 Added by: lwithrow@unca.edu
 Notes:  Styles GMap balloon popup
