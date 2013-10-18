@@ -11801,7 +11801,7 @@ Notes:  Adds support for slideshows
   margin: 0 20px 20px 0;
 }
 
-.profile h2 > div.field-content {
+.profile h2 > div {
   float: left;
   margin-right: 0.3em;
 }
