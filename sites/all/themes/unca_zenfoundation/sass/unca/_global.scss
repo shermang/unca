@@ -55,29 +55,15 @@ h4 {
 }
 
 #bottom-spiffs .column {
-float:left;
-padding:0px;
+	float:left;
+	padding:0px;
 }
 
 #bottom-spiffs .first,
 #bottom-spiffs .last {
-width:240px;
-font-size:14px;
+  font-size:14px;
 }
 
-/*#bottom-spiffs .interior {
-width:428px;
-margin:0 5px;
-background: url(../images/footer-spiff-background-profile.png) #95b36f repeat-x;
-border:solid #fff 1px;
-padding:20px;
-height:136px;
-overflow:hidden;
-}*/
-/*Added on: 2011-05-04
-Added by: lwithrow@unca.edu
-Notes:  Styles footer middle blocks.  Improves spacing to allow for a bit more copy.
-*/
 #bottom-spiffs .interior {
     background: url("../images/footer-spiff-background-profile.png") repeat-x scroll 0 0 #95B36F;
     border: 1px solid #FFFFFF;
@@ -85,7 +71,6 @@ Notes:  Styles footer middle blocks.  Improves spacing to allow for a bit more c
     margin: 0 5px;
     overflow: hidden;
     padding: 5px 10px 10px;
-    width: 448px;
 }
 
 .footer-spiff-apply,

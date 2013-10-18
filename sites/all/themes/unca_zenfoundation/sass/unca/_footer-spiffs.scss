@@ -1,43 +1,46 @@
-/* footer spiffs 
-Last Updated on: 2010-10-18
-Last Updated by: malawren@unca.edu
- */
-#bottom-spiffs ul {
-margin-bottom:-5px;
+// footer spiffs 
+
+#bottom-spiffs {
+  margin: 0 auto 2px;
+  max-width: 80em;
+  width: 100%;
+	.column, columns {
+	  float:left;
+	  padding:0px;
+	}
+    ul {
+      margin-bottom:-5px;
+    }
+    .region > .block {
+      clear: both;
+      margin-bottom: 5px;
+    }
+    .region-footer-promo-a, .region-footer-promo-b {
+      > .block-block {
+        background: url("../images/footer-spiff-background-tall.png") repeat-x scroll 0 0 #32611C;
+          a {
+            padding: 26px 20px 27px 50px
+          }
+        }
+    }
+    #footer-profile {
+    	a {
+    	border: none;
+    	}
+    }
 }
 
-#bottom-spiffs .column {
-float:left;
-padding:0px;
-}
-
-#bottom-spiffs .first,
-#bottom-spiffs .last {
-width:240px;
-font-size:14px;
-}
-
-/*#bottom-spiffs .interior {
-width:428px;
-margin:0 5px;
-background: url(../images/footer-spiff-background-profile.png) #95b36f repeat-x;
-border:solid #fff 1px;
-padding:20px;
-height:136px;
-overflow:hidden;
-}*/
-/*Added on: 2011-05-04
-Added by: lwithrow@unca.edu
-Notes:  Styles footer middle blocks.  Improves spacing to allow for a bit more copy.
-*/
 #bottom-spiffs .interior {
-    background: url("../images/footer-spiff-background-profile.png") repeat-x scroll 0 0 #95B36F;
-    border: 1px solid #FFFFFF;
-    height: 160px;
-    margin: 0 5px;
-    overflow: hidden;
-    padding: 5px 10px 10px;
-    width: 448px;
+  background: url(../images/footer-spiff-background-profile.png) #95b36f repeat-x;
+  border: 1px solid #FFFFFF;
+  height: 160px;
+  overflow: hidden;
+  padding: 5px 10px 10px;
+  width: 100%;
+  @include respond-to($tablet) {
+    margin:0 5px;
+    width: 470px;
+  }    
 }
 
 .footer-spiff-apply,
@@ -47,9 +50,8 @@ Notes:  Styles footer middle blocks.  Improves spacing to allow for a bit more c
 .footer-spiff-mailinglist,
 .footer-spiff-news, 
 .footer-spiff-twitter {
-overflow:hidden;
+	overflow:hidden;
 }
-
 
 a.footer-spiff-apply {
 	background-image:url(../images/spiff-icon-checkmark.png);
@@ -119,9 +121,9 @@ a.footer-spiff-twitter{
 }
 
 a.footer-spiff-linkedin{
-	background-image: url(../images/spiff-icon-linkedin.png);
-	background-repeat:no-repeat;
-	background-position: 10px center;
+  background-image: url(../images/spiff-icon-linkedin.png);
+  background-repeat:no-repeat;
+  background-position: 10px center;
 }
 
 a.footer-spiff-athletics{
@@ -144,89 +146,90 @@ a.footer-spiff-map{
 
 
 #bottom-spiffs .first a {
-	display:block;
-	color:#fff;
-	border:solid #fff 1px;
-	padding-top: 33px;
-	padding-right: 20px;
-	padding-bottom: 33px;
-	padding-left: 50px;
+  display:block;
+  color:#fff;
+  border:solid #fff 1px;
+}
+
+#bottom-spiffs a.contextual-links-trigger {
+  color: #333333 !important;
+  margin: 0.25em 0 !important;
+  padding: 0.25em 1em 0.25em 0.5em !important;
+  border: none !important;
 }
 
 
 #bottom-spiffs .last a {/*works for both core and depts because the depts only call first last, not first.*/
-	display:block;
-	color:#fff;
-	border:solid #fff 1px;
-	padding-top:18px;
-	padding-right:20px;
-	padding-bottom:18px;
-	padding-left:50px;
-	
+  display:block;
+  color:#fff;
+  padding-top:18px 20px 18px 50px;
 }
 
 #footer-profile {
-overflow:hidden
+	
 }
 
 
 
 #bottom-spiffs #profile-headshot {
-float:right;
-padding:1px;
-border:solid #fff 1px;
-margin-left:20px;
+	float:right;
+	padding:1px;
+	border:solid #fff 1px;
+	margin-left:20px;
 }
 
 #bottom-spiffs #profile-name {
-font-size:24px;
-margin-bottom:5px;
-margin-top:5px;
+  font-size:24px;
+  margin-bottom:5px;
+  margin-top:5px;
+    a {
+      color: #4572C5;
+      text-decoration: none;
+      padding: 0;
+      border: none;
+    }
 }
 
 #bottom-spiffs #profile-major {
-margin-bottom:5px;
+	
 }
 
 #bottom-spiffs #profile-abstract {
-margin-bottom:5px;
-font-size:11px;
+	margin-bottom:5px;
+	font-size:11px;
 }
 
 #bottom-spiffs #project-thumbnail {
-float:right;
-padding:1px;
-border:solid #fff 1px;
-margin-left:20px;
+	float:right;
+	padding:1px;
+	border:solid #fff 1px;
+	margin-left:20px;
 }
 
 #bottom-spiffs #project-name {
-font-size:24px;
-line-height:100%;
-margin-bottom:5px;
-margin-top:5px;
+	font-size:24px;
+	line-height:100%;
+	margin-bottom:5px;
+	margin-top:5px;
 }
 
-
-
-
 #bottom-spiffs li {
-margin-bottom:5px;
+	margin-bottom:5px;
 }
 
 #bottom-spiffs p {
-margin-bottom:0px;
+	margin-bottom:0px;
 }
 #bottom-spiffs .content {
-margin-bottom:5px;
+	margin-bottom:5px;
 }
 
 #bottom-spiffs .column.first div.content {
-background:url(../images/footer-spiff-background-tall.png) repeat-x #32611c;
+	background:url(../images/footer-spiff-background-tall.png) repeat-x #32611c;
 }
 
 #bottom-spiffs .column.last div.content {
-background:url(../images/footer-spiff-background-short.png) repeat-x #32611c;
+	background:url(../images/footer-spiff-background-short.png) repeat-x #32611c;
 }
 
 

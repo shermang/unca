@@ -16,6 +16,10 @@
   padding-right: 46px; 
 }
 
+.block-menu-menu-global-footer-menu > h2.block-title {
+  display: none;
+}
+
 #footer {
 text-align:center; 
 color:#fff; 
@@ -36,17 +40,16 @@ color:#fff;
 }
 
 #main {
-//  padding:10px 20px 20px 20px; 
   @include grid-row;
-  margin-bottom:2px; 
+    margin-bottom:4px; 
   }
  
 .top-stripes {
-background:#fff url(../images/page-stripes-topright.png) top right no-repeat;
+  background:#fff url(../images/page-stripes-topright.png) top right no-repeat;
 }
  
 .bottom-stripes {
-background:url(../images/page-stripes-bottomleft.png) no-repeat bottom left;
+  background:url(../images/page-stripes-bottomleft.png) no-repeat bottom left;
 }
  
 /** primary, secondary and utility navigation styles
@@ -120,7 +123,6 @@ padding:10px 15px;
   clear: both;
   height: 40px;
   margin-bottom: 5px;
-  overflow: hidden;
   padding: 0;
   background: #c6c6c6; /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -197,7 +199,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
   color: #000000;
   display: block;
   font-size: 10px;
-  padding: 6px 20px 7px 20px;
+  padding: 6px 20px;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
@@ -364,12 +366,12 @@ width:100%;
 }
  
 #navigation-secondary-bottom { /**this applied to a span gives bottom shadow to div.navigation-secondary**/
-background:url(../images/navigation-secondary-bottomcap.png) repeat-x transparent;
-height:2px;
-display:block;
-margin:0 auto 5px auto;
-overflow:hidden;
-width:100%;
+  background:url(../images/navigation-secondary-bottomcap.png) repeat-x transparent;
+  height:2px;
+  display:block;
+  margin:0 auto 5px auto;
+  overflow:hidden;
+  width:100%;
 }
  
  /** in-page styles 
@@ -615,22 +617,38 @@ border:0px;
 }
  
 /* blue button */
-.button-blue-rounded {
-background:url(../images/button-rounded-blue-left.png) left top no-repeat;
-height:29px;
-float:left;
-padding:0px 0px 0px 12px;
-}
-	
-.button-blue-rounded span {
-  background:url(../images/button-rounded-blue-right.png) top right no-repeat;
-  float:right;
-  height:29px;
-  display:block;
-  margin: 0;
-  color:#fff;
-  padding:5px 12px 0 0;
-  margin:0 -12px 0 0;
+.button-blue-rounded{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  display: block;
+  color: #ffffff;
+  padding: 3px 10px !important;
+  background: -moz-linear-gradient(
+    top,
+    #0463a7 0%,
+    #5497b9);
+  background: -webkit-gradient(
+    linear, left top, left bottom, 
+    from(#0463a7),
+    to(#5497b9));
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  border: 2px solid #A3C0CD !important;
+  -moz-box-shadow:
+    0px 1px 3px rgba(131,176,197,0.5),
+    inset 0px 3px 2px rgba(0,83,161,1);
+  -webkit-box-shadow:
+    0px 1px 3px rgba(131,176,197,0.5),
+    inset 0px 3px 2px rgba(0,83,161,1);
+  box-shadow:
+    0px 1px 3px rgba(131,176,197,0.5),
+    inset 0px 3px 2px rgba(0,83,161,1);
+  text-shadow:
+    0px 0px 0px rgba(000,000,000,0),
+    0px 0px 0px rgba(255,255,255,0);
+  margin:5px 0 0 0;
+  float:left;
 }
   
 // right nav spiff 
