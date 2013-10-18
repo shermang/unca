@@ -16,6 +16,9 @@ form {
       // position:absolute;
       // top:0;
       // width: auto;
+      &.element-invisible {
+        margin: 0;
+      }
     }
   }
 }

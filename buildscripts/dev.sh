@@ -7,20 +7,20 @@ aggregator \
 field_group \
 field_permissions \
 references \
-admin_menu \
-admin_menu_toolbar \
 admin_views \
 captcha \
 ctools \
 customerror \
 date \
 devel \
-devel_themer \
 draggableviews \
 entity_path \
 feeds \
 flickr \
 gmap \
+gmap_location \
+gmap_macro_builder \
+gmap_taxonomy \
 html_export \
 image_caption \
 imagecrop \
@@ -32,6 +32,7 @@ jquery_update \
 lightbox2 \
 link \
 location \
+location_cck \
 mcfilemanager \
 media_viddler \
 media_youtube \
@@ -48,6 +49,7 @@ sharethis \
 taxonomy_menu \
 taxonomy_menu_block \
 token \
+toolbar \
 views \
 views_bulk_operations \
 views_data_export \
@@ -124,7 +126,8 @@ migrate_d2d_unca \
 
 # To disable modules, uncomment the following command and list the modules to disable
 drush dis --yes \
-toolbar \
+admin_menu \
+admin_menu_toolbar \
 overlay \
 securelogin
 
@@ -137,13 +140,18 @@ echo ""
 echo "Setting unca_zenfoundation as the active theme"
 drush vset theme_default unca_zenfoundation
 
+# clear the cache
+echo "Clearing the drupal cache"
+drush --nocolor cc all
+echo ""
+
 # Revert all features
 drush fra --yes
 
 # clear the cache
 echo "Clearing the drupal cache"
 drush --nocolor cc all
-echo ""
 
+echo ""
 echo "Done!"
 

@@ -7,17 +7,22 @@
 
 .row .top-bar {
   padding: 0 -0.9375em;
-  border: none;
-  margin-bottom: 5px;
+  border: 1px solid #FFFFFF;
+  padding-bottom: 5px;
+  margin-bottom: 0;
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
   clear: both;
   float: left;
-  height: 30px;
-  line-height: 30px;
+  height: 40px;
+  line-height: 40px;
   position: relative;
   width: 100%;
   &.expanded {
     height: auto;
+  }
+  @include respond-to($topbar-breakpoint) {
+    height: 30px;
+    line-height: 30px;
   }
     .toggle-topbar.menu-icon {
       margin-top: -19px;

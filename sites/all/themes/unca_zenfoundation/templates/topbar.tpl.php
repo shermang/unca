@@ -19,12 +19,22 @@
           </ul>
 
           <section class="top-bar-section">
+            <ul class="top-bar-search">
+              <li class="has-form search">
+                <div id="search" class="search-bar">
+                <?php
+                  $block = module_invoke('search', 'block_view', 'search');
+                  print render($block);
+                ?>
+                </div> <!-- /#search -->
+              </li>
+            </ul>
             <?php
               print theme('links__system_main_menu', array(
                 'links' => $main_menu,
                 'attributes' => array(
                   'id' => array('navigation-primary'),
-                  'class' => array('list-horizontal, main-menu-links', 'links', 'left'),
+                  'class' => array('list-horizontal', 'main-menu-links', 'links', 'left', 'top-bar-primary'),
                   ),
                 'heading' => array(
                   'text' => t('Main menu'),
@@ -34,11 +44,13 @@
                 )
               );
             ?>
-              <div id="search">
-                <?php
-                  $block = module_invoke('search', 'block_view', 'search');
-                  print render($block);
-                ?>
-            </div> <!-- /#search -->
+            <ul class="top-bar-secondary show-for-tiny">
+              <li>
+                <?php print $secondary_menu; ?>
+              </li>
+              <li>
+                <?php print $utility_menu; ?>
+              </li>
+            </ul>
           </section>
         </nav> <!-- /.top-bar -->
