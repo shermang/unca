@@ -24,10 +24,12 @@ class UNCABlockMigration extends DrupalMigration {
 
     $this->destination = new MigrateDestinationTable('block');
 
+    $this->addFieldMapping('delta', 'delta')
+      ->sourceMigration('UNCABoxes');
+
     $this->addSimpleMappings(
       array(
         'module',
-        'delta',
         'theme',
         'status',
         'weight',
@@ -113,6 +115,7 @@ class UNCABlockMigration extends DrupalMigration {
         return FALSE;
         break;
     }
+    $row->theme = 'unca_zenfoundation';
 
     $result = db_select('block','b')
       ->fields('b',array('bid'))
@@ -124,14 +127,23 @@ class UNCABlockMigration extends DrupalMigration {
     if($result){
       return FALSE;
     }
-
   }
 
   protected function query() {
+    db_set_active('legacy');
+    $results = db_select('variable', 'v')
+      ->fields('v',array('value'))
+      ->condition('name','theme_default','=')
+      ->execute()
+      ->fetchCol();
+    $theme = unserialize($results[0]);
+    db_set_active();
+
     $query = Database::getConnection('default', 'legacy')
       ->select('blocks', 'b')
       ->fields('b')
       ->condition('module','block','=')
+      ->condition('theme',$theme,'=')
       ->condition('theme',array('unca','unca.department','unca_gateway','ncccr'),'IN');
     return $query;
   }
@@ -168,11 +180,11 @@ class UNCABoxesMigration extends DrupalMigration {
 
     $this->destination = new MigrateDestinationTable('block_custom');
 
-    $this->addFieldMapping('bid','bid')
-      ->sourceMigration('UNCABlock');
+//    $this->addFieldMapping('bid','bid');
     $this->addFieldMapping('body','body');
     $this->addFieldMapping('info','info');
-    $this->addFieldMapping('format','format');
+    $this->addFieldMapping('format','format')
+      ->callbacks(array($this, 'mapFormat'));
   }
 
 

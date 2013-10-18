@@ -1,4 +1,4 @@
-<div id="node-<?php print $node->nid; ?>" class="node<?php if ($sticky) { print ' sticky'; } ?><?php if (!$status) { print ' node-unpublished'; } ?>">
+<div id="node-<?php print $node->nid; ?>" class="node<?php if (!$status) { print ' node-unpublished'; } ?>">
 
 <?php print render($content['field_image']); ?>
   <?php if (!$page && $title): ?>
