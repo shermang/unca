@@ -254,4 +254,18 @@ background:url(../images/footer-spiff-background-tall.png) repeat-x #32611c;
 background:url(../images/footer-spiff-background-short.png) repeat-x #32611c;
 }
 
+.views-exposed-form {
+  background-color: transparent;
+  margin: 0 auto;
+  max-width: 80em;
+  padding-top: 0.75em;
+  width: 100%;
+    .views-exposed-widget {
+      float: left;
+    }
+    .views-submit-button {
+      float: left;
+      clear: none;
+    }
+}
 
