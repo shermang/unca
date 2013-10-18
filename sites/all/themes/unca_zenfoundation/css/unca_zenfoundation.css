@@ -5420,7 +5420,7 @@ html .top-bar input[type="button"],
 }
 
 .top-bar-js-breakpoint {
-  width: 64em !important;
+  width: 960px !important;
   visibility: hidden;
 }
 
@@ -5428,7 +5428,7 @@ html .top-bar input[type="button"],
   display: block;
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 960px) {
   .top-bar {
     background: #111111;
     *zoom: 1;
