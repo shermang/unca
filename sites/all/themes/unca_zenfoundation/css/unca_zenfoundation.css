@@ -841,7 +841,7 @@ a.email:before,
   content: "\f17f";
 }
 
-nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu-footer-menu .block-title, #block-menu-menu-audience-menu .block-title, .sidebar .block-menu-menu-secondary-navigation---prot .block-title, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot .block-title, #block-menu-menu-social-links .block-title, .region-header .block-menu-menu-global-tools-menu .block-title, nav.navigation #block-system-main-menu .block-title {
+nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu-footer-menu .block-title, #block-menu-menu-audience-menu .block-title, .sidebar .block-menu-menu-secondary-navigation---prot .block-title, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot .block-title, .sidebar .navigation-secondary .block-title, .ds-sidebar-column .navigation-secondary .block-title, #block-menu-menu-social-links .block-title, .region-header .block-menu-menu-global-tools-menu .block-title, nav.navigation #block-system-main-menu .block-title {
   display: none;
 }
 
@@ -986,10 +986,13 @@ a.email:before,
   padding: 0 0.25em;
 }
 
-nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu, .sidebar .block-menu-menu-secondary-navigation---prot ul, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot ul, .related-links ul, nav.navigation #block-system-main-menu .menu,
+nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu, nav.navigation .navigation-secondary ul.menu, .sidebar .block-menu-menu-secondary-navigation---prot ul, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot ul, .sidebar .navigation-secondary ul, .ds-sidebar-column .navigation-secondary ul, .related-links ul, nav.navigation #block-system-main-menu .menu,
 nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu,
+nav.navigation .navigation-secondary ul.menu,
 .sidebar .block-menu-menu-secondary-navigation---prot ul,
 .ds-sidebar-column .block-menu-menu-secondary-navigation---prot ul,
+.sidebar .navigation-secondary ul,
+.ds-sidebar-column .navigation-secondary ul,
 .related-links ul,
 nav.navigation #block-system-main-menu .menu,
 .no-bullet,
@@ -2829,7 +2832,7 @@ ul.circle {
 ul.disc {
   list-style-type: disc;
 }
-nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu, .sidebar .block-menu-menu-secondary-navigation---prot ul, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot ul, .related-links ul, nav.navigation #block-system-main-menu ul.menu,
+nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu, nav.navigation .navigation-secondary ul.menu, .sidebar .block-menu-menu-secondary-navigation---prot ul, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot ul, .sidebar .navigation-secondary ul, .ds-sidebar-column .navigation-secondary ul, .related-links ul, nav.navigation #block-system-main-menu ul.menu,
 ul.no-bullet,
 .related-files ul, .steps-to-student ul {
   list-style: none;
@@ -6733,64 +6736,68 @@ nav.navigation #block-menu-menu-global-tools-menu a, nav.navigation
   padding-bottom: .5em;
 }
 
-nav.navigation .block-menu-menu-secondary-navigation---prot {
+nav.navigation .block-menu-menu-secondary-navigation---prot, nav.navigation .navigation-secondary {
   margin-bottom: .5em;
 }
-nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu {
+nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu, nav.navigation .navigation-secondary ul.menu {
   border-bottom: 1px solid white;
   padding-bottom: .5em;
 }
-nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul {
+nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navigation .navigation-secondary ul.menu ul {
   display: none;
 }
-.sidebar .block-menu-menu-secondary-navigation---prot, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot {
+.sidebar .block-menu-menu-secondary-navigation---prot, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot, .sidebar .navigation-secondary, .ds-sidebar-column .navigation-secondary {
   display: none;
 }
 @media only screen and (min-width: 64em) {
-  .sidebar .block-menu-menu-secondary-navigation---prot, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot {
+  .sidebar .block-menu-menu-secondary-navigation---prot, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot, .sidebar .navigation-secondary, .ds-sidebar-column .navigation-secondary {
     display: block;
   }
 }
 @media print {
-  .sidebar .block-menu-menu-secondary-navigation---prot, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot {
+  .sidebar .block-menu-menu-secondary-navigation---prot, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot, .sidebar .navigation-secondary, .ds-sidebar-column .navigation-secondary {
     display: block;
   }
 }
-.sidebar .block-menu-menu-secondary-navigation---prot .lt-ie9, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot .lt-ie9 {
+.sidebar .block-menu-menu-secondary-navigation---prot .lt-ie9, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot .lt-ie9, .sidebar .navigation-secondary .lt-ie9, .ds-sidebar-column .navigation-secondary .lt-ie9 {
   display: block;
 }
-.front .sidebar .block-menu-menu-secondary-navigation---prot, .front .ds-sidebar-column .block-menu-menu-secondary-navigation---prot {
+.front .sidebar .block-menu-menu-secondary-navigation---prot, .front .ds-sidebar-column .block-menu-menu-secondary-navigation---prot, .front .sidebar .navigation-secondary, .front .ds-sidebar-column .navigation-secondary {
   padding: 0;
 }
-.sidebar .block-menu-menu-secondary-navigation---prot li, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li {
+.sidebar .block-menu-menu-secondary-navigation---prot li, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li, .sidebar .navigation-secondary li, .ds-sidebar-column .navigation-secondary li {
   -webkit-transition: background-color 0.3s ease-out;
   -moz-transition: background-color 0.3s ease-out;
   -o-transition: background-color 0.3s ease-out;
   transition: background-color 0.3s ease-out;
   background-color: #eee;
   font-size: 1em;
-  margin-bottom: 1px;
-  margin-top: 0;
+  margin: 0;
   padding: 0;
 }
-.sidebar .block-menu-menu-secondary-navigation---prot li:hover, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li:hover {
+.sidebar .block-menu-menu-secondary-navigation---prot li:hover, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li:hover, .sidebar .navigation-secondary li:hover, .ds-sidebar-column .navigation-secondary li:hover {
   background-color: #ddd;
 }
-.sidebar .block-menu-menu-secondary-navigation---prot li li, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li {
+.sidebar .block-menu-menu-secondary-navigation---prot li li, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li, .sidebar .navigation-secondary li li, .ds-sidebar-column .navigation-secondary li li {
   font-size: 1em;
+  border-left: none;
 }
-.sidebar .block-menu-menu-secondary-navigation---prot li li a, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li a {
+.sidebar .block-menu-menu-secondary-navigation---prot li li a, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li a, .sidebar .navigation-secondary li li a, .ds-sidebar-column .navigation-secondary li li a {
   padding-left: 3.33333em;
 }
-.sidebar .block-menu-menu-secondary-navigation---prot li li li a, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li li a {
+.sidebar .block-menu-menu-secondary-navigation---prot li li li, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li li, .sidebar .navigation-secondary li li li, .ds-sidebar-column .navigation-secondary li li li {
+  border-left: none;
+}
+.sidebar .block-menu-menu-secondary-navigation---prot li li li a, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li li a, .sidebar .navigation-secondary li li li a, .ds-sidebar-column .navigation-secondary li li li a {
   padding-left: 5em;
 }
-.sidebar .block-menu-menu-secondary-navigation---prot a, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot a {
+.sidebar .block-menu-menu-secondary-navigation---prot a, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot a, .sidebar .navigation-secondary a, .ds-sidebar-column .navigation-secondary a {
   display: block;
   padding: 0.41667em 0.83333em;
-}
-.sidebar .block-menu-menu-secondary-navigation---prot a:hover, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot a:hover {
   text-decoration: none;
+}
+.sidebar .block-menu-menu-secondary-navigation---prot a:hover, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot a:hover, .sidebar .navigation-secondary a:hover, .ds-sidebar-column .navigation-secondary a:hover {
+  text-decoration: underline;
 }
 
 .section-menu ul {
@@ -11355,7 +11362,7 @@ Added back in by Luke Withrow on 2013-05-15
   background: url(../images/navigation-secondary-background-sprites.png) repeat-x 0 0;
   text-transform: uppercase;
   background-color: #008fd1;
-  margin: 0px;
+  margin: 0px !important;
   list-style: none;
 }
 
@@ -11696,20 +11703,21 @@ div.content-two-column {
   float: left;
 }
 
-.sidebar .right-spiff {
+.sidebar .block.right-spiff {
   background-color: rgba(232, 238, 225, 0.7);
   padding: 10px 10px 1px 10px;
+  margin-bottom: 0;
 }
-
-.sidebar .block-menu.right-spiff {
-  background-color: transparent;
-  padding: 0 0 0 2px;
-}
-.sidebar .block-menu.right-spiff h2, .sidebar .block-menu.right-spiff h3 {
+.sidebar .block.right-spiff h2, .sidebar .block.right-spiff h3 {
   color: #EE5B14;
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 10px;
+}
+.sidebar .block-menu.right-spiff {
+  background-color: transparent;
+  padding: 0 0 0 2px;
+  margin-bottom: 2px;
 }
 
 #webform-client-form-68 {
@@ -11756,6 +11764,7 @@ ul.pager {
 }
 
 #content div.views-row {
+  clear: both;
   padding-bottom: 20px;
 }
 
@@ -12142,12 +12151,15 @@ Notes:  Adds support for slideshows
   text-decoration: none;
 }
 
-.views-row .profile img {
+.views-row .img, .views-row .profile-image {
   float: left;
   margin: 0 20px 20px 0;
 }
-
-.profile h2 > div {
+.views-row .right.profile img {
+  float: left;
+  margin: 0 0 20px 20px;
+}
+.views-row .profile h2 > div {
   float: left;
   margin-right: 0.3em;
 }

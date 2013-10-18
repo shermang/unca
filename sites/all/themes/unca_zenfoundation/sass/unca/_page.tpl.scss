@@ -260,16 +260,9 @@ padding:10px 15px;
           text-transform: uppercase;
         }
     }
-//    input { 
-//      height: 1.35em;
-//      top: 0;
-//      margin: 3px 0;
-//    }
 }
 
-
 /**start navigation secondary--------------------------------------------------------------------------------------**/
-
 
 .navigation-secondary {/**this gives left shadow to div.navigation-secondary**/
 	margin-bottom:0px;
@@ -296,7 +289,6 @@ padding:10px 15px;
 .navigation-secondary ul {
   margin:0px;
 }
-
  
 .navigation-secondary ul li {/*targets first-level menu links (provides blue background image, uppercase font,no bullets and border on left and bottom; also provides inheritance for child items*/
 	padding:0px 10px;
@@ -306,10 +298,9 @@ padding:10px 15px;
 	background:url(../images/navigation-secondary-background-sprites.png) repeat-x 0 0;
 	text-transform:uppercase;
 	background-color:#008fd1;
-	margin:0px;
+	margin: 0px !important;
 	list-style:none;
 }
- 
 
 .navigation-secondary ul li ul li {/*targets second-level menu links-removes all caps, adds padding to left, negative margins compensate for extra padding**/
 	text-transform:none;
@@ -669,18 +660,22 @@ border:0px;
 }
   
 // right nav spiff 
-.sidebar .right-spiff {
-  background-color:rgba(232,238,225,0.7);
-  padding:10px 10px 1px 10px;
-}
-.sidebar .block-menu.right-spiff {
-  background-color: transparent;
-  padding:0 0 0 2px;
-  h2, h3 {
-    color: #EE5B14;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.sidebar{
+  .block.right-spiff {
+    background-color:rgba(232,238,225,0.7);
+    padding:10px 10px 1px 10px;
+    margin-bottom: 0;
+    h2, h3 {
+      color: #EE5B14;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  }
+  .block-menu.right-spiff {
+    background-color: transparent;
+    padding:0 0 0 2px;
+    margin-bottom: 2px;
   }
 }
 
@@ -728,7 +723,8 @@ ul.pager{
 }
  
 #content div.views-row {
-   padding-bottom:20px;
+  clear: both;
+  padding-bottom:20px;
 }
 
 li.arrow  {
@@ -1111,12 +1107,19 @@ float:right;
     text-decoration: none;
 }
 // Clusters
-.views-row .profile img {
+.views-row {
+  .img, .profile-image {
     float: left;
     margin: 0 20px 20px 0;
-}
-
-.profile h2 > div {
-    float: left;
-    margin-right: 0.3em;
+  }
+  .right.profile {
+    img {
+      float: left;
+      margin: 0 0 20px 20px;
+    }
+  }
+  .profile h2 > div {
+      float: left;
+      margin-right: 0.3em;
+  }
 }
