@@ -149,7 +149,6 @@ function unca_student_organization_field_default_field_instances() {
   t('Body');
   t('Student Organization Link');
   t('Student Organizations');
-  t('Teaser');
 
   return $field_instances;
 }
