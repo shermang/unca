@@ -13,7 +13,7 @@ function unca_text_formats_wysiwyg_default_profiles() {
   // Exported profile: filtered_html
   $profiles['filtered_html'] = array(
     'format' => 'filtered_html',
-    'editor' => 'tinymce',
+    'editor' => 'ckeditor',
     'settings' => array(
       'default' => 1,
       'user_choose' => 0,
@@ -22,48 +22,39 @@ function unca_text_formats_wysiwyg_default_profiles() {
       'language' => 'en',
       'buttons' => array(
         'default' => array(
-          'bold' => 1,
-          'italic' => 1,
-          'underline' => 1,
-          'justifyright' => 1,
-          'bullist' => 1,
-          'numlist' => 1,
-          'outdent' => 1,
-          'indent' => 1,
-          'undo' => 1,
-          'redo' => 1,
-          'link' => 1,
-          'unlink' => 1,
-          'anchor' => 1,
-          'image' => 1,
-          'cleanup' => 1,
-          'styleselect' => 1,
-          'fontselect' => 1,
-          'fontsizeselect' => 1,
-          'forecolor' => 1,
-          'sup' => 1,
-          'sub' => 1,
-          'blockquote' => 1,
-          'hr' => 1,
-          'cut' => 1,
-          'copy' => 1,
-          'paste' => 1,
-          'removeformat' => 1,
+          'Bold' => 1,
+          'Italic' => 1,
+          'Underline' => 1,
+          'Strike' => 1,
+          'JustifyLeft' => 1,
+          'JustifyCenter' => 1,
+          'JustifyRight' => 1,
+          'BulletedList' => 1,
+          'NumberedList' => 1,
+          'Outdent' => 1,
+          'Indent' => 1,
+          'Undo' => 1,
+          'Redo' => 1,
+          'Link' => 1,
+          'Unlink' => 1,
+          'Anchor' => 1,
+          'Image' => 1,
+          'Superscript' => 1,
+          'Subscript' => 1,
+          'Blockquote' => 1,
+          'Source' => 1,
+          'HorizontalRule' => 1,
+          'Cut' => 1,
+          'Copy' => 1,
+          'Paste' => 1,
+          'PasteText' => 1,
+          'PasteFromWord' => 1,
+          'Format' => 1,
+          'Styles' => 1,
+          'Table' => 1,
         ),
-        'advimage' => array(
-          'advimage' => 1,
-        ),
-        'contextmenu' => array(
-          'contextmenu' => 1,
-        ),
-        'paste' => array(
-          'pastetext' => 1,
-        ),
-        'table' => array(
-          'tablecontrols' => 1,
-        ),
-        'imce' => array(
-          'imce' => 1,
+        'drupal' => array(
+          'media' => 1,
         ),
       ),
       'toolbar_loc' => 'top',
@@ -74,24 +65,24 @@ function unca_text_formats_wysiwyg_default_profiles() {
       'preformatted' => 0,
       'convert_fonts_to_spans' => 1,
       'remove_linebreaks' => 1,
-      'apply_source_formatting' => 1,
-      'paste_auto_cleanup_on_paste' => 1,
+      'apply_source_formatting' => 0,
+      'paste_auto_cleanup_on_paste' => 0,
       'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
       'css_setting' => 'self',
-      'css_path' => 'themes/unca_zenfoundation/css/global.css, themes/unca_zenfoundation/css/page.tpl.css, themes/unca_zenfoundation/css/editor.css',
-      'css_classes' => 'Notification=notification
-Alert=alert
-Critical Information=critical
-Column=column
-Drop Cap=dropcap
-Float Left=left
-Float Right=right
-Checkmark SPIFF=footer-spiff-apply
-Eye SPIFF=footer-spiff-tour
-Question SPIFF=footer-spiff-question
-Facebook SPIFF=footer-spiff-facebook
-Email SPIFF=footer-spiff-mailinglist
-Captioned Image=caption',
+      'css_path' => 'css/editor.css',
+      'css_classes' => 'Notification=div.notification
+Alert=div.alert
+Critical Information=div.critical
+Column=div.column
+Drop Cap=div.dropcap
+Float Left=div.left
+Float Right=div.right
+Checkmark SPIFF=div.footer-spiff-apply
+Eye SPIFF=div.footer-spiff-tour
+Question SPIFF=div.footer-spiff-question
+Facebook SPIFF=div.footer-spiff-facebook
+Email SPIFF=div.footer-spiff-mailinglist
+Captioned Image=div.caption',
     ),
     'rdf_mapping' => array(),
   );
@@ -99,7 +90,7 @@ Captioned Image=caption',
   // Exported profile: full_html
   $profiles['full_html'] = array(
     'format' => 'full_html',
-    'editor' => 'tinymce',
+    'editor' => 'ckeditor',
     'settings' => FALSE,
     'rdf_mapping' => array(),
   );
