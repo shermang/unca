@@ -1135,3 +1135,15 @@ float:right;
   }
 }
 
+// --------------------------------------------- Policies -------------------------------------------------------------
+.page-policies{
+  .view-filters {
+    input[type="text"] { height: 1em; }
+  }
+  .views-row {
+    padding-bottom: 0;
+    ul {
+      list-style: disc outside none;
+    }
+  }
+}

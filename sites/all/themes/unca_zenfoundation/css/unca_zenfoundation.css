@@ -12223,6 +12223,16 @@ Notes:  Adds support for slideshows
   margin-right: 0.3em;
 }
 
+.page-policies .view-filters input[type="text"] {
+  height: 1em;
+}
+.page-policies .views-row {
+  padding-bottom: 0;
+}
+.page-policies .views-row ul {
+  list-style: disc outside none;
+}
+
 /**
  * @file
  * Print styling
