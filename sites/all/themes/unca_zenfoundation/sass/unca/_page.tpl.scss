@@ -535,6 +535,7 @@ Notes:  Adds icon to all pdf links
 }
 
 /* calendar graphics */
+
 .calendar-graphic {
 	background:transparent url(../images/calendar.png) no-repeat scroll left top;
 	display:block;
@@ -574,7 +575,6 @@ left:-1px;
 .calendar-text {
 margin:0 0 0 0;
 display:block;
-width:155px;
 float:left;
 }
  
@@ -1157,5 +1157,18 @@ float:right;
   .profile h2 > div {
       float: left;
       margin-right: 0.3em;
+  }
+}
+
+// --------------------------------------------- Policies -------------------------------------------------------------
+.page-policies{
+  .view-filters {
+    input[type="text"] { height: 1em; }
+  }
+  .views-row {
+    padding-bottom: 0;
+    ul {
+      list-style: disc outside none;
+    }
   }
 }

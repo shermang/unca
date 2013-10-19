@@ -7517,6 +7517,7 @@ nav.navigation .block-search input {
 
   .top-bar-search {
     float: right;
+    width: 299px;
   }
   .top-bar-search .has-form {
     background-color: transparent;
@@ -7545,6 +7546,7 @@ nav.navigation .block-search input {
 
   .top-bar-search {
     float: right;
+    width: 299px;
   }
   .top-bar-search .has-form {
     background-color: transparent;
@@ -7570,6 +7572,7 @@ nav.navigation .block-search input {
 }
 .lt-ie9 .top-bar-search {
   float: right;
+  width: 299px;
 }
 .lt-ie9 .top-bar-search .has-form {
   background-color: transparent;
@@ -10390,8 +10393,8 @@ a.footer-spiff-map {
 }
 
 .container {
-  width: 960px;
   margin: 0 auto;
+  width: 960px;
 }
 
 .grid_1,
@@ -10417,6 +10420,23 @@ a.footer-spiff-map {
 
 .grid_4 {
   width: 960px;
+}
+
+.small-6 {
+  width: 100%;
+}
+@media only screen and (min-width: 64em) {
+  .small-6 {
+    width: 50%;
+  }
+}
+@media print {
+  .small-6 {
+    width: 50%;
+  }
+}
+.small-6 .lt-ie9 {
+  width: 50%;
 }
 
 .prepend_1 {
@@ -10493,22 +10513,30 @@ h2.section-heading {
 #homepage-news {
   float: left;
   padding: 0px 20px 0px 20px;
-}
-
-#homepage-events,
-#homepage-news {
-  width: 211px;
   font-size: 11px;
 }
 
 #homepage-events li,
-#homepage-news li {
+#homepage-news li,
+.homepage-events li,
+.homepage-news li {
   border-bottom: solid #ddd 1px;
-  padding-bottom: 10px;
+  padding: 5px 10px 10px 10px;
+  clear: both;
+  display: inline-block;
+  width: 100%;
+}
+#homepage-events li .views-field-title,
+#homepage-news li .views-field-title,
+.homepage-events li .views-field-title,
+.homepage-news li .views-field-title {
+  margin: 0;
 }
 
 #homepage-events li.last,
-#homepage-news li.last {
+#homepage-news li.last,
+.homepage-events li.last,
+.homepage-news li.last {
   border: 0;
 }
 
@@ -11613,7 +11641,6 @@ Notes:  Adds icon to all pdf links
 .calendar-text {
   margin: 0 0 0 0;
   display: block;
-  width: 155px;
   float: left;
 }
 
@@ -12184,6 +12211,16 @@ Notes:  Adds support for slideshows
 .views-row .profile h2 > div {
   float: left;
   margin-right: 0.3em;
+}
+
+.page-policies .view-filters input[type="text"] {
+  height: 1em;
+}
+.page-policies .views-row {
+  padding-bottom: 0;
+}
+.page-policies .views-row ul {
+  list-style: disc outside none;
 }
 
 /**
