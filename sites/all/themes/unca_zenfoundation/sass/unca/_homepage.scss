@@ -67,11 +67,14 @@ font-size:11px;
 #homepage-news li,
 .homepage-events li,
 .homepage-news li {
-	border-bottom:solid #ddd 1px;
-	padding: 5px 10px 10px 10px;
-    clear: both;
-    display: inline-block;
-	width: 100%;	
+  border-bottom:solid #ddd 1px;
+  padding: 5px 10px 10px 10px;
+  clear: both;
+  display: inline-block;
+  width: 100%;
+	.views-field-title {
+	  margin: 0;
+	}	
 }
 
 #homepage-events li.last,
