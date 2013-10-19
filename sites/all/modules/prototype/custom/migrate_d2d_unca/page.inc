@@ -25,7 +25,9 @@ class UNCAPageMigration extends UNCANodeMigration {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
     }
-
   }
 
+  public function prepare(stdClass $entity, stdClass $row){
+    parent::prepare($entity, $row);
+  }
 }

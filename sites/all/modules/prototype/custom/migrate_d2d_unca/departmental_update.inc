@@ -13,4 +13,8 @@ class UNCADepartmentalUpdateMigration extends UNCANodeMigration {
 
     // no terms field noted in build spec
   }
+
+  public function prepare(stdClass $entity, stdClass $row){
+    parent::prepare($entity, $row);
+  }
 }

@@ -30,4 +30,8 @@ class UNCAPolicyMigration extends UNCANodeMigration {
       ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('responsible_office'))
       ->arguments(array('source_type' => 'tid'));
   }
+
+  public function prepare(stdClass $entity, stdClass $row){
+    parent::prepare($entity, $row);
+  }
 }
