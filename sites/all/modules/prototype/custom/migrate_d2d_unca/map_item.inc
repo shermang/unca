@@ -74,21 +74,9 @@ class UNCAMapItemMigration extends UNCANodeMigration {
     return $query;
   }
 
-//  public function prepare(stdClass $entity, stdClass $row) {
-//    parent::prepare($entity, $row);
-//    $query = Database::getConnection('default', 'legacy')
-//      ->select('location_instance', 'li')
-//      ->fields('li')
-//      ->condition('nid',$row->nid,'=')
-//      ->condition('vid',$row->vid,'=');
-//     $location_instance = $query->execute()->fetchAll();
-//
-//    $query = Database::getConnection('default', 'legacy')
-//      ->select('location', 'l')
-//      ->fields('l')
-//      ->condition('lid',$location_instance[0]->lid,'=');
-//    $location = $query->execute()->fetchAll();
-//  }
+  public function prepare(stdClass $entity, stdClass $row) {
+    parent::prepare($entity, $row);
+  }
 
 }
 

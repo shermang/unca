@@ -22,4 +22,8 @@ class UNCAIframeMigration extends UNCANodeMigration {
       return FALSE;
     }
   }
+
+  public function prepare(stdClass $entity, stdClass $row){
+    parent::prepare($entity, $row);
+  }
 }
