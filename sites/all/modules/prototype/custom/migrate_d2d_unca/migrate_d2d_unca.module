@@ -290,13 +290,13 @@ function migrate_d2d_unca_register_migrations() {
      ),
 
     // Webform CT - Nodes
-        array(
-	      'class_name' => 'UNCAWebformNodeMigration',
-	      'description' => t('Migration of Webform nodes from Drupal 6'),
-	      'machine_name' => 'UNCAWebFormNode',
-	      'source_type' => 'webform',
-	      'destination_type' => 'webform',
-	    ),
+//        array(
+//	      'class_name' => 'UNCAWebformNodeMigration',
+//	      'description' => t('Migration of Webform nodes from Drupal 6'),
+//	      'machine_name' => 'UNCAWebFormNode',
+//	      'source_type' => 'webform',
+//	      'destination_type' => 'webform',
+//	    ),
 
   );
   // // Tell the node migrations where the users are coming from, so they can
@@ -311,20 +311,20 @@ function migrate_d2d_unca_register_migrations() {
   }
 
   // Menu migrations -- same requirements as users
-  $menu_arguments = $common_arguments + array(
-      'description' => t('Migration of menus from Drupal 6'),
-      'machine_name' => 'UNCAMenu',
-    );
+//  $menu_arguments = $common_arguments + array(
+//      'description' => t('Migration of menus from Drupal 6'),
+//      'machine_name' => 'UNCAMenu',
+//    );
 
   // We just use the migrate_d2d D6 migration class as-is.
-  Migration::registerMigration('UNCADrupalMenu6Migration', $menu_arguments['machine_name'],
-    $menu_arguments);
+//  Migration::registerMigration('UNCADrupalMenu6Migration', $menu_arguments['machine_name'],
+//    $menu_arguments);
 
   // Menu links migrations -- basic requirements, plus must set up menu dependency
   $menu_links_arguments = $common_arguments + array(
       'description' => t('Migration of menu links from Drupal 6'),
       'machine_name' => 'UNCAMenuLinks',
-      'menu_migration' => $menu_arguments['machine_name'],
+//      'menu_migration' => $menu_arguments['machine_name'],
       'node_migrations' => unca_migrations_array($node_arguments),
       'term_migrations' => unca_migrations_array($vocabulary_arguments),
     );
