@@ -60,29 +60,30 @@ border-bottom:solid #fff 1px;
 #homepage-news {
 float:left;
 padding:0px 20px 0px 20px;
-}
-
-#homepage-events,
-#homepage-news {
-width:211px;
 font-size:11px;
 }
 
 #homepage-events li,
-#homepage-news li {
-border-bottom:solid #ddd 1px;
-padding-bottom:10px;
+#homepage-news li,
+.homepage-events li,
+.homepage-news li {
+	border-bottom:solid #ddd 1px;
+	padding: 5px 10px 10px 10px;
+    clear: both;
+    display: inline-block;
+	width: 100%;	
 }
 
 #homepage-events li.last,
-#homepage-news li.last {
-border:0;
+#homepage-news li.last,
+.homepage-events li.last,
+.homepage-news li.last {
+  border:0;
 }
 
 #homepage-campus-updates, .front > .block-views-campus_updates-block_1 {
    float:left;
    padding:0px;
-// width:458px;
 } 
 
 #homepage-campus-updates h3, .front > .block-views-campus_updates-block_1 h3 {
