@@ -25,6 +25,8 @@ class UNCAWebformNodeMigration extends UNCANodeMigration {
 
   public function prepare($entity, $row) {
 
+    parent::prepare($entity, $row);
+
     // Load d6 Webform data (migrate_d2d does not pick up this data automatically)
     $qry = Database::getConnection('default', $this->sourceConnection)
                      ->select('webform', 'wf');

@@ -1,6 +1,6 @@
 <?php
 
-class UNCADestinationMigration extends DrupalNode6Migration {
+class UNCADestinationMigration extends UNCANodeMigration {
   public function __construct(array $arguments) {
 
     parent::__construct($arguments);
@@ -32,6 +32,10 @@ class UNCADestinationMigration extends DrupalNode6Migration {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
     }
+  }
+
+  public function prepare(stdClass $entity, stdClass $row){
+    parent::prepare($entity, $row);
   }
 
 }

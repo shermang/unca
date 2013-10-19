@@ -48,4 +48,8 @@ class UNCAProjectMigration extends UNCANodeMigration {
     }
   }
 
+  public function prepare(stdClass $entity, stdClass $row){
+    parent::prepare($entity, $row);
+  }
+
 }
