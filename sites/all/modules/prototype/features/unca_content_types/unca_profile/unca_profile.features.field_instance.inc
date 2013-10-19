@@ -263,46 +263,6 @@ function unca_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-profile-field_teaser_text'
-  $field_instances['node-profile-field_teaser_text'] = array(
-    'bundle' => 'profile',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_teaser_text',
-    'label' => 'Teaser',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-profiles-body'
   $field_instances['node-profiles-body'] = array(
     'bundle' => 'profiles',
@@ -729,7 +689,6 @@ function unca_profile_field_default_field_instances() {
   t('Profile Weight');
   t('Subheading');
   t('Suffix');
-  t('Teaser');
 
   return $field_instances;
 }

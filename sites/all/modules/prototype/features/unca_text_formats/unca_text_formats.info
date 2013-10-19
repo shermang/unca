@@ -6,6 +6,7 @@ version = 7.x-1.0
 project = unca_text_formats
 dependencies[] = features
 dependencies[] = filter
+dependencies[] = media
 dependencies[] = wysiwyg
 dependencies[] = wysiwyg_spellcheck
 features[features_api][] = api:2

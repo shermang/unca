@@ -50,7 +50,7 @@ function unca_student_project_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 4,
     ),
   );
 
@@ -90,7 +90,7 @@ function unca_student_project_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 35,
+      'weight' => 2,
     ),
   );
 
@@ -129,7 +129,7 @@ function unca_student_project_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 41,
+      'weight' => 7,
     ),
   );
 
@@ -174,6 +174,7 @@ function unca_student_project_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'm/d/Y - H:i:s',
         'input_format_custom' => '',
@@ -182,7 +183,7 @@ function unca_student_project_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
-      'weight' => 42,
+      'weight' => 8,
     ),
   );
 
@@ -241,7 +242,7 @@ function unca_student_project_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 33,
+      'weight' => 1,
     ),
   );
 
@@ -295,7 +296,7 @@ function unca_student_project_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 37,
+      'weight' => 3,
     ),
   );
 
@@ -335,7 +336,7 @@ function unca_student_project_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 40,
+      'weight' => 6,
     ),
   );
 
@@ -390,7 +391,7 @@ function unca_student_project_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 39,
+      'weight' => 5,
     ),
   );
 
