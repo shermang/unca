@@ -7449,7 +7449,7 @@ nav.navigation .block-search input {
 }
 .top-bar.expanded li > a {
   color: #FFFFFF;
-  font-size: 11px;
+  font-size: 1.16em;
   font-weight: normal;
 }
 .top-bar.expanded .top-bar-primary li {
@@ -11081,25 +11081,8 @@ Added back in by Luke Withrow on 2013-05-15
 @media only screen and (min-width: 960px) {
   #navigation-primary {
     margin: 0;
+    max-width: 690px;
     padding: 0;
-    background: #eeeeee;
-    /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2M0YzRjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhNGE0YTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top, #eeeeee 0%, white 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-    /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(25%, white), color-stop(25%, #85c6de), color-stop(75%, #85c6de), color-stop(75%, #c4c4c4), color-stop(100%, #a4a4a4));
-    /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #eeeeee 0%, white 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-    /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #eeeeee 0%, white 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-    /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #eeeeee 0%, white 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-    /* IE10+ */
-    background: linear-gradient(to bottom, #eeeeee 0%, #ffffff 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-    /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#a4a4a4',GradientType=0 );
-    /* IE6-8 */
   }
 
   #navigation-primary li.first {
@@ -11169,25 +11152,8 @@ Added back in by Luke Withrow on 2013-05-15
 @media print {
   #navigation-primary {
     margin: 0;
+    max-width: 690px;
     padding: 0;
-    background: #eeeeee;
-    /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2M0YzRjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhNGE0YTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top, #eeeeee 0%, white 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-    /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(25%, white), color-stop(25%, #85c6de), color-stop(75%, #85c6de), color-stop(75%, #c4c4c4), color-stop(100%, #a4a4a4));
-    /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #eeeeee 0%, white 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-    /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #eeeeee 0%, white 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-    /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #eeeeee 0%, white 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-    /* IE10+ */
-    background: linear-gradient(to bottom, #eeeeee 0%, #ffffff 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-    /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#a4a4a4',GradientType=0 );
-    /* IE6-8 */
   }
 
   #navigation-primary li.first {
@@ -11256,25 +11222,8 @@ Added back in by Luke Withrow on 2013-05-15
 }
 .lt-ie9 #navigation-primary {
   margin: 0;
+  max-width: 690px;
   padding: 0;
-  background: #eeeeee;
-  /* Old browsers */
-  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2M0YzRjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhNGE0YTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  background: -moz-linear-gradient(top, #eeeeee 0%, white 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(25%, white), color-stop(25%, #85c6de), color-stop(75%, #85c6de), color-stop(75%, #c4c4c4), color-stop(100%, #a4a4a4));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #eeeeee 0%, white 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #eeeeee 0%, white 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #eeeeee 0%, white 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, #eeeeee 0%, #ffffff 25%, #85c6de 25%, #85c6de 75%, #c4c4c4 75%, #a4a4a4 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#a4a4a4',GradientType=0 );
-  /* IE6-8 */
 }
 .lt-ie9 #navigation-primary li.first {
   margin-left: 0px;
@@ -11337,17 +11286,44 @@ Added back in by Luke Withrow on 2013-05-15
   background-color: transparent;
 }
 
+@media only screen and (min-width: 960px) {
+  .top-bar #search {
+    padding: 2px 0;
+  }
+}
+@media print {
+  .top-bar #search {
+    padding: 2px 0;
+  }
+}
+.top-bar #search .lt-ie9 {
+  padding: 2px 0;
+}
 #search .container-inline > div {
   display: inline-block;
   margin: 0 0 0.25em 0;
   vertical-align: top;
 }
 #search .form-item-search-block-form input.form-text {
-  height: 24px;
+  height: 22px;
   padding: 0;
+  width: 24em;
+}
+@media only screen and (min-width: 960px) {
+  #search .form-item-search-block-form input.form-text {
+    width: 190px;
+  }
+}
+@media print {
+  #search .form-item-search-block-form input.form-text {
+    width: 190px;
+  }
+}
+#search .form-item-search-block-form input.form-text .lt-ie9 {
+  width: 190px;
 }
 #search .form-actions .form-submit {
-  height: 24px;
+  height: 22px;
   top: 0;
   background-color: #7f7f7f;
   border-color: #7f7f7f;
@@ -11355,7 +11331,7 @@ Added back in by Luke Withrow on 2013-05-15
   border-width: 1px;
   font-size: 10px;
   font-weight: bold;
-  padding: 4px 15px 5px 15px;
+  padding: 1px 15px 1px 15px;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -11374,6 +11350,16 @@ Added back in by Luke Withrow on 2013-05-15
   color: #fff;
   display: inline-block;
   width: 100%;
+}
+
+.sidebar .navigation-secondary a.contextual-links-trigger {
+  display: none;
+  padding: 0 2px;
+  width: 28px;
+}
+
+.sidebar .navigation-secondary a.contextual-links-trigger.contextual-links-trigger-active {
+  display: block;
 }
 
 .navigation-secondary a:hover {
@@ -11401,6 +11387,10 @@ Added back in by Luke Withrow on 2013-05-15
   background-color: #008fd1;
   margin: 0px !important;
   list-style: none;
+}
+
+.navigation-secondary ul.contextual-links li {
+  background: none transparent;
 }
 
 .navigation-secondary ul li ul li {

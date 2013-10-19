@@ -13,6 +13,13 @@ function unca_student_project_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_student_project';
+  $strongarm->value = 'edit-scheduler';
+  $export['additional_settings__active_tab_student_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_student_project';
   $strongarm->value = 0;
   $export['comment_anonymous_student_project'] = $strongarm;
@@ -96,10 +103,10 @@ function unca_student_project_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '9',
         ),
       ),
       'display' => array(),
@@ -112,7 +119,7 @@ function unca_student_project_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_student_project';
   $strongarm->value = array(
-    0 => 'main-menu',
+    0 => 'menu-secondary-navigation---prot',
   );
   $export['menu_options_student_project'] = $strongarm;
 
@@ -145,6 +152,62 @@ function unca_student_project_strongarm() {
   $strongarm->name = 'node_submitted_student_project';
   $strongarm->value = 0;
   $export['node_submitted_student_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_student_project_pattern';
+  $strongarm->value = 'projects/student/[node:title]';
+  $export['pathauto_node_student_project_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_enable_student_project';
+  $strongarm->value = 0;
+  $export['scheduler_publish_enable_student_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_required_student_project';
+  $strongarm->value = 0;
+  $export['scheduler_publish_required_student_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_revision_student_project';
+  $strongarm->value = 0;
+  $export['scheduler_publish_revision_student_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_student_project';
+  $strongarm->value = 0;
+  $export['scheduler_publish_touch_student_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_enable_student_project';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_enable_student_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_required_student_project';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_required_student_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_revision_student_project';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_revision_student_project'] = $strongarm;
 
   return $export;
 }
