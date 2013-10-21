@@ -51,7 +51,7 @@ function unca_custom_install() {
       ))
       ->execute();
   }
-  variable_set('jquery_update_jquery_version', '1.8');
+  variable_set('jquery_update_jquery_version', '1.7');
 }
 
 /**
@@ -93,4 +93,58 @@ function unca_custom_update_7001() {
       ))
       ->execute();
   }
+}
+/**
+ * Update the jQuery version to 1.7 and change more block placements.
+ */
+function unca_custom_update_7002() {
+  $blocks = array(
+    array(
+      'module' => 'system',
+      'delta' => 'navigation',
+      'theme' => 'unca_zenfoundation',
+      'status' => 1,
+      'weight' => -1,
+      'region' => -1,
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'powered-by',
+      'theme' => 'unca_zenfoundation',
+      'status' => 1,
+      'weight' => -1,
+      'region' => -1,
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'user',
+      'delta' => 'login',
+      'theme' => 'unca_zenfoundation',
+      'status' => 1,
+      'weight' => -1,
+      'region' => -1,
+      'pages' => '',
+      'cache' => -1,
+    ),
+  );
+  foreach ($blocks as $block) {
+    db_merge('block')
+      ->key(array('module' => $block['module'], 'delta' => $block['delta'], 'theme' => $block['theme']))
+      ->fields(array(
+        'module' => $block['module'],
+        'delta' => $block['delta'],
+        'theme' => $block['theme'],
+        'status' => $block['status'],
+        'weight' => $block['weight'],
+        'region' => $block['region'],
+        'pages' => $block['pages'],
+        'cache' => $block['cache'],
+      ))
+      ->execute();
+  }
+
+  variable_set('jquery_update_jquery_version', '1.7');
 }
