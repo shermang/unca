@@ -1165,8 +1165,8 @@ float:right;
   .view-filters {
     input[type="text"] { height: 1em; }
   }
-  .views-row {
-    padding-bottom: 0;
+  #content div.views-row {
+    padding-bottom: 0 !important;
     ul {
       list-style: disc outside none;
     }

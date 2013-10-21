@@ -12216,10 +12216,10 @@ Notes:  Adds support for slideshows
 .page-policies .view-filters input[type="text"] {
   height: 1em;
 }
-.page-policies .views-row {
-  padding-bottom: 0;
+.page-policies #content div.views-row {
+  padding-bottom: 0 !important;
 }
-.page-policies .views-row ul {
+.page-policies #content div.views-row ul {
   list-style: disc outside none;
 }
 
