@@ -49,8 +49,7 @@ class UNCACourseMigration extends UNCANodeMigration {
   }
 
   public function prepare($entity, $row) {
-    drush_print_r($row);
-    drush_print_r($entity);
+    parent::prepare($entity, $row);
 
     // Manually set date value (migrate_d2d was not handling, for unkown reason)
     if($row->field_ending_date) {

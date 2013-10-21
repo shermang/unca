@@ -1,6 +1,6 @@
 <?php
 
-class UNCACampusUpdateMigration extends DrupalNode6Migration {
+class UNCACampusUpdateMigration extends UNCANodeMigration {
 
   public function __construct(array $arguments) {
 
@@ -27,4 +27,7 @@ class UNCACampusUpdateMigration extends DrupalNode6Migration {
     }
   }
 
+  public function prepare(stdClass $entity, stdClass $row){
+    parent::prepare($entity, $row);
+  }
 }

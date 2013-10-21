@@ -1,6 +1,6 @@
 <?php
 
-class UNCAClusterMigration extends DrupalNode6Migration {
+class UNCAClusterMigration extends UNCANodeMigration {
   public function __construct(array $arguments) {
 
     parent::__construct($arguments);
@@ -25,6 +25,8 @@ class UNCAClusterMigration extends DrupalNode6Migration {
   }
 
   public function prepare($entity, $row) {
+    parent::prepare($entity, $row);
+
     // Manually set date value (migrate_d2d was not handling, for unkown reason)
     if($row->field_launch_date) {
       $field_date = array(

@@ -19,7 +19,7 @@
   //.menu-icon span {
   //  font-size: 16px;
   //}
-  //.top-bar-search {
+  // .top-bar-search {
   //  @extend .right;
   //  input,
   //  .button {
@@ -52,7 +52,7 @@
       background-color: $topbar-dropdown-bg;
       > a {
         color: #FFFFFF;
-        font-size: 11px;
+        font-size: 1.16em;
         font-weight: normal;
       }
     }
@@ -130,6 +130,7 @@
   }
   .top-bar-search {
     float: right;
+    width: 299px;
     .has-form {
       background-color: transparent;
       height: auto;
