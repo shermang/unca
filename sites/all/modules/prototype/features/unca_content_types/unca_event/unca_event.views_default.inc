@@ -106,17 +106,26 @@ function unca_event_views_default_views() {
 
   /* Display: Block (2) */
   $handler = $view->new_display('block', 'Block (2)', 'block_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'homepage-events';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '2';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'homepage-events';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Event Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['ui_name'] = 'Event Date';
-  $handler->display->display_options['fields']['field_date']['label'] = 'Event Date';
+  $handler->display->display_options['fields']['field_date']['label'] = '';
   $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_date']['settings'] = array(
     'format_type' => 'short',
@@ -129,14 +138,23 @@ function unca_event_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '75';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Link */
   $handler->display->display_options['fields']['field_link_value']['id'] = 'field_link_value';
   $handler->display->display_options['fields']['field_link_value']['table'] = 'field_data_field_link';
   $handler->display->display_options['fields']['field_link_value']['field'] = 'field_link';
   $handler->display->display_options['fields']['field_link_value']['label'] = '';
+  $handler->display->display_options['fields']['field_link_value']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_link_value']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_link_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_value']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_link_value']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_link_value']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_link_value']['type'] = 'link_plain';
   $handler->display->display_options['block_description'] = 'Events Block (2)';
 
   /* Display: Block (5) */
