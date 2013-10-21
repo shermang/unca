@@ -10993,6 +10993,14 @@ Added back in by Luke Withrow on 2013-05-15
   list-style-type: none;
   display: block;
 }
+#footer ul.contextual-links {
+  display: none;
+  margin: 0;
+  text-align: left;
+}
+#footer ul.contextual-links:hover {
+  display: block;
+}
 
 #footer li {
   border-right: solid #4572c5 1px;
