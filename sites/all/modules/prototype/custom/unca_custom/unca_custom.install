@@ -35,6 +35,16 @@ function unca_custom_install() {
       'pages' => '',
       'cache' => -1,
     ),
+    array(
+      'module' => 'menu',
+      'delta' => 'menu-global-footer-menu',
+      'theme' => 'unca_zenfoundation',
+      'status' => 1,
+      'weight' => -1,
+      'region' => 'footer',
+      'pages' => '',
+      'cache' => -1,
+    ),
   );
   foreach ($blocks as $block) {
     db_merge('block')
@@ -147,4 +157,38 @@ function unca_custom_update_7002() {
   }
 
   variable_set('jquery_update_jquery_version', '1.7');
+}
+
+/**
+ * Placing the global footer menu in the footer region.
+ */
+function unca_custom_update_7003() {
+  $blocks = array(
+    array(
+      'module' => 'menu',
+      'delta' => 'menu-global-footer-menu',
+      'theme' => 'unca_zenfoundation',
+      'status' => 1,
+      'weight' => -1,
+      'region' => 'footer',
+      'pages' => '',
+      'cache' => -1,
+    ),
+  );
+  foreach ($blocks as $block) {
+    db_merge('block')
+      ->key(array('module' => $block['module'], 'delta' => $block['delta'], 'theme' => $block['theme']))
+      ->fields(array(
+        'module' => $block['module'],
+        'delta' => $block['delta'],
+        'theme' => $block['theme'],
+        'status' => $block['status'],
+        'weight' => $block['weight'],
+        'region' => $block['region'],
+        'pages' => $block['pages'],
+        'cache' => $block['cache'],
+      ))
+      ->execute();
+  }
+
 }
