@@ -36,6 +36,8 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -158,7 +160,7 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node_revision'] = TRUE;
-  /* Field: Content: Subheading */
+  /* Field: Content: Caption */
   $handler->display->display_options['fields']['field_subheading']['id'] = 'field_subheading';
   $handler->display->display_options['fields']['field_subheading']['table'] = 'field_data_field_subheading';
   $handler->display->display_options['fields']['field_subheading']['field'] = 'field_subheading';
