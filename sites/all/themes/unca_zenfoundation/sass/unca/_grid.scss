@@ -1,19 +1,28 @@
 .container {
-width:960px; 
-margin:0 auto;}
+	margin:0 auto;
+	width:960px; 
+}
 
 .grid_1,
 .grid_2,
 .grid_3,
 .grid_4 { 
-float:left; 
-padding:0;
-display:inline;}
+	float:left; 
+	padding:0;
+	display:inline;
+}
 
 .grid_1 {width:240px;}
 .grid_2 {width:480px;}
 .grid_3 {width:720px;}
 .grid_4 {width:960px;}
+
+.small-6 {
+  width: 100%;
+  @include respond-to($tablet) {
+    width: 50%;
+  }	
+}
 
 .prepend_1 {margin-left:240px;}
 .prepend_2 {margin-left:480px;}

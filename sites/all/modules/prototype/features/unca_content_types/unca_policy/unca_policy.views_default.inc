@@ -23,6 +23,7 @@ function unca_policy_views_default_views() {
   /* Display: Defaults */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->display->display_options['title'] = 'UNC Asheville Policies';
+  $handler->display->display_options['css_class'] = 'view-Policies view-id-Policies';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -47,10 +48,16 @@ e.style.display=\'block\';
   $handler->display->display_options['fields']['field_approved_by_value']['table'] = 'field_data_field_policy_approved_by';
   $handler->display->display_options['fields']['field_approved_by_value']['field'] = 'field_policy_approved_by';
   $handler->display->display_options['fields']['field_approved_by_value']['label'] = 'Approved By';
+  $handler->display->display_options['fields']['field_approved_by_value']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_approved_by_value']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_approved_by_value']['element_default_classes'] = FALSE;
   /* Field: Content: Associated Forms */
   $handler->display->display_options['fields']['field_associated_forms_value']['id'] = 'field_associated_forms_value';
   $handler->display->display_options['fields']['field_associated_forms_value']['table'] = 'field_data_field_policy_associated_forms';
   $handler->display->display_options['fields']['field_associated_forms_value']['field'] = 'field_policy_associated_forms';
+  $handler->display->display_options['fields']['field_associated_forms_value']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_associated_forms_value']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_associated_forms_value']['element_default_classes'] = FALSE;
   /* Field: Content: Policy Number */
   $handler->display->display_options['fields']['field_policy_number_value']['id'] = 'field_policy_number_value';
   $handler->display->display_options['fields']['field_policy_number_value']['table'] = 'field_data_field_policy_number';
@@ -59,6 +66,9 @@ e.style.display=\'block\';
   $handler->display->display_options['fields']['field_policy_type_value']['id'] = 'field_policy_type_value';
   $handler->display->display_options['fields']['field_policy_type_value']['table'] = 'field_data_field_policy_type';
   $handler->display->display_options['fields']['field_policy_type_value']['field'] = 'field_policy_type';
+  $handler->display->display_options['fields']['field_policy_type_value']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_policy_type_value']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_policy_type_value']['element_default_classes'] = FALSE;
   /* Field: Content: Reference Materials */
   $handler->display->display_options['fields']['field_reference_materials_value']['id'] = 'field_reference_materials_value';
   $handler->display->display_options['fields']['field_reference_materials_value']['table'] = 'field_data_field_policy_reference_materials';
@@ -72,6 +82,8 @@ e.style.display=\'block\';
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -80,6 +92,16 @@ e.style.display=\'block\';
   $handler->display->display_options['fields']['field_approval_date_value']['id'] = 'field_approval_date_value';
   $handler->display->display_options['fields']['field_approval_date_value']['table'] = 'field_data_field_policy_approval_date';
   $handler->display->display_options['fields']['field_approval_date_value']['field'] = 'field_policy_approval_date';
+  $handler->display->display_options['fields']['field_approval_date_value']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_approval_date_value']['element_class'] = 'date-display-single';
+  $handler->display->display_options['fields']['field_approval_date_value']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_approval_date_value']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Field: Content: Origination Date */
   $handler->display->display_options['fields']['field_date_issued_value']['id'] = 'field_date_issued_value';
   $handler->display->display_options['fields']['field_date_issued_value']['table'] = 'field_data_field_policy_origination_date';
