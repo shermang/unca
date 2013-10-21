@@ -1,0 +1,271 @@
+/* footer spiffs 
+Last Updated on: 2010-10-18
+Last Updated by: malawren@unca.edu
+ */
+#bottom-spiffs ul {
+margin-bottom:-5px;
+}
+
+body {
+  background: url(../images/background-tile.png) repeat scroll 0 0 #003C77;
+  color: #333333;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #CCCCCC;
+    border-image: none;
+    border-right: 0 solid #CCCCCC;
+    border-style: solid;
+    border-width: 1px 0 0;
+    clear: both;
+    height: 0;
+}
+
+h1 {
+    color: #999999;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1;
+}
+h2 {
+    color: #173D78;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+h3 {
+    color: #EE5B14;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: #4F732E;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+#bottom-spiffs .column {
+	float:left;
+	padding:0px;
+}
+
+#bottom-spiffs .first,
+#bottom-spiffs .last {
+  font-size:14px;
+}
+
+
+.footer-spiff-apply,
+.footer-spiff-tour,
+.footer-spiff-question,
+.footer-spiff-facebook,
+.footer-spiff-mailinglist,
+.footer-spiff-news, 
+.footer-spiff-twitter {
+overflow:hidden;
+}
+
+
+a.footer-spiff-apply {
+	background-image:url(../images/spiff-icon-checkmark.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-checkmark{
+	background-image:url(../images/spiff-icon-checkmark.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-tour {
+	background-image: url(../images/spiff-icon-eye.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-eye {
+	background-image: url(../images/spiff-icon-eye.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-question{
+	background-image: url(../images/spiff-icon-question.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+	
+}
+
+a.footer-spiff-gift{
+	background-image: url(../images/spiff-icon-gift.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-facebook{
+	background-image: url(../images/spiff-icon-facebook.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-news{
+	background-image: url(../images/spiff-icon-news.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-mailinglist{
+background-image: url(../images/spiff-icon-mail.png); 
+background-repeat:no-repeat;
+background-position: 10px center;
+}
+
+a.footer-spiff-mail{
+background-image: url(../images/spiff-icon-mail.png); 
+background-repeat:no-repeat;
+background-position: 10px center;
+}
+
+a.footer-spiff-twitter{
+	background-image: url(../images/spiff-icon-twitter.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-linkedin{
+	background-image: url(../images/spiff-icon-linkedin.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-athletics{
+	background-image: url(../images/spiff-icon-athletics.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-calendar{
+	background-image: url(../images/spiff-icon-calendar.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-map{
+	background-image: url(../images/spiff-icon-map.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+
+#bottom-spiffs .first a {
+	display:block;
+	color:#fff;
+	border:solid #fff 1px;
+	padding-top: 33px;
+	padding-right: 20px;
+	padding-bottom: 33px;
+	padding-left: 50px;
+}
+
+
+#bottom-spiffs .last a {/*works for both core and depts because the depts only call first last, not first.*/
+	display:block;
+	color:#fff;
+	border:solid #fff 1px;
+	padding-top:18px;
+	padding-right:20px;
+	padding-bottom:18px;
+	padding-left:50px;
+	
+}
+
+#footer-profile {
+overflow:hidden
+}
+
+
+
+#bottom-spiffs #profile-headshot {
+float:right;
+padding:1px;
+border:solid #fff 1px;
+margin-left:20px;
+}
+
+#bottom-spiffs #profile-name {
+font-size:24px;
+margin-bottom:5px;
+margin-top:5px;
+}
+
+#bottom-spiffs #profile-major {
+margin-bottom:5px;
+}
+
+#bottom-spiffs #profile-abstract {
+margin-bottom:5px;
+font-size:11px;
+}
+
+#bottom-spiffs #project-thumbnail {
+float:right;
+padding:1px;
+border:solid #fff 1px;
+margin-left:20px;
+}
+
+#bottom-spiffs #project-name {
+font-size:24px;
+line-height:100%;
+margin-bottom:5px;
+margin-top:5px;
+}
+
+
+
+
+#bottom-spiffs li {
+margin-bottom:5px;
+}
+
+#bottom-spiffs p {
+margin-bottom:0px;
+}
+#bottom-spiffs .content {
+margin-bottom:5px;
+}
+
+#bottom-spiffs .column.first div.content {
+background:url(../images/footer-spiff-background-tall.png) repeat-x #32611c;
+}
+
+#bottom-spiffs .column.last div.content {
+background:url(../images/footer-spiff-background-short.png) repeat-x #32611c;
+}
+
+.views-exposed-form {
+  background-color: transparent;
+  margin: 0 auto;
+  max-width: 80em;
+  padding-top: 0.75em;
+  width: 100%;
+    .views-exposed-widget {
+      float: left;
+    }
+    .views-submit-button {
+      float: left;
+      clear: none;
+    }
+}
+

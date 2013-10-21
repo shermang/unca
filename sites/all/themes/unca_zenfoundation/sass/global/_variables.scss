@@ -1,5 +1,5 @@
 // Put emCalc in so it can be used
-$em-base: 16 !default;
+$em-base: 12px !default;
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
 }
@@ -29,7 +29,7 @@ $em-base: 16 !default;
 
 // Grid variables
 
-$row-width: emCalc(1100px);
+$row-width: emCalc(960px);
 // $column-gutter: emCalc(30);
 $total-columns: 12;
 
@@ -64,7 +64,7 @@ $portrait: "only screen and (orientation: portrait)";
 //   $grid-break-#{$i}:
 // }
 
-$topbar-breakpoint: $small-screen;
+$topbar-breakpoint: 960px;
 
 // Respond-to variables
 $print: "print";
@@ -129,6 +129,10 @@ $h3-font-size: emCalc(27);
 $h4-font-size: emCalc(23);
 $h5-font-size: emCalc(18);
 $h6-font-size: 1em;
+
+// Control header font weight
+
+$header-font-weight: normal;
 
 // Style lists
 

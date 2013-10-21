@@ -138,10 +138,19 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
 
   // Foundation js required for mobile bar
   // @todo This should get turned into a proper library call
-  drupal_add_js('/sites/all/libraries/foundation/javascripts/foundation/foundation.js', array('scope' => 'footer', 'weight' => 15));
-  drupal_add_js('/sites/all/libraries/foundation/javascripts/foundation/foundation.topbar.js', array('scope' => 'footer', 'weight' => 16));
+  drupal_add_js('sites/all/libraries/foundation/javascripts/foundation/foundation.js', array('scope' => 'footer', 'weight' => 15));
+  drupal_add_js('sites/all/libraries/foundation/javascripts/foundation/foundation.topbar.js', array('scope' => 'footer', 'weight' => 16));
   // // above foundation scripts fired from our theme script footer
   drupal_add_js(path_to_theme() . '/js/script_footer.js', array('scope' => 'footer', 'weight' => 50));
+
+  foreach ($variables['classes_array'] as $index => $class) {
+    $class_arr = explode(' ', $class);
+    $class_index = array_search('sidebar-first', $class_arr);
+    if (!empty($class_index)) {
+      unset($class_arr[$class_index]);
+    }
+    $variables['classes_array'][$index] = implode(' ', $class_arr);
+  }
 
 }
 
@@ -153,9 +162,71 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
+
 function unca_zenfoundation_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  
+
+  $variables['unca_main'] = variable_get('unca_main_site', FALSE);
+  // Add layout classes
+
+  // Add special classes for Gateway regions
+  $gateway_layout_wrapper_classes = array('unca-gateway', 'clearfix');
+  if (!$variables['page']['gateway_row_2_column_1']) {
+    $gateway_layout_wrapper_classes[] = 'no-gateway-row-2-column-1';
+  }
+  if (!$variables['page']['gateway_row_2_column_2']) {
+    $gateway_layout_wrapper_classes[] = 'no-gateway-row-2-column-2';
+  }
+  if (!$variables['page']['gateway_row_3_column_1']) {
+    $gateway_layout_wrapper_classes[] = 'no-gateway-row-3-column-1';
+  }
+  if (!$variables['page']['gateway_row_3_column_2']) {
+    $gateway_layout_wrapper_classes[] = 'no-gateway-row-3-column-2';
+  }
+  $variables['gateway_layout_wrapper_classes'] = implode(' ', $gateway_layout_wrapper_classes);
+
+  // Add special classes for page regions
+  $page_layout_wrapper_classes = array('unca-default','clearfix');
+
+  if ($variables['page']['sidebar_first']) {
+    $page_layout_wrapper_classes[] = 'has-sidebar';
+  }
+  if (!$variables['page']['content_row_2_column_1']) {
+    $page_layout_wrapper_classes[] = 'no-content-row-2-column-1';
+  }
+  if (!$variables['page']['content_row_2_column_2']) {
+    $page_layout_wrapper_classes[] = 'no-content-row-2-column-2';
+  }
+  if (!$variables['page']['footer_promo_a']) {
+    $page_layout_wrapper_classes[] = 'no-footer-promo-a';
+  }
+  if (!$variables['page']['footer_promo_b']) {
+    $page_layout_wrapper_classes[] = 'no-footer-promo-b';
+  }
+  if (!$variables['page']['footer_promo_large']) {
+    $page_layout_wrapper_classes[] = 'no-footer-promo-large';
+  }
+  // Add special classes for home page
+  if ($variables['is_front']) {
+    $page_layout_wrapper_classes[] = 'unca-home';
+  }
+
+  $variables['page_layout_wrapper_classes'] = implode(' ', $page_layout_wrapper_classes);
+
+  $variables['display_dept_name'] = variable_get('display_dept_name', TRUE);
+
+  $secondary_menu = menu_tree_all_data('menu-secondary-navigation---prot');
+  $secondary_menu = menu_tree_output($secondary_menu);
+  $secondary_menu = unca_zenfoundation_topbar_menu($secondary_menu, array('class' => array('secondary-nav-mini')));
+  $variables['secondary_menu'] = $secondary_menu;
+
+  $utility_menu = menu_tree_all_data('menu-global-tools-menu');
+  $utility_menu = menu_tree_output($utility_menu);
+  $utility_menu = unca_zenfoundation_topbar_menu($utility_menu, array('class' => array('util-nav-mini')));
+  $variables['utility_menu'] = $utility_menu;
+
+  return $variables;
+
 }
 // */
 
@@ -225,7 +296,24 @@ function unca_zenfoundation_preprocess_region(&$variables, $hook) {
 function unca_zenfoundation_preprocess_block(&$variables, $hook) {
   // Add block machine name to classes
   $variables['classes_array'][] = 'block-' . $variables['block']->module . '-' . $variables['block']->delta;
+  if (($variables['block']->module == 'menu') && ($variables['block']->delta == 'menu-secondary-navigation---prot')) {
+    $variables['classes_array'][] = 'navigation-secondary';
+  }
 
+  switch($variables['block']->region) {
+    case 'content_row_1':
+    case 'content_row_2_column_1':
+    case 'content_row_2_column_2':
+      $variables['title_attributes_array']['class'][] = 'section-heading';
+      $variables['content_attributes'] = ' class="highlight-box"';
+      break;
+    case 'sidebar_first':
+      $variables['classes_array'][] = 'right-spiff';
+      break;
+    default:
+      $variables['content_attributes'] = '';
+      break;
+  }
   //
   // Examples provided by Zen
   //
@@ -292,4 +380,49 @@ function unca_zenfoundation_links__system_main_menu($vars) {
   // Wrap the whole thing in a ul
   return '<ul' . drupal_attributes($vars['attributes']) . '>' . $output . '</ul>';
 
+}
+
+/**
+ * Theme a copy of the secondary menu to place into the Foundation mobile topbar.
+ */
+function unca_zenfoundation_topbar_menu(&$menu_links, $attributes = array()) {
+  // Initialize some variables to prevent errors
+  $output = '';
+  $sub_menu = '';
+
+  foreach ($menu_links as $key => $link) {
+    // Add special class needed for Foundation dropdown menu to work
+    if (!empty($link['#below'])) {
+      $link['#attributes']['class'][] = 'has-dropdown';
+    }
+
+    // Printing the actual menu item
+    if (!empty($link['#href'])) {
+      $output .= '<li' . drupal_attributes($link['#attributes']) . '>'
+      . l(
+        $link['#title'],
+        $link['#href']
+      );
+
+      // Get sub navigation links if they exist
+      foreach ($link['#below'] as $key => $sub_link) {
+        if (!empty($sub_link['#href'])) {
+         $sub_menu .= '<li>'
+         . l(
+            $sub_link['#title'],
+            $sub_link['#href']
+          )
+         . '</li>';
+        }
+      }
+      $output .= !empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
+
+      $output .=  '</li>';
+
+    }
+
+  }
+
+  // Wrap the whole thing in a ul
+  return '<ul ' . drupal_attributes($attributes) . '>' . $output . '</ul>';
 }

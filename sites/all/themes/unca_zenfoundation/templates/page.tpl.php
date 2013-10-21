@@ -69,18 +69,32 @@
  * @see template_process()
  */
 ?>
+<?php if ($page['emergency']): ?>
+<div id="region_emergency">
+  <?php print render($page['emergency']); ?>
+</div>
+<?php endif; ?>
 <div id="page">
-
   <?php include(path_to_theme().'/templates/header.tpl.php'); ?>
 
-  <div id="main">
+  <div id="main" class="row top-stripes">
 
-  <?php if ($breadcrumb): ?>
-      <?php print $breadcrumb; ?>
+<?php 
+/*  <?php if ($breadcrumb): ?>
+ *      <?php print $breadcrumb; ?>
+ * <?php endif; ?>
+ */
+?>
+
+  <?php if ($page['notice']): ?>
+    <div id="region_notice">
+      <?php print render($page['notice']); ?>
+    </div>
   <?php endif; ?>
 
-    <div id="content" class="content" role="content">
-      <?php print render($page['highlighted']); ?>
+
+
+    <div id="content" class="bottom-stripes content <?php print $page_layout_wrapper_classes; ?>" role="content">
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
@@ -93,30 +107,69 @@
       <?php if ($action_links): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
+
+      <!-- Primary Content Column -->
       <?php print render($page['content']); ?>
+      <!-- Content Row 1-->
+      <?php if ($page['content_row_1']): ?>
+      <div class="content_row_1">
+        <?php print render($page['content_row_1']); ?>
+      </div>
+      <?php endif; ?>
+      <!-- Content Row 2 Column 1-->
+      <?php if ($page['content_row_2_column_1'] || $page['content_row_2_column_2']): ?>
+        <div class="row featured-blocks">
+          <?php if ($page['content_row_2_column_1']): ?>
+          <div class="content_row_2_column_1 tiny-12 small-6 columns">
+            <?php print render($page['content_row_2_column_1']); ?>
+          </div>
+          <?php endif; ?>
+          <!-- Content Row 2 Column 2-->
+          <?php if ($page['content_row_2_column_2']): ?>
+          <div class="content_row_2_column_2 tiny-12 small-6 columns">
+            <?php print render($page['content_row_2_column_2']); ?>
+          </div>
+          <?php endif; ?>
+        </div>
+      <?php endif; ?>
       <?php print $feed_icons; ?>
     </div><!-- /#content -->
 
-    <?php
-      // Render the sidebars to see if there's anything in them.
-      $sidebar_first  = render($page['sidebar_first']);
-      $sidebar_second = render($page['sidebar_second']);
-    ?>
-
-    <?php if ($sidebar_first || $sidebar_second): ?>
-      <aside class="sidebars">
-        <?php print $sidebar_first; ?>
-        <?php print $sidebar_second; ?>
-      </aside><!-- /.sidebars -->
+    <!-- Let's simplify the sidebar logic since we only have one sidebar region. -->
+    <?php if ($page['sidebar_first']): ?>
+      <aside class="sidebar">
+        <?php print render($page['sidebar_first']); ?>
+      </aside><!-- /.sidebar -->
     <?php endif; ?>
 
   </div><!-- /#main -->
 
-<?php if ($page['footer']): ?>
-  <div class="footer">
-     <?php print render($page['footer']); ?>
-  </div>
-<?php endif; ?>
+ <?php if ($page['footer']): ?>
+
+    <div id="bottom-spiffs" class="row fill-left fill-right footer-blocks ">
+        <?php if ($page['footer_promo_a']): ?>
+          <div class="column large-3 columns first">
+            <?php print render($page['footer_promo_a']); ?>
+          </div><!-- /.column .columns .first -->
+        <?php endif; ?>
+
+        <?php if ($page['footer_promo_a']): ?>
+          <div id="footer-profile" class="column large-6 columns interior">
+            <?php print render($page['footer_promo_large']); ?>
+          </div><!-- /.column .columns .interior -->
+        <?php endif; ?>      
+
+        <?php if ($page['footer_promo_a']): ?>
+          <div class="column large-3 columns last">
+            <?php print render($page['footer_promo_b']); ?>
+          </div><!-- /.column .columns .last -->
+        <?php endif; ?>
+    </div><!-- /.row .fill-left .fill-right .footer-blocks -->
+
+    <div class="footer">
+       <?php print render($page['footer']); ?>
+    </div><!-- /.footer -->
+  <?php endif; ?>
 
 </div><!-- /#page -->
 

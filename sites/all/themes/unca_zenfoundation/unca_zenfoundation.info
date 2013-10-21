@@ -62,8 +62,21 @@ stylesheets[all][] = system.menus.css
 ; stylesheets[all][] = css/forms.css
 ; stylesheets[all][] = css/fields.css
 ; stylesheets[all][] = css/print.css
-
+; stylesheets[all][] = css/grid.css
+; stylesheets[all][] = css/global.css
+; stylesheets[all][] = css/page.tpl.css
+; stylesheets[all][] = css/node.tpl.css
+; stylesheets[all][] = css/block.tpl.css
+; stylesheets[all][] = css/block-content_bottom_left.tpl.css
+; stylesheets[all][] = css/block-content_bottom_right.tpl.css
+; stylesheets[all][] = css/views.tpl.css
+; stylesheets[all][] = css/footer-spiffs.css
+; stylesheets[all][] = css/views-view-fields--Four-Profiles.tpl.css
+; stylesheets[all][] = css/aggregated-feeds.tpl.css
+; stylesheets[all][] = css/flickrshow.css
+stylesheets[all][] = css/reset.css
 stylesheets[all][] = css/unca_zenfoundation.css
+
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html
@@ -79,6 +92,11 @@ stylesheets[all][] = css/unca_zenfoundation.css
 
 ; Optionally add some JavaScripts to your theme.
 
+scripts[] = js/flickrshow-7.2.min.js
+scripts[] = js/jquery-ui-1.8.22.custom.min.js
+scripts[] = js/jquery.arialandmark.js
+scripts[] = js/jquery.slideshow.js
+scripts[] = js/functions.js
 scripts[] = js/script.js
 
 
@@ -98,15 +116,44 @@ scripts[] = js/script.js
 ; And you'll use this variable in maintenance-page.tpl.php:
 ;   <?php print $header_top; ?>
 
-regions[header]         = Header
-regions[navigation]     = Navigation bar
-regions[highlighted]    = Highlighted
+regions[emergency]      = Emergency
+regions[notice]         = Notice
 regions[help]           = Help
-regions[content]        = Content
-regions[sidebar_first]  = First sidebar
-regions[sidebar_second] = Second sidebar
+regions[header]         = Header Top
+regions[navigation]     = Navigation
+regions[content] = Primary Content Column
+regions[content_row_1]  = Content Row 1
+regions[content_row_2_column_1] = Content Row 2 Column 1
+regions[content_row_2_column_2] = Content Row 2 Column 2
+regions[sidebar_first] = Sidebar Column
+regions[footer_promo_a] = Footer Promo A
+regions[footer_promo_b] = Footer Promo B
+regions[footer_promo_large] = Footer Promo Large
 regions[footer]         = Footer
-regions[bottom]         = Page bottom
+regions[bottom]         = Page Bottom
+
+
+; Gateway-specific regions
+; Gateway Pages have unique layout and regions.
+; In order to avoid confusion when placing blocks,
+; these regions are prefixed with gateway_
+; and use Gateway Page in the region name.
+; These regions will be used in page-gateway.tpl.php
+; a template suggestion generated using a Site Section vocab
+; a term reference field of which is on the Basic page content type.
+; In the source order, these regions should be rendered in the
+; primary content area, where the Content Row 1 (etc) regions would be.
+
+regions[gateway_row_1] = Gateway Page Row 1
+regions[gateway_row_2_column_1] = Gateway Page Row 2 Column 1
+regions[gateway_row_2_column_2] = Gateway Page Row 2 Column 2
+regions[gateway_row_3_column_1] = Gateway Page Row 3 Column 1
+regions[gateway_row_3_column_2] = Gateway Page Row 3 Column 2
+
+
+
+
+
 
 ; The page_top and page_bottom regions are hidden, which means they will not
 ; show up on the blocks administration page. But they are required in order for
@@ -125,24 +172,23 @@ regions[page_bottom]    = Page bottom
 ; http://drupal.org/node/171205#features
 
 features[] = logo
-features[] = name
-features[] = slogan
-features[] = node_user_picture
-features[] = comment_user_picture
 features[] = favicon
 features[] = main_menu
 features[] = secondary_menu
-
+features[] = name
+;features[] = slogan
+;features[] = node_user_picture
+;features[] = comment_user_picture
 
 
 ; Set the default values of settings on the theme-settings.php form.
 
-settings[zen_breadcrumb]           = yes
+settings[zen_breadcrumb]           = no
 settings[zen_breadcrumb_separator] = ' › '
 settings[zen_breadcrumb_home]      = 1
 settings[zen_breadcrumb_trailing]  = 1
 settings[zen_breadcrumb_title]     = 0
-settings[zen_skip_link_anchor]     = main-menu
+settings[zen_skip_link_anchor]     = 0
 settings[zen_skip_link_text]       = Jump to navigation
 settings[zen_html5_respond_meta][] = respond
 settings[zen_html5_respond_meta][] = html5

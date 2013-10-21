@@ -1,0 +1,237 @@
+// footer spiffs 
+
+#bottom-spiffs {
+  margin: 0 auto 2px;
+  max-width: 80em;
+  width: 100%;
+	.column, columns {
+	  float:left;
+	  padding:0px;
+	}
+    ul {
+      margin-bottom:-5px;
+    }
+    .region > .block {
+      clear: both;
+      margin-bottom: 5px;
+    }
+    .region-footer-promo-a, .region-footer-promo-b {
+      > .block-block {
+        background: url("../images/footer-spiff-background-tall.png") repeat-x scroll 0 0 #32611C;
+          a {
+            padding: 26px 20px 27px 50px
+          }
+        }
+    }
+    #footer-profile {
+    	a {
+    	border: none;
+    	}
+    }
+}
+
+#bottom-spiffs .interior {
+  background: url(../images/footer-spiff-background-profile.png) #95b36f repeat-x;
+  border: 1px solid #FFFFFF;
+  height: 160px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 0 5px;
+  padding: 5px 10px !important;
+  @include respond-to($tablet) {
+    margin: 0 5px;
+    width: 470px;
+    padding: 5px 10px !important;
+  }    
+}
+
+.footer-spiff-apply,
+.footer-spiff-tour,
+.footer-spiff-question,
+.footer-spiff-facebook,
+.footer-spiff-mailinglist,
+.footer-spiff-news, 
+.footer-spiff-twitter {
+	overflow:hidden;
+}
+
+a.footer-spiff-apply {
+	background-image:url(../images/spiff-icon-checkmark.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-checkmark{
+	background-image:url(../images/spiff-icon-checkmark.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-tour {
+	background-image: url(../images/spiff-icon-eye.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-eye {
+	background-image: url(../images/spiff-icon-eye.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-question{
+	background-image: url(../images/spiff-icon-question.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+	
+}
+
+a.footer-spiff-gift{
+	background-image: url(../images/spiff-icon-gift.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-facebook{
+	background-image: url(../images/spiff-icon-facebook.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-news{
+	background-image: url(../images/spiff-icon-news.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-mailinglist{
+background-image: url(../images/spiff-icon-mail.png); 
+background-repeat:no-repeat;
+background-position: 10px center;
+}
+
+a.footer-spiff-mail{
+background-image: url(../images/spiff-icon-mail.png); 
+background-repeat:no-repeat;
+background-position: 10px center;
+}
+
+a.footer-spiff-twitter{
+	background-image: url(../images/spiff-icon-twitter.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-linkedin{
+  background-image: url(../images/spiff-icon-linkedin.png);
+  background-repeat:no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-athletics{
+	background-image: url(../images/spiff-icon-athletics.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-calendar{
+	background-image: url(../images/spiff-icon-calendar.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+a.footer-spiff-map{
+	background-image: url(../images/spiff-icon-map.png);
+	background-repeat:no-repeat;
+	background-position: 10px center;
+}
+
+
+#bottom-spiffs .first a {
+  display:block;
+  color:#fff;
+  border:solid #fff 1px;
+}
+
+#bottom-spiffs a.contextual-links-trigger {
+  color: #333333 !important;
+  margin: 0.25em 0 !important;
+  padding: 0.25em 1em 0.25em 0.5em !important;
+  border: none !important;
+}
+
+
+#bottom-spiffs .last a {/*works for both core and depts because the depts only call first last, not first.*/
+  display:block;
+  color:#fff;
+  padding-top:18px 20px 18px 50px;
+}
+
+#footer-profile {
+	
+}
+
+
+
+#bottom-spiffs #profile-headshot {
+	float:right;
+	padding:1px;
+	border:solid #fff 1px;
+	margin-left:20px;
+}
+
+#bottom-spiffs #profile-name {
+  font-size:24px;
+  margin-bottom:5px;
+  margin-top:5px;
+    a {
+      color: #4572C5;
+      text-decoration: none;
+      padding: 0;
+      border: none;
+    }
+}
+
+#bottom-spiffs #profile-major {
+	
+}
+
+#bottom-spiffs #profile-abstract {
+	margin-bottom:5px;
+	font-size:11px;
+}
+
+#bottom-spiffs #project-thumbnail {
+	float:right;
+	padding:1px;
+	border:solid #fff 1px;
+	margin-left:20px;
+}
+
+#bottom-spiffs #project-name {
+	font-size:24px;
+	line-height:100%;
+	margin-bottom:5px;
+	margin-top:5px;
+}
+
+#bottom-spiffs li {
+	margin-bottom:5px;
+}
+
+#bottom-spiffs p {
+	margin-bottom:0px;
+}
+#bottom-spiffs .content {
+	margin-bottom:5px;
+}
+
+#bottom-spiffs .column.first div.content {
+	background:url(../images/footer-spiff-background-tall.png) repeat-x #32611c;
+}
+
+#bottom-spiffs .column.last div.content {
+	background:url(../images/footer-spiff-background-short.png) repeat-x #32611c;
+}
+
+

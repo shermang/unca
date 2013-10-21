@@ -2,8 +2,16 @@
 
 .sidebar {
   @include grid-column($full-width);
+  #main > &  {
+    padding-right: 0;
+  } 
   @include respond-to($tablet) {
     @include grid-column($sidebar-1-width);
+  }
+  .sidebar {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
   }
 }
 .region-sidebar-first {

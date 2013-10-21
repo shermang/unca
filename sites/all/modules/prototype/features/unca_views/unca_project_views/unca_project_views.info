@@ -1,0 +1,13 @@
+name = UNCA Project Views
+description = views for the projects page, as well as a rotating block.
+core = 7.x
+package = UNCA Views
+version = 7.x-1.0
+project = unca_project_views
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = Project_SPIFF
+features[views_view][] = Projects
+features_exclude[dependencies][ctools] = ctools
+project path = sites\all\modules\prototype\features\unca_views
