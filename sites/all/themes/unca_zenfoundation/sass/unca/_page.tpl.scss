@@ -650,7 +650,7 @@ border:0px;
 }
  
 /* blue button */
-.button-blue-rounded{
+.button-blue-rounded {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   display: block;
@@ -682,6 +682,7 @@ border:0px;
     0px 0px 0px rgba(255,255,255,0);
   margin:5px 0 0 0;
   float:left;
+    a { padding: 0; }
 }
   
 // right nav spiff 

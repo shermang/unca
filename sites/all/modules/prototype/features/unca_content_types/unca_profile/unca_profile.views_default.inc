@@ -62,33 +62,63 @@ function unca_profile_views_default_views() {
     'university_semester' => 0,
     'university_term' => 0,
   );
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image_fid']['id'] = 'field_image_fid';
+  $handler->display->display_options['fields']['field_image_fid']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image_fid']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image_fid']['label'] = '';
+  $handler->display->display_options['fields']['field_image_fid']['element_class'] = 'profile-headshot right';
+  $handler->display->display_options['fields']['field_image_fid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_fid']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image_fid']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_fid']['settings'] = array(
+    'image_style' => 'square_thumbnail',
+    'image_link' => '',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_type'] = 'p';
+  $handler->display->display_options['fields']['title']['element_class'] = 'profile-name';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Field: Content: Caption */
+  $handler->display->display_options['fields']['field_subheading']['id'] = 'field_subheading';
+  $handler->display->display_options['fields']['field_subheading']['table'] = 'field_data_field_subheading';
+  $handler->display->display_options['fields']['field_subheading']['field'] = 'field_subheading';
+  $handler->display->display_options['fields']['field_subheading']['label'] = '';
+  $handler->display->display_options['fields']['field_subheading']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_subheading']['element_class'] = 'profile-major';
+  $handler->display->display_options['fields']['field_subheading']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_subheading']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_subheading']['settings'] = array(
+    'trim_length' => '10',
+  );
   /* Field: Teaser (Summary) */
   $handler->display->display_options['fields']['field_teaser_text_value']['id'] = 'field_teaser_text_value';
   $handler->display->display_options['fields']['field_teaser_text_value']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['field_teaser_text_value']['field'] = 'body';
   $handler->display->display_options['fields']['field_teaser_text_value']['ui_name'] = 'Teaser (Summary)';
   $handler->display->display_options['fields']['field_teaser_text_value']['label'] = '';
+  $handler->display->display_options['fields']['field_teaser_text_value']['element_type'] = 'p';
   $handler->display->display_options['fields']['field_teaser_text_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_teaser_text_value']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_teaser_text_value']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['field_teaser_text_value']['settings'] = array(
-    'trim_length' => '600',
+    'trim_length' => '150',
   );
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_image_fid']['id'] = 'field_image_fid';
-  $handler->display->display_options['fields']['field_image_fid']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image_fid']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image_fid']['label'] = '';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['fields']['name']['label'] = 'Term';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<a class="button-blue-rounded" href="/faces/[name]"><span>Meet more of our [name]</span></a>';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   /* Sort criterion: Global: Random */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
   $handler->display->display_options['sorts']['random']['table'] = 'views';
@@ -107,9 +137,9 @@ function unca_profile_views_default_views() {
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    0 => '163',
-    1 => '164',
-    2 => '168',
+    0 => '1',
+    1 => '7',
+    2 => '9',
   );
   $handler->display->display_options['filters']['tid']['group'] = '0';
   $handler->display->display_options['filters']['tid']['expose']['operator'] = FALSE;
