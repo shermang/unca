@@ -202,7 +202,7 @@ function slideshow_entity_form_submit($form, &$form_state) {
 
   $form_state['redirect'] = $slideshow_entity_uri['path'];
 
-  drupal_set_message(t('Slideshow %title saved.', array('%title' => entity_label('slideshow_entity', $slideshow_entity))));
+  drupal_set_message(t('Slideshow %title saved.', array('%title' => check_plain(entity_label('slideshow_entity', $slideshow_entity)))));
 }
 
 function slideshow_entity_form_submit_delete($form, &$form_state) {
@@ -217,7 +217,11 @@ function slideshow_entity_form_submit_delete($form, &$form_state) {
 function slideshow_entity_delete_form($form, &$form_state, $slideshow_entity) {
   $form_state['slideshow'] = $slideshow_entity;
   // Always provide entity id in the same form key as in the entity edit form.
-  $form['slideshow_entity_type_id'] = array('#type' => 'value', '#value' => entity_id('slideshow_entity' ,$slideshow_entity));
+  $form['slideshow_entity_type_id'] = array(
+    '#type' => 'value',
+    '#value' => entity_id('slideshow_entity' ,$slideshow_entity),
+  );
+
   $slideshow_entity_uri = entity_uri('slideshow_entity', $slideshow_entity);
   return confirm_form($form,
     t('Are you sure you want to delete slideshow %title?', array('%title' => entity_label('slideshow_entity', $slideshow_entity))),
@@ -237,5 +241,5 @@ function slideshow_entity_delete_form_submit($form, &$form_state) {
 
   drupal_set_message(t('Slideshow %title deleted.', array('%title' => entity_label('slideshow_entity', $slideshow_entity))));
 
-  $form_state['redirect'] = '<front>';
+  $form_state['redirect'] = 'admin/content/slideshows';
 }

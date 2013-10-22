@@ -96,7 +96,6 @@ unca_campus_update \
 unca_news \
 unca_project \
 unca_fields \
-slideshow_entity \
 unca_home_home_page \
 unca_zenfoundation \
 libraries \
@@ -129,7 +128,13 @@ drush dis --yes \
 admin_menu \
 admin_menu_toolbar \
 overlay \
-securelogin
+securelogin \
+slideshow_entity
+
+# uninstall slideshow entity
+echo "Uninstalling Slideshow Entity"
+drush pm-uninstall slideshow_entity
+echo ""
 
 # perform any db queries required by code changes to modules from git pull
 echo "Running any required database updates"
