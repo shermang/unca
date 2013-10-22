@@ -274,7 +274,7 @@ function unca_event_views_default_views() {
   $handler->display->display_options['fields']['field_link_value']['table'] = 'field_data_field_link';
   $handler->display->display_options['fields']['field_link_value']['field'] = 'field_link';
   $handler->display->display_options['fields']['field_link_value']['label'] = '';
-  /* Field: Content: Caption */
+  /* Field: Content: Subheading */
   $handler->display->display_options['fields']['field_subheading']['id'] = 'field_subheading';
   $handler->display->display_options['fields']['field_subheading']['table'] = 'field_data_field_subheading';
   $handler->display->display_options['fields']['field_subheading']['field'] = 'field_subheading';
@@ -345,7 +345,7 @@ Rediscovering Entertainment, Arts & Learning<br>
   $handler->display->display_options['fields']['field_link_value']['table'] = 'field_data_field_link';
   $handler->display->display_options['fields']['field_link_value']['field'] = 'field_link';
   $handler->display->display_options['fields']['field_link_value']['label'] = '';
-  /* Field: Content: Caption */
+  /* Field: Content: Subheading */
   $handler->display->display_options['fields']['field_subheading']['id'] = 'field_subheading';
   $handler->display->display_options['fields']['field_subheading']['table'] = 'field_data_field_subheading';
   $handler->display->display_options['fields']['field_subheading']['field'] = 'field_subheading';
@@ -416,7 +416,7 @@ Rediscovering Entertainment, Arts & Learning<br>
   $handler->display->display_options['fields']['field_link_value']['table'] = 'field_data_field_link';
   $handler->display->display_options['fields']['field_link_value']['field'] = 'field_link';
   $handler->display->display_options['fields']['field_link_value']['label'] = '';
-  /* Field: Content: Caption */
+  /* Field: Content: Subheading */
   $handler->display->display_options['fields']['field_subheading']['id'] = 'field_subheading';
   $handler->display->display_options['fields']['field_subheading']['table'] = 'field_data_field_subheading';
   $handler->display->display_options['fields']['field_subheading']['field'] = 'field_subheading';
