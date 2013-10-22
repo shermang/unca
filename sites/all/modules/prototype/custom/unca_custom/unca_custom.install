@@ -21,7 +21,7 @@ function unca_custom_install() {
       'theme' => 'unca_zenfoundation',
       'status' => 1,
       'weight' => -22,
-      'region' => 'sidebar_first',
+      'region' => -1,
       'pages' => '',
       'cache' => -1,
     ),
@@ -192,3 +192,38 @@ function unca_custom_update_7003() {
   }
 
 }
+
+/**
+ * Removing the navigation menu from the block region since it is being hard-coded into the template.
+ */
+function unca_custom_update_7004() {
+  $blocks = array(
+    array(
+      'module' => 'menu',
+      'delta' => 'menu-secondary-navigation---prot',
+      'theme' => 'unca_zenfoundation',
+      'status' => 1,
+      'weight' => -22,
+      'region' => -1,
+      'pages' => '',
+      'cache' => -1,
+    ),
+  );
+  foreach ($blocks as $block) {
+    db_merge('block')
+      ->key(array('module' => $block['module'], 'delta' => $block['delta'], 'theme' => $block['theme']))
+      ->fields(array(
+        'module' => $block['module'],
+        'delta' => $block['delta'],
+        'theme' => $block['theme'],
+        'status' => $block['status'],
+        'weight' => $block['weight'],
+        'region' => $block['region'],
+        'pages' => $block['pages'],
+        'cache' => $block['cache'],
+      ))
+      ->execute();
+  }
+
+}
+
