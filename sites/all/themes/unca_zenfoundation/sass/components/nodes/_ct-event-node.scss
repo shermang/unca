@@ -1,16 +1,16 @@
-.node-event {
-  .field-name-field-image {
-    @extend %float-left;
-    img {
-      @include placeholder(250px, 450px);
-    }
-  }
-  .field-name-body {
-    clear: both;
-    margin: 1em 0;
-  }
+.node-type-event {
   .field {
     margin-bottom: 0;
     line-height: 1.5;
+  }
+  .field-name-field-date {
+    color: $orange;
+  }
+  .field-name-field-image {
+    // @extend %float-left;
+  }
+  .field-name-body {
+    // clear: both;
+    // margin: 1em 0;
   }
 }
