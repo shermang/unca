@@ -305,43 +305,6 @@ function unca_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-profiles-field_department_term'
-  $field_instances['node-profiles-field_department_term'] = array(
-    'bundle' => 'profiles',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_department_term',
-    'label' => 'Department',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 31,
-    ),
-  );
-
   // Exported field_instance: 'node-profiles-field_image'
   $field_instances['node-profiles-field_image'] = array(
     'bundle' => 'profiles',
@@ -714,51 +677,10 @@ function unca_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-profiles-field_teaser_text'
-  $field_instances['node-profiles-field_teaser_text'] = array(
-    'bundle' => 'profiles',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_teaser_text',
-    'label' => 'Teaser',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 6,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
   t('Contact Information');
-  t('Department');
   t('First Name');
   t('Headshot');
   t('Last Name');
@@ -767,7 +689,6 @@ function unca_profile_field_default_field_instances() {
   t('Profile Weight');
   t('Subheading');
   t('Suffix');
-  t('Teaser');
 
   return $field_instances;
 }
