@@ -94,29 +94,4 @@ class UNCAImageMigration extends UNCANodeMigration {
       return FALSE;
     }
   }
-
-
-
-
-}
-
-class UNCAArticleMigration extends UNCANodeMigration {
-  public function __construct(array $arguments) {
-    // Add any other data we're pulling into the source row, before the parent
-    // constructor.
-    $this->sourceFields['lead_graphic'] = 'Lead graphic string from D6';
-    $this->sourceFields['summary'] = 'Summary string from D6';
-
-    parent::__construct($arguments);
-
-    $this->addFieldMapping('field_image', 'field_lead_graphic')
-         ->sourceMigration('Image');
-    // Note that we map migrated terms by the vocabulary ID.
-    $this->addFieldMapping('field_countries', '1')
-         ->sourceMigration('Countries')
-         ->arguments(array('source_type' => 'tid'));
-    $this->addFieldMapping('field_topics', '2')
-         ->sourceMigration('Topics')
-         ->arguments(array('source_type' => 'tid'));
-  }
 }
