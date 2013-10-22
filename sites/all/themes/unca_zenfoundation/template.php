@@ -165,6 +165,7 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
 
 function unca_zenfoundation_preprocess_page(&$variables, $hook) {
   
+  $variables['sidebar_menu'] = unca_zenfoundation_sidebar_menu();
 
   $variables['unca_main'] = variable_get('unca_main_site', FALSE);
   // Add layout classes
@@ -328,6 +329,58 @@ function unca_zenfoundation_preprocess_block(&$variables, $hook) {
   //}
 }
 
+/**
+ * Programmatically generate the sidebar menu.
+ */
+function unca_zenfoundation_sidebar_menu() {
+  $item = menu_get_object();
+  if (isset($item->type)) {
+    switch ($item->type) {
+      case 'profiles':
+        $parent_link = menu_link_get_preferred('faces', 'menu-secondary-navigation---prot');
+        return unca_zenfoundation_sidebar_menu_links($parent_link['mlid']);
+        break;
+
+      case 'news_article':
+        $parent_link = menu_link_get_preferred('news-events', 'menu-secondary-navigation---prot');
+        return unca_zenfoundation_sidebar_menu_links($parent_link['mlid']);
+        break;
+
+      default:
+        return unca_zenfoundation_sidebar_menu_links();
+        break;
+    }
+  }
+  else {
+    return unca_zenfoundation_sidebar_menu_links();
+  }
+}
+
+function unca_zenfoundation_sidebar_menu_links($parent_link_id = NULL) {
+  $tree = menu_tree_page_data('menu-secondary-navigation---prot');
+
+  if (!empty($parent_link_id)) {
+    foreach($tree as $key => $mi) {
+      if ($mi['link']['p1'] == $parent_link_id) {
+        $menu = menu_tree_output($tree[$key]['below']);
+      }
+    }
+  }
+  else {
+    foreach($tree as $key => $mi) {
+      if ($mi['link']['in_active_trail'] && $tree[$key]['below']) {
+        $menu = menu_tree_output($tree[$key]['below']);
+      }
+    }
+  }
+  if (isset($menu)){
+    return $menu;
+  }
+  else {
+    return NULL;
+  }
+
+}
 
 /**
  * Implements theme_links() targeting the main menu specifically
