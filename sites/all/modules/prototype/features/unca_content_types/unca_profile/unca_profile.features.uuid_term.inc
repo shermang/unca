@@ -11,7 +11,7 @@ function unca_profile_uuid_features_default_terms() {
   $terms = array();
 
   $terms[] = array(
-    'name' => 'Profile in Giving',
+    'name' => 'Alumni',
     'description' => '',
     'format' => 'filtered_html',
     'weight' => 0,
