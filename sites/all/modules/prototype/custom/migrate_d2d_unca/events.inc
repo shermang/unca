@@ -28,11 +28,13 @@ class UNCAEventMigration extends UNCANodeMigration {
 
 // Note that we map migrated terms by the vocabulary ID.
     $this->addFieldMapping('field_event_categories_term', '1')
-      ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('event_categories'))
-      ->arguments(array('source_type' => 'tid'));
+      ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('event_categories'));
+    $this->addFieldMapping('field_event_categories_term:source_type')
+      ->defaultValue('tid');
     $this->addFieldMapping('field_humanities_level_term', '4')
-      ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('humanities_level'))
-      ->arguments(array('source_type' => 'tid'));
+      ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('humanities_level'));
+    $this->addFieldMapping('field_humanities_level_term:source_type')
+      ->defaultValue('tid');
   }
 
 
