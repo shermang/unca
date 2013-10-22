@@ -5,8 +5,6 @@
   </header>
   <?php endif; ?>
 
-  <?php print render($field_subheading); ?>
-
   <?php
     // We hide the comments and links now so that we can render them later.
     hide($content['comments']);

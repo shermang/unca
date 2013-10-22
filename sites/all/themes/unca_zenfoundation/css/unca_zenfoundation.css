@@ -917,7 +917,7 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
 }
 
 .field img,
-.views-field img, .node-event .field-name-field-image {
+.views-field img {
   float: left;
   margin: 0 1em 1em 0;
 }
@@ -6818,27 +6818,12 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
   display: inline-block;
 }
 
-.node-event .field-name-field-image img {
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-  background-color: gray;
-  height: 250px;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 450px;
-}
-.node-event .field-name-field-image img:hover {
-  background-color: #8c8c8c;
-}
-.node-event .field-name-body {
-  clear: both;
-  margin: 1em 0;
-}
-.node-event .field {
+.node-type-event .field {
   margin-bottom: 0;
   line-height: 1.5;
+}
+.node-type-event .field-name-field-date {
+  color: #ef851a;
 }
 
 .node-news .field-name-field-image img {
@@ -6866,6 +6851,10 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 }
 
 /* END: .node-person */
+.node {
+  clear: both;
+}
+
 .tabs li {
   font-weight: normal;
 }
@@ -12224,10 +12213,10 @@ Notes:  Adds support for slideshows
 .page-policies .view-filters input[type="text"] {
   height: 1em;
 }
-.page-policies .views-row {
-  padding-bottom: 0;
+.page-policies #content div.views-row {
+  padding-bottom: 0 !important;
 }
-.page-policies .views-row ul {
+.page-policies #content div.views-row ul {
   list-style: disc outside none;
 }
 
