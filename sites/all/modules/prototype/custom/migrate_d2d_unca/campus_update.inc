@@ -12,6 +12,15 @@ class UNCACampusUpdateMigration extends UNCANodeMigration {
     $this->addFieldMapping('field_image:file_class')
       ->defaultValue('MigrateFileFid');
 
+    $this->addFieldMapping('field_image:preserve_files')
+      ->defaultValue(TRUE);
+    $this->addFieldMapping('field_image:title', 'image_copyright')
+      ->defaultValue('');
+    $this->addFieldMapping('field_image:alt', 'image_description')
+      ->defaultValue('');
+    $this->addFieldMapping('field_image:language')
+      ->defaultValue(LANGUAGE_NONE);
+
   }
 
   /**
