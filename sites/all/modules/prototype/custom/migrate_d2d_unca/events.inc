@@ -12,9 +12,9 @@ class UNCAEventMigration extends UNCANodeMigration {
       ->defaultValue('MigrateFileFid');
     $this->addFieldMapping('field_image:preserve_files')
       ->defaultValue(TRUE);
-    $this->addFieldMapping('field_image:title', 'image_copyright')
+    $this->addFieldMapping('field_image:title')
       ->defaultValue('');
-    $this->addFieldMapping('field_image:alt', 'image_description')
+    $this->addFieldMapping('field_image:alt')
       ->defaultValue('');
     $this->addFieldMapping('field_image:language')
       ->defaultValue(LANGUAGE_NONE);
@@ -27,13 +27,13 @@ class UNCAEventMigration extends UNCANodeMigration {
     $this->addFieldMapping('field_link','field_link');
 
 // Note that we map migrated terms by the vocabulary ID.
-    $this->addFieldMapping('field_event_categories_term', '1')
+    $this->addFieldMapping('field_event_categories_term', migrate_d2d_unca_get_src_vocab_id('event_categories'))
       ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('event_categories'));
     $this->addFieldMapping('field_event_categories_term:source_type')
       ->defaultValue('tid');
-    $this->addFieldMapping('field_humanities_level_term', '4')
+    $this->addFieldMapping('field_humanities_level', migrate_d2d_unca_get_src_vocab_id('humanities_level'))
       ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('humanities_level'));
-    $this->addFieldMapping('field_humanities_level_term:source_type')
+    $this->addFieldMapping('field_humanities_level:source_type')
       ->defaultValue('tid');
   }
 

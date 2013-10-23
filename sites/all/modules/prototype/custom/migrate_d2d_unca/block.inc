@@ -112,7 +112,7 @@ class UNCABlockMigration extends DrupalMigration {
         break;
       default:
         // any regions not listed above will be disabled
-        $row->region = '';
+        $row->region = -1;
         $row->status = 0;
         break;
     }
