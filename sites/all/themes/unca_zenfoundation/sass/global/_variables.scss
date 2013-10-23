@@ -87,11 +87,13 @@ $ie7: ".lt-ie8";
 //
 
 $white:        #ffffff;
-$gray-lighter:   darken($white, 10%);
+$gray-lighter: darken($white, 10%);
 $gray-light:   darken($white, 25%);
 $gray:         darken($white, 50%);
 $gray-dark:    darken($white, 75%);
-$black:      #000000;
+$black:        #000000;
+
+$orange:       #ef851a;
 
 // Foundation colors
 $primary-color: #2ba6cb; // This is also the link color

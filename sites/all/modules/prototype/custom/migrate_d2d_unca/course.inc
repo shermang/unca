@@ -25,21 +25,22 @@ class UNCACourseMigration extends UNCANodeMigration {
     $course_topic_src_vid = migrate_d2d_unca_get_src_vocab_id('course_topic');
   
     $this->addFieldMapping('field_course_catalog_term', $course_catalog_src_vid)
-         ->sourceMigration('Term_course_catalogs')
-         ->arguments(array('source_type' => 'tid'));
+         ->sourceMigration('Term_course_catalogs');
+    $this->addFieldMapping('field_course_catalog_term:source_type')
+      ->defaultValue('tid');
 
     $this->addFieldMapping('field_course_days_term', $course_days_src_vid)
-         ->sourceMigration('Term_course_days')
-         ->arguments(array('source_type' => 'tid'));
-
+         ->sourceMigration('Term_course_days');
+    $this->addFieldMapping('field_course_days_term:source_type')
+      ->defaultValue('tid');
     $this->addFieldMapping('field_course_times_term', $course_times_src_vid)
-         ->sourceMigration('Term_course_times')
-         ->arguments(array('source_type' => 'tid'));
-
+         ->sourceMigration('Term_course_times');
+    $this->addFieldMapping('field_course_times_term:source_type')
+      ->defaultValue('tid');
     $this->addFieldMapping('field_course_topics_term', $course_topic_src_vid)
-         ->sourceMigration('Term_course_topic')
-         ->arguments(array('source_type' => 'tid'));
-
+         ->sourceMigration('Term_course_topic');
+    $this->addFieldMapping('field_course_topics_term:source_type')
+      ->defaultValue('tid');
   }
 
   public function prepareRow($row) {
