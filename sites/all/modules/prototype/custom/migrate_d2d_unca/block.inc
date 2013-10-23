@@ -171,6 +171,7 @@ class UNCABlockMigration extends DrupalMigration {
     $query = Database::getConnection('default', 'legacy')
       ->select('blocks', 'b')
       ->fields('b')
+      ->condition('module',array('menu','system'),'NOT IN') // an array of modules that we do not want to migrate
       ->condition('delta','0','<>')
       ->condition('theme',$theme,'=')
       ->condition('theme',array('unca','unca.department','unca_gateway','ncccr'),'IN');
