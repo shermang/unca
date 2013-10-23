@@ -26,8 +26,9 @@ class UNCAProjectMigration extends UNCANodeMigration {
 
 // Note that we map migrated terms by the vocabulary ID.
     $this->addFieldMapping('field_project_type_term', '4')
-      ->sourceMigration('Term_project_type')
-      ->arguments(array('source_type' => 'tid'));
+      ->sourceMigration('Term_project_type');
+    $this->addFieldMapping('field_project_type_term:source_type')
+      ->defaultValue('tid');
   }
 
   /**
