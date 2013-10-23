@@ -17,19 +17,19 @@ class UNCAPolicyMigration extends UNCANodeMigration {
     $this->addFieldMapping('field_policy_associated_forms','field_associated_forms');
 
 // Note that we map migrated terms by the vocabulary ID.
-    $this->addFieldMapping('field_policy_groups_term', '6')
+    $this->addFieldMapping('field_policy_groups_term', migrate_d2d_unca_get_src_vocab_id('groups_policies_apply_to'))
       ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('groups_policies_apply_to'));
     $this->addFieldMapping('field_policy_groups_term:source_type')
       ->defaultValue('tid');
-    $this->addFieldMapping('field_policy_categories_term', '5')
+    $this->addFieldMapping('field_policy_categories_term', migrate_d2d_unca_get_src_vocab_id('policy_categories'))
       ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('policy_categories'));
     $this->addFieldMapping('field_policy_categories_term:source_type')
       ->defaultValue('tid');
-    $this->addFieldMapping('field_policy_owner_term', '4')
+    $this->addFieldMapping('field_policy_owner_term', migrate_d2d_unca_get_src_vocab_id('policy_owner'))
       ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('policy_owner'));
     $this->addFieldMapping('field_policy_owner_term:source_type')
       ->defaultValue('tid');
-    $this->addFieldMapping('field_policy_responsible_term', '7')
+    $this->addFieldMapping('field_policy_responsible_term', migrate_d2d_unca_get_src_vocab_id('responsible_office'))
       ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('responsible_office'));
     $this->addFieldMapping('field_policy_responsible_term:source_type')
       ->defaultValue('tid');

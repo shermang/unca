@@ -18,17 +18,24 @@ function unca_slideshow_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -59,7 +66,7 @@ function unca_slideshow_field_default_field_instances() {
     'description' => 'Choose an image already uploaded to this site or one from your computer or shared network drive.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
@@ -68,10 +75,23 @@ function unca_slideshow_field_default_field_instances() {
         'type' => 'image',
         'weight' => 5,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
         'weight' => 0,
       ),
     ),
@@ -119,17 +139,24 @@ function unca_slideshow_field_default_field_instances() {
     'description' => 'Set URL destination of this slide\'s headline, image, and read more button.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 6,
       ),
-      'teaser' => array(
-        'label' => 'above',
+      'full' => array(
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -177,17 +204,23 @@ function unca_slideshow_field_default_field_instances() {
     'description' => 'Override the "Read More" text. Defaults to "Read more"',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 8,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -217,17 +250,22 @@ function unca_slideshow_field_default_field_instances() {
     'description' => 'Select a slideshow where this slide should display.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 9,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -254,17 +292,25 @@ function unca_slideshow_field_default_field_instances() {
     'description' => 'Set the caption or sub-heading of this slide.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 7,
       ),
-      'teaser' => array(
-        'label' => 'above',
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
