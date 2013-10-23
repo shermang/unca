@@ -18,6 +18,27 @@ function migrate_d2d_unca_flush_caches() {
  * Register all D6->D7 migrations.
  */
 function migrate_d2d_unca_register_migrations() {
+
+  global $conf;
+
+  // check if the source_dir has been setup in the settings.php
+  // this should be an absolute path to the files directory
+  // /var/www/html/unca/sites/default/files/
+  //
+  if(empty($conf['migrate_files_source_dir'])){
+    $conf['migrate_files_source_dir'] = '';
+  }
+
+  // check if we should do webform migrations
+  db_set_active('legacy');
+  $results = db_select('system', 's')
+    ->fields('s',array('status'))
+    ->condition('name','webform','=')
+    ->execute()
+    ->fetchCol();
+  $webform = $results[0];
+  db_set_active();
+
   /**
    * Each migration being registered takes an array of arguments, some required
    * and some optional. Start with the common arguments required by all - the
@@ -63,6 +84,7 @@ function migrate_d2d_unca_register_migrations() {
         'content manager' => 'content manager',
         'administrator' => 'administrator',
       ),
+      'group_name' => 'b_user',
     );
   $role_migration_class = 'UNCARoleMigration';
   // $role_migration_class = 'DrupalRole6Migration';
@@ -81,6 +103,7 @@ function migrate_d2d_unca_register_migrations() {
       'description' => t('Migration of users from Drupal 6'),
       'machine_name' => 'UNCAUser',
       'role_migration' => 'UNCARole',
+      'group_name' => 'b_user',
     );
   $user_migration_class = 'UNCAUserMigration';
   // $user_migration_class = 'DrupalUser6Migration';
@@ -97,7 +120,9 @@ function migrate_d2d_unca_register_migrations() {
   $file_arguments = $common_arguments + array(
       'machine_name' => 'UNCAFile',
       'description' => t('Import Drupal 6 files'),
-      'source_dir' => '',       // @TODO: This may need to be changed once we know where the source files are
+      'source_dir' => $conf['migrate_files_source_dir'],
+      'group_name' => 'c_node',
+      ''
     );
   $file_migration_class = 'UNCAFileMigration';
   // $role_migration_class = 'DrupalRole6Migration';
@@ -134,6 +159,7 @@ function migrate_d2d_unca_register_migrations() {
         'machine_name' => 'Term_' . $vocab['mach_name'],
         'source_vocabulary' => $vocab['d6_vid'],  // D6 Vocabulary ID
         'destination_vocabulary' => $vocab['mach_name'],  // D7 vocabulary machine name
+        'group_name' => 'a_taxonomy',
       );
     }
   }
@@ -166,6 +192,8 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCAEvent',
       'source_type' => 'event',
       'destination_type' => 'event',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
     ),
     array(
       'class_name' => 'UNCANewArticleMigration',
@@ -173,6 +201,8 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCANews',
       'source_type' => 'news_article',
       'destination_type' => 'news_article',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
     ),
     array(
       'class_name' => 'UNCAPolicyMigration',
@@ -180,6 +210,8 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCAPolicy',
       'source_type' => 'policy',
       'destination_type' => 'policy',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
     ),
     array(
       'class_name' => 'UNCAProfileMigration',
@@ -187,6 +219,8 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCAProfile',
       'source_type' => 'profile',
       'destination_type' => 'profile',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
     ),
 
     // Destination CT
@@ -197,6 +231,8 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCADestinationCT',
       'source_type' => 'destination',
       'destination_type' => 'destination',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
     ),
 
     // Campus Update CT
@@ -207,6 +243,8 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCACampusUpdatenCT',
       'source_type' => 'campus_update',
       'destination_type' => 'campus_update',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
     ),
 
     // Page CT
@@ -218,6 +256,8 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCAPageCT',
       'source_type' => 'page',
       'destination_type' => 'page',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
     ),
 
     // iFrame/Page CT
@@ -227,6 +267,8 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCAIframeCT',
       'source_type' => 'iframe',
       'destination_type' => 'page',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
     ),
 
     // Cluster CT
@@ -237,6 +279,9 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCAClusterCT',
       'source_type' => 'cluster',
       'destination_type' => 'cluster',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+
     ),
 
     // Course CT
@@ -247,6 +292,9 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCACourseCT',
       'source_type' => 'course',
       'destination_type' => 'course',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+
     ),
 
     // Slideshow *Image* CT migration
@@ -257,6 +305,9 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCASlideshowImageCT',
       'source_type' => 'slideshow_image',
       'destination_type' => 'slideshow_item',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+
     ),
 
     // Slideshow *Item* CT migration
@@ -267,6 +318,9 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCASlideshowItemCT',
       'source_type' => 'slideshow_item',
       'destination_type' => 'slideshow_item',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+
     ),
 
     // Student Project CT
@@ -278,27 +332,38 @@ function migrate_d2d_unca_register_migrations() {
       'machine_name' => 'UNCAStudentOrg',
       'source_type' => 'student_organization',
       'destination_type' => 'student_organization',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+
     ),
 
     // Map Item CT
-     array(
-       'class_name' => 'UNCAMapItemMigration',
-       'description' => t('Migration of Map Item nodes from Drupal 6'),
-       'machine_name' => 'UNCAMapItem',
-       'source_type' => 'map_item',
-       'destination_type' => 'map_item',
-     ),
+    array(
+      'class_name' => 'UNCAMapItemMigration',
+      'description' => t('Migration of Map Item nodes from Drupal 6'),
+      'machine_name' => 'UNCAMapItem',
+      'source_type' => 'map_item',
+      'destination_type' => 'map_item',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
 
-    // Webform CT - Nodes
-//        array(
-//	      'class_name' => 'UNCAWebformNodeMigration',
-//	      'description' => t('Migration of Webform nodes from Drupal 6'),
-//	      'machine_name' => 'UNCAWebFormNode',
-//	      'source_type' => 'webform',
-//	      'destination_type' => 'webform',
-//	    ),
-
+    ),
   );
+  // Webform CT - Nodes
+  if($webform){
+    $node_arguments[] =
+      array(
+        'class_name' => 'UNCAWebformNodeMigration',
+        'description' => t('Migration of Webform nodes from Drupal 6'),
+        'machine_name' => 'UNCAWebFormNode',
+        'source_type' => 'webform',
+        'destination_type' => 'webform',
+        'group_name' => 'c_node',
+        'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+
+      );
+
+  }
   // // Tell the node migrations where the users are coming from, so they can
   // // set up the dependency and resolve D6->D7 uids.
   $common_node_arguments = $common_arguments + array(
@@ -327,6 +392,7 @@ function migrate_d2d_unca_register_migrations() {
 //      'menu_migration' => $menu_arguments['machine_name'],
       'node_migrations' => unca_migrations_array($node_arguments),
       'term_migrations' => unca_migrations_array($vocabulary_arguments),
+      'group_name' => 'e_structure',
     );
   Migration::registerMigration('UNCADrupalMenuLinks6Migration', $menu_links_arguments['machine_name'],
     $menu_links_arguments);
@@ -334,93 +400,87 @@ function migrate_d2d_unca_register_migrations() {
   // //
   // // +  +  +  +  TABLE-TO-TABLE MIGRATIONS  +  +  +  +
   // //
+  if($webform){
+    $table_arguments = array(
 
-  $table_arguments = array(
+      // Webform CT - Roles
+      // roles are handled in the webformNodeMigration
 
-    // Webform CT - Roles
-    // roles are handled in the webformNodeMigration
+      // Webform CT - Emails
+      array(
+        'class_name' => 'UNCAWebformEmailMigration',
+        'description' => t('Migration of Webform Emails from Drupal 6'),
+        'machine_name' => 'UNCAWebFormEmail',
+        'wf_node_migration' => 'UNCAWebformNodeMigration',
+        'group_name' => 'd_webform',
+        'dependencies' => array('UNCAWebFormNode'),
+      ),
 
-    // Webform CT - Emails
-    array(
-      'class_name' => 'UNCAWebformEmailMigration',
-      'description' => t('Migration of Webform Emails from Drupal 6'),
-      'machine_name' => 'UNCAWebFormEmail',
-      'wf_node_migration' => 'UNCAWebformNodeMigration',
-      'group' => 'WebformTables',
-    ),
+      // Webform CT - Components
+      array(
+        'class_name' => 'UNCAWebformComponentMigration',
+        'description' => t('Migration of Webform Components from Drupal 6'),
+        'machine_name' => 'UNCAWebFormComponent',
+        'wf_node_migration' => 'UNCAWebformNodeMigration',
+        'group_name' => 'd_webform',
+        'dependencies' => array('UNCAWebFormNode'),
+      ),
 
-    // Webform CT - Components
-    array(
-      'class_name' => 'UNCAWebformComponentMigration',
-      'description' => t('Migration of Webform Components from Drupal 6'),
-      'machine_name' => 'UNCAWebFormComponent',
-      'wf_node_migration' => 'UNCAWebformNodeMigration',
-      'group' => 'WebformTables',
-    ),
+      // Webform CT - Submissions
+      array(
+        'class_name' => 'UNCAWebformSubmissionMigration',
+        'description' => t('Migration of Webform Submissions from Drupal 6'),
+        'machine_name' => 'UNCAWebFormSubmission',
+        'wf_node_migration' => 'UNCAWebformNodeMigration',
+        'group_name' => 'd_webform',
+        'dependencies' => array('UNCAWebFormNode'),
+      ),
 
-    // Webform CT - Submissions
-    array(
-      'class_name' => 'UNCAWebformSubmissionMigration',
-      'description' => t('Migration of Webform Submissions from Drupal 6'),
-      'machine_name' => 'UNCAWebFormSubmission',
-      'wf_node_migration' => 'UNCAWebformNodeMigration',
-      'group' => 'WebformTables',
-    ),
-
-    // Webform CT - Submission data
-    array(
-      'class_name' => 'UNCAWebformDataMigration',
-      'description' => t('Migration of Webform Submission data from Drupal 6'),
-      'machine_name' => 'UNCAWebFormData',
-      'wf_node_migration' => 'UNCAWebformNodeMigration',
-      'group' => 'WebformTables',
-    ),
-
-//    // Location - From Map Items - NOT NEEDED
-//    array(
-//      'class_name' => 'UNCALocationMigration',
-//      'description' => t('Migration of Location table from Drupal 6'),
-//      'machine_name' => 'UNCALocation',
-//      'group' => 'LocationTables',
-//    ),
-//  LocationInstance not needed
-//    array(
-//      'class_name' => 'UNCALocationInstanceMigration',
-//      'description' => t('Migration of Location_instance table from Drupal 6'),
-//      'machine_name' => 'UNCALocationInstance',
-//      'group' => 'LocationTables',
-//      'dependencies' => array('UNCALocation','UNCAMapItem'),
-//    ),
-  );
-
-  foreach ($table_arguments as $arguments) {
-    $arguments = array_merge_recursive($arguments, $common_arguments);
-    Migration::registerMigration($arguments['class_name'], $arguments['machine_name'],
-      $arguments);
-  }
-
-  // Blocks
-  $block_arguments = $common_arguments + array(
-      'machine_name' => 'UNCABlock',
-      'description' => t('Migration of Drupal 6 blocks'),
+      // Webform CT - Submission data
+      array(
+        'class_name' => 'UNCAWebformDataMigration',
+        'description' => t('Migration of Webform Submission data from Drupal 6'),
+        'machine_name' => 'UNCAWebFormData',
+        'wf_node_migration' => 'UNCAWebformNodeMigration',
+        'group_name' => 'd_webform',
+        'dependencies' => array('UNCAWebFormNode'),
+      ),
     );
 
-  $block_migration_class = 'UNCABlockMigration';
-  Migration::registerMigration($block_migration_class,
-    $block_arguments['machine_name'], $block_arguments);
-
+    foreach ($table_arguments as $arguments) {
+      $arguments = array_merge_recursive($arguments, $common_arguments);
+      Migration::registerMigration($arguments['class_name'], $arguments['machine_name'],
+        $arguments);
+    }
+  }
   // Boxes
-  $block_arguments = $common_arguments + array(
+  $box_migration_class = 'UNCABoxesMigration';
+  $box_arguments = $common_arguments + array(
+      'class_name' => $box_migration_class,
       'machine_name' => 'UNCABoxes',
       'description' => t('Migration of Drupal 6 Boxes'),
+      'group_name' => 'e_structure',
     );
 
-  $block_migration_class = 'UNCABoxesMigration';
+
+  Migration::registerMigration($box_migration_class,
+    $box_arguments['machine_name'], $box_arguments);
+
+
+  // Blocks
+  $block_migration_class = 'UNCABlockMigration';
+  $block_arguments = $common_arguments + array(
+      'class_name' => $block_migration_class,
+      'machine_name' => 'UNCABlock',
+      'description' => t('Migration of Drupal 6 blocks'),
+      'group_name' => 'e_structure',
+      'dependencies' => array('UNCABoxes'),
+    );
+
   Migration::registerMigration($block_migration_class,
     $block_arguments['machine_name'], $block_arguments);
 
 }
-
 
 /**
  * Implements hook_migrate_api().
@@ -428,6 +488,28 @@ function migrate_d2d_unca_register_migrations() {
 function migrate_d2d_unca_migrate_api() {
   $api = array(
     'api' => 2,
+    'groups' => array(
+      'a_taxonomy' => array(
+        'title' => t('Taxomony Migrations'),
+      ),
+      'b_user' => array(
+        'title' => t('User Migrations'),
+      ),
+      'c_node' => array(
+        'title' => t('Content Migrations'),
+      ),
+      'd_webform' => array(
+        'title' => t('Webforms Migrations'),
+      ),
+      'e_structure' => array(
+        'title' => t('Structure Migrations'),
+      ),
+    ),
+    // Date module doesn't register handler according to new Migrate 2.6 requirements
+    // that's why we register it here.
+    'field handlers' => array(
+      'DateMigrateFieldHandler',
+    ),
   );
   return $api;
 }
@@ -672,6 +754,7 @@ function unca_migrate_node_arguments_by_database($database, $source_content_type
         'machine_name' => 'UNCAProject',
         'source_type' => 'project',
         'destination_type' => 'project',
+        'group_name' => 'c_node',
       );
 
       break;
@@ -682,6 +765,7 @@ function unca_migrate_node_arguments_by_database($database, $source_content_type
         'machine_name' => 'UNCAStudentProject',
         'source_type' => 'project',
         'destination_type' => 'student_project',
+        'group_name' => 'c_node',
       );
       break;
     default:

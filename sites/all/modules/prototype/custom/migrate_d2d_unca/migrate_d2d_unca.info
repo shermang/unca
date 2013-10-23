@@ -6,6 +6,8 @@ hidden = TRUE
 
 dependencies[] = migrate
 dependencies[] = migrate_d2d
+dependencies[] = migrate_ui
+dependencies[] = date_migrate
 
 files[] = role.inc
 files[] = user.inc

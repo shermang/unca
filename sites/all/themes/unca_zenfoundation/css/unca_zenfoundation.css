@@ -10310,58 +10310,56 @@ a.footer-spiff-map {
   overflow: hidden;
 }
 
-#bottom-spiffs #profile-headshot {
-  float: right;
+#bottom-spiffs .profile-headshot {
   padding: 1px;
   border: solid #fff 1px;
   margin-left: 20px;
 }
-
-#bottom-spiffs #profile-name {
+#bottom-spiffs .profile-headshot a {
+  padding: 0;
+}
+#bottom-spiffs .profile-name a {
   font-size: 24px;
   margin-bottom: 5px;
   margin-top: 5px;
+  padding: 0;
+  color: #4572C5;
+  text-decoration: none;
 }
-
-#bottom-spiffs #profile-major {
+#bottom-spiffs .profile-major {
   margin-bottom: 5px;
 }
-
-#bottom-spiffs #profile-abstract {
+#bottom-spiffs .profile-abstract {
   margin-bottom: 5px;
   font-size: 11px;
 }
-
-#bottom-spiffs #project-thumbnail {
+#bottom-spiffs .project-thumbnail {
   float: right;
   padding: 1px;
   border: solid #fff 1px;
   margin-left: 20px;
 }
-
-#bottom-spiffs #project-name {
+#bottom-spiffs .project-name {
   font-size: 24px;
   line-height: 100%;
   margin-bottom: 5px;
   margin-top: 5px;
 }
-
 #bottom-spiffs li {
   margin-bottom: 5px;
 }
-
 #bottom-spiffs p {
   margin-bottom: 0px;
 }
-
 #bottom-spiffs .content {
   margin-bottom: 5px;
 }
-
+#bottom-spiffs .button-blue-rounded a {
+  padding: 0;
+}
 #bottom-spiffs .column.first div.content {
   background: url(../images/footer-spiff-background-tall.png) repeat-x #32611c;
 }
-
 #bottom-spiffs .column.last div.content {
   background: url(../images/footer-spiff-background-short.png) repeat-x #32611c;
 }
@@ -11723,6 +11721,9 @@ div.content-two-column {
   margin: 5px 0 0 0;
   float: left;
 }
+.button-blue-rounded a {
+  padding: 0;
+}
 
 .sidebar .block.right-spiff {
   background-color: rgba(232, 238, 225, 0.7);
@@ -12205,10 +12206,10 @@ Notes:  Adds support for slideshows
 .page-policies .view-filters input[type="text"] {
   height: 1em;
 }
-.page-policies .views-row {
-  padding-bottom: 0;
+.page-policies #content div.views-row {
+  padding-bottom: 0 !important;
 }
-.page-policies .views-row ul {
+.page-policies #content div.views-row ul {
   list-style: disc outside none;
 }
 
