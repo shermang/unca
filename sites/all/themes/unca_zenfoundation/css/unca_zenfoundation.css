@@ -862,6 +862,17 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
   padding: .25em .5em;
 }
 
+.node-type-campus-update .field-name-field-tags .field-item {
+  display: inline;
+  margin: 0 0.25em;
+}
+.node-type-campus-update .field-name-field-tags .field-item:after {
+  content: ",";
+}
+.node-type-campus-update .field-name-field-tags .field-item:last-child:after {
+  content: "";
+}
+
 #block-menu-menu-footer-menu ul, .section-menu ul {
   border-bottom: 1px solid #dbdbdb;
   margin: 0;
@@ -6820,6 +6831,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
   display: inline-block;
 }
 
+/* END: .node-type-campus-update */
 .node-type-event .field {
   line-height: 1.5;
 }
