@@ -102,6 +102,7 @@
 .icon-point-up:before,
 .icon-previous:before,
 .icon-print:before,
+.node .links .print_html a:before,
 .icon-pushpin:before,
 .icon-question:before,
 .icon-quotes-left:before,
@@ -255,6 +256,7 @@ a #block-view-upcoming-events .view-footer:after,
 .icon-point-up:before,
 .icon-previous:before,
 .icon-print:before,
+.node .links .print_html a:before,
 .icon-pushpin:before,
 .icon-question:before,
 .icon-quotes-left:before,
@@ -695,7 +697,7 @@ a.email:before,
   content: "\f15b";
 }
 
-.icon-print:before {
+.icon-print:before, .node .links .print_html a:before {
   content: "\f15c";
 }
 
@@ -6819,11 +6821,25 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 }
 
 .node-type-event .field {
-  margin-bottom: 0;
   line-height: 1.5;
 }
+.node-type-event .field-name-field-date,
+.node-type-event .field-name-field-location {
+  display: inline;
+}
+.node-type-event .field-name-field-date div,
+.node-type-event .field-name-field-location div {
+  display: inline;
+}
 .node-type-event .field-name-field-date {
-  color: #ef851a;
+  font-weight: bold;
+  margin-right: 1em;
+}
+.node-type-event .field-name-body {
+  margin-top: 1em;
+}
+.node-type-event span.print-link {
+  display: none;
 }
 
 .node-news .field-name-field-image img {
@@ -6853,6 +6869,9 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 /* END: .node-person */
 .node {
   clear: both;
+}
+.node .links li {
+  margin: 0;
 }
 
 .tabs li {
