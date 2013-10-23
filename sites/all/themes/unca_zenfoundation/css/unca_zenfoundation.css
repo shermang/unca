@@ -11860,22 +11860,6 @@ table.ncchw ul li {
 }
 
 /* end ncchw.unca.edu styles*/
-/*Added on: 2011-05-02
-Added by: lwithrow@unca.edu
-Notes:  Repositions printer-friendly link to top-right corner of pages.  
-Two styles have been created:  The first for legacy sites, the second for sites with slideshows.
-This CSS overrides .print-link in /modules/print/css/printlinks.css*/
-.print-link {
-  /*This CSS repositions the printer icon on older sites in the top-right corner.  It assumes no content is assigned to "Content Top Right".
-  In these cases, the printer icon is being output as part of the node's content area.
-  */
-  display: block;
-  text-align: right;
-  padding-bottom: 0.5em;
-  margin: -55px -15px 0 0;
-  padding-bottom: 40px;
-}
-
 #block-print-0 .print_html, .print_mail, .print_pdf {
   /*This CSS repositions the printer icon on newer sites in the top-right corner.  
   It assumes the print module has been disabled on this page:  /admin/settings/print/html
