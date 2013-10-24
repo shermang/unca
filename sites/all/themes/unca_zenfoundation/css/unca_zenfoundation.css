@@ -6923,6 +6923,14 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 }
 
 /* END: .node-person */
+.node-dept-update .submitted {
+  color: #ef851a;
+  margin-bottom: 1em;
+}
+.node-dept-update .field-name-body {
+  clear: both;
+}
+
 .node {
   clear: both;
 }
