@@ -67,10 +67,9 @@ function unca_campus_update_field_default_field_instances() {
     'description' => 'Can be used to feature an update in a View and display as a Block on a page.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'list',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -109,7 +108,7 @@ function unca_campus_update_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'backpage-full-width-image',
+          'image_style' => 'medium',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -156,7 +155,7 @@ function unca_campus_update_field_default_field_instances() {
     'description' => 'Free tagging. Enter any new or existing tags to this piece of content.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',

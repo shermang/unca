@@ -30,9 +30,10 @@ class UNCAProfileMigration extends UNCANodeMigration {
 
 
 // Note that we map migrated terms by the vocabulary ID.
-    $this->addFieldMapping('field_profile_type_term', '2')
-      ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('profile_type'))
-      ->arguments(array('source_type' => 'tid'));
+    $this->addFieldMapping('field_profile_type_term', migrate_d2d_unca_get_src_vocab_id('profile_type'))
+      ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('profile_type'));
+    $this->addFieldMapping('field_profile_type_term:source_type')
+      ->defaultValue('tid');
 
 //  // department is a new field and we don't need to migrate
 //    $this->addFieldMapping('field_department_term', '1')

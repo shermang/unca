@@ -1,9 +1,10 @@
 <?php
 
-class UNCAWebformSubmissionMigration extends DynamicMigration {
-  public function __construct(array $arguments) {
+class UNCAWebformSubmissionMigration extends DrupalMigration {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
 
-    parent::__construct(MigrateGroup::getInstance($arguments['group'], array('default')));
+    $this->source = new MigrateSourceSQL($this->query(), array(), NULL, array('map_joinable' => FALSE));
 
     $table_name = 'webform_submissions';
 
@@ -19,14 +20,6 @@ class UNCAWebformSubmissionMigration extends DynamicMigration {
       $map_source_pkey,
       MigrateDestinationTable::getKeySchema($table_name)
     );
-
-    // Source query
-    $query = Database::getConnection('default', 'legacy')
-                     ->select($table_name, 'ws')
-             ->fields('ws');
-
-    // Create a MigrateSource object, which manages retrieving the input data.
-    $this->source = new MigrateSourceSQL($query);
 
     // Set up our destination
     $this->destination = new MigrateDestinationTable($table_name);
@@ -49,9 +42,11 @@ class UNCAWebformSubmissionMigration extends DynamicMigration {
     }
   }
 
-  public function prepare($entity, $row) {
-    // drush_print_r($row);
-    // drush_print_r($entity);
+  protected function query(){
+    $query = Database::getConnection('default', 'legacy')
+      ->select('webform_submissions', 'ws')
+      ->fields('ws');
+    return $query;
   }
 
 }

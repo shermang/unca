@@ -1,9 +1,9 @@
 <?php
 
-class UNCAWebformComponentMigration extends DynamicMigration {
-  public function __construct(array $arguments) {
+class UNCAWebformComponentMigration extends DrupalMigration {
+  public function __construct($arguments) {
 
-    parent::__construct(MigrateGroup::getInstance($arguments['group'], array('default')));
+    parent::__construct($arguments);
 
     $table_name = 'webform_component';
 
@@ -86,6 +86,10 @@ class UNCAWebformComponentMigration extends DynamicMigration {
   public function prepare($entity, $row) {
     // drush_print_r($row);
     // drush_print_r($entity);
+  }
+
+  protected function query(){
+    return parent::query();
   }
 
 }

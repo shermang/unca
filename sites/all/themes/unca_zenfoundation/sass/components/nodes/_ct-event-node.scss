@@ -1,16 +1,27 @@
 .node-type-event {
   .field {
-    margin-bottom: 0;
+    // margin-bottom: 0;
     line-height: 1.5;
   }
+  .field-name-field-date,
+  .field-name-field-location {
+    display: inline;
+    div {
+      display: inline;
+    }
+  }
   .field-name-field-date {
-    color: $orange;
+    font-weight: bold;
+    margin-right: 1em;
   }
   .field-name-field-image {
     // @extend %float-left;
   }
   .field-name-body {
-    // clear: both;
-    // margin: 1em 0;
+    margin-top: 1em;
+  }
+  // Hide the print link at the top since it's already at the bottom of the node
+  span.print-link {
+    display: none;
   }
 }
