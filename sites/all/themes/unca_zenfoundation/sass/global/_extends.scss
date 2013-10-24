@@ -119,6 +119,19 @@
   margin: 0 0 1em 1em;
 }
 
+// Clearfixes
+
+%no-clearfix {
+  &:after {
+    clear: none;
+  }
+}
+%clearfix-left {
+  &:after {
+    clear: left;
+  }
+}
+
 // Hide text with an icon
 %hide-text-icon{
   height:1.5em;
