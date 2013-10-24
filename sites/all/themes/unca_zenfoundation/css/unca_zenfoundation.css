@@ -10179,6 +10179,10 @@ body {
   font-size: 12px;
   line-height: 16px;
 }
+body.cke_panel_frame, body.cke_show_borders {
+  background-image: none;
+  background-color: #FFFFFF;
+}
 
 hr {
   -moz-border-bottom-colors: none;
