@@ -102,6 +102,7 @@
 .icon-point-up:before,
 .icon-previous:before,
 .icon-print:before,
+.links .print_html a:before,
 .icon-pushpin:before,
 .icon-question:before,
 .icon-quotes-left:before,
@@ -255,6 +256,7 @@ a #block-view-upcoming-events .view-footer:after,
 .icon-point-up:before,
 .icon-previous:before,
 .icon-print:before,
+.links .print_html a:before,
 .icon-pushpin:before,
 .icon-question:before,
 .icon-quotes-left:before,
@@ -695,7 +697,7 @@ a.email:before,
   content: "\f15b";
 }
 
-.icon-print:before {
+.icon-print:before, .links .print_html a:before {
   content: "\f15c";
 }
 
@@ -860,6 +862,17 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
   padding: .25em .5em;
 }
 
+.node-type-campus-update .field-name-field-tags .field-item {
+  display: inline;
+  margin: 0 0.25em;
+}
+.node-type-campus-update .field-name-field-tags .field-item:after {
+  content: ",";
+}
+.node-type-campus-update .field-name-field-tags .field-item:last-child:after {
+  content: "";
+}
+
 #block-menu-menu-footer-menu ul, .section-menu ul {
   border-bottom: 1px solid #dbdbdb;
   margin: 0;
@@ -922,6 +935,11 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
   margin: 0 1em 1em 0;
 }
 
+.node-type-cluster .field-name-field-image {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+
 #block-menu-menu-social-links ul.menu li a {
   height: 1.5em;
   padding: 0;
@@ -946,10 +964,10 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
 .view-news .views-row {
   margin-bottom: 1em;
 }
-.view-news h3 {
+.view-news h3, .view-news .node-type-cluster .field-label, .node-type-cluster .view-news .field-label {
   font-size: 1.5em;
 }
-.view-news h3.field-content {
+.view-news h3.field-content, .view-news .node-type-cluster .field-content.field-label, .node-type-cluster .view-news .field-content.field-label {
   margin-bottom: 0;
 }
 .view-news .views-field-field-news-date,
@@ -2663,7 +2681,7 @@ p.lead {
   line-height: 1.6;
 }
 
-.subheader, .view-news h3, .block-title, .flex-caption .teaser {
+.subheader, .view-news h3, .view-news .node-type-cluster .field-label, .node-type-cluster .view-news .field-label, .block-title, .flex-caption .teaser {
   line-height: 1.4;
   color: #6f6f6f;
   font-weight: 300;
@@ -2682,6 +2700,7 @@ li,
 h1,
 h2,
 h3,
+.node-type-cluster .field-label,
 h4,
 h5,
 h6,
@@ -2725,7 +2744,7 @@ p aside {
 }
 
 /* Default header styles */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, .node-type-cluster .field-label, h4, h5, h6 {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -2735,7 +2754,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5em;
   line-height: 1.15em;
 }
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+h1 small, h2 small, h3 small, .node-type-cluster .field-label small, h4 small, h5 small, h6 small {
   font-size: 80%;
   color: #6f6f6f;
   line-height: 0;
@@ -2749,7 +2768,7 @@ h2 {
   font-size: 2.25em;
 }
 
-h3 {
+h3, .node-type-cluster .field-label {
   font-size: 1.83333em;
 }
 
@@ -2921,7 +2940,7 @@ blockquote p {
 }
 
 @media only screen and (min-width: 64em) {
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, .node-type-cluster .field-label, h4, h5, h6 {
     line-height: 1.4;
   }
 
@@ -2933,7 +2952,7 @@ blockquote p {
     font-size: 3.08333em;
   }
 
-  h3 {
+  h3, .node-type-cluster .field-label {
     font-size: 2.25em;
   }
 
@@ -6452,6 +6471,12 @@ html {
   background-color: inherit;
 }
 
+h3, .node-type-cluster .field-label {
+  font-size: 1.16667em;
+  font-weight: bold;
+  color: #ef851a;
+}
+
 #content {
   padding-bottom: 2em;
 }
@@ -6818,12 +6843,27 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
   display: inline-block;
 }
 
+/* END: .node-type-campus-update */
 .node-type-event .field {
-  margin-bottom: 0;
   line-height: 1.5;
 }
+.node-type-event .field-name-field-date,
+.node-type-event .field-name-field-location {
+  display: inline;
+}
+.node-type-event .field-name-field-date div,
+.node-type-event .field-name-field-location div {
+  display: inline;
+}
 .node-type-event .field-name-field-date {
-  color: #ef851a;
+  font-weight: bold;
+  margin-right: 1em;
+}
+.node-type-event .field-name-body {
+  margin-top: 1em;
+}
+.node-type-event span.print-link {
+  display: none;
 }
 
 .node-news .field-name-field-image img {
@@ -6855,6 +6895,10 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
   clear: both;
 }
 
+.links li {
+  margin: 0;
+}
+
 .tabs li {
   font-weight: normal;
 }
@@ -6882,7 +6926,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
   font-size: 1em;
   font-weight: bold;
 }
-#block-view-upcoming-events .views-field-title h3 {
+#block-view-upcoming-events .views-field-title h3, #block-view-upcoming-events .views-field-title .node-type-cluster .field-label, .node-type-cluster #block-view-upcoming-events .views-field-title .field-label {
   font-size: 1em;
 }
 #block-view-upcoming-events .views-field-nothing {
@@ -7203,7 +7247,7 @@ html[xmlns] .slides {
 .flexslider {
   position: relative;
 }
-.flexslider h3 {
+.flexslider h3, .flexslider .node-type-cluster .field-label, .node-type-cluster .flexslider .field-label {
   margin: 0;
 }
 .flexslider .slides li {
@@ -10161,7 +10205,7 @@ h2 {
   margin-bottom: 15px;
 }
 
-h3 {
+h3, .node-type-cluster .field-label {
   color: #EE5B14;
   font-size: 14px;
   font-weight: normal;
@@ -10532,7 +10576,7 @@ h2.section-heading {
   padding: 0px;
 }
 
-#homepage-campus-updates h3, .front > .block-views-campus_updates-block_1 h3 {
+#homepage-campus-updates h3, #homepage-campus-updates .node-type-cluster .field-label, .node-type-cluster #homepage-campus-updates .field-label, .front > .block-views-campus_updates-block_1 h3, .front > .block-views-campus_updates-block_1 .node-type-cluster .field-label, .node-type-cluster .front > .block-views-campus_updates-block_1 .field-label {
   font-size: 15px;
   font-weight: normal;
   margin-left: 0px;
@@ -11730,7 +11774,7 @@ div.content-two-column {
   padding: 10px 10px 1px 10px;
   margin-bottom: 0;
 }
-.sidebar .block.right-spiff h2, .sidebar .block.right-spiff h3 {
+.sidebar .block.right-spiff h2, .sidebar .block.right-spiff h3, .sidebar .block.right-spiff .node-type-cluster .field-label, .node-type-cluster .sidebar .block.right-spiff .field-label {
   color: #EE5B14;
   font-size: 14px;
   font-weight: bold;
@@ -11841,22 +11885,6 @@ table.ncchw ul li {
 }
 
 /* end ncchw.unca.edu styles*/
-/*Added on: 2011-05-02
-Added by: lwithrow@unca.edu
-Notes:  Repositions printer-friendly link to top-right corner of pages.  
-Two styles have been created:  The first for legacy sites, the second for sites with slideshows.
-This CSS overrides .print-link in /modules/print/css/printlinks.css*/
-.print-link {
-  /*This CSS repositions the printer icon on older sites in the top-right corner.  It assumes no content is assigned to "Content Top Right".
-  In these cases, the printer icon is being output as part of the node's content area.
-  */
-  display: block;
-  text-align: right;
-  padding-bottom: 0.5em;
-  margin: -55px -15px 0 0;
-  padding-bottom: 40px;
-}
-
 #block-print-0 .print_html, .print_mail, .print_pdf {
   /*This CSS repositions the printer icon on newer sites in the top-right corner.  
   It assumes the print module has been disabled on this page:  /admin/settings/print/html
@@ -12131,7 +12159,7 @@ Notes:  Adds support for slideshows
   margin-bottom: 10px;
 }
 
-.portal-content h3 {
+.portal-content h3, .portal-content .node-type-cluster .field-label, .node-type-cluster .portal-content .field-label {
   font-size: 14px;
   font-weight: normal;
   line-height: 160%;
