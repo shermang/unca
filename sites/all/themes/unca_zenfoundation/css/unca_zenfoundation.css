@@ -935,9 +935,22 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
   margin: 0 1em 1em 0;
 }
 
-.node-type-cluster .field-name-field-image {
+.node-type-cluster .field-name-field-image, .node-course .field-name-field-image img {
   float: right;
   margin: 0 0 1em 1em;
+}
+
+.node-course .field-name-field-course-number:after,
+.node-course .field-name-field-course-dates:after,
+.node-course .field-name-field-instructor:after,
+.node-course .field-name-field-course-catalog-term:after,
+.node-course .field-name-body:after {
+  clear: none;
+}
+
+.node-course .field-name-field-course-catalog-term:after,
+.node-course .field-name-body:after {
+  clear: left;
 }
 
 #block-menu-menu-social-links ul.menu li a {
@@ -1406,7 +1419,7 @@ table {
 
 html,
 body {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 body {
@@ -6847,6 +6860,22 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 }
 
 /* END: .node-type-campus-update */
+.node-course .field-name-field-image {
+  margin-bottom: 0;
+}
+.node-course .field-name-field-course-number,
+.node-course .field-name-field-course-dates,
+.node-course .field-name-field-instructor,
+.node-course .field-name-field-course-catalog-term,
+.node-course .field-name-body {
+  clear: left;
+  margin: 0;
+}
+.node-course .field-name-field-course-catalog-term,
+.node-course .field-name-body {
+  margin-bottom: 1em;
+}
+
 .node-type-event .field {
   line-height: 1.5;
 }
