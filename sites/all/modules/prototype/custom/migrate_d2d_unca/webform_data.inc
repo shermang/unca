@@ -1,9 +1,9 @@
 <?php
 
-class UNCAWebformDataMigration extends DynamicMigration {
-  public function __construct(array $arguments) {
+class UNCAWebformDataMigration extends Migration {
+  public function __construct($arguments) {
 
-    parent::__construct(MigrateGroup::getInstance($arguments['group'], array('default')));
+    parent::__construct($arguments);
 
     $table_name = 'webform_submitted_data';
 

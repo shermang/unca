@@ -1,9 +1,9 @@
 <?php
 
-class UNCAWebformEmailMigration extends DynamicMigration {
-  public function __construct(array $arguments) {
+class UNCAWebformEmailMigration extends Migration {
+  public function __construct($arguments) {
 
-    parent::__construct(MigrateGroup::getInstance($arguments['group'], array('default')));
+    parent::__construct($arguments);
 
     $table_name = 'webform_emails';
     // We're mapping from the 'webform' table as there's no 'webform_emails' table in D6

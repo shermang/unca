@@ -524,7 +524,7 @@ function migrate_d2d_unca_get_vocab_mach_name($key) {
   // Temporarily correct pending updates in features
   switch($key) {
     case 'event_categories':
-      return 'event_type'; # will change to event_categories
+      return 'event_categories'; # will change to event_categories
       break;
     case 'news_categories':
       return 'news_category'; # will change to news_categories
@@ -560,8 +560,8 @@ function migrate_d2d_unca_get_src_vocab_id($key) {
     /** @var $vocabs_map ARRAY */
     /** @var $src_vocabs ARRAY */
     extract(migrate_d2d_unca_get_vocab_mappings()); # $vocabs_map, $src_vocabs
-    return $vocabs_map[$key]['d6_vid'];
   }
+  return (isset($vocabs_map[$key]['d6_vid']) ? $vocabs_map[$key]['d6_vid'] : '');
 }
 
 function migrate_d2d_unca_get_vocab_mappings() {
@@ -678,12 +678,10 @@ function migrate_d2d_unca_get_vocab_mappings() {
       'mach_name' => 'student_orgs',
       'd6_name' => 'Student Organizations'
     ),
-    // The D6 "Slideshows" vocab MAY get migrated, but will be used to
-    // create slideshow entities, not taxonomy terms
-    '__slideshows__' => array(
+    'slideshows' => array(
       'd7_name' => 'Slideshows',
-      'mach_name' => 'see Migration notes',
-      'd6_name' => ''
+      'mach_name' => 'slideshows',
+      'd6_name' => 'Slideshows'
     ),
 
   );

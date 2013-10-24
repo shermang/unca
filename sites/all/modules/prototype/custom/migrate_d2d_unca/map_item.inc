@@ -43,17 +43,10 @@ class UNCAMapItemMigration extends UNCANodeMigration {
 //    $this->addFieldMapping('field_location_with_map:lid','lid')
 //      ->sourceMigration('UNCLocationMigration');
 // Note that we map migrated terms by the vocabulary ID.
-    if($arguments['unca_source_database'] == 'D6_drupal_maps'){
-    $this->addFieldMapping('field_location_type_term', '5')
+    $this->addFieldMapping('field_location_type_term', migrate_d2d_unca_get_src_vocab_id('location_type'))
       ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('location_type'));
       $this->addFieldMapping('field_location_type_term:source_type')
         ->defaultValue('tid');
-    } else {
-      $this->addFieldMapping('field_location_type_term', '3')
-        ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('location_type'));
-      $this->addFieldMapping('field_location_type_term:source_type')
-        ->defaultValue('tid');
-    }
   }
 
 
