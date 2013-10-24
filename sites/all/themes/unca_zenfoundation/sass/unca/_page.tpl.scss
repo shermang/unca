@@ -42,7 +42,10 @@ color:#fff;
 #main {
   @include grid-row;
     margin-bottom:4px; 
+  #content {
+    padding-top: 10px;
   }
+}
  
 .top-stripes {
   background:#fff url(../images/page-stripes-topright.png) top right no-repeat;
@@ -68,10 +71,18 @@ float:left;
 }
  
 #footer ul {
-text-align:center; 
-margin:0 auto 10px auto; 
-list-style-type:none;
-display:block;
+  text-align:center; 
+  margin:0 auto 10px auto; 
+  list-style-type:none;
+  display:block;
+  &.contextual-links {
+    display: none;
+    margin: 0;
+    text-align: left;
+    &:hover {
+      display: block;
+    }
+  }
 }
  
 #footer li {
@@ -350,31 +361,31 @@ padding:10px 15px;
  
 .navigation-secondary ul li.active-trail {/*this class changes background image (provides color) of active sub menu items**/
 background:url(../images/navigation-secondary-background-sprites.png) #ee5b0a repeat-x 0 -92px; 
-
 }
 
 .navigation-secondary .expanded.active-trail a.active {/*this adds bullet to all a:links inside li with expanded class and active-trail class */
 	display: list-item;
-	list-style-position: outside;
+	list-style-position: inside;
 	list-style-type: square;
-	margin-left: 7px;
+  padding-left: 2.33333em;
+  padding-right: 1.83333em;
 }
 	
-.navigation-secondary .trigger {/*this class targets span named trigger which is added by CMS (adds arrow down)*/
+.navigation-secondary .js-trigger {/*this class targets span named trigger which is added by CMS (adds arrow down)*/
 position:absolute;
 display:block;
 top:0;
 right:5px; 
-width:12px; 
+width:18px; 
 height:12px; 
 margin-top:8px;
 padding:0px;
 cursor:pointer;
-background:url(../images/navigation-secondary-arrow-down.png) no-repeat 0 0; 
+background:url(../images/navigation-secondary-arrow-down.png) no-repeat 3px 0; 
 }
 
 .navigation-secondary .trigger-closed {/*ditto-see above. adds arrow closed*/
-background:url(../images/navigation-secondary-arrow-right.png) no-repeat 0 0; 
+background:url(../images/navigation-secondary-arrow-right.png) no-repeat 3px 0; 
 }
  
 .navigation-secondary .first { /* this class targets span added by cms that allows appearance change to first item in list*/
@@ -801,22 +812,6 @@ table.ncchw ul li {
     margin-bottom: 7px;
 }
 /* end ncchw.unca.edu styles*/
-
-/*Added on: 2011-05-02
-Added by: lwithrow@unca.edu
-Notes:  Repositions printer-friendly link to top-right corner of pages.  
-Two styles have been created:  The first for legacy sites, the second for sites with slideshows.
-This CSS overrides .print-link in /modules/print/css/printlinks.css*/
-.print-link {
-  /*This CSS repositions the printer icon on older sites in the top-right corner.  It assumes no content is assigned to "Content Top Right".
-  In these cases, the printer icon is being output as part of the node's content area.
-  */
-  display: block;
-  text-align: right;
-  padding-bottom: 0.5em;
-  margin: -55px -15px 0 0;
-  padding-bottom: 40px;
-}
 
 #block-print-0 .print_html, .print_mail, .print_pdf {
   /*This CSS repositions the printer icon on newer sites in the top-right corner.  

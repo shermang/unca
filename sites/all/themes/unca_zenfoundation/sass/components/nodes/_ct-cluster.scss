@@ -1,0 +1,10 @@
+.node-type-cluster {
+  .field-label {
+    @extend h3;
+  }
+  .cluster-notes {
+  }
+  .field-name-field-image {
+    @extend %float-right;
+  }
+}

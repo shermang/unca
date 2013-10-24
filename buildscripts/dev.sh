@@ -36,6 +36,7 @@ location_cck \
 mcfilemanager \
 media_viddler \
 media_youtube \
+menu_attributes \
 menu_block \
 node_export \
 pathauto \
