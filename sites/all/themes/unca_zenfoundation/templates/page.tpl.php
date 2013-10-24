@@ -109,7 +109,9 @@
       <?php endif; ?>
 
       <!-- Primary Content Column -->
-      <?php print render($page['content']); ?>
+      <?php if (!($is_front && $is_unca_main)): ?>
+        <?php print render($page['content']); ?>
+      <?php endif; ?>
       <!-- Content Row 1-->
       <?php if ($page['content_row_1']): ?>
       <div class="content_row_1">
@@ -132,18 +134,23 @@
           <?php endif; ?>
         </div>
       <?php endif; ?>
-      <?php print $feed_icons; ?>
     </div><!-- /#content -->
 
     <!-- Let's simplify the sidebar logic since we only have one sidebar region. -->
-    <?php if ($page['sidebar_first']): ?>
-      <aside class="sidebar">
+    <aside class="sidebar">
+      <?php if ($is_front && $is_unca_main): ?>
+        <div class="navigation-gateway">
+          <?php print render($hp_sidebar_menu); ?>
+        </div>
+      <?php else: ?>
         <div class="block block-menu contextual-links-region first odd block-menu-menu-secondary-navigation---prot navigation-secondary right-spiff" id="block-menu-menu-secondary-navigation-prot" role="navigation">
           <?php print render($sidebar_menu); ?>
         </div>
+      <?php endif; ?>
+      <?php if ($page['sidebar_first']): ?>
         <?php print render($page['sidebar_first']); ?>
-      </aside><!-- /.sidebar -->
-    <?php endif; ?>
+      <?php endif; ?>
+    </aside><!-- /.sidebar -->
 
   </div><!-- /#main -->
 

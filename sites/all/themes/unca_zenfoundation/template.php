@@ -164,10 +164,13 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
  */
 
 function unca_zenfoundation_preprocess_page(&$variables, $hook) {
+
+  $variables['is_unca_main'] = variable_get('unca_main_site', FALSE);
   
   $variables['sidebar_menu'] = unca_zenfoundation_sidebar_menu();
+  $hp_sidebar_menu_tree = menu_tree_page_data('menu-home-page-secondary-navigat');
+  $variables['hp_sidebar_menu'] = menu_tree_output($hp_sidebar_menu_tree);
 
-  $variables['unca_main'] = variable_get('unca_main_site', FALSE);
   // Add layout classes
 
   // Add special classes for Gateway regions

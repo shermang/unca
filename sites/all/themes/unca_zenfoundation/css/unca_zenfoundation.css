@@ -10518,7 +10518,7 @@ h2.section-heading {
   margin: 0px;
 }
 
-#block-menu-menu-home-page-secondary-navigat ul li, .navigation-gateway ul li {
+#block-menu-menu-home-page-secondary-navigat ul li, .navigation-gateway ul li a {
   border-left: solid #fff 1px;
   border-top: solid #fff 1px;
   margin: 0px;
@@ -10526,13 +10526,12 @@ h2.section-heading {
   background: url(../images/navigation-gateway-lightblue.png) repeat-x #0091d1;
 }
 
-#block-menu-menu-home-page-secondary-navigat ul li.last, .navigation-gateway ul li.last {
+#block-menu-menu-home-page-secondary-navigat ul li.last, .navigation-gateway ul li.last a {
   border-bottom: solid #fff 1px;
 }
 
 #block-menu-menu-home-page-secondary-navigat a, #block-menu-menu-home-page-secondary-navigat a.active, .navigation-gateway a, .navigation-gateway a.active {
   display: block;
-  height: 16px;
   overflow: hidden;
   text-transform: uppercase;
   font-weight: bold;
@@ -10541,6 +10540,11 @@ h2.section-heading {
 
 #block-menu-menu-home-page-secondary-navigat a:hover, .navigation-gateway a:hover {
   text-decoration: underline;
+}
+
+#gateway-apply,
+#gateway-gift {
+  background: url(../images/navigation-gateway-darkblue.png) repeat-x #001f43;
 }
 
 #homepage-events,
