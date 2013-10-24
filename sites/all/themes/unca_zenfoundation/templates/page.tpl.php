@@ -138,13 +138,16 @@
     <!-- Let's simplify the sidebar logic since we only have one sidebar region. -->
     <?php if ($page['sidebar_first']): ?>
       <aside class="sidebar">
+        <div class="block block-menu contextual-links-region first odd block-menu-menu-secondary-navigation---prot navigation-secondary right-spiff" id="block-menu-menu-secondary-navigation-prot" role="navigation">
+          <?php print render($sidebar_menu); ?>
+        </div>
         <?php print render($page['sidebar_first']); ?>
       </aside><!-- /.sidebar -->
     <?php endif; ?>
 
   </div><!-- /#main -->
 
- <?php if ($page['footer']): ?>
+ <?php if ($page['footer'] || $page['footer_promo_a'] || $page['footer_promo_large'] || $page['footer_promo_b']): ?>
 
     <div id="bottom-spiffs" class="row fill-left fill-right footer-blocks ">
         <?php if ($page['footer_promo_a']): ?>
@@ -153,13 +156,13 @@
           </div><!-- /.column .columns .first -->
         <?php endif; ?>
 
-        <?php if ($page['footer_promo_a']): ?>
+        <?php if ($page['footer_promo_large']): ?>
           <div id="footer-profile" class="column large-6 columns interior">
             <?php print render($page['footer_promo_large']); ?>
           </div><!-- /.column .columns .interior -->
         <?php endif; ?>      
 
-        <?php if ($page['footer_promo_a']): ?>
+        <?php if ($page['footer_promo_b']): ?>
           <div class="column large-3 columns last">
             <?php print render($page['footer_promo_b']); ?>
           </div><!-- /.column .columns .last -->
