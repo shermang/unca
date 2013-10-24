@@ -1,6 +1,6 @@
 <?php
 
-class UNCAWebformEmailMigration extends Migration {
+class UNCAWebformEmailMigration extends DrupalMigration {
   public function __construct($arguments) {
 
     parent::__construct($arguments);
@@ -72,6 +72,10 @@ class UNCAWebformEmailMigration extends Migration {
     $query->addExpression('MAX(eid)');
     $max = $query->execute()->fetchField();
     $entity->eid = $max + 1;
+  }
+
+  protected function query(){
+    return parent::query();
   }
 
 }
