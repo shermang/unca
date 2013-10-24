@@ -9,7 +9,7 @@ class UNCAStudentOrgMigration extends UNCANodeMigration {
     $this->addFieldMapping('field_link','field_student_org_link');
 
 // Note that we map migrated terms by the vocabulary ID.
-    $this->addFieldMapping('field_student_organizations_term', '4')
+    $this->addFieldMapping('field_student_organizations_term',  migrate_d2d_unca_get_src_vocab_id('student_organization'))
       ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('student_organization'));
     $this->addFieldMapping('field_student_organizations_term:source_type')
       ->defaultValue('tid');
