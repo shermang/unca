@@ -109,7 +109,7 @@ function unca_page_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -150,21 +150,19 @@ function unca_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_slideshow_reference'
-  $field_instances['node-page-field_slideshow_reference'] = array(
+  // Exported field_instance: 'node-page-field_slideshow_term'
+  $field_instances['node-page-field_slideshow_term'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Select a slideshow to display on this page.',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 2,
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -174,8 +172,8 @@ function unca_page_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_slideshow_reference',
-    'label' => 'Slideshow Placement',
+    'field_name' => 'field_slideshow_term',
+    'label' => 'Slideshow',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -185,7 +183,7 @@ function unca_page_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -239,7 +237,7 @@ function unca_page_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -247,7 +245,8 @@ function unca_page_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Page Layout');
-  t('Slideshow Placement');
+  t('Select a slideshow to display on this page.');
+  t('Slideshow');
   t('Video');
   t('iFrame');
 

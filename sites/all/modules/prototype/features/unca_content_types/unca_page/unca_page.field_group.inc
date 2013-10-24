@@ -27,6 +27,7 @@ function unca_page_field_group_info() {
       1 => 'field_slideshow_reference',
       2 => 'field_video_embed',
       3 => 'field_page_layout_term',
+      4 => 'field_slideshow_term',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

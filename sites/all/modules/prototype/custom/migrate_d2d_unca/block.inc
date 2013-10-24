@@ -111,11 +111,13 @@ class UNCABlockMigration extends DrupalMigration {
         $row->region = 'gateway_row_2_column_2';
         break;
       default:
-        // any regions not listed above will be thrown away
-        return FALSE;
+        // any regions not listed above will be disabled
+        $row->region = -1;
+        $row->status = 0;
         break;
     }
     $row->theme = 'unca_zenfoundation';
+
 
     $result = db_select('block','b')
       ->fields('b',array('bid'))
@@ -124,9 +126,36 @@ class UNCABlockMigration extends DrupalMigration {
       ->condition('delta',$row->delta,'=')
       ->execute()
       ->fetchAssoc();
-    if($result){
-      return FALSE;
+    switch($row->module){
+      case 'views':
+        if($result){
+          $record =
+            array(
+              'bid' => $result['bid'],
+              'status' => $row->status,
+              'weight' => $row->weight,
+              'visibility' => $row->visibility,
+              'custom' => $row->custom,
+              'pages' => $row->pages,
+              'title' => $row->title,
+              'cache' => $row->cache,
+            );
+          drupal_write_record('block', $record, array('bid' => $result['bid']));
+          return FALSE;
+        }
+        break;
+      case 'block':
+        if($result){
+          return FALSE;
+        }
+        break;
+      default:
+        if($result){
+          return FALSE;
+        }
+        break;
     }
+
   }
 
   protected function query() {
@@ -142,10 +171,17 @@ class UNCABlockMigration extends DrupalMigration {
     $query = Database::getConnection('default', 'legacy')
       ->select('blocks', 'b')
       ->fields('b')
-      ->condition('module','block','=')
+      ->condition('module',array('menu','system'),'NOT IN') // an array of modules that we do not want to migrate
+      ->condition('delta','0','<>')
       ->condition('theme',$theme,'=')
       ->condition('theme',array('unca','unca.department','unca_gateway','ncccr'),'IN');
     return $query;
+  }
+
+  public function prepare($entity, $row){
+    if($entity->delta == ''){
+      $entity->delta = $row->delta;
+    }
   }
 }
 
