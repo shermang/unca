@@ -10,15 +10,6 @@
 function unca_roles_permission_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: 'access administration menu'.
-  $permissions['access administration menu'] = array(
-    'name' => 'access administration menu',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'admin_menu',
-  );
-
   // Exported permission: 'access administration pages'.
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
@@ -1223,22 +1214,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'delete terms in university_term'.
-  $permissions['delete terms in university_term'] = array(
-    'name' => 'delete terms in university_term',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'display drupal links'.
-  $permissions['display drupal links'] = array(
-    'name' => 'display drupal links',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'admin_menu',
-  );
-
   // Exported permission: 'download original image'.
   $permissions['download original image'] = array(
     'name' => 'download original image',
@@ -1674,13 +1649,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'edit terms in university_term'.
-  $permissions['edit terms in university_term'] = array(
-    'name' => 'edit terms in university_term',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'execute php code'.
   $permissions['execute php code'] = array(
     'name' => 'execute php code',
@@ -1706,15 +1674,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node_export',
-  );
-
-  // Exported permission: 'flush caches'.
-  $permissions['flush caches'] = array(
-    'name' => 'flush caches',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'admin_menu',
   );
 
   // Exported permission: 'generate features'.
@@ -1811,6 +1770,8 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'search content',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'search',
   );
