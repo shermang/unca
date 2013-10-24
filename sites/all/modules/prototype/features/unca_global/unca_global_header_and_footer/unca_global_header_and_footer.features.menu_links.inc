@@ -129,9 +129,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Emergency Information',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -147,9 +145,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Employment',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -165,9 +161,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'A-Z Index',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -183,9 +177,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'About this Site',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -201,9 +193,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Contact Us',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -219,9 +209,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Giving',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -237,9 +225,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Quick Links',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -255,9 +241,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Library',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -273,9 +257,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Calendar',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -291,9 +273,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Moodle',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -309,9 +289,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Maps',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -327,9 +305,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'OnePort',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -345,9 +321,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Email',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
