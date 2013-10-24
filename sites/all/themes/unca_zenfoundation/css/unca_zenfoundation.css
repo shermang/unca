@@ -862,14 +862,20 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
   padding: .25em .5em;
 }
 
-.node-type-campus-update .field-name-field-tags .field-item {
+.node-type-campus-update .field-name-field-tags .field-item, .node-destination .field-name-field-studyabroad-region .field-item,
+.node-destination .field-name-field-studyabroad-program-type .field-item,
+.node-destination .field-name-field-university-semester-term .field-item {
   display: inline;
   margin: 0 0.25em;
 }
-.node-type-campus-update .field-name-field-tags .field-item:after {
+.node-type-campus-update .field-name-field-tags .field-item:after, .node-destination .field-name-field-studyabroad-region .field-item:after,
+.node-destination .field-name-field-studyabroad-program-type .field-item:after,
+.node-destination .field-name-field-university-semester-term .field-item:after {
   content: ",";
 }
-.node-type-campus-update .field-name-field-tags .field-item:last-child:after {
+.node-type-campus-update .field-name-field-tags .field-item:last-child:after, .node-destination .field-name-field-studyabroad-region .field-item:last-child:after,
+.node-destination .field-name-field-studyabroad-program-type .field-item:last-child:after,
+.node-destination .field-name-field-university-semester-term .field-item:last-child:after {
   content: "";
 }
 
@@ -949,7 +955,9 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
 }
 
 .node-course .field-name-field-course-catalog-term:after,
-.node-course .field-name-body:after {
+.node-course .field-name-body:after, .node-destination .field-name-field-studyabroad-region:after,
+.node-destination .field-name-field-studyabroad-program-type:after,
+.node-destination .field-name-field-university-semester-term:after {
   clear: left;
 }
 
@@ -6874,6 +6882,11 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 .node-course .field-name-field-course-catalog-term,
 .node-course .field-name-body {
   margin-bottom: 1em;
+}
+
+.node-destination .field-name-field-studyabroad-region,
+.node-destination .field-name-field-studyabroad-program-type {
+  margin-bottom: 0;
 }
 
 .node-type-event .field {
