@@ -554,15 +554,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: 'administer slideshow_entity types'.
-  $permissions['administer slideshow_entity types'] = array(
-    'name' => 'administer slideshow_entity types',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'slideshow_entity',
-  );
-
   // Exported permission: 'administer software updates'.
   $permissions['administer software updates'] = array(
     'name' => 'administer software updates',
@@ -766,15 +757,6 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'create project content',
     'roles' => array(),
     'module' => 'node',
-  );
-
-  // Exported permission: 'create slideshow_entity entities'.
-  $permissions['create slideshow_entity entities'] = array(
-    'name' => 'create slideshow_entity entities',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'slideshow_entity',
   );
 
   // Exported permission: 'create slideshow_item content'.
@@ -1329,15 +1311,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any slideshow_entity entities'.
-  $permissions['edit any slideshow_entity entities'] = array(
-    'name' => 'edit any slideshow_entity entities',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'slideshow_entity',
-  );
-
   // Exported permission: 'edit any slideshow_item content'.
   $permissions['edit any slideshow_item content'] = array(
     'name' => 'edit any slideshow_item content',
@@ -1473,15 +1446,6 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'edit own project content',
     'roles' => array(),
     'module' => 'node',
-  );
-
-  // Exported permission: 'edit own slideshow_entity entities'.
-  $permissions['edit own slideshow_entity entities'] = array(
-    'name' => 'edit own slideshow_entity entities',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'slideshow_entity',
   );
 
   // Exported permission: 'edit own slideshow_item content'.
@@ -1999,15 +1963,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'view slideshow_entity entities'.
-  $permissions['view slideshow_entity entities'] = array(
-    'name' => 'view slideshow_entity entities',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'slideshow_entity',
   );
 
   // Exported permission: 'view the administration theme'.
