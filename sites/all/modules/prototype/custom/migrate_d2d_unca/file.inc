@@ -5,7 +5,7 @@ class UNCAFileMigration extends DrupalFile6Migration {
 
   public function __construct(array $arguments) {
     parent::__construct($arguments);
-    $this->addFieldMapping('preserve_files')
+    $this->addFieldMapping('preserve_files',NULL,FALSE)
       ->defaultValue(TRUE);
   }
 
