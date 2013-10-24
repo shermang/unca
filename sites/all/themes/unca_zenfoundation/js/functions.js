@@ -4,16 +4,16 @@
 //  reset the value if no text was entered
 function initializeSearchBox() {
 	var inputPrompt = "Search people and the Web";
-	$("#q").val(inputPrompt); 
+	$("#edit-search-block-form--2").val(inputPrompt);
 
-	$("#q").focus(function(){		
+	$("#edit-search-block-form--2").focus(function(){
 		if ($(this).val() == inputPrompt) {
-			$(this).val(""); 
+			$(this).val("");
 		}
 	});
-	$("#q").blur(function(){		
+	$("#edit-search-block-form--2").blur(function(){
 		if ($(this).val() == "") {
-			$(this).val(inputPrompt); 
+			$(this).val(inputPrompt);
 		}
 	});
 }

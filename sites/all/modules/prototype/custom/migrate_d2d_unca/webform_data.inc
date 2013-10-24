@@ -1,6 +1,6 @@
 <?php
 
-class UNCAWebformDataMigration extends Migration {
+class UNCAWebformDataMigration extends DrupalMigration {
   public function __construct($arguments) {
 
     parent::__construct($arguments);
@@ -68,4 +68,7 @@ class UNCAWebformDataMigration extends Migration {
     // drush_print_r($entity);
   }
 
+  protected function query(){
+    return parent::query();
+  }
 }
