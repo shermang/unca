@@ -22,7 +22,7 @@ function unca_cluster_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -67,7 +67,7 @@ function unca_cluster_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -103,16 +103,10 @@ function unca_cluster_field_default_field_instances() {
     'description' => 'Enter the sort order of this cluster. Enter only the number, ie "17"',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 2,
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -158,7 +152,7 @@ function unca_cluster_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 4,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -202,14 +196,14 @@ function unca_cluster_field_default_field_instances() {
     'description' => 'Select a featured image for this cluster.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'medium',
         ),
         'type' => 'image',
-        'weight' => 3,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',

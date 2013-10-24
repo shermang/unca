@@ -10,15 +10,6 @@
 function unca_roles_permission_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: 'access administration menu'.
-  $permissions['access administration menu'] = array(
-    'name' => 'access administration menu',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'admin_menu',
-  );
-
   // Exported permission: 'access administration pages'.
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
@@ -563,15 +554,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: 'administer slideshow_entity types'.
-  $permissions['administer slideshow_entity types'] = array(
-    'name' => 'administer slideshow_entity types',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'slideshow_entity',
-  );
-
   // Exported permission: 'administer software updates'.
   $permissions['administer software updates'] = array(
     'name' => 'administer software updates',
@@ -775,15 +757,6 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'create project content',
     'roles' => array(),
     'module' => 'node',
-  );
-
-  // Exported permission: 'create slideshow_entity entities'.
-  $permissions['create slideshow_entity entities'] = array(
-    'name' => 'create slideshow_entity entities',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'slideshow_entity',
   );
 
   // Exported permission: 'create slideshow_item content'.
@@ -1223,22 +1196,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'delete terms in university_term'.
-  $permissions['delete terms in university_term'] = array(
-    'name' => 'delete terms in university_term',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'display drupal links'.
-  $permissions['display drupal links'] = array(
-    'name' => 'display drupal links',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'admin_menu',
-  );
-
   // Exported permission: 'download original image'.
   $permissions['download original image'] = array(
     'name' => 'download original image',
@@ -1352,15 +1309,6 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'edit any project content',
     'roles' => array(),
     'module' => 'node',
-  );
-
-  // Exported permission: 'edit any slideshow_entity entities'.
-  $permissions['edit any slideshow_entity entities'] = array(
-    'name' => 'edit any slideshow_entity entities',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'slideshow_entity',
   );
 
   // Exported permission: 'edit any slideshow_item content'.
@@ -1498,15 +1446,6 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'edit own project content',
     'roles' => array(),
     'module' => 'node',
-  );
-
-  // Exported permission: 'edit own slideshow_entity entities'.
-  $permissions['edit own slideshow_entity entities'] = array(
-    'name' => 'edit own slideshow_entity entities',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'slideshow_entity',
   );
 
   // Exported permission: 'edit own slideshow_item content'.
@@ -1674,13 +1613,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'edit terms in university_term'.
-  $permissions['edit terms in university_term'] = array(
-    'name' => 'edit terms in university_term',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'execute php code'.
   $permissions['execute php code'] = array(
     'name' => 'execute php code',
@@ -1706,15 +1638,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node_export',
-  );
-
-  // Exported permission: 'flush caches'.
-  $permissions['flush caches'] = array(
-    'name' => 'flush caches',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'admin_menu',
   );
 
   // Exported permission: 'generate features'.
@@ -1811,6 +1734,8 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'search content',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'search',
   );
@@ -2038,15 +1963,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'view slideshow_entity entities'.
-  $permissions['view slideshow_entity entities'] = array(
-    'name' => 'view slideshow_entity entities',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'slideshow_entity',
   );
 
   // Exported permission: 'view the administration theme'.
