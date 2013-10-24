@@ -326,6 +326,7 @@ function migrate_d2d_unca_register_migrations() {
     // Student Project CT
     // Note: on nemac (drupal_unca) site only
     unca_migrate_node_arguments_by_database($connectionOptions['database'], 'project'),
+
     array(
       'class_name' => 'UNCAStudentOrgMigration',
       'description' => t('Migration of Student Organization nodes from Drupal 6'),
@@ -406,16 +407,6 @@ function migrate_d2d_unca_register_migrations() {
       // Webform CT - Roles
       // roles are handled in the webformNodeMigration
 
-      // Webform CT - Emails
-      array(
-        'class_name' => 'UNCAWebformEmailMigration',
-        'description' => t('Migration of Webform Emails from Drupal 6'),
-        'machine_name' => 'UNCAWebFormEmail',
-        'wf_node_migration' => 'UNCAWebformNodeMigration',
-        'group_name' => 'd_webform',
-        'dependencies' => array('UNCAWebFormNode'),
-      ),
-
       // Webform CT - Components
       array(
         'class_name' => 'UNCAWebformComponentMigration',
@@ -426,6 +417,16 @@ function migrate_d2d_unca_register_migrations() {
         'dependencies' => array('UNCAWebFormNode'),
       ),
 
+      // Webform CT - Emails
+      array(
+        'class_name' => 'UNCAWebformEmailMigration',
+        'description' => t('Migration of Webform Emails from Drupal 6'),
+        'machine_name' => 'UNCAWebFormEmail',
+        'wf_node_migration' => 'UNCAWebformNodeMigration',
+        'group_name' => 'd_webform',
+        'dependencies' => array('UNCAWebFormNode','UNCAWebFormComponent'),
+      ),
+
       // Webform CT - Submissions
       array(
         'class_name' => 'UNCAWebformSubmissionMigration',
@@ -433,7 +434,7 @@ function migrate_d2d_unca_register_migrations() {
         'machine_name' => 'UNCAWebFormSubmission',
         'wf_node_migration' => 'UNCAWebformNodeMigration',
         'group_name' => 'd_webform',
-        'dependencies' => array('UNCAWebFormNode'),
+        'dependencies' => array('UNCAWebFormNode','UNCAWebFormComponent'),
       ),
 
       // Webform CT - Submission data
@@ -443,7 +444,7 @@ function migrate_d2d_unca_register_migrations() {
         'machine_name' => 'UNCAWebFormData',
         'wf_node_migration' => 'UNCAWebformNodeMigration',
         'group_name' => 'd_webform',
-        'dependencies' => array('UNCAWebFormNode'),
+        'dependencies' => array('UNCAWebFormNode','UNCAWebFormComponent','UNCAWebFormSubmission'),
       ),
     );
 
