@@ -69,7 +69,7 @@ function unca_text_formats_wysiwyg_default_profiles() {
       'paste_auto_cleanup_on_paste' => 0,
       'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
       'css_setting' => 'self',
-      'css_path' => 'css/editor.css',
+      'css_path' => '%b%t/css/unca_zenfoundation.css',
       'css_classes' => 'Notification=div.notification
 Alert=div.alert
 Critical Information=div.critical
