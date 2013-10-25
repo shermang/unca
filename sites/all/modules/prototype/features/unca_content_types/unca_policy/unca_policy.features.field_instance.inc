@@ -197,7 +197,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 12,
       ),
       'teaser' => array(
@@ -235,9 +235,9 @@ function unca_policy_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
+          'prefix_suffix' => 1,
           'scale' => 0,
-          'thousand_separator' => ' ',
+          'thousand_separator' => '',
         ),
         'type' => 'number_integer',
         'weight' => 1,
@@ -280,7 +280,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 11,
       ),
       'teaser' => array(
@@ -428,9 +428,9 @@ function unca_policy_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
+          'prefix_suffix' => 1,
+          'scale' => 0,
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 2,
@@ -528,7 +528,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 13,
       ),
       'teaser' => array(
@@ -605,7 +605,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 14,
       ),
       'teaser' => array(
