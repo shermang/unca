@@ -242,16 +242,23 @@ function unca_zenfoundation_preprocess_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-/* -- Delete this line if you want to use this function
+//* -- Delete this line if you want to use this function
 function unca_zenfoundation_preprocess_node(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  
+  // dpm($variables);
+  // Changing the "submitted by" text for Department Updates
+  // to have a "Month day, year" format
+  if (isset($variables['node']) && $variables['node']->type == 'dept_update') {
+    // dpm("hello");
+    $variables['submitted'] = t('@date', array('@date' => date("M j, Y", $variables['created'])));
+  }
 
   // Optionally, run node-type-specific preprocess functions, like
   // unca_zenfoundation_preprocess_node_page() or unca_zenfoundation_preprocess_node_story().
-  $function = __FUNCTION__ . '_' . $variables['node']->type;
-  if (function_exists($function)) {
-    $function($variables, $hook);
-  }
+  // $function = __FUNCTION__ . '_' . $variables['node']->type;
+  // if (function_exists($function)) {
+  //   $function($variables, $hook);
+  // }
 }
 // */
 
