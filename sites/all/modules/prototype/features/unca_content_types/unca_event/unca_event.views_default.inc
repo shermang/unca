@@ -35,23 +35,101 @@ function unca_event_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['grouping'] = '';
+  $handler->display->display_options['style_options']['class'] = 'events-list';
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['text']['id'] = 'area';
   $handler->display->display_options['footer']['text']['table'] = 'views';
   $handler->display->display_options['footer']['text']['field'] = 'area';
   $handler->display->display_options['footer']['text']['content'] = '<a href="/news-events">More Events ></a>';
   $handler->display->display_options['footer']['text']['format'] = '2';
-  /* Field: Event Date */
+  /* Field: Date - Full Date and Time Accessibility Token */
+  $handler->display->display_options['fields']['field_date_3']['id'] = 'field_date_3';
+  $handler->display->display_options['fields']['field_date_3']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date_3']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date_3']['ui_name'] = 'Date - Full Date and Time Accessibility Token';
+  $handler->display->display_options['fields']['field_date_3']['label'] = '';
+  $handler->display->display_options['fields']['field_date_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_3']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_3']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['field_link_value']['id'] = 'field_link_value';
+  $handler->display->display_options['fields']['field_link_value']['table'] = 'field_data_field_link';
+  $handler->display->display_options['fields']['field_link_value']['field'] = 'field_link';
+  $handler->display->display_options['fields']['field_link_value']['label'] = '';
+  $handler->display->display_options['fields']['field_link_value']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_link_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_value']['empty'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_link_value']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_link_value']['type'] = 'link_absolute';
+  /* Field: Date - Month */
+  $handler->display->display_options['fields']['field_date_1']['id'] = 'field_date_1';
+  $handler->display->display_options['fields']['field_date_1']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date_1']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date_1']['ui_name'] = 'Date - Month';
+  $handler->display->display_options['fields']['field_date_1']['label'] = '';
+  $handler->display->display_options['fields']['field_date_1']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_date_1']['alter']['path'] = '[field_link_value]';
+  $handler->display->display_options['fields']['field_date_1']['alter']['alt'] = '[field_date_3]';
+  $handler->display->display_options['fields']['field_date_1']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_date_1']['element_class'] = 'calendar-month';
+  $handler->display->display_options['fields']['field_date_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_1']['settings'] = array(
+    'format_type' => 'two_digit_month',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Date - Day */
+  $handler->display->display_options['fields']['field_date_2']['id'] = 'field_date_2';
+  $handler->display->display_options['fields']['field_date_2']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date_2']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date_2']['ui_name'] = 'Date - Day';
+  $handler->display->display_options['fields']['field_date_2']['label'] = '';
+  $handler->display->display_options['fields']['field_date_2']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_date_2']['alter']['path'] = '[field_link_value]';
+  $handler->display->display_options['fields']['field_date_2']['alter']['alt'] = '[field_date_3]';
+  $handler->display->display_options['fields']['field_date_2']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_date_2']['element_class'] = 'calendar-day';
+  $handler->display->display_options['fields']['field_date_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_2']['settings'] = array(
+    'format_type' => 'two_digit_day',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Date - Time */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['ui_name'] = 'Event Date';
-  $handler->display->display_options['fields']['field_date']['label'] = 'Event Date';
+  $handler->display->display_options['fields']['field_date']['ui_name'] = 'Date - Time';
+  $handler->display->display_options['fields']['field_date']['label'] = '';
+  $handler->display->display_options['fields']['field_date']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_date']['element_class'] = 'calendar-time';
   $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'unca_standard_time_display',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -61,18 +139,25 @@ function unca_event_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_link_value]';
+  $handler->display->display_options['fields']['title']['alter']['alt'] = '[title] on [field_date_3]';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '75';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Link */
-  $handler->display->display_options['fields']['field_link_value']['id'] = 'field_link_value';
-  $handler->display->display_options['fields']['field_link_value']['table'] = 'field_data_field_link';
-  $handler->display->display_options['fields']['field_link_value']['field'] = 'field_link';
-  $handler->display->display_options['fields']['field_link_value']['label'] = '';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'events-feed-thumbnail-image',
+    'image_link' => '',
+  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
