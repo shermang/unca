@@ -71,7 +71,7 @@ function unca_page_field_default_field_instances() {
           'width' => '100%',
         ),
         'type' => 'link_iframe_formatter_options_iframe',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -122,10 +122,9 @@ function unca_page_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -150,6 +149,42 @@ function unca_page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_slideshow_reference'
+  $field_instances['node-page-field_slideshow_reference'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_slideshow_reference',
+    'label' => 'Slideshow Placement',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_slideshow_term'
   $field_instances['node-page-field_slideshow_term'] = array(
     'bundle' => 'page',
@@ -159,10 +194,9 @@ function unca_page_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -195,10 +229,12 @@ function unca_page_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 2,
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -247,6 +283,7 @@ function unca_page_field_default_field_instances() {
   t('Page Layout');
   t('Select a slideshow to display on this page.');
   t('Slideshow');
+  t('Slideshow Placement');
   t('Video');
   t('iFrame');
 
