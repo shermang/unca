@@ -1,5 +1,8 @@
 // Put emCalc in so it can be used
-$em-base: 12px !default;
+
+$base-font-size: 12px;
+$em-base: $base-font-size;
+
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
 }
