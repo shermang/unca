@@ -27,6 +27,13 @@ function unca_date_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_first_day';
+  $strongarm->value = '0';
+  $export['date_first_day'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_format_long';
   $strongarm->value = 'l, F j, Y - g:ia';
   $export['date_format_long'] = $strongarm;
@@ -48,9 +55,23 @@ function unca_date_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_two_digit_day';
+  $strongarm->value = 'd';
+  $export['date_format_two_digit_day'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_format_unca_standard_date_display';
   $strongarm->value = 'F d, Y';
   $export['date_format_unca_standard_date_display'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_unca_standard_time_display';
+  $strongarm->value = 'g:i A';
+  $export['date_format_unca_standard_time_display'] = $strongarm;
 
   return $export;
 }
