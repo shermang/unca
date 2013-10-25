@@ -45,6 +45,36 @@ function unca_custom_install() {
       'pages' => '',
       'cache' => -1,
     ),
+    array(
+      'module' => 'system',
+      'delta' => 'navigation',
+      'theme' => 'unca_zenfoundation',
+      'status' => 1,
+      'weight' => -1,
+      'region' => -1,
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'powered-by',
+      'theme' => 'unca_zenfoundation',
+      'status' => 1,
+      'weight' => -1,
+      'region' => -1,
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'user',
+      'delta' => 'login',
+      'theme' => 'unca_zenfoundation',
+      'status' => 1,
+      'weight' => -1,
+      'region' => -1,
+      'pages' => '',
+      'cache' => -1,
+    ),
   );
   foreach ($blocks as $block) {
     db_merge('block')
