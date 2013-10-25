@@ -29,7 +29,6 @@ imce_wysiwyg \
 insert_block \
 job_scheduler \
 jquery_update \
-lightbox2 \
 link \
 location \
 location_cck \
@@ -80,6 +79,7 @@ context_layouts \
 context_ui \
 ds \
 ds_ui \
+unca_date_settings \
 unca_global_header_and_footer \
 unca_slideshow \
 unca_department_navigation \
@@ -130,11 +130,17 @@ admin_menu \
 admin_menu_toolbar \
 overlay \
 securelogin \
-slideshow_entity
+slideshow_entity \
+lightbox2
 
 # uninstall slideshow entity
 echo "Uninstalling Slideshow Entity"
 drush pm-uninstall slideshow_entity
+echo ""
+
+# uninstall slideshow entity
+echo "Uninstalling Lightbox2"
+drush pm-uninstall lightbox2
 echo ""
 
 # perform any db queries required by code changes to modules from git pull

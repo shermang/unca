@@ -63,7 +63,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'unca_standard_date_display',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -197,7 +197,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 12,
       ),
       'teaser' => array(
@@ -235,9 +235,9 @@ function unca_policy_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
+          'prefix_suffix' => 1,
           'scale' => 0,
-          'thousand_separator' => ' ',
+          'thousand_separator' => '',
         ),
         'type' => 'number_integer',
         'weight' => 1,
@@ -280,7 +280,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 11,
       ),
       'teaser' => array(
@@ -317,7 +317,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'unca_standard_date_display',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -372,7 +372,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'unca_standard_date_display',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -409,7 +409,7 @@ function unca_policy_field_default_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-40:+1',
+        'year_range' => '-40:+3',
       ),
       'type' => 'date_popup',
       'weight' => 12,
@@ -428,9 +428,9 @@ function unca_policy_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
+          'prefix_suffix' => 1,
+          'scale' => 0,
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 2,
@@ -473,7 +473,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'unca_standard_date_display',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -528,7 +528,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 13,
       ),
       'teaser' => array(
@@ -580,7 +580,7 @@ function unca_policy_field_default_field_instances() {
     'label' => 'Reference Materials',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -605,7 +605,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 14,
       ),
       'teaser' => array(

@@ -1,0 +1,28 @@
+.node-map-item {
+  .field-name-field-image {
+    margin-bottom: 0;
+    img {
+      @extend %float-right;
+    }
+  }
+  .field-name-field-location-with-map {
+    clear: both;
+    .field-label {
+      @include background-image(linear-gradient($green-light, $green));
+      @include border-radius(2px);
+      @include box-shadow(lighten($green-light, 5%) 0 0 5px, darken($green, 5%) 0 0 3px 0 inset);
+      @include single-text-shadow;
+      background-color: $green;
+      border: 1px solid $white;
+      color: $white;
+      font-weight: normal;
+      margin-bottom: .5em;
+      padding: .5em .75em;
+      text-transform: uppercase;
+    }
+    .field-items {
+      background-color: lighten($green-light, 50%);
+      padding: .75em;
+    }
+  }
+}
