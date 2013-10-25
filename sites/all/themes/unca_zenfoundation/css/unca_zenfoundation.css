@@ -1726,7 +1726,7 @@ select {
   }
 }
 /* Styles for screens that are atleast 768px; */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .large-1 {
     position: relative;
     width: 8.33333%;
@@ -2058,7 +2058,7 @@ th.hide-for-xlarge {
 }
 
 /* Medium Displays: 768px - 1279px */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .show-for-medium,
   .show-for-medium-up {
     display: inherit !important;
@@ -2102,7 +2102,7 @@ th.hide-for-xlarge {
   }
 }
 /* Large Displays: 1280px - 1440px */
-@media only screen and (min-width: 83.33333em) {
+@media only screen and (min-width: 62.5em) {
   .show-for-large,
   .show-for-large-up {
     display: inherit !important;
@@ -2149,7 +2149,7 @@ th.hide-for-xlarge {
   }
 }
 /* X-Large Displays: 1400px and up */
-@media only screen and (min-width: 120em) {
+@media only screen and (min-width: 90em) {
   .show-for-xlarge {
     display: inherit !important;
   }
@@ -2515,7 +2515,7 @@ th.hide-for-touch {
   }
 }
 /* Foundation Block Grids for above small breakpoint */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   /* Remove small grid clearing */
   .small-block-grid-1 > li:nth-of-type(1n+1) {
     clear: none;
@@ -2960,7 +2960,7 @@ blockquote p {
   padding: 0 0.08333em;
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   h1, h2, h3, .node-type-cluster .field-label, h4, h5, h6 {
     line-height: 1.4;
   }
@@ -3463,7 +3463,7 @@ input.large[type="submit"], .tabs li.large {
     border-radius: 1000px;
   }
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   button, .button, button,
   html input[type="button"],
   input[type="reset"],
@@ -4760,7 +4760,7 @@ html .even-8.tabs li input[type="button"],
   border-bottom: 0;
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   [data-section=''], [data-section='auto'], .section-container.auto {
     width: 100%;
     position: relative;
@@ -5463,7 +5463,7 @@ html .top-bar input[type="button"],
 }
 
 .top-bar-js-breakpoint {
-  width: 960px !important;
+  width: 768px !important;
   visibility: hidden;
 }
 
@@ -5471,7 +5471,7 @@ html .top-bar input[type="button"],
   display: block;
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 768px) {
   .top-bar {
     background: #111111;
     *zoom: 1;
@@ -5891,7 +5891,7 @@ html .top-bar input[type="button"],
   display: none;
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .touch .orbit-container .orbit-prev,
   .touch .orbit-container .orbit-next {
     display: inherit;
@@ -5900,7 +5900,7 @@ html .top-bar input[type="button"],
     display: block;
   }
 }
-@media only screen and (max-width: 64em) {
+@media only screen and (max-width: 48em) {
   .orbit-stack-on-small .orbit-slides-container {
     height: auto !important;
   }
@@ -6008,7 +6008,7 @@ html .top-bar input[type="button"],
   display: block;
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .clearing-main-prev,
   .clearing-main-next {
     position: absolute;
@@ -6453,7 +6453,7 @@ input[type="submit"] {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .views-exposed-widget {
     position: relative;
     padding-left: 1.25em;
@@ -6654,7 +6654,7 @@ nav.navigation .block-search {
   margin-bottom: 1em;
   text-align: center;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   nav.navigation .block-search {
     margin-bottom: 0;
     text-align: right;
@@ -6697,7 +6697,7 @@ nav.navigation .block-search .lt-ie9 {
 #block-menu-menu-footer-menu ul li {
   margin-bottom: 0;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   #block-menu-menu-footer-menu ul {
     border-bottom: 0 none;
   }
@@ -6765,7 +6765,7 @@ nav.navigation #block-menu-menu-global-tools-menu a, nav.navigation
 .primary-menu .last:hover a, .primary-menu .last:hover a:not(.button) {
   background: #bfbfbf;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .primary-menu .dropdown {
     background-color: #111111;
     padding-bottom: .5em;
@@ -6798,7 +6798,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 .sidebar .block-menu-menu-secondary-navigation---prot, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot, .sidebar .navigation-secondary, .ds-sidebar-column .navigation-secondary {
   display: none;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .sidebar .block-menu-menu-secondary-navigation---prot, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot, .sidebar .navigation-secondary, .ds-sidebar-column .navigation-secondary {
     display: block;
   }
@@ -7373,7 +7373,7 @@ html[xmlns] .slides {
   text-shadow: 0 0 0.5em white;
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .block-calendar-list {
     display: none;
   }
@@ -7390,7 +7390,7 @@ html[xmlns] .slides {
 .block-calendar {
   display: none;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .block-calendar {
     display: block;
   }
@@ -7435,7 +7435,7 @@ html[xmlns] .slides {
 .view-directory .views-field-field-person-headshot img:hover {
   background-color: #8c8c8c;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .view-directory .views-field-field-person-headshot img {
     margin-top: .74em;
   }
@@ -7457,7 +7457,7 @@ html[xmlns] .slides {
   float: left;
   text-align: center;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .logo-link {
     float: left;
     text-align: left;
@@ -7488,7 +7488,7 @@ nav.navigation .block-search {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   nav.navigation .block-search {
     position: relative;
     padding-left: 1.25em;
@@ -7532,7 +7532,7 @@ nav.navigation .block-search input {
   float: left;
   text-align: center;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   #site-name {
     float: left;
     padding: 0;
@@ -7640,12 +7640,15 @@ nav.navigation .block-search input {
   background-position-x: 8px;
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 768px) {
   .row .top-bar {
     padding-left: 0;
     padding-right: 0;
   }
 
+  .top-bar-section .lt-ie9 {
+    padding-right: 275px;
+  }
   .top-bar-section ul {
     background-color: transparent;
   }
@@ -7653,6 +7656,57 @@ nav.navigation .block-search input {
   .top-bar-search {
     float: right;
     width: 299px;
+  }
+  .top-bar-search .lt-ie9 {
+    position: absolute;
+    right: 5px;
+  }
+  .top-bar-search .has-form {
+    background-color: transparent;
+    height: auto;
+    padding: 0;
+  }
+  .top-bar-search input.form-text {
+    top: 0;
+  }
+
+  .top-bar-secondary {
+    left: -9999em;
+    position: absolute;
+    visibility: hidden;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 48em) {
+  .top-bar-section {
+    padding-right: 275px;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 48em) {
+  .top-bar-search {
+    position: absolute;
+    right: 5px;
+  }
+}
+@media print {
+  .row .top-bar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .top-bar-section .lt-ie9 {
+    padding-right: 275px;
+  }
+  .top-bar-section ul {
+    background-color: transparent;
+  }
+
+  .top-bar-search {
+    float: right;
+    width: 299px;
+  }
+  .top-bar-search .lt-ie9 {
+    position: absolute;
+    right: 5px;
   }
   .top-bar-search .has-form {
     background-color: transparent;
@@ -7670,37 +7724,32 @@ nav.navigation .block-search input {
   }
 }
 @media print {
-  .row .top-bar {
-    padding-left: 0;
-    padding-right: 0;
+  .top-bar-section {
+    padding-right: 275px;
   }
-
-  .top-bar-section ul {
-    background-color: transparent;
-  }
-
+}
+@media print {
   .top-bar-search {
-    float: right;
-    width: 299px;
-  }
-  .top-bar-search .has-form {
-    background-color: transparent;
-    height: auto;
-    padding: 0;
-  }
-  .top-bar-search input.form-text {
-    top: 0;
-  }
-
-  .top-bar-secondary {
-    left: -9999em;
     position: absolute;
-    visibility: hidden;
+    right: 5px;
   }
 }
 .lt-ie9 .row .top-bar {
   padding-left: 0;
   padding-right: 0;
+}
+@media only screen and (min-width: 48em) {
+  .lt-ie9 .top-bar-section {
+    padding-right: 275px;
+  }
+}
+@media print {
+  .lt-ie9 .top-bar-section {
+    padding-right: 275px;
+  }
+}
+.lt-ie9 .top-bar-section .lt-ie9 {
+  padding-right: 275px;
 }
 .lt-ie9 .top-bar-section ul {
   background-color: transparent;
@@ -7708,6 +7757,22 @@ nav.navigation .block-search input {
 .lt-ie9 .top-bar-search {
   float: right;
   width: 299px;
+}
+@media only screen and (min-width: 48em) {
+  .lt-ie9 .top-bar-search {
+    position: absolute;
+    right: 5px;
+  }
+}
+@media print {
+  .lt-ie9 .top-bar-search {
+    position: absolute;
+    right: 5px;
+  }
+}
+.lt-ie9 .top-bar-search .lt-ie9 {
+  position: absolute;
+  right: 5px;
 }
 .lt-ie9 .top-bar-search .has-form {
   background-color: transparent;
@@ -7723,7 +7788,7 @@ nav.navigation .block-search input {
   visibility: hidden;
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   #navigation-utility {
     max-width: 50%;
     margin-top: 8px;
@@ -7759,7 +7824,7 @@ nav.navigation .block-search input {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   #block-menu-menu-footer-menu ul {
     display: block;
     padding: 0;
@@ -7949,7 +8014,7 @@ nav.navigation .block-search input {
 #block-menu-menu-footer-menu .lt-ie9 ul ul li {
   padding: 0;
 }
-@media only screen and (min-width: 83.33333em) {
+@media only screen and (min-width: 62.5em) {
   #block-menu-menu-footer-menu ul {
     display: block;
     padding: 0;
@@ -8147,7 +8212,7 @@ nav.navigation .block-search input {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   #block-menu-menu-audience-menu {
     position: absolute;
     right: 0;
@@ -8228,7 +8293,7 @@ nav.navigation .block-menu-menu-global-tools-menu {
   width: 50%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   nav.navigation .block-menu-menu-global-tools-menu {
     display: none;
   }
@@ -8244,7 +8309,7 @@ nav.navigation .block-menu-menu-global-tools-menu .lt-ie9 {
 .region-header .block-menu-menu-global-tools-menu {
   display: none;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .region-header .block-menu-menu-global-tools-menu {
     position: relative;
     padding-left: 1.25em;
@@ -8293,7 +8358,7 @@ nav.navigation #block-system-main-menu {
   float: left;
   margin-bottom: 0;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   nav.navigation #block-system-main-menu {
     position: relative;
     padding-left: 1.25em;
@@ -8328,7 +8393,7 @@ nav.navigation #block-system-main-menu .menu {
   margin-bottom: 0;
   text-align: right;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   nav.navigation #block-system-main-menu .menu {
     margin: 0 auto 1.41667em auto;
     margin-left: -1.83333em;
@@ -8409,9 +8474,8 @@ nav.navigation #block-system-main-menu .menu .lt-ie9 ul.menu {
   height: 30px;
   line-height: 30px;
   margin-bottom: 5px;
-  background: transparent;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .top-bar .title-area {
     display: none;
   }
@@ -8469,7 +8533,7 @@ nav.navigation #block-system-main-menu .menu .lt-ie9 ul.menu {
   border-top: none;
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 768px) {
   .top-bar {
     height: 40px;
     border: 1px solid #FFFFFF;
@@ -8556,7 +8620,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot {
   width: 50%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   nav.navigation .block-menu-menu-secondary-navigation---prot {
     display: none;
   }
@@ -8577,7 +8641,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   #block-menu-menu-social-links {
     position: relative;
     padding-left: 1.25em;
@@ -8654,7 +8718,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   display: block;
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .view-directory .views-row {
     clear: none;
     display: block;
@@ -8746,7 +8810,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-default.has-sidebar .ds-content-column {
     position: relative;
     padding-left: 1.25em;
@@ -8771,7 +8835,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 75%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-default.has-sidebar .ds-sidebar-column {
     position: relative;
     padding-left: 1.25em;
@@ -8824,7 +8888,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-gateway .ds-row-2-column-1,
   .unc-ds-gateway .ds-row-2-column-2,
   .unc-ds-gateway .ds-row-3-column-1,
@@ -8911,7 +8975,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-home.has-sidebar .ds-content-column {
     position: relative;
     padding-left: 1.25em;
@@ -8936,7 +9000,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 66.66667%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-home.has-sidebar .ds-sidebar-column {
     position: relative;
     padding-left: 1.25em;
@@ -8991,7 +9055,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-subsite.has-sidebar .ds-content-wrapper {
     position: relative;
     padding-left: 0;
@@ -9016,7 +9080,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 75%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-subsite.has-sidebar .ds-sidebar-column {
     position: relative;
     padding-left: 1.25em;
@@ -9041,7 +9105,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 25%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-subsite .ds-content-row-2-column-1,
   .unc-ds-subsite .ds-content-row-2-column-2 {
     position: relative;
@@ -9077,7 +9141,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   float: left;
   clear: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-subsite .ds-footer-promo-a {
     position: relative;
     padding-left: 1.25em;
@@ -9112,7 +9176,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 50%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-subsite .ds-footer-promo-b {
     position: relative;
     padding-left: 1.25em;
@@ -9143,7 +9207,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   right: auto;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-subsite .ds-footer-promo-large {
     position: relative;
     padding-left: 1.25em;
@@ -9195,7 +9259,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-subsite.no-ds-footer-promo-a .ds-footer-promo-b {
     position: relative;
     padding-left: 1.25em;
@@ -9229,7 +9293,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   float: left;
   clear: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-subsite.no-ds-footer-promo-a .ds-footer-promo-large {
     position: relative;
     padding-left: 1.25em;
@@ -9261,7 +9325,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-subsite.no-ds-footer-promo-b .ds-footer-promo-a {
     position: relative;
     padding-left: 1.25em;
@@ -9286,7 +9350,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 25%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-subsite.no-ds-footer-promo-b .ds-footer-promo-large {
     position: relative;
     padding-left: 1.25em;
@@ -9322,7 +9386,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 50%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-subsite.no-ds-footer-promo-large .ds-footer-promo-a,
   .unc-ds-subsite.no-ds-footer-promo-large .ds-footer-promo-b {
     left: 0;
@@ -9351,7 +9415,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .unc-ds-subsite.no-ds-footer-promo-a.no-ds-footer-promo-b .ds-footer-promo-a,
   .unc-ds-subsite.no-ds-footer-promo-a.no-ds-footer-promo-b .ds-footer-promo-b,
   .unc-ds-subsite.no-ds-footer-promo-a.no-ds-footer-promo-b .ds-footer-promo-large, .unc-ds-subsite.no-ds-footer-promo-a.no-ds-footer-promo-large .ds-footer-promo-a,
@@ -9411,7 +9475,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .one-sidebar #content {
     position: relative;
     padding-left: 1.25em;
@@ -9436,7 +9500,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 75%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .sidebar-first #content {
     position: relative;
     padding-left: 1.25em;
@@ -9467,7 +9531,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   right: auto;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .two-sidebars #content {
     position: relative;
     padding-left: 1.25em;
@@ -9542,11 +9606,28 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
 }
 
 .row .top-bar {
+  background: #c6c6c6;
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2M0YzRjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhNGE0YTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, #c6c6c6 0%, #8b8b8b 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(25%, white), color-stop(25%, #85c6de), color-stop(75%, #85c6de), color-stop(75%, #c4c4c4), color-stop(100%, #a4a4a4));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #c6c6c6 0%, #8b8b8b 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #c6c6c6 0%, #8b8b8b 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #c6c6c6 0%, #8b8b8b 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #c6c6c6 0%, #8b8b8b 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c6c6c6', endColorstr='#8b8b8b',GradientType=0 );
+  /* IE6-8 */
   padding: 0 -0.9375em;
   border: 1px solid #FFFFFF;
   padding-bottom: 5px;
   margin-bottom: 0;
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
   clear: both;
   float: left;
   height: 40px;
@@ -9555,23 +9636,28 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 100%;
 }
 .row .top-bar.expanded {
+  background-color: #222222;
+  background-image: none;
   height: auto;
 }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 768px) {
   .row .top-bar {
-    height: 30px;
-    line-height: 30px;
+    height: auto;
+    line-height: inherit;
+    padding-bottom: 0;
   }
 }
 @media print {
   .row .top-bar {
-    height: 30px;
-    line-height: 30px;
+    height: auto;
+    line-height: inherit;
+    padding-bottom: 0;
   }
 }
 .row .top-bar .lt-ie9 {
-  height: 30px;
-  line-height: 30px;
+  height: auto;
+  line-height: inherit;
+  padding-bottom: 0;
 }
 .row .top-bar .toggle-topbar.menu-icon {
   margin-top: -19px;
@@ -9709,7 +9795,7 @@ nav.navigation:after {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .columns-1 .col {
     position: relative;
     padding-left: 1.25em;
@@ -9742,7 +9828,7 @@ nav.navigation:after {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .columns-2 .col {
     position: relative;
     padding-left: 1.25em;
@@ -9775,7 +9861,7 @@ nav.navigation:after {
   width: 100%;
   float: left;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .columns-3 .col {
     position: relative;
     padding-left: 1.25em;
@@ -9811,7 +9897,7 @@ nav.navigation:after {
 #main > .sidebar {
   padding-right: 0;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .sidebar {
     position: relative;
     padding-left: 1.25em;
@@ -10065,7 +10151,7 @@ nav.navigation:after {
   margin: 0 0 5px;
   padding: 5px 10px !important;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   #bottom-spiffs .interior {
     margin: 0 5px;
     width: 470px;
@@ -10562,7 +10648,7 @@ a.footer-spiff-map {
 .small-6 {
   width: 100%;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .small-6 {
     width: 50%;
   }
@@ -10715,7 +10801,7 @@ h2.section-heading {
   padding: 0 10px 10px 10px !important;
   margin: 0 !important;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .campus-updates li {
     width: 50%;
   }
@@ -10734,7 +10820,7 @@ h2.section-heading {
   margin-right: 0;
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   #homepage-campus-updates li.views-row-first, .front .campus-updates li.views-row-first {
     border-right: solid #aaa 1px;
   }
@@ -11189,30 +11275,10 @@ Added back in by Luke Withrow on 2013-05-15
 /**start navigation primary--------------------------------------------------------------------------------------**/
 #navigation-primary-wrapper {
   clear: both;
-  height: 40px;
   padding: 0;
-  background: #c6c6c6;
-  /* Old browsers */
-  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2M0YzRjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhNGE0YTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  background: -moz-linear-gradient(top, #c6c6c6 0%, #8b8b8b 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(25%, white), color-stop(25%, #85c6de), color-stop(75%, #85c6de), color-stop(75%, #c4c4c4), color-stop(100%, #a4a4a4));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #c6c6c6 0%, #8b8b8b 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #c6c6c6 0%, #8b8b8b 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #c6c6c6 0%, #8b8b8b 100%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, #c6c6c6 0%, #8b8b8b 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c6c6c6', endColorstr='#8b8b8b',GradientType=0 );
-  /* IE6-8 */
 }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 768px) {
   #navigation-primary-wrapper {
-    height: 30px;
     margin-top: 0;
   }
   #navigation-primary-wrapper, #navigation-primary-wrapper .top-bar {
@@ -11221,7 +11287,6 @@ Added back in by Luke Withrow on 2013-05-15
 }
 @media print {
   #navigation-primary-wrapper {
-    height: 30px;
     margin-top: 0;
   }
   #navigation-primary-wrapper, #navigation-primary-wrapper .top-bar {
@@ -11229,14 +11294,13 @@ Added back in by Luke Withrow on 2013-05-15
   }
 }
 #navigation-primary-wrapper .lt-ie9 {
-  height: 30px;
   margin-top: 0;
 }
 #navigation-primary-wrapper .lt-ie9, #navigation-primary-wrapper .lt-ie9 .top-bar {
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 768px) {
   #navigation-primary {
     margin: 0;
     max-width: 690px;
@@ -11444,7 +11508,7 @@ Added back in by Luke Withrow on 2013-05-15
   background-color: transparent;
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 768px) {
   .top-bar #search {
     padding: 2px 0;
   }
@@ -11467,7 +11531,7 @@ Added back in by Luke Withrow on 2013-05-15
   padding: 0;
   width: 24em;
 }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 768px) {
   #search .form-item-search-block-form input.form-text {
     width: 190px;
   }
@@ -12020,7 +12084,7 @@ table.ncchw ul li {
 .gmap-map {
   width: 100% !important;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   .gmap-map {
     min-width: 679px;
   }

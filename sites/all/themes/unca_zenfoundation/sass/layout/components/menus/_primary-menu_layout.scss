@@ -37,7 +37,7 @@
   height: 30px;
   line-height: 30px;
   margin-bottom: 5px;
-  background: transparent;  
+  //background: transparent;  
   @include respond-to($tablet) {
     .title-area {
       display: none;
