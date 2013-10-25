@@ -106,10 +106,13 @@ function unca_policy_field_default_field_bases() {
   // Exported field_base: 'field_policy_categories_term'
   $field_bases['field_policy_categories_term'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_policy_categories_term',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -132,6 +135,7 @@ function unca_policy_field_default_field_bases() {
           'parent' => 0,
         ),
       ),
+      'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
@@ -161,10 +165,13 @@ function unca_policy_field_default_field_bases() {
   // Exported field_base: 'field_policy_groups_term'
   $field_bases['field_policy_groups_term'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_policy_groups_term',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -187,6 +194,7 @@ function unca_policy_field_default_field_bases() {
           'parent' => 0,
         ),
       ),
+      'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
