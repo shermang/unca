@@ -43,7 +43,6 @@ print \
 profile2 \
 recaptcha \
 rules \
-scanner \
 scheduler \
 sharethis \
 taxonomy_menu \
@@ -131,7 +130,8 @@ admin_menu_toolbar \
 overlay \
 securelogin \
 slideshow_entity \
-lightbox2
+lightbox2 \
+scanner
 
 # uninstall slideshow entity
 echo "Uninstalling Slideshow Entity"
