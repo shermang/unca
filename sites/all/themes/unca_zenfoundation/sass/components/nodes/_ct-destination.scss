@@ -1,0 +1,14 @@
+.node-destination {
+  .field-name-field-studyabroad-region,
+  .field-name-field-studyabroad-program-type {
+    margin-bottom: 0;
+  }
+  .field-name-field-studyabroad-region,
+  .field-name-field-studyabroad-program-type,
+  .field-name-field-university-semester-term {
+    @extend %clearfix-left;
+    .field-item {
+      @extend %inline-commas;
+    }
+  }
+}

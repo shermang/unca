@@ -862,14 +862,20 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
   padding: .25em .5em;
 }
 
-.node-type-campus-update .field-name-field-tags .field-item {
+.node-type-campus-update .field-name-field-tags .field-item, .node-destination .field-name-field-studyabroad-region .field-item,
+.node-destination .field-name-field-studyabroad-program-type .field-item,
+.node-destination .field-name-field-university-semester-term .field-item {
   display: inline;
   margin: 0 0.25em;
 }
-.node-type-campus-update .field-name-field-tags .field-item:after {
+.node-type-campus-update .field-name-field-tags .field-item:after, .node-destination .field-name-field-studyabroad-region .field-item:after,
+.node-destination .field-name-field-studyabroad-program-type .field-item:after,
+.node-destination .field-name-field-university-semester-term .field-item:after {
   content: ",";
 }
-.node-type-campus-update .field-name-field-tags .field-item:last-child:after {
+.node-type-campus-update .field-name-field-tags .field-item:last-child:after, .node-destination .field-name-field-studyabroad-region .field-item:last-child:after,
+.node-destination .field-name-field-studyabroad-program-type .field-item:last-child:after,
+.node-destination .field-name-field-university-semester-term .field-item:last-child:after {
   content: "";
 }
 
@@ -935,7 +941,7 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
   margin: 0 1em 1em 0;
 }
 
-.node-type-cluster .field-name-field-image, .node-course .field-name-field-image img {
+.node-type-cluster .field-name-field-image, .node-course .field-name-field-image img, .node-map-item .field-name-field-image img {
   float: right;
   margin: 0 0 1em 1em;
 }
@@ -949,7 +955,9 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
 }
 
 .node-course .field-name-field-course-catalog-term:after,
-.node-course .field-name-body:after {
+.node-course .field-name-body:after, .node-destination .field-name-field-studyabroad-region:after,
+.node-destination .field-name-field-studyabroad-program-type:after,
+.node-destination .field-name-field-university-semester-term:after {
   clear: left;
 }
 
@@ -6876,6 +6884,11 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
   margin-bottom: 1em;
 }
 
+.node-destination .field-name-field-studyabroad-region,
+.node-destination .field-name-field-studyabroad-program-type {
+  margin-bottom: 0;
+}
+
 .node-type-event .field {
   line-height: 1.5;
 }
@@ -6896,6 +6909,40 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 }
 .node-type-event span.print-link {
   display: none;
+}
+
+.node-map-item .field-name-field-image {
+  margin-bottom: 0;
+}
+.node-map-item .field-name-field-location-with-map {
+  clear: both;
+}
+.node-map-item .field-name-field-location-with-map .field-label {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #74a441), color-stop(100%, #43793a));
+  background-image: -webkit-linear-gradient(#74a441, #43793a);
+  background-image: -moz-linear-gradient(#74a441, #43793a);
+  background-image: -o-linear-gradient(#74a441, #43793a);
+  background-image: linear-gradient(#74a441, #43793a);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: #81b648 0 0 5px, #396832 0 0 3px 0 inset;
+  -moz-box-shadow: #81b648 0 0 5px, #396832 0 0 3px 0 inset;
+  box-shadow: #81b648 0 0 5px, #396832 0 0 3px 0 inset;
+  text-shadow: 0px 0px 1px #aaaaaa;
+  background-color: #43793a;
+  border: 1px solid white;
+  color: white;
+  font-weight: normal;
+  margin-bottom: .5em;
+  padding: .5em .75em;
+  text-transform: uppercase;
+}
+.node-map-item .field-name-field-location-with-map .field-items {
+  background-color: #f2f8ec;
+  padding: .75em;
 }
 
 .node-news .field-name-field-image img {
@@ -6920,6 +6967,21 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 }
 .node-person .field-name-body, .node-person .field-type-text-with-summary {
   clear: both;
+}
+
+/* END: .node-person */
+.node-policy .field-label {
+  font-weight: normal;
+}
+.node-policy .policy-info .field {
+  margin: 0;
+}
+.node-policy .policy-info .field div {
+  display: inline;
+  float: none;
+}
+.node-policy .policy-info .field-label {
+  font-weight: bold;
 }
 
 /* END: .node-person */
