@@ -219,7 +219,13 @@ function unca_zenfoundation_preprocess_page(&$variables, $hook) {
 
   $variables['display_dept_name'] = variable_get('display_dept_name', TRUE);
 
-  $secondary_menu = unca_zenfoundation_sidebar_menu(1);
+  if ($variables['is_front'] && $variables['is_unca_main']) {
+    $secondary_menu = menu_tree_page_data('menu-home-page-secondary-navigat');
+    $secondary_menu = menu_tree_output($secondary_menu);
+  }
+  else {
+    $secondary_menu = unca_zenfoundation_sidebar_menu(1);
+  }
   $secondary_menu = unca_zenfoundation_topbar_menu($secondary_menu, array('class' => array('secondary-nav-mini')));
   $variables['secondary_menu'] = $secondary_menu;
 
@@ -457,6 +463,10 @@ function unca_zenfoundation_topbar_menu(&$menu_links, $attributes = array()) {
   // Initialize some variables to prevent errors
   $output = '';
   $sub_menu = '';
+
+  if (empty($menu_links)) {
+    return $output;
+  }
 
   foreach ($menu_links as $key => $link) {
     // Add special class needed for Foundation dropdown menu to work
