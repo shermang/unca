@@ -1,3 +1,12 @@
+.navigation-gateway {
+  .sidebar & {
+    display: none;
+    @include respond-to($tablet) {
+      display: block;
+    }
+  }
+}
+
 .block-menu-menu-secondary-navigation---prot, .navigation-secondary {
 
   // When the primary menu is in the navigation region

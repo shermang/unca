@@ -6782,6 +6782,23 @@ nav.navigation #block-menu-menu-global-tools-menu a, nav.navigation
   padding-bottom: .5em;
 }
 
+.sidebar .navigation-gateway {
+  display: none;
+}
+@media only screen and (min-width: 48em) {
+  .sidebar .navigation-gateway {
+    display: block;
+  }
+}
+@media print {
+  .sidebar .navigation-gateway {
+    display: block;
+  }
+}
+.sidebar .navigation-gateway .lt-ie9 {
+  display: block;
+}
+
 nav.navigation .block-menu-menu-secondary-navigation---prot, nav.navigation .navigation-secondary {
   margin-bottom: .5em;
 }
