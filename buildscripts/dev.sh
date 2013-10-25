@@ -80,6 +80,7 @@ context_layouts \
 context_ui \
 ds \
 ds_ui \
+unca_date_settings \
 unca_global_header_and_footer \
 unca_slideshow \
 unca_department_navigation \
