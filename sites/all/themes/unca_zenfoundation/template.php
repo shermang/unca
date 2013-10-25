@@ -219,8 +219,7 @@ function unca_zenfoundation_preprocess_page(&$variables, $hook) {
 
   $variables['display_dept_name'] = variable_get('display_dept_name', TRUE);
 
-  $secondary_menu = menu_tree_all_data('menu-secondary-navigation---prot');
-  $secondary_menu = menu_tree_output($secondary_menu);
+  $secondary_menu = unca_zenfoundation_sidebar_menu(1);
   $secondary_menu = unca_zenfoundation_topbar_menu($secondary_menu, array('class' => array('secondary-nav-mini')));
   $variables['secondary_menu'] = $secondary_menu;
 
@@ -242,16 +241,23 @@ function unca_zenfoundation_preprocess_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-/* -- Delete this line if you want to use this function
+//* -- Delete this line if you want to use this function
 function unca_zenfoundation_preprocess_node(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  
+  // dpm($variables);
+  // Changing the "submitted by" text for Department Updates
+  // to have a "Month day, year" format
+  if (isset($variables['node']) && $variables['node']->type == 'dept_update') {
+    // dpm("hello");
+    $variables['submitted'] = t('@date', array('@date' => date("M j, Y", $variables['created'])));
+  }
 
   // Optionally, run node-type-specific preprocess functions, like
   // unca_zenfoundation_preprocess_node_page() or unca_zenfoundation_preprocess_node_story().
-  $function = __FUNCTION__ . '_' . $variables['node']->type;
-  if (function_exists($function)) {
-    $function($variables, $hook);
-  }
+  // $function = __FUNCTION__ . '_' . $variables['node']->type;
+  // if (function_exists($function)) {
+  //   $function($variables, $hook);
+  // }
 }
 // */
 
@@ -335,47 +341,53 @@ function unca_zenfoundation_preprocess_block(&$variables, $hook) {
 /**
  * Programmatically generate the sidebar menu.
  */
-function unca_zenfoundation_sidebar_menu() {
+function unca_zenfoundation_sidebar_menu($max_depth = NULL) {
   $item = menu_get_object();
   if (isset($item->type)) {
     switch ($item->type) {
       case 'profiles':
         $parent_link = menu_link_get_preferred('faces', 'menu-secondary-navigation---prot');
-        return unca_zenfoundation_sidebar_menu_links($parent_link['mlid']);
+        return unca_zenfoundation_sidebar_menu_links($parent_link['mlid'], $max_depth);
         break;
 
       case 'news_article':
         $parent_link = menu_link_get_preferred('news-events', 'menu-secondary-navigation---prot');
-        return unca_zenfoundation_sidebar_menu_links($parent_link['mlid']);
+        return unca_zenfoundation_sidebar_menu_links($parent_link['mlid'], $max_depth);
         break;
 
       default:
-        return unca_zenfoundation_sidebar_menu_links();
+        return unca_zenfoundation_sidebar_menu_links(NULL, $max_depth);
         break;
     }
   }
   else {
-    return unca_zenfoundation_sidebar_menu_links();
+    return unca_zenfoundation_sidebar_menu_links(NULL, $max_depth);
   }
 }
 
-function unca_zenfoundation_sidebar_menu_links($parent_link_id = NULL) {
+/**
+ * Helper function to generate the correct set of menu links for the current page.
+ */
+function unca_zenfoundation_sidebar_menu_links($parent_link_id = NULL, $max_depth = NULL) {
   $tree = menu_tree_page_data('menu-secondary-navigation---prot');
 
-  if (!empty($parent_link_id)) {
-    foreach($tree as $key => $mi) {
-      if ($mi['link']['p1'] == $parent_link_id) {
-        $menu = menu_tree_output($tree[$key]['below']);
+  foreach($tree as $key => $mi) {
+    if ((!empty($parent_link_id) && ($mi['link']['p1'] == $parent_link_id))
+        || (empty($parent_link_id) && $mi['link']['in_active_trail'] && $tree[$key]['below'])) {
+      switch (TRUE) {
+        case (($max_depth !== NULL) && ($mi['link']['plid'] == 0)):
+          $max_depth++; // Since we stripping out the top level of the menu, we need to increment
+                        // the $max_depth to compensate.
+          $tree = menu_tree_all_data('menu-secondary-navigation---prot', $mi['link'], $max_depth);
+          // We are deliberately omitting the 'break' here because we want to pass the new value
+          // of $tree to menu_tree_output() below.
+        case ($max_depth === NULL):
+          $menu = menu_tree_output($tree[$key]['below']);
+          break;
       }
     }
   }
-  else {
-    foreach($tree as $key => $mi) {
-      if ($mi['link']['in_active_trail'] && $tree[$key]['below']) {
-        $menu = menu_tree_output($tree[$key]['below']);
-      }
-    }
-  }
+
   if (isset($menu)){
     return $menu;
   }
@@ -393,7 +405,7 @@ function unca_zenfoundation_sidebar_menu_links($parent_link_id = NULL) {
  */
 function unca_zenfoundation_links__system_main_menu($vars) {
   // Get all the main menu links
-  $menu_links = menu_tree_output(menu_tree_all_data('main-menu'));
+  $menu_links = menu_tree_output(menu_tree_all_data('main-menu', NULL, 1));
 
   // Initialize some variables to prevent errors
   $output = '';
