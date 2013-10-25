@@ -133,11 +133,12 @@ function unca_event_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_event_categories_term',
     'label' => 'Event Categories',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
