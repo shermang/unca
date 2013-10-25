@@ -6970,6 +6970,21 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 }
 
 /* END: .node-person */
+.node-policy .field-label {
+  font-weight: normal;
+}
+.node-policy .policy-info .field {
+  margin: 0;
+}
+.node-policy .policy-info .field div {
+  display: inline;
+  float: none;
+}
+.node-policy .policy-info .field-label {
+  font-weight: bold;
+}
+
+/* END: .node-person */
 .node-dept-update .submitted {
   color: #ef851a;
   margin-bottom: 1em;
