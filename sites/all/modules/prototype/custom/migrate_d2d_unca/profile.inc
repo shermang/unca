@@ -60,6 +60,7 @@ class UNCAProfileMigration extends UNCANodeMigration {
       $row->field_lastname = $name->getLast();
       $row->field_suffix = $name->getSuffix();
     }
+
     return TRUE;
   }
 

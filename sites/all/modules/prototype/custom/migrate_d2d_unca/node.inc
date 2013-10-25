@@ -70,6 +70,63 @@ abstract class UNCANodeMigration extends DrupalNode6Migration {
       }
     }
   }
+
+  public function getDestinationImageFieldNames($baseFieldName = NULL){
+    if(empty($baseFieldName)){
+      $baseFieldName = 'field_image';
+    }
+
+    return
+      array(
+        $baseFieldName,
+        $baseFieldName .':file_class',
+        $baseFieldName .':language',
+        $baseFieldName .':preserve_files',
+        $baseFieldName .':destination_dir',
+        $baseFieldName .':destination_file',
+        $baseFieldName .':file_replace',
+        $baseFieldName .':source_dir',
+        $baseFieldName .':urlencode',
+        $baseFieldName .':alt',
+        $baseFieldName .':title',
+      );
+  }
+
+  public function getDestinationTermFieldNames($baseFieldName = NULL){
+    if(empty($baseFieldName)){
+      $baseFieldName = 'field_tags';
+    }
+
+    return
+      array(
+        $baseFieldName,
+        $baseFieldName .':source_type',
+        $baseFieldName .':create_term',
+        $baseFieldName .':ignore_case'
+      );
+  }
+
+  public function getDestinationVideoFieldNames($baseFieldName = NULL){
+    if(empty($baseFieldName)){
+      $baseFieldName = 'field_video_embed';
+    }
+
+    return
+      array(
+        $baseFieldName,
+        $baseFieldName .':file_class',
+        $baseFieldName .':language',
+        $baseFieldName .':preserve_files',
+        $baseFieldName .':destination_dir',
+        $baseFieldName .':destination_file',
+        $baseFieldName .':file_replace',
+        $baseFieldName .':source_dir',
+        $baseFieldName .':urlencode',
+        $baseFieldName .':description',
+        $baseFieldName .':display',
+      );
+  }
+
 }
 
 /**
