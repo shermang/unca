@@ -84,7 +84,7 @@ function unca_profile_views_default_views() {
   $handler->display->display_options['fields']['title']['element_class'] = 'profile-name';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Caption */
+  /* Field: Content: Subheading */
   $handler->display->display_options['fields']['field_subheading']['id'] = 'field_subheading';
   $handler->display->display_options['fields']['field_subheading']['table'] = 'field_data_field_subheading';
   $handler->display->display_options['fields']['field_subheading']['field'] = 'field_subheading';
@@ -210,7 +210,7 @@ function unca_profile_views_default_views() {
   $handler->display->display_options['fields']['field_image_fid']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image_fid']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image_fid']['label'] = '';
-  /* Field: Content: Caption */
+  /* Field: Content: Subheading */
   $handler->display->display_options['fields']['field_subhead_value']['id'] = 'field_subhead_value';
   $handler->display->display_options['fields']['field_subhead_value']['table'] = 'field_data_field_subheading';
   $handler->display->display_options['fields']['field_subhead_value']['field'] = 'field_subheading';
@@ -501,7 +501,7 @@ function unca_profile_views_default_views() {
   $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
   $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_profile_weight';
   $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_profile_weight_value';
-  /* Sort criterion: Content: Caption (field_subheading) */
+  /* Sort criterion: Content: Subheading (field_subheading) */
   $handler->display->display_options['sorts']['field_subhead_value']['id'] = 'field_subhead_value';
   $handler->display->display_options['sorts']['field_subhead_value']['table'] = 'field_data_field_subheading';
   $handler->display->display_options['sorts']['field_subhead_value']['field'] = 'field_subheading_value';
@@ -846,7 +846,7 @@ function unca_profile_views_default_views() {
   $handler->display->display_options['fields']['field_image_fid']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image_fid']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image_fid']['label'] = '';
-  /* Field: Content: Caption */
+  /* Field: Content: Subheading */
   $handler->display->display_options['fields']['field_subhead_value']['id'] = 'field_subhead_value';
   $handler->display->display_options['fields']['field_subhead_value']['table'] = 'field_data_field_subheading';
   $handler->display->display_options['fields']['field_subhead_value']['field'] = 'field_subheading';
