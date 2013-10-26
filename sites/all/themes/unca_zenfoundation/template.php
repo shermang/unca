@@ -257,6 +257,9 @@ function unca_zenfoundation_preprocess_node(&$variables, $hook) {
     // dpm("hello");
     $variables['submitted'] = t('@date', array('@date' => date("M j, Y", $variables['created'])));
   }
+  if (isset($variables['content']['print_links'])) {
+    unset($variables['content']['print_links']);
+  }
 
   // Optionally, run node-type-specific preprocess functions, like
   // unca_zenfoundation_preprocess_node_page() or unca_zenfoundation_preprocess_node_story().
