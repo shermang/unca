@@ -16,16 +16,16 @@ class UNCADestinationMigration extends UNCANodeMigration {
     $this->addFieldMapping('field_image:file_class')
         ->defaultValue('MigrateFileFid');
     // Note that we map migrated terms by the vocabulary ID.
-    $this->addFieldMapping('field_studyabroad_program_type', migrate_d2d_unca_get_src_vocab_id('studyabroad_program_type'))
-         ->sourceMigration($prog_type_migration_machine_name);
+    $this->addFieldMapping('field_studyabroad_program_type', migrate_d2d_unca_get_src_vocab_id('program_type'))
+         ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('program_types'));
     $this->addFieldMapping('field_studyabroad_program_type:source_type')
          ->defaultValue('tid');
-    $this->addFieldMapping('field_studyabroad_region', migrate_d2d_unca_get_src_vocab_id('studyabroad_region'))
-         ->sourceMigration('Term_region');
+    $this->addFieldMapping('field_studyabroad_region', migrate_d2d_unca_get_src_vocab_id('region'))
+         ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('region'));
     $this->addFieldMapping('field_studyabroad_region:source_type')
       ->defaultValue('tid');
     $this->addFieldMapping('field_university_semester_term', migrate_d2d_unca_get_src_vocab_id('university_semester'))
-         ->sourceMigration('Term_university_term');
+         ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('university_semester'));
     $this->addFieldMapping('field_university_semester_term:source_type')
          ->defaultValue('tid');
   }
