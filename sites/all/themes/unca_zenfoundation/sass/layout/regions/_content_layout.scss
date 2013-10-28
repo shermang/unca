@@ -1,7 +1,7 @@
 // @include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
 
 #content {
-  @include grid-column($full-width);
+  //@include grid-column($full-width);
   // One sidebar, on the left
   .one-sidebar & {
     @include respond-to($tablet) {
