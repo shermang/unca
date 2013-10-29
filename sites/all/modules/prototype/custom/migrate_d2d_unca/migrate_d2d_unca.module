@@ -210,7 +210,7 @@ function migrate_d2d_unca_register_migrations() {
       'description' => t('Migration of Profile nodes from Drupal 6'),
       'machine_name' => 'UNCAProfile',
       'source_type' => 'profile',
-      'destination_type' => 'profile',
+      'destination_type' => 'profiles',
       'group_name' => 'c_node',
       'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
     ),
