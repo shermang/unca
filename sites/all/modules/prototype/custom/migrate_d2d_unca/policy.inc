@@ -14,7 +14,12 @@ class UNCAPolicyMigration extends UNCANodeMigration {
     $this->addFieldMapping('field_policy_approval_date','field_approval_date');
     $this->addFieldMapping('field_policy_next_review_date','field_next_review');
     $this->addFieldMapping('field_policy_reference_materials','field_reference_materials');
+    $this->addFieldMapping('field_policy_reference_materials:format','field_policy_reference_materials:format')
+      ->callbacks(array($this,'mapFormat'));
     $this->addFieldMapping('field_policy_associated_forms','field_associated_forms');
+    $this->addFieldMapping('field_policy_associated_forms:format','field_associated_forms:format')
+      ->callbacks(array($this,'mapFormat'));
+    $this->addFieldMapping('field_policy_number','field_policy_number');
 
 // Note that we map migrated terms by the vocabulary ID.
     $this->addFieldMapping('field_policy_groups_term', migrate_d2d_unca_get_src_vocab_id('groups_policies_apply_to'))
