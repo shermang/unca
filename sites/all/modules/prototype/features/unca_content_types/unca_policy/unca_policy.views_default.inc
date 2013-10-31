@@ -47,37 +47,59 @@ e.style.display=\'block\';
   $handler->display->display_options['fields']['field_approved_by_value']['id'] = 'field_approved_by_value';
   $handler->display->display_options['fields']['field_approved_by_value']['table'] = 'field_data_field_policy_approved_by';
   $handler->display->display_options['fields']['field_approved_by_value']['field'] = 'field_policy_approved_by';
-  $handler->display->display_options['fields']['field_approved_by_value']['label'] = 'Approved By';
+  $handler->display->display_options['fields']['field_approved_by_value']['label'] = '';
   $handler->display->display_options['fields']['field_approved_by_value']['element_type'] = '0';
   $handler->display->display_options['fields']['field_approved_by_value']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_approved_by_value']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_approved_by_value']['element_default_classes'] = FALSE;
   /* Field: Content: Associated Forms */
   $handler->display->display_options['fields']['field_associated_forms_value']['id'] = 'field_associated_forms_value';
   $handler->display->display_options['fields']['field_associated_forms_value']['table'] = 'field_data_field_policy_associated_forms';
   $handler->display->display_options['fields']['field_associated_forms_value']['field'] = 'field_policy_associated_forms';
+  $handler->display->display_options['fields']['field_associated_forms_value']['label'] = '';
   $handler->display->display_options['fields']['field_associated_forms_value']['element_type'] = '0';
   $handler->display->display_options['fields']['field_associated_forms_value']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_associated_forms_value']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_associated_forms_value']['element_default_classes'] = FALSE;
   /* Field: Content: Policy Number */
   $handler->display->display_options['fields']['field_policy_number_value']['id'] = 'field_policy_number_value';
   $handler->display->display_options['fields']['field_policy_number_value']['table'] = 'field_data_field_policy_number';
   $handler->display->display_options['fields']['field_policy_number_value']['field'] = 'field_policy_number';
+  $handler->display->display_options['fields']['field_policy_number_value']['label'] = '';
+  $handler->display->display_options['fields']['field_policy_number_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_policy_number_value']['settings'] = array(
+    'thousand_separator' => ' ',
+    'decimal_separator' => '.',
+    'scale' => '0',
+    'prefix_suffix' => 1,
+  );
   /* Field: Content: Policy Type */
   $handler->display->display_options['fields']['field_policy_type_value']['id'] = 'field_policy_type_value';
   $handler->display->display_options['fields']['field_policy_type_value']['table'] = 'field_data_field_policy_type';
   $handler->display->display_options['fields']['field_policy_type_value']['field'] = 'field_policy_type';
+  $handler->display->display_options['fields']['field_policy_type_value']['label'] = '';
   $handler->display->display_options['fields']['field_policy_type_value']['element_type'] = '0';
   $handler->display->display_options['fields']['field_policy_type_value']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_policy_type_value']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_policy_type_value']['element_default_classes'] = FALSE;
   /* Field: Content: Reference Materials */
   $handler->display->display_options['fields']['field_reference_materials_value']['id'] = 'field_reference_materials_value';
   $handler->display->display_options['fields']['field_reference_materials_value']['table'] = 'field_data_field_policy_reference_materials';
   $handler->display->display_options['fields']['field_reference_materials_value']['field'] = 'field_policy_reference_materials';
+  $handler->display->display_options['fields']['field_reference_materials_value']['label'] = '';
+  $handler->display->display_options['fields']['field_reference_materials_value']['element_label_colon'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['field_teaser_text_value']['id'] = 'field_teaser_text_value';
   $handler->display->display_options['fields']['field_teaser_text_value']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['field_teaser_text_value']['field'] = 'body';
-  $handler->display->display_options['fields']['field_teaser_text_value']['label'] = 'Teaser';
+  $handler->display->display_options['fields']['field_teaser_text_value']['label'] = '';
+  $handler->display->display_options['fields']['field_teaser_text_value']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['field_teaser_text_value']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_teaser_text_value']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_teaser_text_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_teaser_text_value']['settings'] = array(
+    'trim_length' => '300',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -88,12 +110,16 @@ e.style.display=\'block\';
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Approval Date */
   $handler->display->display_options['fields']['field_approval_date_value']['id'] = 'field_approval_date_value';
   $handler->display->display_options['fields']['field_approval_date_value']['table'] = 'field_data_field_policy_approval_date';
   $handler->display->display_options['fields']['field_approval_date_value']['field'] = 'field_policy_approval_date';
+  $handler->display->display_options['fields']['field_approval_date_value']['label'] = '';
   $handler->display->display_options['fields']['field_approval_date_value']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_approval_date_value']['element_class'] = 'date-display-single';
+  $handler->display->display_options['fields']['field_approval_date_value']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_approval_date_value']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_approval_date_value']['settings'] = array(
     'format_type' => 'long',
@@ -106,10 +132,26 @@ e.style.display=\'block\';
   $handler->display->display_options['fields']['field_date_issued_value']['id'] = 'field_date_issued_value';
   $handler->display->display_options['fields']['field_date_issued_value']['table'] = 'field_data_field_policy_origination_date';
   $handler->display->display_options['fields']['field_date_issued_value']['field'] = 'field_policy_origination_date';
+  $handler->display->display_options['fields']['field_date_issued_value']['label'] = '';
+  $handler->display->display_options['fields']['field_date_issued_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_issued_value']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Field: Content: Policy Code */
   $handler->display->display_options['fields']['field_policy_code_value']['id'] = 'field_policy_code_value';
   $handler->display->display_options['fields']['field_policy_code_value']['table'] = 'field_data_field_policy_code';
   $handler->display->display_options['fields']['field_policy_code_value']['field'] = 'field_policy_code';
+  $handler->display->display_options['fields']['field_policy_code_value']['label'] = '';
+  $handler->display->display_options['fields']['field_policy_code_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_policy_code_value']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['fields']['field_policy_code_value']['delta_offset'] = '0';
   /* Sort criterion: Content: Policy Number (field_policy_number) */
   $handler->display->display_options['sorts']['field_policy_number_value_1']['id'] = 'field_policy_number_value_1';
   $handler->display->display_options['sorts']['field_policy_number_value_1']['table'] = 'field_data_field_policy_number';

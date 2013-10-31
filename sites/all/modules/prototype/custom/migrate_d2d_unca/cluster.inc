@@ -10,11 +10,22 @@ class UNCAClusterMigration extends UNCANodeMigration {
          ->sourceMigration('UNCAFile');
     $this->addFieldMapping('field_image:file_class')
         ->defaultValue('MigrateFileFid');
-    $this->addFieldMapping('body:summary', 'field_subhead');
+    $this->addFieldMapping('field_image:preserve_files')
+      ->defaultValue(TRUE);
+    $this->addFieldMapping('field_image:title')
+      ->defaultValue('');
+    $this->addFieldMapping('field_image:alt')
+      ->defaultValue('');
+    $this->addFieldMapping('field_image:language')
+      ->defaultValue(LANGUAGE_NONE);
+
+    $this->addFieldMapping('body:summary', 'field_subhead',FALSE);
     $this->addFieldMapping('field_cluster_number', 'field_number');
     $this->addFieldMapping('field_cluster_coordinator', 'field_coordinator');
-    $this->addFieldMapping('field_cluster_coordinator:format')
-       ->defaultValue('filtered_html');
+    $this->addFieldMapping('field_cluster_coordinator:format','field_coordinator:format')
+      ->callbacks(array($this, 'mapFormat'));
+    $this->addFieldMapping('field_cluster_coordinator:language')
+      ->defaultValue(LANGUAGE_NONE);
     $this->addFieldMapping('field_date', 'field_launch_date');
   }
 

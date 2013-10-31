@@ -6,8 +6,11 @@ class UNCAIframeMigration extends UNCANodeMigration {
 
     parent::__construct($arguments);
 
-    $this->addFieldMapping('field_iframe','field_iframe_url');
-
+    $this->addFieldMapping('field_iframe','field_iframe');
+    $this->addFieldMapping('field_iframe:title','field_iframe:title');
+    $this->addFieldMapping('field_iframe:attributes','field_iframe:attributes');
+    $this->addFieldMapping('field_iframe:language')
+      ->defaultValue(LANGUAGE_NONE);
   }
 
   /**
