@@ -6523,6 +6523,9 @@ nav.navigation a {
 .sidebar.region {
   padding-bottom: 2em;
 }
+.sidebar li {
+  margin-left: 10px;
+}
 
 .block-title {
   font-size: 2.25em;
