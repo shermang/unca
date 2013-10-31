@@ -94,7 +94,7 @@
 
 
 
-    <div id="content" class="bottom-stripes content <?php print $page_layout_wrapper_classes; ?>" role="content">
+    <div id="content" class="bottom-stripes content large-9 columns <?php print $page_layout_wrapper_classes; ?>" role="content">
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
@@ -137,7 +137,7 @@
     </div><!-- /#content -->
 
     <!-- Let's simplify the sidebar logic since we only have one sidebar region. -->
-    <aside class="sidebar">
+    <aside class="sidebar large-3 columns">
       <?php if ($is_front && $is_unca_main): ?>
         <div class="navigation-gateway">
           <?php print render($hp_sidebar_menu); ?>

@@ -10,16 +10,14 @@
 function unca_global_header_and_footer_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu:<front>
-  $menu_links['main-menu:<front>'] = array(
+  // Exported menu link: main-menu:http://www.unca.edu/about
+  $menu_links['main-menu:http://www.unca.edu/about'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'http://www.unca.edu/about',
     'router_path' => '',
-    'link_title' => 'Home',
+    'link_title' => 'About',
     'options' => array(
-      'attributes' => array(
-        'title' => 'UNC Asheville Home Page',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -28,16 +26,14 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -50,
   );
-  // Exported menu link: main-menu:http://www.unca.edu/about
-  $menu_links['main-menu:http://www.unca.edu/about'] = array(
+  // Exported menu link: main-menu:http://www.unca.edu/academics
+  $menu_links['main-menu:http://www.unca.edu/academics'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'http://www.unca.edu/about',
+    'link_path' => 'http://www.unca.edu/academics',
     'router_path' => '',
-    'link_title' => 'About',
+    'link_title' => 'Academics',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -46,16 +42,14 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -49,
   );
-  // Exported menu link: main-menu:http://www.unca.edu/academics
-  $menu_links['main-menu:http://www.unca.edu/academics'] = array(
+  // Exported menu link: main-menu:http://www.unca.edu/admissions
+  $menu_links['main-menu:http://www.unca.edu/admissions'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'http://www.unca.edu/academics',
+    'link_path' => 'http://www.unca.edu/admissions',
     'router_path' => '',
-    'link_title' => 'Academics',
+    'link_title' => 'Admissions',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -64,52 +58,14 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -48,
   );
-  // Exported menu link: main-menu:http://www.unca.edu/admissions
-  $menu_links['main-menu:http://www.unca.edu/admissions'] = array(
+  // Exported menu link: main-menu:http://www.unca.edu/centers
+  $menu_links['main-menu:http://www.unca.edu/centers'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'http://www.unca.edu/admissions',
+    'link_path' => 'http://www.unca.edu/centers',
     'router_path' => '',
-    'link_title' => 'Admissions',
+    'link_title' => 'Centers',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -47,
-  );
-  // Exported menu link: main-menu:http://www.unca.edu/life-campus
-  $menu_links['main-menu:http://www.unca.edu/life-campus'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'http://www.unca.edu/life-campus',
-    'router_path' => '',
-    'link_title' => 'Life on Campus',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -46,
-  );
-  // Exported menu link: main-menu:http://www.unca.edu/news-events
-  $menu_links['main-menu:http://www.unca.edu/news-events'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'http://www.unca.edu/news-events',
-    'router_path' => '',
-    'link_title' => 'News & Events',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -118,16 +74,30 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -44,
   );
-  // Exported menu link: main-menu:http://www.uncabulldogs.com/
-  $menu_links['main-menu:http://www.uncabulldogs.com/'] = array(
+  // Exported menu link: main-menu:http://www.unca.edu/life-campus
+  $menu_links['main-menu:http://www.unca.edu/life-campus'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'http://www.uncabulldogs.com/',
+    'link_path' => 'http://www.unca.edu/life-campus',
     'router_path' => '',
-    'link_title' => 'Athletics',
+    'link_title' => 'Life on Campus',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+  );
+  // Exported menu link: main-menu:http://www.unca.edu/news-events
+  $menu_links['main-menu:http://www.unca.edu/news-events'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'http://www.unca.edu/news-events',
+    'router_path' => '',
+    'link_title' => 'News & Events',
+    'options' => array(
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -136,6 +106,22 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -45,
   );
+  // Exported menu link: main-menu:http://www.uncabulldogs.com/
+  $menu_links['main-menu:http://www.uncabulldogs.com/'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'http://www.uncabulldogs.com/',
+    'router_path' => '',
+    'link_title' => 'Athletics',
+    'options' => array(
+      'attributes' => array(),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
+  );
   // Exported menu link: menu-global-footer-menu:http://bulldogalert.unca.edu/
   $menu_links['menu-global-footer-menu:http://bulldogalert.unca.edu/'] = array(
     'menu_name' => 'menu-global-footer-menu',
@@ -143,9 +129,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Emergency Information',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -161,9 +145,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Employment',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -179,9 +161,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'A-Z Index',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -197,9 +177,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'About this Site',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -215,9 +193,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Contact Us',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -233,9 +209,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Giving',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -251,9 +225,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Quick Links',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -269,9 +241,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Library',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -287,9 +257,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Calendar',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -305,9 +273,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Moodle',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -323,9 +289,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Maps',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -341,9 +305,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'OnePort',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -359,9 +321,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Email',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -379,12 +339,12 @@ function unca_global_header_and_footer_menu_default_menu_links() {
   t('Admissions');
   t('Athletics');
   t('Calendar');
+  t('Centers');
   t('Contact Us');
   t('Email');
   t('Emergency Information');
   t('Employment');
   t('Giving');
-  t('Home');
   t('Library');
   t('Life on Campus');
   t('Maps');

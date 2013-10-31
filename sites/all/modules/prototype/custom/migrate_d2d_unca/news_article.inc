@@ -1,5 +1,5 @@
 <?php
-class UNCANewArticleMigration extends UNCANodeMigration {
+class UNCANewsArticleMigration extends UNCANodeMigration {
   public function __construct(array $arguments) {
 // Add any other data we're pulling into the source row, before the parent
 // constructor.

@@ -63,7 +63,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'unca_standard_date_display',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -317,7 +317,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'unca_standard_date_display',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -372,7 +372,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'unca_standard_date_display',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -409,7 +409,7 @@ function unca_policy_field_default_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-40:+1',
+        'year_range' => '-40:+3',
       ),
       'type' => 'date_popup',
       'weight' => 12,
@@ -473,7 +473,7 @@ function unca_policy_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'unca_standard_date_display',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -580,7 +580,7 @@ function unca_policy_field_default_field_instances() {
     'label' => 'Reference Materials',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
