@@ -124,8 +124,9 @@ function unca_event_views_default_views() {
   $handler->display->display_options['fields']['field_date']['element_class'] = 'calendar-time';
   $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date']['type'] = 'date_plain';
   $handler->display->display_options['fields']['field_date']['settings'] = array(
-    'format_type' => 'unca_standard_time_display',
+    'format_type' => 'long',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
