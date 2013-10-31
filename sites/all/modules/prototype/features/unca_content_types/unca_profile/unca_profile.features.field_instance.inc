@@ -381,7 +381,7 @@ function unca_profile_field_default_field_instances() {
     'label' => 'Contact Information',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -497,12 +497,13 @@ function unca_profile_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_profile_personal_statement',
     'label' => 'Personal Statement',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 5,

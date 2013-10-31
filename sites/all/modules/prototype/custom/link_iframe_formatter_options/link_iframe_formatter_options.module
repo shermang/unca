@@ -102,7 +102,6 @@ function link_iframe_formatter_options_field_formatter_view($entity_type, $entit
           'width' => $display['settings']['width'],
           'frameborder' => $display['settings']['frameborder'],
           'scrolling' => $display['settings']['scrolling'],
-          'class' => $link_options['attributes']['class'],
         ),
         '#value' => ''
       );

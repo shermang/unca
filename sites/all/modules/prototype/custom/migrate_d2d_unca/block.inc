@@ -116,6 +116,30 @@ class UNCABlockMigration extends DrupalMigration {
         $row->status = 0;
         break;
     }
+
+    switch(TRUE){
+      case (($row->delta == 'News-block_1') && ($row->theme == 'unca.department')):
+        $row->delta = 'block_4';
+        break;
+      case (($row->delta == 'News-block_2') && ($row->theme == 'unca.department')):
+        $row->delta = 'block_5';
+        break;
+      case (($row->delta == 'News-block_1') && ($row->theme == 'unca')):
+        $row->delta = 'News-block_1';
+        break;
+      case (($row->delta == 'News-block_2') && ($row->theme == 'unca')):
+        $row->delta = 'News-block_2';
+        break;
+      case (($row->delta == 'News-block_3') && ($row->theme == 'unca')):
+        $row->delta = 'News-block_3';
+        break;
+      case ($row->delta == 'Events_with_images-block_1'):
+        $row->delta = 'Events-block_3';
+        break;
+      case ($row->delta == 'Events_with_images-block_2'):
+        $row->delta = 'Events-block_5';
+        break;
+    }
     $row->theme = 'unca_zenfoundation';
 
 
@@ -155,7 +179,6 @@ class UNCABlockMigration extends DrupalMigration {
         }
         break;
     }
-
   }
 
   protected function query() {

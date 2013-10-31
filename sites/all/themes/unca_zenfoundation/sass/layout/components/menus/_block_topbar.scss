@@ -124,6 +124,9 @@
     padding-right: 0;
   }
   .top-bar-section {
+    @include respond-to($tablet) {
+      padding-right: 275px;
+    }
     ul {
       background-color: transparent;
     }
@@ -131,6 +134,10 @@
   .top-bar-search {
     float: right;
     width: 299px;
+    @include respond-to($tablet) {
+      position: absolute;
+      right: 5px;
+    }
     .has-form {
       background-color: transparent;
       height: auto;
