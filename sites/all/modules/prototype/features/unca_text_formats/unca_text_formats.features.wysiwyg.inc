@@ -53,6 +53,9 @@ function unca_text_formats_wysiwyg_default_profiles() {
           'Styles' => 1,
           'Table' => 1,
         ),
+        'imce' => array(
+          'imce' => 1,
+        ),
         'drupal' => array(
           'media' => 1,
         ),
@@ -65,8 +68,8 @@ function unca_text_formats_wysiwyg_default_profiles() {
       'preformatted' => 0,
       'convert_fonts_to_spans' => 1,
       'remove_linebreaks' => 1,
-      'apply_source_formatting' => 0,
-      'paste_auto_cleanup_on_paste' => 0,
+      'apply_source_formatting' => 1,
+      'paste_auto_cleanup_on_paste' => 1,
       'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
       'css_setting' => 'self',
       'css_path' => '%b%t/css/unca_zenfoundation.css',
@@ -91,7 +94,72 @@ Captioned Image=div.caption',
   $profiles['full_html'] = array(
     'format' => 'full_html',
     'editor' => 'ckeditor',
-    'settings' => FALSE,
+    'settings' => array(
+      'default' => 1,
+      'user_choose' => 0,
+      'show_toggle' => 1,
+      'theme' => 'advanced',
+      'language' => 'en',
+      'buttons' => array(
+        'default' => array(
+          'Bold' => 1,
+          'Italic' => 1,
+          'Underline' => 1,
+          'Strike' => 1,
+          'JustifyLeft' => 1,
+          'JustifyRight' => 1,
+          'BulletedList' => 1,
+          'NumberedList' => 1,
+          'Outdent' => 1,
+          'Indent' => 1,
+          'Undo' => 1,
+          'Redo' => 1,
+          'Link' => 1,
+          'Unlink' => 1,
+          'Anchor' => 1,
+          'Image' => 1,
+          'Superscript' => 1,
+          'Subscript' => 1,
+          'Blockquote' => 1,
+          'Source' => 1,
+          'Cut' => 1,
+          'Copy' => 1,
+          'PasteText' => 1,
+          'Format' => 1,
+          'Styles' => 1,
+          'Table' => 1,
+        ),
+        'imce' => array(
+          'imce' => 1,
+        ),
+      ),
+      'toolbar_loc' => 'top',
+      'toolbar_align' => 'left',
+      'path_loc' => 'bottom',
+      'resizing' => 1,
+      'verify_html' => 1,
+      'preformatted' => 0,
+      'convert_fonts_to_spans' => 1,
+      'remove_linebreaks' => 1,
+      'apply_source_formatting' => 1,
+      'paste_auto_cleanup_on_paste' => 1,
+      'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
+      'css_setting' => 'self',
+      'css_path' => '%b%t/css/unca_zenfoundation.css',
+      'css_classes' => 'Notification=div.notification
+Alert=div.alert
+Critical Information=div.critical
+Column=div.column
+Drop Cap=div.dropcap
+Float Left=div.left
+Float Right=div.right
+Checkmark SPIFF=div.footer-spiff-apply
+Eye SPIFF=div.footer-spiff-tour
+Question SPIFF=div.footer-spiff-question
+Facebook SPIFF=div.footer-spiff-facebook
+Email SPIFF=div.footer-spiff-mailinglist
+Captioned Image=div.caption',
+    ),
     'rdf_mapping' => array(),
   );
 
