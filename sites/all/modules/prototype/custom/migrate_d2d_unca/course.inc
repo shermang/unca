@@ -16,6 +16,8 @@ class UNCACourseMigration extends UNCANodeMigration {
     $this->addFieldMapping('field_times', 'field_times');
     $this->addFieldMapping('field_ending_date', 'field_ending_date');
     $this->addFieldMapping('field_course_dates', 'field_course_dates');
+    $this->addFieldMapping('field_course_dates:language')
+      ->defaultValue(LANGUAGE_NONE);
    
     // Note that we map migrated terms by the vocabulary ID.
     // 
