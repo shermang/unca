@@ -29,5 +29,15 @@ class UNCAPageMigration extends UNCANodeMigration {
 
   public function prepare(stdClass $entity, stdClass $row){
     parent::prepare($entity, $row);
+    db_set_active('legacy');
+    $subSite_nid = db_select('subsites_node', 's')
+      ->fields('s',array('nid'))
+      ->condition('nid',$row->nid,'=')
+      ->execute()
+      ->fetchField();
+    if($subSite_nid){
+      $entity->field_page_layout['und'][0]['value'] = 'gateway';
+    }
+    db_set_active();
   }
 }
