@@ -38,7 +38,7 @@
   line-height: 30px;
   margin-bottom: 5px;
   //background: transparent;  
-  @include respond-to($tablet) {
+  @include respond-to($topbar-breakpoint) {
     .title-area {
       display: none;
     }

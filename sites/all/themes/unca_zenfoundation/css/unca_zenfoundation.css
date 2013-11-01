@@ -5463,7 +5463,7 @@ html .top-bar input[type="button"],
 }
 
 .top-bar-js-breakpoint {
-  width: 768px !important;
+  width: 960px !important;
   visibility: hidden;
 }
 
@@ -5471,7 +5471,7 @@ html .top-bar input[type="button"],
   display: block;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
   .top-bar {
     background: #111111;
     *zoom: 1;
@@ -7660,7 +7660,7 @@ nav.navigation .block-search input {
   background-position-x: 8px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
   .row .top-bar {
     padding-left: 0;
     padding-right: 0;
@@ -7696,12 +7696,12 @@ nav.navigation .block-search input {
     visibility: hidden;
   }
 }
-@media only screen and (min-width: 768px) and (min-width: 48em) {
+@media only screen and (min-width: 960px) and (min-width: 48em) {
   .top-bar-section {
     padding-right: 275px;
   }
 }
-@media only screen and (min-width: 768px) and (min-width: 48em) {
+@media only screen and (min-width: 960px) and (min-width: 48em) {
   .top-bar-search {
     position: absolute;
     right: 5px;
@@ -8495,7 +8495,7 @@ nav.navigation #block-system-main-menu .menu .lt-ie9 ul.menu {
   line-height: 30px;
   margin-bottom: 5px;
 }
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 960px) {
   .top-bar .title-area {
     display: none;
   }
@@ -8553,7 +8553,7 @@ nav.navigation #block-system-main-menu .menu .lt-ie9 ul.menu {
   border-top: none;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
   .top-bar {
     height: 40px;
     border: 1px solid #FFFFFF;
@@ -9653,7 +9653,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   background-image: none;
   height: auto;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
   .row .top-bar {
     height: auto;
     line-height: inherit;
@@ -11453,7 +11453,7 @@ Added back in by Luke Withrow on 2013-05-15
   clear: both;
   padding: 0;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
   #navigation-primary-wrapper {
     margin-top: 0;
   }
@@ -11476,7 +11476,7 @@ Added back in by Luke Withrow on 2013-05-15
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
   #navigation-primary {
     margin: 0;
     max-width: 690px;
@@ -11684,7 +11684,7 @@ Added back in by Luke Withrow on 2013-05-15
   background-color: transparent;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
   .top-bar #search {
     padding: 2px 0;
   }
@@ -11707,7 +11707,7 @@ Added back in by Luke Withrow on 2013-05-15
   padding: 0;
   width: 24em;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
   #search .form-item-search-block-form input.form-text {
     width: 190px;
   }
