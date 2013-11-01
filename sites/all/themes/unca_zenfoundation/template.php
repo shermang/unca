@@ -165,11 +165,25 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
 
 function unca_zenfoundation_preprocess_page(&$variables, $hook) {
 
+  $variables['gateway_page'] = FALSE;
+
+  if (isset($variables['node']->field_page_layout)) {
+    $field_items = field_get_items('node', $variables['node'], 'field_page_layout');
+    if ($field_items[0]['value'] === 'gateway') {
+      $variables['gateway_page'] = TRUE;
+    }
+  }
+
   $variables['is_unca_main'] = variable_get('unca_main_site', FALSE);
   
   $variables['sidebar_menu'] = unca_zenfoundation_sidebar_menu();
   $hp_sidebar_menu_tree = menu_tree_page_data('menu-home-page-secondary-navigat');
   $variables['hp_sidebar_menu'] = menu_tree_output($hp_sidebar_menu_tree);
+
+  $variables['page']['footer']['copyright'] = array(
+    '#type' => 'markup',
+    '#markup' => '<div class="clear">&nbsp;</div><p>&copy;' . date('Y') . ' The University of North Carolina at Asheville</p>',
+  );
 
   // Add layout classes
 
