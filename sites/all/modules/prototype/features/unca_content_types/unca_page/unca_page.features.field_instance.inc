@@ -109,22 +109,22 @@ function unca_page_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 9,
+      'weight' => 14,
     ),
   );
 
-  // Exported field_instance: 'node-page-field_page_layout_term'
-  $field_instances['node-page-field_page_layout_term'] = array(
+  // Exported field_instance: 'node-page-field_page_layout'
+  $field_instances['node-page-field_page_layout'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -134,7 +134,7 @@ function unca_page_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_page_layout_term',
+    'field_name' => 'field_page_layout',
     'label' => 'Page Layout',
     'required' => 0,
     'settings' => array(
@@ -145,7 +145,7 @@ function unca_page_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 10,
     ),
   );
 
@@ -181,7 +181,7 @@ function unca_page_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 12,
     ),
   );
 
@@ -237,7 +237,7 @@ function unca_page_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 8,
+      'weight' => 13,
     ),
   );
 
