@@ -30,7 +30,8 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'flexslider';
-  $handler->display->display_options['style_options']['captionfield'] = 'field_subheading';
+  $handler->display->display_options['style_options']['optionset'] = 'unca_optionset';
+  $handler->display->display_options['style_options']['captionfield'] = 'nothing';
   $handler->display->display_options['style_options']['id'] = 'unca-slideshow-flexslider';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
@@ -50,6 +51,16 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_slideshow_term_node']['field'] = 'reverse_field_slideshow_term_node';
   $handler->display->display_options['relationships']['reverse_field_slideshow_term_node']['relationship'] = 'field_slideshow_term_tid';
   $handler->display->display_options['relationships']['reverse_field_slideshow_term_node']['required'] = TRUE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['relationship'] = 'reverse_field_slideshow_term_node';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['path']['absolute'] = TRUE;
   /* Field: Content: Link */
   $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
   $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
@@ -58,28 +69,45 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['fields']['field_link']['label'] = '';
   $handler->display->display_options['fields']['field_link']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link']['empty'] = '[path]';
+  $handler->display->display_options['fields']['field_link']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_link']['type'] = 'link_absolute';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['fields']['title_1']['table'] = 'node';
-  $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['relationship'] = 'reverse_field_slideshow_term_node';
-  $handler->display->display_options['fields']['title_1']['label'] = '';
-  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['relationship'] = 'reverse_field_slideshow_term_node';
   $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['alter']['path'] = '[field_link]';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'flexslider_full',
     'image_link' => '',
   );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'reverse_field_slideshow_term_node';
+  $handler->display->display_options['fields']['title_1']['label'] = '';
+  $handler->display->display_options['fields']['title_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
+  /* Field: Content: Read More Text */
+  $handler->display->display_options['fields']['field_read_more']['id'] = 'field_read_more';
+  $handler->display->display_options['fields']['field_read_more']['table'] = 'field_data_field_read_more';
+  $handler->display->display_options['fields']['field_read_more']['field'] = 'field_read_more';
+  $handler->display->display_options['fields']['field_read_more']['relationship'] = 'reverse_field_slideshow_term_node';
+  $handler->display->display_options['fields']['field_read_more']['label'] = '';
+  $handler->display->display_options['fields']['field_read_more']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_read_more']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_read_more']['alter']['path'] = '[field_link]';
+  $handler->display->display_options['fields']['field_read_more']['alter']['link_class'] = 'read-more';
+  $handler->display->display_options['fields']['field_read_more']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_read_more']['hide_empty'] = TRUE;
   /* Field: Caption */
   $handler->display->display_options['fields']['field_subheading']['id'] = 'field_subheading';
   $handler->display->display_options['fields']['field_subheading']['table'] = 'field_data_field_subheading';
@@ -88,16 +116,22 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['fields']['field_subheading']['ui_name'] = 'Caption';
   $handler->display->display_options['fields']['field_subheading']['label'] = '';
   $handler->display->display_options['fields']['field_subheading']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_subheading']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_subheading']['alter']['text'] = '<div class="subheading">[field_subheading]</div>';
   $handler->display->display_options['fields']['field_subheading']['element_label_colon'] = FALSE;
-  /* Field: Content: Read More Text */
-  $handler->display->display_options['fields']['field_read_more']['id'] = 'field_read_more';
-  $handler->display->display_options['fields']['field_read_more']['table'] = 'field_data_field_read_more';
-  $handler->display->display_options['fields']['field_read_more']['field'] = 'field_read_more';
-  $handler->display->display_options['fields']['field_read_more']['relationship'] = 'reverse_field_slideshow_term_node';
-  $handler->display->display_options['fields']['field_read_more']['label'] = '';
-  $handler->display->display_options['fields']['field_read_more']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_read_more']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_read_more']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_subheading']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_subheading']['hide_empty'] = TRUE;
+  /* Field: Slideshow caption */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Slideshow caption';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h2 class="title"><a href="[field_link]">[title_1]</a></h2>
+[field_read_more]
+[field_subheading]';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';

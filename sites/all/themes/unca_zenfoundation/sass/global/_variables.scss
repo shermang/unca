@@ -67,7 +67,7 @@ $portrait: "only screen and (orientation: portrait)";
 //   $grid-break-#{$i}:
 // }
 
-$topbar-breakpoint: 768px;
+$topbar-breakpoint: 960px;
 
 // Respond-to variables
 $print: "print";
@@ -97,11 +97,17 @@ $gray-dark:    darken($white, 75%);
 $black:        #000000;
 
 $orange:       #ef851a;
+$orange-dark:  #ee2b19;
+
 $green:        #43793a;
 $green-light:  #74a441;
 
+$blue-light:   #3ac6e1;
+$blue:         #0E52C7;
+$blue-dark:    #001b47;
+
 // Foundation colors
-$primary-color: #2ba6cb; // This is also the link color
+$primary-color: $blue; // This is also the link color
 // $secondary-color: #e9e9e9;
 // $alert-color: #c60f13;
 // $success-color: #5da423;
@@ -143,7 +149,8 @@ $header-font-weight: normal;
 
 // Control link color
 $anchor-font-color: #4572C5;
-
+$anchor-font-color-hover: #4572C5;
+ 
 // Style lists
 
 $list-style-position: outside;
@@ -152,6 +159,9 @@ $list-side-margin: emCalc(20);
 // $definition-list-header-weight: bold;
 // $definition-list-header-margin-bottom: .3em;
 // $definition-list-margin-bottom: emCalc(12);
+
+// Font stacks
+$helvetica-neue: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 
 // Various global styles
