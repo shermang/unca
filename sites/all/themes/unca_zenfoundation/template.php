@@ -180,6 +180,11 @@ function unca_zenfoundation_preprocess_page(&$variables, $hook) {
   $hp_sidebar_menu_tree = menu_tree_page_data('menu-home-page-secondary-navigat');
   $variables['hp_sidebar_menu'] = menu_tree_output($hp_sidebar_menu_tree);
 
+  $variables['page']['footer']['copyright'] = array(
+    '#type' => 'markup',
+    '#markup' => '<div class="clear">&nbsp;</div><p>&copy;' . date('Y') . ' The University of North Carolina at Asheville</p>',
+  );
+
   // Add layout classes
 
   // Add special classes for Gateway regions
