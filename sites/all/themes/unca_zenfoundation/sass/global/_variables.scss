@@ -67,7 +67,7 @@ $portrait: "only screen and (orientation: portrait)";
 //   $grid-break-#{$i}:
 // }
 
-$topbar-breakpoint: 768px;
+$topbar-breakpoint: 960px;
 
 // Respond-to variables
 $print: "print";
@@ -143,7 +143,8 @@ $header-font-weight: normal;
 
 // Control link color
 $anchor-font-color: #4572C5;
-
+$anchor-font-color-hover: #4572C5;
+ 
 // Style lists
 
 $list-style-position: outside;
