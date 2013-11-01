@@ -1,14 +1,4 @@
 <?php
-/**
- * @file
- * unca_global_header_and_footer.features.inc
- */
 
-/**
- * Implements hook_ctools_plugin_api().
- */
-function unca_global_header_and_footer_ctools_plugin_api($module = NULL, $api = NULL) {
-  if ($module == "context" && $api == "context") {
-    return array("version" => "3");
-  }
-}
+// This file is deprecated and can be removed.
+// Please remove include_once('unca_global_header_and_footer.features.inc') in unca_global_header_and_footer.module as well.
