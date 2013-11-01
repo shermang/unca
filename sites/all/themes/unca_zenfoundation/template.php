@@ -165,6 +165,15 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
 
 function unca_zenfoundation_preprocess_page(&$variables, $hook) {
 
+  $variables['gateway_page'] = FALSE;
+
+  if (isset($variables['node']->field_page_layout)) {
+    $field_items = field_get_items('node', $variables['node'], 'field_page_layout');
+    if ($field_items[0]['value'] === 'gateway') {
+      $variables['gateway_page'] = TRUE;
+    }
+  }
+
   $variables['is_unca_main'] = variable_get('unca_main_site', FALSE);
   
   $variables['sidebar_menu'] = unca_zenfoundation_sidebar_menu();
