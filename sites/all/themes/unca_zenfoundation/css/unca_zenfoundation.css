@@ -9738,6 +9738,9 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   width: 100%;
   float: left;
 }
+#footer .block.footer-menu {
+  margin-bottom: 0.5em;
+}
 
 #header {
   width: 100%;

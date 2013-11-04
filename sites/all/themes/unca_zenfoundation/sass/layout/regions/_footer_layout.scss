@@ -2,5 +2,8 @@
   @include grid-row;
   .block {
     @include grid-column($full-width);
+    &.footer-menu {
+      margin-bottom: 0.5em;
+    }
   }
 }
