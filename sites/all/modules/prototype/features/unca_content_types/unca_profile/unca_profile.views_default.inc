@@ -28,7 +28,7 @@ function unca_profile_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -132,18 +132,6 @@ function unca_profile_views_default_views() {
   );
   $handler->display->display_options['filters']['type']['group'] = '0';
   $handler->display->display_options['filters']['type']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Has taxonomy term */
-  $handler->display->display_options['filters']['tid']['id'] = 'tid';
-  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['filters']['tid']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid']['value'] = array(
-    0 => '1',
-    1 => '7',
-    2 => '9',
-  );
-  $handler->display->display_options['filters']['tid']['group'] = '0';
-  $handler->display->display_options['filters']['tid']['expose']['operator'] = FALSE;
-  $handler->display->display_options['filters']['tid']['vocabulary'] = 'profile_types';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -151,9 +139,90 @@ function unca_profile_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = '0';
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Profile Type (field_profile_type_term) */
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['id'] = 'field_profile_type_term_tid';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['table'] = 'field_data_field_profile_type_term';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['field'] = 'field_profile_type_term_tid';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['expose']['operator_id'] = 'field_profile_type_term_tid_op';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['expose']['label'] = 'Profile Type (field_profile_type_term)';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['expose']['operator'] = 'field_profile_type_term_tid_op';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['expose']['identifier'] = 'field_profile_type_term_tid';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['vocabulary'] = 'profile_types';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_1');
+  /* Display: Four Profiles */
+  $handler = $view->new_display('block', 'Four Profiles', 'block_1');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'profiles' => 'profiles',
+  );
+  $handler->display->display_options['filters']['type']['group'] = '0';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = '0';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Profile Type (field_profile_type_term) */
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['id'] = 'field_profile_type_term_tid';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['table'] = 'field_data_field_profile_type_term';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['field'] = 'field_profile_type_term_tid';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['value'] = array(
+    72 => '72',
+  );
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['expose']['operator_id'] = 'field_profile_type_term_tid_op';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['expose']['label'] = 'Profile Type (field_profile_type_term)';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['expose']['operator'] = 'field_profile_type_term_tid_op';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['expose']['identifier'] = 'field_profile_type_term_tid';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['vocabulary'] = 'profile_types';
+
+  /* Display: Four Profiles Ask */
+  $handler = $view->new_display('block', 'Four Profiles Ask', 'block_2');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'profiles' => 'profiles',
+  );
+  $handler->display->display_options['filters']['type']['group'] = '0';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = '0';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Profile Type (field_profile_type_term) */
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['id'] = 'field_profile_type_term_tid';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['table'] = 'field_data_field_profile_type_term';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['field'] = 'field_profile_type_term_tid';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['value'] = array(
+    71 => '71',
+  );
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['expose']['operator_id'] = 'field_profile_type_term_tid_op';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['expose']['label'] = 'Profile Type (field_profile_type_term)';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['expose']['operator'] = 'field_profile_type_term_tid_op';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['expose']['identifier'] = 'field_profile_type_term_tid';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_profile_type_term_tid']['vocabulary'] = 'profile_types';
+
+  /* Display: Four Profiles Giving */
+  $handler = $view->new_display('block', 'Four Profiles Giving', 'block_3');
   $export['Profile_SPIFF'] = $view;
 
   $view = new view();
