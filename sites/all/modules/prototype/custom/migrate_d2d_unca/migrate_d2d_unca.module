@@ -473,6 +473,16 @@ function migrate_d2d_unca_register_migrations() {
   Migration::registerMigration($block_migration_class,
     $block_arguments['machine_name'], $block_arguments);
 
+  $var_migration_class = 'UNCAVariableMigration';
+  $var_arguments = $common_arguments + array(
+      'class_name' => $var_migration_class,
+      'machine_name' => 'UNCAVars',
+      'description' => t('Migration of Drupal 6 Variables'),
+      'group_name' => 'e_structure',
+    );
+  Migration::registerMigration($var_migration_class,
+    $var_arguments['machine_name'], $var_arguments);
+
 }
 
 /**
