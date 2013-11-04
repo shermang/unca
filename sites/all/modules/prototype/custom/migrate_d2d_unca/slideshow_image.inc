@@ -26,8 +26,8 @@ class UNCASlideshowImageMigration extends UNCANodeMigration {
     
     $this->addFieldMapping('field_subheading', 'field_subhead');
     // Note that we map migrated terms by the vocabulary ID.
-    $this->addFieldMapping('field_slideshow_term', migrate_d2d_unca_get_src_vocab_id('slideshow'))
-      ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('slideshow'));
+    $this->addFieldMapping('field_slideshow_term', migrate_d2d_unca_get_src_vocab_id('slideshows'))
+      ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('slideshows'));
     $this->addFieldMapping('field_slideshow_term:source_type')
       ->defaultValue('tid');
   }
