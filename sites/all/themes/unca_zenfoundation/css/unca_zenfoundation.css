@@ -9772,6 +9772,100 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   right: 0;
 }
 
+.unca-gateway {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 80em;
+  *zoom: 1;
+}
+.unca-gateway:before, .unca-gateway:after {
+  content: " ";
+  display: table;
+}
+.unca-gateway:after {
+  clear: both;
+}
+.unca-gateway .gateway-row-1,
+.unca-gateway .gateway-row-2-column-1,
+.unca-gateway .gateway-row-2-column-2,
+.unca-gateway .gateway-row-3-column-1,
+.unca-gateway .gateway-row-3-column-2 {
+  position: relative;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  width: 100%;
+  float: left;
+}
+@media only screen and (min-width: 48em) {
+  .unca-gateway .gateway-row-2-column-1,
+  .unca-gateway .gateway-row-2-column-2,
+  .unca-gateway .gateway-row-3-column-1,
+  .unca-gateway .gateway-row-3-column-2 {
+    position: relative;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    width: 50%;
+    float: left;
+  }
+}
+@media print {
+  .unca-gateway .gateway-row-2-column-1,
+  .unca-gateway .gateway-row-2-column-2,
+  .unca-gateway .gateway-row-3-column-1,
+  .unca-gateway .gateway-row-3-column-2 {
+    position: relative;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    width: 50%;
+    float: left;
+  }
+}
+.unca-gateway .gateway-row-2-column-1 .lt-ie9,
+.unca-gateway .gateway-row-2-column-2 .lt-ie9,
+.unca-gateway .gateway-row-3-column-1 .lt-ie9,
+.unca-gateway .gateway-row-3-column-2 .lt-ie9 {
+  position: relative;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  width: 50%;
+  float: left;
+}
+.unca-gateway.no-row-2-column-1 .gateway-row-2-column-2 {
+  position: relative;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  width: 100%;
+  float: left;
+}
+.unca-gateway.no-row-2-column-2 .gateway-row-2-column-1 {
+  position: relative;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  width: 100%;
+  float: left;
+}
+.unca-gateway.no-row-3-column-1 .gateway-row-3-column-2 {
+  position: relative;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  width: 100%;
+  float: left;
+  clear: both;
+}
+.unca-gateway.no-row-3-column-2 .gateway-row-3-column-1 {
+  position: relative;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  width: 100%;
+  float: left;
+}
+.unca-gateway .gateway-row-3-column-1 {
+  clear: both;
+}
+
 @media only screen and (min-width: 48em) {
   .one-sidebar #content {
     position: relative;
