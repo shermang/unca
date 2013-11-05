@@ -128,8 +128,8 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Slideshow caption';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h2 class="title"><a href="[field_link]">[title_1]</a></h2>
-[field_read_more]
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_read_more]
+<h2 class="title"><a href="[field_link]">[title_1]</a></h2>
 [field_subheading]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
@@ -166,8 +166,10 @@ function unca_slideshow_views_default_views() {
     'slideshow_item' => 'slideshow_item',
   );
 
-  /* Display: EVA Field */
-  $handler = $view->new_display('entity_view', 'EVA Field', 'entity_view_1');
+  /* Display: EVA Field - Slides */
+  $handler = $view->new_display('entity_view', 'EVA Field - Slides', 'entity_view_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'unca-flexslider-slideshow-slides';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -190,6 +192,61 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['bundles'] = array(
     0 => 'page',
   );
+
+  /* Display: Slideshow thumbnails view attachment */
+  $handler = $view->new_display('attachment', 'Slideshow thumbnails view attachment', 'attachment_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'unca-flexslider-thumbnails-carousel';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'flexslider';
+  $handler->display->display_options['style_options']['optionset'] = 'unca_thumbnails_optionset';
+  $handler->display->display_options['style_options']['id'] = 'unca-slideshow-flexslider-thumbs';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['relationship'] = 'reverse_field_slideshow_term_node';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['alter']['path'] = '[field_link]';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'flexslider_thumbnail',
+    'image_link' => '',
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: Slideshow (field_slideshow_term) */
+  $handler->display->display_options['arguments']['field_slideshow_term_tid']['id'] = 'field_slideshow_term_tid';
+  $handler->display->display_options['arguments']['field_slideshow_term_tid']['table'] = 'field_data_field_slideshow_term';
+  $handler->display->display_options['arguments']['field_slideshow_term_tid']['field'] = 'field_slideshow_term_tid';
+  $handler->display->display_options['arguments']['field_slideshow_term_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_slideshow_term_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_slideshow_term_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_slideshow_term_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['displays'] = array(
+    'entity_view_1' => 'entity_view_1',
+    'default' => 0,
+    'entity_view_2' => 0,
+  );
+  $handler->display->display_options['attachment_position'] = 'after';
   $export['unca_slideshow'] = $view;
 
   $view = new view();

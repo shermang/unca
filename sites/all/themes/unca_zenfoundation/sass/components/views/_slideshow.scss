@@ -9,13 +9,19 @@
       position: relative;
     }
   }
+  @include respond-to($tablet) {
+    &#unca-slideshow-flexslider {
+      margin-bottom: 0;
+    }
+  }
   // Direction Nav
   .flex-direction-nav {
     *height: 0;
     a {
       @include background-image(linear-gradient(lighten($orange, 10%), $orange));
-      @include icon-font(arrow-left2);
+      @include icon-font(arrow-left4);
       border: 1px solid $white;
+      border-left: 0 none;
       color: $white;
       cursor: pointer;
       display: block;
@@ -25,16 +31,21 @@
       margin: 0;
       opacity: 1;
       overflow: hidden;
-      padding: 0.15em;
+      padding: 0.15em 0.15em 0.15em 0.5em;;
       position: absolute;
-      top: 40%;
+      top: 35%;
       width: 2em;
       z-index: 10;
       &:hover {
-        @include background-image($orange, $orange-dark);
+        @include background-image(linear-gradient($orange, $orange-dark));
       }
       &.flex-next {
-        @include icon-font(arrow-right2);
+        @include icon-font(arrow-right4);
+        border-left: 1px solid $white;
+        border-right: 0 none;
+      }
+      @include respond-to($tablet) {
+        top: 40%;
       }
     }
     .flex-prev {
@@ -55,12 +66,6 @@
         opacity: 1;
         right: 0;
       }
-      .flex-next,
-      .flex-prev {
-        &:hover {
-          opacity: 1;
-        }
-      }
     }
     .flex-disabled {
       opacity: 0!important;
@@ -68,12 +73,27 @@
       cursor: default;
     }
   }
+  // Resetting opacity on flexslider hover
+  &:hover {
+    .flex-next,
+    .flex-prev {
+      opacity: 1;
+    }
+  }
+  // Control nav, aka the little round dots
+  .flex-control-nav {
+    bottom: 9em;
+    @include respond-to($tablet) {
+      // bottom: -3em;
+      display: none;
+    }
+  }
 }
 
 // Pause / play button
 .flex-pauseplay {
   position: absolute;
-  right: 8%;
+  right: 4em;
   top: 4em;
   a {
     @include single-text-shadow($black 0 0 .5em 0);
@@ -83,13 +103,18 @@
 
 // Captions
 .flex-caption {
-  background-color: transparentize($blue-dark, 0.25);
-  bottom: 0;
+  background-color: $blue-dark;
   color: $white;
   max-width: 100%;
-  padding: 1em 1.5em;;
-  position: absolute;
-  width: 100%;
+  min-height: 8em;
+  padding: 1em 1.5em;
+  @include respond-to($tablet) {
+    background-color: transparentize($blue-dark, 0.25);
+    bottom: 0;
+    min-height: 1em;
+    position: absolute;
+    width: 100%;
+  }
   a {
     color: $white;
   }
@@ -115,7 +140,40 @@
     @extend %read-more-flexslider;
     float: right;
   }
-  .subheading {
+}
 
+// Thumbnail carousel
+#unca-slideshow-flexslider-thumbs {
+  display: none; // Hide for mobile
+  padding: 0 .25em;
+  @include respond-to($tablet) {
+    display: block; // Display for non-mobile
+  }
+  .slides {
+    li {
+      margin: .25em;
+      opacity: 0.7;
+      // Styles for the active slide
+      &.flex-active-slide,
+      &:hover {
+        @include transition(all .3s);
+        opacity: 1;
+        top: -1em;
+      }
+    }
+  }
+  .flex-direction-nav {
+    a {
+      height: 1.1em;
+      padding: 0 .25em;
+      width: 1em;
+      @include icon-font(arrow-left5) {
+        font-size: 1em;
+      }
+      &.flex-next {
+        @include icon-font(arrow-right5);
+        padding-left: 0.35em;
+      }
+    }
   }
 }

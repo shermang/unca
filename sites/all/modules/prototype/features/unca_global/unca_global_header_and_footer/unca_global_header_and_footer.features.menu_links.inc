@@ -10,6 +10,20 @@
 function unca_global_header_and_footer_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: main-menu:<front>
+  $menu_links['main-menu:<front>'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'Home',
+    'options' => array(),
+    'module' => 'menu',
+    'hidden' => 1,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+  );
   // Exported menu link: main-menu:http://www.unca.edu/about
   $menu_links['main-menu:http://www.unca.edu/about'] = array(
     'menu_name' => 'main-menu',
@@ -345,6 +359,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
   t('Emergency Information');
   t('Employment');
   t('Giving');
+  t('Home');
   t('Library');
   t('Life on Campus');
   t('Maps');
