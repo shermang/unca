@@ -8,24 +8,25 @@ class UNCACampusUpdateMigration extends UNCANodeMigration {
 
     // Field mappings
 
-    // field_image is a new field for this content type
-//    $this->addFieldMapping('field_image', 'field_image')
-//       ->sourceMigration('UNCAFile');
-//    $this->addFieldMapping('field_image:file_class')
-//      ->defaultValue('MigrateFileFid');
-//
-//    $this->addFieldMapping('field_image:preserve_files')
-//      ->defaultValue(TRUE);
-//    $this->addFieldMapping('field_image:title', 'image_copyright')
-//      ->defaultValue('');
-//    $this->addFieldMapping('field_image:alt', 'image_description')
-//      ->defaultValue('');
-//    $this->addFieldMapping('field_image:language')
-//      ->defaultValue(LANGUAGE_NONE);
+    $this->addFieldMapping('field_image', 'field_campus_update_image')
+      ->sourceMigration('UNCAFile');
+    $this->addFieldMapping('field_image:file_class')
+      ->defaultValue('MigrateFileFid');
+
+    $this->addFieldMapping('field_image:preserve_files')
+      ->defaultValue(TRUE);
+    $this->addFieldMapping('field_image:title', 'title')
+      ->defaultValue('');
+    $this->addFieldMapping('field_image:alt', 'image_campus_update_teaser')
+      ->defaultValue('');
+    $this->addFieldMapping('field_image:language')
+      ->defaultValue(LANGUAGE_NONE);
 
 
-    $unMigratedDestinations = array_merge($this->getDestinationImageFieldNames('field_image'),
-      $this->getDestinationTermFieldNames('field_tags'), $this->getDestinationVideoFieldNames('field_video_embed'));
+    $unMigratedDestinations = array_merge(
+      $this->getDestinationTermFieldNames('field_tags'),
+      $this->getDestinationVideoFieldNames('field_video_embed')
+    );
 
     array_push($unMigratedDestinations,'field_featured_update');
 
