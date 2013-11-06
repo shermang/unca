@@ -24,9 +24,7 @@
       <?php endif; ?>
 
       <!-- Primary Content Column -->
-      <?php if (!($is_front && $is_unca_main)): ?>
-        <?php print render($page['content']); ?>
-      <?php endif; ?>
+      <?php print render($page['content']); ?>
       <!-- Content Row 1-->
       <?php if ($page['content_row_1']): ?>
       <div class="content_row_1">
