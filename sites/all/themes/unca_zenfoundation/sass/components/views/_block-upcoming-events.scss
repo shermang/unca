@@ -1,3 +1,20 @@
+.block-views-master_events-block_1 {
+  .views-row {
+    border-top: $gray-lighter 1px solid;
+    list-style: none;
+    margin: 0;
+    &.views-row-first {
+      border-top: 0 none;
+    }
+  }
+  .calendar-graphic {
+    margin: 1em 0;
+  }
+  .calendar-text {
+    margin: 1em 0;
+  }
+}
+
 #block-view-upcoming-events {
   .content {
     padding: .5em 0;

@@ -982,6 +982,10 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
   margin: 0 0 1em 1em;
 }
 
+.clear {
+  clear: both;
+}
+
 .node-course .field-name-field-course-number:after,
 .node-course .field-name-field-course-dates:after,
 .node-course .field-name-field-instructor:after,
@@ -7100,6 +7104,21 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 }
 
 /* END: .related-files */
+.block-views-master_events-block_1 .views-row {
+  border-top: #e6e6e6 1px solid;
+  list-style: none;
+  margin: 0;
+}
+.block-views-master_events-block_1 .views-row.views-row-first {
+  border-top: 0 none;
+}
+.block-views-master_events-block_1 .calendar-graphic {
+  margin: 1em 0;
+}
+.block-views-master_events-block_1 .calendar-text {
+  margin: 1em 0;
+}
+
 #block-view-upcoming-events .content {
   padding: .5em 0;
 }
