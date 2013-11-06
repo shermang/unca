@@ -231,7 +231,13 @@ function unca_zenfoundation_preprocess_page(&$variables, $hook) {
 
   $variables['page_layout_wrapper_classes'] = implode(' ', $page_layout_wrapper_classes);
 
-  $variables['display_dept_name'] = variable_get('display_dept_name', TRUE);
+  $theme_settings = variable_get('theme_unca_zenfoundation_settings', array());
+  if (!empty($theme_settings) && isset($theme_settings['toggle_name'])) {
+    $variables['display_dept_name'] = (bool) $theme_settings['toggle_name'];
+  }
+  else {
+    $variables['display_dept_name'] = TRUE;
+  }
 
   if ($variables['is_front'] && $variables['is_unca_main']) {
     $secondary_menu = menu_tree_page_data('menu-home-page-secondary-navigat');
