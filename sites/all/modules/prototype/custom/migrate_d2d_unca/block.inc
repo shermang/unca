@@ -139,6 +139,9 @@ class UNCABlockMigration extends DrupalMigration {
       case ($row->delta == 'Events_with_images-block_2'):
         $row->delta = 'Events-block_5';
         break;
+      case ($row->delta == 'Campus_Updates-block_1'):
+        $row->delta = 'campus_updates-block_1'; // note change in capitalization
+        break;
     }
     $row->theme = 'unca_zenfoundation';
 
