@@ -1,9 +1,10 @@
 <?php
-$eventtime = strtotime($row->field_data_field_date_field_date_value);
-$timezone = $row->field_field_date[0]['raw']['timezone'];
-$month = format_date($eventtime, 'custom', 'M', $timezone);
-$day = format_date($eventtime, 'custom', 'j', $timezone);
-$time = format_date($eventtime, 'custom', 'g:i A',$timezone);
+$timezone = $row->field_field_date[0]['raw']['timezone_db'];
+$eventtime = strtotime($row->field_data_field_date_field_date_value.' '.$timezone);
+
+$month = format_date($eventtime, 'custom', 'M');
+$day = format_date($eventtime, 'custom', 'j');
+$time = format_date($eventtime, 'custom', 'g:i A');
 
 if(!empty($row->field_field_link_value[0]['raw']['value'])){
   $field_link_value = $row->field_field_link_value[0]['raw']['value'];
