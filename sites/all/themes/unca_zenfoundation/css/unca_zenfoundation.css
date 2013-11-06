@@ -11545,8 +11545,6 @@ Added back in by Luke Withrow on 2013-05-15
 }
 
 #sccr {
-  position: absolute;
-  margin-top: 343px;
   display: -moz-inline-block;
 }
 
