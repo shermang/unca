@@ -11,11 +11,13 @@
 
     <div id="content" class="bottom-stripes content large-9 columns <?php print $page_layout_wrapper_classes; ?>" role="content">
       <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title"><?php print $title; ?></h1>
+      <?php if (!($is_front && $is_unca_main)): ?>
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?>
+          <h1 class="title" id="page-title"><?php print $title; ?></h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
       <?php endif; ?>
-      <?php print render($title_suffix); ?>
       <?php print $messages; ?>
       <?php print render($tabs); ?>
       <?php print render($page['help']); ?>
@@ -24,9 +26,7 @@
       <?php endif; ?>
 
       <!-- Primary Content Column -->
-      <?php if (!($is_front && $is_unca_main)): ?>
-        <?php print render($page['content']); ?>
-      <?php endif; ?>
+      <?php print render($page['content']); ?>
       <!-- Content Row 1-->
       <?php if ($page['content_row_1']): ?>
       <div class="content_row_1">
