@@ -156,6 +156,7 @@ class UNCABlockMigration extends DrupalMigration {
     switch($row->module){
       case 'views':
         if($result){
+          if(!$row->status){
           $record =
             array(
               'bid' => $result['bid'],
@@ -167,6 +168,7 @@ class UNCABlockMigration extends DrupalMigration {
               'title' => $row->title,
               'cache' => $row->cache,
             );
+          }
           drupal_write_record('block', $record, array('bid' => $result['bid']));
           return FALSE;
         }
