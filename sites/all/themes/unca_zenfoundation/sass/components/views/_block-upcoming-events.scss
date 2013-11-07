@@ -1,4 +1,7 @@
-.block-views-master_events-block_1 {
+.block-views-master_events-block_1,
+.block-views-master_events-block_2,
+.block-views-master_events-block_3,
+.block-views-master_events-block_4 {
   .views-row {
     border-top: $gray-lighter 1px solid;
     list-style: none;
@@ -8,7 +11,7 @@
     }
   }
   .calendar-graphic {
-    margin: 1em 0;
+    margin: 1em .5em 1em 0;
   }
   .calendar-text {
     margin: 1em 0;

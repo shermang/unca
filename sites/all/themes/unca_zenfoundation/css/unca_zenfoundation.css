@@ -6748,6 +6748,14 @@ nav.navigation .block-search .lt-ie9 {
   display: none;
 }
 
+.gateway-content .list-unstyled {
+  margin: 0 0 1em 0;
+}
+.gateway-content .list-unstyled li {
+  list-style: none;
+  margin-bottom: .5em;
+}
+
 .field-name-field-video-embed {
   position: relative;
   padding-bottom: 56.25%;
@@ -7104,18 +7112,30 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 }
 
 /* END: .related-files */
-.block-views-master_events-block_1 .views-row {
+.block-views-master_events-block_1 .views-row,
+.block-views-master_events-block_2 .views-row,
+.block-views-master_events-block_3 .views-row,
+.block-views-master_events-block_4 .views-row {
   border-top: #e6e6e6 1px solid;
   list-style: none;
   margin: 0;
 }
-.block-views-master_events-block_1 .views-row.views-row-first {
+.block-views-master_events-block_1 .views-row.views-row-first,
+.block-views-master_events-block_2 .views-row.views-row-first,
+.block-views-master_events-block_3 .views-row.views-row-first,
+.block-views-master_events-block_4 .views-row.views-row-first {
   border-top: 0 none;
 }
-.block-views-master_events-block_1 .calendar-graphic {
-  margin: 1em 0;
+.block-views-master_events-block_1 .calendar-graphic,
+.block-views-master_events-block_2 .calendar-graphic,
+.block-views-master_events-block_3 .calendar-graphic,
+.block-views-master_events-block_4 .calendar-graphic {
+  margin: 1em .5em 1em 0;
 }
-.block-views-master_events-block_1 .calendar-text {
+.block-views-master_events-block_1 .calendar-text,
+.block-views-master_events-block_2 .calendar-text,
+.block-views-master_events-block_3 .calendar-text,
+.block-views-master_events-block_4 .calendar-text {
   margin: 1em 0;
 }
 
@@ -9791,7 +9811,8 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   right: 0;
 }
 
-.unca-gateway {
+.unca-gateway,
+.gateway-content {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -9800,18 +9821,54 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   max-width: 80em;
   *zoom: 1;
 }
-.unca-gateway:before, .unca-gateway:after {
+.unca-gateway:before, .unca-gateway:after,
+.gateway-content:before,
+.gateway-content:after {
   content: " ";
   display: table;
 }
-.unca-gateway:after {
+.unca-gateway:after,
+.gateway-content:after {
   clear: both;
 }
 .unca-gateway .gateway-row-1,
 .unca-gateway .gateway-row-2-column-1,
 .unca-gateway .gateway-row-2-column-2,
 .unca-gateway .gateway-row-3-column-1,
-.unca-gateway .gateway-row-3-column-2 {
+.unca-gateway .gateway-row-3-column-2,
+.unca-gateway .gateway-link-section,
+.gateway-content .gateway-row-1,
+.gateway-content .gateway-row-2-column-1,
+.gateway-content .gateway-row-2-column-2,
+.gateway-content .gateway-row-3-column-1,
+.gateway-content .gateway-row-3-column-2,
+.gateway-content .gateway-link-section {
+  position: relative;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  width: 100%;
+  float: left;
+}
+.unca-gateway .first-column,
+.unca-gateway .last-column,
+.gateway-content .first-column,
+.gateway-content .last-column {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  width: 50%;
+  float: left;
+}
+.unca-gateway .first-column,
+.gateway-content .first-column {
+  padding-right: 1em;
+}
+.unca-gateway .last-column,
+.gateway-content .last-column {
+  padding-left: 1em;
+}
+.unca-gateway .sharethis-buttons,
+.gateway-content .sharethis-buttons {
   position: relative;
   padding-left: 1.25em;
   padding-right: 1.25em;
@@ -9822,7 +9879,13 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   .unca-gateway .gateway-row-2-column-1,
   .unca-gateway .gateway-row-2-column-2,
   .unca-gateway .gateway-row-3-column-1,
-  .unca-gateway .gateway-row-3-column-2 {
+  .unca-gateway .gateway-row-3-column-2,
+  .unca-gateway .gateway-link-section,
+  .gateway-content .gateway-row-2-column-1,
+  .gateway-content .gateway-row-2-column-2,
+  .gateway-content .gateway-row-3-column-1,
+  .gateway-content .gateway-row-3-column-2,
+  .gateway-content .gateway-link-section {
     position: relative;
     padding-left: 1.25em;
     padding-right: 1.25em;
@@ -9834,7 +9897,13 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   .unca-gateway .gateway-row-2-column-1,
   .unca-gateway .gateway-row-2-column-2,
   .unca-gateway .gateway-row-3-column-1,
-  .unca-gateway .gateway-row-3-column-2 {
+  .unca-gateway .gateway-row-3-column-2,
+  .unca-gateway .gateway-link-section,
+  .gateway-content .gateway-row-2-column-1,
+  .gateway-content .gateway-row-2-column-2,
+  .gateway-content .gateway-row-3-column-1,
+  .gateway-content .gateway-row-3-column-2,
+  .gateway-content .gateway-link-section {
     position: relative;
     padding-left: 1.25em;
     padding-right: 1.25em;
@@ -9845,28 +9914,37 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
 .unca-gateway .gateway-row-2-column-1 .lt-ie9,
 .unca-gateway .gateway-row-2-column-2 .lt-ie9,
 .unca-gateway .gateway-row-3-column-1 .lt-ie9,
-.unca-gateway .gateway-row-3-column-2 .lt-ie9 {
+.unca-gateway .gateway-row-3-column-2 .lt-ie9,
+.unca-gateway .gateway-link-section .lt-ie9,
+.gateway-content .gateway-row-2-column-1 .lt-ie9,
+.gateway-content .gateway-row-2-column-2 .lt-ie9,
+.gateway-content .gateway-row-3-column-1 .lt-ie9,
+.gateway-content .gateway-row-3-column-2 .lt-ie9,
+.gateway-content .gateway-link-section .lt-ie9 {
   position: relative;
   padding-left: 1.25em;
   padding-right: 1.25em;
   width: 50%;
   float: left;
 }
-.unca-gateway.no-row-2-column-1 .gateway-row-2-column-2 {
+.unca-gateway.no-row-2-column-1 .gateway-row-2-column-2,
+.gateway-content.no-row-2-column-1 .gateway-row-2-column-2 {
   position: relative;
   padding-left: 1.25em;
   padding-right: 1.25em;
   width: 100%;
   float: left;
 }
-.unca-gateway.no-row-2-column-2 .gateway-row-2-column-1 {
+.unca-gateway.no-row-2-column-2 .gateway-row-2-column-1,
+.gateway-content.no-row-2-column-2 .gateway-row-2-column-1 {
   position: relative;
   padding-left: 1.25em;
   padding-right: 1.25em;
   width: 100%;
   float: left;
 }
-.unca-gateway.no-row-3-column-1 .gateway-row-3-column-2 {
+.unca-gateway.no-row-3-column-1 .gateway-row-3-column-2,
+.gateway-content.no-row-3-column-1 .gateway-row-3-column-2 {
   position: relative;
   padding-left: 1.25em;
   padding-right: 1.25em;
@@ -9874,14 +9952,16 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   float: left;
   clear: both;
 }
-.unca-gateway.no-row-3-column-2 .gateway-row-3-column-1 {
+.unca-gateway.no-row-3-column-2 .gateway-row-3-column-1,
+.gateway-content.no-row-3-column-2 .gateway-row-3-column-1 {
   position: relative;
   padding-left: 1.25em;
   padding-right: 1.25em;
   width: 100%;
   float: left;
 }
-.unca-gateway .gateway-row-3-column-1 {
+.unca-gateway .gateway-row-3-column-1,
+.gateway-content .gateway-row-3-column-1 {
   clear: both;
 }
 
