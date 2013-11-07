@@ -29,14 +29,12 @@
           <ul class="action-links"><?php print render($action_links); ?></ul>
         <?php endif; ?>
       
-        <h2>Gateway Row 1</h2>
         <?php print render($page['gateway_row_1']); ?>
       </div>
 
       <!-- Gateway Row 2 column 1-->
       <?php if ($page['gateway_row_2_column_1']): ?>
       <div class="gateway-row-2-column-1">
-        <h2>Gateway Row 2 column 1</h2>
         <?php print render($page['gateway_row_2_column_1']); ?>
       </div>
       <?php endif; ?>
@@ -44,7 +42,6 @@
       <!-- Gateway Row 2 column 2-->
       <?php if ($page['gateway_row_2_column_2']): ?>
       <div class="gateway-row-2-column-2">
-        <h2>Gateway Row 2 column 2</h2>
         <?php print render($page['gateway_row_2_column_2']); ?>
       </div>
       <?php endif; ?>
@@ -52,7 +49,6 @@
       <!-- Gateway Row 3 column 1 -->
       <?php if ($page['gateway_row_3_column_1']): ?>
       <div class="gateway-row-3-column-1">
-        <h2>Gateway Row 3 column 1</h2>
         <?php print render($page['gateway_row_3_column_1']); ?>
       </div>
       <?php endif; ?>
@@ -60,8 +56,14 @@
       <!-- Gateway Row 3 column 2 -->
       <?php if ($page['gateway_row_3_column_2']): ?>
       <div class="gateway-row-3-column-2">
-        <h2>Gateway Row 3 column 2</h2>
         <?php print render($page['gateway_row_3_column_2']); ?>
+      </div>
+      <?php endif; ?>
+
+      <!-- Default content -->
+      <?php if ($page['content']): ?>
+      <div class="gateway-content">
+        <?php print render($page['content']); ?>
       </div>
       <?php endif; ?>
 

@@ -1,20 +1,38 @@
-.unca-gateway {
-  // Since this is inside another row, we need the nesting styles
-  // @include grid-row(nest);
+.unca-gateway,
+.gateway-content {
   @include grid-row;
+
   // Default behavior for all regions
   .gateway-row-1,
   .gateway-row-2-column-1,
   .gateway-row-2-column-2,
   .gateway-row-3-column-1,
-  .gateway-row-3-column-2 {
+  .gateway-row-3-column-2,
+  .gateway-link-section {
     @include grid-column($full-width);
   }
+
+  // Special styles for the innards of the gateway-content region
+  .first-column,
+  .last-column {
+    @include grid-column($full-width / 2, false, false, false, false, false, true);
+  }
+  .first-column {
+    padding-right: 1em;
+  }
+  .last-column {
+    padding-left: 1em;
+  }
+  .sharethis-buttons {
+    @include grid-column($full-width);
+  }
+
   // Layout styles for the 2nd and 3rd rows
   .gateway-row-2-column-1,
   .gateway-row-2-column-2,
   .gateway-row-3-column-1,
-  .gateway-row-3-column-2 {
+  .gateway-row-3-column-2,
+  .gateway-link-section {
     @include respond-to($tablet) {
       @include grid-column($full-width / 2);
     }
