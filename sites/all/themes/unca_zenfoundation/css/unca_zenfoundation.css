@@ -982,6 +982,10 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
   margin: 0 0 1em 1em;
 }
 
+.clear {
+  clear: both;
+}
+
 .node-course .field-name-field-course-number:after,
 .node-course .field-name-field-course-dates:after,
 .node-course .field-name-field-instructor:after,
@@ -6604,6 +6608,10 @@ nav.navigation a {
   margin-bottom: 2em;
 }
 
+.block-views .more-link {
+  padding: 5px 0;
+}
+
 .current-students .cta-item img {
   height: 120px;
   width: 100%;
@@ -6742,6 +6750,14 @@ nav.navigation .block-search .lt-ie9 {
 }
 .block-search label {
   display: none;
+}
+
+.gateway-content .list-unstyled {
+  margin: 0 0 1em 0;
+}
+.gateway-content .list-unstyled li {
+  list-style: none;
+  margin-bottom: .5em;
 }
 
 .field-name-field-video-embed {
@@ -7100,6 +7116,33 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 }
 
 /* END: .related-files */
+.block-views-master_events-block_1 .views-row,
+.block-views-master_events-block_2 .views-row,
+.block-views-master_events-block_3 .views-row,
+.block-views-master_events-block_4 .views-row {
+  border-top: #e6e6e6 1px solid;
+  list-style: none;
+  margin: 0;
+}
+.block-views-master_events-block_1 .views-row.views-row-first,
+.block-views-master_events-block_2 .views-row.views-row-first,
+.block-views-master_events-block_3 .views-row.views-row-first,
+.block-views-master_events-block_4 .views-row.views-row-first {
+  border-top: 0 none;
+}
+.block-views-master_events-block_1 .calendar-graphic,
+.block-views-master_events-block_2 .calendar-graphic,
+.block-views-master_events-block_3 .calendar-graphic,
+.block-views-master_events-block_4 .calendar-graphic {
+  margin: 1em .5em 1em 0;
+}
+.block-views-master_events-block_1 .calendar-text,
+.block-views-master_events-block_2 .calendar-text,
+.block-views-master_events-block_3 .calendar-text,
+.block-views-master_events-block_4 .calendar-text {
+  margin: 1em 0;
+}
+
 #block-view-upcoming-events .content {
   padding: .5em 0;
 }
@@ -9772,7 +9815,8 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   right: 0;
 }
 
-.unca-gateway {
+.unca-gateway,
+.gateway-content {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -9781,18 +9825,54 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   max-width: 80em;
   *zoom: 1;
 }
-.unca-gateway:before, .unca-gateway:after {
+.unca-gateway:before, .unca-gateway:after,
+.gateway-content:before,
+.gateway-content:after {
   content: " ";
   display: table;
 }
-.unca-gateway:after {
+.unca-gateway:after,
+.gateway-content:after {
   clear: both;
 }
 .unca-gateway .gateway-row-1,
 .unca-gateway .gateway-row-2-column-1,
 .unca-gateway .gateway-row-2-column-2,
 .unca-gateway .gateway-row-3-column-1,
-.unca-gateway .gateway-row-3-column-2 {
+.unca-gateway .gateway-row-3-column-2,
+.unca-gateway .gateway-link-section,
+.gateway-content .gateway-row-1,
+.gateway-content .gateway-row-2-column-1,
+.gateway-content .gateway-row-2-column-2,
+.gateway-content .gateway-row-3-column-1,
+.gateway-content .gateway-row-3-column-2,
+.gateway-content .gateway-link-section {
+  position: relative;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  width: 100%;
+  float: left;
+}
+.unca-gateway .first-column,
+.unca-gateway .last-column,
+.gateway-content .first-column,
+.gateway-content .last-column {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  width: 50%;
+  float: left;
+}
+.unca-gateway .first-column,
+.gateway-content .first-column {
+  padding-right: 1em;
+}
+.unca-gateway .last-column,
+.gateway-content .last-column {
+  padding-left: 1em;
+}
+.unca-gateway .sharethis-buttons,
+.gateway-content .sharethis-buttons {
   position: relative;
   padding-left: 1.25em;
   padding-right: 1.25em;
@@ -9803,7 +9883,13 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   .unca-gateway .gateway-row-2-column-1,
   .unca-gateway .gateway-row-2-column-2,
   .unca-gateway .gateway-row-3-column-1,
-  .unca-gateway .gateway-row-3-column-2 {
+  .unca-gateway .gateway-row-3-column-2,
+  .unca-gateway .gateway-link-section,
+  .gateway-content .gateway-row-2-column-1,
+  .gateway-content .gateway-row-2-column-2,
+  .gateway-content .gateway-row-3-column-1,
+  .gateway-content .gateway-row-3-column-2,
+  .gateway-content .gateway-link-section {
     position: relative;
     padding-left: 1.25em;
     padding-right: 1.25em;
@@ -9815,7 +9901,13 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   .unca-gateway .gateway-row-2-column-1,
   .unca-gateway .gateway-row-2-column-2,
   .unca-gateway .gateway-row-3-column-1,
-  .unca-gateway .gateway-row-3-column-2 {
+  .unca-gateway .gateway-row-3-column-2,
+  .unca-gateway .gateway-link-section,
+  .gateway-content .gateway-row-2-column-1,
+  .gateway-content .gateway-row-2-column-2,
+  .gateway-content .gateway-row-3-column-1,
+  .gateway-content .gateway-row-3-column-2,
+  .gateway-content .gateway-link-section {
     position: relative;
     padding-left: 1.25em;
     padding-right: 1.25em;
@@ -9826,28 +9918,37 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
 .unca-gateway .gateway-row-2-column-1 .lt-ie9,
 .unca-gateway .gateway-row-2-column-2 .lt-ie9,
 .unca-gateway .gateway-row-3-column-1 .lt-ie9,
-.unca-gateway .gateway-row-3-column-2 .lt-ie9 {
+.unca-gateway .gateway-row-3-column-2 .lt-ie9,
+.unca-gateway .gateway-link-section .lt-ie9,
+.gateway-content .gateway-row-2-column-1 .lt-ie9,
+.gateway-content .gateway-row-2-column-2 .lt-ie9,
+.gateway-content .gateway-row-3-column-1 .lt-ie9,
+.gateway-content .gateway-row-3-column-2 .lt-ie9,
+.gateway-content .gateway-link-section .lt-ie9 {
   position: relative;
   padding-left: 1.25em;
   padding-right: 1.25em;
   width: 50%;
   float: left;
 }
-.unca-gateway.no-row-2-column-1 .gateway-row-2-column-2 {
+.unca-gateway.no-row-2-column-1 .gateway-row-2-column-2,
+.gateway-content.no-row-2-column-1 .gateway-row-2-column-2 {
   position: relative;
   padding-left: 1.25em;
   padding-right: 1.25em;
   width: 100%;
   float: left;
 }
-.unca-gateway.no-row-2-column-2 .gateway-row-2-column-1 {
+.unca-gateway.no-row-2-column-2 .gateway-row-2-column-1,
+.gateway-content.no-row-2-column-2 .gateway-row-2-column-1 {
   position: relative;
   padding-left: 1.25em;
   padding-right: 1.25em;
   width: 100%;
   float: left;
 }
-.unca-gateway.no-row-3-column-1 .gateway-row-3-column-2 {
+.unca-gateway.no-row-3-column-1 .gateway-row-3-column-2,
+.gateway-content.no-row-3-column-1 .gateway-row-3-column-2 {
   position: relative;
   padding-left: 1.25em;
   padding-right: 1.25em;
@@ -9855,14 +9956,16 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
   float: left;
   clear: both;
 }
-.unca-gateway.no-row-3-column-2 .gateway-row-3-column-1 {
+.unca-gateway.no-row-3-column-2 .gateway-row-3-column-1,
+.gateway-content.no-row-3-column-2 .gateway-row-3-column-1 {
   position: relative;
   padding-left: 1.25em;
   padding-right: 1.25em;
   width: 100%;
   float: left;
 }
-.unca-gateway .gateway-row-3-column-1 {
+.unca-gateway .gateway-row-3-column-1,
+.gateway-content .gateway-row-3-column-1 {
   clear: both;
 }
 
@@ -11549,11 +11652,13 @@ Added back in by Luke Withrow on 2013-05-15
 }
 
 #sccr a {
-  width: 710px;
-  height: 77px;
-  display: inline-block;
-  background-position: 0px -20px;
   background-image: url("../images/scsmall.jpg");
+  background-position: 0px -20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  height: 77px;
+  width: 100%;
 }
 
 #sccr a:hover {
@@ -11692,9 +11797,7 @@ Added back in by Luke Withrow on 2013-05-15
 -------------------------------------------------------------------------------------- **/
 #header {
   background-color: #fff;
-  background: url(../images/banners/banner.php) no-repeat;
-  /**background:url(../images/banners/banner-mountains.jpg) no-repeat; **/
-  margin-bottom: -5px;
+  background: url(../images/header_backgrounds/header_background.php) no-repeat;
 }
 
 #home-icon {
@@ -11888,12 +11991,24 @@ Added back in by Luke Withrow on 2013-05-15
     /* IE6-8 */
   }
 
+  #navigation-primary li > a, #navigation-primary li a {
+    color: #000000;
+    display: block;
+    font-size: 10px;
+    padding: 6px 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 100%;
+    background-color: transparent;
+  }
+
   #navigation-primary li > a:hover, #navigation-primary li a:hover {
     color: #FFFFFF;
     display: block;
     text-decoration: none;
     border: 1px solid #FFFFFF;
-    padding: 5px 16px 6px 16px;
+    padding: 5px 16px 5px 16px;
     background: #ee8b19;
     /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -11912,18 +12027,6 @@ Added back in by Luke Withrow on 2013-05-15
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee8b19', endColorstr='#dd5100',GradientType=0 );
     /* IE6-8 */
-  }
-
-  #navigation-primary li > a, #navigation-primary li a {
-    color: #000000;
-    display: block;
-    font-size: 10px;
-    padding: 6px 17px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    width: 100%;
-    background-color: transparent;
   }
 }
 @media print {
@@ -11959,12 +12062,24 @@ Added back in by Luke Withrow on 2013-05-15
     /* IE6-8 */
   }
 
+  #navigation-primary li > a, #navigation-primary li a {
+    color: #000000;
+    display: block;
+    font-size: 10px;
+    padding: 6px 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 100%;
+    background-color: transparent;
+  }
+
   #navigation-primary li > a:hover, #navigation-primary li a:hover {
     color: #FFFFFF;
     display: block;
     text-decoration: none;
     border: 1px solid #FFFFFF;
-    padding: 5px 16px 6px 16px;
+    padding: 5px 16px 5px 16px;
     background: #ee8b19;
     /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -11983,18 +12098,6 @@ Added back in by Luke Withrow on 2013-05-15
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee8b19', endColorstr='#dd5100',GradientType=0 );
     /* IE6-8 */
-  }
-
-  #navigation-primary li > a, #navigation-primary li a {
-    color: #000000;
-    display: block;
-    font-size: 10px;
-    padding: 6px 17px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    width: 100%;
-    background-color: transparent;
   }
 }
 .lt-ie9 #navigation-primary {
@@ -12026,12 +12129,23 @@ Added back in by Luke Withrow on 2013-05-15
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#a4a4a4',GradientType=0 );
   /* IE6-8 */
 }
+.lt-ie9 #navigation-primary li > a, .lt-ie9 #navigation-primary li a {
+  color: #000000;
+  display: block;
+  font-size: 10px;
+  padding: 6px 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 100%;
+  background-color: transparent;
+}
 .lt-ie9 #navigation-primary li > a:hover, .lt-ie9 #navigation-primary li a:hover {
   color: #FFFFFF;
   display: block;
   text-decoration: none;
   border: 1px solid #FFFFFF;
-  padding: 5px 16px 6px 16px;
+  padding: 5px 16px 5px 16px;
   background: #ee8b19;
   /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -12050,17 +12164,6 @@ Added back in by Luke Withrow on 2013-05-15
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee8b19', endColorstr='#dd5100',GradientType=0 );
   /* IE6-8 */
-}
-.lt-ie9 #navigation-primary li > a, .lt-ie9 #navigation-primary li a {
-  color: #000000;
-  display: block;
-  font-size: 10px;
-  padding: 6px 17px;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  width: 100%;
-  background-color: transparent;
 }
 
 @media only screen and (min-width: 960px) {

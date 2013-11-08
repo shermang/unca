@@ -1,7 +1,7 @@
 <?php
 
-$custom_banner_dir = '../../../../../default/files/banner_images';
-$directory = '../banners/'; // Must have trailing slash
+$custom_banner_dir = '../../../../../default/files/header_backgrounds';
+$directory = '../header_backgrounds/'; // Must have trailing slash
 
 if (file_exists($custom_banner_dir) && is_dir($custom_banner_dir)) {
   $files = scandir($custom_banner_dir);

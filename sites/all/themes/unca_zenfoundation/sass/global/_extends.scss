@@ -119,6 +119,12 @@
   margin: 0 0 1em 1em;
 }
 
+// Clears
+%clear,
+.clear {
+  clear: both;
+}
+
 // Clearfixes
 
 %no-clearfix {
