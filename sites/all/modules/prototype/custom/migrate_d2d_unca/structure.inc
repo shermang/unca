@@ -37,6 +37,28 @@ class UNCAVariableMigration extends DrupalMigration {
       return FALSE;
     }
 
+    $value = unserialize($row->value);
+    switch($row->name){
+      case 'site_frontpage':
+      case 'site_404':
+      case 'site_403':
+        if(strpos($value,'node') != 0){
+          $tmp_value = explode('/',$value);
+          $result = db_select('migrate_map_uncapagect','p')
+            ->fields('p')
+            ->condition('sourceid1',$tmp_value[1],'=')
+            ->execute()
+            ->fetchAssoc();
+          if($result){
+            $row->value = serialize('node/'.$result[0]['destid1']);
+          }
+        }
+
+        break;
+      default:
+        break;
+
+    }
     variable_set($row->name,unserialize($row->value));
 
     // we always want to return false as we don't want migrate to actually process the row

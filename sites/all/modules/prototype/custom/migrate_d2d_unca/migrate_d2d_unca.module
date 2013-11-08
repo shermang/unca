@@ -233,7 +233,7 @@ function migrate_d2d_unca_register_migrations() {
       'class_name' => 'UNCACampusUpdateMigration',
       'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
       'machine_name' => 'UNCACampusUpdatenCT',
-      'source_type' => 'campus_update',
+      'source_type' => 'updates',
       'destination_type' => 'campus_update',
       'group_name' => 'c_node',
       'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),

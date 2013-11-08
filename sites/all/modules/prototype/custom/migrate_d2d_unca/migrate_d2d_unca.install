@@ -1,0 +1,66 @@
+<?php
+/**
+ * Implementation of hook_schema().
+ */
+function migrate_d2d_unca_schema(){
+  $schema['migrate_taxonomy_term_data'] = array(
+    'description' => 'Stores migrations term information.',
+    'fields' => array(
+      'tid' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique term ID.',
+      ),
+      'vid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The {taxonomy_vocabulary}.vid of the vocabulary to which the term is assigned.',
+      ),
+      'name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'The term name.',
+        'translatable' => TRUE,
+      ),
+      'description' => array(
+        'type' => 'text',
+        'not null' => FALSE,
+        'size' => 'big',
+        'description' => 'A description of the term.',
+        'translatable' => TRUE,
+      ),
+      'format' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'description' => 'The {filter_format}.format of the description.',
+      ),
+      'weight' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The weight of this term in relation to other terms.',
+      ),
+    ),
+    'primary key' => array('tid'),
+    'foreign keys' => array(
+      'vocabulary' => array(
+        'table' => 'taxonomy_vocabulary',
+        'columns' => array('vid' => 'vid'),
+      ),
+    ),
+    'indexes' => array(
+      'taxonomy_tree' => array('vid', 'weight', 'name'),
+      'vid_name' => array('vid', 'name'),
+      'name' => array('name'),
+    ),
+  );
+
+  return $schema;
+
+}
