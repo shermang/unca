@@ -6608,6 +6608,10 @@ nav.navigation a {
   margin-bottom: 2em;
 }
 
+.block-views .more-link {
+  padding: 5px 0;
+}
+
 .current-students .cta-item img {
   height: 120px;
   width: 100%;
@@ -11648,11 +11652,13 @@ Added back in by Luke Withrow on 2013-05-15
 }
 
 #sccr a {
-  width: 710px;
-  height: 77px;
-  display: inline-block;
-  background-position: 0px -20px;
   background-image: url("../images/scsmall.jpg");
+  background-position: 0px -20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  height: 77px;
+  width: 100%;
 }
 
 #sccr a:hover {
@@ -11793,7 +11799,6 @@ Added back in by Luke Withrow on 2013-05-15
   background-color: #fff;
   background: url(../images/banners/banner.php) no-repeat;
   /**background:url(../images/banners/banner-mountains.jpg) no-repeat; **/
-  margin-bottom: -5px;
 }
 
 #home-icon {
@@ -11987,12 +11992,24 @@ Added back in by Luke Withrow on 2013-05-15
     /* IE6-8 */
   }
 
+  #navigation-primary li > a, #navigation-primary li a {
+    color: #000000;
+    display: block;
+    font-size: 10px;
+    padding: 6px 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 100%;
+    background-color: transparent;
+  }
+
   #navigation-primary li > a:hover, #navigation-primary li a:hover {
     color: #FFFFFF;
     display: block;
     text-decoration: none;
     border: 1px solid #FFFFFF;
-    padding: 5px 16px 6px 16px;
+    padding: 5px 16px 5px 16px;
     background: #ee8b19;
     /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -12011,18 +12028,6 @@ Added back in by Luke Withrow on 2013-05-15
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee8b19', endColorstr='#dd5100',GradientType=0 );
     /* IE6-8 */
-  }
-
-  #navigation-primary li > a, #navigation-primary li a {
-    color: #000000;
-    display: block;
-    font-size: 10px;
-    padding: 6px 17px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    width: 100%;
-    background-color: transparent;
   }
 }
 @media print {
@@ -12058,12 +12063,24 @@ Added back in by Luke Withrow on 2013-05-15
     /* IE6-8 */
   }
 
+  #navigation-primary li > a, #navigation-primary li a {
+    color: #000000;
+    display: block;
+    font-size: 10px;
+    padding: 6px 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 100%;
+    background-color: transparent;
+  }
+
   #navigation-primary li > a:hover, #navigation-primary li a:hover {
     color: #FFFFFF;
     display: block;
     text-decoration: none;
     border: 1px solid #FFFFFF;
-    padding: 5px 16px 6px 16px;
+    padding: 5px 16px 5px 16px;
     background: #ee8b19;
     /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -12082,18 +12099,6 @@ Added back in by Luke Withrow on 2013-05-15
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee8b19', endColorstr='#dd5100',GradientType=0 );
     /* IE6-8 */
-  }
-
-  #navigation-primary li > a, #navigation-primary li a {
-    color: #000000;
-    display: block;
-    font-size: 10px;
-    padding: 6px 17px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    width: 100%;
-    background-color: transparent;
   }
 }
 .lt-ie9 #navigation-primary {
@@ -12125,12 +12130,23 @@ Added back in by Luke Withrow on 2013-05-15
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#a4a4a4',GradientType=0 );
   /* IE6-8 */
 }
+.lt-ie9 #navigation-primary li > a, .lt-ie9 #navigation-primary li a {
+  color: #000000;
+  display: block;
+  font-size: 10px;
+  padding: 6px 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 100%;
+  background-color: transparent;
+}
 .lt-ie9 #navigation-primary li > a:hover, .lt-ie9 #navigation-primary li a:hover {
   color: #FFFFFF;
   display: block;
   text-decoration: none;
   border: 1px solid #FFFFFF;
-  padding: 5px 16px 6px 16px;
+  padding: 5px 16px 5px 16px;
   background: #ee8b19;
   /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -12149,17 +12165,6 @@ Added back in by Luke Withrow on 2013-05-15
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee8b19', endColorstr='#dd5100',GradientType=0 );
   /* IE6-8 */
-}
-.lt-ie9 #navigation-primary li > a, .lt-ie9 #navigation-primary li a {
-  color: #000000;
-  display: block;
-  font-size: 10px;
-  padding: 6px 17px;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  width: 100%;
-  background-color: transparent;
 }
 
 @media only screen and (min-width: 960px) {

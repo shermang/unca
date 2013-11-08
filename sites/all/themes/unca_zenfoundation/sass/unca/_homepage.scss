@@ -282,11 +282,13 @@ Added back in by Luke Withrow on 2013-05-15
 	display: -moz-inline-block;
 }
 #sccr a {
-	width:710px;
-	height:77px;
-	display: inline-block;
-		background-position:0px -20px; 
 	background-image: url("../images/scsmall.jpg");
+  background-position:0px -20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+	display: inline-block;
+	height:77px;
+	width:100%;
 }
 
 #sccr a:hover {
