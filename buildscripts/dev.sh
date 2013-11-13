@@ -44,7 +44,6 @@ profile2 \
 recaptcha \
 rules \
 scheduler \
-sharethis \
 taxonomy_menu \
 taxonomy_menu_block \
 token \
@@ -131,6 +130,7 @@ overlay \
 securelogin \
 slideshow_entity \
 lightbox2 \
+sharethis \
 scanner
 
 # uninstall slideshow entity
