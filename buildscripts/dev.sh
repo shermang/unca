@@ -44,7 +44,6 @@ profile2 \
 recaptcha \
 rules \
 scheduler \
-sharethis \
 taxonomy_menu \
 taxonomy_menu_block \
 token \
@@ -122,6 +121,7 @@ migrate_ui \
 date_migrate \
 migrate_d2d \
 migrate_d2d_unca \
+addthis \
 
 # To disable modules, uncomment the following command and list the modules to disable
 drush dis --yes \
@@ -131,6 +131,7 @@ overlay \
 securelogin \
 slideshow_entity \
 lightbox2 \
+sharethis \
 scanner
 
 # uninstall slideshow entity
