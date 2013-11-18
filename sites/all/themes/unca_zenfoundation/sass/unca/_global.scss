@@ -61,6 +61,34 @@ h4 {
     margin-bottom: 5px;
 }
 
+blockquote {
+  background-image: url(../images/quote.png);
+  background-repeat: no-repeat;
+  background-position: -10px -10px;
+  color: #333333;
+  text-align: left;
+  text-indent: 30px;
+  background-color: #EFF3EA;
+  padding: 10px;
+  clear: right;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #0095D3;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #0095D3;
+  margin-top: 10px;
+  margin-right: 40px;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  padding-right:20px;
+  padding-left:20px;
+  padding-bottom:0px;
+  color:#333; 
+  font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: italic;
+}
+
 #bottom-spiffs .column {
 	float:left;
 	padding:0px;

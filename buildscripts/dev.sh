@@ -129,6 +129,7 @@ admin_menu \
 admin_menu_toolbar \
 overlay \
 securelogin \
+sharethis \
 slideshow_entity \
 lightbox2 \
 sharethis \
