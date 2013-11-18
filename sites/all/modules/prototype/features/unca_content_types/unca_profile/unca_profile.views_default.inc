@@ -279,6 +279,12 @@ function unca_profile_views_default_views() {
   $handler->display->display_options['fields']['field_image_fid']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image_fid']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image_fid']['label'] = '';
+  $handler->display->display_options['fields']['field_image_fid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_fid']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_fid']['settings'] = array(
+    'image_style' => 'profile-headshot-image',
+    'image_link' => '',
+  );
   /* Field: Content: Subheading */
   $handler->display->display_options['fields']['field_subhead_value']['id'] = 'field_subhead_value';
   $handler->display->display_options['fields']['field_subhead_value']['table'] = 'field_data_field_subheading';
