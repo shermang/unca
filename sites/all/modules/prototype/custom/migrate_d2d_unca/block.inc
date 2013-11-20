@@ -76,7 +76,7 @@ class UNCABlockMigration extends DrupalMigration {
         $row->region = 'content_row_2_column_2';
         break;
       case 'content_bottom':
-        $row->region = 'bottom';
+        $row->region = 'content_row_1';
         break;
       case 'right_column':
         $row->region = 'sidebar_first';
