@@ -51,7 +51,7 @@ class UNCAVariableMigration extends DrupalMigration {
             ->execute()
             ->fetchAssoc();
           if($result){
-            $row->value = serialize('node/'.$result[0]['destid1']);
+            $row->value = serialize('node/'.$result['destid1']);
           }
         }
 
