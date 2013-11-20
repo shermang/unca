@@ -42,15 +42,16 @@ class UNCAVariableMigration extends DrupalMigration {
       case 'site_frontpage':
       case 'site_404':
       case 'site_403':
-        if(strpos($value,'node') != 0){
-          $tmp_value = explode('/',$value);
+        $tmp_value = explode('/',$value);
+        if(!empty($tmp_value[0]) && ($tmp_value[0] == 'node')){
+
           $result = db_select('migrate_map_uncapagect','p')
             ->fields('p')
             ->condition('sourceid1',$tmp_value[1],'=')
             ->execute()
             ->fetchAssoc();
           if($result){
-            $row->value = serialize('node/'.$result[0]['destid1']);
+            $row->value = serialize('node/'.$result['destid1']);
           }
         }
 
