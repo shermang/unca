@@ -17,6 +17,9 @@ function unca_project_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_featured_project',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
@@ -27,10 +30,11 @@ function unca_project_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => '',
-        1 => '',
+        0 => 0,
+        1 => 1,
       ),
       'allowed_values_function' => '',
+      'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'list_boolean',
