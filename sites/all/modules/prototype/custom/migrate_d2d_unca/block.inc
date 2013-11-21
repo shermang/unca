@@ -125,6 +125,9 @@ class UNCABlockMigration extends DrupalMigration {
     }
 
     switch(TRUE){
+      case ($row->delta == 'Profile_Random-block_1'):
+        $row->delta == 'profile_random-block';
+        break;
       case (($row->delta == 'News-block_1') && ($row->theme == 'unca.department')):
         $row->delta = 'News-block_4';
         break;
