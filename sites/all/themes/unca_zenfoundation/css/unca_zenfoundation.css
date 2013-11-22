@@ -8141,7 +8141,7 @@ nav.navigation .block-search input {
     margin-top: 8px;
     margin-right: 30px;
     margin-bottom: 0;
-    font-size: emPCalc(12);
+    font-size: 1em;
   }
 }
 .top-bar-secondary .util-nav-mini {
