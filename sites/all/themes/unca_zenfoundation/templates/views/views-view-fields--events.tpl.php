@@ -13,12 +13,12 @@ if(!empty($row->field_field_link_value[0]['raw']['value'])){
 }
 
 ?>
-<a href="<?php print $field_link_value; ?>" class="calendar-graphic">
-  <span class="calendar-month"><?php print $month; ?></span>
-  <span class="calendar-day"><?php print $day; ?></span>
+<a href="<?php print $field_link_value; ?>">
+  <span><?php print $month; ?></span>
+  <span><?php print $day; ?></span>
 </a>
-<a href="<?php print $field_link_value ?>" class="calendar-text">
-  <span class="calendar-time"><?php print $time; ?></span>
+<a href="<?php print $field_link_value ?>">
+  <span><?php print $time; ?></span>
   <br />
   <?php print $fields['title']->content; ?>
 </a>
