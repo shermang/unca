@@ -78,5 +78,6 @@ features[variable][] = scheduler_unpublish_required_profiles
 features[variable][] = scheduler_unpublish_revision_profiles
 features[views_view][] = Profile_SPIFF
 features[views_view][] = Profiles
+features[views_view][] = profile_random
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][unca_home] = unca_home

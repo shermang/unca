@@ -145,6 +145,8 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'access print',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'print',
   );
@@ -374,15 +376,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'imce',
   );
 
-  // Exported permission: 'administer lightbox2'.
-  $permissions['administer lightbox2'] = array(
-    'name' => 'administer lightbox2',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'lightbox2',
-  );
-
   // Exported permission: 'administer mcfilemanager'.
   $permissions['administer mcfilemanager'] = array(
     'name' => 'administer mcfilemanager',
@@ -500,15 +493,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'rules',
   );
 
-  // Exported permission: 'administer scanner settings'.
-  $permissions['administer scanner settings'] = array(
-    'name' => 'administer scanner settings',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'scanner',
-  );
-
   // Exported permission: 'administer scheduler'.
   $permissions['administer scheduler'] = array(
     'name' => 'administer scheduler',
@@ -525,15 +509,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'search',
-  );
-
-  // Exported permission: 'administer sharethis'.
-  $permissions['administer sharethis'] = array(
-    'name' => 'administer sharethis',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'sharethis',
   );
 
   // Exported permission: 'administer shortcuts'.
@@ -1196,15 +1171,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'download original image'.
-  $permissions['download original image'] = array(
-    'name' => 'download original image',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'lightbox2',
-  );
-
   // Exported permission: 'edit all webform submissions'.
   $permissions['edit all webform submissions'] = array(
     'name' => 'edit all webform submissions',
@@ -1690,15 +1656,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'googleanalytics',
-  );
-
-  // Exported permission: 'perform search and replace'.
-  $permissions['perform search and replace'] = array(
-    'name' => 'perform search and replace',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'scanner',
   );
 
   // Exported permission: 'post comments'.

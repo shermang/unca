@@ -48,6 +48,13 @@ class UNCABlockMigration extends DrupalMigration {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
     }
+
+    if(($row->visibility == 1) && empty($row->pages)){
+      // we have to do this because of a "bug" in D6 which allowed you to set visibility to 1 and
+      // not list anything in pages, therefore showing the block in all pages.  In D7, the visibility needs
+      // to be set to 0 and pages needs to be empty to show on all pages.
+      $row->visibility == 0;
+    }
     switch ($row->region){
       case 'emergency':
         break;
@@ -69,7 +76,7 @@ class UNCABlockMigration extends DrupalMigration {
         $row->region = 'content_row_2_column_2';
         break;
       case 'content_bottom':
-        $row->region = 'bottom';
+        $row->region = 'content_row_1';
         break;
       case 'right_column':
         $row->region = 'sidebar_first';
@@ -118,11 +125,14 @@ class UNCABlockMigration extends DrupalMigration {
     }
 
     switch(TRUE){
+      case ($row->delta == 'Profile_Random-block_1'):
+        $row->delta == 'profile_random-block';
+        break;
       case (($row->delta == 'News-block_1') && ($row->theme == 'unca.department')):
-        $row->delta = 'block_4';
+        $row->delta = 'News-block_4';
         break;
       case (($row->delta == 'News-block_2') && ($row->theme == 'unca.department')):
-        $row->delta = 'block_5';
+        $row->delta = 'News-block_5';
         break;
       case (($row->delta == 'News-block_1') && ($row->theme == 'unca')):
         $row->delta = 'News-block_1';
@@ -147,7 +157,7 @@ class UNCABlockMigration extends DrupalMigration {
 
 
     $result = db_select('block','b')
-      ->fields('b',array('bid'))
+      ->fields('b')
       ->condition('theme',$row->theme,'=')
       ->condition('module',$row->module,'=')
       ->condition('delta',$row->delta,'=')
@@ -156,20 +166,11 @@ class UNCABlockMigration extends DrupalMigration {
     switch($row->module){
       case 'views':
         if($result){
-          if(!$row->status){
-          $record =
-            array(
-              'bid' => $result['bid'],
-              'status' => $row->status,
-              'weight' => $row->weight,
-              'visibility' => $row->visibility,
-              'custom' => $row->custom,
-              'pages' => $row->pages,
-              'title' => $row->title,
-              'cache' => $row->cache,
-            );
+          if($row->status){
+            $row->bid = $result['bid'];
+            drupal_write_record('block', $row, 'bid');
           }
-          drupal_write_record('block', $record, array('bid' => $result['bid']));
+
           return FALSE;
         }
         break;
