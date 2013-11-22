@@ -6935,13 +6935,13 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
   border-left: none;
 }
 .sidebar .block-menu-menu-secondary-navigation---prot li li a, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li a, .sidebar .navigation-secondary li li a, .ds-sidebar-column .navigation-secondary li li a {
-  padding-left: 3.33333em;
+  padding-left: 1.66667em;
 }
 .sidebar .block-menu-menu-secondary-navigation---prot li li li, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li li, .sidebar .navigation-secondary li li li, .ds-sidebar-column .navigation-secondary li li li {
   border-left: none;
 }
 .sidebar .block-menu-menu-secondary-navigation---prot li li li a, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li li a, .sidebar .navigation-secondary li li li a, .ds-sidebar-column .navigation-secondary li li li a {
-  padding-left: 5em;
+  padding-left: 3.33333em;
 }
 .sidebar .block-menu-menu-secondary-navigation---prot a, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot a, .sidebar .navigation-secondary a, .ds-sidebar-column .navigation-secondary a {
   display: block;
