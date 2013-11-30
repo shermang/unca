@@ -1027,6 +1027,7 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
 }
 .view-news h3, .view-news .node-type-cluster .field-label, .node-type-cluster .view-news .field-label {
   font-size: 1.5em;
+  font-weight: bold;
 }
 .view-news h3.field-content, .view-news .node-type-cluster .field-content.field-label, .node-type-cluster .view-news .field-content.field-label {
   margin-bottom: 0;
@@ -10897,7 +10898,7 @@ h2 {
 h3, .node-type-cluster .field-label {
   color: #EE5B14;
   font-size: 14px;
-  font-weight: normal;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
@@ -13033,7 +13034,7 @@ Notes:  Adds support for slideshows
 
 .portal-content h3, .portal-content .node-type-cluster .field-label, .node-type-cluster .portal-content .field-label {
   font-size: 14px;
-  font-weight: normal;
+  font-weight: bold;
   line-height: 160%;
   color: #173D79;
   margin-right: 5px;
