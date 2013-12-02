@@ -12023,8 +12023,8 @@ Added back in by Luke Withrow on 2013-05-15
   #navigation-primary li > a, #navigation-primary li a {
     color: #000000;
     display: block;
-    font-size: 10px;
-    padding: 6px 16px;
+    font-size: 11px;
+    padding: 6px 14px;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
@@ -12094,8 +12094,8 @@ Added back in by Luke Withrow on 2013-05-15
   #navigation-primary li > a, #navigation-primary li a {
     color: #000000;
     display: block;
-    font-size: 10px;
-    padding: 6px 16px;
+    font-size: 11px;
+    padding: 6px 14px;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
@@ -12161,8 +12161,8 @@ Added back in by Luke Withrow on 2013-05-15
 .lt-ie9 #navigation-primary li > a, .lt-ie9 #navigation-primary li a {
   color: #000000;
   display: block;
-  font-size: 10px;
-  padding: 6px 16px;
+  font-size: 11px;
+  padding: 6px 14px;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
