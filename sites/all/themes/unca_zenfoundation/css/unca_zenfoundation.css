@@ -7920,10 +7920,16 @@ nav.navigation .block-search input {
 .top-bar.expanded {
   padding-bottom: 5px;
 }
+.top-bar.expanded, .row .top-bar.expanded {
+  background-color: #222222;
+}
 .top-bar.expanded .top-bar-primary,
 .top-bar.expanded .top-bar-secondary {
   float: left !important;
   width: 50%;
+}
+.top-bar.expanded li {
+  background-color: #222222;
 }
 .top-bar.expanded li > a {
   color: #FFFFFF;
@@ -8853,9 +8859,6 @@ nav.navigation #block-system-main-menu .menu .lt-ie9 ul.menu {
   margin-top: -19px;
 }
 
-.top-bar-section ul {
-  background: none;
-}
 .top-bar-section ul li {
   margin-left: 1px;
 }
@@ -10133,6 +10136,7 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
 }
 .row .top-bar.expanded {
   background-color: #222222;
+  background-image: none;
   height: auto;
 }
 @media only screen and (min-width: 960px) {
@@ -12035,7 +12039,7 @@ Added back in by Luke Withrow on 2013-05-15
     display: block;
     text-decoration: none;
     border: 1px solid #FFFFFF;
-    padding: 5px 13px;
+    padding: 5px 12px;
     background: #ee8b19;
     /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -12106,7 +12110,7 @@ Added back in by Luke Withrow on 2013-05-15
     display: block;
     text-decoration: none;
     border: 1px solid #FFFFFF;
-    padding: 5px 13px;
+    padding: 5px 12px;
     background: #ee8b19;
     /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -12172,7 +12176,7 @@ Added back in by Luke Withrow on 2013-05-15
   display: block;
   text-decoration: none;
   border: 1px solid #FFFFFF;
-  padding: 5px 13px;
+  padding: 5px 12px;
   background: #ee8b19;
   /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
