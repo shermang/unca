@@ -541,12 +541,12 @@ function last_edit_info($node) {
 
   if($result) {
     $row = $result->fetchAssoc();
-    $author = "Last edited by ";
+    $author = " by ";
     $author .= l($row['name'], 'mailto:' . $row['mail'],
       array('title' => t('Email author')));
   } else {
     $author = '';
   }
 
-  return $author ." on " .format_date($node->changed);
+  return "Last edited" . $author ." on " .format_date($node->changed);
 }
