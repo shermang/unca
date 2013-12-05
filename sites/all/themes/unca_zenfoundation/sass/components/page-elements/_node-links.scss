@@ -1,0 +1,11 @@
+// Links
+.links {
+  li {
+    margin: 0;
+  }
+  .print_html {
+    a {
+      @extend .icon-print;
+    }
+  }
+}

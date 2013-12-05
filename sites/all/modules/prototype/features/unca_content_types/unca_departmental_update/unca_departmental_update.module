@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the UNCA Departmental Update feature.
+ */
+
+include_once 'unca_departmental_update.features.inc';

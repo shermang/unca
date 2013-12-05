@@ -1,0 +1,17 @@
+.node-policy {
+  .field-label {
+    font-weight: normal;
+  }
+  .policy-info {
+    .field {
+      margin: 0;
+      div {
+        display: inline;
+        float: none;
+      }
+    }
+    .field-label {
+      font-weight: bold;
+    }
+  }
+} /* END: .node-person */

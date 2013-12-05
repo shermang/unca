@@ -1,0 +1,811 @@
+<?php
+
+/**
+ * This is example code for a Drupal 6 to Drupal 7 migration. This won't actually
+ * work without defining the referenced vocabularies, content types, and fields
+ * on each side.
+ */
+
+
+/**
+ * Implements hook_flush_caches().
+ */
+function migrate_d2d_unca_flush_caches() {
+  migrate_d2d_unca_register_migrations();
+}
+
+/**
+ * Register all D6->D7 migrations.
+ */
+function migrate_d2d_unca_register_migrations() {
+
+  global $conf;
+
+  // check if the source_dir has been setup in the settings.php
+  // this should be an absolute path to the files directory
+  // /var/www/html/unca/sites/default/files/
+  //
+  if(empty($conf['migrate_files_source_dir'])){
+    $conf['migrate_files_source_dir'] = '';
+  }
+
+  // check if we should do webform migrations
+  db_set_active('legacy');
+  $results = db_select('system', 's')
+    ->fields('s',array('status'))
+    ->condition('name','webform','=')
+    ->execute()
+    ->fetchCol();
+  $webform = $results[0];
+  db_set_active();
+
+  /**
+   * Each migration being registered takes an array of arguments, some required
+   * and some optional. Start with the common arguments required by all - the
+   * source_connection (connection key, set up in settings.php, pointing to
+   * the Drupal 6 database) and source_version (major version of Drupal).
+   */
+
+
+  $connectionOptions = Database::getConnection('default','legacy')->getConnectionOptions();
+
+  $common_arguments = array(
+    'source_connection' => 'legacy',
+    'source_version' => 6,
+    'unca_source_database' => $connectionOptions['database'],
+  );
+
+
+
+  //
+  // +  +  +  +  USER ROLES  +  +  +  +
+  //
+  // Src:
+  // 1  anonymous user
+  // 2 authenticated user
+  // 3 content manager
+  // 4 administrator
+  //
+  // Target:
+  // 1  anonymous user
+  // 2 authenticated user
+  // 3 administrator
+  //
+  // Migration:
+  // Create target role: 4 content manager
+  // Where src.rid = 3 (cont. mgr) or 5 (editor), convert to 4 (cont. mgr)
+  // Where src.rid = 4 (admin), convert to 3 (administrator)
+
+  $role_arguments = $common_arguments + array(
+      'machine_name' => 'UNCARole',
+      'description' => t('Import Drupal 6 roles'),
+      'role_mappings' => array(
+        'author' => 'content manager',
+        'content manager' => 'content manager',
+        'administrator' => 'administrator',
+      ),
+      'group_name' => 'b_user',
+    );
+  $role_migration_class = 'UNCARoleMigration';
+  // $role_migration_class = 'DrupalRole6Migration';
+  Migration::registerMigration($role_migration_class,
+    $role_arguments['machine_name'], $role_arguments);
+
+
+
+  //
+  // +  +  +  +  USERS: 'UNCAUser'  +  +  +  +
+  //
+
+  // The description and the migration machine name are also required arguments,
+  // which will be unique for each migration you register.
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of users from Drupal 6'),
+      'machine_name' => 'UNCAUser',
+      'role_migration' => 'UNCARole',
+      'group_name' => 'b_user',
+    );
+  $user_migration_class = 'UNCAUserMigration';
+  // $user_migration_class = 'DrupalUser6Migration';
+
+  // We just use the migrate_d2d D6 migration class as-is.
+  Migration::registerMigration($user_migration_class, $arguments['machine_name'],
+    $arguments);
+
+
+  //
+  // +  +  +  +  FILE  +  +  +  +
+  //
+
+  $file_arguments = $common_arguments + array(
+      'machine_name' => 'UNCAFile',
+      'description' => t('Import Drupal 6 files'),
+      'source_dir' => $conf['migrate_files_source_dir'],
+      'group_name' => 'c_node',
+      ''
+    );
+  $file_migration_class = 'UNCAFileMigration';
+  // $role_migration_class = 'DrupalRole6Migration';
+  Migration::registerMigration($file_migration_class,
+    $file_arguments['machine_name'], $file_arguments);
+
+  //
+  // +  +  +  +  TAXONOMY  +  +  +  +
+  //
+
+  //  IMPORTANT:  TAXONOMY MIGRATION IS USING THE WRONG D7 MACHINE NAMES;
+  //  THEY WILL NEED TO BE CHANGED IN migrate_d2d_unca_get_vocab_mappings()
+  //  WHEN THEY GET FIXED IN THE FEATURES.
+
+  // Vocabulary ids are not consistent on source dbs, so compile our mapping
+  // dynamically
+
+  /** the following comments are used by intellij and phpStorm IDEs to suppress undeclared variable error messages
+   *  as they are created using the php extract() function
+   */
+  /** @var $vocabs_map ARRAY */
+  /** @var $src_vocabs ARRAY */
+  extract(migrate_d2d_unca_get_vocab_mappings()); # $vocabs_map, $src_vocabs
+
+  // For vocabulary migrations, source_vocabulary and destination_vocabulary are
+  // required arguments. Note that in Drupal 6 vocabularies did not have machine
+  // names, so we use the vocabulary ID to uniquely identify them.
+
+  // Normal vocabs, can be handled automatically
+  foreach($vocabs_map as $vname => $vocab) {
+    if(@$vocab['d6_vid']) {
+      $vocabulary_arguments[] = array(
+        'description' => 'Migration of ' . $vocab['d6_name'] . ' terms from Drupal 6',
+        'machine_name' => 'Term_' . $vocab['mach_name'],
+        'source_vocabulary' => $vocab['d6_vid'],  // D6 Vocabulary ID
+        'destination_vocabulary' => $vocab['mach_name'],  // D7 vocabulary machine name
+        'group_name' => 'a_taxonomy',
+      );
+    }
+  }
+
+  $common_vocabulary_arguments = $common_arguments + array(
+      'class_name' => 'UNCATermMigration',
+      // 'soft_dependencies' => array('User'),
+    );
+  foreach ($vocabulary_arguments as $arguments) {
+    $arguments += $common_vocabulary_arguments;
+    Migration::registerMigration($arguments['class_name'], $arguments['machine_name'], $arguments);
+  }
+
+
+
+
+
+  // //
+  // // +  +  +  +  NODE  +  +  +  +
+  // //
+
+  // // Node migrations - each has its own class derived from the migrate_d2d class,
+  // // specifying its particular field mappings and transformations. source_type
+  // // and destination_type are required arguments.
+  $node_arguments = array(
+    unca_migrate_node_arguments_by_database($connectionOptions['database'], 'project'),
+    unca_migrate_node_arguments_by_database($connectionOptions['database'],'news_article'),
+    array(
+      'class_name' => 'UNCAEventMigration',
+      'description' => t('Migration of event nodes from Drupal 6'),
+      'machine_name' => 'UNCAEvent',
+      'source_type' => 'event',
+      'destination_type' => 'event',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+    ),
+    array(
+      'class_name' => 'UNCAPolicyMigration',
+      'description' => t('Migration of Policy nodes from Drupal 6'),
+      'machine_name' => 'UNCAPolicy',
+      'source_type' => 'policy',
+      'destination_type' => 'policy',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+    ),
+    array(
+      'class_name' => 'UNCAProfileMigration',
+      'description' => t('Migration of Profile nodes from Drupal 6'),
+      'machine_name' => 'UNCAProfile',
+      'source_type' => 'profile',
+      'destination_type' => 'profiles',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+    ),
+
+    // Destination CT
+    // Note: sites: studyabroad (only)
+    array(
+      'class_name' => 'UNCADestinationMigration',
+      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+      'machine_name' => 'UNCADestinationCT',
+      'source_type' => 'destination',
+      'destination_type' => 'destination',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+    ),
+
+    // Campus Update CT
+    // Note: core site (unca_drupal) only
+    array(
+      'class_name' => 'UNCACampusUpdateMigration',
+      'description' => t('Migration of Study Abroad "Destination" nodes from Drupal 6'),
+      'machine_name' => 'UNCACampusUpdatenCT',
+      'source_type' => 'updates',
+      'destination_type' => 'campus_update',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+    ),
+
+    // Page CT
+    // On unca_drupal, content_field_video_embed -> field_data_video_embed
+    // On drupal_studyabroad, handle viddler (data in fid)
+    array(
+      'class_name' => 'UNCAPageMigration',
+      'description' => t('Migration of "page" nodes from Drupal 6'),
+      'machine_name' => 'UNCAPageCT',
+      'source_type' => 'page',
+      'destination_type' => 'page',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+    ),
+
+    // iFrame/Page CT
+    array(
+      'class_name' => 'UNCAIframeMigration',
+      'description' => t('Migration of "iframe" nodes from Drupal 6'),
+      'machine_name' => 'UNCAIframeCT',
+      'source_type' => 'iframe',
+      'destination_type' => 'page',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+    ),
+
+    // Cluster CT
+    // Note: sites: clusters, giving, ils
+    array(
+      'class_name' => 'UNCAClusterMigration',
+      'description' => t('Migration of Cluster nodes from Drupal 6'),
+      'machine_name' => 'UNCAClusterCT',
+      'source_type' => 'cluster',
+      'destination_type' => 'cluster',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+
+    ),
+
+    // Course CT
+    // Note: sites: nccr, olliaasheville, ils
+    array(
+      'class_name' => 'UNCACourseMigration',
+      'description' => t('Migration of Course nodes from Drupal 6'),
+      'machine_name' => 'UNCACourseCT',
+      'source_type' => 'course',
+      'destination_type' => 'course',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+
+    ),
+
+    // Slideshow *Image* CT migration
+    // Note: two d6 cts map to the single d7 slideshow_item ct (see next migration)
+    array(
+      'class_name' => 'UNCASlideshowImageMigration',
+      'description' => t('Migration of Slideshow Image nodes from Drupal 6'),
+      'machine_name' => 'UNCASlideshowImageCT',
+      'source_type' => 'slideshow_image',
+      'destination_type' => 'slideshow_item',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+
+    ),
+
+    // Slideshow *Item* CT migration
+    // Note: two d6 cts map to the single d7 slideshow_item ct (see prev migration)
+    array(
+      'class_name' => 'UNCASlideshowItemMigration',
+      'description' => t('Migration of Slideshow Item nodes from Drupal 6'),
+      'machine_name' => 'UNCASlideshowItemCT',
+      'source_type' => 'slideshow_item',
+      'destination_type' => 'slideshow_item',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+
+    ),
+
+    // Student Project CT
+    // Note: on nemac (drupal_unca) site only
+    unca_migrate_node_arguments_by_database($connectionOptions['database'], 'project'),
+
+    array(
+      'class_name' => 'UNCAStudentOrgMigration',
+      'description' => t('Migration of Student Organization nodes from Drupal 6'),
+      'machine_name' => 'UNCAStudentOrg',
+      'source_type' => 'student_organization',
+      'destination_type' => 'student_organization',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+
+    ),
+
+    // Map Item CT
+    array(
+      'class_name' => 'UNCAMapItemMigration',
+      'description' => t('Migration of Map Item nodes from Drupal 6'),
+      'machine_name' => 'UNCAMapItem',
+      'source_type' => 'map_item',
+      'destination_type' => 'map_item',
+      'group_name' => 'c_node',
+      'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+
+    ),
+  );
+  // Webform CT - Nodes
+  if($webform){
+    $node_arguments[] =
+      array(
+        'class_name' => 'UNCAWebformNodeMigration',
+        'description' => t('Migration of Webform nodes from Drupal 6'),
+        'machine_name' => 'UNCAWebFormNode',
+        'source_type' => 'webform',
+        'destination_type' => 'webform',
+        'group_name' => 'c_node',
+        'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+
+      );
+
+  }
+  // // Tell the node migrations where the users are coming from, so they can
+  // // set up the dependency and resolve D6->D7 uids.
+  $common_node_arguments = $common_arguments + array(
+      'user_migration' => 'UNCAUser',
+    );
+  foreach ($node_arguments as $arguments) {
+    $arguments = array_merge_recursive($arguments, $common_node_arguments);
+    Migration::registerMigration($arguments['class_name'], $arguments['machine_name'],
+      $arguments);
+  }
+
+  // Menu migrations -- same requirements as users
+//  $menu_arguments = $common_arguments + array(
+//      'description' => t('Migration of menus from Drupal 6'),
+//      'machine_name' => 'UNCAMenu',
+//    );
+
+  // We just use the migrate_d2d D6 migration class as-is.
+//  Migration::registerMigration('UNCADrupalMenu6Migration', $menu_arguments['machine_name'],
+//    $menu_arguments);
+
+  // Menu links migrations -- basic requirements, plus must set up menu dependency
+  $menu_links_arguments = $common_arguments + array(
+      'description' => t('Migration of menu links from Drupal 6'),
+      'machine_name' => 'UNCAMenuLinks',
+//      'menu_migration' => $menu_arguments['machine_name'],
+      'node_migrations' => unca_migrations_array($node_arguments),
+      'term_migrations' => unca_migrations_array($vocabulary_arguments),
+      'group_name' => 'e_structure',
+    );
+  Migration::registerMigration('UNCADrupalMenuLinks6Migration', $menu_links_arguments['machine_name'],
+    $menu_links_arguments);
+
+  // //
+  // // +  +  +  +  TABLE-TO-TABLE MIGRATIONS  +  +  +  +
+  // //
+  if($webform){
+    $table_arguments = array(
+
+      // Webform CT - Roles
+      // roles are handled in the webformNodeMigration
+
+      // Webform CT - Components
+      array(
+        'class_name' => 'UNCAWebformComponentMigration',
+        'description' => t('Migration of Webform Components from Drupal 6'),
+        'machine_name' => 'UNCAWebFormComponent',
+        'wf_node_migration' => 'UNCAWebformNodeMigration',
+        'group_name' => 'd_webform',
+        'dependencies' => array('UNCAWebFormNode'),
+      ),
+
+      // Webform CT - Emails
+      array(
+        'class_name' => 'UNCAWebformEmailMigration',
+        'description' => t('Migration of Webform Emails from Drupal 6'),
+        'machine_name' => 'UNCAWebFormEmail',
+        'wf_node_migration' => 'UNCAWebformNodeMigration',
+        'group_name' => 'd_webform',
+        'dependencies' => array('UNCAWebFormNode','UNCAWebFormComponent'),
+      ),
+
+      // Webform CT - Submissions
+      array(
+        'class_name' => 'UNCAWebformSubmissionMigration',
+        'description' => t('Migration of Webform Submissions from Drupal 6'),
+        'machine_name' => 'UNCAWebFormSubmission',
+        'wf_node_migration' => 'UNCAWebformNodeMigration',
+        'group_name' => 'd_webform',
+        'dependencies' => array('UNCAWebFormNode','UNCAWebFormComponent'),
+      ),
+
+      // Webform CT - Submission data
+      array(
+        'class_name' => 'UNCAWebformDataMigration',
+        'description' => t('Migration of Webform Submission data from Drupal 6'),
+        'machine_name' => 'UNCAWebFormData',
+        'wf_node_migration' => 'UNCAWebformNodeMigration',
+        'group_name' => 'd_webform',
+        'dependencies' => array('UNCAWebFormNode','UNCAWebFormComponent','UNCAWebFormSubmission'),
+      ),
+    );
+
+    foreach ($table_arguments as $arguments) {
+      $arguments = array_merge_recursive($arguments, $common_arguments);
+      Migration::registerMigration($arguments['class_name'], $arguments['machine_name'],
+        $arguments);
+    }
+  }
+  // Boxes
+  $box_migration_class = 'UNCABoxesMigration';
+  $box_arguments = $common_arguments + array(
+      'class_name' => $box_migration_class,
+      'machine_name' => 'UNCABoxes',
+      'description' => t('Migration of Drupal 6 Boxes'),
+      'group_name' => 'e_structure',
+    );
+
+
+  Migration::registerMigration($box_migration_class,
+    $box_arguments['machine_name'], $box_arguments);
+
+
+  // Blocks
+  $block_migration_class = 'UNCABlockMigration';
+  $block_arguments = $common_arguments + array(
+      'class_name' => $block_migration_class,
+      'machine_name' => 'UNCABlock',
+      'description' => t('Migration of Drupal 6 blocks'),
+      'group_name' => 'e_structure',
+      'dependencies' => array('UNCABoxes'),
+    );
+
+  Migration::registerMigration($block_migration_class,
+    $block_arguments['machine_name'], $block_arguments);
+
+  $var_migration_class = 'UNCAVariableMigration';
+  $var_arguments = $common_arguments + array(
+      'class_name' => $var_migration_class,
+      'machine_name' => 'UNCAVars',
+      'description' => t('Migration of Drupal 6 Variables'),
+      'group_name' => 'e_structure',
+    );
+  Migration::registerMigration($var_migration_class,
+    $var_arguments['machine_name'], $var_arguments);
+
+}
+
+/**
+ * Implements hook_migrate_api().
+ */
+function migrate_d2d_unca_migrate_api() {
+  $api = array(
+    'api' => 2,
+    'groups' => array(
+      'a_taxonomy' => array(
+        'title' => t('Taxomony Migrations'),
+      ),
+      'b_user' => array(
+        'title' => t('User Migrations'),
+      ),
+      'c_node' => array(
+        'title' => t('Content Migrations'),
+      ),
+      'd_webform' => array(
+        'title' => t('Webforms Migrations'),
+      ),
+      'e_structure' => array(
+        'title' => t('Structure Migrations'),
+      ),
+    ),
+    // Date module doesn't register handler according to new Migrate 2.6 requirements
+    // that's why we register it here.
+    'field handlers' => array(
+      'DateMigrateFieldHandler',
+    ),
+  );
+  return $api;
+}
+
+/**
+ * Allow lookup of vocab mach names in order to all them to
+ * change without breaking things.
+ * @param  [type] $key [description]
+ * @return [type]      [description]
+ */
+function migrate_d2d_unca_get_vocab_mach_name($key) {
+  // Temporarily correct pending updates in features
+  switch($key) {
+    case 'event_categories':
+      return 'event_categories'; # will change to event_categories
+      break;
+    case 'news_categories':
+      return 'news_category'; # will change to news_categories
+      break;
+    case 'profile_type':
+      return 'profile_types'; # will change to profile_type
+      break;
+    case 'program_type':
+      return 'program_types'; # will change to program_type
+      break;
+    case 'university_semester':
+      return 'university_semester'; # will change to university_semester
+      break;
+    default:
+      return $key;
+      break;
+  }
+}
+
+/**
+ * Gets a d6 vocabulary vid
+ * @param  [type] $key [description]
+ * @return [type]      [description]
+ */
+function migrate_d2d_unca_get_src_vocab_id($key) {
+
+  static $vocabs_map, $src_vocabs;
+
+  if(!$vocabs_map) {
+    /** the following comments are used by intellij and phpStorm IDEs to suppress undeclared variable error messages
+     *  as they are created using the php extract() function
+     */
+    /** @var $vocabs_map ARRAY */
+    /** @var $src_vocabs ARRAY */
+    extract(migrate_d2d_unca_get_vocab_mappings()); # $vocabs_map, $src_vocabs
+  }
+  return (isset($vocabs_map[$key]['d6_vid']) ? $vocabs_map[$key]['d6_vid'] : '');
+}
+
+function migrate_d2d_unca_get_vocab_mappings() {
+
+  // Temporarily correct pending updates in features
+  $event_categories_mach_name = migrate_d2d_unca_get_vocab_mach_name('event_categories'); # will change to event_categories
+  $news_categories_mach_name = migrate_d2d_unca_get_vocab_mach_name('news_categories'); # will change to news_categories
+  $profile_type_mach_name = migrate_d2d_unca_get_vocab_mach_name('profile_type'); # will change to profile_type
+  $program_type_mach_name = migrate_d2d_unca_get_vocab_mach_name('program_type'); # will change to program_type
+  $university_semester_mach_name = migrate_d2d_unca_get_vocab_mach_name('university_semester'); # will change to university_semester
+
+
+
+  // Array of all the D7 vocabs/settings, mapped to D6 vocab names.
+  // Some D7 vocabs require special handling, which is done later.
+  $vocabs_map = array(
+    'course_catalogs' => array(
+      'd7_name' => 'Course Catalog',
+      'mach_name' => 'course_catalogs',
+      'd6_name' => 'Catalogs'
+    ),
+    'course_days' => array(
+      'd7_name' => 'Course Days',
+      'mach_name' => 'course_days',
+      'd6_name' => 'Days'
+    ),
+    'course_times' => array(
+      'd7_name' => 'Course Times',
+      'mach_name' => 'course_times',
+      'd6_name' => 'Time'
+    ),
+    'course_topic' => array(
+      'd7_name' => 'Course Topic',
+      'mach_name' => 'course_topic',
+      'd6_name' => 'Topics'
+    ),
+    // Note: event_categories is populated from the source "News Articles" OR
+    // "News and Events Categories", depending on site.
+    // Also, note that these two source vocabularies get duplicated into
+    // D7.news_categories
+    'event_categories' => array(
+      'd7_name' => 'Event Categories',
+      'mach_name' => $event_categories_mach_name,
+      'd6_name' => '',
+    ),
+    'policy_owner' => array(
+      'd7_name' => 'Policy Owner',
+      'mach_name' => 'policy_owner',
+      'd6_name' => 'Policy Owner'
+    ),
+    'policy_categories' => array(
+      'd7_name' => 'Policy Categories',
+      'mach_name' => 'policy_categories',
+      'd6_name' => 'Policy Categories'
+    ),
+    'groups_policies_apply_to' => array(
+      'd7_name' => 'Groups Policies Apply To',
+      'mach_name' => 'groups_policies_apply_to',
+      'd6_name' => 'Groups Policies Apply To'
+    ),
+    'responsible_office' => array(
+      'd7_name' => 'Responsible Office',
+      'mach_name' => 'responsible_office',
+      'd6_name' => 'Responsible Office'
+    ),
+    'humanities_level' => array(
+      'd7_name' => 'Humanities Level',
+      'mach_name' => 'humanities_level',
+      'd6_name' => 'Humanities Level'
+    ),
+    // Note: news_categories is populated from the source "News Articles" OR
+    // "News and Events Categories", depending on site.
+    // Also, note that these two source vocabularies get duplicated into
+    // D7.event_categories
+    'news_categories' => array(
+      'd7_name' => 'News Categories',
+      'mach_name' => $news_categories_mach_name,
+      'd6_name' => '',
+    ),
+    'profile_type' => array(
+      'd7_name' => 'Profile Type',
+      'mach_name' => $profile_type_mach_name,
+      'd6_name' => 'Profile Types'
+    ),
+    'program_type' => array(
+      'd7_name' => 'Program Type',
+      'mach_name' => $program_type_mach_name,
+      'd6_name' => 'Program Type'
+    ),
+    'project_type' => array(
+      'd7_name' => 'Project Type',
+      'mach_name' => 'project_type',
+      'd6_name' => 'Project Types'
+    ),
+    'region' => array(
+      'd7_name' => 'Study Abroad Region',
+      'mach_name' => 'region',
+      'd6_name' => 'Region'
+    ),
+    'university_semester' => array(
+      'd7_name' => 'University Semester',
+      'mach_name' => $university_semester_mach_name,
+      'd6_name' => 'Term'
+    ),
+    // Note: location_type is populated from the source "Map Category" OR
+    // "Map Categories", depending on site
+    'location_type' => array(
+      'd7_name' => 'Location Type',
+      'mach_name' => 'location_type',
+      'd6_name' => '',
+    ),
+    'student_orgs' => array(
+      'd7_name' => 'Student Organizations',
+      'mach_name' => 'student_orgs',
+      'd6_name' => 'Student Organizations'
+    ),
+    'slideshows' => array(
+      'd7_name' => 'Slideshows',
+      'mach_name' => 'slideshows',
+      'd6_name' => 'Slideshows'
+    ),
+
+  );
+
+  // Create map array for easy lookup
+  $map_d6_name_to_mach_name = array();
+  foreach($vocabs_map as $key => $vocab) {
+    switch ($vocab['d6_name']) {
+      case 'News and Events Categories':
+      case 'News Articles':
+      case 'Map Categories':
+      case 'Map Category':
+        // do nothing (these will be handled manually)
+        break;
+      case 'News and Event Type':
+        // do nothing (not migrated)
+        break;
+      default:
+        $map_d6_name_to_mach_name[$vocab['d6_name']] = $key;
+    }
+
+  }
+  // Add these manually
+  $map_d6_name_to_mach_name['Map Categories'] = 'location_type';
+  $map_d6_name_to_mach_name['Map Category'] = 'location_type';
+
+
+
+  // Get the src db vocab ids and add them to the main map
+  //   load source site's vocabularies
+  db_set_active('legacy');
+  $result = db_query('SELECT vid, name from {vocabulary}');
+  //   add to map
+  $src_vocabs = array();
+  foreach ($result as $record) {
+    $src_vocabs[] = $record;
+
+    // 'Normal' vocabs
+    if($mach_name = @$map_d6_name_to_mach_name[$record->name]) {
+      $vocabs_map[$mach_name]['d6_name'] = $record->name;
+      $vocabs_map[$mach_name]['d6_vid'] = $record->vid;
+
+      // Vocabs needing special handling
+    } else {
+      switch ($record->name) {
+        case 'News and Events Categories':
+        case 'News Articles':
+          $vocabs_map['event_categories']['d6_name'] = $record->name;
+          $vocabs_map['event_categories']['d6_vid'] = $record->vid;
+          $vocabs_map['news_categories']['d6_name'] = $record->name;
+          $vocabs_map['news_categories']['d6_vid'] = $record->vid;
+          break;
+      }
+    }
+  };
+  // Re-set default db
+  db_set_active();
+
+  return compact('vocabs_map', 'src_vocabs');
+}
+
+function unca_migrate_node_arguments_by_database($database, $source_content_type){
+  switch (true){
+    case ((strpos($database,'csci') === FALSE) && ($source_content_type == 'project')):
+      return array(
+        'class_name' => 'UNCAProjectMigration',
+        'description' => t('Migration of project nodes from Drupal 6'),
+        'machine_name' => 'UNCAProject',
+        'source_type' => 'project',
+        'destination_type' => 'project',
+        'group_name' => 'c_node',
+        'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+      );
+
+      break;
+    case ((strpos($database,'csci') !== FALSE) && ($source_content_type == 'project')):
+      return array(
+        'class_name' => 'UNCAStudentProjectMigration',
+        'description' => t('Migration of Project nodes from Drupal 6'),
+        'machine_name' => 'UNCAStudentProject',
+        'source_type' => 'project',
+        'destination_type' => 'student_project',
+        'group_name' => 'c_node',
+        'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+      );
+      break;
+
+    case ((strpos($database,'unca_drupal') !== FALSE) && ($source_content_type == 'news_article')):
+      return array(
+        'class_name' => 'UNCANewsArticleMigration',
+        'description' => t('Migration of News Article nodes from Drupal 6'),
+        'machine_name' => 'UNCANewsArticle',
+        'source_type' => 'news_article',
+        'destination_type' => 'news_article',
+        'group_name' => 'c_node',
+        'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+      );
+      break;
+
+    case ((strpos($database,'unca_drupal') === FALSE) && ($source_content_type == 'news_article')):
+      return array(
+        'class_name' => 'UNCADepartmentalUpdateMigration',
+        'description' => t('Migration of News Article nodes from Drupal 6'),
+        'machine_name' => 'UNCADepartmentalUpdate',
+        'source_type' => 'news_article',
+        'destination_type' => 'dept_update',
+        'group_name' => 'c_node',
+        'dependencies' => array('UNCAFile','UNCAUser','UNCARole'),
+      );
+
+      break;
+    default:
+      return array();
+      break;
+  }
+}
+
+function unca_migrations_array($arguments){
+  $array = array();
+  foreach ($arguments as $argument) {
+    $array[] =  $argument['machine_name'];
+  }
+  return $array;
+}

@@ -1,0 +1,151 @@
+// @include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
+
+.unc-ds-subsite {
+  // Since this is inside another row, we need the nesting styles
+  @include grid-row(nest);
+  // Default behavior for all regions
+  .ds-content-row-1,
+  .ds-content-row-2-column-1,
+  .ds-content-row-2-column-2,
+  .ds-sidebar-column,
+  .ds-footer-promo-a,
+  .ds-footer-promo-b,
+  .ds-footer-promo-large {
+    @include grid-column($full-width);
+  }
+  // If there's a sidebar, set the correct layout styles
+  &.has-sidebar {
+    .ds-content-wrapper {
+      @include respond-to($tablet) {
+        @include grid-column($content-width-sb1, false, false, false, false, false, true);
+      }
+    }
+    .ds-sidebar-column {
+      @include respond-to($tablet) {
+        @include grid-column($sidebar-2-width);
+      }
+    }
+  }
+  // Content area layout styles
+  .ds-content-wrapper {
+    @include respond-to($tablet) {
+      // @include grid-row(nest);
+    }
+  }
+  .ds-content-row-2-column-1,
+  .ds-content-row-2-column-2 {
+    @include respond-to($tablet) {
+      @include grid-column($full-width / 2);
+    }
+  }
+  // DS footer layout styles
+  $ds-footer-promo-a-width: $full-width / 4; // for tablets
+  $ds-footer-promo-b-width: $full-width / 4; // for tablets
+  $ds-footer-promo-large-width: $full-width / 2; // for tablets
+
+  .ds-footer-promo-a {
+    @include grid-column($full-width / 2);
+    clear: left;
+    @include respond-to($tablet) {
+      @include grid-column($ds-footer-promo-a-width);
+    clear: left;
+    }
+  }
+  .ds-footer-promo-b {
+    @include grid-column($full-width / 2);
+    @include respond-to($tablet) {
+      @include grid-column($ds-footer-promo-b-width, false, false, false, $ds-footer-promo-large-width);
+    }
+  }
+  .ds-footer-promo-large {
+    @include respond-to($tablet) {
+      @include grid-column($ds-footer-promo-large-width, false, false, false, false, $ds-footer-promo-b-width);
+    }
+  }
+
+  //
+  // The following section controls conditional layouts based on
+  // whether or not a region is getting rendered
+  //
+
+  // If there's no Row2Column1, make Row2Colum2 full width
+  &.no-ds-content-row-2-column-1 {
+    .ds-content-row-2-column-2 {
+      @include grid-column($full-width);
+    }
+  }
+  // If there's no Row2Column2, make Row2Colum1 full width
+  &.no-ds-content-row-2-column-2 {
+    .ds-content-row-2-column-1 {
+      @include grid-column($full-width);
+    }
+  }
+  // If there's no FooterPromoA...
+  &.no-ds-footer-promo-a {
+    .ds-footer-promo-b {
+      // ...FooterPromoB fills up the whole space
+      @include grid-column($full-width);
+      @include respond-to($tablet) {
+        // ...and in tablet needs more pushing, plus a clear
+        @include grid-column($ds-footer-promo-b-width, false, false, false, $ds-footer-promo-large-width + $ds-footer-promo-a-width);
+        clear: left;
+      }
+    }
+    .ds-footer-promo-large {
+      @include respond-to($tablet) {
+        // ...in tablet, FooterPromoLarge fills up the extra space
+        @include grid-column($ds-footer-promo-large-width + $ds-footer-promo-a-width);
+      }
+    }
+  }
+  // If there's no FooterPromoB...
+  &.no-ds-footer-promo-b {
+    .ds-footer-promo-a {
+      // ...FooterPromoB fills up the whole space
+      @include grid-column($full-width);
+      @include respond-to($tablet) {
+        // ...and fills up the same amount of space in tablet
+        @include grid-column($ds-footer-promo-a-width);
+      }
+    }
+    .ds-footer-promo-large {
+      @include respond-to($tablet) {
+      // ...FooterPromoLarge fills up the extra space in tablet and has no pushing
+        @include grid-column($ds-footer-promo-large-width + $ds-footer-promo-b-width);
+        right: 0;
+      }
+    }
+  }
+  // If there's no FooterPromoLarge...
+  &.no-ds-footer-promo-large {
+    // ...FooterPromoA and FooterPromoB split the space
+    .ds-footer-promo-a,
+    .ds-footer-promo-b {
+      @include grid-column($full-width / 2);
+      @include respond-to($tablet) {
+        // Makes sure nothing's getting pulled
+        left: 0;
+      }
+    }
+  }
+  // If there's only one Promo block (the other two are missing)...
+  &.no-ds-footer-promo-a.no-ds-footer-promo-b,
+  &.no-ds-footer-promo-a.no-ds-footer-promo-large,
+  &.no-ds-footer-promo-b.no-ds-footer-promo-large {
+    .ds-footer-promo-a,
+    .ds-footer-promo-b,
+    .ds-footer-promo-large {
+      // ...then the remaining region fills up the entire space in tablet
+      @include grid-column($full-width);
+      // ...same for  tablet
+      @include respond-to($tablet) {
+        @include grid-column($full-width);
+        // Clear for the sidebar
+        clear: both;
+        // ...with no pushing or pulling
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+}

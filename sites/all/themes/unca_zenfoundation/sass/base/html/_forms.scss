@@ -1,0 +1,86 @@
+form {
+  .form-item {
+    position:relative;
+    @include respond-to($tablet) {
+      select {
+        // width: auto;
+      }
+    }
+    label {
+      // @extend input[type="text"];
+      // @include box-shadow(0);
+      // background-color: transparent;
+      // border: 0 none;
+      // left:0;
+      // margin-bottom: 0;
+      // position:absolute;
+      // top:0;
+      // width: auto;
+      &.element-invisible {
+        margin: 0;
+      }
+    }
+  }
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  @extend .button;
+  font-size: .75em;
+}
+
+// Drupal forms
+.form-item {
+  margin-bottom: 1em;
+  .form-item {
+    margin-bottom: 0;
+  }
+  label {
+    margin-bottom: .5em;
+  }
+}
+.form-type-radio {
+  input,
+  label {
+    display: inline;
+  }
+}
+
+// Webform forms
+.webform-container-inline {
+  .form-item {
+    display: inline;
+  }
+  select {
+    margin-right: .5em;
+    width: auto;
+  }
+  .webform-calendar {
+    // @include icon-font(calendar); // doesn't actual work on inputs :(
+    @include placeholder(1em, 1em);
+    margin-bottom: 0;
+  }
+}
+
+// Views forms
+.views-exposed-form {
+  // @include grid-row(nest); // Use this if you want to collapse its padding
+  @include grid-row;
+  background-color: lighten($gray-lighter, 5%);
+  padding-top: .75em;
+}
+.views-exposed-widget {
+  @include grid-column($full-width);
+  @include respond-to($tablet) {
+    @include grid-column(4);
+  }
+}
+.views-submit-button {
+  clear: left;
+}
+.views-submit-button,
+.views-reset-button {
+  width: auto;
+}

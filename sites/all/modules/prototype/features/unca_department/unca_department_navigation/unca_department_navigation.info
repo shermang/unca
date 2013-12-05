@@ -1,0 +1,11 @@
+name = UNCA Department Navigation
+description = Secondary (ie., "sidebar") navigation for UNCA Department sites
+core = 7.x
+package = UNCA Department
+version = 7.x-1.0
+project = unca_department_navigation
+dependencies[] = features
+dependencies[] = menu
+features[features_api][] = api:2
+features[menu_custom][] = menu-secondary-navigation---prot
+project path = sites/all/modules/prototype/features/unca_department

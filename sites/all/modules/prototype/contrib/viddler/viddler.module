@@ -1,0 +1,43 @@
+<?php
+module_load_include('inc', 'viddler', 'viddler.field');
+
+define('VIDDLER_DEFAULT_VIDEO_WIDTH', 430);
+define('VIDDLER_DEFAULT_VIDEO_HEIGHT', 365);
+define('VIDDLER_DEFAULT_PREVIEW_WIDTH', 270);
+define('VIDDLER_DEFAULT_PREVIEW_HEIGHT', 232);
+define('VIDDLER_DEFAULT_THUMBNAIL_WIDTH', 114);
+define('VIDDLER_DEFAULT_THUMBNAIL_HEIGHT', 86);
+
+
+function viddler_menu() {
+  $items['admin/config/media/viddler'] = array(
+    'title' => 'Viddler',
+    'description' => 'Configure Viddler.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('viddler_admin_settings_form'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
+  return $items;
+}
+
+function viddler_admin_settings_form() {
+  $form = array();
+  $form['general'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('General Settings'),
+    '#description' => t('These features will effect all viddler content types.'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['general']['viddler_apikey'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Viddler Api Key'),
+    '#default_value' => variable_get('viddler_apikey', ''),
+    '#required' => FALSE,
+    '#description' => t('The viddler api key is the only way we can post recorded or uploaded videos to Viddler.'),
+  );
+  
+  return system_settings_form($form);
+}
