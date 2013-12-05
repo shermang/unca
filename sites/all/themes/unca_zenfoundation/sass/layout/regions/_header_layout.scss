@@ -49,3 +49,15 @@
     }
   }  
 }
+
+.row .top-bar.expanded {
+  .toggle-topbar.menu-icon {
+    a {
+      color:#FFF;
+      & span {
+        box-shadow:0 10px 0 1px #FFF, 0 16px 0 1px #FFF, 0 22px 0 1px #FFF;
+        -webkit-box-shadow: 0 10px 0 1px #FFF, 0 16px 0 1px #FFF, 0 22px 0 1px #FFF;
+      }
+    }
+  }
+}
