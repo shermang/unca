@@ -6938,11 +6938,17 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 .sidebar .block-menu-menu-secondary-navigation---prot li li a, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li a, .sidebar .navigation-secondary li li a, .ds-sidebar-column .navigation-secondary li li a {
   padding-left: 1.66667em;
 }
+.sidebar .block-menu-menu-secondary-navigation---prot li li a.active-trail, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li a.active-trail, .sidebar .navigation-secondary li li a.active-trail, .ds-sidebar-column .navigation-secondary li li a.active-trail {
+  padding-left: 0.83333em;
+}
 .sidebar .block-menu-menu-secondary-navigation---prot li li li, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li li, .sidebar .navigation-secondary li li li, .ds-sidebar-column .navigation-secondary li li li {
   border-left: none;
 }
 .sidebar .block-menu-menu-secondary-navigation---prot li li li a, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li li a, .sidebar .navigation-secondary li li li a, .ds-sidebar-column .navigation-secondary li li li a {
-  padding-left: 3.33333em;
+  padding-left: 2.5em;
+}
+.sidebar .block-menu-menu-secondary-navigation---prot li li li.active-trail, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot li li li.active-trail, .sidebar .navigation-secondary li li li.active-trail, .ds-sidebar-column .navigation-secondary li li li.active-trail {
+  padding-left: 1.66667em;
 }
 .sidebar .block-menu-menu-secondary-navigation---prot a, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot a, .sidebar .navigation-secondary a, .ds-sidebar-column .navigation-secondary a {
   display: block;
@@ -12405,8 +12411,6 @@ Added back in by Luke Withrow on 2013-05-15
   display: list-item;
   list-style-position: inside;
   list-style-type: square;
-  padding-left: 2.33333em;
-  padding-right: 1.83333em;
 }
 
 .navigation-secondary .js-trigger {
