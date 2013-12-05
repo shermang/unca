@@ -527,3 +527,26 @@ function unca_zenfoundation_topbar_menu(&$menu_links, $attributes = array()) {
   // Wrap the whole thing in a ul
   return '<ul ' . drupal_attributes($attributes) . '>' . $output . '</ul>';
 }
+
+function last_edit_info($node) {
+
+  $result =  db_query("SELECT u.name, u.mail,
+                        u.uid AS the_uid
+                        FROM {node_revision} nr, {users} u
+                            WHERE    nr.uid = u.uid
+                            AND    nr.nid = :nid
+                            ORDER BY timestamp DESC
+                            LIMIT 1",
+    array(':nid' => $node->nid));
+
+  if($result) {
+    $row = $result->fetchAssoc();
+    $author = " by ";
+    $author .= l($row['name'], 'mailto:' . $row['mail'],
+      array('title' => t('Email author')));
+  } else {
+    $author = '';
+  }
+
+  return "Last edited" . $author ." on " .format_date($node->changed);
+}
