@@ -11525,7 +11525,7 @@ h2.section-heading {
 
 #homepage-campus-updates h3, #homepage-campus-updates .node-type-cluster .field-label, .node-type-cluster #homepage-campus-updates .field-label, .front > .block-views-campus_updates-block_1 h3, .front > .block-views-campus_updates-block_1 .node-type-cluster .field-label, .node-type-cluster .front > .block-views-campus_updates-block_1 .field-label {
   font-size: 15px;
-  font-weight: normal;
+  font-weight: bold;
   margin-left: 0px;
 }
 
