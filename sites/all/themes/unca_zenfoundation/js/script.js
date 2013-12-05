@@ -58,6 +58,7 @@
   }
   $(document).ready(function() {
     initExpandingNav('.sidebar .block-menu-menu-secondary-navigation---prot');
+    initializeSearchBox();
   });
   // initExpandingNav('.secondary-nav-mini');
 
