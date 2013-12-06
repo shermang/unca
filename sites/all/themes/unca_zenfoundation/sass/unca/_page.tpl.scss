@@ -1114,8 +1114,10 @@ margin:10px;
 }
 
 .js-slideshow{
-	height:350px;
-	text-align:center
+	background:#DFDFDF;
+  height:195px;
+	text-align:center;
+  overflow:hidden;
 }
 
 .float-right{
@@ -1170,5 +1172,16 @@ float:right;
     ul {
       list-style: disc outside none;
     }
+  }
+}
+
+// --------------------------------------------- Cesap -------------------------------------------------------------
+.node {
+  input[type="text"] {
+    display:inline-block;
+    height:30px
+  }
+  input[type="submit"] {
+    bottom: 2px;
   }
 }

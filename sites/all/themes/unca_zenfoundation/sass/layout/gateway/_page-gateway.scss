@@ -10,8 +10,10 @@
   .gateway-row-3-column-2,
   .gateway-link-section {
     @include grid-column($full-width);
+    @include respond-to($tablet) {
+      @include grid-column($full-width / 3);
+    }
   }
-
   // Special styles for the innards of the gateway-content region
   .first-column,
   .last-column {
