@@ -9848,6 +9848,23 @@ nav.navigation .block-menu-menu-secondary-navigation---prot .lt-ie9 {
 .gateway-content:after {
   clear: both;
 }
+.unca-gateway #page-title,
+.unca-gateway .messages,
+.unca-gateway .tabs-primary,
+.gateway-content #page-title,
+.gateway-content .messages,
+.gateway-content .tabs-primary {
+  position: relative;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  width: 100%;
+  float: left;
+}
+.unca-gateway #page-title,
+.gateway-content #page-title {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
 .unca-gateway .gateway-row-1,
 .unca-gateway .gateway-row-2-column-1,
 .unca-gateway .gateway-row-2-column-2,
@@ -10986,6 +11003,27 @@ a.footer-spiff-map {
   background: url(../images/footer-spiff-background-short.png) repeat-x #32611c;
 }
 
+.unca-gateway h2 {
+  margin-bottom: 0.2em;
+  margin-top: 1em;
+}
+.unca-gateway #this-week-highlights h2 {
+  margin-top: 1em;
+}
+@media only screen and (min-width: 48em) {
+  .unca-gateway #this-week-highlights h2 {
+    margin-top: 0;
+  }
+}
+@media print {
+  .unca-gateway #this-week-highlights h2 {
+    margin-top: 0;
+  }
+}
+.unca-gateway #this-week-highlights h2 .lt-ie9 {
+  margin-top: 0;
+}
+
 #this-week-highlights {
   position: relative;
   padding-left: 1.25em;
@@ -10995,19 +11033,42 @@ a.footer-spiff-map {
 }
 @media only screen and (min-width: 48em) {
   #this-week-highlights {
-    width: 63.3%;
+    position: relative;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    width: 66.66667%;
     float: left;
   }
 }
 @media print {
   #this-week-highlights {
-    width: 63.3%;
+    position: relative;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    width: 66.66667%;
     float: left;
   }
 }
 #this-week-highlights .lt-ie9 {
-  width: 63.3%;
+  position: relative;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  width: 66.66667%;
   float: left;
+}
+#this-week-highlights .highlight-box {
+  /* Recent News and other views within gateway page highlight boxes */
+}
+#this-week-highlights .highlight-box .views-row {
+  padding-bottom: 0;
+}
+#this-week-highlights .weather-block {
+  font-size: 0.83333em;
+  width: 60%;
+}
+#this-week-highlights .weather-block .left {
+  width: 25%;
+  margin: 0 1em 0 0;
 }
 
 .gateway-row-2-column-1 .block {
@@ -11016,28 +11077,6 @@ a.footer-spiff-map {
 
 .gateway-row-2-column-2 .block {
   clear: both;
-}
-
-#block-views-news-block-3 .views-row {
-  padding-bottom: 0 !important;
-}
-
-#block-weather-system-1 {
-  float: right;
-  width: 60%;
-}
-
-.weather {
-  margin-left: 3em;
-  font-size: 0.83333em;
-}
-.weather .left {
-  width: 25%;
-  margin: 0 1em 0 0;
-}
-
-#block-views-master-events-block-2 {
-  position: absolute;
 }
 
 /* footer spiffs 
@@ -12980,6 +13019,9 @@ table.ncchw ul li {
 .front .print-html-link {
   right: -2.35em;
 }
+.unca-gateway .print-html-link {
+  right: 0.25em;
+}
 
 .print-page {
   height: 1.25em;
@@ -13275,6 +13317,11 @@ Notes:  Adds support for slideshows
   outline: 0;
   border-bottom: 1px solid #fff;
   margin: 10px 0;
+}
+
+.region-gateway-row-1 {
+  background: #DFDFDF;
+  padding: 0.75em 0.25em 1em;
 }
 
 .js-slideshow {

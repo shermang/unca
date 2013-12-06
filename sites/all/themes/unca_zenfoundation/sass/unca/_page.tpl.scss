@@ -821,6 +821,9 @@ table.ncchw ul li {
   .front & {
     right: -2.35em;
   }
+  .unca-gateway & {
+    right: 0.25em;
+  }
 }
 
 .print-page {
@@ -1111,6 +1114,11 @@ margin:10px;
 	outline:0;
 	border-bottom: 1px solid #fff; 
 	margin: 10px 0;
+}
+
+.region-gateway-row-1 {
+	background:#DFDFDF;
+  padding: 0.75em 0.25em 1em;
 }
 
 .js-slideshow{
