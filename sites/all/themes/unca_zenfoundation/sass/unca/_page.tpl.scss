@@ -811,6 +811,18 @@ table.ncchw ul li {
   display: block;
 }
 
+.node-page {
+  position: relative;
+}
+
+.print-html-link {
+  position: absolute;
+  right: -1em;
+  .front & {
+    right: -2.35em;
+  }
+}
+
 .print-page {
   height: 1.25em;
   overflow: hidden;
