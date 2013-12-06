@@ -6574,6 +6574,10 @@ a, a:link, a:visited {
   padding-bottom: 2em;
 }
 
+.header-wrapper {
+  margin-bottom: 0.41667em;
+}
+
 nav.navigation {
   background-color: black;
   color: white;
@@ -7130,7 +7134,6 @@ nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu ul, nav.navi
 .block-views-master_events-block_4 .views-row {
   border-top: #e6e6e6 1px solid;
   list-style: none;
-  margin: 0;
 }
 .block-views-master_events-block_1 .views-row.views-row-first,
 .block-views-master_events-block_2 .views-row.views-row-first,
@@ -11511,9 +11514,11 @@ h2.section-heading {
 #homepage-events li,
 #homepage-news li,
 .homepage-events li,
-.homepage-news li {
+.homepage-news li,
+.block-views-master_events-block_1 .item-list ul li {
   border-bottom: solid #ddd 1px;
-  padding: 5px 10px 10px 10px;
+  margin: 0 0 0.25em 0.83333em;
+  padding: 5px 10px 10px 0px;
   clear: both;
   display: inline-block;
   width: 100%;
@@ -11521,7 +11526,8 @@ h2.section-heading {
 #homepage-events li .views-field-title,
 #homepage-news li .views-field-title,
 .homepage-events li .views-field-title,
-.homepage-news li .views-field-title {
+.homepage-news li .views-field-title,
+.block-views-master_events-block_1 .item-list ul li .views-field-title {
   margin: 0;
 }
 
@@ -11750,6 +11756,13 @@ Added back in by Luke Withrow on 2013-05-15
 
 #slideshow #slidesContainer .slide {
   height: 343px;
+}
+
+.front .view-id-unca_slideshow {
+  margin: -10px -1.25em 0 -1.25em;
+}
+.front .view-id-unca_slideshow .flexslider {
+  margin: 0;
 }
 
 #sccr {
@@ -12292,7 +12305,8 @@ Added back in by Luke Withrow on 2013-05-15
 }
 #search .form-item-search-block-form input.form-text {
   height: 22px;
-  padding: 0;
+  font-size: 1em;
+  padding: 0 0.25em;
   width: 24em;
 }
 @media only screen and (min-width: 960px) {
@@ -12839,6 +12853,12 @@ table.ncchw ul li {
   */
   margin: -53px 329px;
   display: block;
+}
+
+.print-page {
+  height: 1.25em;
+  overflow: hidden;
+  width: 1em;
 }
 
 .gmap-map {

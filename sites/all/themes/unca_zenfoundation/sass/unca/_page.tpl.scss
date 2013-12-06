@@ -247,7 +247,8 @@ padding:10px 15px;
    .form-item-search-block-form {
      input.form-text {
        height: 22px;
-       padding: 0;
+       font-size: 1em;
+       padding: 0 0.25em;
        width: 24em;
        @include respond-to($topbar-breakpoint) {
          width: 190px;
@@ -810,6 +811,11 @@ table.ncchw ul li {
   display: block;
 }
 
+.print-page {
+  height: 1.25em;
+  overflow: hidden;
+  width: 1em;
+}
 
 // ------------------------------------- Google maps ------------------------------------- 
 

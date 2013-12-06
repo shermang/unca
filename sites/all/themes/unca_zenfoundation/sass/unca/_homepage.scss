@@ -65,9 +65,11 @@ font-size:11px;
 #homepage-events li,
 #homepage-news li,
 .homepage-events li,
-.homepage-news li {
+.homepage-news li,
+.block-views-master_events-block_1 .item-list ul li {
   border-bottom:solid #ddd 1px;
-  padding: 5px 10px 10px 10px;
+  margin: 0 0 0.25em emCalc(10px);
+  padding: 5px 10px 10px 0px;
   clear: both;
   display: inline-block;
   width: 100%;
@@ -276,6 +278,15 @@ Added back in by Luke Withrow on 2013-05-15
 }
 #slideshow #slidesContainer .slide {
     height: 343px;
+}
+
+.front {
+  .view-id-unca_slideshow {
+    margin: -10px -1.25em 0 -1.25em;
+    .flexslider {
+      margin: 0;
+    }
+  }
 }
 
 #sccr{
