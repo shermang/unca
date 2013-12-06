@@ -13334,11 +13334,11 @@ Notes:  Adds support for slideshows
   list-style: disc outside none;
 }
 
-.node-59 input[type="text"] {
+.node input[type="text"] {
   display: inline-block;
   height: 30px;
 }
-.node-59 input[type="submit"] {
+.node input[type="submit"] {
   bottom: 2px;
 }
 
