@@ -1,0 +1,57 @@
+//Flickr Widget
+#block-block-78 {
+  //height: 250px;
+}
+
+#this-week-highlights {
+  @include grid-column($full-width);
+  @include respond-to($tablet) {
+    width: 63.3%; //Overwriting full width above but using other styles.
+    float: left;
+  }
+  .highlight-box {
+    h2 {
+      @extend h3;
+    }
+  }
+}
+
+.gateway-row-2-column-1 {
+  .block { 
+    clear: both; 
+  }
+} 
+
+.gateway-row-2-column-2 {
+  .block { 
+    clear: both; 
+  }
+}
+
+//Recent News
+#block-views-news-block-3 {
+  .views-row {
+    padding-bottom:0 !important;
+  }
+}
+
+//Weather
+#block-weather-system-1 {
+  float:right;
+  width:60%;
+}
+
+.weather {
+  margin-left:3em;
+  font-size:emCalc(10px);
+  .left {
+    width:25%;
+    margin:0 1em 0 0;
+  }
+}
+
+
+//Events
+#block-views-master-events-block-2 {
+  position:absolute;
+}
