@@ -1,0 +1,40 @@
+
+NOTES: 
+
+ + As of now (9-25-13), this module is essentially just a stub.  There's some 
+   cruft from initial trial-and-error development, he role/user migrations, 
+   although in place, do not work correctly at this point.
+
+   However, the basic structure of the module should not need to change.
+
+ + The migrate, migrate_d2d and migrate_d2d_unca modules are not automatically enabled by buildscript/dev.sh
+
+ + The drupal_d2d module expects a second database cxn config in settings.php, 
+    with the key 'legacy', like this:
+
+    $databases = array (
+      'default' => array (
+        'default' => array (
+          'database' => 'unc-dev-2',
+          'username' => 'unc-user',
+          'password' => 'blahblah',
+          'host' => 'localhost',
+          'port' => '',
+          'driver' => 'mysql',
+          'prefix' => '',
+        ),
+      ),
+      'legacy' => array (
+        'default' => array (
+          'database' => 'd6_unca_drupal',
+          'username' => 'unc-d6-user',
+          'password' => 'blahblah',
+          'host' => 'localhost',
+          'port' => '',
+          'driver' => 'mysql',
+          'prefix' => '',
+        ),
+      ),
+    );
+
+

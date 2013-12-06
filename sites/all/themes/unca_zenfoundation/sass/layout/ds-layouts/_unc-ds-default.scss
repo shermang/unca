@@ -1,0 +1,22 @@
+.unc-ds-default {
+  // Since this is inside another row, we need the nesting styles
+  @include grid-row(nest);
+  // Default behavior for both regions
+  .ds-content-column,
+  .ds-sidebar-column {
+    @include grid-column($full-width);
+  }
+  // If there's a sidebar, set the right layout styles
+  &.has-sidebar {
+    .ds-content-column {
+      @include respond-to($tablet) {
+        @include grid-column($content-width-sb1);
+      }
+    }
+    .ds-sidebar-column {
+      @include respond-to($tablet) {
+        @include grid-column($sidebar-2-width);
+      }
+    }
+  }
+}

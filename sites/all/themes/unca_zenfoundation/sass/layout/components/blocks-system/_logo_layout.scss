@@ -1,0 +1,9 @@
+.logo-link {
+  @include grid-column($full-width);
+  text-align: center;
+  @include respond-to($tablet) {
+    float: left;
+    text-align: left;
+    width: auto;
+  }
+}
