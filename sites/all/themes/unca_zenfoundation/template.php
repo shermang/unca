@@ -152,6 +152,17 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
     $variables['classes_array'][$index] = implode(' ', $class_arr);
   }
 
+  $gateway_regions = array('gateway_row_1', 'gateway_row_2_column_1', 'gateway_row_2_column_2');
+  foreach ($gateway_regions as $region) {
+    if (array_key_exists($region, $variables['page'])) {
+      $variables['classes_array'] = array_diff($variables['classes_array'], array('one-sidebar', 'two-sidebars'));
+      if (!in_array('no-sidebars', $variables['classes_array'])) {
+        $variables['classes_array'][] = 'no-sidebars';
+      }
+      break;
+    }
+  }
+
 }
 
 /**
