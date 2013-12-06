@@ -274,11 +274,16 @@ function unca_zenfoundation_preprocess_node(&$variables, $hook) {
   // Changing the "submitted by" text for Department Updates
   // to have a "Month day, year" format
   if (isset($variables['node']) && $variables['node']->type == 'dept_update') {
-    // dpm("hello");
     $variables['submitted'] = t('@date', array('@date' => date("M j, Y", $variables['created'])));
   }
   if (isset($variables['content']['print_links'])) {
     unset($variables['content']['print_links']);
+  }
+  if (isset($variables['content']['links']['print_html'])) {
+    $variables['content']['print_links'] = $variables['content']['links']['print_html'];
+    $variables['content']['print_links']['#attributes']['class'][] = 'print-html-link';
+    $variables['content']['print_links']['#weight'] = -1;
+    unset($variables['content']['links']['print_html']);
   }
 
   // Optionally, run node-type-specific preprocess functions, like

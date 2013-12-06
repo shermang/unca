@@ -173,6 +173,7 @@
   h3 {
     @extend .subheader;
     font-size: $h5-font-size;
+    font-weight:bold;
     &.field-content {
       margin-bottom: 0;
     }
