@@ -152,6 +152,17 @@ function unca_zenfoundation_preprocess_html(&$variables, $hook) {
     $variables['classes_array'][$index] = implode(' ', $class_arr);
   }
 
+  $gateway_regions = array('gateway_row_1', 'gateway_row_2_column_1', 'gateway_row_2_column_2');
+  foreach ($gateway_regions as $region) {
+    if (array_key_exists($region, $variables['page'])) {
+      $variables['classes_array'] = array_diff($variables['classes_array'], array('one-sidebar', 'two-sidebars'));
+      if (!in_array('no-sidebars', $variables['classes_array'])) {
+        $variables['classes_array'][] = 'no-sidebars';
+      }
+      break;
+    }
+  }
+
 }
 
 /**
@@ -274,11 +285,16 @@ function unca_zenfoundation_preprocess_node(&$variables, $hook) {
   // Changing the "submitted by" text for Department Updates
   // to have a "Month day, year" format
   if (isset($variables['node']) && $variables['node']->type == 'dept_update') {
-    // dpm("hello");
     $variables['submitted'] = t('@date', array('@date' => date("M j, Y", $variables['created'])));
   }
   if (isset($variables['content']['print_links'])) {
     unset($variables['content']['print_links']);
+  }
+  if (isset($variables['content']['links']['print_html'])) {
+    $variables['content']['print_links'] = $variables['content']['links']['print_html'];
+    $variables['content']['print_links']['#attributes']['class'][] = 'print-html-link';
+    $variables['content']['print_links']['#weight'] = -1;
+    unset($variables['content']['links']['print_html']);
   }
 
   // Optionally, run node-type-specific preprocess functions, like

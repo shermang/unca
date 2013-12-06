@@ -1,0 +1,53 @@
+
+.unca-gateway {
+  h2 {
+    margin-bottom: 0.2em;
+    margin-top: 1em;
+  }
+  #this-week-highlights {
+    h2 {
+      margin-top: 1em;
+      @include respond-to($tablet) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+#this-week-highlights {
+  @include grid-column($full-width);
+  @include respond-to($tablet) {
+    @include grid-column($full-width * 2 / 3);
+  }
+  .highlight-box {
+    h2 {
+      @extend h3;
+    }
+    /* Recent News and other views within gateway page highlight boxes */
+    .views-row {
+      padding-bottom: 0;
+    }
+  }
+  .weather-block {
+    //margin-left:3em;
+    font-size:emCalc(10px);
+    width:60%;
+    .left {
+      width:25%;
+      margin:0 1em 0 0;
+    }
+  }
+}
+
+.gateway-row-2-column-1 {
+  .block { 
+    clear: both; 
+  }
+} 
+
+.gateway-row-2-column-2 {
+  .block { 
+    clear: both; 
+  }
+}
+

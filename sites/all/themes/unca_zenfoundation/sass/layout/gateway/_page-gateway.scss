@@ -2,6 +2,18 @@
 .gateway-content {
   @include grid-row;
 
+  
+  #page-title,
+  .messages,
+  .tabs-primary {
+    @include grid-column($full-width);
+  }
+
+  #page-title {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
   // Default behavior for all regions
   .gateway-row-1,
   .gateway-row-2-column-1,
@@ -10,8 +22,10 @@
   .gateway-row-3-column-2,
   .gateway-link-section {
     @include grid-column($full-width);
+    @include respond-to($tablet) {
+      @include grid-column($full-width / 3);
+    }
   }
-
   // Special styles for the innards of the gateway-content region
   .first-column,
   .last-column {
