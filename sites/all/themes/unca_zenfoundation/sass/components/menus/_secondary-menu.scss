@@ -65,18 +65,25 @@
         border-left: none;
         a {
           padding-left: emCalc(20px);
+          &.active-trail {
+            padding-left: emCalc(10px);
+          }
         }
         // Third level
         li {
           border-left: none;
           a {
-            padding-left: emCalc(40px);
+            padding-left: emCalc(30px);
+          }
+          &.active-trail {
+            padding-left: emCalc(20px);
           }
         }
       }
     }
     a {
       display: block;
+      width:94%;
       padding: emCalc(5px) emCalc(10px);
       text-decoration: none;
       &:hover {

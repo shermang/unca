@@ -6,6 +6,24 @@
 }
 
 .row .top-bar {
+  @include menubg;
+  padding: 0 -0.9375em;
+  border: 1px solid #FFFFFF;
+  padding-bottom: 5px;
+  margin-bottom: 0;
+  //background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  clear: both;
+  float: left;
+  height: 32px;
+  line-height: 40px;
+  position: relative;
+  width: 100%;
+  &.expanded {
+    background-color: $topbar-dropdown-bg;
+    background-image: none;
+    height: auto;
+  }
+  @include respond-to($topbar-breakpoint) {
   background: #c6c6c6; /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iIzg1YzZkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2M0YzRjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhNGE0YTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -16,28 +34,30 @@
   background: -ms-linear-gradient(top,  #c6c6c6 0%, #8b8b8b 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #c6c6c6 0%, #8b8b8b 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#8b8b8b',GradientType=0 ); /* IE6-8 */
-  padding: 0 -0.9375em;
-  border: 1px solid #FFFFFF;
-  padding-bottom: 5px;
-  margin-bottom: 0;
-  //background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-  clear: both;
-  float: left;
-  height: 40px;
-  line-height: 40px;
-  position: relative;
-  width: 100%;
-  &.expanded {
-    background-color: $topbar-dropdown-bg;
-    background-image: none;
-    height: auto;
-  }
-  @include respond-to($topbar-breakpoint) {
     height: auto;
     line-height: inherit;
     padding-bottom: 0;
   }
-    .toggle-topbar.menu-icon {
-      margin-top: -19px;
-    }  
+  .toggle-topbar.menu-icon {
+    margin-top: -24px;
+    a {
+      color:#000;
+      & span {
+        box-shadow:0 10px 0 1px #000, 0 16px 0 1px #000, 0 22px 0 1px #000;
+        -webkit-box-shadow: 0 10px 0 1px #000, 0 16px 0 1px #000, 0 22px 0 1px #000;
+      }
+    }
+  }  
+}
+
+.row .top-bar.expanded {
+  .toggle-topbar.menu-icon {
+    a {
+      color:#FFF;
+      & span {
+        box-shadow:0 10px 0 1px #FFF, 0 16px 0 1px #FFF, 0 22px 0 1px #FFF;
+        -webkit-box-shadow: 0 10px 0 1px #FFF, 0 16px 0 1px #FFF, 0 22px 0 1px #FFF;
+      }
+    }
+  }
 }

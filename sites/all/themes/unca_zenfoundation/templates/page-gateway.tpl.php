@@ -33,16 +33,24 @@
       </div>
 
       <!-- Gateway Row 2 column 1-->
-      <?php if ($page['gateway_row_2_column_1']): ?>
-      <div class="gateway-row-2-column-1">
-        <?php print render($page['gateway_row_2_column_1']); ?>
-      </div>
-      <?php endif; ?>
+      <?php if (($page['gateway_row_2_column_1']) || ($page['gateway_row_2_column_2'])): ?>
+      <div id="this-week-highlights">
+        <h2>This Week</h2>
+        <div class="divider"><span></span></div>
+        <div class="highlight-box clearfix">
+          <?php if ($page['gateway_row_2_column_1']): ?>
+          <div class="gateway-row-2-column-1">
+            <?php print render($page['gateway_row_2_column_1']); ?>
+          </div>
+          <?php endif; ?>
 
-      <!-- Gateway Row 2 column 2-->
-      <?php if ($page['gateway_row_2_column_2']): ?>
-      <div class="gateway-row-2-column-2">
-        <?php print render($page['gateway_row_2_column_2']); ?>
+          <!-- Gateway Row 2 column 2-->
+          <?php if ($page['gateway_row_2_column_2']): ?>
+          <div class="gateway-row-2-column-2">
+            <?php print render($page['gateway_row_2_column_2']); ?>
+          </div>
+          <?php endif; ?>
+        </div>
       </div>
       <?php endif; ?>
 
