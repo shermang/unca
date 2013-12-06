@@ -27,7 +27,7 @@
 
       <!-- Primary Content Column -->
       <?php print render($page['content']); ?>
-      <?php if(!$is_front && !$is_unca_main && ($node->type == 'page')){
+      <?php if(!$is_front && !$is_unca_main && (isset($node->type) && $node->type == 'page')){
         print "<p align=right>" . last_edit_info($node) . "</p>";
       } ?>
       <!-- Content Row 1-->
