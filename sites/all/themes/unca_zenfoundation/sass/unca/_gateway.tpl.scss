@@ -1,17 +1,40 @@
-//Flickr Widget
-#block-block-78 {
-  //height: 250px;
+
+.unca-gateway {
+  h2 {
+    margin-bottom: 0.2em;
+    margin-top: 1em;
+  }
+  #this-week-highlights {
+    h2 {
+      margin-top: 1em;
+      @include respond-to($tablet) {
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 #this-week-highlights {
   @include grid-column($full-width);
   @include respond-to($tablet) {
-    width: 63.3%; //Overwriting full width above but using other styles.
-    float: left;
+    @include grid-column($full-width * 2 / 3);
   }
   .highlight-box {
     h2 {
       @extend h3;
+    }
+    /* Recent News and other views within gateway page highlight boxes */
+    .views-row {
+      padding-bottom: 0;
+    }
+  }
+  .weather-block {
+    //margin-left:3em;
+    font-size:emCalc(10px);
+    width:60%;
+    .left {
+      width:25%;
+      margin:0 1em 0 0;
     }
   }
 }
@@ -28,30 +51,3 @@
   }
 }
 
-//Recent News
-#block-views-news-block-3 {
-  .views-row {
-    padding-bottom:0 !important;
-  }
-}
-
-//Weather
-#block-weather-system-1 {
-  float:right;
-  width:60%;
-}
-
-.weather {
-  margin-left:3em;
-  font-size:emCalc(10px);
-  .left {
-    width:25%;
-    margin:0 1em 0 0;
-  }
-}
-
-
-//Events
-#block-views-master-events-block-2 {
-  position:absolute;
-}
