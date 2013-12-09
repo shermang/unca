@@ -246,12 +246,12 @@ padding:10px 15px;
 
    .form-item-search-block-form {
      input.form-text {
-       height: 22px;
+       height: 24px;
        font-size: 1em;
        padding: 0 0.25em;
        width: 24em;
        @include respond-to($topbar-breakpoint) {
-         width: 190px;
+         width: 215px;
        }
      }
    }
@@ -259,7 +259,7 @@ padding:10px 15px;
       //width: 25%;
       //float: left;
         .form-submit { 
-          height: 22px;
+          height: 24px;
           top: 0;
           background-color: #7f7f7f;
           border:none;
