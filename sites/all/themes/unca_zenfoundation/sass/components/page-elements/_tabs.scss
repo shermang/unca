@@ -1,0 +1,10 @@
+.tabs {
+  @extend .button-group;
+  @extend .radius;
+  li {
+    @extend .button;
+    @extend .secondary;
+    @extend .small;
+    font-weight: normal;
+  }
+}

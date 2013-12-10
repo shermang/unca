@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the UNCA Course feature.
+ */
+
+include_once 'unca_course.features.inc';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Student Project feature.
+ */
+
+include_once 'unca_student_project.features.inc';

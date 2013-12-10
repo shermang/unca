@@ -1,0 +1,26 @@
+// @include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
+
+.sidebar {
+  @include grid-column($full-width);
+  #main > &  {
+    padding-right: 0;
+  } 
+  @include respond-to($tablet) {
+    @include grid-column($sidebar-1-width);
+  }
+  .sidebar {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+}
+.region-sidebar-first {
+  // When there's only one sidebar and it's the first one
+  .sidebar-first & {
+    @include grid-column($sidebar-1-width, false, false, false, false, $content-width-sb1);
+  }
+  // When there are two sidebars
+  .two-sidebars & {
+    @include grid-column($sidebar-1-width, false, false, false, false, $content-width-sb1-sb2);
+  }
+}

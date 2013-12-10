@@ -1,0 +1,30 @@
+<?php
+/**
+ * Implements hook_field_schema().
+ */
+function viddler_field_schema($field) {
+  $columns = array(
+    'value' => array(
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => FALSE,
+    ),
+    'embed_code' => array(
+      'type' => 'text',
+      'length' => 255,
+      'not null' => FALSE,
+    ),
+    'thumbnail_url' => array(
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => FALSE,
+    ),
+    'thumbnail_fid' => array(
+      'type' => 'int',
+      'length' => 11,
+      'not null' => FALSE,
+    ),
+  );
+  
+  return array('columns' => $columns);
+}

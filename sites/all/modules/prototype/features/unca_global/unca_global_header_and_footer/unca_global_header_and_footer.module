@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the UNCA Global Header and Footer feature.
+ */
+
+include_once 'unca_global_header_and_footer.features.inc';

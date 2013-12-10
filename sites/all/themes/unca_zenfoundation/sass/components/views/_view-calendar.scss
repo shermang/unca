@@ -1,0 +1,19 @@
+.block-calendar {
+  display: none;
+  @include respond-to($tablet) {
+    display: block;
+  }
+  .fc-header {
+    text-align: center;
+  }
+  .previous-arrow {
+    a {
+      @include icon-font(arrow-left);
+    }
+  }
+  .next-arrow {
+    a {
+      @include icon-font(arrow-right, after);
+    }
+  }
+}

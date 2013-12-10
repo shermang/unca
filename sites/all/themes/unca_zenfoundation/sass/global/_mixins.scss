@@ -1,0 +1,175 @@
+//
+// Media queries
+//
+
+//
+// Respond-to
+//
+// Using the first argument, you can target:
+// - $ie7, $ie8, $ie9, $ie10 (pre-defined variables)
+// - $print
+// - Any media query defined in _variables.scss
+// - Any number in ems, for arbitrary breakpoints
+// - Any arbitrary media query, contained in ""
+//
+// Second argument automatically sets your styles to apply to print.
+// If you don't want your style applying to print, set the second variable
+// to anything but "true".
+//
+// Third argument defaults to giving IE8 media query styles. Set to "false"
+// if you don't want your styles applying to IE8.
+@mixin respond-to($target, $target-print: true, $target-ie8: true) {
+  // Target IE versions
+  // Assumes you have conditional wrapper classes in place and
+  // variables in place mapping to those wrappers.
+  @if $target == $ie7
+    or $target == $ie8
+    or $target == $ie9
+    or $target == $ie10 {
+    // Turning off other two variables to strictly target the IE version
+    $target-print: false;
+    $target-ie8: false;
+    // Putting the styles in the appropriate IE wrapper class
+    #{$target} & {
+      @content;
+    }
+  }
+  // Allowing use of breakpoints or targets defined in _variables.scss
+  @else if $target {
+    // Allowing for arbitrary breakpoints
+    @if type-of($target) == "number" {
+      @media only screen and (min-width: #{$target}) {
+        @content;
+      }
+    }
+    // If it's $print, just targeting print
+    @else if $target == $print {
+      $target-print: false;
+      $target-ie8: false;
+    }
+    // Putting our styles in our custom media query
+    @else {
+      @media #{$target} {
+        @content;
+      }
+    }
+  }
+  // Putting the styles into print media queries
+  @if $target-print == true {
+    @media #{$print} {
+      @content;
+    }
+  }
+  // Allowing us to generate a separate print stylesheet
+  @if $target-print == true
+    or $target == $print {
+    // This variable is off by default. Declare "true" at
+    // beginning of print.scss and then include styles.scss
+    // if you want to generate a separate print stylesheet.
+    $print-styles: false !default;
+    // If enabled, generating the styles w/o media queries
+    // and with an extra level of specificity.
+    @if $print-styles != false {
+      html & {
+        @content;
+      }
+    }
+  }
+  // Giving media query styles to IE8, if set as true
+  @if $target-ie8 == true {
+    .lt-ie9 {
+      @content;
+    }
+  }
+}
+
+// Gridify
+//
+// Make elements align in a grid, regardless of height
+// Apply to elements you want as grid items
+// $cols = how many columns you want
+// $margin-right = margin-right, should be in percent
+// $ie8-height = an explicit height for all the elements, only applied to IE
+@mixin gridify($cols, $margin-right: 5%, $ie8-height: auto) {
+  // Math for widths, margins, and clears
+  $width: (100% / $cols) - $margin-right + ($margin-right / $cols);
+  $ie-width: (100% / $cols) - $margin-right;
+  $clearnum: $cols + 1;
+
+  // Default styles for each grid item
+  clear: none;
+  display: block;
+  float: left;
+  margin-right: $margin-right;
+  width: $width;
+
+  // Resetting from any previous uses of this mixin
+  &:nth-child(odd),
+  &:nth-child(even) {
+    clear: none;
+    margin-right: $margin-right;
+  }
+
+  // Clear the rows
+  &:nth-child(#{$cols}n+#{$clearnum}) {
+    clear: left;
+  }
+  // Remove margin-right from last column
+  &:nth-child(#{$cols}n+#{$cols}) {
+    margin-right: 0;
+  }
+
+  // Fix for IE8 since it can't handle :nth-child()
+  .lt-ie9 & {
+    height: $ie8-height;
+    width: $ie-width;
+  }
+}
+
+// Placeholder
+@mixin placeholder($height, $width, $bgc: $gray) {
+  @include transition(background-color .25s);
+  background-color: $bgc;
+  height: $height;
+  margin-bottom: 1em;
+  max-width: 100%;
+  width: $width;
+  &:hover {
+    background-color: lighten($bgc, 5%);
+  }
+}
+
+// Icon bullets
+@mixin icon-bullets($icon, $selector: li, $icon-color: false) {
+  @extend .no-bullet;
+  #{$selector} {
+    @include icon-font($icon) {
+      @if $icon-color {
+        color: $icon-color;
+      }
+      @content;
+    }
+  }
+}
+
+//Menu Gradient
+@mixin menubg {
+  background: #eeeeee;
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2MzYzNjMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhNGE0YTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, #eeeeee 0%, white 25%, #c3c3c3 75%, #a4a4a4 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(25%, white), color-stop(75%, #c3c3c3), color-stop(100%, #a4a4a4));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #eeeeee 0%, white 25%, #c3c3c3 75%, #a4a4a4 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #eeeeee 0%, white 25%, #c3c3c3 75%, #a4a4a4 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #eeeeee 0%, white 25%, #c3c3c3 75%, #a4a4a4 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #eeeeee 0%, #ffffff 25%, #c3c3c3 75%, #a4a4a4 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#a4a4a4',GradientType=0 );
+  /* IE6-8 */
+}

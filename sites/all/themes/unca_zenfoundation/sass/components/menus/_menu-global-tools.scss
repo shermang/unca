@@ -1,0 +1,16 @@
+#block-menu-menu-global-tools-menu,
+#block-menu-menu-global-tools-menu--2 {
+
+  // When the menu is in the header region
+  .region-header & {
+    font-size: .9em;
+  }
+
+  // When the menu is in the navigation region
+  nav.navigation & {
+    margin-bottom: 0;
+    a {
+      color: $primary-color;
+    }
+  }
+}

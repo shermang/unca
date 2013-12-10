@@ -1,0 +1,22 @@
+.node-course {
+  .field-name-field-image {
+    margin-bottom: 0;
+    img {
+      @extend %float-right;
+    }
+  }
+  .field-name-field-course-number,
+  .field-name-field-course-dates,
+  .field-name-field-instructor,
+  .field-name-field-course-catalog-term,
+  .field-name-body {
+    @extend %no-clearfix;
+    clear: left;
+    margin: 0;
+  }
+  .field-name-field-course-catalog-term,
+  .field-name-body {
+    @extend %clearfix-left;
+    margin-bottom: 1em;
+  }
+}

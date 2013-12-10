@@ -1,0 +1,104 @@
+.navigation-gateway {
+  .sidebar & {
+    display: none;
+    @include respond-to($tablet) {
+      display: block;
+    }
+  }
+}
+
+.block-menu-menu-secondary-navigation---prot, .navigation-secondary {
+
+  // When the primary menu is in the navigation region
+  nav.navigation & {
+    margin-bottom: .5em;
+    ul.menu {
+      @extend %no-bullet;
+      border-bottom: 1px solid $white;
+      padding-bottom: .5em;
+      ul {
+        display: none;
+      }
+    }
+  }
+
+  li.js-collapsed {
+    ul {
+      display: none;
+    }
+  }
+
+  // When in a sidebar
+  .sidebar &,
+  .ds-sidebar-column & {
+    @extend %block-title-hide;
+    // Hide in mobile
+    display: none;
+    // Show in tablet
+    @include respond-to($tablet) {
+      display: block;
+    }
+
+    // When on the front page (in a sidebar)
+    .front & {
+      padding: 0;
+      // @extend .fill-top;
+    }
+
+    ul {
+      @extend %no-bullet;
+    }
+    // First level
+    li {
+      @include transition(background-color 0.3s ease-out);
+      background-color: #eee;
+      // display: inline-block;
+      font-size: emCalc(12);
+      margin: 0;
+      padding: 0;
+      &:hover {
+        background-color: #ddd;
+      }
+      // Second level
+      li {
+        font-size: 1em;
+        border-left: none;
+        a {
+          padding-left: emCalc(20px);
+          &.active-trail {
+            padding-left: emCalc(10px);
+          }
+        }
+        // Third level
+        li {
+          border-left: none;
+          a {
+            padding-left: emCalc(30px);
+          }
+          &.active-trail {
+            padding-left: emCalc(20px);
+          }
+        }
+      }
+    }
+    a {
+      display: block;
+      width:94%;
+      padding: emCalc(5px) emCalc(10px);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    // // menu expand-collapse
+    // @extend %expando-menu;
+    // .trigger,
+    // .expanded > .trigger {
+    //   width: 30px;
+    //   height: 30px;
+    //   margin-top: 0;
+    //   background-position: 10px 18px;
+    // }
+
+  }
+}
