@@ -27,7 +27,7 @@ function unca_slideshow_flexslider_default_presets() {
     'smoothHeight' => 0,
     'startAt' => '0',
     'animationSpeed' => '600',
-    'initDelay' => '0',
+    'initDelay' => '200',
     'useCSS' => 1,
     'touch' => 1,
     'video' => 0,

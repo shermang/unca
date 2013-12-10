@@ -105,6 +105,7 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['fields']['field_read_more']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_read_more']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_read_more']['alter']['path'] = '[field_link]';
+  $handler->display->display_options['fields']['field_read_more']['alter']['alt'] = '[title_1]';
   $handler->display->display_options['fields']['field_read_more']['alter']['link_class'] = 'read-more';
   $handler->display->display_options['fields']['field_read_more']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_read_more']['hide_empty'] = TRUE;
@@ -165,6 +166,12 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'slideshow_item' => 'slideshow_item',
   );
+  /* Filter criterion: Content: Image (field_image:fid) */
+  $handler->display->display_options['filters']['field_image_fid']['id'] = 'field_image_fid';
+  $handler->display->display_options['filters']['field_image_fid']['table'] = 'field_data_field_image';
+  $handler->display->display_options['filters']['field_image_fid']['field'] = 'field_image_fid';
+  $handler->display->display_options['filters']['field_image_fid']['relationship'] = 'reverse_field_slideshow_term_node';
+  $handler->display->display_options['filters']['field_image_fid']['operator'] = 'not empty';
 
   /* Display: EVA Field - Slides */
   $handler = $view->new_display('entity_view', 'EVA Field - Slides', 'entity_view_1');
@@ -198,7 +205,8 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'unca-flexslider-thumbnails-carousel';
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'flexslider';
   $handler->display->display_options['style_options']['optionset'] = 'unca_thumbnails_optionset';
