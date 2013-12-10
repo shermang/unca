@@ -10,6 +10,16 @@
 function unca_text_formats_filter_default_formats() {
   $formats = array();
 
+  // Exported format: Code.
+  $formats['code'] = array(
+    'format' => 'code',
+    'name' => 'Code',
+    'cache' => 1,
+    'status' => 1,
+    'weight' => 0,
+    'filters' => array(),
+  );
+
   // Exported format: Filtered HTML.
   $formats['filtered_html'] = array(
     'format' => 'filtered_html',
