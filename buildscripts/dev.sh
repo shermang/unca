@@ -96,6 +96,7 @@ unca_news \
 unca_project \
 unca_fields \
 unca_home_home_page \
+unca_ldap \
 unca_zenfoundation \
 libraries \
 flexslider \
