@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the unca_ldap feature.
+ * Code for the UNCA LDAP feature.
  */
 
 include_once 'unca_ldap.features.inc';
