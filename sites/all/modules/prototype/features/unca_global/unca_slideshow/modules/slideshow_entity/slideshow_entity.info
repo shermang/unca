@@ -1,4 +1,4 @@
-name = UNCA Slideshow
+name = UNCA Slideshow Entity
 description = Slideshow entity, admin UI and supporting functionality
 package = UNCA Global
 version = VERSION
