@@ -119,7 +119,8 @@ function mcfilemanager_runtime_requirements() {
   $library_path = mcfilemanager_library_directory();
 
   // Check if the file auth_drupal.php resides in Drupal's root directory
-  if (!file_exists('auth_drupal.php')) {
+  $module_path = drupal_get_path('module','mcfilemanager');
+  if (!file_exists("$module_path/auth_drupal.php")) {
     $requirements['mcfilemanager_auth_file'] = array(
       'title' => $t('MCFileManager authentication file'),
       'value' => $t('The required file %file could not be found! Refer to MCFileManager\'s !help section for installation instructions.', array('%file' => 'auth_drupal.php', '!help' => l(t('help'), 'admin/help/mcfilemanager'))),
