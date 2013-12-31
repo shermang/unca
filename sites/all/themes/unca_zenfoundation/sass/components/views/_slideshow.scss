@@ -151,7 +151,7 @@
   }
   .slides {
     li {
-      margin: .25em;
+      margin: 0.25em 0;
       opacity: 0.7;
       // Styles for the active slide
       &.flex-active-slide,

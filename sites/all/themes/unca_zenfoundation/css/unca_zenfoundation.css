@@ -6773,6 +6773,9 @@ nav.navigation .block-search .lt-ie9 {
   padding-top: 25px;
   height: 0;
 }
+.field-name-field-video-embed object, .field-name-field-video-embed embed {
+  height: 350px;
+}
 
 .field-name-field-video-embed iframe {
   position: absolute;
@@ -7710,7 +7713,7 @@ html[xmlns] .slides {
   display: block;
 }
 #unca-slideshow-flexslider-thumbs .slides li {
-  margin: .25em;
+  margin: 0.25em 0;
   opacity: 0.7;
 }
 #unca-slideshow-flexslider-thumbs .slides li.flex-active-slide, #unca-slideshow-flexslider-thumbs .slides li:hover {
