@@ -141,7 +141,7 @@ echo "Uninstalling Slideshow Entity"
 drush pm-uninstall slideshow_entity
 echo ""
 
-# uninstall slideshow entity
+# uninstall lightbox2
 echo "Uninstalling Lightbox2"
 drush pm-uninstall lightbox2
 echo ""
