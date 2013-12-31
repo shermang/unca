@@ -564,5 +564,5 @@ function last_edit_info($node) {
     $author = '';
   }
 
-  return "Last edited" . $author ." on " .format_date($node->changed);
+  return "Last edited" . $author ." on " .format_date($node->changed,'custom','m/d/Y');
 }
