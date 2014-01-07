@@ -26,7 +26,7 @@ function unca_profile_views_api($module = NULL, $api = NULL) {
 function unca_profile_node_info() {
   $items = array(
     'profiles' => array(
-      'name' => t('Profiles'),
+      'name' => t('Profile'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
