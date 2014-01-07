@@ -67,22 +67,14 @@ function unca_slideshow_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -127,7 +119,7 @@ function unca_slideshow_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -136,7 +128,7 @@ function unca_slideshow_field_default_field_instances() {
     'bundle' => 'slideshow_item',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Set URL destination of this slide\'s headline, image, and read more button.',
+    'description' => 'Set URL destination of this slide\'s headline, image, and read more button. If this is left blank, the destination will be the content found in the Body field below.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -176,7 +168,7 @@ function unca_slideshow_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'rel_remove' => 'default',
-      'title' => 'optional',
+      'title' => 'none',
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -280,7 +272,7 @@ function unca_slideshow_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -328,7 +320,7 @@ function unca_slideshow_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -342,7 +334,7 @@ function unca_slideshow_field_default_field_instances() {
   t('Read More Link');
   t('Read More Text');
   t('Select a slideshow where this slide should display.');
-  t('Set URL destination of this slide\'s headline, image, and read more button.');
+  t('Set URL destination of this slide\'s headline, image, and read more button. If this is left blank, the destination will be the content found in the Body field below.');
   t('Set the caption or sub-heading of this slide.');
   t('Slideshow');
 
