@@ -15,6 +15,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'system',
   );
@@ -33,19 +34,9 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'access all webform results',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'webform',
-  );
-
-  // Exported permission: 'access comments'.
-  $permissions['access comments'] = array(
-    'name' => 'access comments',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'comment',
   );
 
   // Exported permission: 'access content'.
@@ -64,6 +55,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'access content overview',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'node',
   );
@@ -82,6 +74,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'access dashboard',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'dashboard',
   );
@@ -109,6 +102,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'access mcfilemanager files',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'mcfilemanager',
   );
@@ -127,6 +121,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'access own webform results',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'webform',
   );
@@ -136,6 +131,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'access own webform submissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'webform',
   );
@@ -228,17 +224,9 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'administer blocks',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'block',
-  );
-
-  // Exported permission: 'administer comments'.
-  $permissions['administer comments'] = array(
-    'name' => 'administer comments',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'comment',
   );
 
   // Exported permission: 'administer content types'.
@@ -622,34 +610,31 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'cancel account'.
   $permissions['cancel account'] = array(
     'name' => 'cancel account',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'user',
   );
 
   // Exported permission: 'change own username'.
   $permissions['change own username'] = array(
     'name' => 'change own username',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'user',
   );
 
   // Exported permission: 'create article content'.
   $permissions['create article content'] = array(
     'name' => 'create article content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'create campus_update content'.
   $permissions['create campus_update content'] = array(
     'name' => 'create campus_update content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -709,6 +694,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'create page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'node',
   );
@@ -723,7 +709,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'create profiles content'.
   $permissions['create profiles content'] = array(
     'name' => 'create profiles content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -737,7 +726,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'create slideshow_item content'.
   $permissions['create slideshow_item content'] = array(
     'name' => 'create slideshow_item content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -753,6 +745,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'create url aliases',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'path',
   );
@@ -760,7 +753,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'create webform content'.
   $permissions['create webform content'] = array(
     'name' => 'create webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -769,6 +765,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'crop any image',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'imagecrop',
   );
@@ -778,6 +775,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'crop own images',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'imagecrop',
   );
@@ -796,6 +794,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'delete all webform submissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'webform',
   );
@@ -803,16 +802,17 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete any article content'.
   $permissions['delete any article content'] = array(
     'name' => 'delete any article content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any campus_update content'.
   $permissions['delete any campus_update content'] = array(
     'name' => 'delete any campus_update content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -863,6 +863,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'delete any page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'node',
   );
@@ -877,7 +878,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete any profiles content'.
   $permissions['delete any profiles content'] = array(
     'name' => 'delete any profiles content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -891,7 +895,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete any slideshow_item content'.
   $permissions['delete any slideshow_item content'] = array(
     'name' => 'delete any slideshow_item content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -905,23 +912,27 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete any webform content'.
   $permissions['delete any webform content'] = array(
     'name' => 'delete any webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own article content'.
   $permissions['delete own article content'] = array(
     'name' => 'delete own article content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own campus_update content'.
   $permissions['delete own campus_update content'] = array(
     'name' => 'delete own campus_update content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -972,6 +983,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'delete own page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'node',
   );
@@ -986,7 +998,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete own profiles content'.
   $permissions['delete own profiles content'] = array(
     'name' => 'delete own profiles content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1000,7 +1015,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete own slideshow_item content'.
   $permissions['delete own slideshow_item content'] = array(
     'name' => 'delete own slideshow_item content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1014,7 +1032,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete own webform content'.
   $permissions['delete own webform content'] = array(
     'name' => 'delete own webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1023,6 +1044,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'delete own webform submissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'webform',
   );
@@ -1176,6 +1198,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'edit all webform submissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'webform',
   );
@@ -1183,16 +1206,17 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit any article content'.
   $permissions['edit any article content'] = array(
     'name' => 'edit any article content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any campus_update content'.
   $permissions['edit any campus_update content'] = array(
     'name' => 'edit any campus_update content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1252,6 +1276,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'edit any page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'node',
   );
@@ -1266,7 +1291,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit any profiles content'.
   $permissions['edit any profiles content'] = array(
     'name' => 'edit any profiles content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1280,7 +1308,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit any slideshow_item content'.
   $permissions['edit any slideshow_item content'] = array(
     'name' => 'edit any slideshow_item content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1294,7 +1325,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit any webform content'.
   $permissions['edit any webform content'] = array(
     'name' => 'edit any webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1303,6 +1337,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'edit media',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'media',
   );
@@ -1310,16 +1345,17 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit own article content'.
   $permissions['edit own article content'] = array(
     'name' => 'edit own article content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own campus_update content'.
   $permissions['edit own campus_update content'] = array(
     'name' => 'edit own campus_update content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1328,15 +1364,6 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'edit own cluster content',
     'roles' => array(),
     'module' => 'node',
-  );
-
-  // Exported permission: 'edit own comments'.
-  $permissions['edit own comments'] = array(
-    'name' => 'edit own comments',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'comment',
   );
 
   // Exported permission: 'edit own course content'.
@@ -1389,6 +1416,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'edit own page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'node',
   );
@@ -1403,7 +1431,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit own profiles content'.
   $permissions['edit own profiles content'] = array(
     'name' => 'edit own profiles content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1417,7 +1448,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit own slideshow_item content'.
   $permissions['edit own slideshow_item content'] = array(
     'name' => 'edit own slideshow_item content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1431,7 +1465,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit own webform content'.
   $permissions['edit own webform content'] = array(
     'name' => 'edit own webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1440,6 +1477,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'edit own webform submissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'webform',
   );
@@ -1658,21 +1696,12 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'googleanalytics',
   );
 
-  // Exported permission: 'post comments'.
-  $permissions['post comments'] = array(
-    'name' => 'post comments',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'comment',
-  );
-
   // Exported permission: 'revert revisions'.
   $permissions['revert revisions'] = array(
     'name' => 'revert revisions',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'node',
   );
@@ -1682,6 +1711,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'schedule (un)publishing of nodes',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'scheduler',
   );
@@ -1713,16 +1743,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'captcha',
-  );
-
-  // Exported permission: 'skip comment approval'.
-  $permissions['skip comment approval'] = array(
-    'name' => 'skip comment approval',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'comment',
   );
 
   // Exported permission: 'submit latitude/longitude'.
@@ -1782,11 +1802,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'use text format filtered_html'.
   $permissions['use text format filtered_html'] = array(
     'name' => 'use text format filtered_html',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'filter',
   );
 
@@ -1794,7 +1810,7 @@ function unca_roles_permission_user_default_permissions() {
   $permissions['use text format full_html'] = array(
     'name' => 'use text format full_html',
     'roles' => array(
-      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'filter',
   );
@@ -1909,6 +1925,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'view own unpublished content',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'node',
   );
@@ -1918,6 +1935,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'view revisions',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'node',
   );

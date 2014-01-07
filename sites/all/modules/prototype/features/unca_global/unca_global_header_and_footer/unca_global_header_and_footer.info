@@ -17,7 +17,6 @@ features[menu_links][] = main-menu:http://www.unca.edu/academics
 features[menu_links][] = main-menu:http://www.unca.edu/admissions
 features[menu_links][] = main-menu:http://www.unca.edu/centers
 features[menu_links][] = main-menu:http://www.unca.edu/life-campus
-features[menu_links][] = main-menu:http://www.unca.edu/news-events
 features[menu_links][] = main-menu:http://www.uncabulldogs.com/
 features[menu_links][] = menu-global-footer-menu:http://bulldogalert.unca.edu/
 features[menu_links][] = menu-global-footer-menu:http://hr.unca.edu/

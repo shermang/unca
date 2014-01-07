@@ -171,7 +171,7 @@ function unca_news_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_news_article_pattern';
-  $strongarm->value = 'news-events/news/[node:created:four_digit_year]/[node:created:two_digit_month]/[node:title]';
+  $strongarm->value = 'news-events/news/[node:created:custom:Y]/[node:created:custom:D]/[node:title]';
   $export['pathauto_node_news_article_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

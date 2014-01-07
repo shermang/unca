@@ -17,18 +17,13 @@ function unca_text_formats_wysiwyg_default_profiles() {
     'settings' => array(
       'default' => 1,
       'user_choose' => 0,
-      'show_toggle' => 1,
+      'show_toggle' => 0,
       'theme' => 'advanced',
       'language' => 'en',
       'buttons' => array(
         'default' => array(
           'Bold' => 1,
           'Italic' => 1,
-          'Underline' => 1,
-          'Strike' => 1,
-          'JustifyLeft' => 1,
-          'JustifyCenter' => 1,
-          'JustifyRight' => 1,
           'BulletedList' => 1,
           'NumberedList' => 1,
           'Outdent' => 1,
@@ -46,9 +41,8 @@ function unca_text_formats_wysiwyg_default_profiles() {
           'HorizontalRule' => 1,
           'Cut' => 1,
           'Copy' => 1,
-          'Paste' => 1,
           'PasteText' => 1,
-          'PasteFromWord' => 1,
+          'RemoveFormat' => 1,
           'Format' => 1,
           'Styles' => 1,
           'Table' => 1,
@@ -70,22 +64,12 @@ function unca_text_formats_wysiwyg_default_profiles() {
       'remove_linebreaks' => 1,
       'apply_source_formatting' => 1,
       'paste_auto_cleanup_on_paste' => 1,
-      'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
+      'block_formats' => 'p,h2,h3,h4',
       'css_setting' => 'self',
       'css_path' => '%b%t/css/unca_zenfoundation.css',
       'css_classes' => 'Notification=div.notification
 Alert=div.alert
-Critical Information=div.critical
-Column=div.column
-Drop Cap=div.dropcap
-Float Left=div.left
-Float Right=div.right
-Checkmark SPIFF=div.footer-spiff-apply
-Eye SPIFF=div.footer-spiff-tour
-Question SPIFF=div.footer-spiff-question
-Facebook SPIFF=div.footer-spiff-facebook
-Email SPIFF=div.footer-spiff-mailinglist
-Captioned Image=div.caption',
+Critical Information=div.critical',
     ),
     'rdf_mapping' => array(),
   );
