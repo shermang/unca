@@ -12882,6 +12882,51 @@ iframe.mapiframe {
   font-size: 12px;
 }
 
+/* */
+/* messages */
+.region-general {
+  margin-bottom: 5px;
+  padding: 2px 0 5px 0;
+  clear: both;
+}
+
+.region-general h4 {
+  text-transform: uppercase;
+  padding: 0 15px;
+  font-style: normal;
+}
+
+.region-general .message {
+  color: #333;
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 0;
+}
+
+.region-general * {
+  margin: 5px 5px 5px 5px;
+}
+
+.region-emergency {
+  background: url(../images/msg-emergency-background.png) repeat-x #e91920;
+  color: #fff;
+}
+
+.region-emergency h4 {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.region-notice {
+  background: url(../images/msg-notice-background.png) repeat-x #ef8518;
+  color: #fff;
+}
+
+.region-notice h4 {
+  font-weight: normal;
+  font-size: 12px;
+}
+
 /* article styles */
 .article-title {
   margin-bottom: 10px;
