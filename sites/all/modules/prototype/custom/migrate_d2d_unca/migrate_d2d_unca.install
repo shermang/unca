@@ -64,3 +64,47 @@ function migrate_d2d_unca_schema(){
   return $schema;
 
 }
+
+/**
+ * Implementation of hook_update_N()
+ *
+ */
+function migrate_d2d_unca_update_7101() {
+
+
+  $maps = db_select('migrate_map_uncapagect','p')
+    ->fields('p')
+    ->execute();
+
+  if($maps){
+    while($map = $maps->fetchAssoc()){
+      $d7_url_alias = db_select('url_alias','d7u')
+        ->fields('d7u')
+        ->condition('source','node/'.$map['destid1'],'LIKE')
+        ->execute()
+        ->fetchAssoc();
+      if($d7_url_alias){
+        db_set_active('legacy');
+        $d6_url_alias = db_select('url_alias','d6u')
+          ->fields('d6u')
+          ->condition('src','node/'.$map['sourceid1'],'LIKE')
+          ->orderBy('pid','DESC')
+          ->range(0,1)
+          ->execute()
+          ->fetchAssoc();
+        db_set_active();
+        if($d6_url_alias){
+          if($d7_url_alias['alias'] != $d6_url_alias['dst']){
+            db_merge('url_alias')
+              ->key(array('pid' => $d7_url_alias['pid']))
+              ->fields(array('alias' => $d6_url_alias['dst']))
+              ->execute();
+          }
+        }
+      }
+    }
+  }
+
+
+
+}
