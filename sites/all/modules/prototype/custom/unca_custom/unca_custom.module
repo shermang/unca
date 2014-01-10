@@ -1,3 +1,31 @@
 <?php
 
-/* Drupal requires this empty .module file. */
+/*
+ * implementation of hook_menu
+ */
+function unca_custom_menu(){
+  $items = array();
+
+ // used to bridge google cse from drupal 6 to drupal 7
+ // should not be needed after all d6 sites are updated to drupal 7
+  $items['search-results'] = array(
+    'title' => 'search redirect',
+    'page callback' => '_unca_custom_redirect',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/*
+* page callback for unca_custom menu
+*/
+function _unca_custom_redirect(){
+// http://unca.edu/search/google/dad%20please?query=dad%20please&cx=000437231783059028413%3Afmzh8niwczw&cof=FORID%3A11&sitesearch=
+// http://www.unca.edu/search-results?cx=000437231783059028413%3Afmzh8niwczw&cof=FORID%3A10&ie=UTF-8&group=faculty%2Fstaff&query=dad+please&sa.x=0&sa.y=0&sa=submit
+
+  $query_parameters = drupal_get_query_parameters();
+  drupal_goto('search/google/'.$query_parameters['query'],array('query'=>$query_parameters));
+}
+
