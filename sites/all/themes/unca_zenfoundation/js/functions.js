@@ -4,7 +4,7 @@
 //  reset the value if no text was entered
 function initializeSearchBox() {
   console.log("initialize search");
-	var inputPrompt = "Search people and the Web";
+	var inputPrompt = "";
 	jQuery("#edit-search-block-form--2").val(inputPrompt);
 
 	jQuery("#edit-search-block-form--2").focus(function(){
@@ -21,17 +21,13 @@ function initializeSearchBox() {
 
 //searchAction
 //Description: used to determine the form action, searching the web or directory
-function initializeSearchAction() {
-document.getElementById('search-button-people').onclick = function() {
-
-    var form = document.getElementById('searchform');
-
+function searchPeople() {
+	document.getElementById('edit-search-block-form--2').name = "query";
+    var form = document.getElementById('search-block-form');
     form.action = 'http://www3.unca.edu/directory/';
     form.method = 'POST'
     jQuery('.cse').remove();
-
     form.submit();
-}
 }
 
 // initializeNavigationSecondary
