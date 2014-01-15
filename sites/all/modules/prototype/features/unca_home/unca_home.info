@@ -15,7 +15,6 @@ features[features_api][] = api:2
 features[menu_custom][] = menu-home-page-secondary-navigat
 features[menu_links][] = menu-home-page-secondary-navigat:http://alumni.unca.edu/
 features[menu_links][] = menu-home-page-secondary-navigat:http://www.unca.edu/admissions/apply
-features[menu_links][] = menu-home-page-secondary-navigat:http://www.unca.edu/for-faculty
 features[menu_links][] = menu-home-page-secondary-navigat:http://www.unca.edu/for-parents
 features[menu_links][] = menu-home-page-secondary-navigat:http://www.unca.edu/for-students
 features[menu_links][] = menu-home-page-secondary-navigat:http://www.unca.edu/for-the-community

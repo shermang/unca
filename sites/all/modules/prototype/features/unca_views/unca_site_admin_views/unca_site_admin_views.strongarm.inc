@@ -17,6 +17,10 @@ function unca_site_admin_views_strongarm() {
   $strongarm->value = array(
     'admin_views_node' => FALSE,
     'administration_nodes' => TRUE,
+    'map_test_two' => TRUE,
+    'maps' => TRUE,
+    'News_Archive' => TRUE,
+    'News_Categories' => TRUE,
   );
   $export['views_defaults'] = $strongarm;
 

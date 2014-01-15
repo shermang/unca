@@ -109,7 +109,7 @@ function unca_cluster_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_cluster';
   $strongarm->value = array(
-    0 => 'main-menu',
+    0 => 'menu-secondary-navigation---prot',
   );
   $export['menu_options_cluster'] = $strongarm;
 
@@ -117,7 +117,7 @@ function unca_cluster_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_cluster';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'menu-secondary-navigation---prot:0';
   $export['menu_parent_cluster'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -14,7 +14,7 @@ function unca_slideshow_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_slideshow_item';
-  $strongarm->value = 'edit-scheduler';
+  $strongarm->value = 'edit-menu';
   $export['additional_settings__active_tab_slideshow_item'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -106,7 +106,7 @@ function unca_slideshow_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '6',
         ),
       ),
       'display' => array(),
@@ -127,7 +127,7 @@ function unca_slideshow_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_slideshow_item';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'menu-secondary-navigation---prot:0';
   $export['menu_parent_slideshow_item'] = $strongarm;
 
   $strongarm = new stdClass();

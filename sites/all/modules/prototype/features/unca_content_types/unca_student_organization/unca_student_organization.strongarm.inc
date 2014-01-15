@@ -14,7 +14,7 @@ function unca_student_organization_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_student_organization';
-  $strongarm->value = 'edit-scheduler';
+  $strongarm->value = 'edit-menu';
   $export['additional_settings__active_tab_student_organization'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -96,7 +96,7 @@ function unca_student_organization_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_student_organization';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'menu-secondary-navigation---prot:0';
   $export['menu_parent_student_organization'] = $strongarm;
 
   $strongarm = new stdClass();
