@@ -20,16 +20,17 @@ function unca_slideshow_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Read More & URL Settings',
-    'weight' => '10',
+    'label' => 'Advanced',
+    'weight' => '5',
     'children' => array(
       0 => 'field_link',
       1 => 'field_read_more',
       2 => 'path',
+      3 => 'field_video_embed',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Read More & URL Settings',
+      'label' => 'Advanced',
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'group-advanced field-group-fieldset',

@@ -83,8 +83,8 @@ function unca_campus_update_views_default_views() {
   $handler->display->display_options['filters']['status']['group'] = '0';
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_1');
+  /* Display: Homepage Block */
+  $handler = $view->new_display('block', 'Homepage Block', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Campus Updates';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
@@ -149,6 +149,34 @@ function unca_campus_update_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node_rss';
   $handler->display->display_options['path'] = 'rss/campus-updates';
   $handler->display->display_options['menu']['name'] = 'primary-links';
+
+  /* Display: Sidebar Block */
+  $handler = $view->new_display('block', 'Sidebar Block', 'block_3');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'l, F d, Y';
   $export['campus_updates'] = $view;
 
   return $export;

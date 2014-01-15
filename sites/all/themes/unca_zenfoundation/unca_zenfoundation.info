@@ -75,7 +75,9 @@ stylesheets[all][] = system.menus.css
 ; stylesheets[all][] = css/aggregated-feeds.tpl.css
 ; stylesheets[all][] = css/flickrshow.css
 stylesheets[all][] = css/reset.css
-stylesheets[all][] = css/unca_zenfoundation.css
+; stylesheets[all][] = css/unca_zenfoundation.css
+stylesheets[all][] = css/unca_zenfoundation_1.css
+stylesheets[all][] = css/unca_zenfoundation_2.css
 
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.

@@ -111,16 +111,14 @@ function unca_campus_update_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_campus_update';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_campus_update'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_campus_update';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'menu-home-page-secondary-navigat:0';
   $export['menu_parent_campus_update'] = $strongarm;
 
   $strongarm = new stdClass();

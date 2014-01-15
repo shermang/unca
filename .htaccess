@@ -14,7 +14,7 @@ Options -Indexes
 Options +FollowSymLinks
 
 # Make Drupal handle any 404 errors.
-ErrorDocument 404 /index.php
+ErrorDocument 404 sites/default/files/404.php
 
 # Set the default handler.
 DirectoryIndex index.php index.html index.htm
@@ -141,3 +141,116 @@ DirectoryIndex index.php index.html index.htm
     </FilesMatch>
   </IfModule>
 </IfModule>
+Redirect 301 /arts http://arts.unca.edu
+Redirect 301 /athletics http://uncabulldogs.com
+Redirect 301 /atms http://atms.unca.edu
+Redirect 301 /chemistry http://chemistry.unca.edu
+Redirect 301 /dining http://dineoncampus.com/unca
+Redirect 301 /finaid http://financialaid.unca.edu
+Redirect 301 /giftplanning http://unca.planyourlegacy.org
+Redirect 301 /homecoming http://studentactivities.unca.edu/homecoming
+Redirect 301 /intlstudies http://studyabroad.unca.edu
+Redirect 301 /its http://its.unca.edu
+Redirect 301 /library http://library.unca.edu
+Redirect 301 /mmas http://nm.unca.edu
+Redirect 301 /onlinegiving https://www.applyweb.com/public/contribute?s=uncacont
+Redirect 301 /parsec http://parsec.unca.edu
+Redirect 301 /sgaelections http://www3.unca.edu/student/sgaelections
+Redirect 301 /studentlife http://studentactivities.unca.edu
+Redirect 301 /aa http://academicaffairs.unca.edu
+Redirect 301 /accountinfo https://accountinfo.unca.edu
+Redirect 301 /ad /giving
+Redirect 301 /advising http://advising.unca.edu
+Redirect 301 /agc http://agc.unca.edu
+Redirect 301 /artsandideas http://arts.unca.edu
+Redirect 301 /bannerweb https://www3.unca.edu/its/banner
+Redirect 301 /biology http://biology.unca.edu
+Redirect 301 /bookstore http://www.uncasheville.bkstr.com
+Redirect 301 /calendar http://calendar.unca.edu
+Redirect 301 /campusmap http://maps.unca.edu
+Redirect 301 /career http://career.unca.edu
+Redirect 301 /catalog http://catalog.unca.edu
+Redirect 301 /chem http://chemistry.unca.edu
+Redirect 301 /chemistry http://chemistry.unca.edu
+Redirect 301 /classics http://classics.unca.edu
+Redirect 301 /clusters http://clusters.unca.edu
+Redirect 301 /disabilityservices http://disabilityservices.unca.edu
+Redirect 301 /drama http://drama.unca.edu
+Redirect 301 /econ http://economics.unca.edu
+Redirect 301 /education http://education.unca.edu
+Redirect 301 /fbf http://fbf.unca.edu
+Redirect 301 /financialaid http://financialaid.unca.edu
+Redirect 301 /flanguages http://flanguages.unca.edu
+Redirect 301 /honors http://honors.unca.edu
+Redirect 301 /housing http://housing.unca.edu
+Redirect 301 /humanities http://humanities.unca.edu
+Redirect 301 /ils http://ils.unca.edu
+Redirect 301 /irb http://irb.unca.edu
+Redirect 301 /keycenter http://keycenter.unca.edu
+Redirect 301 /magazine http://www3.unca.edu/drupal/magazine
+Redirect 301 /math http://math.unca.edu
+Redirect 301 /art http://art.unca.edu
+Redirect 301 /politicalscience http://politicalscience.unca.edu
+Redirect 301 /psychology http://psychology.unca.edu
+Redirect 301 /publicsafety http://publicsafety.unca.edu
+Redirect 301 /recreation http://recreation.unca.edu
+Redirect 301 /registrar http://registrar.unca.edu
+Redirect 301 /sacs http://sacs.unca.edu
+Redirect 301 /seriouslycreative http://seriouslycreative.unca.edu
+Redirect 301 /sga http://sga.unca.edu
+Redirect 301 /sociology http://sociology.unca.edu
+Redirect 301 /studentactivities http://studentactivities.unca.edu
+Redirect 301 /studentaffairs http://studentaffairs.unca.edu
+Redirect 301 /studyabroad http://studyabroad.unca.edu
+Redirect 301 /uncabulldogs http://uncabulldogs.com
+Redirect 301 /urp http://urp.unca.edu
+Redirect 301 /womensstudies http://wgss.unca.edu
+Redirect 301 /hr http://hr.unca.edu
+Redirect 301 /maps http://maps.unca.edu
+Redirect 301 /alumni http://alumni.unca.edu
+Redirect 301 /mla http://mla.unca.edu
+Redirect 301 /music http://music.unca.edu
+Redirect 301 /ncsu_engr http://www.engr.ncsu.edu/mechatronics/
+Redirect 301 /nemac http://nemac.unca.edu
+Redirect 301 /news http://news.unca.edu
+Redirect 301 /onecard http://onecard.unca.edu
+Redirect 301 /onestop http://onestop.unca.edu
+Redirect 301 /physics http://physics.unca.edu
+Redirect 301 /philosophy http://philosophy.unca.edu
+Redirect 301 /policies http://administration.unca.edu/policies
+Redirect 301 /cjs http://cjs.unca.edu
+Redirect 301 /gswp http://agc.unca.edu/great-smokies-writing-program
+Redirect 301 /oaci http://cesap.unca.edu/super-saturday-program
+Redirect 301 /commencement http://news.unca.edu/commencement
+Redirect 301 /homecoming http://studentactivities.unca.edu/homecoming
+Redirect 301 /shs http://healthandcounseling.unca.edu
+Redirect 301 /maps/driving-directions http://maps.unca.edu/driving-directions
+Redirect 301 /disted http://disted.unca.edu
+Redirect 301 /highsmith http://studentactivities.unca.edu/highsmith-student-union
+Redirect 301 /news-events/events http://calendar.unca.edu
+Redirect 301 /transportation http://publicsafety.unca.edu/parking
+Redirect 301 /sp http://www3.unca.edu/spcms3
+Redirect 301 /ip http://administration.unca.edu/intellectual-property-copyright
+Redirect 301 /dls http://tlt.unca.edu/
+Redirect 301 /barker http://studentactivities.unca.edu
+Redirect 301 /facultysenate http://www3.unca.edu/facultysenate
+Redirect 301 /admissions/community-school-partnerships http://oscopp.unca.edu
+Redirect 301 /csac http://administration.unca.edu/chancellors-staff-advisory-committee
+Redirect 301 /mgmtacct http://mgmtacct.unca.edu
+Redirect 301 /africanastudies http://afst.unca.edu
+Redirect 301 /culturalarts http://cesap.unca.edu
+Redirect 301 /envr_studies http://envr.unca.edu
+Redirect 301 /esi http://ist.unca.edu/ethics-and-social-institutions-esi
+Redirect 301 /hw http://hwp.unca.edu
+Redirect 301 /history http://history.unca.edu
+Redirect 301 /ist http://ist.unca.edu
+Redirect 301 /ints http://ist.unca.edu/international-studies-ints
+Redirect 301 /legal http://ist.unca.edu/legal-studies-legl
+Redirect 301 /lit http://literature.unca.edu
+Redirect 301 /masscomm http://masscomm.unca.edu
+Redirect 301 /neuroscience http://ist.unca.edu/neuroscience-neur
+Redirect 301 /pre-health http://hwp.unca.edu/
+Redirect 301 /religiousstudies http://religiousstudies.unca.edu
+Redirect 301 /tf http://tf.unca.edu
+Redirect 301 /news-events/news/2013/4/study-unc-asheville-makes-268-million-economic-impact /economicimpact
+Redirect 301 /~mcmcclur https://sites.google.com/a/unca.edu/mark-mcclure/

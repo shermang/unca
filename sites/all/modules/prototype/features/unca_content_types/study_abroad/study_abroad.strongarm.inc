@@ -112,7 +112,7 @@ function study_abroad_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_destination';
   $strongarm->value = array(
-    0 => 'main-menu',
+    0 => 'menu-secondary-navigation---prot',
   );
   $export['menu_options_destination'] = $strongarm;
 
@@ -120,7 +120,7 @@ function study_abroad_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_destination';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'menu-home-page-secondary-navigat:0';
   $export['menu_parent_destination'] = $strongarm;
 
   $strongarm = new stdClass();

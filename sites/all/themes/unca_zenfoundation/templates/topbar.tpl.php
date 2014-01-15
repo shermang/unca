@@ -26,6 +26,7 @@
                   $block = module_invoke('search', 'block_view', 'search');
                   print render($block);
                 ?>
+				<div id="searchPeopleButton"  onClick="searchPeople();"></div>
                 </div> <!-- /#search -->
               </li>
             </ul>
