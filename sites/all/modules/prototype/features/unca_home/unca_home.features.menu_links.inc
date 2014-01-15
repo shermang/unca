@@ -46,24 +46,6 @@ function unca_home_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -44,
   );
-  // Exported menu link: menu-home-page-secondary-navigat:http://www.unca.edu/for-faculty
-  $menu_links['menu-home-page-secondary-navigat:http://www.unca.edu/for-faculty'] = array(
-    'menu_name' => 'menu-home-page-secondary-navigat',
-    'link_path' => 'http://www.unca.edu/for-faculty',
-    'router_path' => '',
-    'link_title' => 'Faculty & Staff',
-    'options' => array(
-      'attributes' => array(
-        'id' => 'gateway-faculty-staff',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -49,
-  );
   // Exported menu link: menu-home-page-secondary-navigat:http://www.unca.edu/for-parents
   $menu_links['menu-home-page-secondary-navigat:http://www.unca.edu/for-parents'] = array(
     'menu_name' => 'menu-home-page-secondary-navigat',
@@ -133,14 +115,13 @@ function unca_home_menu_default_menu_links() {
     'hidden' => 0,
     'external' => 1,
     'has_children' => 0,
-    'expanded' => 0,
+    'expanded' => 1,
     'weight' => -45,
   );
   // Translatables
   // Included for use with string extractors like potx.
   t('Alumni');
   t('Apply');
-  t('Faculty & Staff');
   t('Make a Gift');
   t('Parents & Families');
   t('Students');

@@ -14,7 +14,7 @@ function unca_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_page';
-  $strongarm->value = 'edit-workflow';
+  $strongarm->value = 'edit-menu';
   $export['additional_settings__active_tab_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -126,11 +126,7 @@ function unca_page_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_page';
   $strongarm->value = array(
-    0 => 'menu-global-footer-menu',
-    1 => 'menu-global-tools-menu',
-    2 => 'main-menu',
-    3 => 'menu-secondary-navigation---prot',
-    4 => 'menu-home-page-secondary-navigat',
+    0 => 'menu-secondary-navigation---prot',
   );
   $export['menu_options_page'] = $strongarm;
 
@@ -169,7 +165,7 @@ function unca_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_page_pattern';
-  $strongarm->value = '[node:menu-link:parents:join-path]';
+  $strongarm->value = '[node:title]';
   $export['pathauto_node_page_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

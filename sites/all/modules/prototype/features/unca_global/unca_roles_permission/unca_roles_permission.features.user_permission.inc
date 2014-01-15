@@ -112,6 +112,8 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'access news feeds',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'content manager' => 'content manager',
     ),
     'module' => 'aggregator',
   );
@@ -387,6 +389,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'administer menu',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'menu',
   );
@@ -621,13 +624,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'user',
   );
 
-  // Exported permission: 'create article content'.
-  $permissions['create article content'] = array(
-    'name' => 'create article content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create campus_update content'.
   $permissions['create campus_update content'] = array(
     'name' => 'create campus_update content',
@@ -799,13 +795,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'webform',
   );
 
-  // Exported permission: 'delete any article content'.
-  $permissions['delete any article content'] = array(
-    'name' => 'delete any article content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any campus_update content'.
   $permissions['delete any campus_update content'] = array(
     'name' => 'delete any campus_update content',
@@ -916,13 +905,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
       'content manager' => 'content manager',
     ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own article content'.
-  $permissions['delete own article content'] = array(
-    'name' => 'delete own article content',
-    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1203,13 +1185,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'webform',
   );
 
-  // Exported permission: 'edit any article content'.
-  $permissions['edit any article content'] = array(
-    'name' => 'edit any article content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any campus_update content'.
   $permissions['edit any campus_update content'] = array(
     'name' => 'edit any campus_update content',
@@ -1340,13 +1315,6 @@ function unca_roles_permission_user_default_permissions() {
       'content manager' => 'content manager',
     ),
     'module' => 'media',
-  );
-
-  // Exported permission: 'edit own article content'.
-  $permissions['edit own article content'] = array(
-    'name' => 'edit own article content',
-    'roles' => array(),
-    'module' => 'node',
   );
 
   // Exported permission: 'edit own campus_update content'.
@@ -1802,7 +1770,9 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'use text format filtered_html'.
   $permissions['use text format filtered_html'] = array(
     'name' => 'use text format filtered_html',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'filter',
   );
 
@@ -1945,6 +1915,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'view the administration theme',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'system',
   );
