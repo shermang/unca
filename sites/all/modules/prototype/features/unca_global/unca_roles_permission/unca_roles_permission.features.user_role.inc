@@ -13,7 +13,7 @@ function unca_roles_permission_user_default_roles() {
   // Exported role: administrator.
   $roles['administrator'] = array(
     'name' => 'administrator',
-    'weight' => 2,
+    'weight' => 4,
   );
 
   return $roles;
