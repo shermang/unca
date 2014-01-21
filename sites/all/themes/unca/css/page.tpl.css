@@ -2,8 +2,8 @@
 -------------------------------------------------------------------------------------- **/
 #header {
 background-color:#fff; 
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/headers/header-background.php) no-repeat;
-/**background:url(http://www.unca.edu/sites/all/themes/unca/imgs/banners/banner-mountains.jpg) no-repeat; **/
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/headers/header-background.php) no-repeat;
+/**background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/banners/banner-mountains.jpg) no-repeat; **/
 margin-bottom:-5px;
 }
  
@@ -33,11 +33,11 @@ margin-bottom:2px;
 }
  
 .top-stripes {
-background:#fff url(http://www.unca.edu/sites/all/themes/unca/imgs/page-stripes-topright.png) top right no-repeat;
+background:#fff url(https://cms.unca.edu/sites/all/themes/unca/imgs/page-stripes-topright.png) top right no-repeat;
 }
  
 .bottom-stripes {
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/page-stripes-bottomleft.png) no-repeat bottom left;
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/page-stripes-bottomleft.png) no-repeat bottom left;
 }
  
 /** primary, secondary and utility navigation styles
@@ -103,11 +103,11 @@ border:solid #fff 1px;
 margin-bottom:5px; 
 padding:0; 
 height:30px;
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/navigation-primary-background-sprites.png) no-repeat 0 0; 
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/navigation-primary-background-sprites.png) no-repeat 0 0; 
 }
  
 #navigation-primary li a {
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/navigation-primary-background-sprites.png) no-repeat; 
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/navigation-primary-background-sprites.png) no-repeat; 
 padding-top:30px; 
 height:0px; 
 overflow:hidden; 
@@ -184,7 +184,7 @@ background-position:-604px -224px;
 }
  
 #navigation-primary #search {
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/navigation-primary-background-sprites.png) no-repeat -686px 0px; 
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/navigation-primary-background-sprites.png) no-repeat -686px 0px; 
 width:265px; 
 height:30px; 
 padding-right:5px; 
@@ -219,7 +219,7 @@ margin-top:4px;
 .navigation-secondary {/**this gives left shadow to div.navigation-secondary**/
 	margin-bottom:0px;
 	padding-left:2px;
-	background-image: url(http://www.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-leftcap.png);
+	background-image: url(https://cms.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-leftcap.png);
 	background-repeat: repeat-y;
 }
  
@@ -245,7 +245,7 @@ margin-bottom:0px;
 	border-left:solid #fff 1px;
 	border-bottom:solid #fff 1px;
 	position:relative;
-	background:url(http://www.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-background-sprites.png) repeat-x 0 0;
+	background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-background-sprites.png) repeat-x 0 0;
 	text-transform:uppercase;
 	background-color:#008fd1;
 	margin:0px;
@@ -275,7 +275,7 @@ margin-bottom:0px;
 
  
 .navigation-secondary ul li.active-trail {/*this class changes background image (provides color) of active sub menu items**/
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-background-sprites.png) #ee5b0a repeat-x 0 -92px; 
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-background-sprites.png) #ee5b0a repeat-x 0 -92px; 
 
 }
 
@@ -296,11 +296,11 @@ height:12px;
 margin-top:8px;
 padding:0px;
 cursor:pointer;
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-arrow-down.png) no-repeat 0 0; 
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-arrow-down.png) no-repeat 0 0; 
 }
 
 .navigation-secondary .trigger-closed {/*ditto-see above. adds arrow closed*/
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-arrow-right.png) no-repeat 0 0; 
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-arrow-right.png) no-repeat 0 0; 
 }
  
 .navigation-secondary .first { /* this class targets span added by cms that allows appearance change to first item in list*/
@@ -312,7 +312,7 @@ border-top:solid #fff 1px;
 }
  
 #navigation-secondary-bottom { /**style targets CMS span-- gives bottom shadow to div.navigation-secondary**/
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-bottomcap.png) repeat-x transparent;
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-bottomcap.png) repeat-x transparent;
 height:2px;
 display:block;
 margin:0 auto 5px auto;
@@ -325,7 +325,7 @@ width:100%;
 }
  
 #navigation-secondary-bottom { /**this applied to a span gives bottom shadow to div.navigation-secondary**/
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-bottomcap.png) repeat-x transparent;
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/navigation-secondary-bottomcap.png) repeat-x transparent;
 height:2px;
 display:block;
 margin:0 auto 5px auto;
@@ -339,7 +339,7 @@ width:100%;
 /* section heading */
 .section-heading {
 color:#fff; 
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/heading-background-left.png) no-repeat top left; 
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/heading-background-left.png) no-repeat top left; 
 height:34px; 
 min-height:24px; 
 margin:0 -5px;
@@ -347,7 +347,7 @@ padding:0 0 0 10px;
 }
  
 .section-heading span {
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/heading-background-right.png) no-repeat top right; 
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/heading-background-right.png) no-repeat top right; 
 width:100%;
 display:block;
 font-style:normal;
@@ -403,7 +403,7 @@ margin:5px 5px 5px 5px;
 }
  
 .msg-emergency {
-background: url(http://www.unca.edu/sites/all/themes/unca/imgs/msg-emergency-background.png) repeat-x #e91920; 
+background: url(https://cms.unca.edu/sites/all/themes/unca/imgs/msg-emergency-background.png) repeat-x #e91920; 
 color:#fff;
 }
  
@@ -413,7 +413,7 @@ font-size:14px;
 }
  
 .msg-notice {
-background: url(http://www.unca.edu/sites/all/themes/unca/imgs/msg-notice-background.png) repeat-x #ef8518; 
+background: url(https://cms.unca.edu/sites/all/themes/unca/imgs/msg-notice-background.png) repeat-x #ef8518; 
 color:#fff;
 }
  
@@ -453,7 +453,7 @@ Notes:  Adds icon to all pdf links
 
 /* calendar graphics */
 .calendar-graphic {
-	background:transparent url(http://www.unca.edu/sites/all/themes/unca/imgs/calendar.png) no-repeat scroll left top;
+	background:transparent url(https://cms.unca.edu/sites/all/themes/unca/imgs/calendar.png) no-repeat scroll left top;
 	display:block;
 	float:left;
 	height:48px;
@@ -502,14 +502,14 @@ color:#000;
  
 /* divider */
 .divider {
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/divider-left.png) no-repeat; 
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/divider-left.png) no-repeat; 
 height:13px; 
 min-height:13px; 
 width:100%
 }
  
 .divider span {
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/divider-right.png) no-repeat; 
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/divider-right.png) no-repeat; 
 height:13px; 
 min-height:13px; 
 width:2px; 
@@ -568,14 +568,14 @@ border:0px;
  
 /* blue button */
 .button-blue-rounded {
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/button-rounded-blue-left.png) left top no-repeat;
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/button-rounded-blue-left.png) left top no-repeat;
 height:29px;
 float:left;
 padding:0px 0px 0px 12px;
 }
 	
 .button-blue-rounded span {
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/button-rounded-blue-right.png) top right no-repeat;
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/button-rounded-blue-right.png) top right no-repeat;
 float:right;
 height:29px;
 display:block;
@@ -593,13 +593,13 @@ padding:10px 10px 1px 10px;
 
 /* Ask a Student Form */
 #webform-client-form-68 {
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/ask-a-student-form-background.png) no-repeat top left transparent;
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/ask-a-student-form-background.png) no-repeat top left transparent;
 padding:10px 20px 20px 20px;
 margin:0;
 }
  
 #node-68 #form-bottomcap {
-background:url(http://www.unca.edu/sites/all/themes/unca/imgs/ask-a-student-form-background.png) no-repeat 0 -445px transparent;
+background:url(https://cms.unca.edu/sites/all/themes/unca/imgs/ask-a-student-form-background.png) no-repeat 0 -445px transparent;
 display:block;
 margin:0 0 20px 0;
 height:3px;

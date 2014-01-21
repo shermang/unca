@@ -195,6 +195,7 @@ Redirect 301 /psychology http://psychology.unca.edu
 Redirect 301 /publicsafety http://publicsafety.unca.edu
 Redirect 301 /recreation http://recreation.unca.edu
 Redirect 301 /registrar http://registrar.unca.edu
+Redirect 301 /registrar/classes/schedules http://www3.unca.edu/schedules/
 Redirect 301 /sacs http://sacs.unca.edu
 Redirect 301 /seriouslycreative http://seriouslycreative.unca.edu
 Redirect 301 /sga http://sga.unca.edu
@@ -252,5 +253,7 @@ Redirect 301 /neuroscience http://ist.unca.edu/neuroscience-neur
 Redirect 301 /pre-health http://hwp.unca.edu/
 Redirect 301 /religiousstudies http://religiousstudies.unca.edu
 Redirect 301 /tf http://tf.unca.edu
+Redirect 301 /radio http://studentactivities.unca.edu/radio
 Redirect 301 /news-events/news/2013/4/study-unc-asheville-makes-268-million-economic-impact /economicimpact
 Redirect 301 /~mcmcclur https://sites.google.com/a/unca.edu/mark-mcclure/
+Redirect 301 /retrospective http://www3.unca.edu/retrospective
