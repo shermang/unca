@@ -22,7 +22,7 @@ function unca_event_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -191,13 +191,9 @@ function unca_event_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'medium',
-        ),
-        'type' => 'image',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -342,11 +338,11 @@ function unca_event_field_default_field_instances() {
     'description' => 'Enter a short description, caption or subheading for this event.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -384,10 +380,10 @@ function unca_event_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'file_entity',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'file_view_mode' => 'media_original',
         ),
         'type' => 'file_rendered',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',

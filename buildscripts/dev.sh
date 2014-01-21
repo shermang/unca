@@ -47,7 +47,6 @@ scheduler \
 taxonomy_menu \
 taxonomy_menu_block \
 token \
-toolbar \
 views \
 views_bulk_operations \
 views_data_export \
@@ -68,6 +67,7 @@ media_internet \
 uuid \
 entity_token \
 googleanalytics \
+google_cse \
 ldap_authentication \
 ldap_user \
 ldap_servers \
@@ -116,6 +116,7 @@ date_views \
 unca_custom \
 unca_departmental_update \
 unca_image_styles \
+unca_google_custom_search \
 unca_roles_permission \
 migrate \
 migrate_ui \
@@ -123,17 +124,18 @@ date_migrate \
 migrate_d2d \
 migrate_d2d_unca \
 addthis \
+admin_menu \
+admin_menu_toolbar \
 
 # To disable modules, uncomment the following command and list the modules to disable
 drush dis --yes \
-admin_menu \
-admin_menu_toolbar \
 overlay \
 securelogin \
 sharethis \
 slideshow_entity \
 lightbox2 \
 sharethis \
+toolbar \
 scanner
 
 # uninstall slideshow entity

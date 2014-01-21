@@ -197,7 +197,7 @@ function unca_campus_update_field_default_field_instances() {
         'label' => 'above',
         'module' => 'file_entity',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'file_view_mode' => 'media_original',
         ),
         'type' => 'file_rendered',
         'weight' => 2,

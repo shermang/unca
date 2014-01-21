@@ -24,9 +24,9 @@ class UNCAProfileMigration extends UNCANodeMigration {
     $this->addFieldMapping('field_image:language')
       ->defaultValue(LANGUAGE_NONE);
     // end image field
-    $this->addFieldMapping('field_contact_info','field_teaser_text');
-    $this->addFieldMapping('field_personal_statement','field_teaser_text');
-    $this->addFieldMapping('field_weight','field_weight');
+    $this->addFieldMapping('field_profile_contact_info','field_teaser_text');
+    $this->addFieldMapping('field_profile_personal_statement','field_teaser_text');
+    $this->addFieldMapping('field_profile_weight','field_weight');
 
 
 // Note that we map migrated terms by the vocabulary ID.
