@@ -93,6 +93,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'access draggableviews',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'draggableviews',
   );
@@ -152,18 +153,14 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'access private fields'.
   $permissions['access private fields'] = array(
     'name' => 'access private fields',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
   // Exported permission: 'access rules debug'.
   $permissions['access rules debug'] = array(
     'name' => 'access rules debug',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'rules',
   );
 
@@ -199,6 +196,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'add media from remote sources',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'media_internet',
   );
@@ -261,9 +259,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer features'.
   $permissions['administer features'] = array(
     'name' => 'administer features',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'features',
   );
 
@@ -288,9 +284,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer field permissions'.
   $permissions['administer field permissions'] = array(
     'name' => 'administer field permissions',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
@@ -424,9 +418,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer pathauto'.
   $permissions['administer pathauto'] = array(
     'name' => 'administer pathauto',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'pathauto',
   );
 
@@ -478,9 +470,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer rules'.
   $permissions['administer rules'] = array(
     'name' => 'administer rules',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'rules',
   );
 
@@ -534,6 +524,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'administer taxonomy',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'taxonomy',
   );
@@ -604,9 +595,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'bypass rules access'.
   $permissions['bypass rules access'] = array(
     'name' => 'bypass rules access',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'rules',
   );
 
@@ -637,28 +626,40 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'create cluster content'.
   $permissions['create cluster content'] = array(
     'name' => 'create cluster content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'create course content'.
   $permissions['create course content'] = array(
     'name' => 'create course content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'create destination content'.
   $permissions['create destination content'] = array(
     'name' => 'create destination content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'create event content'.
   $permissions['create event content'] = array(
     'name' => 'create event content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -674,14 +675,20 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'create map_item content'.
   $permissions['create map_item content'] = array(
     'name' => 'create map_item content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'create news_article content'.
   $permissions['create news_article content'] = array(
     'name' => 'create news_article content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -698,7 +705,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'create policy content'.
   $permissions['create policy content'] = array(
     'name' => 'create policy content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -715,7 +725,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'create project content'.
   $permissions['create project content'] = array(
     'name' => 'create project content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -732,7 +745,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'create student_organization content'.
   $permissions['create student_organization content'] = array(
     'name' => 'create student_organization content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -781,6 +797,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'customize shortcut links',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'shortcut',
   );
@@ -808,42 +825,60 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete any cluster content'.
   $permissions['delete any cluster content'] = array(
     'name' => 'delete any cluster content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any course content'.
   $permissions['delete any course content'] = array(
     'name' => 'delete any course content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any destination content'.
   $permissions['delete any destination content'] = array(
     'name' => 'delete any destination content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any event content'.
   $permissions['delete any event content'] = array(
     'name' => 'delete any event content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any map_item content'.
   $permissions['delete any map_item content'] = array(
     'name' => 'delete any map_item content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any news_article content'.
   $permissions['delete any news_article content'] = array(
     'name' => 'delete any news_article content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -860,7 +895,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete any policy content'.
   $permissions['delete any policy content'] = array(
     'name' => 'delete any policy content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -877,7 +915,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete any project content'.
   $permissions['delete any project content'] = array(
     'name' => 'delete any project content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -894,7 +935,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete any student_organization content'.
   $permissions['delete any student_organization content'] = array(
     'name' => 'delete any student_organization content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -921,42 +965,60 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete own cluster content'.
   $permissions['delete own cluster content'] = array(
     'name' => 'delete own cluster content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own course content'.
   $permissions['delete own course content'] = array(
     'name' => 'delete own course content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own destination content'.
   $permissions['delete own destination content'] = array(
     'name' => 'delete own destination content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own event content'.
   $permissions['delete own event content'] = array(
     'name' => 'delete own event content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own map_item content'.
   $permissions['delete own map_item content'] = array(
     'name' => 'delete own map_item content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own news_article content'.
   $permissions['delete own news_article content'] = array(
     'name' => 'delete own news_article content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -973,7 +1035,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete own policy content'.
   $permissions['delete own policy content'] = array(
     'name' => 'delete own policy content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -990,7 +1055,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete own project content'.
   $permissions['delete own project content'] = array(
     'name' => 'delete own project content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1007,7 +1075,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete own student_organization content'.
   $permissions['delete own student_organization content'] = array(
     'name' => 'delete own student_organization content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1036,6 +1107,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'delete revisions',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'node',
   );
@@ -1198,28 +1270,40 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit any cluster content'.
   $permissions['edit any cluster content'] = array(
     'name' => 'edit any cluster content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any course content'.
   $permissions['edit any course content'] = array(
     'name' => 'edit any course content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any destination content'.
   $permissions['edit any destination content'] = array(
     'name' => 'edit any destination content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any event content'.
   $permissions['edit any event content'] = array(
     'name' => 'edit any event content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1235,14 +1319,20 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit any map_item content'.
   $permissions['edit any map_item content'] = array(
     'name' => 'edit any map_item content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any news_article content'.
   $permissions['edit any news_article content'] = array(
     'name' => 'edit any news_article content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1259,7 +1349,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit any policy content'.
   $permissions['edit any policy content'] = array(
     'name' => 'edit any policy content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1276,7 +1369,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit any project content'.
   $permissions['edit any project content'] = array(
     'name' => 'edit any project content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1293,7 +1389,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit any student_organization content'.
   $permissions['edit any student_organization content'] = array(
     'name' => 'edit any student_organization content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1330,28 +1429,40 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit own cluster content'.
   $permissions['edit own cluster content'] = array(
     'name' => 'edit own cluster content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own course content'.
   $permissions['edit own course content'] = array(
     'name' => 'edit own course content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own destination content'.
   $permissions['edit own destination content'] = array(
     'name' => 'edit own destination content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own event content'.
   $permissions['edit own event content'] = array(
     'name' => 'edit own event content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1368,14 +1479,20 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit own map_item content'.
   $permissions['edit own map_item content'] = array(
     'name' => 'edit own map_item content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own news_article content'.
   $permissions['edit own news_article content'] = array(
     'name' => 'edit own news_article content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1392,7 +1509,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit own policy content'.
   $permissions['edit own policy content'] = array(
     'name' => 'edit own policy content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1409,7 +1529,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit own project content'.
   $permissions['edit own project content'] = array(
     'name' => 'edit own project content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1426,7 +1549,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit own student_organization content'.
   $permissions['edit own student_organization content'] = array(
     'name' => 'edit own student_organization content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'node',
   );
 
@@ -1597,18 +1723,14 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'export nodes'.
   $permissions['export nodes'] = array(
     'name' => 'export nodes',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node_export',
   );
 
   // Exported permission: 'export own nodes'.
   $permissions['export own nodes'] = array(
     'name' => 'export own nodes',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node_export',
   );
 
@@ -1631,9 +1753,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'manage features'.
   $permissions['manage features'] = array(
     'name' => 'manage features',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'features',
   );
 
@@ -1727,6 +1847,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'switch shortcut sets',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'shortcut',
   );
@@ -1752,9 +1873,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'use PHP to import nodes'.
   $permissions['use PHP to import nodes'] = array(
     'name' => 'use PHP to import nodes',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node_export',
   );
 
@@ -1820,6 +1939,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'view all flickr photos',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'flickr',
   );
@@ -1876,6 +1996,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'view own flickr photos',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'flickr',
   );
