@@ -24,6 +24,24 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
   );
+  // Exported menu link: main-menu:http://news.unca.edu/
+  $menu_links['main-menu:http://news.unca.edu/'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'http://news.unca.edu/',
+    'router_path' => '',
+    'link_title' => 'News & Events',
+    'options' => array(
+      'attributes' => array(
+        'target' => '_blank',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -45,
+  );
   // Exported menu link: main-menu:http://www.unca.edu/about
   $menu_links['main-menu:http://www.unca.edu/about'] = array(
     'menu_name' => 'main-menu',
@@ -111,7 +129,9 @@ function unca_global_header_and_footer_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Athletics',
     'options' => array(
-      'attributes' => array(),
+      'attributes' => array(
+        'target' => '_top',
+      ),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -348,6 +368,7 @@ function unca_global_header_and_footer_menu_default_menu_links() {
   t('Life on Campus');
   t('Maps');
   t('Moodle');
+  t('News & Events');
   t('OnePort');
   t('Quick Links');
 
