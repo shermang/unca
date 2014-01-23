@@ -1,5 +1,5 @@
 name = UNCA Departmental Update
-description = Departmental Update Content Type
+description = Departmental Update Content Type for UNC Asheville
 core = 7.x
 package = UNCA Content Types
 version = 7.x-1.0-beta1
