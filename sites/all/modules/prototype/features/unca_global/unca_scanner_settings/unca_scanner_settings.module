@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the UNCA Scanner Settings feature.
+ */
+
+include_once 'unca_scanner_settings.features.inc';
