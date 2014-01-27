@@ -149,17 +149,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'webform',
   );
 
-  // Exported permission: 'access print'.
-  $permissions['access print'] = array(
-    'name' => 'access print',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'print',
-  );
-
   // Exported permission: 'access private fields'.
   $permissions['access private fields'] = array(
     'name' => 'access private fields',
@@ -502,15 +491,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'user',
-  );
-
-  // Exported permission: 'administer print'.
-  $permissions['administer print'] = array(
-    'name' => 'administer print',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'print',
   );
 
   // Exported permission: 'administer profile types'.
@@ -2088,15 +2068,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'migrate',
-  );
-
-  // Exported permission: 'node-specific print configuration'.
-  $permissions['node-specific print configuration'] = array(
-    'name' => 'node-specific print configuration',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'print',
   );
 
   // Exported permission: 'notify of path changes'.

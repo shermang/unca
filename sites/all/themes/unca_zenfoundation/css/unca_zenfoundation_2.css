@@ -4446,6 +4446,7 @@ a.footer-spiff-map {
 
 #footer-profile {
   overflow: hidden;
+  background-color: #f00;
 }
 
 #bottom-spiffs .profile-headshot {

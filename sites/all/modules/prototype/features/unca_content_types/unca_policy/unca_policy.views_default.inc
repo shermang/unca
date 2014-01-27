@@ -29,7 +29,11 @@ function unca_policy_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Footer: Global: Text area */
@@ -43,24 +47,17 @@ var e = document.getElementById(id);
 e.style.display=\'block\';
 </script>';
   $handler->display->display_options['footer']['text']['format'] = '2';
-  /* Field: Content: Approval Authority */
-  $handler->display->display_options['fields']['field_approved_by_value']['id'] = 'field_approved_by_value';
-  $handler->display->display_options['fields']['field_approved_by_value']['table'] = 'field_data_field_policy_approved_by';
-  $handler->display->display_options['fields']['field_approved_by_value']['field'] = 'field_policy_approved_by';
-  $handler->display->display_options['fields']['field_approved_by_value']['label'] = '';
-  $handler->display->display_options['fields']['field_approved_by_value']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_approved_by_value']['element_label_type'] = '0';
-  $handler->display->display_options['fields']['field_approved_by_value']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_approved_by_value']['element_default_classes'] = FALSE;
-  /* Field: Content: Associated Forms */
-  $handler->display->display_options['fields']['field_associated_forms_value']['id'] = 'field_associated_forms_value';
-  $handler->display->display_options['fields']['field_associated_forms_value']['table'] = 'field_data_field_policy_associated_forms';
-  $handler->display->display_options['fields']['field_associated_forms_value']['field'] = 'field_policy_associated_forms';
-  $handler->display->display_options['fields']['field_associated_forms_value']['label'] = '';
-  $handler->display->display_options['fields']['field_associated_forms_value']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_associated_forms_value']['element_label_type'] = '0';
-  $handler->display->display_options['fields']['field_associated_forms_value']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_associated_forms_value']['element_default_classes'] = FALSE;
+  /* Field: Content: Policy Code */
+  $handler->display->display_options['fields']['field_policy_code_value']['id'] = 'field_policy_code_value';
+  $handler->display->display_options['fields']['field_policy_code_value']['table'] = 'field_data_field_policy_code';
+  $handler->display->display_options['fields']['field_policy_code_value']['field'] = 'field_policy_code';
+  $handler->display->display_options['fields']['field_policy_code_value']['label'] = '';
+  $handler->display->display_options['fields']['field_policy_code_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_policy_code_value']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['fields']['field_policy_code_value']['delta_offset'] = '0';
   /* Field: Content: Policy Number */
   $handler->display->display_options['fields']['field_policy_number_value']['id'] = 'field_policy_number_value';
   $handler->display->display_options['fields']['field_policy_number_value']['table'] = 'field_data_field_policy_number';
@@ -73,45 +70,12 @@ e.style.display=\'block\';
     'scale' => '0',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Policy Type */
-  $handler->display->display_options['fields']['field_policy_type_value']['id'] = 'field_policy_type_value';
-  $handler->display->display_options['fields']['field_policy_type_value']['table'] = 'field_data_field_policy_type';
-  $handler->display->display_options['fields']['field_policy_type_value']['field'] = 'field_policy_type';
-  $handler->display->display_options['fields']['field_policy_type_value']['label'] = '';
-  $handler->display->display_options['fields']['field_policy_type_value']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_policy_type_value']['element_label_type'] = '0';
-  $handler->display->display_options['fields']['field_policy_type_value']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_policy_type_value']['element_default_classes'] = FALSE;
-  /* Field: Content: Reference Materials */
-  $handler->display->display_options['fields']['field_reference_materials_value']['id'] = 'field_reference_materials_value';
-  $handler->display->display_options['fields']['field_reference_materials_value']['table'] = 'field_data_field_policy_reference_materials';
-  $handler->display->display_options['fields']['field_reference_materials_value']['field'] = 'field_policy_reference_materials';
-  $handler->display->display_options['fields']['field_reference_materials_value']['label'] = '';
-  $handler->display->display_options['fields']['field_reference_materials_value']['element_label_colon'] = FALSE;
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['field_teaser_text_value']['id'] = 'field_teaser_text_value';
-  $handler->display->display_options['fields']['field_teaser_text_value']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['field_teaser_text_value']['field'] = 'body';
-  $handler->display->display_options['fields']['field_teaser_text_value']['label'] = '';
-  $handler->display->display_options['fields']['field_teaser_text_value']['alter']['max_length'] = '300';
-  $handler->display->display_options['fields']['field_teaser_text_value']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_teaser_text_value']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_teaser_text_value']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_teaser_text_value']['settings'] = array(
-    'trim_length' => '300',
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Approval Date */
   $handler->display->display_options['fields']['field_approval_date_value']['id'] = 'field_approval_date_value';
   $handler->display->display_options['fields']['field_approval_date_value']['table'] = 'field_data_field_policy_approval_date';
@@ -128,34 +92,19 @@ e.style.display=\'block\';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Origination Date */
-  $handler->display->display_options['fields']['field_date_issued_value']['id'] = 'field_date_issued_value';
-  $handler->display->display_options['fields']['field_date_issued_value']['table'] = 'field_data_field_policy_origination_date';
-  $handler->display->display_options['fields']['field_date_issued_value']['field'] = 'field_policy_origination_date';
-  $handler->display->display_options['fields']['field_date_issued_value']['label'] = '';
-  $handler->display->display_options['fields']['field_date_issued_value']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_date_issued_value']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Content: Policy Code */
-  $handler->display->display_options['fields']['field_policy_code_value']['id'] = 'field_policy_code_value';
-  $handler->display->display_options['fields']['field_policy_code_value']['table'] = 'field_data_field_policy_code';
-  $handler->display->display_options['fields']['field_policy_code_value']['field'] = 'field_policy_code';
-  $handler->display->display_options['fields']['field_policy_code_value']['label'] = '';
-  $handler->display->display_options['fields']['field_policy_code_value']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_policy_code_value']['settings'] = array(
-    'thousand_separator' => ' ',
-    'prefix_suffix' => 1,
-  );
-  $handler->display->display_options['fields']['field_policy_code_value']['delta_offset'] = '0';
-  /* Sort criterion: Content: Policy Number (field_policy_number) */
-  $handler->display->display_options['sorts']['field_policy_number_value_1']['id'] = 'field_policy_number_value_1';
-  $handler->display->display_options['sorts']['field_policy_number_value_1']['table'] = 'field_data_field_policy_number';
-  $handler->display->display_options['sorts']['field_policy_number_value_1']['field'] = 'field_policy_number_value';
+  /* Field: Content: Approval Authority */
+  $handler->display->display_options['fields']['field_approved_by_value']['id'] = 'field_approved_by_value';
+  $handler->display->display_options['fields']['field_approved_by_value']['table'] = 'field_data_field_policy_approved_by';
+  $handler->display->display_options['fields']['field_approved_by_value']['field'] = 'field_policy_approved_by';
+  $handler->display->display_options['fields']['field_approved_by_value']['label'] = '';
+  $handler->display->display_options['fields']['field_approved_by_value']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_approved_by_value']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_approved_by_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_approved_by_value']['element_default_classes'] = FALSE;
+  /* Sort criterion: Content: Policy Code (field_policy_code) */
+  $handler->display->display_options['sorts']['field_policy_code_value']['id'] = 'field_policy_code_value';
+  $handler->display->display_options['sorts']['field_policy_code_value']['table'] = 'field_data_field_policy_code';
+  $handler->display->display_options['sorts']['field_policy_code_value']['field'] = 'field_policy_code_value';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -314,44 +263,6 @@ e.style.display=\'block\';
     3 => 0,
   );
   $handler->display->display_options['path'] = 'policies';
-  $handler->display->display_options['menu']['name'] = 'primary-links';
-
-  /* Display: Placeholder Page */
-  $handler = $view->new_display('page', 'Placeholder Page', 'page_2');
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['text']['id'] = 'area';
-  $handler->display->display_options['header']['text']['table'] = 'views';
-  $handler->display->display_options['header']['text']['field'] = 'area';
-  $handler->display->display_options['header']['text']['empty'] = TRUE;
-  $handler->display->display_options['header']['text']['content'] = '<a href="http://www2.unca.edu/policies">View the policies of UNC Asheville</a>';
-  $handler->display->display_options['header']['text']['format'] = 'filtered_html';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'policy' => 'policy',
-  );
-  $handler->display->display_options['filters']['type']['group'] = '0';
-  $handler->display->display_options['filters']['type']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = '0';
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
-  $handler->display->display_options['filters']['status_1']['table'] = 'node';
-  $handler->display->display_options['filters']['status_1']['field'] = 'status';
-  $handler->display->display_options['filters']['status_1']['value'] = '0';
-  $handler->display->display_options['filters']['status_1']['group'] = '0';
-  $handler->display->display_options['filters']['status_1']['expose']['operator'] = FALSE;
-  $handler->display->display_options['path'] = 'policies/placeholder';
   $handler->display->display_options['menu']['name'] = 'primary-links';
   $export['Policies'] = $view;
 
