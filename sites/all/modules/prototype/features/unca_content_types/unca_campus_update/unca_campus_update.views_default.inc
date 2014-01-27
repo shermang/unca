@@ -15,7 +15,7 @@ function unca_campus_update_views_default_views() {
   $view->description = 'This view queries the latest campus updates for display on the home page.';
   $view->tag = '';
   $view->base_table = 'node';
-  $view->human_name = '';
+  $view->human_name = 'Campus Updates';
   $view->core = 0;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */

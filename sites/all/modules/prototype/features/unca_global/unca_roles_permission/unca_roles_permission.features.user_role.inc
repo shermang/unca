@@ -16,5 +16,11 @@ function unca_roles_permission_user_default_roles() {
     'weight' => 4,
   );
 
+  // Exported role: content manager.
+  $roles['content manager'] = array(
+    'name' => 'content manager',
+    'weight' => 3,
+  );
+
   return $roles;
 }
