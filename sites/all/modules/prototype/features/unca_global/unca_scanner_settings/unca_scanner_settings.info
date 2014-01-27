@@ -43,4 +43,3 @@ features[variable][] = scanner_title_node_revision_slideshow_item
 features[variable][] = scanner_title_node_revision_student_organization
 features[variable][] = scanner_title_node_revision_student_project
 features[variable][] = scanner_title_node_revision_webform
-project path = sites/all/modules/prototype/features/unca_global
