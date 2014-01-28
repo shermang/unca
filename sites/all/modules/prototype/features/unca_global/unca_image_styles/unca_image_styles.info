@@ -14,6 +14,7 @@ features[image][] = featured-media-image
 features[image][] = gateway-links-image
 features[image][] = news-update-featured-image
 features[image][] = profile-headshot-image
+features[image][] = profile_image
 features[image][] = promo-link-featured-image_
 features[image][] = scale_215x215
 features[image][] = scale_crop_160x90
