@@ -1,6 +1,6 @@
 <?php $base_path = base_path();?>
 <div class="profile">
-<?php if ($fields['field_image_fid']->content){?>
+<?php if (strpos($fields['field_image_fid']->content,'src=') != 0){?>
   <?php print $fields['field_image_fid']->content; ?>
   <?php } else { ?>
  <img src="http://www.unca.edu/sites/default/files/images/Not_Available.png" width="175" height="175" alt="headshot" class="profile-image"/>
