@@ -269,6 +269,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'administer blocks',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'block',
   );
