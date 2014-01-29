@@ -999,12 +999,10 @@ nav.navigation .block .block-title, .block-search .block-title, #block-menu-menu
 
 .field img,
 .views-field img {
-  float: left;
   margin: 0 1em 1em 0;
 }
 
 .node-type-cluster .field-name-field-image, .node-course .field-name-field-image img, .node-map-item .field-name-field-image img {
-  float: right;
   margin: 0 0 1em 1em;
 }
 
