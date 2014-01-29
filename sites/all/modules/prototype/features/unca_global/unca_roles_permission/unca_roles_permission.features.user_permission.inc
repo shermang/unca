@@ -72,6 +72,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'access contextual links',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'contextual',
   );
