@@ -120,6 +120,7 @@ function unca_roles_permission_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'aggregator',
   );
@@ -2052,6 +2053,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'perform search and replace',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'scanner',
   );
@@ -2215,6 +2217,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'publish blocks',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'sharedblocks',
   );
@@ -2590,6 +2593,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'subscribe to blocks',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'sharedblocks',
   );
