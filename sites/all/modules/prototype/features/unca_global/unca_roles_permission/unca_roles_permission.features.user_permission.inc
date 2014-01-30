@@ -821,13 +821,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'webform',
   );
 
-  // Exported permission: 'edit terms in region'.
-  $permissions['edit terms in region'] = array(
-    'name' => 'edit terms in region',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'edit terms in slideshows'.
   $permissions['edit terms in slideshows'] = array(
     'name' => 'edit terms in slideshows',
@@ -1093,13 +1086,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'search',
-  );
-
-  // Exported permission: 'use text format code'.
-  $permissions['use text format code'] = array(
-    'name' => 'use text format code',
-    'roles' => array(),
-    'module' => 'filter',
   );
 
   // Exported permission: 'use text format filtered_html'.
