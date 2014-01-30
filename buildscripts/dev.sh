@@ -16,8 +16,6 @@ devel \
 draggableviews \
 entity_path \
 feeds \
-#flickr \
-#html_export \
 image_caption \
 imagecrop \
 imce \
@@ -35,7 +33,6 @@ menu_attributes \
 menu_block \
 node_export \
 pathauto \
-#print \
 profile2 \
 recaptcha \
 rules \
@@ -49,7 +46,6 @@ views_data_export \
 views_flipped_table \
 views_ui \
 views_slideshow \
-#weather \
 webform \
 wysiwyg \
 wysiwyg_spellcheck \
@@ -79,24 +75,6 @@ unca_slideshow \
 unca_department_navigation \
 unca_home \
 unca_site_admin_views \
-#Begin optional content types and views; only enable when necessary
-#unca_student_organization \
-#study_abroad \
-#unca_policy \
-#unca_cluster \
-#unca_course \
-#unca_campus_update \
-#unca_news \
-#unca_project \
-#unca_project_views \
-#unca_student_project \
-#unca_maps \
-#unca_map_views \
-#gmap \
-#gmap_location \
-#gmap_macro_builder \
-#gmap_taxonomy \
-#End optional content types and views
 unca_page \
 unca_slideshow \
 unca_profile \
@@ -130,11 +108,28 @@ admin_menu \
 admin_menu_toolbar \
 scanner \
 bulk_export \
+#Begin optional content types and views; only enable when necessary
+#unca_student_organization \
+#study_abroad \
+#unca_policy \
+#unca_cluster \
+#unca_course \
+#unca_campus_update \
+#unca_news \
+#unca_project \
+#unca_project_views \
+#unca_student_project \
+#unca_maps \
+#unca_map_views \
+#gmap \
+#gmap_location \
+#gmap_macro_builder \
+#gmap_taxonomy \
+#End optional content types and views
 
 
 #Begin modules to disable
 drush dis --yes \
-#devel \
 color \
 comment \
 overlay \
