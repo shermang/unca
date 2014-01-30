@@ -176,15 +176,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: 'access weather pages'.
-  $permissions['access weather pages'] = array(
-    'name' => 'access weather pages',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'weather',
-  );
-
   // Exported permission: 'add media from remote sources'.
   $permissions['add media from remote sources'] = array(
     'name' => 'add media from remote sources',
@@ -295,15 +286,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'context_ui',
   );
 
-  // Exported permission: 'administer custom weather block'.
-  $permissions['administer custom weather block'] = array(
-    'name' => 'administer custom weather block',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'weather',
-  );
-
   // Exported permission: 'administer features'.
   $permissions['administer features'] = array(
     'name' => 'administer features',
@@ -361,15 +343,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'flexslider',
-  );
-
-  // Exported permission: 'administer flickr'.
-  $permissions['administer flickr'] = array(
-    'name' => 'administer flickr',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'flickr',
   );
 
   // Exported permission: 'administer google analytics'.
@@ -698,15 +671,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'create gmap macro'.
-  $permissions['create gmap macro'] = array(
-    'name' => 'create gmap macro',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'gmap_macro_builder',
-  );
-
   // Exported permission: 'create url aliases'.
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
@@ -772,146 +736,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete terms in course_catalogs'.
-  $permissions['delete terms in course_catalogs'] = array(
-    'name' => 'delete terms in course_catalogs',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in course_days'.
-  $permissions['delete terms in course_days'] = array(
-    'name' => 'delete terms in course_days',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in course_times'.
-  $permissions['delete terms in course_times'] = array(
-    'name' => 'delete terms in course_times',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in course_topic'.
-  $permissions['delete terms in course_topic'] = array(
-    'name' => 'delete terms in course_topic',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in department'.
-  $permissions['delete terms in department'] = array(
-    'name' => 'delete terms in department',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in event_categories'.
-  $permissions['delete terms in event_categories'] = array(
-    'name' => 'delete terms in event_categories',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in event_type'.
-  $permissions['delete terms in event_type'] = array(
-    'name' => 'delete terms in event_type',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in groups_policies_apply_to'.
-  $permissions['delete terms in groups_policies_apply_to'] = array(
-    'name' => 'delete terms in groups_policies_apply_to',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in humanities_level'.
-  $permissions['delete terms in humanities_level'] = array(
-    'name' => 'delete terms in humanities_level',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in location_type'.
-  $permissions['delete terms in location_type'] = array(
-    'name' => 'delete terms in location_type',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in news_and_event_type'.
-  $permissions['delete terms in news_and_event_type'] = array(
-    'name' => 'delete terms in news_and_event_type',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in news_and_events_categories'.
-  $permissions['delete terms in news_and_events_categories'] = array(
-    'name' => 'delete terms in news_and_events_categories',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in news_category'.
-  $permissions['delete terms in news_category'] = array(
-    'name' => 'delete terms in news_category',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in page_layout'.
-  $permissions['delete terms in page_layout'] = array(
-    'name' => 'delete terms in page_layout',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in policy_categories'.
-  $permissions['delete terms in policy_categories'] = array(
-    'name' => 'delete terms in policy_categories',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in policy_owner'.
-  $permissions['delete terms in policy_owner'] = array(
-    'name' => 'delete terms in policy_owner',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in program_types'.
-  $permissions['delete terms in program_types'] = array(
-    'name' => 'delete terms in program_types',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in project_type'.
-  $permissions['delete terms in project_type'] = array(
-    'name' => 'delete terms in project_type',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in region'.
-  $permissions['delete terms in region'] = array(
-    'name' => 'delete terms in region',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in responsible_office'.
-  $permissions['delete terms in responsible_office'] = array(
-    'name' => 'delete terms in responsible_office',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'delete terms in slideshows'.
   $permissions['delete terms in slideshows'] = array(
     'name' => 'delete terms in slideshows',
@@ -919,29 +743,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
       'content manager' => 'content manager',
     ),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in student_organization'.
-  $permissions['delete terms in student_organization'] = array(
-    'name' => 'delete terms in student_organization',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in tags'.
-  $permissions['delete terms in tags'] = array(
-    'name' => 'delete terms in tags',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in university_semester'.
-  $permissions['delete terms in university_semester'] = array(
-    'name' => 'delete terms in university_semester',
-    'roles' => array(),
     'module' => 'taxonomy',
   );
 
@@ -1020,142 +821,9 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'webform',
   );
 
-  // Exported permission: 'edit terms in course_catalogs'.
-  $permissions['edit terms in course_catalogs'] = array(
-    'name' => 'edit terms in course_catalogs',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in course_days'.
-  $permissions['edit terms in course_days'] = array(
-    'name' => 'edit terms in course_days',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in course_times'.
-  $permissions['edit terms in course_times'] = array(
-    'name' => 'edit terms in course_times',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in course_topic'.
-  $permissions['edit terms in course_topic'] = array(
-    'name' => 'edit terms in course_topic',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in department'.
-  $permissions['edit terms in department'] = array(
-    'name' => 'edit terms in department',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in event_categories'.
-  $permissions['edit terms in event_categories'] = array(
-    'name' => 'edit terms in event_categories',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in event_type'.
-  $permissions['edit terms in event_type'] = array(
-    'name' => 'edit terms in event_type',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in groups_policies_apply_to'.
-  $permissions['edit terms in groups_policies_apply_to'] = array(
-    'name' => 'edit terms in groups_policies_apply_to',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in humanities_level'.
-  $permissions['edit terms in humanities_level'] = array(
-    'name' => 'edit terms in humanities_level',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in location_type'.
-  $permissions['edit terms in location_type'] = array(
-    'name' => 'edit terms in location_type',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in news_and_event_type'.
-  $permissions['edit terms in news_and_event_type'] = array(
-    'name' => 'edit terms in news_and_event_type',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in news_and_events_categories'.
-  $permissions['edit terms in news_and_events_categories'] = array(
-    'name' => 'edit terms in news_and_events_categories',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in news_category'.
-  $permissions['edit terms in news_category'] = array(
-    'name' => 'edit terms in news_category',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in page_layout'.
-  $permissions['edit terms in page_layout'] = array(
-    'name' => 'edit terms in page_layout',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in policy_categories'.
-  $permissions['edit terms in policy_categories'] = array(
-    'name' => 'edit terms in policy_categories',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in policy_owner'.
-  $permissions['edit terms in policy_owner'] = array(
-    'name' => 'edit terms in policy_owner',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in program_types'.
-  $permissions['edit terms in program_types'] = array(
-    'name' => 'edit terms in program_types',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in project_type'.
-  $permissions['edit terms in project_type'] = array(
-    'name' => 'edit terms in project_type',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'edit terms in region'.
   $permissions['edit terms in region'] = array(
     'name' => 'edit terms in region',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in responsible_office'.
-  $permissions['edit terms in responsible_office'] = array(
-    'name' => 'edit terms in responsible_office',
     'roles' => array(),
     'module' => 'taxonomy',
   );
@@ -1167,29 +835,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
       'content manager' => 'content manager',
     ),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in student_organization'.
-  $permissions['edit terms in student_organization'] = array(
-    'name' => 'edit terms in student_organization',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in tags'.
-  $permissions['edit terms in tags'] = array(
-    'name' => 'edit terms in tags',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in university_semester'.
-  $permissions['edit terms in university_semester'] = array(
-    'name' => 'edit terms in university_semester',
-    'roles' => array(),
     'module' => 'taxonomy',
   );
 
@@ -1505,16 +1150,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'advanced_help',
   );
 
-  // Exported permission: 'view all flickr photos'.
-  $permissions['view all flickr photos'] = array(
-    'name' => 'view all flickr photos',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'content manager' => 'content manager',
-    ),
-    'module' => 'flickr',
-  );
-
   // Exported permission: 'view any main profile'.
   $permissions['view any main profile'] = array(
     'name' => 'view any main profile',
@@ -1553,15 +1188,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'location',
   );
 
-  // Exported permission: 'view node map'.
-  $permissions['view node map'] = array(
-    'name' => 'view node map',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'gmap_location',
-  );
-
   // Exported permission: 'view own field_iframe'.
   $permissions['view own field_iframe'] = array(
     'name' => 'view own field_iframe',
@@ -1570,16 +1196,6 @@ function unca_roles_permission_user_default_permissions() {
       'content manager' => 'content manager',
     ),
     'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view own flickr photos'.
-  $permissions['view own flickr photos'] = array(
-    'name' => 'view own flickr photos',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'content manager' => 'content manager',
-    ),
-    'module' => 'flickr',
   );
 
   // Exported permission: 'view own main profile'.
@@ -1621,15 +1237,6 @@ function unca_roles_permission_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: 'view user location details'.
-  $permissions['view user location details'] = array(
-    'name' => 'view user location details',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'gmap_location',
-  );
-
   // Exported permission: 'view user location table'.
   $permissions['view user location table'] = array(
     'name' => 'view user location table',
@@ -1637,15 +1244,6 @@ function unca_roles_permission_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'location',
-  );
-
-  // Exported permission: 'view user map'.
-  $permissions['view user map'] = array(
-    'name' => 'view user map',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'gmap_location',
   );
 
   return $permissions;
