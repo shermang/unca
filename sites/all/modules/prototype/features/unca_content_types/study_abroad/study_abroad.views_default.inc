@@ -225,12 +225,12 @@ function study_abroad_views_default_views() {
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['label'] = '';
   $handler->display->display_options['fields']['field_image']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_image']['element_class'] = 'profile-headshot';
+  $handler->display->display_options['fields']['field_image']['element_class'] = 'project-thumbnail';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'flag__130_width_',
     'image_link' => 'content',
   );
   /* Field: Content: Title */
@@ -292,11 +292,6 @@ function study_abroad_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'destination' => 'destination',
   );
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['value'] = 'China';
   $export['study_abroad_destinations'] = $view;
 
   return $export;
