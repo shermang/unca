@@ -6881,3 +6881,7 @@ nav.navigation #block-menu-menu-global-tools-menu a, nav.navigation
   transition: background 0.25s;
   background: gray;
 }
+
+.floatL {
+  float: left;
+}
