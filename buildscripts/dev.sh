@@ -16,12 +16,8 @@ devel \
 draggableviews \
 entity_path \
 feeds \
-flickr \
-gmap \
-gmap_location \
-gmap_macro_builder \
-gmap_taxonomy \
-html_export \
+#flickr \
+#html_export \
 image_caption \
 imagecrop \
 imce \
@@ -39,7 +35,7 @@ menu_attributes \
 menu_block \
 node_export \
 pathauto \
-print \
+#print \
 profile2 \
 recaptcha \
 rules \
@@ -53,7 +49,7 @@ views_data_export \
 views_flipped_table \
 views_ui \
 views_slideshow \
-weather \
+#weather \
 webform \
 wysiwyg \
 wysiwyg_spellcheck \
@@ -82,18 +78,29 @@ unca_global_header_and_footer \
 unca_slideshow \
 unca_department_navigation \
 unca_home \
-unca_profile \
-unca_project_views \
 unca_site_admin_views \
-unca_student_organization \
-study_abroad \
-unca_policy \
+#Begin optional content types and views; only enable when necessary
+#unca_student_organization \
+#study_abroad \
+#unca_policy \
+#unca_cluster \
+#unca_course \
+#unca_campus_update \
+#unca_news \
+#unca_project \
+#unca_project_views \
+#unca_student_project \
+#unca_maps \
+#unca_map_views \
+#gmap \
+#gmap_location \
+#gmap_macro_builder \
+#gmap_taxonomy \
+#End optional content types and views
+unca_page \
+unca_slideshow \
+unca_profile \
 unca_event \
-unca_cluster \
-unca_course \
-unca_campus_update \
-unca_news \
-unca_project \
 unca_fields \
 unca_home_home_page \
 unca_ldap \
@@ -103,14 +110,9 @@ flexslider \
 entityreference \
 references_dialog \
 strongarm \
-unca_slideshow \
 email \
-unca_student_project \
-unca_maps \
-unca_map_views \
 pathologic \
 link_iframe_formatter_options \
-unca_page \
 unca_text_formats \
 date_views \
 unca_custom \
@@ -126,17 +128,22 @@ migrate_d2d_unca \
 addthis \
 admin_menu \
 admin_menu_toolbar \
+scanner \
+bulk_export \
 
-# To disable modules, uncomment the following command and list the modules to disable
+
+#Begin modules to disable
 drush dis --yes \
+#devel \
+color \
+comment \
 overlay \
 securelogin \
 sharethis \
 slideshow_entity \
 lightbox2 \
 sharethis \
-toolbar \
-scanner
+toolbar 
 
 # uninstall slideshow entity
 echo "Uninstalling Slideshow Entity"
