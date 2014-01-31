@@ -4446,10 +4446,10 @@ a.footer-spiff-map {
 
 #footer-profile {
   overflow: hidden;
-  background-color: #f00;
 }
 
 #bottom-spiffs .profile-headshot {
+  float: right;
   padding: 1px;
   border: solid #fff 1px;
   margin-left: 20px;
@@ -4471,6 +4471,7 @@ a.footer-spiff-map {
 #bottom-spiffs .profile-abstract {
   margin-bottom: 5px;
   font-size: 11px;
+  width: 80%;
 }
 #bottom-spiffs .project-thumbnail {
   float: right;
