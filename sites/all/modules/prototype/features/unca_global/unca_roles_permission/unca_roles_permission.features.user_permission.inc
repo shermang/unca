@@ -1219,6 +1219,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'view the administration theme',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'system',
   );
