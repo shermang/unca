@@ -9,18 +9,18 @@
   <h2><?php print render($content['field_policy_number']); ?></h2>
   <h2><?php print render($content['field_policy_code']); ?></h2>
   <ul class="policy-info">
-    <li><?php print render($content['field_policy_approved_by']); ?></li>
-    <li><?php print render($content['field_policy_type']); ?></li> 
-    <li><?php print render($content['field_policy_owner_term']); ?></li>  
-    <li><?php print render($content['field_policy_responsible_term']); ?></li> 
+    <?php if(isset($content['field_policy_approved_by'])):?><li><?php print render($content['field_policy_approved_by']); ?></li><?php endif ?>
+    <?php if(isset($content['field_policy_type'])):?><li><?php print render($content['field_policy_type']); ?></li><?php endif ?>
+    <?php if(isset($content['field_policy_owner_term'])):?><li><?php print render($content['field_policy_owner_term']); ?></li><?php endif ?>
+    <?php if(isset($content['field_policy_responsible_term'])):?><li><?php print render($content['field_policy_responsible_term']); ?></li><?php endif ?>
   </ul>
   <h2>Revision History</h2>
   <ul class="policy-info">
-    <li><?php print render($content['field_policy_responsible_term']); ?></li>
-    <li><?php print render($content['field_policy_origination_date']); ?></li>
-    <li><?php print render($content['field_policy_last_amended_date']); ?></li> 
-    <li><?php print render($content['field_policy_approval_date']); ?></li>  
-    <li><?php print render($content['field_policy_next_review_date']); ?></li> 
+    <?php if(isset($content['field_policy_responsible_term'])):?><li><?php print render($content['field_policy_responsible_term']); ?></li><?php endif ?>
+    <?php if(isset($content['field_policy_origination_date'])):?><li><?php print render($content['field_policy_origination_date']); ?></li><?php endif ?>
+    <?php if(isset($content['field_policy_last_amended_date'])):?><li><?php print render($content['field_policy_last_amended_date']); ?></li><?php endif ?>
+    <?php if(isset($content['field_policy_approval_date'])):?><li><?php print render($content['field_policy_approval_date']); ?></li><?php endif ?>
+    <?php if(isset($content['field_policy_review_date'])):?><li><?php print render($content['field_policy_next_review_date']); ?></li><?php endif ?>
   </ul>
   <?php
     $body = field_get_items('node',$node, 'body');
@@ -28,7 +28,5 @@
   ?>
   <hr/>
   <?php print render($content['field_policy_reference_materials']); ?>
-
-  <?php print render($content['links']); ?>
-
-</article><!-- /node -->
+  <?php print render($content['field_policy_associated_forms']); ?>
+ </article><!-- /node -->
