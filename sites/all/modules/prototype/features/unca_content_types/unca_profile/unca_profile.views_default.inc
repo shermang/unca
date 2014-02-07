@@ -943,7 +943,7 @@ function unca_profile_views_default_views() {
   /* Display: UNCA Profiles */
   $handler = $view->new_display('page', 'UNCA Profiles', 'page_13');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Faculty and Staff';
+  $handler->display->display_options['title'] = 'Faces of UNC Asheville';
   $handler->display->display_options['display_description'] = 'Queries profiles for the profiles page.';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
