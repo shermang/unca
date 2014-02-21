@@ -1,0 +1,1695 @@
+/*02/19/14***************************************************************************************/
+/****************************************************************************************/
+/****************************************************************************************/
+/*Place any code that is removed from the two big sheets onto this document.            *
+/*This applies to code that is un-needed and removed, but also to any code moved to a   *
+/*separate sheet.                                                                       *
+/*Please note date of removal, who removed it, and line numbers where applicable        *
+/****************************************************************************************/
+/****************************************************************************************/
+/****************************************************************************************/
+
+
+
+
+
+@charset "UTF-8";
+/* CSS Document 02/17/14*/
+
+/**********************************
+foundation1.css 2/14/14 Mary Ann Lawrence
+**********************************/
+
+/*
+ * Font Custom: Scss
+ */
+@font-face {
+  font-family: "wireframe-icons";
+  src: url("../fonts/wireframe-icons/wireframe-icons_dfdbc9d93ad117d03de262700bd14e73.eot");
+  src: url("../fonts/wireframe-icons/wireframe-icons_dfdbc9d93ad117d03de262700bd14e73.eot?#iefix") format("embedded-opentype"), url("../fonts/wireframe-icons/wireframe-icons_dfdbc9d93ad117d03de262700bd14e73.woff") format("woff"), url("../fonts/wireframe-icons/wireframe-icons_dfdbc9d93ad117d03de262700bd14e73.ttf") format("truetype"), url("../fonts/wireframe-icons/wireframe-icons_dfdbc9d93ad117d03de262700bd14e73.svg#wireframe-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-address-book:before,
+.icon-arrow-left-alt1:before,
+.icon-arrow-left:before,
+.icon-arrow-left2:before,
+.icon-arrow-left3:before,
+.icon-arrow-left4:before,
+.icon-arrow-left5:before,
+.icon-arrow-right-alt1:before,
+.icon-arrow-right:before,
+.icon-arrow-right2:before,
+.icon-arrow-right3:before,
+.icon-arrow-right4:before,
+.icon-arrow-right5:before,
+.icon-backward:before,
+.icon-backward2:before,
+.icon-bell:before,
+.icon-blocked:before,
+.icon-blogger:before,
+.icon-blogger2:before,
+.icon-bubble:before,
+.icon-bubble2:before,
+.icon-bubbles:before,
+.icon-bubbles2:before,
+.icon-bubbles3:before,
+.icon-bubbles4:before,
+.icon-busy:before,
+.icon-calendar:before,
+.icon-camera:before,
+.icon-cancel-circle:before,
+.icon-cart:before,
+.icon-checkmark-circle:before,
+.icon-checkmark:before,
+.icon-checkmark2:before,
+.icon-clock:before,
+.icon-close:before,
+.icon-cogs:before,
+.icon-download:before,
+.icon-earth:before,
+.icon-envelop:before,
+.icon-eye-blocked:before,
+.icon-eye:before,
+.icon-eye2:before,
+.icon-facebook-sign:before,
+.icon-facebook:before,
+.icon-facebook2:before,
+.icon-feed:before,
+.icon-feed2:before,
+.icon-file:before,
+.icon-film:before,
+.icon-first:before,
+.icon-flag:before,
+.icon-flickr:before,
+.icon-flickr2:before,
+.icon-forward:before,
+.icon-forward2:before,
+.icon-forward3:before,
+.icon-google-plus:before,
+.icon-heart:before,
+.icon-heart2:before,
+.icon-home:before,
+.icon-home2:before,
+.icon-image:before,
+.icon-image2:before,
+.icon-images:before,
+.icon-info:before,
+.icon-info2:before,
+.icon-key:before,
+.icon-key2:before,
+.icon-lab:before,
+.icon-last:before,
+.icon-link:before,
+.icon-location:before,
+.icon-location2:before,
+.icon-lock:before,
+.icon-lock2:before,
+.icon-map:before,
+.icon-minus:before,
+.icon-newspaper:before,
+.icon-next:before,
+.icon-notebook:before,
+.icon-notification:before,
+.icon-pause:before,
+.icon-pause2:before,
+.icon-pencil:before,
+.icon-phone:before,
+.icon-pinterest:before,
+.icon-pinterest2:before,
+.icon-play:before,
+.icon-play2:before,
+.icon-play3:before,
+.icon-plus:before,
+.icon-point-down:before,
+.icon-point-left:before,
+.icon-point-right:before,
+.icon-point-up:before,
+.icon-previous:before,
+.icon-print:before,
+.links .print_html a:before,
+.icon-pushpin:before,
+.icon-question:before,
+.icon-quotes-left:before,
+.icon-redo:before,
+.icon-reply:before,
+.icon-star:before,
+.icon-star2:before,
+.icon-star3:before,
+.icon-stop:before,
+.icon-stop2:before,
+.icon-tag:before,
+.icon-tags:before,
+.icon-thumbs-up:before,
+.icon-thumbs-up2:before,
+.icon-tumblr:before,
+.icon-tumblr2:before,
+.icon-twitter-sign:before,
+.icon-twitter:before,
+.icon-twitter2:before,
+.icon-undo:before,
+.icon-unlocked:before,
+.icon-upload:before,
+.icon-user:before,
+.icon-user2:before,
+.icon-user3:before,
+.icon-users:before,
+.icon-users2:before,
+.icon-vimeo:before,
+.icon-vimeo2:before,
+.icon-wand:before,
+.icon-warning:before,
+.icon-wordpress:before,
+.icon-wordpress2:before,
+.icon-wrench:before,
+.icon-youtube:before,
+.block-calendar .previous-arrow a:before,
+.flexslider .flex-direction-nav a:before,
+#unca-slideshow-flexslider-thumbs .flex-direction-nav a:before,
+.steps-to-student ul a:before,
+.flexslider .flex-direction-nav a.flex-next:before,
+#unca-slideshow-flexslider-thumbs .flex-direction-nav a.flex-next:before,
+a.email:before,
+.email a:before,
+#block-menu-menu-social-links .facebook:before,
+.related-files ul a:before,
+.phone-number:before,
+#block-menu-menu-social-links .twitter:before,
+#block-menu-menu-social-links .youtube:before,
+.block-calendar .next-arrow a:after,
+.view-news .view-footer a:after,
+#block-view-upcoming-events .view-footer a:after,
+a .view-news .view-footer:after,
+.view-news a .view-footer:after,
+a #block-view-upcoming-events .view-footer:after,
+#block-view-upcoming-events a .view-footer:after {
+  font-family: "wireframe-icons";
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: inherit;
+}
+
+.icon-address-book:before,
+.icon-arrow-left-alt1:before,
+.icon-arrow-left:before,
+.icon-arrow-left2:before,
+.icon-arrow-left3:before,
+.icon-arrow-left4:before,
+.icon-arrow-left5:before,
+.icon-arrow-right-alt1:before,
+.icon-arrow-right:before,
+.icon-arrow-right2:before,
+.icon-arrow-right3:before,
+.icon-arrow-right4:before,
+.icon-arrow-right5:before,
+.icon-backward:before,
+.icon-backward2:before,
+.icon-bell:before,
+.icon-blocked:before,
+.icon-blogger:before,
+.icon-blogger2:before,
+.icon-bubble:before,
+.icon-bubble2:before,
+.icon-bubbles:before,
+.icon-bubbles2:before,
+.icon-bubbles3:before,
+.icon-bubbles4:before,
+.icon-busy:before,
+.icon-calendar:before,
+.icon-camera:before,
+.icon-cancel-circle:before,
+.icon-cart:before,
+.icon-checkmark-circle:before,
+.icon-checkmark:before,
+.icon-checkmark2:before,
+.icon-clock:before,
+.icon-close:before,
+.icon-cogs:before,
+.icon-download:before,
+.icon-earth:before,
+.icon-envelop:before,
+.icon-eye-blocked:before,
+.icon-eye:before,
+.icon-eye2:before,
+.icon-facebook-sign:before,
+.icon-facebook:before,
+.icon-facebook2:before,
+.icon-feed:before,
+.icon-feed2:before,
+.icon-file:before,
+.icon-film:before,
+.icon-first:before,
+.icon-flag:before,
+.icon-flickr:before,
+.icon-flickr2:before,
+.icon-forward:before,
+.icon-forward2:before,
+.icon-forward3:before,
+.icon-google-plus:before,
+.icon-heart:before,
+.icon-heart2:before,
+.icon-home:before,
+.icon-home2:before,
+.icon-image:before,
+.icon-image2:before,
+.icon-images:before,
+.icon-info:before,
+.icon-info2:before,
+.icon-key:before,
+.icon-key2:before,
+.icon-lab:before,
+.icon-last:before,
+.icon-link:before,
+.icon-location:before,
+.icon-location2:before,
+.icon-lock:before,
+.icon-lock2:before,
+.icon-map:before,
+.icon-minus:before,
+.icon-newspaper:before,
+.icon-next:before,
+.icon-notebook:before,
+.icon-notification:before,
+.icon-pause:before,
+.icon-pause2:before,
+.icon-pencil:before,
+.icon-phone:before,
+.icon-pinterest:before,
+.icon-pinterest2:before,
+.icon-play:before,
+.icon-play2:before,
+.icon-play3:before,
+.icon-plus:before,
+.icon-point-down:before,
+.icon-point-left:before,
+.icon-point-right:before,
+.icon-point-up:before,
+.icon-previous:before,
+.icon-print:before,
+.links .print_html a:before,
+.icon-pushpin:before,
+.icon-question:before,
+.icon-quotes-left:before,
+.icon-redo:before,
+.icon-reply:before,
+.icon-star:before,
+.icon-star2:before,
+.icon-star3:before,
+.icon-stop:before,
+.icon-stop2:before,
+.icon-tag:before,
+.icon-tags:before,
+.icon-thumbs-up:before,
+.icon-thumbs-up2:before,
+.icon-tumblr:before,
+.icon-tumblr2:before,
+.icon-twitter-sign:before,
+.icon-twitter:before,
+.icon-twitter2:before,
+.icon-undo:before,
+.icon-unlocked:before,
+.icon-upload:before,
+.icon-user:before,
+.icon-user2:before,
+.icon-user3:before,
+.icon-users:before,
+.icon-users2:before,
+.icon-vimeo:before,
+.icon-vimeo2:before,
+.icon-wand:before,
+.icon-warning:before,
+.icon-wordpress:before,
+.icon-wordpress2:before,
+.icon-wrench:before,
+.icon-youtube:before,
+.block-calendar .previous-arrow a:before,
+.flexslider .flex-direction-nav a:before,
+#unca-slideshow-flexslider-thumbs .flex-direction-nav a:before,
+.steps-to-student ul a:before,
+.flexslider .flex-direction-nav a.flex-next:before,
+#unca-slideshow-flexslider-thumbs .flex-direction-nav a.flex-next:before,
+a.email:before,
+.email a:before,
+#block-menu-menu-social-links .facebook:before,
+.related-files ul a:before,
+.phone-number:before,
+#block-menu-menu-social-links .twitter:before,
+#block-menu-menu-social-links .youtube:before {
+  padding-right: .5em;
+}
+
+.block-calendar .next-arrow a:after,
+.view-news .view-footer a:after,
+#block-view-upcoming-events .view-footer a:after,
+a .view-news .view-footer:after,
+.view-news a .view-footer:after,
+a #block-view-upcoming-events .view-footer:after,
+#block-view-upcoming-events a .view-footer:after {
+  padding-left: .5em;
+}
+
+.icon-address-book:before {
+  content: "\f100";
+}
+
+.icon-arrow-left-alt1:before {
+  content: "\f101";
+}
+
+.icon-arrow-left:before,
+.block-calendar .previous-arrow a:before {
+  content: "\f102";
+}
+
+.icon-arrow-left2:before {
+  content: "\f103";
+}
+
+.icon-arrow-left3:before {
+  content: "\f104";
+}
+
+.icon-arrow-left4:before,
+.flexslider .flex-direction-nav a:before {
+  content: "\f105";
+}
+
+.icon-arrow-left5:before,
+#unca-slideshow-flexslider-thumbs .flex-direction-nav a:before {
+  content: "\f106";
+}
+
+.icon-arrow-right-alt1:before {
+  content: "\f107";
+}
+
+.icon-arrow-right:before {
+  content: "\f108";
+}
+
+.block-calendar .next-arrow a:after {
+  content: "\f108";
+}
+
+.icon-arrow-right2:before,
+.steps-to-student ul a:before {
+  content: "\f109";
+}
+
+.icon-arrow-right3:before {
+  content: "\f10a";
+}
+
+.icon-arrow-right4:before,
+.flexslider .flex-direction-nav a.flex-next:before {
+  content: "\f10b";
+}
+
+.icon-arrow-right5:before,
+#unca-slideshow-flexslider-thumbs .flex-direction-nav a.flex-next:before {
+  content: "\f10c";
+}
+
+.icon-backward:before {
+  content: "\f10d";
+}
+
+.icon-backward2:before {
+  content: "\f10e";
+}
+
+.icon-bell:before {
+  content: "\f10f";
+}
+
+.icon-blocked:before {
+  content: "\f110";
+}
+
+.icon-blogger:before {
+  content: "\f111";
+}
+
+.icon-blogger2:before {
+  content: "\f112";
+}
+
+.icon-bubble:before {
+  content: "\f113";
+}
+
+.icon-bubble2:before {
+  content: "\f114";
+}
+
+.icon-bubbles:before {
+  content: "\f115";
+}
+
+.icon-bubbles2:before {
+  content: "\f116";
+}
+
+.icon-bubbles3:before {
+  content: "\f117";
+}
+
+.icon-bubbles4:before {
+  content: "\f118";
+}
+
+.icon-busy:before {
+  content: "\f119";
+}
+
+.icon-calendar:before {
+  content: "\f11a";
+}
+
+.icon-camera:before {
+  content: "\f11b";
+}
+
+.icon-cancel-circle:before {
+  content: "\f11c";
+}
+
+.icon-cart:before {
+  content: "\f11d";
+}
+
+.icon-checkmark-circle:before {
+  content: "\f11e";
+}
+
+.icon-checkmark:before {
+  content: "\f11f";
+}
+
+.icon-checkmark2:before {
+  content: "\f120";
+}
+
+.icon-clock:before {
+  content: "\f121";
+}
+
+.icon-close:before {
+  content: "\f122";
+}
+
+.icon-cogs:before {
+  content: "\f123";
+}
+
+.icon-download:before {
+  content: "\f124";
+}
+
+.icon-earth:before {
+  content: "\f125";
+}
+
+.icon-envelop:before,
+a.email:before,
+.email a:before {
+  content: "\f126";
+}
+
+.icon-eye-blocked:before {
+  content: "\f127";
+}
+
+.icon-eye:before {
+  content: "\f128";
+}
+
+.icon-eye2:before {
+  content: "\f129";
+}
+
+.icon-facebook-sign:before,
+#block-menu-menu-social-links .facebook:before {
+  content: "\f12a";
+}
+
+.icon-facebook:before {
+  content: "\f12b";
+}
+
+.icon-facebook2:before {
+  content: "\f12c";
+}
+
+.icon-feed:before {
+  content: "\f12d";
+}
+
+.icon-feed2:before {
+  content: "\f12e";
+}
+
+.icon-file:before,
+.related-files ul a:before {
+  content: "\f12f";
+}
+
+.icon-film:before {
+  content: "\f130";
+}
+
+.icon-first:before {
+  content: "\f131";
+}
+
+.icon-flag:before {
+  content: "\f132";
+}
+
+.icon-flickr:before {
+  content: "\f133";
+}
+
+.icon-flickr2:before {
+  content: "\f134";
+}
+
+.icon-forward:before {
+  content: "\f135";
+}
+
+.icon-forward2:before {
+  content: "\f136";
+}
+
+.icon-forward3:before {
+  content: "\f137";
+}
+
+.icon-google-plus:before {
+  content: "\f138";
+}
+
+.icon-heart:before {
+  content: "\f139";
+}
+
+.icon-heart2:before {
+  content: "\f13a";
+}
+
+.icon-home:before {
+  content: "\f13b";
+}
+
+.icon-home2:before {
+  content: "\f13c";
+}
+
+.icon-image:before {
+  content: "\f13d";
+}
+
+.icon-image2:before {
+  content: "\f13e";
+}
+
+.icon-images:before {
+  content: "\f13f";
+}
+
+.icon-info:before {
+  content: "\f140";
+}
+
+.icon-info2:before {
+  content: "\f141";
+}
+
+.icon-key:before {
+  content: "\f142";
+}
+
+.icon-key2:before {
+  content: "\f143";
+}
+
+.icon-lab:before {
+  content: "\f144";
+}
+
+.icon-last:before {
+  content: "\f145";
+}
+
+.icon-link:before {
+  content: "\f146";
+}
+
+.icon-location:before {
+  content: "\f147";
+}
+
+.icon-location2:before {
+  content: "\f148";
+}
+
+.icon-lock:before {
+  content: "\f149";
+}
+
+.icon-lock2:before {
+  content: "\f14a";
+}
+
+.icon-map:before {
+  content: "\f14b";
+}
+
+.icon-minus:before {
+  content: "\f14c";
+}
+
+.icon-newspaper:before {
+  content: "\f14d";
+}
+
+.icon-next:before {
+  content: "\f14e";
+}
+
+.icon-notebook:before {
+  content: "\f14f";
+}
+
+.icon-notification:before {
+  content: "\f150";
+}
+
+.icon-pause:before {
+  content: "\f151";
+}
+
+.icon-pause2:before {
+  content: "\f152";
+}
+
+.icon-pencil:before {
+  content: "\f153";
+}
+
+.icon-phone:before,
+.phone-number:before {
+  content: "\f154";
+}
+
+.icon-pinterest:before {
+  content: "\f155";
+}
+
+.icon-pinterest2:before {
+  content: "\f156";
+}
+
+.icon-play:before {
+  content: "\f157";
+}
+
+.icon-play2:before {
+  content: "\f158";
+}
+
+.icon-play3:before {
+  content: "\f159";
+}
+
+.view-news .view-footer a:after, #block-view-upcoming-events .view-footer a:after, a .view-news .view-footer:after, .view-news a .view-footer:after, a #block-view-upcoming-events .view-footer:after, #block-view-upcoming-events a .view-footer:after {
+  content: "\f159";
+}
+
+.icon-plus:before {
+  content: "\f15a";
+}
+
+.icon-point-down:before {
+  content: "\f15b";
+}
+
+.icon-point-left:before {
+  content: "\f15c";
+}
+
+.icon-point-right:before {
+  content: "\f15d";
+}
+
+.icon-point-up:before {
+  content: "\f15e";
+}
+
+.icon-previous:before {
+  content: "\f15f";
+}
+
+.icon-print:before, .links .print_html a:before {
+  content: "\f160";
+}
+
+.icon-pushpin:before {
+  content: "\f161";
+}
+
+.icon-question:before {
+  content: "\f162";
+}
+
+.icon-quotes-left:before {
+  content: "\f163";
+}
+
+.icon-redo:before {
+  content: "\f164";
+}
+
+.icon-reply:before {
+  content: "\f165";
+}
+
+.icon-star:before {
+  content: "\f166";
+}
+
+.icon-star2:before {
+  content: "\f167";
+}
+
+.icon-star3:before {
+  content: "\f168";
+}
+
+.icon-stop:before {
+  content: "\f169";
+}
+
+.icon-stop2:before {
+  content: "\f16a";
+}
+
+.icon-tag:before {
+  content: "\f16b";
+}
+
+.icon-tags:before {
+  content: "\f16c";
+}
+
+.icon-thumbs-up:before {
+  content: "\f16d";
+}
+
+.icon-thumbs-up2:before {
+  content: "\f16e";
+}
+
+.icon-tumblr:before {
+  content: "\f16f";
+}
+
+.icon-tumblr2:before {
+  content: "\f170";
+}
+
+.icon-twitter-sign:before,
+#block-menu-menu-social-links .twitter:before {
+  content: "\f171";
+}
+
+.icon-twitter:before {
+  content: "\f172";
+}
+
+.icon-twitter2:before {
+  content: "\f173";
+}
+
+.icon-undo:before {
+  content: "\f174";
+}
+
+.icon-unlocked:before {
+  content: "\f175";
+}
+
+.icon-upload:before {
+  content: "\f176";
+}
+
+.icon-user:before {
+  content: "\f177";
+}
+
+.icon-user2:before {
+  content: "\f178";
+}
+
+.icon-user3:before {
+  content: "\f179";
+}
+
+.icon-users:before {
+  content: "\f17a";
+}
+
+.icon-users2:before {
+  content: "\f17b";
+}
+
+.icon-vimeo:before {
+  content: "\f17c";
+}
+
+.icon-vimeo2:before {
+  content: "\f17d";
+}
+
+.icon-wand:before {
+  content: "\f17e";
+}
+
+.icon-warning:before {
+  content: "\f17f";
+}
+
+.icon-wordpress:before {
+  content: "\f180";
+}
+
+.icon-wordpress2:before {
+  content: "\f181";
+}
+
+.icon-wrench:before {
+  content: "\f182";
+}
+
+.icon-youtube:before,
+#block-menu-menu-social-links .youtube:before {
+  content: "\f183";
+}
+
+
+/**********************************
+maybe temporary mary ann lawrence 2/14/14
+**********************************/
+
+
+.field img,
+.views-field img {
+  margin: 0 1em 1em 0;
+}
+
+.node-type-cluster .field-name-field-image, .node-course .field-name-field-image img, .node-map-item .field-name-field-image img {
+  margin: 0 0 1em 1em;
+}
+
+.clear {
+  clear: both;
+}
+
+.node-course .field-name-field-course-number:after,
+.node-course .field-name-field-course-dates:after,
+.node-course .field-name-field-instructor:after,
+.node-course .field-name-field-course-catalog-term:after,
+.node-course .field-name-body:after {
+  clear: none;
+}
+
+.node-course .field-name-field-course-catalog-term:after,
+.node-course .field-name-body:after, .node-destination .field-name-field-studyabroad-region:after,
+.node-destination .field-name-field-studyabroad-program-type:after,
+.node-destination .field-name-field-university-semester-term:after {
+  clear: left;
+}
+
+#block-menu-menu-social-links ul.menu li a {
+  height: 1.5em;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 1.25em;
+}
+
+.view-news .view-footer, #block-view-upcoming-events .view-footer {
+  text-align: right;
+}
+
+.field,
+.views-field {
+  margin-bottom: 1em;
+}
+.field .label,
+.views-field .label {
+  font-weight: bold;
+}
+
+.view-news .views-row {
+  margin-bottom: 1em;
+}
+.view-news h3, .view-news .node-type-cluster .field-label, .node-type-cluster .view-news .field-label, .view-news #this-week-highlights .highlight-box h2, #this-week-highlights .highlight-box .view-news h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.view-news h3.field-content, .view-news .node-type-cluster .field-content.field-label, .node-type-cluster .view-news .field-content.field-label, .view-news #this-week-highlights .highlight-box h2.field-content, #this-week-highlights .highlight-box .view-news h2.field-content {
+  margin-bottom: 0;
+}
+.view-news .views-field-field-news-date,
+.view-news .views-field-body {
+  font-size: 80%;
+}
+.view-news .views-field-field-news-date {
+  font-weight: bold;
+}
+
+
+/**********************************
+foundation1.css 2/14/14 Mary Ann Lawrence
+**********************************/
+
+
+.flex-caption .read-more {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0e52c7), color-stop(100%, #1faec9));
+  background-image: -webkit-linear-gradient(#0e52c7, #1faec9);
+  background-image: -moz-linear-gradient(#0e52c7, #1faec9);
+  background-image: -o-linear-gradient(#0e52c7, #1faec9);
+  background-image: linear-gradient(#0e52c7, #1faec9);
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  -o-border-radius: 2em;
+  border-radius: 2em;
+  border: 1px solid #3ac6e1;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  padding: .45em 1em .25em 1em;
+  text-transform: uppercase;
+}
+.flex-caption .read-more:hover, .flex-caption .read-more:focus {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1968ef), color-stop(100%, #1faec9));
+  background-image: -webkit-linear-gradient(#1968ef, #1faec9);
+  background-image: -moz-linear-gradient(#1968ef, #1faec9);
+  background-image: -o-linear-gradient(#1968ef, #1faec9);
+  background-image: linear-gradient(#1968ef, #1faec9);
+}
+
+/**********************************
+/foundation1.css 
+**********************************/
+
+/**********************************
+foundation1.css mary ann lawrence 02/14/14
+**********************************/
+
+
+nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu, nav.navigation .navigation-secondary ul.menu, .sidebar .block-menu-menu-secondary-navigation---prot ul, .ds-sidebar-column .block-menu-menu-secondary-navigation---prot ul, .sidebar .navigation-secondary ul, .ds-sidebar-column .navigation-secondary ul, .related-links ul, nav.navigation #block-system-main-menu .menu,
+nav.navigation .block-menu-menu-secondary-navigation---prot ul.menu,
+nav.navigation .navigation-secondary ul.menu,
+.sidebar .block-menu-menu-secondary-navigation---prot ul,
+.ds-sidebar-column .block-menu-menu-secondary-navigation---prot ul,
+.sidebar .navigation-secondary ul,
+.ds-sidebar-column .navigation-secondary ul,
+.related-links ul,
+nav.navigation #block-system-main-menu .menu,
+.no-bullet,
+.related-files ul,
+.steps-to-student ul {
+  margin: 0;
+}
+/**********************************
+/foundation1.css mary ann lawrence 02/14/14
+**********************************/
+
+/**********************************
+foundation1.css mary ann lawrence 02/14/14
+**********************************/
+
+/**********************************
+/foundation2.css mary ann lawrence 02/14/14
+**********************************/
+
+@charset "UTF-8";
+/* CSS Document */
+
+/*
+ * jQuery FlexSlider v2.2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+/* Browser Resets
+*********************************/
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus {
+  outline: none;
+}
+
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Icon Fonts
+*********************************/
+/* Font-face Icons */
+@font-face {
+  font-family: 'flexslider-icon';
+  src: url("../fonts/flexslider/flexslider-icon.eot");
+  src: url("../fonts/flexslider/flexslider-icon.eot?#iefix") format("embedded-opentype"), url("../fonts/flexslider/flexslider-icon.woff") format("woff"), url("../fonts/flexslider/flexslider-icon.ttf") format("truetype"), url("../fonts/flexslider/flexslider-icon.svg#flexslider-icon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {
+  margin: 0;
+  padding: 0;
+}
+.flexslider .slides {
+  /* Hide the slides before the JS is loaded. Avoids image jumping */
+}
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+}
+.flexslider .slides img {
+  width: 100%;
+  display: block;
+}
+
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+
+/* Clearfix for the .slides element */
+.slides:after {
+  content: "\0020";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+html[xmlns] .slides {
+  display: block;
+}
+
+* html .slides {
+  height: 1%;
+}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {
+  display: block;
+}
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {
+  margin: 0 0 60px;
+  background: #fff;
+  border: 4px solid #fff;
+  position: relative;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  zoom: 1;
+}
+.flexslider .slides {
+  zoom: 1;
+}
+
+.flex-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.loading .flex-viewport {
+  max-height: 300px;
+}
+
+.carousel li {
+  margin-right: 5px;
+}
+
+/* Direction Nav */
+.flex-direction-nav {
+  *height: 0;
+}
+.flex-direction-nav a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  overflow: hidden;
+  opacity: 0;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.flex-direction-nav a:before {
+  font-family: "flexslider-icon";
+  font-size: 40px;
+  display: inline-block;
+  content: '\f001';
+}
+.flex-direction-nav a.flex-next:before {
+  content: '\f002';
+}
+.flex-direction-nav .flex-prev {
+  left: -50px;
+}
+.flex-direction-nav .flex-next {
+  right: -50px;
+  text-align: right;
+}
+.flex-direction-nav:hover .flex-prev {
+  opacity: 0.7;
+  left: 10px;
+}
+.flex-direction-nav:hover .flex-next {
+  opacity: 0.7;
+  right: 10px;
+}
+.flex-direction-nav:hover .flex-next:hover,
+.flex-direction-nav:hover .flex-prev:hover {
+  opacity: 1;
+}
+.flex-direction-nav .flex-disabled {
+  opacity: 0 !important;
+  filter: alpha(opacity=0);
+  cursor: default;
+}
+
+/* Pause/Play */
+.flex-pauseplay a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  opacity: 0.8;
+  z-index: 10;
+  overflow: hidden;
+  cursor: pointer;
+  color: #000;
+}
+.flex-pauseplay a:before {
+  font-family: "flexslider-icon";
+  font-size: 20px;
+  display: inline-block;
+  content: '\f004';
+}
+.flex-pauseplay a:hover {
+  opacity: 1;
+}
+.flex-pauseplay a.flex-play :before {
+  content: '\f003';
+}
+
+/* Control Nav */
+.flex-control-nav {
+  width: 100%;
+  position: absolute;
+  bottom: -40px;
+  text-align: center;
+}
+.flex-control-nav li {
+  margin: 0 6px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+.flex-control-nav li a {
+  width: 11px;
+  height: 11px;
+  display: block;
+  background: #666;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-indent: -9999px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.flex-control-nav li a:hover {
+  background: #333;
+  background: rgba(0, 0, 0, 0.7);
+}
+.flex-control-nav li a.flex-active {
+  background: #000;
+  background: rgba(0, 0, 0, 0.9);
+  cursor: default;
+}
+
+.flex-control-thumbs {
+  margin: 5px 0 0;
+  position: static;
+  overflow: hidden;
+}
+.flex-control-thumbs li {
+  width: 25%;
+  float: left;
+  margin: 0;
+}
+.flex-control-thumbs img {
+  width: 100%;
+  display: block;
+  opacity: .7;
+  cursor: pointer;
+}
+.flex-control-thumbs img:hover {
+  opacity: 1;
+}
+.flex-control-thumbs .flex-active {
+  opacity: 1;
+  cursor: default;
+}
+
+@media screen and (max-width: 860px) {
+  .flex-direction-nav .flex-prev {
+    opacity: 1;
+    left: 10px;
+  }
+  .flex-direction-nav .flex-next {
+    opacity: 1;
+    right: 10px;
+  }
+}
+.flexslider {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: 0 none;
+  margin-bottom: 5em;
+  position: relative;
+}
+.flexslider .slides li {
+  position: relative;
+}
+@media only screen and (min-width: 48em) {
+  .flexslider#unca-slideshow-flexslider {
+    margin-bottom: 0;
+  }
+}
+@media print {
+  .flexslider#unca-slideshow-flexslider {
+    margin-bottom: 0;
+  }
+}
+.flexslider .lt-ie9#unca-slideshow-flexslider {
+  margin-bottom: 0;
+}
+.flexslider .flex-direction-nav {
+  *height: 0;
+}
+.flexslider .flex-direction-nav a {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f29e4a), color-stop(100%, #ef851a));
+  background-image: -webkit-linear-gradient(#f29e4a, #ef851a);
+  background-image: -moz-linear-gradient(#f29e4a, #ef851a);
+  background-image: -o-linear-gradient(#f29e4a, #ef851a);
+  background-image: linear-gradient(#f29e4a, #ef851a);
+  border: 1px solid white;
+  border-left: 0 none;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 2em;
+  height: 2em;
+  line-height: 1;
+  margin: 0;
+  opacity: 1;
+  overflow: hidden;
+  padding: 0.15em 0.15em 0.15em 0.5em;
+  position: absolute;
+  top: 35%;
+  width: 2em;
+  z-index: 10;
+}
+.flexslider .flex-direction-nav a:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ef851a), color-stop(100%, #ee2b19));
+  background-image: -webkit-linear-gradient(#ef851a, #ee2b19);
+  background-image: -moz-linear-gradient(#ef851a, #ee2b19);
+  background-image: -o-linear-gradient(#ef851a, #ee2b19);
+  background-image: linear-gradient(#ef851a, #ee2b19);
+}
+.flexslider .flex-direction-nav a.flex-next {
+  border-left: 1px solid white;
+  border-right: 0 none;
+}
+@media only screen and (min-width: 48em) {
+  .flexslider .flex-direction-nav a {
+    top: 40%;
+  }
+}
+@media print {
+  .flexslider .flex-direction-nav a {
+    top: 40%;
+  }
+}
+.flexslider .flex-direction-nav a .lt-ie9 {
+  top: 40%;
+}
+.flexslider .flex-direction-nav .flex-prev {
+  left: 0;
+}
+.flexslider .flex-direction-nav .flex-next {
+  right: 0;
+  text-align: right;
+}
+.flexslider .flex-direction-nav:hover .flex-prev {
+  opacity: 1;
+  left: 0;
+}
+.flexslider .flex-direction-nav:hover .flex-next {
+  opacity: 1;
+  right: 0;
+}
+.flexslider .flex-direction-nav .flex-disabled {
+  opacity: 0 !important;
+  filter: alpha(opacity=0);
+  cursor: default;
+}
+.flexslider:hover .flex-next,
+.flexslider:hover .flex-prev {
+  opacity: 1;
+}
+.flexslider .flex-control-nav {
+  bottom: 9em;
+}
+@media only screen and (min-width: 48em) {
+  .flexslider .flex-control-nav {
+    display: none;
+  }
+}
+@media print {
+  .flexslider .flex-control-nav {
+    display: none;
+  }
+}
+.flexslider .flex-control-nav .lt-ie9 {
+  display: none;
+}
+
+.flex-pauseplay {
+  position: absolute;
+  right: 4em;
+  top: 4em;
+}
+.flex-pauseplay a {
+  text-shadow: black 0 0 0.5em 0 0px 1px #aaaaaa;
+  color: white;
+}
+
+.flex-caption {
+  background-color: #001b47;
+  color: white;
+  max-width: 100%;
+  min-height: 8em;
+  padding: 1em 1.5em;
+}
+@media only screen and (min-width: 48em) {
+  .flex-caption {
+    background-color: rgba(0, 27, 71, 0.75);
+    bottom: 0;
+    min-height: 1em;
+    position: absolute;
+    width: 100%;
+  }
+}
+@media print {
+  .flex-caption {
+    background-color: rgba(0, 27, 71, 0.75);
+    bottom: 0;
+    min-height: 1em;
+    position: absolute;
+    width: 100%;
+  }
+}
+.flex-caption .lt-ie9 {
+  background-color: rgba(0, 27, 71, 0.75);
+  bottom: 0;
+  min-height: 1em;
+  position: absolute;
+  width: 100%;
+}
+.flex-caption a {
+  color: white;
+}
+.flex-caption .title {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  font-weight: lighter;
+  margin: 0;
+}
+.flex-caption .title a {
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.75);
+}
+.flex-caption .title a:hover {
+  border-bottom: 1px solid white;
+}
+@media only screen and (min-width: 48em) {
+  .flex-caption .title a {
+    border-bottom: none;
+  }
+  .flex-caption .title a:hover {
+    border-bottom: none;
+  }
+}
+@media print {
+  .flex-caption .title a {
+    border-bottom: none;
+  }
+  .flex-caption .title a:hover {
+    border-bottom: none;
+  }
+}
+.flex-caption .title a .lt-ie9 {
+  border-bottom: none;
+}
+.flex-caption .title a .lt-ie9:hover {
+  border-bottom: none;
+}
+.flex-caption .read-more {
+  float: right;
+}
+
+#unca-slideshow-flexslider-thumbs {
+  display: none;
+  padding: 0 .25em;
+}
+@media only screen and (min-width: 48em) {
+  #unca-slideshow-flexslider-thumbs {
+    display: block;
+  }
+}
+@media print {
+  #unca-slideshow-flexslider-thumbs {
+    display: block;
+  }
+}
+#unca-slideshow-flexslider-thumbs .lt-ie9 {
+  display: block;
+}
+#unca-slideshow-flexslider-thumbs .slides li {
+  margin: 0.25em 0;
+  opacity: 0.7;
+}
+#unca-slideshow-flexslider-thumbs .slides li.flex-active-slide, #unca-slideshow-flexslider-thumbs .slides li:hover {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 1;
+  top: -1em;
+}
+#unca-slideshow-flexslider-thumbs .flex-direction-nav a {
+  height: 1.1em;
+  padding: 0 .25em;
+  width: 1em;
+}
+#unca-slideshow-flexslider-thumbs .flex-direction-nav a:before {
+  font-size: 1em;
+}
+#unca-slideshow-flexslider-thumbs .flex-direction-nav a.flex-next {
+  padding-left: 0.35em;
+}
+
+/*mala removed 02/17/14*/
+
+@media only screen and (min-width: 48em) {/*aren't necesary-font resizing is built into the aen template.*/
+  h1, h2, h3, .node-type-cluster .field-label, #this-week-highlights .highlight-box h2, h4, h5, h6 {
+    line-height: 1.4;
+  }
+
+  h1 {
+    font-size: 3.66667em;
+  }
+
+  h2 {
+    font-size: 3.08333em;
+  }
+
+  h3, .node-type-cluster .field-label, #this-week-highlights .highlight-box h2 {
+    font-size: 2.25em;
+  }
+
+  h4 {
+    font-size: 1.91667em;
+  }
+}
+
+
+
+
+
+
+
+
+/*SPIFF Profile Styles*******************************************************************/
+/*Moved to profiles.css
+/*David Allen 2/13/14
+/*removed from unca_zenfoundation2.css, various lines*/
+
+#bottom-spiffs .spiff-summary {
+  margin-top: -5px;
+  margin-bottom: 5px;
+  font-size: 11px;
+  width: 80%;
+}
+
+/*
+#bottom-spiffs #spiff-title { Footer Items Selected by ID may no longer be needed
+  font-size: 24px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#bottom-spiffs #spiff-title a { Footer Items Selected by ID may no longer be needed
+  color: #4572C5;
+  text-decoration: none;
+  padding: 0;
+  border: none;
+}
+*/
+
+#bottom-spiffs .spiff-title a {
+  font-size: 24px;
+  margin-bottom: 5px;
+  margin-top: -5px;
+  padding: 0;
+  color: #4572C5;
+  text-decoration: none;
+}
+
+/*
+#spiff-title {
+  line-height: 20px;
+}
+
+#bottom-spiffs #spiff-thumbnail { Footer Items Selected by ID may no longer be needed
+  float: right;
+  padding: 1px;
+  border: solid #fff 1px;
+  margin-left: 20px;
+}
+*/
+
+#bottom-spiffs .spiff-thumbnail {
+  float: right;
+  padding: 1px;
+  border: solid #fff 1px;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+#bottom-spiffs .spiff-thumbnail a {
+  padding: 0;
+}
+
+
+#bottom-spiffs .spiff-subheading {
+  margin-bottom: 5px;
+}
+/****************************************************************************************/
+/****************************************************************************************/
+
+/*font sizes*******************************************************************/
+/*Mary Ann lawrence 2/17/14
+/*removed from unca_zenfoundation2.css
+/*not needed because font resizing is built into the aen template.*/
+
+
+@media only screen and (min-width: 48em) {
+  h1, h2, h3, .node-type-cluster .field-label, #this-week-highlights .highlight-box h2, h4, h5, h6 {
+    line-height: 1.4;
+  }
+
+  h1 {
+    font-size: 3.66667em;
+  }
+
+  h2 {
+    font-size: 3.08333em;
+  }
+
+  h3, .node-type-cluster .field-label, #this-week-highlights .highlight-box h2 {
+    font-size: 2.25em;
+  }
+
+  h4 {
+    font-size: 1.91667em;
+  }
+}
