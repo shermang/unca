@@ -68,7 +68,7 @@
 				<ul id="navigation-utility" class="list-horizontal">
 				  <li><a href="http://calendar.unca.edu">Calendar</a></li>
 				  <li><a href="http://maps.unca.edu">Maps</a></li>
-				  <li><a href="http://bullpup.lib.unca.edu/library/">Library</a></li>
+				  <li><a href="http://library.unca.edu">Library</a></li>
 				  <li><a href="http://learnonline.unca.edu">Moodle</a></li>
 				  <li><a href="http://oneport.unca.edu/">OnePort</a></li>
 				  <li class="last"><a href="http://webmail.unca.edu/">Email</a></li>
