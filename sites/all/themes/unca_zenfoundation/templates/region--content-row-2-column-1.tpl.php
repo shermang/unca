@@ -29,7 +29,7 @@
  */
 ?>
 <?php if ($content): ?>
-  <div class="<?php print $classes; ?> highlight-box">
+  <div class="<?php print $classes; ?> highlight-box clearfix">
     <?php print $content; ?>
   </div>
 <?php endif; ?>
