@@ -32,6 +32,7 @@ Drupal.behaviors.image_caption = {
       //Display inline block so it doesn't break any text aligns on the parent contatiner
       $(this).wrap("<span class=\"image-caption-container\" style=\"display:inline-block;" + style + "\"></span>");
       $(this).parent().addClass('image-caption-container-' + alignment);
+      window.alert(style);
       
       // Add dimensions, if available
       if(imgwidth){
