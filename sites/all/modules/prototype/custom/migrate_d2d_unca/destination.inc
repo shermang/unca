@@ -28,6 +28,7 @@ class UNCADestinationMigration extends UNCANodeMigration {
          ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('university_semester'));
     $this->addFieldMapping('field_university_semester_term:source_type')
          ->defaultValue('tid');
+    $this->addFieldMapping('body:summary','field_teaser_text',FALSE);
   }
 
   public function prepareRow($row) {

@@ -27,6 +27,8 @@ class UNCAStudentProjectMigration extends UNCANodeMigration {
     $this->addFieldMapping('field_student_fullname','field_name');
     $this->addFieldMapping('field_email','field_email_address');
     $this->addFieldMapping('field_graduation_year','field_year');
+
+    $this->addFieldMapping('body:summary','field_teaser_text', FALSE);
   }
 
   public function prepare(stdClass $entity, stdClass $row){

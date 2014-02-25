@@ -14,6 +14,8 @@ class UNCAStudentOrgMigration extends UNCANodeMigration {
     $this->addFieldMapping('field_student_organizations_term:source_type')
       ->defaultValue('tid');
 
+    $this->addFieldMapping('body:summary','field_teaser_text', FALSE);
+
 //  // department is a new field and we don't need to migrate
 //    $this->addFieldMapping('field_department_term', '1')
 //      ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('department'))

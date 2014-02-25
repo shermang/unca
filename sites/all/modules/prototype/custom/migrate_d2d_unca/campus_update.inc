@@ -22,6 +22,8 @@ class UNCACampusUpdateMigration extends UNCANodeMigration {
     $this->addFieldMapping('field_image:language')
       ->defaultValue(LANGUAGE_NONE);
 
+    $this->addFieldMapping('body:summary','field_campus_update_teaser',FALSE);
+
 
     $unMigratedDestinations = array_merge(
       $this->getDestinationTermFieldNames('field_tags'),

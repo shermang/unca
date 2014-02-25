@@ -47,6 +47,8 @@ class UNCAMapItemMigration extends UNCANodeMigration {
       ->sourceMigration('Term_'.migrate_d2d_unca_get_vocab_mach_name('location_type'));
       $this->addFieldMapping('field_location_type_term:source_type')
         ->defaultValue('tid');
+
+    $this->addFieldMapping('body:summary','field_teaser_text', FALSE);
   }
 
 
