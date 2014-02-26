@@ -69,6 +69,18 @@ function unca_slideshow_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'default_flexslider_optionset';
+  $strongarm->value = array(
+    'unca_optionset' => FALSE,
+    'unca_thumbnails_optionset' => FALSE,
+    'clone_of_unca_thumbnails_optionset' => TRUE,
+    'default' => TRUE,
+  );
+  $export['default_flexslider_optionset'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__slideshow_item';
   $strongarm->value = array(
     'view_modes' => array(
