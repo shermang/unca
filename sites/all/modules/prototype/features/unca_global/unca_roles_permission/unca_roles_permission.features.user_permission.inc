@@ -23,9 +23,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'access administration pages'.
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'system',
   );
 
@@ -81,18 +79,14 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'access dashboard'.
   $permissions['access dashboard'] = array(
     'name' => 'access dashboard',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'dashboard',
   );
 
   // Exported permission: 'access devel information'.
   $permissions['access devel information'] = array(
     'name' => 'access devel information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'devel',
   );
 
@@ -111,6 +105,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'access mcfilemanager files',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'mcfilemanager',
   );
@@ -181,6 +176,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'add media from remote sources',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
       'content manager' => 'content manager',
     ),
     'module' => 'media_internet',
@@ -189,18 +185,14 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'admin_classes'.
   $permissions['admin_classes'] = array(
     'name' => 'admin_classes',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'ds_ui',
   );
 
   // Exported permission: 'admin_display_suite'.
   $permissions['admin_display_suite'] = array(
     'name' => 'admin_display_suite',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'ds',
   );
 
@@ -216,45 +208,35 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'admin_view_modes'.
   $permissions['admin_view_modes'] = array(
     'name' => 'admin_view_modes',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'ds_ui',
   );
 
   // Exported permission: 'administer CAPTCHA settings'.
   $permissions['administer CAPTCHA settings'] = array(
     'name' => 'administer CAPTCHA settings',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'captcha',
   );
 
   // Exported permission: 'administer actions'.
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'system',
   );
 
   // Exported permission: 'administer addthis'.
   $permissions['administer addthis'] = array(
     'name' => 'administer addthis',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'addthis',
   );
 
   // Exported permission: 'administer advanced addthis'.
   $permissions['administer advanced addthis'] = array(
     'name' => 'administer advanced addthis',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'addthis',
   );
 
@@ -271,18 +253,14 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer content types'.
   $permissions['administer content types'] = array(
     'name' => 'administer content types',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'administer contexts'.
   $permissions['administer contexts'] = array(
     'name' => 'administer contexts',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'context_ui',
   );
 
@@ -305,9 +283,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer field collections'.
   $permissions['administer field collections'] = array(
     'name' => 'administer field collections',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'field_collection',
   );
 
@@ -321,9 +297,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer fieldgroups'.
   $permissions['administer fieldgroups'] = array(
     'name' => 'administer fieldgroups',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'field_group',
   );
 
@@ -348,9 +322,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer google analytics'.
   $permissions['administer google analytics'] = array(
     'name' => 'administer google analytics',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'googleanalytics',
   );
 
@@ -375,9 +347,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer imce'.
   $permissions['administer imce'] = array(
     'name' => 'administer imce',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'imce',
   );
 
@@ -404,6 +374,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'administer menu',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'menu',
   );
@@ -411,18 +382,14 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer menu attributes'.
   $permissions['administer menu attributes'] = array(
     'name' => 'administer menu attributes',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'menu_attributes',
   );
 
   // Exported permission: 'administer modules'.
   $permissions['administer modules'] = array(
     'name' => 'administer modules',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'system',
   );
 
@@ -454,27 +421,21 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer permissions'.
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'user',
   );
 
   // Exported permission: 'administer profile types'.
   $permissions['administer profile types'] = array(
     'name' => 'administer profile types',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'profile2',
   );
 
   // Exported permission: 'administer profiles'.
   $permissions['administer profiles'] = array(
     'name' => 'administer profiles',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'profile2',
   );
 
@@ -533,18 +494,14 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer site configuration'.
   $permissions['administer site configuration'] = array(
     'name' => 'administer site configuration',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'system',
   );
 
   // Exported permission: 'administer software updates'.
   $permissions['administer software updates'] = array(
     'name' => 'administer software updates',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'system',
   );
 
@@ -561,18 +518,14 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer themes'.
   $permissions['administer themes'] = array(
     'name' => 'administer themes',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'system',
   );
 
   // Exported permission: 'administer url aliases'.
   $permissions['administer url aliases'] = array(
     'name' => 'administer url aliases',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'path',
   );
 
@@ -606,9 +559,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'advanced migration information'.
   $permissions['advanced migration information'] = array(
     'name' => 'advanced migration information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'migrate',
   );
 
@@ -655,9 +606,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'context ajax block access'.
   $permissions['context ajax block access'] = array(
     'name' => 'context ajax block access',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'context_ui',
   );
 
@@ -676,6 +625,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'create url aliases',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'path',
   );
@@ -685,6 +635,8 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'crop any image',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+      'content manager' => 'content manager',
     ),
     'module' => 'imagecrop',
   );
@@ -694,6 +646,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'crop own images',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'imagecrop',
   );
@@ -739,19 +692,14 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'delete terms in slideshows'.
   $permissions['delete terms in slideshows'] = array(
     'name' => 'delete terms in slideshows',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'content manager' => 'content manager',
-    ),
+    'roles' => array(),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'display drupal links'.
   $permissions['display drupal links'] = array(
     'name' => 'display drupal links',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'admin_menu',
   );
 
@@ -767,9 +715,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit any main profile'.
   $permissions['edit any main profile'] = array(
     'name' => 'edit any main profile',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'profile2',
   );
 
@@ -788,6 +734,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'edit media',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'media',
   );
@@ -805,10 +752,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit own main profile'.
   $permissions['edit own main profile'] = array(
     'name' => 'edit own main profile',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'profile2',
   );
 
@@ -824,19 +768,14 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'edit terms in slideshows'.
   $permissions['edit terms in slideshows'] = array(
     'name' => 'edit terms in slideshows',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'content manager' => 'content manager',
-    ),
+    'roles' => array(),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'execute php code'.
   $permissions['execute php code'] = array(
     'name' => 'execute php code',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'devel',
   );
 
@@ -875,27 +814,21 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'migration information'.
   $permissions['migration information'] = array(
     'name' => 'migration information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'migrate',
   );
 
   // Exported permission: 'notify of path changes'.
   $permissions['notify of path changes'] = array(
     'name' => 'notify of path changes',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'pathauto',
   );
 
   // Exported permission: 'opt-in or out of tracking'.
   $permissions['opt-in or out of tracking'] = array(
     'name' => 'opt-in or out of tracking',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'googleanalytics',
   );
 
@@ -932,10 +865,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'publish editable content'.
   $permissions['publish editable content'] = array(
     'name' => 'publish editable content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'content manager' => 'content manager',
-    ),
+    'roles' => array(),
     'module' => 'publishcontent',
   );
 
@@ -984,27 +914,21 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'select account cancellation method'.
   $permissions['select account cancellation method'] = array(
     'name' => 'select account cancellation method',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'user',
   );
 
   // Exported permission: 'skip CAPTCHA'.
   $permissions['skip CAPTCHA'] = array(
     'name' => 'skip CAPTCHA',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'captcha',
   );
 
   // Exported permission: 'submit latitude/longitude'.
   $permissions['submit latitude/longitude'] = array(
     'name' => 'submit latitude/longitude',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'location',
   );
 
@@ -1057,18 +981,14 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'use PHP for title patterns'.
   $permissions['use PHP for title patterns'] = array(
     'name' => 'use PHP for title patterns',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'auto_nodetitle',
   );
 
   // Exported permission: 'use PHP for tracking visibility'.
   $permissions['use PHP for tracking visibility'] = array(
     'name' => 'use PHP for tracking visibility',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'googleanalytics',
   );
 
@@ -1082,9 +1002,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'use advanced search'.
   $permissions['use advanced search'] = array(
     'name' => 'use advanced search',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'search',
   );
 
@@ -1102,6 +1020,8 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'use text format full_html',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+      'content manager' => 'content manager',
     ),
     'module' => 'filter',
   );
@@ -1141,6 +1061,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'view any main profile',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'profile2',
   );
@@ -1148,9 +1069,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'view location directory'.
   $permissions['view location directory'] = array(
     'name' => 'view location directory',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'location',
   );
 
@@ -1168,9 +1087,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'view node location table'.
   $permissions['view node location table'] = array(
     'name' => 'view node location table',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'location',
   );
 
@@ -1227,9 +1144,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'view user location table'.
   $permissions['view user location table'] = array(
     'name' => 'view user location table',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'location',
   );
 
