@@ -1010,7 +1010,8 @@ function unca_roles_permission_user_default_permissions() {
   $permissions['use text format filtered_html'] = array(
     'name' => 'use text format filtered_html',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'filter',
   );
@@ -1020,7 +1021,6 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'use text format full_html',
     'roles' => array(
       'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
       'content manager' => 'content manager',
     ),
     'module' => 'filter',
