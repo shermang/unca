@@ -33,16 +33,6 @@
     // We hide the comments and links now so that we can render them later.
     hide($content['comments']);
     hide($content['links']);
-
-    if(!empty($content['field_profile_contact_info']['#items'][0]['value'])){
-      hide($content['body']);
-      hide($content['field_profile_personal_statement']);
-    }
-
-    if(!empty($content['field_profile_personal_statement']['#items'][0]['value'])){
-      hide($content['body']);
-    }
-
     print render($content);
   ?>
 
