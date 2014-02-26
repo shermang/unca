@@ -61,4 +61,3 @@ features[variable][] = scheduler_unpublish_required_page
 features[variable][] = scheduler_unpublish_revision_page
 features_exclude[field_base][field_slideshow_reference] = field_slideshow_reference
 features_exclude[field_instance][node-page-field_slideshow_reference] = node-page-field_slideshow_reference
-project path = sites/all/modules/prototype/features/unca_content_types

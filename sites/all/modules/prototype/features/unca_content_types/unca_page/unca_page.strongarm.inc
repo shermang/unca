@@ -116,6 +116,12 @@ function unca_page_strongarm() {
             'visible' => TRUE,
           ),
         ),
+        'unca_slideshow_five_slider_display' => array(
+          'default' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );

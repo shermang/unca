@@ -22,7 +22,7 @@ function unca_page_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -72,7 +72,7 @@ function unca_page_field_default_field_instances() {
           'width' => '100%',
         ),
         'type' => 'link_iframe_formatter_options_iframe',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -125,7 +125,7 @@ function unca_page_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -199,7 +199,7 @@ function unca_page_field_default_field_instances() {
           'file_view_mode' => 'media_original',
         ),
         'type' => 'file_rendered',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
