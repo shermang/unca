@@ -16,8 +16,8 @@ function unca_slideshow_flexslider_default_presets() {
   $preset->name = 'unca_optionset';
   $preset->title = 'UNCA Optionset';
   $preset->theme = 'classic';
-  $preset->imagestyle_normal = 'flexslider_full';
-  $preset->imagestyle_thumbnail = 'flexslider_thumbnail';
+  $preset->imagestyle_normal = '';
+  $preset->imagestyle_thumbnail = '';
   $preset->options = array(
     'namespace' => 'flex-',
     'selector' => '.slides > li',
@@ -27,7 +27,7 @@ function unca_slideshow_flexslider_default_presets() {
     'smoothHeight' => 0,
     'startAt' => '0',
     'animationSpeed' => '600',
-    'initDelay' => '200',
+    'initDelay' => '0',
     'useCSS' => 1,
     'touch' => 1,
     'video' => 0,
@@ -42,13 +42,13 @@ function unca_slideshow_flexslider_default_presets() {
     'minItems' => '0',
     'maxItems' => '0',
     'move' => '0',
-    'animation' => 'slide',
+    'animation' => 'fade',
     'slideshow' => 1,
     'slideshowSpeed' => '8000',
     'directionNav' => 1,
-    'controlNav' => '1',
-    'prevText' => 'Previous',
-    'nextText' => 'Next',
+    'controlNav' => '0',
+    'prevText' => '',
+    'nextText' => '',
     'pausePlay' => 1,
     'pauseText' => 'Pause',
     'playText' => 'Play',
@@ -84,12 +84,12 @@ function unca_slideshow_flexslider_default_presets() {
     'touch' => 1,
     'video' => 0,
     'keyboard' => 1,
-    'multipleKeyboard' => 1,
+    'multipleKeyboard' => 0,
     'mousewheel' => 0,
     'controlsContainer' => '.flex-control-nav-container',
     'sync' => '',
     'asNavFor' => '#unca-slideshow-flexslider',
-    'itemWidth' => '160',
+    'itemWidth' => '137',
     'itemMargin' => '0',
     'minItems' => '0',
     'maxItems' => '0',
@@ -99,8 +99,8 @@ function unca_slideshow_flexslider_default_presets() {
     'slideshowSpeed' => '8000',
     'directionNav' => 1,
     'controlNav' => '0',
-    'prevText' => 'Previous',
-    'nextText' => 'Next',
+    'prevText' => '',
+    'nextText' => '',
     'pausePlay' => 0,
     'pauseText' => 'Pause',
     'playText' => 'Play',
@@ -108,8 +108,8 @@ function unca_slideshow_flexslider_default_presets() {
     'thumbCaptions' => 0,
     'thumbCaptionsBoth' => 0,
     'animationLoop' => 1,
-    'pauseOnAction' => 1,
-    'pauseOnHover' => 1,
+    'pauseOnAction' => 0,
+    'pauseOnHover' => 0,
     'manualControls' => '',
   );
   $export['unca_thumbnails_optionset'] = $preset;

@@ -11,4 +11,3 @@ features[views_view][] = Project_SPIFF
 features[views_view][] = Projects
 features[views_view][] = featured_projects
 features_exclude[dependencies][ctools] = ctools
-project path = sites\all\modules\prototype\features\unca_views

@@ -96,6 +96,9 @@ function unca_slideshow_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
+      'focus' => 0,
+      'focus_lock_ratio' => 0,
+      'focus_min_size' => '',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -385,6 +388,43 @@ function unca_slideshow_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-slideshows-field_5_item_slideshow'
+  $field_instances['taxonomy_term-slideshows-field_5_item_slideshow'] = array(
+    'bundle' => 'slideshows',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_5_item_slideshow',
+    'label' => 'Short Slideshow (5 Items or fewer)',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 1,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
@@ -397,6 +437,7 @@ function unca_slideshow_field_default_field_instances() {
   t('Select a slideshow where this slide should display.');
   t('Set URL destination of this slide\'s headline, image, and read more button. If this is left blank, the destination will be the content found in the Body field below.');
   t('Set the caption or sub-heading of this slide.');
+  t('Short Slideshow (5 Items or fewer)');
   t('Slideshow');
   t('Video');
 
