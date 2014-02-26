@@ -28,6 +28,9 @@
   .sidebar .navigation-gateway {
     display: block;
   }
+  .sidebar .navigation-gateway ul.menu {
+    margin: 0px;
+  }
 }
 @media print {
   .sidebar .navigation-gateway {
