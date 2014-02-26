@@ -6318,3 +6318,32 @@ responsive video
 	font-style: italic;
 	border: 1px solid #F0F;
 }
+
+/* ==========================================================================
+   promo button
+   added on 2/27 by Mary Ann Lawrence
+   Used for promotional buttons such as the Request Information on the Admissions page.
+   ========================================================================== */
+
+a.promo-button{
+background-color: #f26d2c;
+color: #ffffff;
+display: block;
+font-size: 14px;
+text-decoration: none;
+text-align: center;
+font-family: Verdana, Geneva, sans-serif;
+padding: 5px;
+border: 2px solid #FFFFFF;
+-moz-border-radius: 5px;
+border-radius: 5px;
+-webkit-box-shadow: 0 6px 6px -3px rgba(0,0,0,.3);
+-moz-box-shadow: 0 6px 6px -3px rgba(0,0,0,.3);
+box-shadow: 0 6px 6px -3px rgba(0,0,0,.3);
+font-weight: normal;
+}
+
+a.promo-button:hover{
+background-color: #dedede;
+color: #003c77;
+}

@@ -31,4 +31,9 @@
 #bottom-spiffs .spiff-subheading { /*Correlates to subheading field*/
   margin-bottom: 5px;
 }
+
+#bottom-spiffs .spiff-summary p a {
+	padding: 0px;
+	color: #0e52c7;
+	}
 /****************************************************************************************/
