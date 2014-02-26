@@ -3417,6 +3417,8 @@ nav.navigation:after {
 }
 #bottom-spiffs .region-footer-promo-a > .block-block a, #bottom-spiffs .region-footer-promo-b > .block-block a {
   padding: 26px 20px 27px 50px;
+  color: #fff;
+  display: block; 
 }
 #bottom-spiffs #footer-profile a {
   border: none;
@@ -3551,9 +3553,7 @@ a.footer-spiff-map {
   background-position: 10px center;
 }
 
-#bottom-spiffs .first a {
-  display: block;
-  color: #fff;
+#bottom-spiffs .first a, #bottom-spiffs .last a {  
   border: solid #fff 1px;
 }
 
@@ -3564,12 +3564,6 @@ a.footer-spiff-map {
   border: none !important;
 }
 
-#bottom-spiffs .last a {
-  /*works for both core and depts because the depts only call first last, not first.*/
-  display: block;
-  color: #fff;
-  padding-top: 18px 20px 18px 50px;
-}
 
 #bottom-spiffs #profile-headshot {
   float: right;
@@ -3903,27 +3897,6 @@ a.footer-spiff-map {
   background-image: url(../images/spiff-icon-map.png);
   background-repeat: no-repeat;
   background-position: 10px center;
-}
-
-#bottom-spiffs .first a {
-  display: block;
-  color: #fff;
-  border: solid #fff 1px;
-  padding-top: 33px;
-  padding-right: 20px;
-  padding-bottom: 33px;
-  padding-left: 50px;
-}
-
-#bottom-spiffs .last a {
-  /*works for both core and depts because the depts only call first last, not first.*/
-  display: block;
-  color: #fff;
-  border: solid #fff 1px;
-  padding-top: 18px;
-  padding-right: 20px;
-  padding-bottom: 18px;
-  padding-left: 50px;
 }
 
 #block-views-study-abroad-destinations-block .project-thumbnail a {
@@ -5579,6 +5552,9 @@ div.content-two-column {
 }
 .button-blue-rounded a {
   padding: 0;
+}
+.button-blue-rounded span {
+  color: #fff;
 }
 
 .sidebar .block.right-spiff {
