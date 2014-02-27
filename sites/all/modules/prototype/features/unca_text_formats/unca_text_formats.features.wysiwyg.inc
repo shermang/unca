@@ -45,6 +45,12 @@ function unca_text_formats_wysiwyg_default_profiles() {
           'Styles' => 1,
           'Table' => 1,
         ),
+        'imce' => array(
+          'imce' => 1,
+        ),
+        'drupal' => array(
+          'media' => 1,
+        ),
       ),
       'toolbar_loc' => 'top',
       'toolbar_align' => 'left',
@@ -103,6 +109,12 @@ Caption=div.captioned-image',
           'Format' => 1,
           'Styles' => 1,
           'Table' => 1,
+        ),
+        'imce' => array(
+          'imce' => 1,
+        ),
+        'drupal' => array(
+          'media' => 1,
         ),
       ),
       'toolbar_loc' => 'top',
