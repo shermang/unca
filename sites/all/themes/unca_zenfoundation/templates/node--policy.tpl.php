@@ -27,6 +27,8 @@
     print $body[0]['value'];
   ?>
   <hr/>
+  <h2>Reference Materials</h2>
   <?php print render($content['field_policy_reference_materials']); ?>
+  <h2>Associated Forms</h2>
   <?php print render($content['field_policy_associated_forms']); ?>
  </article><!-- /node -->
