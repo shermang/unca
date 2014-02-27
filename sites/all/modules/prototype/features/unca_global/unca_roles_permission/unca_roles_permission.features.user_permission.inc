@@ -25,6 +25,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'system',
   );
@@ -367,6 +368,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'administer media',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'media',
   );
@@ -801,6 +803,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'import media',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'media',
   );
