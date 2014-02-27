@@ -23,7 +23,10 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'access administration pages'.
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
     'module' => 'system',
   );
 
@@ -365,6 +368,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'administer media',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'media',
   );
@@ -398,6 +402,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'administer news feeds',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'aggregator',
   );
@@ -525,16 +530,16 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'administer url aliases'.
   $permissions['administer url aliases'] = array(
     'name' => 'administer url aliases',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'path',
   );
 
   // Exported permission: 'administer users'.
   $permissions['administer users'] = array(
     'name' => 'administer users',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'user',
   );
 
@@ -566,9 +571,7 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'block IP addresses'.
   $permissions['block IP addresses'] = array(
     'name' => 'block IP addresses',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'system',
   );
 
@@ -800,6 +803,7 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'import media',
     'roles' => array(
       'administrator' => 'administrator',
+      'content manager' => 'content manager',
     ),
     'module' => 'media',
   );
@@ -857,7 +861,6 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'publish blocks',
     'roles' => array(
       'administrator' => 'administrator',
-      'content manager' => 'content manager',
     ),
     'module' => 'sharedblocks',
   );
@@ -937,7 +940,6 @@ function unca_roles_permission_user_default_permissions() {
     'name' => 'subscribe to blocks',
     'roles' => array(
       'administrator' => 'administrator',
-      'content manager' => 'content manager',
     ),
     'module' => 'sharedblocks',
   );
@@ -1029,30 +1031,21 @@ function unca_roles_permission_user_default_permissions() {
   // Exported permission: 'view advanced help index'.
   $permissions['view advanced help index'] = array(
     'name' => 'view advanced help index',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'advanced_help',
   );
 
   // Exported permission: 'view advanced help popup'.
   $permissions['view advanced help popup'] = array(
     'name' => 'view advanced help popup',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'advanced_help',
   );
 
   // Exported permission: 'view advanced help topic'.
   $permissions['view advanced help topic'] = array(
     'name' => 'view advanced help topic',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'advanced_help',
   );
 
