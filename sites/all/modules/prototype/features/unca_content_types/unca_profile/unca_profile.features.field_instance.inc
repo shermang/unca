@@ -584,7 +584,7 @@ function unca_profile_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_profile_type_term',
     'label' => 'Profile Type',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),

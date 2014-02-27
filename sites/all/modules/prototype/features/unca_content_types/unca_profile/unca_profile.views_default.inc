@@ -542,18 +542,6 @@ function unca_profile_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_class'] = 'profile-title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Contact Information */
-  $handler->display->display_options['fields']['field_profile_contact_info']['id'] = 'field_profile_contact_info';
-  $handler->display->display_options['fields']['field_profile_contact_info']['table'] = 'field_data_field_profile_contact_info';
-  $handler->display->display_options['fields']['field_profile_contact_info']['field'] = 'field_profile_contact_info';
-  $handler->display->display_options['fields']['field_profile_contact_info']['label'] = '';
-  $handler->display->display_options['fields']['field_profile_contact_info']['element_label_colon'] = FALSE;
-  /* Field: Content: Personal Statement */
-  $handler->display->display_options['fields']['field_profile_personal_statement']['id'] = 'field_profile_personal_statement';
-  $handler->display->display_options['fields']['field_profile_personal_statement']['table'] = 'field_data_field_profile_personal_statement';
-  $handler->display->display_options['fields']['field_profile_personal_statement']['field'] = 'field_profile_personal_statement';
-  $handler->display->display_options['fields']['field_profile_personal_statement']['label'] = '';
-  $handler->display->display_options['fields']['field_profile_personal_statement']['element_label_colon'] = FALSE;
   /* Field: Teaser (Node Summary) */
   $handler->display->display_options['fields']['field_teaser_text_value']['id'] = 'field_teaser_text_value';
   $handler->display->display_options['fields']['field_teaser_text_value']['table'] = 'field_data_body';
