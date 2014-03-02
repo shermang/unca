@@ -228,11 +228,6 @@ abstract class EntityMetadataWrapper {
    *   If there is no access information for this property, TRUE is returned.
    */
   public function access($op, $account = NULL) {
-    if (empty($this->info['parent']) && $this instanceof EntityDrupalWrapper) {
-      // If there is no parent just incorporate entity based access.
-      $entity_access_op = $op === 'view' ? 'view' : $this->getIdentifier() ? 'update' : 'create';
-      return $this->entityAccess($entity_access_op, $account);
-    }
     return !empty($this->info['parent']) ? $this->info['parent']->propertyAccess($this->info['name'], $op, $account) : TRUE;
   }
 
@@ -501,20 +496,15 @@ class EntityStructureWrapper extends EntityMetadataWrapper implements IteratorAg
 
   protected function propertyAccess($name, $op, $account = NULL) {
     $info = $this->getPropertyInfo($name);
-    // If the property should be accessed and it's an entity, make sure the user
-    // is allowed to view that entity.
-    if ($op == 'view' && $this->$name instanceof EntityDrupalWrapper && !$this->$name->entityAccess($op, $account)) {
-      return FALSE;
-    }
-    // If a property should be edited and this is an entity, make sure the user
-    // has update access for this entity.
+
+    // If a property should be edited and this is part of an entity, make sure
+    // the user has update access for this entity.
     if ($op == 'edit') {
       $entity = $this;
       while (!($entity instanceof EntityDrupalWrapper) && isset($entity->info['parent'])) {
         $entity = $entity->info['parent'];
       }
-      $entity_access_op = $entity->getIdentifier() ? 'update' : 'create';
-      if ($entity instanceof EntityDrupalWrapper && !$entity->entityAccess($entity_access_op, $account)) {
+      if ($entity instanceof EntityDrupalWrapper && !$entity->entityAccess('update', $account)) {
         return FALSE;
       }
     }
@@ -804,6 +794,27 @@ class EntityDrupalWrapper extends EntityStructureWrapper {
       }
     }
     return $this->type;
+  }
+
+  /**
+   * {@inheritdoc}
+   *
+   * Note that this method checks property access, but can be used for checking
+   * entity access *only* if the wrapper is not a property (i.e. has no parent
+   * wrapper).
+   * To be safe, better use EntityDrupalWrapper::entityAccess() for checking
+   * entity access.
+   */
+  public function access($op, $account = NULL) {
+    if (!empty($this->info['parent'])) {
+      // If this is a property, make sure the user is able to view the
+      // currently referenced entity also.
+      return $this->entityAccess('view', $account) && parent::access($op, $account);
+    }
+    else {
+      // This is not a property, so fallback on entity access.
+      return $this->entityAccess($op == 'edit' ? 'update' : 'view', $account);
+    }
   }
 
   /**
