@@ -1693,3 +1693,226 @@ html[xmlns] .slides {
     font-size: 1.91667em;
   }
 }
+
+/*removed campus updates 2/28/14*/
+
+
+.block-views-master_events-block_1 .views-row,
+.block-views-master_events-block_2 .views-row,
+.block-views-master_events-block_3 .views-row,
+.block-views-master_events-block_4 .views-row {
+  border-top: #e6e6e6 1px solid;
+  list-style: none;
+  margin: 0;
+}
+.block-views-master_events-block_1 .views-row.views-row-first,
+.block-views-master_events-block_2 .views-row.views-row-first,
+.block-views-master_events-block_3 .views-row.views-row-first,
+.block-views-master_events-block_4 .views-row.views-row-first {
+  border-top: 0 none;
+}
+.block-views-master_events-block_1 .calendar-graphic,
+.block-views-master_events-block_2 .calendar-graphic,
+.block-views-master_events-block_3 .calendar-graphic,
+.block-views-master_events-block_4 .calendar-graphic {
+  margin: 1em .5em 1em 0;
+}
+.block-views-master_events-block_1 .calendar-text,
+.block-views-master_events-block_2 .calendar-text,
+.block-views-master_events-block_3 .calendar-text,
+.block-views-master_events-block_4 .calendar-text {
+  margin: 1em 0;
+}
+
+#block-view-upcoming-events .content {
+  padding: .5em 0;
+}
+#block-view-upcoming-events .views-row {
+  clear: both;
+  margin-bottom: .5em;
+}
+#block-view-upcoming-events .views-field {
+  margin-bottom: 0;
+  margin-left: 4em;
+}
+#block-view-upcoming-events .views-field-title {
+  font-size: 1em;
+  font-weight: bold;
+}
+#block-view-upcoming-events .views-field-title h3, #block-view-upcoming-events .views-field-title .node-type-cluster .field-label, .node-type-cluster #block-view-upcoming-events .views-field-title .field-label, #block-view-upcoming-events .views-field-title #this-week-highlights .highlight-box h2, #this-week-highlights .highlight-box #block-view-upcoming-events .views-field-title h2 {
+  font-size: 1em;
+}
+#block-view-upcoming-events .views-field-nothing {
+  display: block;
+  float: left;
+  margin-left: 0;
+  padding-top: .2em;
+  padding-left: 0;
+  width: 3em;
+}
+#block-view-upcoming-events .views-field-nothing .event-calendar-date {
+  display: block;
+  font-weight: normal;
+  text-align: center;
+}
+#block-view-upcoming-events .views-field-nothing .event-calendar-date a, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:link, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:visited, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:hover, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:active, #block-view-upcoming-events .views-field-nothing .event-calendar-date a:focus {
+  border-bottom: 0 none;
+  font-weight: normal;
+}
+#block-view-upcoming-events .views-field-nothing .event-calendar-date .event-month {
+  font-size: 1.25em;
+  display: block;
+  line-height: 1;
+  text-transform: uppercase;
+}
+#block-view-upcoming-events .views-field-nothing .event-calendar-date .event-day {
+  display: block;
+  font-size: 2.25em;
+  line-height: 1em;
+  padding: 0 0 .25em 0;
+}
+#block-view-upcoming-events .views-field-field-event-liblocation {
+  font-style: italic;
+  padding: .5em 0;
+}
+#block-view-upcoming-events .views-field-field-event-liblocation .field-content {
+  font-size: .9em;
+}
+
+
+@media only screen and (min-width: 48em) {
+  .block-calendar-list {
+    display: none;
+  }
+}
+@media print {
+  .block-calendar-list {
+    display: none;
+  }
+}
+.block-calendar-list .lt-ie9 {
+  display: none;
+}
+
+.block-calendar {
+  display: none;
+}
+@media only screen and (min-width: 48em) {
+  .block-calendar {
+    display: block;
+  }
+}
+@media print {
+  .block-calendar {
+    display: block;
+  }
+}
+.block-calendar .lt-ie9 {
+  display: block;
+}
+.block-calendar .fc-header {
+  text-align: center;
+}
+
+.view-directory .views-row {
+  margin-bottom: 3em;
+}
+.view-directory .views-field {
+  line-height: 1.3;
+  margin: 0 0 0 120px;
+}
+.view-directory .views-field h4 {
+  margin-bottom: 0;
+}
+.view-directory .views-field-field-person-headshot {
+  margin: 0;
+}
+.view-directory .views-field-field-person-headshot img {
+  -webkit-transition: background-color 0.25s;
+  -moz-transition: background-color 0.25s;
+  -o-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+  background-color: gray;
+  height: 125px;
+  margin-bottom: 1em;
+  max-width: 100%;
+  width: 126px;
+  margin-top: .24em;
+}
+.view-directory .views-field-field-person-headshot img:hover {
+  background-color: #8c8c8c;
+}
+@media only screen and (min-width: 48em) {
+  .view-directory .views-field-field-person-headshot img {
+    margin-top: .74em;
+  }
+}
+@media print {
+  .view-directory .views-field-field-person-headshot img {
+    margin-top: .74em;
+  }
+}
+.view-directory .views-field-field-person-headshot img .lt-ie9 {
+  margin-top: .74em;
+}
+
+#homepage-events,
+#homepage-news {
+  float: left;
+  padding: 0px 20px 0px 20px;
+  font-size: 11px;
+}
+
+#homepage-events li,
+#homepage-news li,
+.homepage-events li,
+.homepage-news li,
+.block-views-master_events-block_1 .item-list ul li {
+  border-bottom: solid #ddd 1px;
+  margin: 0 0 0.25em 0.83333em;
+  padding: 5px 10px 10px 0px;
+  clear: both;
+  display: inline-block;
+  width: 100%;
+}
+#homepage-events li .views-field-title,
+#homepage-news li .views-field-title,
+.homepage-events li .views-field-title,
+.homepage-news li .views-field-title,
+.block-views-master_events-block_1 .item-list ul li .views-field-title {
+  margin: 0;
+}
+
+#homepage-events li.last,
+#homepage-news li.last,
+.homepage-events li.last,
+.homepage-news li.last {
+  border: 0;
+}
+
+#homepage-campus-updates, .front > .block-views-campus_updates-block_1 {
+  float: left;
+  padding: 0px;
+}
+
+#homepage-campus-updates h3, #homepage-campus-updates .node-type-cluster .field-label, .node-type-cluster #homepage-campus-updates .field-label, #homepage-campus-updates #this-week-highlights .highlight-box h2, #this-week-highlights .highlight-box #homepage-campus-updates h2, .front > .block-views-campus_updates-block_1 h3, .front > .block-views-campus_updates-block_1 .node-type-cluster .field-label, .node-type-cluster .front > .block-views-campus_updates-block_1 .field-label, .front > .block-views-campus_updates-block_1 #this-week-highlights .highlight-box h2, #this-week-highlights .highlight-box .front > .block-views-campus_updates-block_1 h2 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 0px;
+}
+
+.view-campus-updates .views-field-body {
+  margin-top: 12px;
+}
+
+#homepage-campus-updates p, .front > .block-views-campus_updates-block_1 p {
+  font-size: 11px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+#homepage-campus-updates p img, .front .campus-updates p img {
+  float: left;
+  max-width: 100%;
+  padding: 0px 10px 10px 0px;
+}
