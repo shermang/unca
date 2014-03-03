@@ -1,0 +1,13 @@
+name = UNCA Aggregator Feeds
+description = Includes base feeds from News Center and Master Calendar, as well as their attendant views
+core = 7.x
+package = UNCA Global
+version = 7.x-1.0
+project = unca_aggregator_feeds
+dependencies[] = aggregator
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = aggregator_feeds
+features_exclude[dependencies][ctools] = ctools
+project path = sites/all/modules/prototype/features/unca_global
