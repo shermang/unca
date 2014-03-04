@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the UNCA Performance Settings feature.
+ */
+
+include_once 'unca_performance_settings.features.inc';

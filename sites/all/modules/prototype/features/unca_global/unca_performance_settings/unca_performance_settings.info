@@ -1,0 +1,16 @@
+name = UNCA Performance Settings
+description = Performance settings from Configuration -> Development -> Performance
+core = 7.x
+package = UNCA Global
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = block_cache
+features[variable][] = cache
+features[variable][] = cache_lifetime
+features[variable][] = drupal_css_cache_files
+features[variable][] = drupal_js_cache_files
+features[variable][] = page_cache_maximum_age
+features[variable][] = preprocess_css
+project path = sites/all/modules/prototype/features/unca_global
