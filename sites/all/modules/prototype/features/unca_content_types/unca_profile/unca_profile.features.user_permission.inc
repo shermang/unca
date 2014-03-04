@@ -15,6 +15,7 @@ function unca_profile_user_default_permissions() {
     'name' => 'access user profiles',
     'roles' => array(
       'administrator' => 'administrator',
+      'developer' => 'developer',
     ),
     'module' => 'user',
   );
@@ -22,14 +23,18 @@ function unca_profile_user_default_permissions() {
   // Exported permission: 'delete terms in profile_types'.
   $permissions['delete terms in profile_types'] = array(
     'name' => 'delete terms in profile_types',
-    'roles' => array(),
+    'roles' => array(
+      'developer' => 'developer',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'edit terms in profile_types'.
   $permissions['edit terms in profile_types'] = array(
     'name' => 'edit terms in profile_types',
-    'roles' => array(),
+    'roles' => array(
+      'developer' => 'developer',
+    ),
     'module' => 'taxonomy',
   );
 

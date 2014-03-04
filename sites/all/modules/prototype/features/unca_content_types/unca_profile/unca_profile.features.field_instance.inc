@@ -600,7 +600,11 @@ function unca_profile_field_default_field_instances() {
   // Exported field_instance: 'node-profiles-field_profile_weight'
   $field_instances['node-profiles-field_profile_weight'] = array(
     'bundle' => 'profiles',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -622,8 +626,8 @@ function unca_profile_field_default_field_instances() {
     'label' => 'Profile Weight',
     'required' => 0,
     'settings' => array(
-      'max' => '',
-      'min' => '',
+      'max' => 50,
+      'min' => -50,
       'prefix' => '',
       'suffix' => '',
       'user_register_form' => FALSE,
