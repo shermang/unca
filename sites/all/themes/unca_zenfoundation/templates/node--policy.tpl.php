@@ -27,7 +27,7 @@
     print $body[0]['value'];
   ?>
   <hr/>
-  
+
   <?php if (isset($content['field_policy_reference_materials'])) print "<h2>Reference Materials</h2>" . render($content['field_policy_reference_materials']); ?>
   <?php if (isset($content['field_policy_associated_forms'])) print "<h2>Associated Forms</h2>" . render($content['field_policy_associated_forms']); ?>
  </article><!-- /node -->
