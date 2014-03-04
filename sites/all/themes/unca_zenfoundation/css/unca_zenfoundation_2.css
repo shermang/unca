@@ -3242,7 +3242,72 @@ nav.navigation:after {
   -webkit-border-radius: 12px;
 }
 
+#bottom-spiffs {
+  margin: 0 auto 2px;
+  max-width: 80em;
+  width: 100%;
+}
+#bottom-spiffs .column, #bottom-spiffs .columns {
+  float: left;
+  padding: 0px;
+}
+#bottom-spiffs ul {
+  margin-bottom: -5px;
+}
+#bottom-spiffs .region > .block {
+  clear: both;
+  margin-bottom: 5px;
+}
+#bottom-spiffs .region-footer-promo-a > .block-block, #bottom-spiffs .region-footer-promo-b > .block-block {
+  background: url("../images/footer-spiff-background-tall.png") repeat-x scroll 0 0 #32611c;
+}
+#bottom-spiffs .region-footer-promo-a > .block-block a, #bottom-spiffs .region-footer-promo-b > .block-block a {
+  padding: 26px 20px 27px 50px;
+  color: #fff;
+  display: block; 
+}
+#bottom-spiffs #footer-profile a {
+  border: none;
+}
 
+#bottom-spiffs .interior {
+  background: url(../images/footer-spiff-background-profile.png) #95b36f repeat-x;
+  border: 1px solid #FFFFFF;
+  height: 160px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 0 5px;
+  padding: 5px 10px !important;
+}
+@media only screen and (min-width: 48em) {
+  #bottom-spiffs .interior {
+    /*margin: 0 5px;*/
+    width: 50%;
+    padding: 5px 10px !important;
+  }
+}
+@media print {
+  #bottom-spiffs .interior {
+    /*margin: 0 5px;*/
+    width: 50%;
+    padding: 5px 10px !important;
+  }
+}
+#bottom-spiffs .interior .lt-ie9 {
+  margin: 0 5px;
+  width: 470px;
+  padding: 5px 10px !important;
+}
+
+.footer-spiff-apply,
+.footer-spiff-tour,
+.footer-spiff-question,
+.footer-spiff-facebook,
+.footer-spiff-mailinglist,
+.footer-spiff-news,
+.footer-spiff-twitter {
+  overflow: hidden;
+}
 
 .unca-gateway h2 {
   margin-bottom: 0.2em;
@@ -3955,7 +4020,7 @@ iframe.mapiframe {
 }
 
 .hold-slide a.close:link {
-  background-image: url("imgs/closebox.png");
+  background-image: url("images/closebox.png");
   background-position: 0 0;
   background-repeat: no-repeat;
   display: block;
@@ -4132,7 +4197,7 @@ iframe.mapiframe {
     margin-top: 0;
   }
   #navigation-primary-wrapper, #navigation-primary-wrapper .top-bar {
-    margin-bottom: 0;
+    margin-bottom: 5px;
   }
 }
 @media print {
