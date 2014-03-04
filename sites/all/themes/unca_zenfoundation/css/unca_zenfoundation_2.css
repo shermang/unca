@@ -3247,7 +3247,7 @@ nav.navigation:after {
   max-width: 80em;
   width: 100%;
 }
-#bottom-spiffs .column, #bottom-spiffs columns {
+#bottom-spiffs .column, #bottom-spiffs .columns {
   float: left;
   padding: 0px;
 }
@@ -4382,7 +4382,7 @@ iframe.mapiframe {
 }
 
 .hold-slide a.close:link {
-  background-image: url("imgs/closebox.png");
+  background-image: url("images/closebox.png");
   background-position: 0 0;
   background-repeat: no-repeat;
   display: block;
@@ -4559,7 +4559,7 @@ iframe.mapiframe {
     margin-top: 0;
   }
   #navigation-primary-wrapper, #navigation-primary-wrapper .top-bar {
-    margin-bottom: 0;
+    margin-bottom: 5px;
   }
 }
 @media print {
