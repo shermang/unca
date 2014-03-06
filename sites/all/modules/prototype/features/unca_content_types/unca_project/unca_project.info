@@ -8,6 +8,7 @@ dependencies[] = date
 dependencies[] = features
 dependencies[] = file
 dependencies[] = image
+dependencies[] = imagefield_crop
 dependencies[] = list
 dependencies[] = media
 dependencies[] = number
