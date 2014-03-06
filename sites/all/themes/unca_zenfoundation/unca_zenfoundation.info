@@ -79,7 +79,8 @@ stylesheets[all][] = css/reset.css
 stylesheets[all][] = css/unca_zenfoundation_1.css
 stylesheets[all][] = css/unca_zenfoundation_2.css
 stylesheets[all][] = css/flexslider_theme.css
-stylesheets[all][] = css/profiles.css
+stylesheets[all][] = css/footer-blocks.css
+
 
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.

@@ -1,0 +1,476 @@
+/*SPIFF Profile Styles*******************************************************************/
+
+/*-------------------------checkthisout*/
+
+#bottom-spiffs {
+  margin: 0 auto 2px;
+  max-width: 80em;
+  width: 100%;
+}
+#bottom-spiffs .column, #bottom-spiffs columns {
+  float: left;
+  padding: 0px;
+}
+#bottom-spiffs ul {
+  margin-bottom: -5px;
+}
+#bottom-spiffs .region > .block {
+  clear: both;
+  margin-bottom: 5px;
+}
+#bottom-spiffs .region-footer-promo-a > .block-block, #bottom-spiffs .region-footer-promo-b > .block-block {
+  background: url("../images/footer-spiff-background-tall.png") repeat-x scroll 0 0 #32611c;
+}
+#bottom-spiffs .region-footer-promo-a > .block-block a, #bottom-spiffs .region-footer-promo-b > .block-block a {
+  padding: 26px 20px 27px 50px;
+  color: #fff;
+  display: block; 
+}
+#bottom-spiffs #footer-profile a {
+  border: none;
+}
+
+#bottom-spiffs .interior {
+  background: url(../images/footer-spiff-background-profile.png) #95b36f repeat-x;
+  border: 1px solid #FFFFFF;
+  height: 160px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 0 5px;
+  padding: 5px 10px !important;
+}
+@media only screen and (min-width: 48em) {
+  #bottom-spiffs .interior {
+    /*margin: 0 5px;*/
+    width: 50%;
+    padding: 5px 10px !important;
+  }
+}
+@media print {
+  #bottom-spiffs .interior {
+    /*margin: 0 5px;*/
+    width: 50%;
+    padding: 5px 10px !important;
+  }
+}
+#bottom-spiffs .interior .lt-ie9 {
+  margin: 0 5px;
+  width: 470px;
+  padding: 5px 10px !important;
+}
+
+.footer-spiff-apply,
+.footer-spiff-tour,
+.footer-spiff-question,
+.footer-spiff-facebook,
+.footer-spiff-mailinglist,
+.footer-spiff-news,
+.footer-spiff-twitter {
+  overflow: hidden;
+}
+
+a.footer-spiff-apply {
+  background-image: url(../images/spiff-icon-checkmark.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-checkmark {
+  background-image: url(../images/spiff-icon-checkmark.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-tour {
+  background-image: url(../images/spiff-icon-eye.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-eye {
+  background-image: url(../images/spiff-icon-eye.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-question {
+  background-image: url(../images/spiff-icon-question.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-gift {
+  background-image: url(../images/spiff-icon-gift.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-facebook {
+  background-image: url(../images/spiff-icon-facebook.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-news {
+  background-image: url(../images/spiff-icon-news.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-mailinglist {
+  background-image: url(../images/spiff-icon-mail.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-mail {
+  background-image: url(../images/spiff-icon-mail.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-twitter {
+  background-image: url(../images/spiff-icon-twitter.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-linkedin {
+  background-image: url(../images/spiff-icon-linkedin.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-athletics {
+  background-image: url(../images/spiff-icon-athletics.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-calendar {
+  background-image: url(../images/spiff-icon-calendar.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-map {
+  background-image: url(../images/spiff-icon-map.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+#bottom-spiffs .first a, #bottom-spiffs .last a {  
+  border: solid #fff 1px;
+}
+
+#bottom-spiffs a.contextual-links-trigger {
+  color: #333333 !important;
+  margin: 0.25em 0 !important;
+  padding: 0.25em 1em 0.25em 0.5em !important;
+  border: none !important;
+}
+
+
+#bottom-spiffs #profile-headshot {
+  float: right;
+  padding: 1px;
+  border: solid #fff 1px;
+  margin-left: 20px;
+}
+
+#bottom-spiffs #profile-name {
+  font-size: 24px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+#bottom-spiffs #profile-name a {
+  color: #4572C5;
+  text-decoration: none;
+  padding: 0;
+  border: none;
+}
+
+#bottom-spiffs #profile-abstract {
+  margin-bottom: 5px;
+  font-size: 11px;
+}
+
+#bottom-spiffs #project-thumbnail {
+  float: right;
+  padding: 1px;
+  border: solid #fff 1px;
+  margin-left: 20px;
+}
+
+#bottom-spiffs #project-name {
+  font-size: 24px;
+  line-height: 100%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#bottom-spiffs li {
+  margin-bottom: 5px;
+}
+
+#bottom-spiffs p {
+  margin-bottom: 0px;
+}
+
+#bottom-spiffs .content {
+  margin-bottom: 5px;
+}
+
+#bottom-spiffs .column.first div.content {
+  background: url(../images/footer-spiff-background-tall.png) repeat-x #32611c;
+}
+
+#bottom-spiffs .column.last div.content {
+  background: url(../images/footer-spiff-background-short.png) repeat-x #32611c;
+}
+#bottom-spiffs .spiff-summary { /*Correlates to body summary field*/
+  margin-top: -5px;
+  margin-bottom: 5px;
+  font-size: 12px; /*changed from 11px to 12px, by DA requested by LW 2/18/14*/
+  width: 80%;
+}
+
+#bottom-spiffs .spiff-title a { /*Correlates to title field*/
+  font-size: 24px;
+  margin-bottom: 5px;
+  margin-top: -5px;
+  padding: 0;
+  color: #4572C5;
+  text-decoration: none;
+}
+
+#bottom-spiffs .spiff-thumbnail { /*Correlates to image field*/
+  float: right;
+  padding: 1px;
+  border: solid #fff 1px;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+#bottom-spiffs .spiff-thumbnail a { /*Correlates to image field*/
+  padding: 0;
+}
+
+
+#bottom-spiffs .spiff-subheading { /*Correlates to subheading field*/
+  margin-bottom: 5px;
+}
+
+#bottom-spiffs .spiff-summary p a {
+	padding: 0px;
+	color: #0e52c7;
+	}
+/****************************************************************************************/
+
+
+#bottom-spiffs .column {
+  float: left;
+  padding: 0px;
+}
+
+#bottom-spiffs .first,
+#bottom-spiffs .last {
+  font-size: 14px;
+}
+
+.footer-spiff-apply,
+.footer-spiff-tour,
+.footer-spiff-question,
+.footer-spiff-facebook,
+.footer-spiff-mailinglist,
+.footer-spiff-news,
+.footer-spiff-twitter {
+  overflow: hidden;
+}
+
+a.footer-spiff-apply {
+  background-image: url(../images/spiff-icon-checkmark.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-checkmark {
+  background-image: url(../images/spiff-icon-checkmark.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-tour {
+  background-image: url(../images/spiff-icon-eye.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-eye {
+  background-image: url(../images/spiff-icon-eye.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-question {
+  background-image: url(../images/spiff-icon-question.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-gift {
+  background-image: url(../images/spiff-icon-gift.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-facebook {
+  background-image: url(../images/spiff-icon-facebook.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-news {
+  background-image: url(../images/spiff-icon-news.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-mailinglist {
+  background-image: url(../images/spiff-icon-mail.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-mail {
+  background-image: url(../images/spiff-icon-mail.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-twitter {
+  background-image: url(../images/spiff-icon-twitter.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-linkedin {
+  background-image: url(../images/spiff-icon-linkedin.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-athletics {
+  background-image: url(../images/spiff-icon-athletics.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-calendar {
+  background-image: url(../images/spiff-icon-calendar.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+a.footer-spiff-map {
+  background-image: url(../images/spiff-icon-map.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+#block-views-study-abroad-destinations-block .project-thumbnail a {
+  display: block;
+  color: #fff;
+  border: solid #fff 1px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+/* blue button */
+#block-views-study-abroad-destinations-block .views-more-link {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  display: block;
+  color: #ffffff;
+  padding: 3px 10px !important;
+  background: -moz-linear-gradient(top, #0463a7 0%, #5497b9);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0463a7), to(#5497b9));
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  border: 2px solid #A3C0CD !important;
+  -moz-box-shadow: 0px 1px 3px rgba(131, 176, 197, 0.5), inset 0px 3px 2px #0053a1;
+  -webkit-box-shadow: 0px 1px 3px rgba(131, 176, 197, 0.5), inset 0px 3px 2px #0053a1;
+  box-shadow: 0px 1px 3px rgba(131, 176, 197, 0.5), inset 0px 3px 2px #0053a1;
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(255, 255, 255, 0);
+  margin: 5px 0 0 0;
+  float: left;
+}
+#block-views-study-abroad-destinations-block .views-more-link a {
+  padding: 0;
+}
+
+#footer-profile {
+  overflow: hidden;
+}
+
+#bottom-spiffs .profile-headshot {
+  float: right;
+  padding: 1px;
+  border: solid #fff 1px;
+  margin-left: 20px;
+}
+#bottom-spiffs .profile-headshot a {
+  padding: 0;
+}
+#bottom-spiffs .profile-name a {
+  font-size: 24px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 0;
+  color: #4572C5;
+  text-decoration: none;
+}
+#bottom-spiffs .profile-major {
+  margin-bottom: 5px;
+}
+#bottom-spiffs .profile-abstract {
+  margin-bottom: 5px;
+  font-size: 11px;
+  width: 80%;
+}
+#bottom-spiffs .project-thumbnail {
+  float: right;
+  padding: 1px;
+  border: solid #fff 1px;
+  margin-left: 20px;
+}
+#bottom-spiffs .project-name {
+  font-size: 24px;
+  line-height: 100%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+#bottom-spiffs li {
+  margin-bottom: 5px;
+}
+#bottom-spiffs p {
+  margin-bottom: 0px;
+}
+#bottom-spiffs .content {
+  margin-bottom: 5px;
+}
+#bottom-spiffs .button-blue-rounded a {
+  padding: 0;
+}
+#bottom-spiffs .column.first div.content {
+  background: url(../images/footer-spiff-background-tall.png) repeat-x #32611c;
+}
+#bottom-spiffs .column.last div.content {
+  background: url(../images/footer-spiff-background-short.png) repeat-x #32611c;
+}
+
+
+
