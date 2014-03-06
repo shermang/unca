@@ -16,13 +16,13 @@ function unca_roles_permission_strongarm() {
   $strongarm->name = 'imce_profiles';
   $strongarm->value = array(
     1 => array(
-      'name' => 'User-1',
+      'name' => 'Default Profile',
       'usertab' => 1,
       'filesize' => '0',
       'quota' => '0',
       'tuquota' => '0',
-      'extensions' => '*',
-      'dimensions' => '800x600',
+      'extensions' => 'gif jpg png pdf zip js doc xls ppt mp3 docx xlsx pptx jpeg gif jpg png pdf zip js doc xls ppt mp3 docx xlsx pptx jpeg',
+      'dimensions' => '680x600',
       'filenum' => '0',
       'directories' => array(
         0 => array(
@@ -33,6 +33,8 @@ function unca_roles_permission_strongarm() {
           'thumb' => 1,
           'delete' => 1,
           'resize' => 1,
+          'mkdir' => 1,
+          'rmdir' => 1,
         ),
       ),
       'thumbnails' => array(
@@ -55,6 +57,7 @@ function unca_roles_permission_strongarm() {
           'suffix' => '',
         ),
       ),
+      'mkdirnum' => 0,
     ),
     2 => array(
       'name' => 'Sample profile',
@@ -74,6 +77,8 @@ function unca_roles_permission_strongarm() {
           'thumb' => 1,
           'delete' => 1,
           'resize' => 1,
+          'mkdir' => 0,
+          'rmdir' => 0,
         ),
       ),
       'thumbnails' => array(
@@ -96,6 +101,7 @@ function unca_roles_permission_strongarm() {
           'suffix' => '',
         ),
       ),
+      'mkdirnum' => 2,
     ),
   );
   $export['imce_profiles'] = $strongarm;

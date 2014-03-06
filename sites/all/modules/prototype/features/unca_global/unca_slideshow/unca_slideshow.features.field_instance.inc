@@ -237,6 +237,55 @@ function unca_slideshow_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-slideshow_item-field_show_image_on_inside_page'
+  $field_instances['node-slideshow_item-field_show_image_on_inside_page'] = array(
+    'bundle' => 'slideshow_item',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'This option allows the user to select whether they prefer they\'re slideshow image to appear on the inside page or just in the slideshow.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_show_image_on_inside_page',
+    'label' => 'Show Image on Inside Page',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-slideshow_item-field_slideshow_term'
   $field_instances['node-slideshow_item-field_slideshow_term'] = array(
     'bundle' => 'slideshow_item',
@@ -438,7 +487,9 @@ function unca_slideshow_field_default_field_instances() {
   t('Set URL destination of this slide\'s headline, image, and read more button. If this is left blank, the destination will be the content found in the Body field below.');
   t('Set the caption or sub-heading of this slide.');
   t('Short Slideshow (5 Items or fewer)');
+  t('Show Image on Inside Page');
   t('Slideshow');
+  t('This option allows the user to select whether they prefer they\'re slideshow image to appear on the inside page or just in the slideshow.');
   t('Video');
 
   return $field_instances;

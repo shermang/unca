@@ -25,8 +25,9 @@ function unca_slideshow_field_group_info() {
     'children' => array(
       0 => 'field_link',
       1 => 'field_read_more',
-      2 => 'path',
-      3 => 'field_video_embed',
+      2 => 'field_video_embed',
+      3 => 'field_show_image_on_inside_page',
+      4 => 'path',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
