@@ -444,7 +444,7 @@ function unca_profile_views_default_views() {
   $handler->display->display_options['fields']['field_teaser_text_value']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser_text_value']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['field_teaser_text_value']['settings'] = array(
-    'trim_length' => '600',
+    'trim_length' => '300',
   );
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image_fid']['id'] = 'field_image_fid';
@@ -480,6 +480,18 @@ function unca_profile_views_default_views() {
   $handler->display->display_options['fields']['field_suffix_value']['field'] = 'field_profile_suffix';
   $handler->display->display_options['fields']['field_suffix_value']['label'] = '';
   $handler->display->display_options['fields']['field_suffix_value']['element_label_colon'] = FALSE;
+  /* Field: Content: Contact Information */
+  $handler->display->display_options['fields']['field_profile_contact_info']['id'] = 'field_profile_contact_info';
+  $handler->display->display_options['fields']['field_profile_contact_info']['table'] = 'field_data_field_profile_contact_info';
+  $handler->display->display_options['fields']['field_profile_contact_info']['field'] = 'field_profile_contact_info';
+  $handler->display->display_options['fields']['field_profile_contact_info']['label'] = '';
+  $handler->display->display_options['fields']['field_profile_contact_info']['element_label_colon'] = FALSE;
+  /* Field: Content: Personal Statement */
+  $handler->display->display_options['fields']['field_profile_personal_statement']['id'] = 'field_profile_personal_statement';
+  $handler->display->display_options['fields']['field_profile_personal_statement']['table'] = 'field_data_field_profile_personal_statement';
+  $handler->display->display_options['fields']['field_profile_personal_statement']['field'] = 'field_profile_personal_statement';
+  $handler->display->display_options['fields']['field_profile_personal_statement']['label'] = '';
+  $handler->display->display_options['fields']['field_profile_personal_statement']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Profile Weight (field_profile_weight) */
   $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
   $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_profile_weight';
@@ -534,69 +546,6 @@ function unca_profile_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['element_class'] = 'profile-title';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Teaser (Node Summary) */
-  $handler->display->display_options['fields']['field_teaser_text_value']['id'] = 'field_teaser_text_value';
-  $handler->display->display_options['fields']['field_teaser_text_value']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['field_teaser_text_value']['field'] = 'body';
-  $handler->display->display_options['fields']['field_teaser_text_value']['ui_name'] = 'Teaser (Node Summary)';
-  $handler->display->display_options['fields']['field_teaser_text_value']['label'] = '';
-  $handler->display->display_options['fields']['field_teaser_text_value']['alter']['trim_whitespace'] = TRUE;
-  $handler->display->display_options['fields']['field_teaser_text_value']['alter']['nl2br'] = TRUE;
-  $handler->display->display_options['fields']['field_teaser_text_value']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_teaser_text_value']['element_class'] = 'profile-summary';
-  $handler->display->display_options['fields']['field_teaser_text_value']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_teaser_text_value']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['field_teaser_text_value']['settings'] = array(
-    'trim_length' => '600',
-  );
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_image_fid']['id'] = 'field_image_fid';
-  $handler->display->display_options['fields']['field_image_fid']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image_fid']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image_fid']['label'] = '';
-  $handler->display->display_options['fields']['field_image_fid']['element_class'] = 'profile-image';
-  $handler->display->display_options['fields']['field_image_fid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_fid']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image_fid']['settings'] = array(
-    'image_style' => 'profile-headshot-image',
-    'image_link' => '',
-  );
-  /* Field: Content: Subheading */
-  $handler->display->display_options['fields']['field_subhead_value']['id'] = 'field_subhead_value';
-  $handler->display->display_options['fields']['field_subhead_value']['table'] = 'field_data_field_subheading';
-  $handler->display->display_options['fields']['field_subhead_value']['field'] = 'field_subheading';
-  $handler->display->display_options['fields']['field_subhead_value']['label'] = '';
-  $handler->display->display_options['fields']['field_subhead_value']['element_class'] = 'profile-subheading';
-  $handler->display->display_options['fields']['field_subhead_value']['element_label_colon'] = FALSE;
-  /* Field: Content: First Name */
-  $handler->display->display_options['fields']['field_firstname_value']['id'] = 'field_firstname_value';
-  $handler->display->display_options['fields']['field_firstname_value']['table'] = 'field_data_field_profile_first_name';
-  $handler->display->display_options['fields']['field_firstname_value']['field'] = 'field_profile_first_name';
-  $handler->display->display_options['fields']['field_firstname_value']['label'] = '';
-  $handler->display->display_options['fields']['field_firstname_value']['element_class'] = 'profile-first-name';
-  $handler->display->display_options['fields']['field_firstname_value']['element_label_colon'] = FALSE;
-  /* Field: Content: Last Name */
-  $handler->display->display_options['fields']['field_lastname_value']['id'] = 'field_lastname_value';
-  $handler->display->display_options['fields']['field_lastname_value']['table'] = 'field_data_field_profile_last_name';
-  $handler->display->display_options['fields']['field_lastname_value']['field'] = 'field_profile_last_name';
-  $handler->display->display_options['fields']['field_lastname_value']['label'] = '';
-  $handler->display->display_options['fields']['field_lastname_value']['element_class'] = 'profile-last-name';
-  $handler->display->display_options['fields']['field_lastname_value']['element_label_colon'] = FALSE;
-  /* Field: Content: Suffix */
-  $handler->display->display_options['fields']['field_suffix_value']['id'] = 'field_suffix_value';
-  $handler->display->display_options['fields']['field_suffix_value']['table'] = 'field_data_field_profile_suffix';
-  $handler->display->display_options['fields']['field_suffix_value']['field'] = 'field_profile_suffix';
-  $handler->display->display_options['fields']['field_suffix_value']['label'] = '';
-  $handler->display->display_options['fields']['field_suffix_value']['element_class'] = 'profile-suffix';
-  $handler->display->display_options['fields']['field_suffix_value']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */

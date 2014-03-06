@@ -10,6 +10,7 @@ dependencies[] = field_group
 dependencies[] = file
 dependencies[] = file_entity
 dependencies[] = image
+dependencies[] = imagefield_crop
 dependencies[] = list
 dependencies[] = media
 dependencies[] = options

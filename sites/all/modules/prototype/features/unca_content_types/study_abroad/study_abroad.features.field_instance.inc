@@ -22,7 +22,7 @@ function study_abroad_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -61,10 +61,14 @@ function study_abroad_field_default_field_instances() {
     'description' => 'Upload an image of the flag of the destination country. This image will appear in destination listings on the Study Abroad Programs page.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -82,20 +86,28 @@ function study_abroad_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
+      'focus' => 0,
+      'focus_lock_ratio' => 0,
+      'focus_min_size' => '',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '',
+      'min_resolution' => '300x300',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'imagefield_crop',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
+        'collapsible' => 2,
+        'croparea' => '500x500',
+        'enforce_minimum' => 1,
+        'enforce_ratio' => 1,
+        'preview_image_style' => 'medium',
         'progress_indicator' => 'throbber',
+        'resolution' => '300x300',
       ),
-      'type' => 'image_image',
+      'type' => 'imagefield_crop_widget',
       'weight' => 2,
     ),
   );
@@ -112,7 +124,7 @@ function study_abroad_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -149,7 +161,7 @@ function study_abroad_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -186,7 +198,7 @@ function study_abroad_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',

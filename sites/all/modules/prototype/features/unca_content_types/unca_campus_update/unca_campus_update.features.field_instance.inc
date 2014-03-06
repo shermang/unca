@@ -68,8 +68,9 @@ function unca_campus_update_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'list_default',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -134,18 +135,23 @@ function unca_campus_update_field_default_field_instances() {
       'focus_min_size' => '',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '',
+      'min_resolution' => '300x300',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'imagefield_crop',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
+        'collapsible' => 2,
+        'croparea' => '500x500',
+        'enforce_minimum' => 1,
+        'enforce_ratio' => 1,
+        'preview_image_style' => 'medium',
         'progress_indicator' => 'throbber',
+        'resolution' => '300x300',
       ),
-      'type' => 'image_image',
+      'type' => 'imagefield_crop_widget',
       'weight' => 2,
     ),
   );
