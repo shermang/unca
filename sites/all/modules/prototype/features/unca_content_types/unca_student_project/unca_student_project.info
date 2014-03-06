@@ -10,6 +10,7 @@ dependencies[] = email
 dependencies[] = features
 dependencies[] = file_entity
 dependencies[] = image
+dependencies[] = imagefield_crop
 dependencies[] = link
 dependencies[] = media
 dependencies[] = strongarm
