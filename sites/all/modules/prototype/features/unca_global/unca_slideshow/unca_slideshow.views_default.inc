@@ -188,25 +188,12 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['path']['absolute'] = TRUE;
-  /* Field: Content: Link */
-  $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
-  $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
-  $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
-  $handler->display->display_options['fields']['field_link']['relationship'] = 'reverse_field_slideshow_term_node';
-  $handler->display->display_options['fields']['field_link']['label'] = '';
-  $handler->display->display_options['fields']['field_link']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_link']['empty'] = '[path]';
-  $handler->display->display_options['fields']['field_link']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_link']['type'] = 'link_absolute';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['relationship'] = 'reverse_field_slideshow_term_node';
   $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_image']['alter']['path'] = '[field_link]';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
@@ -528,7 +515,6 @@ function unca_slideshow_views_default_views() {
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['relationship'] = 'reverse_field_slideshow_term_node';
   $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_image']['alter']['path'] = '[field_link]';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
