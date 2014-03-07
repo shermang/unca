@@ -29,3 +29,18 @@ function _unca_custom_redirect(){
   drupal_goto('search/google/'.$query_parameters['query'],array('query'=>$query_parameters));
 }
 
+
+function unca_custom_views_pre_render(&$view){
+  switch($view->name){
+    case 'unca_slideshow':
+       foreach($view->result as $index => $result){
+         if(empty($result->_field_data['field_slideshow_term_taxonomy_term_data_nid']['entity']->body)
+           && empty($result->_field_data['field_slideshow_term_taxonomy_term_data_nid']['entity']->field_link)){
+             unset($view->result[$index]->_field_data['field_slideshow_term_taxonomy_term_data_nid']['entity']->field_read_more);
+             unset($view->result[1]->field_field_image[$index]['rendered']['#path']);
+
+         }
+       }
+      break;
+  }
+}
