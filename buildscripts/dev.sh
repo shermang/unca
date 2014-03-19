@@ -83,6 +83,12 @@ unca_fields \
 unca_home_home_page \
 unca_ldap \
 unca_zenfoundation \
+unca_aggregator_feeds \
+unca_google_analytics \
+unca_performance_settings \
+scanner \
+unca_scanner_settings \
+unca_shortcuts \
 libraries \
 flexslider \
 entityreference \
@@ -106,7 +112,6 @@ migrate_d2d_unca \
 addthis \
 admin_menu \
 admin_menu_toolbar \
-scanner \
 bulk_export \
 #Begin optional content types and views; only enable when necessary
 #unca_student_organization \
@@ -138,6 +143,7 @@ sharethis \
 slideshow_entity \
 lightbox2 \
 sharethis \
+webform \
 toolbar 
 
 # uninstall slideshow entity
@@ -158,11 +164,6 @@ echo ""
 # Set unca_zenfoundation as the active theme
 echo "Setting unca_zenfoundation as the active theme"
 drush vset theme_default unca_zenfoundation
-
-# clear the cache
-echo "Clearing the drupal cache"
-drush --nocolor cc all
-echo ""
 
 # Revert all features
 drush fra --yes
