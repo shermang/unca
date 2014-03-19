@@ -75,7 +75,7 @@ unca_date_settings \
 unca_global_header_and_footer \
 unca_google_analytics \
 unca_google_custom_search \
-unca_image_styles
+unca_image_styles \
 unca_ldap \
 unca_performance_settings \
 unca_scanner_settings \
