@@ -16,7 +16,6 @@ function unca_course_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
-      'developer' => 'developer',
     ),
     'module' => 'field_permissions',
   );

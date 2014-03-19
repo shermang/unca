@@ -8,11 +8,12 @@
  <h2><?php print $fields['title']->content; ?></h2>
 <p><?php print $fields['field_subhead_value']->content; ?><br />
 <?php
+
 switch (TRUE){
-  case !empty($fields['field_profile_contact_info']->content):
+  case strip_tags($fields['field_profile_contact_info']->content) != "":
     print $fields['field_profile_contact_info']->content;
     break;
-  case !empty($fields['field_profile_personal_statement']->content):
+  case strip_tags($fields['field_profile_personal_statement']->content) != "":
     print $fields['field_profile_personal_statement']->content;
     break;
   default:

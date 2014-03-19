@@ -12,7 +12,7 @@
   <header id="header" class="row">
       <div class="inner">
         <?php if ($logo): ?>
-          <a class="logo-link" href="<?php print url('<front>') ?>" title="<?php print t('Home'); ?>"><img id="logo" src="<?php print $logo; ?>"></a>
+          <a class="logo-link" href="http://www.unca.edu" title="<?php print t('Home'); ?>"><img id="logo" src="<?php print $logo; ?>"></a>
         <?php endif; ?>
         <?php print render($page['header']); ?>
         <div id="navigation-primary-wrapper">
