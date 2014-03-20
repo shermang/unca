@@ -69,20 +69,34 @@ context_layouts \
 context_ui \
 ds \
 ds_ui \
+unca_department_navigation \
+unca_aggregator_feeds \
 unca_date_settings \
 unca_global_header_and_footer \
+unca_google_analytics \
+unca_google_custom_search \
+unca_image_styles \
+unca_ldap \
+unca_performance_settings \
+unca_scanner_settings \
+unca_shortcuts \
 unca_slideshow \
-unca_department_navigation \
+unca_text_formats \
 unca_home \
+unca_home_home_page \
 unca_site_admin_views \
 unca_page \
 unca_slideshow \
 unca_profile \
 unca_event \
 unca_fields \
-unca_home_home_page \
-unca_ldap \
 unca_zenfoundation \
+unca_aggregator_feeds \
+unca_google_analytics \
+unca_performance_settings \
+scanner \
+unca_scanner_settings \
+unca_shortcuts \
 libraries \
 flexslider \
 entityreference \
@@ -91,7 +105,6 @@ strongarm \
 email \
 pathologic \
 link_iframe_formatter_options \
-unca_text_formats \
 date_views \
 unca_custom \
 unca_departmental_update \
@@ -106,7 +119,6 @@ migrate_d2d_unca \
 addthis \
 admin_menu \
 admin_menu_toolbar \
-scanner \
 bulk_export \
 #Begin optional content types and views; only enable when necessary
 #unca_student_organization \
@@ -138,6 +150,7 @@ sharethis \
 slideshow_entity \
 lightbox2 \
 sharethis \
+webform \
 toolbar 
 
 # uninstall slideshow entity
@@ -159,11 +172,6 @@ echo ""
 echo "Setting unca_zenfoundation as the active theme"
 drush vset theme_default unca_zenfoundation
 
-# clear the cache
-echo "Clearing the drupal cache"
-drush --nocolor cc all
-echo ""
-
 # Revert all features
 drush fra --yes
 
@@ -173,4 +181,3 @@ drush --nocolor cc all
 
 echo ""
 echo "Done!"
-
