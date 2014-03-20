@@ -44,3 +44,9 @@ function unca_custom_views_pre_render(&$view){
       break;
   }
 }
+
+function unca_custom_media_browser_plugins_alter(&$plugins) {
+  // remove upload and library tabs from Select Media form (media_upload_add and media_library_add forms)
+  unset($plugins['upload']);
+  unset($plugins['library']);
+}
