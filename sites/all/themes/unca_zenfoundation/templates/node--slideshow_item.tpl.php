@@ -9,8 +9,8 @@
     // We hide the comments and links now so that we can render them later.
     hide($content['comments']);
     hide($content['links']);
-    print render($content['field_image']);
-    ?><hr/><?php
+    if ($content['field_show_image_on_inside_page'])
+        print render($content['field_image']);
     print render($content);
   ?>
 
