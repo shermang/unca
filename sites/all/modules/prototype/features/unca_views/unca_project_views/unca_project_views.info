@@ -10,4 +10,5 @@ features[features_api][] = api:2
 features[views_view][] = Project_SPIFF
 features[views_view][] = Projects
 features[views_view][] = featured_projects
+features[views_view][] = student_projects
 features_exclude[dependencies][ctools] = ctools
